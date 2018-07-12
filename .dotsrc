@@ -1,0 +1,107 @@
+#!/usr/bin/env bash
+
+# repo https address for cloning & pushing (empty for local backup)
+REPO="https://github.com/creio/dots"
+
+# branch, defaults to current branch (HEAD)
+BRANCH="master"
+
+# location where backup folder or repo will be created or cloned
+#BASE_DIR="/home/st/files/mega/dots"
+BASE_DIR="/media/files/github/creio/dots"
+
+# names for storage directories within BASE_DIR.
+# created only if needed, stores files from below arrays
+USER_DIR=""
+ROOT_DIR="root"
+
+# file paths which will be backed up into the directories above
+USER_PATHS=(
+# dir
+"screen"
+"startpage"
+".bin"
+".colors"
+".fonts"
+".gnupg"
+".nano"
+".ncmpcpp"
+".ssh"
+".themes"
+".icons"
+".urxvt"
+".wall"
+# files
+".aurlist.txt"
+".pkglist.txt"
+# 
+".alias_zsh"
+".dotsrc"
+".gitignore"
+".gitconfig"
+".gtkrc-2.0"
+".nanorc"
+".pam_environment"
+".tmux.conf"
+".xinitrc"
+".Xresources"
+".xsettingsd"
+".zshrc"
+".face.icon"
+"README.md"
+# config
+".config/audacious/config"
+".config/cava"
+".config/cherrytree"
+".config/clipit"
+".config/conky"
+".config/dconf"
+".config/dunst"
+".config/fontconfig"
+".config/fish"
+".config/gtk-2.0"
+".config/gtk-3.0"
+".config/htop"
+".config/i3"
+".config/mc"
+".config/mpd"
+".config/mpv"
+".config/micro/bindings.json"
+".config/micro/settings.json"
+".config/neofetch"
+".config/netwmpager"
+".config/newsboat"
+".config/nvim/init.vim"
+".config/obmenu-generator"
+".config/openbox"
+".config/polybar"
+".config/qt5ct"
+".config/ranger"
+".config/rofi"
+".config/skippy-xd"
+".config/streamlink"
+".config/sublime-text-3/Packages/User"
+".config/termite"
+".config/Thunar"
+".config/tint2"
+".config/kitty"
+".config/volumeicon"
+".config/xfce4"
+".config/youtube-viewer"
+".config/compton.conf"
+".config/kdenliverc"
+".config/redshift.conf"
+".config/Trolltech.conf"
+".config/user-dirs.dirs"
+".config/user-dirs.locale"
+)
+
+ROOT_PATHS=(
+"/etc/environment"
+"/etc/fstab"
+"/etc/pacman.conf"
+"/etc/sddm.conf"
+"/etc/vconsole.conf"
+"/etc/pulse/daemon.conf"
+"/usr/share/sddm/themes/clairvoyance"
+)

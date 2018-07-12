@@ -1,0 +1,33 @@
+{
+	"auto_complete": true,
+	"auto_complete_triggers":
+	[
+		{
+			"characters": "b4",
+			"selector": "text.html"
+		}
+	],
+	"color_scheme": "Packages/User/ln.tmTheme",
+	"draw_shadows": false,
+	"enable_tab_scrolling": false,
+	"font_face": "Roboto Mono Medium",
+	"font_size": 9,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+	],
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
+	"margin": 3,
+	"show_encoding": true,
+	"show_scroll_tabs": false,
+	"spacegray_fileicons": true,
+	"spacegray_sidebar_font_small": true,
+	"spacegray_sidebar_tree_small": true,
+	"spacegray_tabs_font_small": true,
+	"spacegray_tabs_small": true,
+	"tab_size": 2,
+	"theme": "Spacegray.sublime-theme",
+	"update_check": false,
+	"word_wrap": true
+}

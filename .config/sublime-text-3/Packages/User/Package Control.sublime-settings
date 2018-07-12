@@ -1,0 +1,21 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"CSScomb",
+		"Emmet",
+		"Expand Selection to Quotes",
+		"Gist",
+		"Markdown Extended",
+		"Package Control",
+		"Sass",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"Terminal",
+		"Theme - Spacegray"
+	]
+}

@@ -1,0 +1,52 @@
+
+[alsa]
+mixer-element=Master
+
+[audgui]
+about_win=707,304,623,180
+filebrowser_win=378,80,672,480
+filesel_path=/home/st/files/mega
+info_win=399,181,560,398
+
+[gtkui]
+column_widths=10,200,234,10,175,175,10,100,29,53,275,275,275,10,275
+infoarea_visible=FALSE
+menu_visible=FALSE
+player_height=368
+player_width=686
+player_x=633
+player_y=108
+playlist_columns=artist title length
+playlist_headers=FALSE
+playlist_tabs_visible=FALSE
+statusbar_visible=FALSE
+
+[gtkui-layout]
+item0_name=Search Tool
+item0_pos=0,-1,-1,192,150
+item1_name=Playlist Manager
+item1_pos=-1,0,522,284,188
+item2_name=LyricWiki Plugin
+item2_pos=-1,0,0,284,188
+item3_name=Blur Scope
+item3_pos=-1,0,0,284,188
+item4_name=OpenGL Spectrum Analyzer
+item4_pos=-1,0,0,284,188
+item5_name=Spectrum Analyzer
+item5_pos=-1,0,0,284,188
+item6_name=Album Art
+item6_pos=-1,101,0,159,164
+item7_name=OpenGL Спектральный Анализатор
+item7_pos=-1,0,0,280,184
+item8_name=Анализатор спектра
+item8_pos=-1,0,0,284,188
+item9_name=Размывающийся уровень
+item9_pos=-1,93,59,280,184
+item_count=10
+
+[skins]
+skin=/usr/share/audacious/Skins/Classic
+vis_type=1
+
+[skins-layout]
+albumart=0,522,288,192

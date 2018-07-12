@@ -1,0 +1,45 @@
+! Special
+*.background:    [100]#1E1F29
+*.foreground:    #afe1d2
+*.cursorColor:  #2d4944
+*.border:       #1E1F29
+
+! black
+*.color0: #1E1F29
+*.color8: #344048
+
+! red
+*.color1: #6b3659
+*.color9: #874272
+
+! Green
+*.color2: #396f5e
+*.color10: #448773
+
+! Yellow
+*.color3: #cbd59a
+*.color11: #f0f8c9
+
+! Blue
+*.color4: #364670
+*.color12: #455a8e
+
+! Magenta
+*.color5:  #613a73
+*.color13: #794b87
+
+! Cyan
+*.color6: #1c6689
+*.color14: #207ba2
+
+! White
+*.color7:  #93cfbd
+*.color15: #b8eadb
+
+! cn
+! State:           ´bg´,     ´fg´,     ´bgalt´,  ´hlbg´,   ´hlfg´
+rofi.color-normal: #282a36,  #b3bdcb,  #282a36,  #282a36,  #5a74ca
+rofi.color-urgent: #282a36,  #5a74ca,  #282a36,  #5a74ca,  #282a36
+rofi.color-active: #282a36,  #5a74ca,  #282a36,  #5a74ca,  #282a36
+!                  ´background´, ´border´
+rofi.color-window: #282a36,      #75444A57

@@ -1,0 +1,79 @@
+#! perl
+
+use v5.20;
+use common::sense;
+
+use AnyEvent;
+use Linux::FD qw(signalfd);
+use POSIX;
+use File::Basename qw(dirname);
+
+my $sigset = POSIX::SigSet->new(&POSIX::SIGHUP);
+sigprocmask(SIG_BLOCK, $sigset);
+my $sigfd = signalfd($sigset);
+my $libdir = dirname(__FILE__);
+
+our @terms = ();
+
+sub reload_all {
+    my @lines = `urxvt --perl-lib $libdir -pe config-print 2>&1`;
+    my %resource;
+    for (@lines) {
+        $resource{$1} = $2 if (/(.*?): (.*)/);
+    }
+    my $cmd = "";
+    my $i = 0;
+RESOURCE:
+    for (keys %resource) {
+        my $key;
+        given ($_) {
+            # Codes adapted from https://github.com/sos4nt/dynamic-colors/blob/master/bin/dynamic-colors
+            $key = "4;$1" when (/color(\d+)/);
+            $key = 10 when "foreground";
+            $key = 11 when "background";
+            $key = 12 when "cursor";
+            $key = 13 when "mouse_foreground";
+            $key = 14 when "mouse_background";
+            $key = 17 when "highlight";
+            $key = 708 when "border";
+            $key = 710 when "font";
+            when ("geometry") {
+                if (my ($col, $row) = $resource{$_} =~ /(\d+)x(\d+)/) {
+                    $cmd .= "\e[8;${row};${col}t";
+                }
+                next RESOURCE;
+            }
+            default { next RESOURCE }
+        }
+        my $val = $resource{$_};
+        $cmd .= "\e]$key;$val\a";
+    }
+    # warn "CMD: " . ($cmd =~ s/\e/\\e/gr =~ s/\a/\\a/gr);
+    for (@terms) {
+        $_->cmd_parse($cmd);
+    }
+}
+
+our $watch = AnyEvent->io (
+             fh   => $sigfd, # which file handle to check
+             poll => "r",     # which event to wait for ("r"ead data)
+             cb   => sub {    # what callback to execute
+                 sysread $sigfd, my $dummy, 4096;
+                 reload_all;
+             }
+          );
+
+sub on_start {
+    my ($ext) = @_;
+    # warn "START ext=$ext TERM=$TERM";
+    push @terms, $TERM;
+    ();
+}
+
+sub on_destroy {
+    my ($ext) = @_;
+    # warn "END ext=$ext TERM=$TERM";
+    @terms = grep { $_ != $TERM } @terms;
+    if (!@terms) { undef $watch; }
+    ();
+}

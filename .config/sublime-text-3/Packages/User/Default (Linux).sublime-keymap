@@ -1,0 +1,15 @@
+[
+	{ "keys": ["ctrl+shift+r"], "command": "reindent" },
+	{ "keys": ["ctrl+k", "ctrl+m"], "command": "toggle_menu" },
+
+	{ "keys": ["ctrl+k", "ctrl+i"], "command": "gist" },
+	{ "keys": ["ctrl+k", "ctrl+p"], "command": "gist_private" },
+	{ "keys": ["ctrl+k", "ctrl+s"], "command": "gist_update_file" },
+	// { "keys": ["ctrl+k", "ctrl+l"], "command": "gist_list" },
+	{ "keys": ["ctrl+k", "ctrl+["], "command": "insert_gist_list" },
+	{ "keys": ["ctrl+k", "ctrl+]"], "command": "gist_add_file" },
+	// 
+	{ "keys": ["ctrl+."], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["ctrl+'"], "command": "expand_selection_to_quotes" }
+]
+// Ctrl+Shift+G оборачивание emmet

@@ -1,0 +1,10 @@
+[Configuration]
+LastActiveMode=THUNAR_RENAMER_MODE_NAME
+LastActiveRenamer=ThunarSbrReplaceRenamer
+
+[ThunarSbrReplaceRenamer]
+CaseSensitive=FALSE
+Replacement=icon
+Pattern=ico
+Regexp=FALSE
+

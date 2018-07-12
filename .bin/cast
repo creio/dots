@@ -1,0 +1,20 @@
+#! /bin/bash
+#
+
+# ffmpeg -y \
+# -f x11grab \
+# -framerate 30 \
+# -s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
+# -i :0+0,0 \
+# -r 30 \
+# -c:v gif -threads 0 \
+# -y ~/Videos/screen/output.gif
+
+ffmpeg -y \
+-f x11grab \
+-framerate 30 \
+-s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
+-i :0.0 \
+-r 30 \
+-c:v libx264rgb -crf 0 -preset ultrafast -threads 0 \
+-y ~/Videos/screen/output.mkv

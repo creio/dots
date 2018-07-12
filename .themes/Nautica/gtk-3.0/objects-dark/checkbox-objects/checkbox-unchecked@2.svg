@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="16"
+   width="16"
+   version="1.1"
+   viewBox="0 0 4.2333332 4.2333335"
+   id="svg9"
+   sodipodi:docname="checkbox-unchecked.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <defs
+     id="defs13" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview11"
+     showgrid="false"
+     inkscape:zoom="21.625"
+     inkscape:cx="0.1849711"
+     inkscape:cy="7.9306358"
+     inkscape:current-layer="svg9" />
+  <metadata
+     id="metadata2">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0 -292.77)"
+     id="g7"
+     style="stroke-width:0.34395833;stroke-miterlimit:4;stroke-dasharray:none;stroke:#dedede;stroke-opacity:1">
+    <g
+       id="checkbox-unchecked-selected"
+       opacity=".5"
+       transform="matrix(.21704 0 0 .21704 -40.8 340.91)"
+       style="stroke-width:1.58476933;stroke-miterlimit:4;stroke-dasharray:none;stroke:#dedede;stroke-opacity:1">
+      <rect
+         opacity="0.698"
+         rx="3.8332"
+         ry="3.625"
+         height="15.927"
+         width="15.927"
+         stroke="#dadae2"
+         y="-220.05"
+         x="189.77"
+         stroke-width="1.1394"
+         fill="none"
+         id="rect4"
+         style="stroke-width:1.58476933;stroke-miterlimit:4;stroke-dasharray:none;stroke:#dedede;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>

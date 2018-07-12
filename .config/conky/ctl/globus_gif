@@ -1,0 +1,113 @@
+conky.config = {
+    update_interval=0.09,
+    imlib_cache_size=100,
+    alignment = top_left,
+    gap_x = 340,
+    gap_y = -220,
+    minimum_width = 600, minimum_height = 600,
+    maximum_width = 600,
+    double_buffer = yes,
+    background=false,
+    text_buffer_size=2048,
+    double_buffer=true,
+    no_buffers=true,
+    use_xft=true,
+    font='monospace:pixelsize=11',
+    draw_shades=false,
+    override_utf8_locale=true,
+
+    cpu_avg_samples=2,
+    diskio_avg_samples=2,
+    net_avg_samples=2,
+
+    own_window=true,
+    own_window_type='normal',
+    --own_window_class='Conky',
+    own_window_argb_visual=true,
+    own_window_hints='undecorated,sticky,skip_taskbar,skip_pager,below',
+    own_window_argb_value=0,
+};
+
+conky.text = [[
+${if_updatenr 1}${image ~/.config/conky/ctl/net/anim/000.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 2}${image ~/.config/conky/ctl/net/anim/003.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 3}${image ~/.config/conky/ctl/net/anim/006.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 4}${image ~/.config/conky/ctl/net/anim/009.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 5}${image ~/.config/conky/ctl/net/anim/012.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 6}${image ~/.config/conky/ctl/net/anim/015.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 7}${image ~/.config/conky/ctl/net/anim/018.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 8}${image ~/.config/conky/ctl/net/anim/021.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 9}${image ~/.config/conky/ctl/net/anim/024.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 10}${image ~/.config/conky/ctl/net/anim/027.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 11}${image ~/.config/conky/ctl/net/anim/030.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 12}${image ~/.config/conky/ctl/net/anim/033.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 13}${image ~/.config/conky/ctl/net/anim/036.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 14}${image ~/.config/conky/ctl/net/anim/039.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 15}${image ~/.config/conky/ctl/net/anim/042.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 16}${image ~/.config/conky/ctl/net/anim/045.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 17}${image ~/.config/conky/ctl/net/anim/048.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 18}${image ~/.config/conky/ctl/net/anim/051.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 19}${image ~/.config/conky/ctl/net/anim/054.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 20}${image ~/.config/conky/ctl/net/anim/057.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 21}${image ~/.config/conky/ctl/net/anim/060.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 22}${image ~/.config/conky/ctl/net/anim/063.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 23}${image ~/.config/conky/ctl/net/anim/066.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 24}${image ~/.config/conky/ctl/net/anim/069.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 25}${image ~/.config/conky/ctl/net/anim/072.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 26}${image ~/.config/conky/ctl/net/anim/075.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 27}${image ~/.config/conky/ctl/net/anim/078.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 28}${image ~/.config/conky/ctl/net/anim/081.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 29}${image ~/.config/conky/ctl/net/anim/084.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 30}${image ~/.config/conky/ctl/net/anim/087.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 31}${image ~/.config/conky/ctl/net/anim/090.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 32}${image ~/.config/conky/ctl/net/anim/093.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 33}${image ~/.config/conky/ctl/net/anim/096.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 34}${image ~/.config/conky/ctl/net/anim/099.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 35}${image ~/.config/conky/ctl/net/anim/102.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 36}${image ~/.config/conky/ctl/net/anim/105.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 37}${image ~/.config/conky/ctl/net/anim/108.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 38}${image ~/.config/conky/ctl/net/anim/111.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 39}${image ~/.config/conky/ctl/net/anim/114.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 40}${image ~/.config/conky/ctl/net/anim/117.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 41}${image ~/.config/conky/ctl/net/anim/120.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 42}${image ~/.config/conky/ctl/net/anim/123.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 43}${image ~/.config/conky/ctl/net/anim/126.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 44}${image ~/.config/conky/ctl/net/anim/129.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 45}${image ~/.config/conky/ctl/net/anim/132.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 46}${image ~/.config/conky/ctl/net/anim/135.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 47}${image ~/.config/conky/ctl/net/anim/138.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 48}${image ~/.config/conky/ctl/net/anim/141.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 49}${image ~/.config/conky/ctl/net/anim/144.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 50}${image ~/.config/conky/ctl/net/anim/147.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 51}${image ~/.config/conky/ctl/net/anim/150.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 52}${image ~/.config/conky/ctl/net/anim/153.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 53}${image ~/.config/conky/ctl/net/anim/156.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 54}${image ~/.config/conky/ctl/net/anim/159.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 55}${image ~/.config/conky/ctl/net/anim/162.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 56}${image ~/.config/conky/ctl/net/anim/165.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 57}${image ~/.config/conky/ctl/net/anim/168.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 58}${image ~/.config/conky/ctl/net/anim/171.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 59}${image ~/.config/conky/ctl/net/anim/174.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 60}${image ~/.config/conky/ctl/net/anim/177.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 61}${image ~/.config/conky/ctl/net/anim/180.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 62}${image ~/.config/conky/ctl/net/anim/183.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 63}${image ~/.config/conky/ctl/net/anim/186.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 64}${image ~/.config/conky/ctl/net/anim/189.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 65}${image ~/.config/conky/ctl/net/anim/192.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 66}${image ~/.config/conky/ctl/net/anim/195.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 67}${image ~/.config/conky/ctl/net/anim/198.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 68}${image ~/.config/conky/ctl/net/anim/201.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 69}${image ~/.config/conky/ctl/net/anim/204.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 70}${image ~/.config/conky/ctl/net/anim/207.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 71}${image ~/.config/conky/ctl/net/anim/210.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 72}${image ~/.config/conky/ctl/net/anim/213.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 73}${image ~/.config/conky/ctl/net/anim/216.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 74}${image ~/.config/conky/ctl/net/anim/219.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 75}${image ~/.config/conky/ctl/net/anim/222.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 76}${image ~/.config/conky/ctl/net/anim/225.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 77}${image ~/.config/conky/ctl/net/anim/228.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 78}${image ~/.config/conky/ctl/net/anim/231.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 79}${image ~/.config/conky/ctl/net/anim/234.png -p 18,285 -s 650x570}${endif}
+${if_updatenr 80}${image ~/.config/conky/ctl/net/anim/237.png -p 18,285 -s 650x570}${endif}
+
+]];

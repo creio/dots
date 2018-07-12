@@ -1,0 +1,50 @@
+cd .config
+nvim
+search.config
+search .config
+search range
+rename scope.sh.bak
+rename scope.sh
+open_wit
+q
+Q
+!q
+shell thunar
+open_with 1
+find sc
+find st
+find .bi
+find .confi
+find f
+find fil
+find me
+find .wa
+search creio
+cd
+shell -w dh
+shell -w df
+search icons
+find them
+find icons
+open_with 4
+rename .xinitrc
+search .themes
+search .wall
+open_with 0
+filter
+findh
+find .al
+
+shell touch bindings.json
+find
+rename xfce-polybar.png
+deleteq
+shell makepkg -s
+shell
+shell ./update.sh
+shell gap
+open_with 
+rename cn
+open_with
+rename xfce4.bak
+delete

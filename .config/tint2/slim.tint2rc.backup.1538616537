@@ -1,0 +1,25 @@
+# background
+border_width = 0
+background_color = #071d22 50
+background_color_hover = #071d22 75
+
+# panel
+panel_items = T
+panel_size = 100% 40
+panel_margin = 0 0
+panel_background_id = 1
+panel_position = top center horizontal
+panel_window_name = tint2
+panel_monitor = 2
+
+# task
+task_text = 1
+task_centered = 1
+task_padding = 2 5 4
+task_font = euphon 8
+task_font_color = #ffffff 85
+task_active_font_color = #ffffff 100
+task_background_id = 1
+mouse_left = toggle_iconify
+taskbar_hide_different_monitor = 1
+taskbar_mode = single_desktop

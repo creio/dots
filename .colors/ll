@@ -1,0 +1,32 @@
+! special
+*.foreground:   #0f0f0f
+!*.background:   [95]#f2f3f4
+*.background:   #f2f3f4
+*.cursorColor:  #bc7190
+*.border:       #f2f3f4
+
+*.color0:	#282A36
+*.color1:	#F37F97
+*.color2:	#67b2ef
+*.color3:	#F2A272
+*.color4:	#8897F4
+*.color5:	#C574DD
+*.color6:	#67b2ef
+*.color7:	#776e6b
+*.color8:	#414458
+*.color9:	#F37F97
+*.color10:	#67b2ef
+*.color11:	#FF8037
+*.color12:	#556FFF
+*.color13:	#B043D1
+*.color14:	#67b2ef
+*.color15:	#BEBEC1
+
+! cl
+! Property Name     BG       Border   Separator
+rofi.color-window:  #f2f3f4, #ffffff, #fafafa
+
+! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
+rofi.color-normal:  #f2f3f4, #9c9c9c, #f2f3f4, #f2f3f4, #0f0f0f
+rofi.color-active:  #f2f3f4, #9c9c9c, #f2f3f4, #f2f3f4, #0f0f0f
+rofi.color-urgent:  #f2f3f4, #9c9c9c, #f2f3f4, #f2f3f4, #0f0f0f

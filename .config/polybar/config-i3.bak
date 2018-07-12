@@ -1,0 +1,288 @@
+[colors]
+accent = #5a74ca
+background = ${xrdb:background}
+background-alt = ${xrdb:color4}
+foreground = ${xrdb:foreground}
+foreground-alt = ${xrdb:color7}
+primary = ${xrdb:color6}
+secondary = ${xrdb:color13}
+alert = ${xrdb:color5}
+# 
+red = ${xrdb:color1}
+green = ${xrdb:color2}
+yellow = ${xrdb:color3}
+blue = ${xrdb:color4}
+magenta = ${xrdb:color5}
+cyan = ${xrdb:color6}
+white = ${xrdb:color7}
+
+
+
+[settings]
+screenchange-reload = true
+
+
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+
+# //////////////////////////////////////
+[bar/top]
+# xrandr -q | grep " connected" | cut -d ' ' -f1
+#monitor = ${env:MONITOR:VGA-1}
+monitor = ${env:MONITOR:monitor-fallback}
+monitor-fallback = VGA-1
+#monitor-fallback = HDMI1
+#monitor-strict = false
+width = 100%
+height = 28
+offset-x = 0
+offset-y = 0
+fixed-center = true
+bottom = false
+locale = ru_RU.UTF-8
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 2
+module-margin-right = 0
+
+font-0 = RobotoMonoMedium:size=10:antialias=false;2
+# Cat unicode: echo -e "\uF31A"
+font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=9;2"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=9;2"
+font-3 = "Font Awesome 5 Brands:pixelsize=9;2"
+font-4 = "Material Icons:antialias=false:size=11;3"
+font-5 = "unifont:fontformat=truetype:size=10:antialias=false;0"
+
+
+modules-left = app web rss cpu memory mpd
+modules-center = i3
+modules-right = alsa xkeyboard date off
+
+tray-position = right
+tray-detached = false
+tray-maxsize = 16
+# tray-transparent = true
+tray-background = ${colors.background}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+# tray-scale = 1.0
+
+
+# wm-restack = i3
+# override-redirect = false
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[module/i3]
+type = internal/i3
+index-sort = true
+strip-wsnumbers = true
+enable-scroll = false
+format = <label-state> <label-mode>
+wrapping-scroll = false
+
+ws-icon-0 = 1;1:
+ws-icon-1 = 2;2:
+ws-icon-2 = 3;3:
+ws-icon-3 = 4;4:
+ws-icon-4 = 5;5:
+ws-icon-5 = 6;6:
+ws-icon-6 = 7;7:
+ws-icon-7 = 8;8:
+ws-icon-8 = 9;9:
+ws-icon-9 = 10;10
+
+label-mode = %mode%
+label-mode-padding = 1
+
+; focused = Active workspace on focused monitor
+label-focused = %icon%
+label-focused-foreground = ${colors.accent}
+label-focused-background =
+label-focused-underline = ${colors.primary}
+label-focused-padding = 1
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %icon%
+label-unfocused-padding = 1
+
+; visible = Active workspace on unfocused monitor
+label-visible = %icon%
+label-visible-foreground = ${self.label-focused-foreground}
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %icon%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+
+
+[module/title]
+type = internal/xwindow
+format-padding = 1
+label = %title%
+label-maxlen = 20
+
+
+
+[module/mail]
+type = custom/script
+; 600s = 10min
+interval = 600
+format = " <label> "
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
+exec = ~/.config/polybar/mails
+
+
+
+[module/app]
+type = custom/text
+
+content = 
+content-foreground = ${colors.primary}
+
+#click-left = ulauncher
+click-left = "jgmenu_run >/dev/null 2>&1 &"
+click-right = ~/.bin/rofi-favapp
+
+
+
+[module/web]
+type = custom/text
+content = 
+content-foreground = ${colors.primary}
+click-left = ~/.bin/findapp firefox &
+click-right = 
+
+
+
+[module/rss]
+type = custom/text
+content = 
+content-foreground = ${colors.primary}
+click-left = xfce4-terminal -T float -e newsboat &
+click-right = 
+
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
+label = %percentage%%
+
+
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
+label = %percentage_used%%
+
+
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.primary}
+
+
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+format-online = <icon-prev> <icon-pause> <icon-play> <icon-next> 
+
+icon-prev = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+toggle-on-foreground = ${colors.primary}
+toggle-off-foreground = ${colors.secondary}
+
+label-offline = no sound
+
+
+
+[module/alsa]
+type = internal/alsa
+format-volume = <ramp-volume> <label-volume>
+format-muted =  0%
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = ${colors.primary}
+
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
+label = %layout%
+
+
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = " %d-%m-%Y"
+date-alt = " %d-%m-%Y"
+
+time = %H:%M
+# time-alt = %H:%M:%S
+time-alt = %a %d.%m.%Y
+
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
+format-underline = #0a6cf5
+
+label = %time%
+
+
+
+[module/off]
+type = custom/text
+content = 
+content-foreground = ${colors.primary}
+click-left = ~/.bin/i3-logout
+content-margin-right = 0
