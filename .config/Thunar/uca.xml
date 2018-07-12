@@ -1,0 +1,34 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Открыть терминал</name>
+	<unique-id>1516939589099320-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description></description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>system-file-manager</icon>
+	<name>Root Thunar</name>
+	<unique-id>1516942386276593-1</unique-id>
+	<command>gksu thunar  %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+<action>
+	<icon>utilities-terminal_su</icon>
+	<name>Root Terminal</name>
+	<unique-id>1516942474166522-2</unique-id>
+	<command>gksu termite %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+	<text-files/>
+</action>
+</actions>

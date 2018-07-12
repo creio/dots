@@ -1,0 +1,18 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sdb2
+UUID=b8a413df-1aab-4a3b-a23e-1d9d598c7ff2           	/         	ext4      	rw,relatime	0 1
+
+# /dev/sdb1
+UUID=b254d51b-b2d7-4bc0-8235-47eb50c6e161           	/boot     	ext2      	rw,relatime,block_validity,barrier,user_xattr,acl	0 2
+
+# /dev/sdb4
+UUID=8caf1d8a-772f-48f2-905e-2601cac4f1c6           	/home     	ext4      	rw,relatime	0 2
+
+# /dev/sdb3
+UUID=5a4aad0d-1cd6-40e2-b324-95488e50231b           	none      	swap      	defaults,pri=-2	0 0
+
+# /dev/sda5: LABEL="files"
+UUID=9f7a7cce-a588-43bb-96c4-5262652cb4fc /home/st/files ext4    defaults,relatime 0 0

@@ -1,0 +1,34 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+! rofi.modi: window,run,ssh
+rofi.modi: run,drun,window
+rofi.font: Clear Sans Medium 14
+rofi.color-enabled: true
+rofi.lines: 8
+rofi.columns: 1
+rofi.location: 0
+rofi.width: 1368
+rofi.padding: 340
+!rofi.width: 500
+! rofi.fullscreen: true
+rofi.opacity: 90
+rofi.bw: 1
+rofi.line-margin: 8
+! rofi.separator-style: solid
+rofi.scrollbar-width: 2
+! rofi.terminal: termite
+! rofi.ssh-client: ssh
+! rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
+
+! Arc-Dark
+rofi.color-window: #2F343F,#2F343F
+rofi.color-normal: #2F343F,#C5C8C6,#2F343F,#5294e2,#2F343F
+rofi.color-active: #2F343F,#c2cad0,#2F343F,#5294e2,#c2cad0
+rofi.color-urgent: #2F343F,#dc322f,#2F343F,#5294e2,#dc322f
+
+! Light
+!rofi.color-window: #ffffff,#ffffff
+!rofi.color-normal: #ffffff,#066DC1,#ffffff,#066DC1,#ffffff
+!rofi.color-active: #ffffff,#c2cad0,#ffffff,#066DC1,#c2cad0
+!rofi.color-urgent: #ffffff,#dc322f,#ffffff,#066DC1,#dc322f

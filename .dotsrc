@@ -1,0 +1,75 @@
+# repo https address for cloning & pushing (empty for local backup)
+REPO="https://github.com/creio/dots"
+
+# branch, defaults to current branch (HEAD)
+BRANCH="master"
+
+# location where backup folder or repo will be created or cloned
+BASE_DIR="/home/st/files/mega/dots"
+
+# names for storage directories within BASE_DIR.
+# created only if needed, stores files from below arrays
+USER_DIR=""
+ROOT_DIR="root"
+
+# file paths which will be backed up into the directories above
+USER_PATHS=(
+".bin"
+".ncmpcpp"
+".ssh"
+".themes"
+".config/cherrytree"
+".config/clipit"
+".config/dunst"
+".config/fontconfig"
+".config/glava"
+".config/gtk-2.0"
+".config/gtk-3.0"
+".config/htop"
+".config/mpd"
+".config/mpv"
+".config/neofetch"
+".config/obmenu-generator"
+".config/openbox"
+".config/polybar"
+".config/qt5ct"
+".config/ranger"
+".config/rofi"
+".config/skippy-xd"
+".config/streamlink"
+".config/termite"
+".config/Thunar"
+".config/tint2"
+".config/wall"
+".config/volumeicon"
+".config/youtube-viewer"
+".config/compton.conf"
+".config/compton.conf.bak"
+".config/i3-compton.conf"
+".config/redshift.conf"
+".config/redshift.conf"
+".config/Trolltech.conf"
+".config/user-dirs.dirs"
+".config/user-dirs.locale"
+".zshrc"
+".alias_zsh"
+".dotsrc"
+".gitignore"
+".gitconfig"
+".xinitrc"
+".Xresources"
+".xsettingsd"
+".pam_environment"
+".gtkrc-2.0"
+)
+
+ROOT_PATHS=(
+"/etc/fstab"
+"/etc/pacman.conf"
+"/etc/environment"
+"/etc/oblogout.conf"
+"/etc/vconsole.conf"
+"/usr/share/themes/adeos-archlabs"
+"/usr/share/themes/adeos-branco"
+"/usr/share/themes/adeos-cores"
+)

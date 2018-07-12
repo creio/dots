@@ -1,0 +1,120 @@
+[colors]
+#background = #282a36
+background = #6c5b7b
+backgr-rgb = #002F343F
+foreground = #b9b1be
+
+black = #686868
+red = #ff5c57
+green = #71b2a1
+yellow = #f0c674
+blue = #5294e2
+magenta = #b9b1be
+cyan = #80b1d3
+white = #f1f1f0
+
+
+[bar/main]
+monitor = VGA-0
+bottom = false
+width = 45%
+height = 26
+
+locale = ru_RU.UTF-8
+
+override-redirect = false
+
+# tray-position = right
+# tray-detached = false
+# tray-maxsize = 18
+# tray-transparent = true
+# tray-offset-x = -240
+# tray-offset-y = 0
+# tray-padding = 0
+# tray-scale = 1.0
+
+enable-ipc = true
+
+font-0 = Hack:style:Bold:size=10:antialias=false;1
+font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=10;2"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=10;2"
+font-3 = "Font Awesome 5 Brands:pixelsize=10;2"
+font-4 = cryptocoins:style=Regular:size=10;1
+
+background = ${colors.backgr-rgb}
+foreground = ${colors.foreground}
+
+modules-right = 
+modules-center = 
+modules-left = app mpd crypto
+
+padding-left = 0
+padding-right = 0
+
+module-margin-right = 0
+module-margin-left = 0
+
+
+[module/crypto]
+type = custom/script
+interval = 300
+exec = /home/st/.config/polybar/crypto.py
+format-foreground = ${colors.magenta}
+
+
+[module/app]
+type = custom/text
+
+content = 
+content-padding = 1
+content-foreground = ${colors.blue}
+
+#click-left = ~/.bin/findapp xfce4-appfinder
+# click-left = "jgmenu_run ob | jgmenu --simple >/dev/null 2>&1 &"
+click-left = rofi -show drun
+click-right = ~/.bin/rofi-logout
+
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+
+# format-online = <icon-prev>  <toggle>  <icon-next>
+format-online = <icon-prev> <icon-stop> <toggle> <icon-next>
+
+label-song =  %title%
+label-offline =  mpd is offline
+
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
+icon-prev-padding-left = 1
+icon-next-padding-right = 2
+
+
+[module/title]
+type = internal/xwindow
+format-padding = 1
+label = %title%
+label-maxlen = 20
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+label-layout =  %layout%
+
+label-layout-padding = 1
+
+
+[module/date]
+type = internal/date
+interval = 5
+
+date     = "%d.%m.%Y"
+#date-alt =  " %A %H:%M" 
+time     = " %H:%M"

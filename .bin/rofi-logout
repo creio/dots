@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+question=$(echo "lock|logout|reboot|shutdown" | rofi -sep "|" \
+    -dmenu -i -p 'System ' "" -width 20 -hide-scrollbar -font "Clear Sans Medium 11" \
+    -eh 1 -line-padding 4 -padding 20 -no-config -lines 4 -color-enabled \
+    -color-window "#2b303b, #2b303b, #2b303b" \
+    -color-normal "#2b303b, #5294e2, #2b303b, #5294e2, #2b303b")
+
+case $question in
+    *lock)
+        i3lock-fancy
+        ;;
+    *logout)
+        openbox --exit
+        ;;
+    *reboot)
+        systemctl reboot
+        ;;
+    *shutdown)
+        systemctl poweroff
+        ;;
+    *)
+        exit 0  # do nothing on wrong response
+        ;;
+esac

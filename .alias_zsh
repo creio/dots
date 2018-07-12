@@ -1,0 +1,200 @@
+#!/usr/bin/bash
+
+# Стеганография
+# cat molot-tora.mp4 eraz.zip > data.mp4
+# unzip date.mp4
+
+# git.io custom url
+# curl -i https://git.io -F "url=https://github.com/drcry" -F "code=YOUR_CUSTOM_NAME"
+
+# share vbox в виртуалке
+# mkdir vboxshare
+# sudo mount -t vboxsf -o rw,uid=1000,gid=1000 vboxshare vboxshare
+# sudo mount -t vboxsf -o rw,uid=st,gid=users vboxshare vboxshare
+# uid={имя пользователя} git={группа}
+
+alias tb="nc termbin.com 9999"
+
+# aur pkg
+aget () {
+	curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
+}
+
+#alias arch="neofetch"
+alias arch="neofetch --w3m ~/.config/neofetch/neo.png"
+# alias arch="neofetch --w3m"
+
+# Погода, не только по городу, но и по месту. Нет привязки к регистру и языку.
+alias wtr='curl -H "Accept-Language: ru" wttr.in/Москва'
+wts () {
+	curl -H 'Accept-Language: ru' wttr.in/"$1"
+}
+alias moon='curl wttr.in/Moon'
+
+alias ls="ls_extended"
+alias dir="dir --color=auto"
+alias vdir="vdir --color=auto"
+alias grep="grep --color=always"
+#alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
+
+alias ll="ls_extended -alF"
+alias la="ls_extended -A"
+alias l="ls_extended -CF"
+alias .l="dirs -v"
+
+alias mk="mkdir"
+mkj () {
+	mkdir -p "$1"
+	cd "$1"
+}
+
+alias /="cd /"
+alias ~="cd ~"
+alias ..="cd .."
+alias ...="cd ../.."
+# alias ....="cd ../../.."
+# alias .....="cd ../../../.."
+
+gc () {
+	git clone git@github.com:"$1".git
+}
+gcj () {
+	g
+	git clone "$1"
+	cd "$2"
+	subl3 .
+}
+alias gi="git init"
+alias gs="git status"
+alias gl="git log --stat --pretty=oneline --graph --date=short"
+alias gg="gitg &"
+alias gad="git add --all"
+gac () {
+	git add --all
+	git commit -am "$1"
+}
+alias gap="gap"
+alias gr="git remote"
+alias gf="git fetch"
+alias gpl="git pull"
+alias gp="git push"
+alias gpm="git push origin master"
+alias gh="chromium http://github.com/ctlos &"
+
+alias torc="chromium --proxy-server='socks://127.0.0.1:9050' &"
+
+alias yt="youtube-viewer -fs"
+
+
+# youtube-dl --ignore-errors -o '~/Видео/youtube/%(playlist)s/%(title)s.%(ext)s' https://www.youtube.com/playlist?list=PL-UzghgfytJQV-JCEtyuttutudMk7
+# Загрузка Видео ~/Videos или ~/Видео
+# Пример: ytdv https://www.youtube.com/watch?v=gBAfejjUQoA
+ytdv () {
+	youtube-dl --ignore-errors -o '~/Video/youtube/%(title)s.%(ext)s' $1
+}
+
+# Загрузка аудио ~/Music или ~/Музыка
+# Пример: mp3 https://www.youtube.com/watch?v=gBAfejjUQoA
+mp3 () {
+	youtube-dl --ignore-errors -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 
+-o '~/Music/youtube/%(title)s.%(ext)s' "$1"
+}
+# album https://www.youtube.com/watch?v=-F7A24f6gNc&list=RD-F7A24f6gNc
+album () {
+	youtube-dl --ignore-errors -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o 
+'~/Music/youtube/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' "$1"
+}
+
+alias m="ncmpcpp"
+pf () {
+	peerflix "$1" --vlc
+}
+# download web site
+wgetw () {
+	wget -rkx "$1"
+}
+iso () {
+	sudo dd bs=4M if=/home/st/files/linux/distr/"$1".iso of=/dev/"$2" status=progress && sync
+}
+
+
+alias st="subl3"
+alias sst="sudo subl3"
+alias fm="ranger"
+alias sfm="sudo ranger"
+alias sth="sudo thunar ."
+alias thk="thunar . &"
+alias h="htop"
+
+alias sp="sudo pacman -S"
+alias sps="sudo pacman -Ss"
+alias spc="sudo pacman -Sc"
+alias spcc="sudo pacman -Scc"
+alias spy="sudo pacman -Syy"
+alias spu="sudo pacman -Syu"
+alias spr="sudo pacman -R"
+
+alias y="yaourt -S"
+alias yn="yaourt -S --noconfirm"
+alias ys="yaourt"
+alias ysn="yaourt --noconfirm"
+alias yc="yaourt -Sc"
+alias ycc="yaourt -Scc"
+alias yy="yaourt -Syy"
+alias yu="yaourt -Syu"
+alias yun="yaourt -Syu --noconfirm"
+alias yr="yaourt -Rns"
+alias yrn="yaourt -Rns --noconfirm"
+
+# распаковать архив не указывая тип распаковщика
+function ex {
+ if [ -z "$1" ]; then
+		# display usage if no parameters given
+		echo "Использование: ex <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+ else
+		if [ -f "$1" ] ; then
+				NAME=${1%.*}
+				#mkdir $NAME && cd $NAME
+				case "$1" in
+					*.tar.bz2)   tar xvjf ./"$1"    ;;
+					*.tar.gz)    tar xvzf ./"$1"    ;;
+					*.tar.xz)    tar xvJf ./"$1"    ;;
+					*.lzma)      unlzma ./"$1"      ;;
+					*.bz2)       bunzip2 ./"$1"     ;;
+					*.rar)       unrar x -ad ./"$1" ;;
+					*.gz)        gunzip ./"$1"      ;;
+					*.tar)       tar xvf ./"$1"     ;;
+					*.tbz2)      tar xvjf ./"$1"    ;;
+					*.tgz)       tar xvzf ./"$1"    ;;
+					*.zip)       unzip ./"$1"       ;;
+					*.Z)         uncompress ./"$1"  ;;
+					*.7z)        7z x ./"$1"        ;;
+					*.xz)        unxz ./"$1"        ;;
+					*.exe)       cabextract ./"$1"  ;;
+					*)           echo "ex: '$1' - Не может быть распакован" ;;
+				esac
+		else
+				echo "'$1' - не является допустимым файлом"
+		fi
+fi
+}
+
+# Упаковка в архив командой pk 7z /что/мы/пакуем имя_файла.7z
+pk () {
+	if [ $1 ] ; then
+		case $1 in
+			tbz)       tar cjvf $2.tar.bz2 $2      ;;
+			tgz)       tar czvf $2.tar.gz  $2       ;;
+			tar)       tar cpvf $2.tar  $2       ;;
+			bz2)       bzip $2 ;;
+			gz)        gzip -c -9 -n $2 > $2.gz ;;
+			zip)       zip -r $2.zip $2   ;;
+			7z)        7z a $2.7z $2    ;;
+			*)         echo "'$1' не может быть упакован с помощью pk()" ;;
+		esac
+	else
+		echo "'$1' не является допустимым файлом"
+	fi
+}

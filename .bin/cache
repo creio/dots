@@ -1,0 +1,3 @@
+#!/bin/bash
+fc-cache -vf
+sudo pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) && sudo rm -rf ~/.cache/thumbnails/*

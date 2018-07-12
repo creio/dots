@@ -1,0 +1,5 @@
+rofi.terminal:         termite
+rofi.sidebar-mode:     true
+rofi.theme:            sidestyle.rasi
+rofi.drun-icon-theme:  Papirus
+rofi.show-icons:       true

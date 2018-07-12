@@ -1,0 +1,17 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+!rofi.color-enabled: true
+!rofi.color-window: #161616, #002b36, #000000
+!rofi.color-normal: #161616, #ffffff, #161616, #232323, #ffffff
+!rofi.color-active: #161616, #ffffff, #161616, #232323, #ffffff
+!rofi.color-urgent: #161616, #ffffff, #161616, #dc322f, #fdf6e3
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme Nord
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #2E3440, #2E3440, #A3BE8C
+rofi.color-normal: #2E3440, #ECEFF4, #2E3440, #A3BE8C, #2E3440
+rofi.color-active: #2E3440, #ECEFF4, #2E3440, #A3BE8C, #2E3440
+rofi.color-urgent: #2E3440, #BF616A, #2E3440, #BF616A, #ECEFF4

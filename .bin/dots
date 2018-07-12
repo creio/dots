@@ -1,0 +1,316 @@
+#!/usr/bin/env bash
+#
+# Ctlos Linux https://ctlos.github.io
+# 
+# Dot file management script using zenity, git & rsync
+# Written by Nathaniel Maia, November 2017 - March 2018
+
+# Config ~/.dotsrc
+# Ignore github ~/.gitignore
+# git.io/ctldotsrc
+# wget git.io/ctldots
+# sudo cp -fv ~/.bin/dots /usr/bin/dots
+
+# immutable values
+readonly NAME=$(basename "$0")
+readonly CFG="$HOME/.${NAME}rc"
+
+readonly B='\E[1;34m'
+readonly R='\E[1;31m'
+readonly G='\E[1;32m'
+readonly N='\E[0m'
+readonly BLD='\E[1m'
+
+readonly WRN="${R}[WARN]${N}:"
+readonly INF="${B}[INFO]${N}:"
+readonly YN="${B}[${R}y${B}/${R}${BLD}N${N}${B}]${N}: "
+
+readonly MENUTXT="\n  Enter number or letter and press [Enter]. 0/q to cancel\n\n> "
+
+readonly MENU="
+\n\t  ${R}1 ${N}| ${R}${BLD}b${N}ackup\t\t-> Backup Files
+\t${B}------------------------------------------${N}
+\n\t  ${R}2 ${N}| ${R}${BLD}r${N}estore\t\t-> Restore Files
+\t${B}------------------------------------------${N}"
+
+
+main_menu() {
+    local choice
+
+    clear
+    echo -e "$MENU"
+    draw_box 12
+    printf "$MENUTXT"
+    read -e -r choice
+    clear
+
+    [[ $choice =~ (v|V) ]] && V="v"
+
+    case "$choice" in
+        0|[Qq]|quit) exit 0 ;;
+        1*|[Bb]*|backup*) [[ $BASE_DIR ]] && { backup_files; exit 0; } || edit_config ;;
+        2*|[Rr]*|restore*) restore_files && exit 0
+    esac
+
+    src_cfg
+    main_menu
+}
+
+draw_box() {
+    local h=${1:-12}            # $1 Box Height
+    local w=${2:-57}            # $2 Box Width
+    local row=${3:-1}           # $3 Starting Row
+    local col=${4:-2}           # $4 Starting Column
+    local co=${5:-1}            # $5 Box Color, 1-7
+    ((h--))                     # account for corner
+    ((w--))                     # account for corner
+    local endrow=$((row + h))   # end row
+    local endcol=$((col + w))   # end column
+    echo -ne "\E[3${co}m"       # foreground colour
+
+    local hz="-" vt="|" cn="+"  # horizontal, vertical, and corner chars
+
+    plot_char() {
+        echo -e "\E[${1};${2}H""$3"
+    }
+
+    local i=0
+    for ((r=row; i<h; r++)); do
+        plot_char "$r" "$col" "$vt"    # left side
+        ((i++))
+    done
+    i=0
+    for ((r=row; i<h; r++)); do
+        plot_char "$r" "$endcol" "$vt" # right side
+        ((i++))
+    done
+    i=0
+    for ((c=col; i<w; c++)); do
+        plot_char "$row" "$c" "$hz"    # top side
+        ((i++))
+    done
+    i=0
+    for ((c=col; i<w; c++)); do
+        plot_char "$endrow" "$c" "$hz" # bottom side
+        ((i++))
+    done
+
+    plot_char "$row" "$col" "$cn"       # left-top corner
+    plot_char "$row" "$endcol" "$cn"    # right-top corner
+    plot_char "$endrow" "$col" "$cn"    # left-bottom corner
+    plot_char "$endrow" "$endcol" "$cn" # right-bottom corner
+    tput sgr0  # Reset colours
+}
+
+check_reqs() {
+    if ! hash git rsync &>/dev/null && hash pacman &>/dev/null; then
+        echo -e "\n\n\n\tInstalling:\n\t\tgit\n\t\trsync\n\n\tPlease Wait.."
+        draw_box 8
+        sleep 1
+        clear
+        sudo pacman -S git rsync --noconfirm --needed
+    fi
+}
+
+prep_directory() {
+    if [[ $REQ != "True" ]]; then
+        check_reqs
+        if [[ $BASE_DIR ]]; then    # is set in config but might not exist yet
+            if [[ ! -d $BASE_DIR ]]; then  # is not an existing dir
+
+                if [[ $REPO ]] && grep -wq '^https://.*/.*/.*$' <<< "$REPO"; then  # is REPO actually and address
+                    git clone "$REPO" "$BASE_DIR"
+                else
+                    mkdir -p$V "$BASE_DIR" # local backup
+                fi
+            fi
+
+            [[ -d $BASE_DIR ]] && REQ="True"
+        else
+            echo -e "$WRN BASE_DIR must be set in config to continue. $EXITING"
+        fi
+    fi
+}
+
+clean_backup_dirs() {
+    if [[ ${PREV_BACKUPS[*]} ]] && sub_choice "Perform clean backup (wipe BASE_DIR)" "${R}$BASE_DIR${N}"; then
+        for dir in "${PREV_BACKUPS[@]}"; do
+            if [[ -d $dir ]] && sub_choice "Wipe all files in /$(basename "$dir")" "${R}$dir${N}"; then
+                rm -rf$V "$dir"
+                [[ $V ]] && sleep 0.5
+            fi
+        done
+    fi
+}
+
+commit_changes() {
+    if grep -q 'https://' <<< "$REPO"; then
+        if sub_choice "Commit and push changes to REPO" "${R}$REPO${N}"; then
+
+            printf "\nEnter commit message below, an example has been provided\n\n> "
+            read -e -i "$(date +%a-%D) Update" -r comment
+
+            if grep -wq '[a-zA-Z0-9]*' <<< "$comment"; then
+                cd "$BASE_DIR/" || return 1
+                git add .
+                git commit -m "$comment"
+                git push origin "${BRANCH:-HEAD}"
+            else
+                echo "Bad commit message"
+                sleep 1
+                commit_changes
+            fi
+        fi
+    fi
+}
+
+backup_files() {
+    prep_directory
+    clean_backup_dirs
+
+    if [[ ${USER_PATHS[*]} || ${ROOT_PATHS[*]} ]]; then
+
+        echo -e "$INF ${B}Copying files, please wait..$N\n"
+        for f in "${USER_PATHS[@]}"; do
+            [[ -e $f ]] && rsync -aR$V $f "$BASE_DIR/$USER_DIR/"
+            [[ $V ]] && sleep 0.5
+        done
+
+        for f in "${ROOT_PATHS[@]}"; do
+            [[ -e $f ]] && rsync -aR$V $f "$BASE_DIR/$ROOT_DIR/"
+            [[ $V ]] && sleep 0.5
+        done
+
+        echo -e "$INF ${G}Backup complete$N"
+        sleep 1
+    else
+        echo -e "$WRN No valid file paths were found.."
+        sleep 2
+    fi
+    commit_changes
+}
+
+restore_files() {
+    prep_directory
+    if [[ ${PREV_BACKUPS[*]} ]]; then
+        local msg=""
+
+        for x in "${PREV_BACKUPS[@]}"; do
+            if [[ -e $x ]] && sub_choice "Restore everything from /$(basename "$x")" "${R}$x${N}"; then
+                if grep -q "$BASE_DIR/$USER_DIR" <<< "$x"; then
+                    rsync -avPC --filter="exclude $ROOT_DIR" "$BASE_DIR/$USER_DIR/" "$HOME/"
+                elif grep -q "$BASE_DIR/$ROOT_DIR" <<< "$x"; then
+                    sudo rsync -avn "$BASE_DIR/$ROOT_DIR/" /
+                else
+                    echo -e "\n\n\n\t$WRN Unable to restore\n\n\t$x"
+                    draw_box 9
+                    sleep 1
+                fi
+
+            fi
+
+            [[ $V ]] && sleep 0.5
+        done
+
+    else
+        echo -e "\n\n\n\t$INF ${R}No Existing backups to restore${N}"
+        draw_box 9
+        sleep 1
+    fi
+}
+
+mk_cfg() {
+    [[ $1 == "new" ]] && edit_config
+
+    for f in "${USER_PATHS[@]}"; do
+        if [[ -e $f ]] && ! grep "$f" <<< "$u_paths"; then
+            u_paths="$u_paths\"$f\"\n"
+        fi
+    done
+
+    for f in "${ROOT_PATHS[@]}"; do
+        if [[ -e $f ]] && ! grep "$f" <<< "$r_paths"; then
+            r_paths="$r_paths\"$f\"\n"
+        fi
+    done
+
+    local cfg="# config file for dfm (dotfile manager)
+\n# repo https address for cloning & pushing (empty for local backup)
+REPO=\"$REPO\"
+\n# branch, defaults to current branch (HEAD)
+BRANCH=\"$BRANCH\"
+\n# location where backup folder or repo will be created or cloned
+BASE_DIR=\"$BASE_DIR\"
+\n# names for storage directories within BASE_DIR.
+# created only if needed, stores files from below arrays
+USER_DIR=\"${USER_DIR}\"
+ROOT_DIR=\"${ROOT_DIR:-root}\"
+\n# file paths which will be backed up into the directories above
+USER_PATHS=(\n$u_paths)
+\nROOT_PATHS=(\n$r_paths)"
+
+    echo -e "$cfg" > "$CFG" && clear
+    src_cfg
+}
+
+edit_config() {
+    $EDITOR "$CFG"
+    src_cfg
+}
+
+src_cfg() {
+    PREV_BACKUPS=()
+    ! . "$CFG" 2>/dev/null && mk_cfg "new"
+    [[ -d $BASE_DIR/$USER_DIR ]] && PREV_BACKUPS+=("$BASE_DIR/$USER_DIR")
+    [[ -d $BASE_DIR/$ROOT_DIR ]] && PREV_BACKUPS+=("$BASE_DIR/$ROOT_DIR")
+}
+
+sub_choice() {
+    local choice
+
+    clear
+    printf "\n\n\n\t$1? $YN\n\n\t$2"
+    draw_box 9
+    tput cup 3 $((${#1} + 17))
+    read -r choice
+    clear
+
+    grep -q '[yY]' <<< "$choice" && return 0 || return 1
+}
+
+usage() {
+    cat <<EOF
+
+USAGE:
+       $NAME [OPTIONS..]
+
+OPTIONS:
+
+       -h,--help          Print this usage message
+       -v,--verbose       More information output
+
+       Without any options the main dialog menu opens.
+
+INFO:
+       Configuration is done in: '$CFG'
+
+       A default config will be created if one is not found,
+       followed by opening it in $EDITOR for you to configure.
+
+       Alternatively open your favorite editor and edit it manually.
+
+EOF
+    exit 0
+}
+
+for arg in "$@"; do
+    case $arg in
+        -v|--verbose) V="v" ;;
+        -h|--help) usage ;;
+    esac
+done
+
+src_cfg
+main_menu
+
+exit 0

@@ -1,0 +1,6 @@
+#!/bin/bash
+# push github
+
+git add .
+git commit -a -m 'auto commit'
+git push origin master
