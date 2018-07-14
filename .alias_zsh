@@ -138,6 +138,7 @@ alias spr="sudo pacman -R"
 
 alias y="yaourt -S"
 alias yn="yaourt -S --noconfirm"
+alias ygpg="yaourt -S --m-arg "--skippgpcheck" --noconfirm"
 alias ys="yaourt"
 alias ysn="yaourt --noconfirm"
 alias yc="yaourt -Sc"
