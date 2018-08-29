@@ -5,8 +5,10 @@ visualizer_fifo_path = /tmp/mpd.fifo
 visualizer_output_name = "Visualizer feed"
 visualizer_in_stereo = no
 visualizer_sync_interval = 30
+## Available values: spectrum, wave, wave_filled, ellipse.
 visualizer_type = spectrum
-visualizer_look = ●┃
+#visualizer_look = ●┃
+visualizer_look = ┄┃
 visualizer_color = cyan, green, yellow, magenta, red
 song_list_format = "{{%a - %t}|{%f}}{$R%l}"
 #song_status_format = {%a - %t}|{%f}

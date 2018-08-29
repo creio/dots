@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 #
 # Neofetch config file
 # https://github.com/dylanaraps/neofetch
@@ -20,9 +20,9 @@ print_info() {
     #info "OS" distro
     #info "Model" model
     info "Kernel" kernel
-    #info "Packages" packages
+    info "Packages" packages
     #info "Memory" memory
-    #info "Disk" disk
+    # info "Disk" disk
     #info "Uptime" uptime
     info "Shell" shell
     info "Terminal" term
@@ -39,8 +39,8 @@ print_info() {
     info "Font" font
     info "Terminal Font" term_font
     info "Song" song
-    #info "Local IP" local_ip
-    #info "Public IP" public_ip
+    info "Local IP" local_ip
+    # info "Public IP" public_ip
     #info "Users" users
     #info "Install Date" install_date
     #prin "Weather" "$(curl wttr.in/?0?q?T | awk '/°(C|F)/ {printf $(NF-1) $(NF) " ("a")"} /,/ {a=$0}')"
@@ -640,8 +640,8 @@ gap=2
 # Values:  'px'
 # Flags:   --xoffset
 #          --yoffset
-yoffset=50
-xoffset=16
+yoffset=0
+xoffset=0
 
 # Image background color
 # Only works with the w3m backend.

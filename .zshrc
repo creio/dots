@@ -6,8 +6,9 @@ fi
 
 ZSH=/usr/share/oh-my-zsh/
 
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="refined"
+ZSH_THEME="robbyrussell"
+# ZSH_THEME="oxide"
+# ZSH_THEME="refined"
 # ZSH_THEME="dracula"
 DISABLE_AUTO_UPDATE="true"
 plugins=(
@@ -27,8 +28,12 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # 	__vte_osc7
 # fi
 
-export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'subl3'; else echo 'nano'; fi)"
+# if [[ $TILIX_ID ]]; then
+# 	source /etc/profile.d/vte.sh
+# fi
 
+export TERM="xterm-256color"
+export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'subl3'; else echo 'nano'; fi)"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 if [ -f ~/.alias_zsh ]; then

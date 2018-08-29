@@ -1,5 +1,4 @@
 #!/bin/bash
-#   Author: Alex Creio
 
 M=5 # slop border width
 
@@ -12,14 +11,19 @@ aX=$(( $X - $M )) && aY=$(( $Y - $M ))
 aW=$(( $W + ( $M * 2 ) )) && aH=$(( $H + ( $M * 2 ) ))
 
 if [ "$W" -gt "1" ]; then
+    # Calculate urxvt
+    let W=$(( $W / 7 ))-2
+    let H=$(( $H / 15 ))-1
     
-    termite --geometry=$W"x"$H"+"$X"+"$Y &
+    # termite --geometry=$W"x"$H"+"$X"+"$Y &
+    urxvt -g $W"x"$H"+"$X"+"$Y &
 
     for i in {0..10}; do # timeout
         if ps -p $! >/dev/null; then
             sleep .1
 
-            wmctrl -e 0,$aX,$aY,$aW,$aH
+            # wmctrl -e 0,$aX,$aY,$aW,$aH # termite
+            wmctrl -r :ACTIVE: -e 0,$aX,$aY,$aW,$aH
             break
         fi
     done

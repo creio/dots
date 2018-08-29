@@ -27,13 +27,13 @@ menu.title.text.justify: center
 
 !! Selected menu item
 menu.items.active.bg: gradient horizontal flat
-menu.items.active.bg.color: #81a1c1
+menu.items.active.bg.color: #cc575d
 menu.items.active.bg.colorTo: #89d0bA
 menu.items.active.text.color: #2f343f
 
 !! Titlebar
 window.active.title.bg: gradient horizontal flat
-window.active.title.bg.color: #cc619f
+window.active.title.bg.color: #cc575d
 window.active.title.bg.colorTo: #8be9fd
 window.inactive.title.bg: gradient horizontal flat
 window.inactive.title.bg.color: #9b78cc
@@ -87,6 +87,6 @@ osd.bg.color: #2f343f
 osd.label.bg: flat solid
 osd.label.bg.color: #2f343f
 osd.hilight.bg: flat solid
-osd.hilight.bg.color: #81a1c1
+osd.hilight.bg.color: #cc575d
 osd.unhilight.bg: flat solid
 osd.unhilight.bg.color: #d8dee8
