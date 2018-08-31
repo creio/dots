@@ -16,11 +16,11 @@ pacman -Sy --noconfirm --needed reflector
 reflector -c "Belarus" -c "Russia" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
 
 
-echo "Arch Linux Virtualbox"
-read -p "1 - Yes, 0 - No: " virtualbox_setting
-if [[ $virtualbox_setting == 0 ]]; then
+echo "Arch Linux Virtualbox?"
+read -p "yes, no: " virtualbox_setting
+if [[ $virtualbox_setting == no ]]; then
   virtualbox_install=""
-elif [[ $xorg_setting == 1 ]]; then
+elif [[ $virtualbox_setting == yes ]]; then
   virtualbox_install="virtualbox-guest-modules-arch virtualbox-guest-utils"
 fi
 echo
@@ -31,7 +31,7 @@ packages=(
 base-devel xorg-apps xorg-server xorg-xinit
 mesa xf86-video-nouveau
 networkmanager network-manager-applet
-gtk-engines gtk-engine-murrine xdg-user-dirs qt4 qt5-styleplugins qt5ct
+gtk-engines gtk-engine-murrine xdg-user-dirs-gtk qt4 qt5-styleplugins qt5ct
 arc-gtk-theme papirus-icon-theme
 ttf-dejavu ttf-hack ttf-roboto ttf-ubuntu-font-family ttf-font-awesome
 alsa-utils gstreamer pulseaudio pulseaudio-alsa
