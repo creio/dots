@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DIALOG_RESULT=$(echo -e 'chromium\nteamspeak3\ngodot\nthunar\nsteam\npavucontrol\nlxrandr\nlxappearance\ngparted' | rofi -dmenu -i -p "Favorite [APP]" -hide-scrollbar -tokenize -lines 9 -eh 1 -width 30 -location 0 -xoffset 0 -yoffset 0 -padding 20 -disable-history -font "ClearSansMedium 14")
+DIALOG_RESULT=$(echo -e 'chromium\nteamspeak3\ngodot\nthunar\nsteam\npavucontrol\nlxrandr\nlxappearance\ngparted' | rofi -dmenu -i -p "Favorite [APP]" -hide-scrollbar -tokenize -lines 9 -eh 1 -width 25 -location 0 -xoffset 0 -yoffset 0 -padding 20 -disable-history -font "ClearSansMedium 13")
 
 echo "This result is : $DIALOG_RESULT"
 sleep 1;
