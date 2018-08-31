@@ -195,26 +195,28 @@ for_window [window_role="demo"] resize set 800 600, move position center
 for_window [class="(?i)thunar"] move window to scratchpad, scratchpad show, floating enable, resize set 800 400, move position center
 for_window [class="(?i)simplescreenrecorder"] floating enable, move position 5 30
 for_window [class="(?i)nitrogen|engrampa|fsearch|qt5ct"] floating enable, resize set 600 500, move position center
-for_window [class="(?i)pavucontrol|lxappearance|viewnior"] floating enable
-for_window [title="(?i)term-float"] floating enable, focus
-for_window [title="(?i)ranger"] floating enable, resize set 1280 600, move position center, focus
+for_window [class="(?i)atril|pavucontrol|lxappearance|viewnior|keepassxc|veracrypt"] floating enable
 for_window [class="(?i)mpv"] floating enable, resize set 350 250, sticky enable, move window to position 1000 85
 # for_window [title="(?i)htop"] floating enable, resize set 1280 600, move position center, focus
 for_window [class="(?i)chromium|urxvt|thunar|subl3|mupdf"] focus
 for_window [window_role="demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
 for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 350, move absolute position 0 418
-for_window [workspace=$ws1] layout tabbed
+
 for_window [workspace=$ws3] layout tabbed
+for_window [workspace=$ws6] layout tabbed
+
+for_window [class="URxvt" instance="float"] move window to scratchpad, scratchpad show, floating enable, resize set 1280 600, move position center, focus
+for_window [class="URxvt" instance="floating"] move window to scratchpad, scratchpad show, floating enable, resize set 720 400, move position center, focus
 
 
 ## Specific workspaces
 assign [title="(?i)term-tiling"] $ws1
 assign [title="htop"] $ws1
-assign [window_role="browser"] $ws2
+assign [class="(?i)chromium"] $ws2
 assign [class="(?i)subl3"] $ws3
 assign [class="(?i)smplayer"] $ws4
 assign [window_role="gimp"] $ws5
-assign [class="(?i)telegram|discord"] $ws6
+assign [class="(?i)fractal|telegram|discord"] $ws6
 assign [class="(?i)zathura|fbreader|mupdf"] $ws7
 
 
@@ -224,10 +226,10 @@ bindsym $mod1+l exec --no-startup-id "betterlockscreen -l dimblur"
 bindsym $mod1+space exec --no-startup-id "skippy-xd"
 bindsym $mod1+d exec --no-startup-id "rofi -show drun"
 bindsym Ctrl+space exec --no-startup-id "rofi -show window"
-bindsym $mod+Return exec --no-startup-id "urxvt -name 'term-tiling'"
-bindsym $mod1+t exec --no-startup-id "urxvt -name 'term-float'"
-bindsym $mod1+h exec --no-startup-id "urxvt -e htop"
-bindsym $mod1+r exec --no-startup-id "urxvt -e ranger"
+bindsym $mod+Return exec --no-startup-id "urxvt -name term-tiling"
+bindsym $mod1+t exec --no-startup-id "urxvt -name floating"
+bindsym $mod1+r exec --no-startup-id "urxvt -name float -e ranger"
+bindsym $mod1+h exec --no-startup-id "urxvt -name float -e htop"
 bindsym $mod1+f exec --no-startup-id "thunar"
 bindsym $mod1+s exec --no-startup-id "subl3"
 bindsym $mod1+w exec --no-startup-id "chromium"

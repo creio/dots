@@ -63,7 +63,7 @@ font-4 = "Material Icons:antialias=false:size=11;3"
 font-5 = "unifont:fontformat=truetype:size=10:antialias=false;0"
 
 
-modules-left = app cpu memory temperature mpd
+modules-left = app rss cpu memory mpd
 modules-center = i3
 modules-right = alsa xkeyboard date off
 
@@ -159,6 +159,15 @@ content-foreground = ${colors.primary}
 
 #click-left = ulauncher
 click-left = ~/.bin/rofi-favapp
+click-right = 
+
+
+
+[module/rss]
+type = custom/text
+content = 
+content-foreground = ${colors.primary}
+click-left = urxvt -name float -e newsboat &
 click-right = 
 
 
