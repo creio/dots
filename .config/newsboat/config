@@ -1,0 +1,27 @@
+# colors
+color background           color255 color0
+color listnormal           color255 color0
+color listfocus            color255 color4 bold
+color listnormal_unread    color255 color0 bold
+color listfocus_unread     yellow color4 bold
+#color info                 color31 color0
+color info                 white color0
+color article              color255 color0
+
+# highlights
+highlight article "^(Feed|Title|Link|Date|Author):.*$" color4 color0 
+highlight article "https?://[^ ]+" yellow color0 protect
+
+# generals
+confirm-exit yes
+browser chromium
+auto-reload yes
+cleanup-on-quit yes
+player mpv
+refresh-on-startup yes
+reload-time 20
+reload-threads 2
+notify-program notify-send
+
+# add video or audio to play queue using mpv (requires: mpv, youtube-dl, youtube-viewer)
+macro y set browser "youtube-viewer %u"; open-in-browser ; set browser "$BROWSER %u"

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="thunar" version="1.0">
+  <property name="last-view" type="string" value="ThunarIconView"/>
+  <property name="last-location-bar" type="string" value="ThunarLocationEntry"/>
+  <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_NORMAL"/>
+  <property name="last-window-width" type="int" value="796"/>
+  <property name="last-window-height" type="int" value="396"/>
+  <property name="last-window-maximized" type="bool" value="false"/>
+  <property name="last-show-hidden" type="bool" value="true"/>
+  <property name="last-separator-position" type="int" value="138"/>
+  <property name="last-menubar-visible" type="bool" value="false"/>
+  <property name="hidden-bookmarks" type="array">
+    <value type="string" value="file:///"/>
+    <value type="string" value="network:///"/>
+    <value type="string" value="network://"/>
+  </property>
+  <property name="hidden-devices" type="array">
+    <value type="string" value="77D95D3C0CBB4385"/>
+    <value type="string" value="849e1130-1670-496a-9c81-db05512b677d"/>
+    <value type="string" value="9f7a7cce-a588-43bb-96c4-5262652cb4fc"/>
+    <value type="string" value="33de6b56-6568-46a4-9fcc-de16dc9562f3"/>
+    <value type="string" value="b9494637-e3f4-4c2f-9f95-57c0b69e3db1"/>
+    <value type="string" value="b8a413df-1aab-4a3b-a23e-1d9d598c7ff2"/>
+    <value type="string" value="b254d51b-b2d7-4bc0-8235-47eb50c6e161"/>
+    <value type="string" value="8caf1d8a-772f-48f2-905e-2601cac4f1c6"/>
+  </property>
+  <property name="misc-single-click" type="bool" value="false"/>
+  <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_SMALLEST"/>
+  <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
+</channel>

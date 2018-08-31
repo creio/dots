@@ -1,0 +1,267 @@
+# Window and Color
+client.focused          #364670 #364670 #93CFBD #364670 #364670
+client.focused_inactive #2F2F38 #2F2F38 #CCCCCC #2F2F38 #2F2F38
+client.unfocused        #2F2F38 #2F2F38 #93CFBD #2F2F38 #2F2F38
+client.urgent           #6B3659 #6B3659 #93CFBD #6B3659 #6B3659
+client.placeholder      #666666 #666666 #CCCCCC #666666 #666666
+client.background       #364670
+
+hide_edge_borders smart
+new_window pixel 2
+new_float pixel 2
+
+# Gapps
+smart_gaps on
+smart_borders on
+
+set $default_gaps_inner 0
+set $default_gaps_outer 0
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), mod1 + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), mod1 + +|-|0 (global)
+bindsym $mod+mod1+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym mod1+plus  gaps inner all plus 5
+        bindsym mod1+minus gaps inner all minus 5
+        bindsym mod1+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym mod1+plus  gaps outer all plus 5
+        bindsym mod1+minus gaps outer all minus 5
+        bindsym mod1+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
+set $mod Mod4
+set $mod1 Mod1
+
+font pango:ClearSansMedium 9
+
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+z kill
+
+# change focus
+bindsym $mod1+Tab focus right
+# bindsym $mod+Tab focus left
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+mod1+j move left
+bindsym $mod+mod1+k move down
+bindsym $mod+mod1+l move up
+bindsym $mod+mod1+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+mod1+Left move left
+bindsym $mod+mod1+Down move down
+bindsym $mod+mod1+Up move up
+bindsym $mod+mod1+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+c floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod1+x focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+d focus child
+
+bindsym $mod+g sticky toggle
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+mod1+1 move container to workspace $ws1
+bindsym $mod+mod1+2 move container to workspace $ws2
+bindsym $mod+mod1+3 move container to workspace $ws3
+bindsym $mod+mod1+4 move container to workspace $ws4
+bindsym $mod+mod1+5 move container to workspace $ws5
+bindsym $mod+mod1+6 move container to workspace $ws6
+bindsym $mod+mod1+7 move container to workspace $ws7
+bindsym $mod+mod1+8 move container to workspace $ws8
+bindsym $mod+mod1+9 move container to workspace $ws9
+bindsym $mod+mod1+0 move container to workspace $ws10
+
+bindsym $mod+mod1+e reload
+bindsym $mod+mod1+r restart
+bindsym $mod+mod1+Delete exec ~/.bin/i3-logout
+# bindsym $mod+mod1+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+mode "resize" {
+        bindsym j resize shrink width 3 px or 3 ppt
+        bindsym k resize grow height 3 px or 3 ppt
+        bindsym l resize shrink height 3 px or 3 ppt
+        bindsym semicolon resize grow width 3 px or 3 ppt
+
+        bindsym Left resize shrink width 3 px or 3 ppt
+        bindsym Down resize grow height 3 px or 3 ppt
+        bindsym Up resize shrink height 3 px or 3 ppt
+        bindsym Right resize grow width 3 px or 3 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+
+bindsym $Mod+Ctrl+x move scratchpad
+bindsym $Mod+x scratchpad show
+
+
+## Specific window
+# for_window [window_role="stalonetray"] floating enable
+for_window [window_role="pop-up|bubble|task_dialog|Preferences|setup"] floating enable
+for_window [window_type="dialog|menu"] floating enable
+for_window [window_role="browser|GtkFileChooserDialog"] resize set 800 600, move position center
+for_window [window_role="demo"] resize set 800 600, move position center
+for_window [class="(?i)thunar"] move window to scratchpad, scratchpad show, floating enable, resize set 800 400, move position center
+for_window [class="(?i)simplescreenrecorder"] floating enable, move position 5 30
+for_window [class="(?i)nitrogen|engrampa|fsearch|qt5ct"] floating enable, resize set 600 500, move position center
+for_window [class="(?i)pavucontrol|lxappearance|viewnior"] floating enable
+for_window [title="(?i)term-float"] floating enable, focus
+for_window [title="(?i)ranger"] floating enable, resize set 1280 600, move position center, focus
+for_window [class="(?i)mpv"] floating enable, resize set 350 250, sticky enable, move window to position 1000 85
+# for_window [title="(?i)htop"] floating enable, resize set 1280 600, move position center, focus
+for_window [class="(?i)chromium|urxvt|thunar|subl3|mupdf"] focus
+for_window [window_role="demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
+for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 350, move absolute position 0 418
+for_window [workspace=$ws1] layout tabbed
+for_window [workspace=$ws3] layout tabbed
+
+
+## Specific workspaces
+assign [title="(?i)term-tiling"] $ws1
+assign [title="htop"] $ws1
+assign [window_role="browser"] $ws2
+assign [class="(?i)subl3"] $ws3
+assign [class="(?i)smplayer"] $ws4
+assign [window_role="gimp"] $ws5
+assign [class="(?i)telegram|discord"] $ws6
+assign [class="(?i)zathura|fbreader|mupdf"] $ws7
+
+
+# start app
+# Update locker, run: betterlockscreen -u path/to/directory -r 1920x1080 -b 0.5
+bindsym $mod1+l exec --no-startup-id "betterlockscreen -l dimblur"
+bindsym $mod1+space exec --no-startup-id "skippy-xd"
+bindsym $mod1+d exec --no-startup-id "rofi -show drun"
+bindsym Ctrl+space exec --no-startup-id "rofi -show window"
+bindsym $mod+Return exec --no-startup-id "urxvt -name 'term-tiling'"
+bindsym $mod1+t exec --no-startup-id "urxvt -name 'term-float'"
+bindsym $mod1+h exec --no-startup-id "urxvt -e htop"
+bindsym $mod1+r exec --no-startup-id "urxvt -e ranger"
+bindsym $mod1+f exec --no-startup-id "thunar"
+bindsym $mod1+s exec --no-startup-id "subl3"
+bindsym $mod1+w exec --no-startup-id "chromium"
+bindsym $mod+w exec --no-startup-id "$HOME/.bin/i3_switch_workspace.sh"
+bindsym Print exec --no-startup-id "scrot 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~/Pictures/screen ; viewnior ~/Pictures/screen/$f'"
+
+bindsym $mod+Ctrl+Up exec mpc volume +2
+bindsym $mod+Ctrl+Down exec mpc volume -2
+bindsym $mod+Ctrl+Left exec mpc prev
+bindsym $mod+Ctrl+Right exec mpc next
+bindsym $mod+Ctrl+d exec mpc del 0
+
+
+##### autostart app
+exec_always --no-startup-id "xrdb -load $HOME/.Xresources"
+#exec_always --no-startup-id "nitrogen --restore"
+exec_always --no-startup-id "xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop ~/.config/wall/wl7.gif"
+exec --no-startup-id "numlockx"
+exec --no-startup-id "compton -b --paint-on-overlay --unredir-if-possible --backend xr_glx_hybrid --vsync drm --glx-swap-method -1 --glx-no-stencil"
+#exec --no-startup-id "compton -b --config ~/.config/compton.conf"
+exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:win_space_toggle,grp_led:scroll'"
+#exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_mod1_toggle,grp_led:scroll'"
+# exec --no-startup-id "thunar --daemon"
+exec --no-startup-id "xfsettingsd"
+exec --no-startup-id "/usr/lib/xfce-polkit/xfce-polkit"
+# keyring for storing saved passwords
+# exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11
+exec --no-startup-id "dunst -config $HOME/.config/dunst/dunstrc"
+##### Start bar  
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
+# exec_always --no-startup-id tint2
+exec --no-startup-id "pulseaudio --start"
+exec --no-startup-id nm-applet
+exec --no-startup-id redshift-gtk
+exec --no-startup-id clipit
+exec --no-startup-id megasync
+exec --no-startup-id caffeine
