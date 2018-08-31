@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 # Install script for Arch Linux
 
-# Check for root
-# if [[ $EUID -ne 0 ]]; then
-#    echo "This script must be run as root." >&2
-#    echo "Try 'sudo sh'"
-#    echo ""
-#    exit 1
-# fi
+# https://raw.githubusercontent.com/creio/dots/master/.bin/creio2.sh
+
+# wget git.io/creio2.sh
+# nano creio2.sh
 
 
 DISK="sdb"
