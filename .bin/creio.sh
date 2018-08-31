@@ -16,11 +16,10 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 
-DISK="sdb"
 R_DISK="sdb1"
 B_DISK="sdb2"
-S_DISK="sdb3"
-H_DISK="sdb4"
+H_DISK="sdb3"
+S_DISK="sdb4"
 
 loadkeys ru
 setfont cyr-sun16
