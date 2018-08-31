@@ -94,7 +94,7 @@ echo "FONT=cyr-sun16" >> /etc/vconsole.conf
 
 mkinitcpio -p linux
 
-pacman -Sy --noconfirm --needed grub
+pacman -S --noconfirm --needed grub
 grub-install /dev/$DISK
 grub-mkconfig -o /boot/grub/grub.cfg
 
