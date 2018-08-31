@@ -9,6 +9,7 @@
 
 alias zup="source $HOME/.zshrc"
 alias merge="xrdb -merge .Xresources"
+alias vga="lspci -k | grep -A 2 -E '(VGA|3D)'"
 alias tb="nc termbin.com 9999"
 
 # share vbox В локальной машине mkdir vboxshare

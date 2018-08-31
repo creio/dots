@@ -50,7 +50,7 @@ our $CONFIG = {
   "force_icon_size"     => 0,
   "generic_fallback"    => 0,
   "gtk_rc_filename"     => "$ENV{HOME}/.gtkrc-2.0",
-  "icon_size"           => 48,
+  "icon_size"           => 16,
   "Linux::DesktopFiles" => {
                              desktop_files_paths     => [
                                                           "/usr/share/applications",
@@ -68,6 +68,6 @@ our $CONFIG = {
                            },
   "locale_support"      => 1,
   "missing_icon"        => "gtk-missing-image",
-  "terminal"            => "termite",
+  "terminal"            => "urxvt",
   "VERSION"             => 0.84,
 }

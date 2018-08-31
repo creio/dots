@@ -41,7 +41,7 @@ our $SCHEMA = [
 
     #          NAME            LABEL                ICON
     {cat => ['utility',     'Инструменты', 'applications-utilities']},
-    {cat => ['development', 'Резработка', 'applications-development']},
+    {cat => ['development', 'Разработка', 'applications-development']},
     {cat => ['education',   'Образование',   'applications-science']},
     {cat => ['game',        'Игры',       'applications-games']},
     {cat => ['graphics',    'Графика',    'applications-graphics']},
@@ -108,5 +108,5 @@ our $SCHEMA = [
     # {exit => ['Exit', 'application-exit']},
 
     ## This uses the 'oblogout' menu
-    {item => ['oblogout', 'Выйти из системы', 'application-exit']},
+    {item => ['rofi-logout', 'Выйти из системы', 'application-exit']},
 ]

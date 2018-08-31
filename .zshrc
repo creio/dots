@@ -22,6 +22,7 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=3"
 
 # if [[ $TERM == xterm-termite ]]; then
 # 	. /etc/profile.d/vte.sh

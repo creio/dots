@@ -14,21 +14,9 @@
 	<icon>system-file-manager</icon>
 	<name>Root Thunar</name>
 	<unique-id>1516942386276593-1</unique-id>
-	<command>gksu thunar  %f</command>
+	<command>thunar admin://%f</command>
 	<description></description>
 	<patterns>*</patterns>
 	<directories/>
-	<text-files/>
-</action>
-<action>
-	<icon>utilities-terminal_su</icon>
-	<name>Root Terminal</name>
-	<unique-id>1516942474166522-2</unique-id>
-	<command>gksu termite %f</command>
-	<description></description>
-	<patterns>*</patterns>
-	<directories/>
-	<other-files/>
-	<text-files/>
 </action>
 </actions>

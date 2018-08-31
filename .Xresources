@@ -8,7 +8,7 @@ Xft.lcdfilter: lcddefault
 
 
 
-#include "~/.colors/dracula"
+#include ".colors/default"
 
 
 URxvt.font: xft:Roboto Mono Medium:size=11
@@ -44,7 +44,12 @@ URxvt*geometry: 76x20
 URxvt.internalBorder: 15
 
 URxvt*transparent:false
+!URxvt*shading: 10
 URxvt*depth: 32
+!URxvt*background: rgba:0000/0000/0200/c800
+URxvt*background: [97]#1E1F29
+
+URxvt.colorUL: #4682B4
 
 
 
@@ -54,10 +59,10 @@ rofi.terminal:                       urxvt
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
 rofi.opacity:                        100
-rofi.width:                          30
+rofi.width:                          25
 rofi.lines:                          7
 rofi.columns:                        1
-rofi.font:                           ClearSansMedium 14
+rofi.font:                           ClearSansMedium 13
 rofi.drun-icon-theme:                Papirus
 !rofi.show-icons:                    true
 rofi.bw:                             10
@@ -73,8 +78,8 @@ rofi.markup-rows:                    false
 rofi.scrollbar-width: 0
 rofi.color-enabled: true
 ! State:           ´bg´,     ´fg´,     ´bgalt´,  ´hlbg´,   ´hlfg´
-rofi.color-normal: #282a36,  #5294e2,  #282a36,  #5294e2,  #282a36
-rofi.color-urgent: #282a36,  #5294e2,  #282a36,  #5294e2,  #282a36
-rofi.color-active: #282a36,  #5294e2,  #282a36,  #5294e2,  #282a36
+rofi.color-normal: #282a36,  #5a74ca,  #282a36,  #5a74ca,  #282a36
+rofi.color-urgent: #282a36,  #5a74ca,  #282a36,  #5a74ca,  #282a36
+rofi.color-active: #282a36,  #5a74ca,  #282a36,  #5a74ca,  #282a36
 !                  ´background´, ´border´
 rofi.color-window: #282a36,      #75444A57

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Install script for Arch Linux
+# autor: Alex Creio https://cvc.hashbase.io/
 
 # https://raw.githubusercontent.com/creio/dots/master/.bin/creio.sh
 

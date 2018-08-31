@@ -28,7 +28,6 @@ margin-top = 0
 margin-bottom = 0
 
 
-
 # //////////////////////////////////////
 [bar/top]
 monitor = VGA-1
@@ -38,6 +37,7 @@ offset-x = 0
 offset-y = 0
 fixed-center = true
 bottom = false
+locale = ru_RU.UTF-8
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -48,11 +48,11 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-padding-left = 2
-padding-right = 2
+padding-left = 1
+padding-right = 1
 
-module-margin-left = 0
-module-margin-right = 2
+module-margin-left = 2
+module-margin-right = 0
 
 font-0 = RobotoMonoMedium:size=10:antialias=false;2
 # Cat unicode: echo -e "\uF31A"
@@ -63,19 +63,19 @@ font-4 = "Material Icons:antialias=false:size=11;3"
 font-5 = "unifont:fontformat=truetype:size=10:antialias=false;0"
 
 
-modules-left = app cpu memory mpd
+modules-left = app cpu memory temperature mpd
 modules-center = i3
 modules-right = alsa xkeyboard date off
 
-# tray-position = right
-# tray-detached = false
-# tray-maxsize = 16
-# # tray-transparent = true
-# tray-background = ${colors.background}
-# tray-offset-x = 0
-# tray-offset-y = 0
-# tray-padding = 0
-# # tray-scale = 1.0
+tray-position = right
+tray-detached = false
+tray-maxsize = 16
+# tray-transparent = true
+tray-background = ${colors.background}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+# tray-scale = 1.0
 
 
 # wm-restack = i3
@@ -93,13 +93,16 @@ enable-scroll = false
 format = <label-state> <label-mode>
 wrapping-scroll = false
 
-ws-icon-0 = web;
-ws-icon-1 = term;
-ws-icon-2 = code;
-ws-icon-3 = media;
-ws-icon-4 = gimp;
-ws-icon-5 = chat;
-ws-icon-6 = doc;
+ws-icon-0 = 1;1:
+ws-icon-1 = 2;2:
+ws-icon-2 = 3;3:
+ws-icon-3 = 4;4:
+ws-icon-4 = 5;5:
+ws-icon-5 = 6;6:
+ws-icon-6 = 7;7:
+ws-icon-7 = 8;8
+ws-icon-8 = 9;9
+ws-icon-9 = 10;10
 
 label-mode = %mode%
 label-mode-padding = 1
@@ -165,7 +168,6 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.primary}
-format-underline = #f90000
 label = %percentage%%
 
 
@@ -175,7 +177,6 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.primary}
-format-underline = #4bffdc
 label = %percentage_used%%
 
 
@@ -186,9 +187,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
 
 label = %temperature%
 label-warn = %temperature%
@@ -197,7 +196,7 @@ label-warn-foreground = ${colors.secondary}
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = ${colors.primary}
 
 
 
@@ -207,10 +206,10 @@ host = 127.0.0.1
 port = 6600
 format-online = <icon-prev> <icon-pause> <icon-play> <icon-next> 
 
-icon-prev = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev = 
+icon-play = 
+icon-pause = 
+icon-next = 
 
 toggle-on-foreground = ${colors.primary}
 toggle-off-foreground = ${colors.secondary}
@@ -248,7 +247,7 @@ date-alt = " %d-%m-%Y"
 
 time = %H:%M
 # time-alt = %H:%M:%S
-time-alt = %d.%m.%Y
+time-alt = %a %d.%m.%Y
 
 format-prefix = " "
 format-prefix-foreground = ${colors.primary}
@@ -262,5 +261,5 @@ label = %time%
 type = custom/text
 content = 
 content-foreground = ${colors.primary}
-click-left = ~/.bin/rofi-logout
+click-left = ~/.bin/i3-logout
 content-margin-right = 0
