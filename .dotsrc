@@ -67,6 +67,7 @@ USER_PATHS=(
 ".Xresources"
 ".xsettingsd"
 ".zshrc"
+"README.md"
 )
 
 ROOT_PATHS=(
