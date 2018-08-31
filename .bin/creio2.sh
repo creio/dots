@@ -12,6 +12,21 @@ DISK="sdb"
 
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
+pacman -Sy --noconfirm --needed reflector
+reflector -c "Belarus" -c "Russia" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
+
+
+echo "Arch Linux Virtualbox"
+read -p "1 - Yes, 0 - No: " virtualbox_setting
+if [[ $virtualbox_setting == 0 ]]; then
+  virtualbox_install=""
+elif [[ $xorg_setting == 1 ]]; then
+  virtualbox_install="virtualbox-guest-modules-arch virtualbox-guest-utils"
+fi
+echo
+pacman -S --noconfirm --needed $virtualbox_install
+
+
 packages=(
 base-devel xorg-apps xorg-server xorg-xinit
 mesa xf86-video-nouveau
