@@ -10,6 +10,8 @@
 DISK="sdb"
 
 
+sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+
 packages=(
 base-devel xorg-apps xorg-server xorg-xinit
 mesa xf86-video-nouveau
@@ -36,7 +38,11 @@ for pack in "${packages[@]}"; do
 done
 
 
+# Root password
+passwd
 
+
+# user add & password
 while true; do
     clear
     echo -e "\nWhat would you like your username to be?
@@ -53,41 +59,34 @@ while true; do
     esac
 done
 
-
-echo "ctlos" > /etc/hostname
-echo
-ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-echo
-echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
-echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen 
-echo
-locale-gen
-echo
-echo "LANG=ru_RU.UTF-8" > /etc/locale.conf
-echo
-echo "KEYMAP=ru" >> /etc/vconsole.conf
-echo "FONT=cyr-sun16" >> /etc/vconsole.conf
-echo
-mkinitcpio -p linux
-echo
-passwd
-echo
-pacman -Sy --noconfirm --needed grub
-grub-install /dev/$DISK
-echo
-grub-mkconfig -o /boot/grub/grub.cfg
-echo
-echo
-
-
 useradd -m -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /bin/zsh "$USER"
 passwd "$USER"
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
-sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+
+echo "ctlos" > /etc/hostname
+
+ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+
+echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen
+locale-gen
+
+
+echo "LANG=ru_RU.UTF-8" > /etc/locale.conf
+echo "KEYMAP=ru" >> /etc/vconsole.conf
+echo "FONT=cyr-sun16" >> /etc/vconsole.conf
+
+mkinitcpio -p linux
+
+pacman -Sy --noconfirm --needed grub
+grub-install /dev/$DISK
+grub-mkconfig -o /boot/grub/grub.cfg
 
 
 systemctl enable NetworkManager
 # systemctl start NetworkManager
 
 echo "System Setup Complete"
+
+rm ctlos2.sh
