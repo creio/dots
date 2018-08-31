@@ -1,3 +1,4 @@
-.gitconfig
-.ssh
 .bin/stream
+.gitconfig
+.gnupg
+.ssh

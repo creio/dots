@@ -5,6 +5,7 @@ REPO="https://github.com/creio/dots"
 BRANCH="master"
 
 # location where backup folder or repo will be created or cloned
+#BASE_DIR="/home/st/files/mega/dots"
 BASE_DIR="/home/st/files/github/creio/dots"
 
 # names for storage directories within BASE_DIR.
@@ -16,6 +17,7 @@ ROOT_DIR="root"
 USER_PATHS=(
 ".bin"
 ".colors"
+".gnupg"
 ".ncmpcpp"
 ".ssh"
 ".themes"
