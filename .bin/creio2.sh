@@ -44,8 +44,7 @@ gamin thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumble
 gsimplecal redshift xfce4-power-manager numlockx volumeicon \
 atril audacious cherrytree galculator-gtk2 gimp gparted chromium pepper-flash \
 gufw nitrogen pavucontrol simplescreenrecorder transmission-gtk viewnior keepassxc veracrypt \
-openbox lxappearance-obconf obconf \
-i3-gaps"
+openbox lxappearance-obconf obconf"
 
 pacman -S --noconfirm --needed $pack
 
