@@ -56,7 +56,6 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/open-templates" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/copy" "<Primary>c")
 ; (gtk_accel_path "<Actions>/ThunarWindow/view-location-selector-pathbar" "")
-; (gtk_accel_path "<Actions>/ThunarWindow/open-trash" "")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/799643972c334b94948456c90cb714e8" "")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/aa5d75574dac9fa3c01215bd2124f038" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/sort-descending" "")

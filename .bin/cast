@@ -1,8 +1,20 @@
 #! /bin/bash
 #
 
-#ffmpeg -report -f x11grab -framerate 30 -video_size 1366x768 -i :0+0,0 -pix_fmt yuv420p -c:v gif -q:v 1 -s 1366x768 -f gif -threads 4 ~/Videos/screen/output.gif
+# ffmpeg -y \
+# -f x11grab \
+# -framerate 30 \
+# -s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
+# -i :0+0,0 \
+# -r 30 \
+# -c:v gif -threads 0 \
+# -y ~/Videos/screen/output.gif
 
-ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 \
--vcodec libx264 -pix_fmt yuv420p -preset ultrafast -crf 0 -threads 0 \
+ffmpeg -y \
+-f x11grab \
+-framerate 30 \
+-s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
+-i :0.0 \
+-r 30 \
+-c:v libx264rgb -crf 0 -preset ultrafast -threads 0 \
 -y ~/Videos/screen/output.mkv

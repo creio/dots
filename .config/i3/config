@@ -159,7 +159,7 @@ bindsym $mod+mod1+8 move container to workspace $ws8
 bindsym $mod+mod1+9 move container to workspace $ws9
 bindsym $mod+mod1+0 move container to workspace $ws10
 
-bindsym $mod+mod1+e reload
+bindsym $mod+mod1+c reload
 bindsym $mod+mod1+r restart
 bindsym $mod+mod1+Delete exec ~/.bin/i3-logout
 # bindsym $mod+mod1+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -182,8 +182,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-bindsym $Mod+Ctrl+x move scratchpad
+bindsym $Mod1+v move scratchpad
 bindsym $Mod+x scratchpad show
+bindsym $Mod+n scratchpad toggle
 
 
 ## Specific window
@@ -194,7 +195,7 @@ for_window [window_role="browser|GtkFileChooserDialog"] resize set 800 600, move
 for_window [window_role="demo"] resize set 800 600, move position center
 for_window [class="(?i)thunar"] move window to scratchpad, scratchpad show, floating enable, resize set 800 400, move position center
 for_window [class="(?i)simplescreenrecorder"] floating enable, move position 5 30
-for_window [class="(?i)nitrogen|engrampa|fsearch|qt5ct"] floating enable, resize set 600 500, move position center
+for_window [class="(?i)nitrogen|engrampa|flameshot|fsearch|qt5ct"] floating enable, resize set 600 500, move position center
 for_window [class="(?i)atril|pavucontrol|lxappearance|viewnior|keepassxc|veracrypt"] floating enable
 for_window [class="(?i)mpv"] floating enable, resize set 350 250, sticky enable, move window to position 1000 85
 # for_window [title="(?i)htop"] floating enable, resize set 1280 600, move position center, focus
@@ -204,6 +205,7 @@ for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floati
 
 for_window [workspace=$ws3] layout tabbed
 for_window [workspace=$ws6] layout tabbed
+for_window [workspace=$ws9] layout tabbed
 
 for_window [class="URxvt" instance="float"] move window to scratchpad, scratchpad show, floating enable, resize set 1280 600, move position center, focus
 for_window [class="URxvt" instance="floating"] move window to scratchpad, scratchpad show, floating enable, resize set 720 400, move position center, focus
@@ -218,6 +220,8 @@ assign [class="(?i)smplayer"] $ws4
 assign [window_role="gimp"] $ws5
 assign [class="(?i)fractal|telegram|discord"] $ws6
 assign [class="(?i)zathura|fbreader|mupdf"] $ws7
+assign [class="(?i)keepassxc|veracrypt"] $ws8
+assign [class="(?i)virtualbox"] $ws9
 
 
 # start app
@@ -230,11 +234,13 @@ bindsym $mod+Return exec --no-startup-id "urxvt -name term-tiling"
 bindsym $mod1+t exec --no-startup-id "urxvt -name floating"
 bindsym $mod1+r exec --no-startup-id "urxvt -name float -e ranger"
 bindsym $mod1+h exec --no-startup-id "urxvt -name float -e htop"
-bindsym $mod1+f exec --no-startup-id "thunar"
+bindsym $mod1+f exec --no-startup-id "$HOME/.bin/findapp thunar"
 bindsym $mod1+s exec --no-startup-id "subl3"
 bindsym $mod1+w exec --no-startup-id "chromium"
 bindsym $mod+w exec --no-startup-id "$HOME/.bin/i3_switch_workspace.sh"
 bindsym Print exec --no-startup-id "scrot 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~/Pictures/screen ; viewnior ~/Pictures/screen/$f'"
+bindsym $mod1+Print exec --no-startup-id "flameshot gui"
+bindsym $mod1+m exec --no-startup-id "urxvt -e ncmpcpp"
 
 bindsym $mod+Ctrl+Up exec mpc volume +2
 bindsym $mod+Ctrl+Down exec mpc volume -2
@@ -246,7 +252,9 @@ bindsym $mod+Ctrl+d exec mpc del 0
 ##### autostart app
 exec_always --no-startup-id "xrdb -load $HOME/.Xresources"
 #exec_always --no-startup-id "nitrogen --restore"
-exec_always --no-startup-id "xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop ~/.config/wall/wl7.gif"
+# gifsicle --resize 1366x768 wl7.gif -o bg.gif
+exec_always --no-startup-id "xwinwrap -ov -ni -fs -- gifview -w WID ~/.config/wall/bg.gif -a"
+# exec_always --no-startup-id "xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop ~/.config/wall/wl7.gif"
 exec --no-startup-id "numlockx"
 exec --no-startup-id "compton -b --paint-on-overlay --unredir-if-possible --backend xr_glx_hybrid --vsync drm --glx-swap-method -1 --glx-no-stencil"
 #exec --no-startup-id "compton -b --config ~/.config/compton.conf"

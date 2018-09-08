@@ -1,9 +1,9 @@
 sw_volume: 100
 audio_device_state:1:MPD pulse
 audio_device_state:1:MPD FIFO
-state: pause
-current: 170
-time: 96.142000
+state: play
+current: 10
+time: 4.086000
 random: 0
 repeat: 0
 single: 0
@@ -12,183 +12,71 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/01. Born to Touch Your Feelings (Studio Edit).mp3
-1:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/02. Still Loving You.mp3
-2:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/03. Wind of Change.mp3
-3:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/04. Always Somewhere.mp3
-4:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/05. Send Me an Angel (Acoustic Version 2017).mp3
-5:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/06. Holiday.mp3
-6:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/07. Eye of the Storm (Radio Edit).mp3
-7:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/08. When The Smoke Is Going Down.mp3
-8:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/09. Lonely Nights.mp3
-9:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/10. Gypsy Life.mp3
-10:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/11. House of Cards (Single Edit).mp3
-11:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/12. The Best Is Yet to Come.mp3
-12:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/13. When You Came into My Life (Studio Edit).mp3
-13:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/14. Lady Starlight.mp3
-14:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/15. Follow Your Heart.mp3
-15:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/16. Melrose Avenue.mp3
-16:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/17. Always Be with You.mp3
-17:Top Tracks - Dream Theater/001 - Dream Theater - The Spirit Carries On.mp3
-18:Top Tracks - Dream Theater/002 - Dream Theater - The Best Of Times (Lyrics Video).mp3
-19:Top Tracks - Dream Theater/003 - Dream Theater - The Dance Of Eternity [Breaking The Fourth Wall].mp3
-20:Top Tracks - Dream Theater/005 - Dream Theater- The Dark Eternal Night (with lyrics).mp3
-21:Top Tracks - Dream Theater/006 - Dream Theater - Metropolis Pt. 1.mp3
-22:Top Tracks - Dream Theater/009 - Mike Portnoy  - Panic Attack.mp3
-23:Top Tracks - Dream Theater/010 - Dream Theater Instrumedley MYUNG ONLY - 'The Dance of Instrumentals'.mp3
-24:Top Tracks - Dream Theater/013 - Dream Theater – Our New World [OFFICIAL VIDEO].mp3
-25:Top Tracks - Dream Theater/014 - Dream Theater - Through Her Eyes.mp3
-26:Top Tracks - Dream Theater/015 - Dream Theater - Enigma Machine (Audio).mp3
-27:Top Tracks - Dream Theater/016 - Dream Theater - Under A Glass Moon.mp3
-28:Top Tracks - Dream Theater/017 - DREAM THEATER - Forsaken (Official  Music Video).mp3
-29:Top Tracks - Dream Theater/018 - Dream Theater The Glass Prison.mp3
-30:Top Tracks - Dream Theater/019 - Dream Theater - Overture 1928 - Breaking The Fourth Wall LIVE Blu-Ray.mp3
-31:Top Tracks - Dream Theater/021 - Dream Theater - The Enemy Inside (LYRIC VIDEO).mp3
-32:Top Tracks - Dream Theater/022 - Dream Theater - Stream of Consciousness - John Petrucci Solo With Epic Speed And Technicality.mp3
-33:Top Tracks - Dream Theater/023 - Dream Theater - On The Backs Of Angels (Audio).mp3
-34:Top Tracks - Dream Theater/024 - Dream Theater - Octavarium - HQ.mp3
-35:Top Tracks - Dream Theater/027 - Dream Theater - Breaking all illusions ( Live From The Boston Opera House)  - with lyrics.mp3
-36:Top Tracks - Dream Theater/028 - Dream Theater - The Looking Glass [OFFICIAL VIDEO].mp3
-37:Top Tracks - Dream Theater/030 - The Count of Tuscany -  Dream Theater.mp3
-38:Top Tracks - Dream Theater/031 - Dream Theater - The Gift Of Music [OFFICIAL VIDEO].mp3
-39:Top Tracks - Dream Theater/032 - Dream Theater - Official Video Strange Deja Vu (Live From The Boston Opera House).mp3
-40:Top Tracks - Dream Theater/033 - Dream Theater - Finally free  ( Live From The Boston Opera House ) - with lyrics.mp3
-41:Top Tracks - Dream Theater/034 - Dream Theater - Sacrificed Sons + Lyrics.mp3
-42:Top Tracks - Dream Theater/035 - A Nightmare to Remember - Mike Portnoy (DRUMS ONLY) [HQ].mp3
-43:Top Tracks - Dream Theater/036 - Dream Theater - I Walk Beside You + Lyrics.mp3
-44:Top Tracks - Dream Theater/037 - Dream Theater - Home, Drum Cover, 5 Year Old Drummer, Jonah Rocks.mp3
-45:Top Tracks - Dream Theater/038 - Dream Theater - Illumination Theory (Audio).mp3
-46:Top Tracks - Dream Theater/039 - Dream Theater - Surrounded (Lyrics on Screen) HD.mp3
-47:Top Tracks - Dream Theater/040 - Dream Theater - Honor Thy Father + Lyrics.mp3
-48:Top Tracks - Dream Theater/041 - Dream Theater- Erotomania [Instrumental].mp3
-49:Top Tracks - Dream Theater/042 - Dream Theater - The Ministry of Lost Souls [Live].mp3
-50:Top Tracks - Dream Theater/043 - Dream Theater - Learning to Live.mp3
-51:Top Tracks - Dream Theater/044 - Dream Theater- Space-Dye Vest.mp3
-52:Top Tracks - Dream Theater/045 - Dream Theater - This Dying Soul (with lyrics).mp3
-53:Top Tracks - Dream Theater/046 - Dream Theater - Burning My Soul.mp3
-54:Top Tracks - Dream Theater/047 - Dream Theater - Eve.mp3
-55:Top Tracks - Dream Theater/048 - Dream Theater - The shattered fortress ( Live From The Boston Opera House) - with lyrics.mp3
-56:Top Tracks - Dream Theater/049 - Dream Theater - These Walls + Lyrics.mp3
-57:Top Tracks - Dream Theater/050 - Dream Theater - The Root of All Evil + Lyrics.mp3
-58:Top Tracks - Dream Theater/051 - Dream Theater - Peruvian Skies.mp3
-59:Top Tracks - Dream Theater/052 - Dream Theater - Fatal Tragedy.mp3
-60:Top Tracks - Dream Theater/053 - Dream Theater   Lost Not Forgotten  guitar cover.mp3
-61:Top Tracks - Dream Theater/055 - Dream Theater - Hell's Kitchen.mp3
-62:Top Tracks - Dream Theater/056 - the mirror - dream theater.mp3
-63:Top Tracks - Dream Theater/058 - Dream Theater - Innocence Faded.mp3
-64:Top Tracks - Dream Theater/060 - Dream Theater - Lines In The Sand.mp3
-65:Top Tracks - Dream Theater/061 - Dream Theater - The Answer Lies Within + Lyrics.mp3
-66:Top Tracks - Dream Theater/062 - wair fot sleep - dream theater.mp3
-67:Top Tracks - Dream Theater/064 - 6_00 - Dream Theater (8 year old Drummer) Drum Cover by Avery Drummer.mp3
-68:Top Tracks - Dream Theater/065 - Dream Theater - Lifting shadows off a dream ( Live From The Boston Opera House ) - with lyrics.mp3
-69:Top Tracks - Dream Theater/067 - Dream Theater - Beneath The Surface with Lyrics.mp3
-70:Top Tracks - Dream Theater/068 - Dream Theater - This is the life HD & HQ.mp3
-71:Top Tracks - Dream Theater/069 - Dream Theater - Solitary Shell + Lyrics.mp3
-72:Top Tracks - Dream Theater/070 - Dream Theater - Build Me Up And Break Me Down (LYRIC VIDEO).mp3
-73:Top Tracks - Dream Theater/071 - Dream Theater - Beyond This Life.mp3
-74:Top Tracks - Dream Theater/072 - 05 Repentance - Dream Theater DT.mp3
-75:Top Tracks - Dream Theater/074 - Dream Theater - Outcry with Lyrics.mp3
-76:Top Tracks - Dream Theater/075 - Dream Theater - Never Enough.mp3
-77:Top Tracks - Dream Theater/076 - ADTOE 5) Bridges In The Sky - Dream Theater.mp3
-78:Top Tracks - Dream Theater/077 - Dream Theater - Scarred ( Live From The Boston Opera House ) - with lyrics.mp3
-79:Top Tracks - Dream Theater/078 - Dream Theater – Moment Of Betrayal (Audio).mp3
-80:Top Tracks - Dream Theater/079 - Dream Theater - Take Away My Pain.mp3
-81:Top Tracks - Dream Theater/080 - Dream Theater - Afterlife (Score).mp3
-82:Top Tracks - Dream Theater/081 - Dream Theater - Misunderstood.mp3
-83:Top Tracks - Dream Theater/082 - Dream Theater - Disappear..mp3
-84:Top Tracks - Dream Theater/083 - Dream Theater - In The Presence Of Enemies Part 1.mp3
-85:Top Tracks - Dream Theater/084 - Dream Theater - New Millennium.mp3
-86:Top Tracks - Dream Theater/085 - Dream Theater - Trial of tears ( Live From The Boston Opera House ) - with lyrics.mp3
-87:Top Tracks - Dream Theater/086 - Dream Theater - The Bigger Picture (Audio).mp3
-88:Top Tracks - Dream Theater/087 - Mike Portnoy  - The Great Debate.mp3
-89:Top Tracks - Dream Theater/089 - Dream Theater - Caught in a Web.mp3
-90:Top Tracks - Dream Theater/090 - Dream Theater Solo Clavier Live at Budokan.mp3
-91:Top Tracks - Dream Theater/091 - Mike Portnoy - Six Degrees of Inner Turbulence - DrumCam.mp3
-92:Top Tracks - Dream Theater/092 - Dream Theater - The Test That Stumped Them All + Lyrics.mp3
-93:Top Tracks - Dream Theater/093 - Dream Theater - Along For The Ride (Audio).mp3
-94:Top Tracks - Dream Theater/094 - Dream Theater - Perfect Strangers.mp3
-95:Top Tracks - Dream Theater/095 - Dream Theater - Raise The Knife (Score).mp3
-96:Top Tracks - Dream Theater/097 - Voices- Dream Theater.mp3
-97:Top Tracks - Dream Theater/098 - Dream Theater - Blind Faith + Lyrics.mp3
-98:Top Tracks - Dream Theater/099 - Mike Portnoy - Prophets of War.mp3
-99:Top Tracks - Dream Theater/100 - Dream Theater - Vacant.mp3
-100:Top Tracks - Dream Theater/101 - Dream Theater - False Awakening Suite (Audio).mp3
-101:Top Tracks - Dream Theater/102 - Dream Theater - In the Presence of Enemies (pt. I&II)[LIVE] [Chaos in Motion 07-08].mp3
-102:Top Tracks - Dream Theater/103 - Jordan Rudess Keyboard solo.mp3
-103:Top Tracks - Dream Theater/104 - Dream Theater - Goodnight Kiss + Lyrics.mp3
-104:Top Tracks - Dream Theater/105 - Dream Theater - To Live Forever.mp3
-105:Top Tracks - Dream Theater/106 - Dream Theater - Dystopian Overture (Audio).mp3
-106:Top Tracks - Dream Theater/107 - Dream Theater - A Fortune In Lies (Live) Drumcover by Marzl.mp3
-107:Top Tracks - Dream Theater/108 - Dream Theater - Chosen (Audio).mp3
-108:Top Tracks - Dream Theater/109 - Dream Theater - Descent Of The NOMACS (Audio).mp3
-109:Top Tracks - Dream Theater/110 - Dream Theater - Through My Words.mp3
-110:Top Tracks - Dream Theater/111 - Far From Heaven - Dream Theater.mp3
-111:Top Tracks - Dream Theater/112 - Dream Theater - Anna Lee (Lyrics On Screen) HD.mp3
-112:Top Tracks - Dream Theater/113 - Mike Portnoy - Another Won - DrumCam.mp3
-113:Top Tracks - Dream Theater/114 - Dream Theater - In The Presence Of Enemies Part 2.mp3
-114:Top Tracks - Dream Theater/115 - Dream Theater - A New Beginning (Audio).mp3
-115:Top Tracks - Dream Theater/116 - Dream Theater - The root of all evil ( Live in  Chile ) - with lyrics.mp3
-116:Top Tracks - Dream Theater/117 - Dream Theater - Astonishing (Audio).mp3
-117:Top Tracks - Dream Theater/118 - Dream Theater - Behind The Veil (Audio).mp3
-118:Top Tracks - Dream Theater/119 - Dream Theater - A Better Life (Audio).mp3
-119:Top Tracks - Dream Theater/120 - Dream Theater - You Not Me.mp3
-120:Top Tracks - Dream Theater/121 - Dream Theater - War Inside My Head (Budokan).mp3
-121:Top Tracks - Dream Theater/122 - Dream Theater - Another Hand-The Killing Hand.mp3
-122:Top Tracks - Dream Theater/123 - Dream Theater - Hey you.mp3
-123:Top Tracks - Dream Theater/124 - Dream Theater - Act Of Faythe (Audio).mp3
-124:Top Tracks - Dream Theater/125 - Dream Theater - A Life Left Behind (Audio).mp3
-125:Top Tracks - Dream Theater/126 - Dream Theater - Just Let Me Breathe.mp3
-126:Top Tracks - Dream Theater/127 - Dream Theater - When Your Time Has Come (Audio).mp3
-127:Top Tracks - Dream Theater/128 - Dream Theater- One Last Time (Subtitulada Español) HD (Live Scenes From New York - 2000).mp3
-128:Top Tracks - Dream Theater/129 - Dream Theater - Speak to me - with lyrics.mp3
-129:Top Tracks - Dream Theater/130 - Dream Theater - A Savior In The Square (Audio).mp3
-130:Top Tracks - Dream Theater/131 - Dream Theater - Stargazer.mp3
-131:Top Tracks - Dream Theater/132 - Dream Theater - Xanadu [Rush - A Farewell To Kings (40th Anniversary Deluxe)].mp3
-132:Top Tracks - Dream Theater/134 - Dream Theater - Lord Nafaryus (Audio).mp3
-133:Top Tracks - Dream Theater/135 - Tenement Funster; Flick of the Wrist; Lily of the Valley - Dream Theater.mp3
-134:Top Tracks - Dream Theater/136 - Dream Theater - Ravenskill (Audio).mp3
-135:Top Tracks - Dream Theater/137 - Dream Theater - About to Crash + Lyrics.mp3
-136:Top Tracks - Dream Theater/138 - Dream Theater - Funeral for a friend_Love lies bleeding.mp3
-137:Top Tracks - Dream Theater/139 - Dream Theater- Losing Time (Subtitulada Español) HD.mp3
-138:Top Tracks - Dream Theater/140 - Dream Theater - Three Days (Audio).mp3
-139:Top Tracks - Dream Theater/143 - Dream Theater - Surrender To Reason (Audio).mp3
-140:Top Tracks - Dream Theater/144 - Dream Theater - The X Aspect (Audio).mp3
-141:Top Tracks - Dream Theater/145 - Dream Theater - Take Your Fingers From My Hair (With Lyrics).mp3
-142:Top Tracks - Dream Theater/146 - Dream Theater - Don't Look Past Me Lyrics.mp3
-143:Top Tracks - Dream Theater/148 - Dream Theater -- Six Degrees of Inner Turbulence -- Overture.mp3
-144:Top Tracks - Dream Theater/149 - Dream Theater - Begin Again (Audio).mp3
-145:Top Tracks - Dream Theater/151 - Dream Theater - Brother, Can You Hear Me (Audio).mp3
-146:Top Tracks - Dream Theater/153 - Dream Theater - Raw Dog [HD] (God Of War III - Blood & Metal).mp3
-147:Top Tracks - Dream Theater/154 - Dream Theater - Losing Faythe (Audio).mp3
-148:Top Tracks - Dream Theater/155 - Dream Theater - Only A Matter Of Time (Live At Budokan).mp3
-149:Top Tracks - Dream Theater/156 - Dream Theater - Hymn Of A Thousand Voices (Audio).mp3
-150:Top Tracks - Dream Theater/157 - Dream Theater - To Tame a Land.mp3
-151:Top Tracks - Dream Theater/158 - Trial of Tears - It's Raining; Deep in Heaven; The Wasteland - Dream Theater.mp3
-152:Top Tracks - Dream Theater/160 - Dream Theater - The Walking Shadow (Audio).mp3
-153:Top Tracks - Dream Theater/162 - Dream Theater - A Tempting Offer (Audio).mp3
-154:Top Tracks - Dream Theater/163 - Dream Theater - The Path That Divides (Audio).mp3
-155:Top Tracks - Dream Theater/164 - Dream Theater - The Hovering Sojourn (Audio).mp3
-156:Top Tracks - Dream Theater/165 - Dream Theater - The Road To Revolution (Audio).mp3
-157:Top Tracks - Dream Theater/166 - DREAM THEATER - A Change Of Seasons - The Crimson Sunrise (METAL MASTERS 2014).mp3
-158:Top Tracks - Dream Theater/168 - Dream Theater - Heaven's Cove (Audio).mp3
-159:Top Tracks - Dream Theater/170 - Dream Theater - My Last Farewell (Audio).mp3
-160:Top Tracks - Dream Theater/171 - Dream Theater - Take the Time.mp3
-161:Top Tracks - Dream Theater/172 - Dream Theater - Larks' Tongues in Aspic Pt.2.mp3
-162:Top Tracks - Dream Theater/173 - Dream Theater   Bombay Vindaloo.mp3
-163:Top Tracks - Dream Theater/174 - Dream Theater - Six Degrees Of Inner Turbulance (part eight) VIII Losing Time _ Grand Finale.mp3
-164:Top Tracks - Dream Theater/175 - Dream Theater - 2285 Entr'acte (Audio).mp3
-165:Top Tracks - Dream Theater/176 - Odyssey - Dream Theater.mp3
-166:Top Tracks - Dream Theater/177 - Dream Theater - Digital Discord (Audio).mp3
-167:Top Tracks - Dream Theater/180 - Dream Theater - Whispers In The Wind (Audio).mp3
-168:Top Tracks - Dream Theater/181 - Dream Theater - Caught In A Web (5 Years In A LIVEtime outtake - 1995-01-24).mp3
-169:Top Tracks - Dream Theater/182 - Dream Theater - Power Down (Audio).mp3
-170:Top Tracks - Dream Theater/187 - Dream Theater - You Or Me Lyrics.mp3
-171:Top Tracks - Dream Theater/190 - Dream Theater - The Crimson Sunset.mp3
-172:Top Tracks - Dream Theater/191 - Dream Theater  The Mirror - Lie Subtitulado Español.mp3
-173:Top Tracks - Dream Theater/192 - Dream Theater - Lost Without You (Demo Live Instrumental).mp3
-174:Top Tracks - Dream Theater/193 - Liquid Tension Experiment - Biaxident (Cover).mp3
-175:Top Tracks - Dream Theater/195 - Dream Theater - The Crimson Sunset Lyrics.mp3
-176:Top Tracks - Dream Theater/201 - Dream Theater - Particle E. Motion (Demo Instrumental).mp3
-177:Top Tracks - Dream Theater/204 - 13 Six Degrees Of Inner Turbulence VIII Losing Time Grand Finale 432Hz HIGH QUALITY FLAC.mp3
-178:sound.mp3
+0:Metallica - Essentials (2018)/01. Enter Sandman.mp3
+1:Metallica - Essentials (2018)/02. One.mp3
+2:Metallica - Essentials (2018)/03. Nothing Else Matters.mp3
+3:Metallica - Essentials (2018)/04. For Whom The Bell Tolls (Remastered).mp3
+4:Metallica - Essentials (2018)/05. The Unforgiven.mp3
+5:Metallica - Essentials (2018)/06. Fade To Black (Remastered).mp3
+6:Metallica - Essentials (2018)/07. Welcome Home (Sanitarium).mp3
+7:Metallica - Essentials (2018)/08. Sad But True.mp3
+8:Metallica - Essentials (2018)/09. Seek & Destroy (Remastered).mp3
+9:Metallica - Essentials (2018)/10. Harvester Of Sorrow.mp3
+10:Metallica - Essentials (2018)/11. Hardwired.mp3
+11:Metallica - Essentials (2018)/12. Fuel.mp3
+12:Metallica - Essentials (2018)/13. Wherever I May Roam.mp3
+13:Metallica - Essentials (2018)/14. Battery.mp3
+14:Metallica - Essentials (2018)/15. Ride The Lightning (Remastered).mp3
+15:Metallica - Essentials (2018)/16. The Four Horsemen (Remastered).mp3
+16:Metallica - Essentials (2018)/17. ...And Justice For All.mp3
+17:Metallica - Essentials (2018)/18. King Nothing.mp3
+18:Metallica - Essentials (2018)/19. Creeping Death (Remastered).mp3
+19:Metallica - Essentials (2018)/20. Blackened.mp3
+20:Metallica - Essentials (2018)/21. Moth Into Flame.mp3
+21:Metallica - Essentials (2018)/22. I Disappear.mp3
+22:Metallica - Essentials (2018)/23. Until It Sleeps.mp3
+23:Metallica - Essentials (2018)/24. Whiskey In The Jar.mp3
+24:Rammstein - Essentials (2018)/01. Du hast.mp3
+25:Rammstein - Essentials (2018)/02. Sonne.mp3
+26:Rammstein - Essentials (2018)/03. Amerika.mp3
+27:Rammstein - Essentials (2018)/04. Engel.mp3
+28:Rammstein - Essentials (2018)/05. Feuer Frei!.mp3
+29:Rammstein - Essentials (2018)/06. Bueck dich.mp3
+30:Rammstein - Essentials (2018)/07. Rammstein.mp3
+31:Rammstein - Essentials (2018)/08. Mein Teil.mp3
+32:Rammstein - Essentials (2018)/09. Rosenrot.mp3
+33:Rammstein - Essentials (2018)/10. Ich Will.mp3
+34:Rammstein - Essentials (2018)/11. Keine Lust.mp3
+35:Rammstein - Essentials (2018)/12. Sehnsucht.mp3
+36:Rammstein - Essentials (2018)/13. Mutter.mp3
+37:Rammstein - Essentials (2018)/14. Du riechst so gut.mp3
+38:Rammstein - Essentials (2018)/15. Mein Herz Brennt.mp3
+39:Rammstein - Essentials (2018)/16. Mein Land.mp3
+40:Rammstein - Essentials (2018)/17. Links 2 3 4.mp3
+41:Rammstein - Essentials (2018)/18. Pussy.mp3
+42:Rammstein - Essentials (2018)/19. Te Quiero Puta!.mp3
+43:Rammstein - Essentials (2018)/20. Haifisch.mp3
+44:Rammstein - Essentials (2018)/21. Benzin.mp3
+45:Rammstein - Essentials (2018)/22. Klavier.mp3
+46:Rammstein - Essentials (2018)/23. Asche zu Asche.mp3
+47:Rammstein - Essentials (2018)/24. Ich Tu Dir Weh.mp3
+48:Rammstein - Essentials (2018)/25. Reise, Reise.mp3
+49:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/01. Born to Touch Your Feelings (Studio Edit).mp3
+50:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/02. Still Loving You.mp3
+51:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/03. Wind of Change.mp3
+52:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/04. Always Somewhere.mp3
+53:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/05. Send Me an Angel (Acoustic Version 2017).mp3
+54:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/06. Holiday.mp3
+55:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/07. Eye of the Storm (Radio Edit).mp3
+56:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/08. When The Smoke Is Going Down.mp3
+57:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/09. Lonely Nights.mp3
+58:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/10. Gypsy Life.mp3
+59:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/11. House of Cards (Single Edit).mp3
+60:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/12. The Best Is Yet to Come.mp3
+61:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/13. When You Came into My Life (Studio Edit).mp3
+62:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/14. Lady Starlight.mp3
+63:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/15. Follow Your Heart.mp3
+64:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/16. Melrose Avenue.mp3
+65:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/17. Always Be with You.mp3
+66:sound.mp3
 playlist_end

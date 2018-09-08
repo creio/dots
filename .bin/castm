@@ -1,6 +1,23 @@
 #! /bin/bash
 #
 
-ffmpeg -f alsa -ac 2 -i pulse -f x11grab -r 30 -s 1366x768 -i :0.0 \
--vcodec libx264 -pix_fmt yuv420p -preset ultrafast -crf 0 -threads 0 \
--acodec libvorbis -y ~/Videos/screen/output.mkv
+# For Pulseaudio with ALSA:
+ffmpeg -y \
+-f x11grab \
+-framerate 30 \
+-s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
+-i :0.0 \
+-f alsa -i default \
+-r 30 \
+-c:v libx264rgb -crf 0 -preset ultrafast -c:a flac \
+-y ~/Videos/screen/output.mkv
+
+# For ALSA:
+# ffmpeg -y \
+# -f x11grab \
+# -s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
+# -i :0.0 \
+# -thread_queue_size 1024 \
+# -f alsa -ar 44100 -i hw:1 \
+# -c:v libx264 -r 30 -c:a flac \
+# -y ~/Videos/screen/output.mkv

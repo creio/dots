@@ -63,7 +63,7 @@ font-4 = "Material Icons:antialias=false:size=11;3"
 font-5 = "unifont:fontformat=truetype:size=10:antialias=false;0"
 
 
-modules-left = app rss cpu memory mpd
+modules-left = app web rss cpu memory mpd
 modules-center = i3
 modules-right = alsa xkeyboard date off
 
@@ -100,8 +100,8 @@ ws-icon-3 = 4;4:
 ws-icon-4 = 5;5:
 ws-icon-5 = 6;6:
 ws-icon-6 = 7;7:
-ws-icon-7 = 8;8
-ws-icon-8 = 9;9
+ws-icon-7 = 8;8:
+ws-icon-8 = 9;9:
 ws-icon-9 = 10;10
 
 label-mode = %mode%
@@ -159,6 +159,15 @@ content-foreground = ${colors.primary}
 
 #click-left = ulauncher
 click-left = ~/.bin/rofi-favapp
+click-right = 
+
+
+
+[module/web]
+type = custom/text
+content = 
+content-foreground = ${colors.primary}
+click-left = ~/.bin/findapp chromium &
 click-right = 
 
 

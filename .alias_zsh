@@ -82,16 +82,6 @@ gac () {
 	git add --all
 	git commit -am "$1"
 }
-gap () {
-	git add .
-	git commit -a -m 'auto commit'
-	git push
-}
-gcp () {
-	git add --all
-	git commit -am "$1"
-	git push
-}
 alias gr="git remote"
 alias gf="git fetch"
 alias gpl="git pull"
@@ -179,8 +169,8 @@ alias ycc="yay -Scc"
 alias yy="yay -Syy"
 alias yu="yay -Syu"
 alias yun="yay -Syu --noconfirm"
-alias yr="yay -Rns"
-alias yrn="yay -Rns --noconfirm"
+alias yr="yay -R"
+alias yrn="yay -R --noconfirm"
 
 # распаковать архив не указывая тип распаковщика
 function ex {

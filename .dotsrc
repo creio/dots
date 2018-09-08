@@ -44,6 +44,7 @@ USER_PATHS=(
 ".config/rofi"
 ".config/skippy-xd"
 ".config/streamlink"
+".config/systemd/user/pscircle.service"
 ".config/termite"
 ".config/Thunar"
 ".config/tint2"
