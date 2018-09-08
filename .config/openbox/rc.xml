@@ -210,10 +210,10 @@
     <keybind key="W-f">
       <action name="ToggleFullscreen"/>
     </keybind>
-    <keybind key="W-d">
+    <keybind key="W-a">
       <action name="ToggleDecorations"/>
     </keybind>
-    <keybind key="W-a">
+    <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
     <keybind key="W-g">
