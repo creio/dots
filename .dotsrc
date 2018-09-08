@@ -64,6 +64,7 @@ USER_PATHS=(
 ".gitconfig"
 ".gtkrc-2.0"
 ".pam_environment"
+".tmux.conf"
 ".xinitrc"
 ".Xresources"
 ".xsettingsd"

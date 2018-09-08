@@ -219,7 +219,7 @@
     <keybind key="W-g">
       <action name="ToggleAlwaysOnTop"/>
     </keybind>
-    <keybind key="W-S-r">
+    <keybind key="W-A-r">
       <action name="Execute">
         <command>openbox --reconfigure</command>
       </action>
@@ -277,11 +277,6 @@
     </keybind>
     <keybind key="W-4">
       <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-s">
-      <action name="Execute">
-        <command>jgmenu_run</command>
-      </action>
     </keybind>
     <keybind key="A-space">
       <action name="ShowMenu">
@@ -355,6 +350,11 @@
         <command>findapp subl3</command>
       </action>
     </keybind>
+    <keybind key="A-r">
+      <action name="Execute">
+        <command>urxvt -g 135x35+70+40 -e ranger</command>
+      </action>
+    </keybind>
     <keybind key="A-t">
       <action name="Execute">
         <command>findapp urxvt</command>
@@ -383,6 +383,11 @@
     <keybind key="W-A-l">
       <action name="Execute">
         <command>oblogout</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-Delete">
+      <action name="Execute">
+        <command>rofi-logout</command>
       </action>
     </keybind>
     <keybind key="Print">
