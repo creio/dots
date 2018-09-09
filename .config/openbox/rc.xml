@@ -402,7 +402,7 @@
     </keybind>
     <keybind key="A-space">
       <action name="Execute">
-        <command>rofi -show run</command>
+        <command>rofi -run-command "zsh -i -c '{cmd}'" -run-list-command "source $HOME/.bin/aliases" -show run</command>
       </action>
     </keybind>
     <keybind key="A-d">
