@@ -8,6 +8,8 @@
     <property name="show-tray-icon" type="bool" value="false"/>
     <property name="general-notification" type="bool" value="false"/>
     <property name="inactivity-on-ac" type="uint" value="14"/>
-    <property name="blank-on-ac" type="int" value="5"/>
+    <property name="blank-on-ac" type="int" value="3"/>
+    <property name="dpms-on-ac-sleep" type="uint" value="7"/>
+    <property name="dpms-on-ac-off" type="uint" value="12"/>
   </property>
 </channel>
