@@ -54,6 +54,8 @@ URxvt.colorUL: #4682B4
 
 
 rofi.modi:                           ssh,window,drun,run
+rofi.run-command:                    /bin/zsh -i -c "{cmd}"
+rofi.run-list-command:               source ~/.bin/aliases
 rofi.sidebar-mode:                   false
 rofi.terminal:                       urxvt
 rofi.ssh-client:                     ssh

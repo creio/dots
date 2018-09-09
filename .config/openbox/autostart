@@ -17,6 +17,7 @@ xset b off
 thunar --daemon &
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
 # setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
+setxkbmap -option terminate:ctrl_alt_bksp &
 numlockx &
 xsettingsd &
 #xfce4-volumed &

@@ -278,7 +278,7 @@
     <keybind key="W-4">
       <action name="GoToDesktop"/>
     </keybind>
-    <keybind key="A-space">
+    <keybind key="C-space">
       <action name="ShowMenu">
         <menu>root-menu</menu>
       </action>
@@ -398,6 +398,11 @@
     <keybind key="A-Print">
       <action name="Execute">
         <command>scrot -d 5 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~/Pictures/screen ; viewnior ~/Pictures/screen/$f'</command>
+      </action>
+    </keybind>
+    <keybind key="A-space">
+      <action name="Execute">
+        <command>rofi -show run</command>
       </action>
     </keybind>
     <keybind key="A-d">

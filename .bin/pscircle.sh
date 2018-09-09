@@ -5,7 +5,7 @@ output=/tmp/pscircle.png
 pscircle \
 	--output-width=1366 \
 	--output-height=768 \
-	--background-image=$HOME/.config/wall/wl3.png \
+	--background-image=$HOME/.config/wall/wl1.png \
 	--link-color-min=375143a0 \
 	--link-color-max=375143 \
 	--dot-color-min=7c762f \
@@ -27,6 +27,7 @@ pscircle \
 	--toplists-bar-height=3 \
 	--cpulist-center=400.0:-80.0 \
 	--memlist-center=400.0:80.0 \
+	--interval=0 \
 	--output=$output
 
 if command -v feh >/dev/null; then
