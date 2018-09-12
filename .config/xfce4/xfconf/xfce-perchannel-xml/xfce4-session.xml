@@ -26,6 +26,6 @@
     <property name="Engine" type="empty"/>
   </property>
   <property name="compat" type="empty">
-    <property name="LaunchGNOME" type="bool" value="true"/>
+    <property name="LaunchGNOME" type="bool" value="false"/>
   </property>
 </channel>
