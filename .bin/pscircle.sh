@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# xfce wall
+# xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s ~/.pscircle.png
+
 set -e
 output=$HOME/.pscircle.png
 
