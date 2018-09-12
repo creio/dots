@@ -82,17 +82,17 @@ rofi.color-enabled: true
 
 ! One Dark
 ! State:           ´bg´,     ´fg´,     ´bgalt´,  ´hlbg´,   ´hlfg´
-!rofi.color-normal: #282a36,  #5a74ca,  #282a36,  #5a74ca,  #282a36
-!rofi.color-urgent: #282a36,  #5a74ca,  #282a36,  #5a74ca,  #282a36
-!rofi.color-active: #282a36,  #5a74ca,  #282a36,  #5a74ca,  #282a36
+rofi.color-normal: #282a36,  #5a74ca,  #282a36,  #5a74ca,  #282a36
+rofi.color-urgent: #282a36,  #5a74ca,  #282a36,  #5a74ca,  #282a36
+rofi.color-active: #282a36,  #5a74ca,  #282a36,  #5a74ca,  #282a36
 !                  ´background´, ´border´
-!rofi.color-window: #282a36,      #75444A57
+rofi.color-window: #282a36,      #75444A57
 
 ! One Light
 ! Property Name     BG       Border   Separator
-rofi.color-window:  #f0f0f1, #75444A57, #fafafa
+!rofi.color-window:  #f0f0f1, #75444A57, #fafafa
 
 ! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
-rofi.color-normal:  #f0f0f1, #5a74ca, #f0f0f1, #5a74ca, #f0f0f1
-rofi.color-active:  #f0f0f1, #5a74ca, #f0f0f1, #5a74ca, #4078f2
-rofi.color-urgent:  #f0f0f1, #5a74ca, #f0f0f1, #5a74ca, #ca1243
+!rofi.color-normal:  #f0f0f1, #5a74ca, #f0f0f1, #5a74ca, #f0f0f1
+!rofi.color-active:  #f0f0f1, #5a74ca, #f0f0f1, #5a74ca, #4078f2
+!rofi.color-urgent:  #f0f0f1, #5a74ca, #f0f0f1, #5a74ca, #ca1243
