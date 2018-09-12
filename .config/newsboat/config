@@ -1,16 +1,9 @@
-# colors
-color background           color255 color0
-color listnormal           color255 color0
-color listfocus            color255 color4 bold
-color listnormal_unread    color255 color0 bold
-color listfocus_unread     yellow color4 bold
-#color info                 color31 color0
-color info                 white color0
-color article              color255 color0
-
-# highlights
-highlight article "^(Feed|Title|Link|Date|Author):.*$" color4 color0 
-highlight article "https?://[^ ]+" yellow color0 protect
+color info color4 default
+color listnormal color246 default
+color listnormal_unread color244 default
+color listfocus_unread color15 color4
+color listfocus color15 color4
+color article color244 color234
 
 # generals
 confirm-exit yes

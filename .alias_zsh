@@ -120,7 +120,8 @@ mp3p () {
 
 alias porn="mpv 'http://www.pornhub.com/random'"
 
-alias m="ncmpcpp -S visualizer"
+alias mv="ncmpcpp -S visualizer"
+alias m="ncmpcpp"
 
 pf () {
 	peerflix "$1" --mpv

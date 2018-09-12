@@ -1,20 +1,20 @@
 #!/bin/bash
 set -e
-output=/tmp/pscircle.png
+output=$HOME/.pscircle.png
 
 pscircle \
 	--output-width=1366 \
 	--output-height=768 \
 	--background-image=$HOME/.config/wall/wl1.png \
-	--link-color-min=375143a0 \
-	--link-color-max=375143 \
-	--dot-color-min=7c762f \
-	--dot-color-max=b56e46 \
-	--tree-font-color=94bfd1 \
-	--toplists-font-color=C8D2D7 \
-	--toplists-pid-font-color=7B9098 \
-	--toplists-bar-background=444444 \
-	--toplists-bar-color=7d54dd \
+	--link-color-min=aaa \
+	--link-color-max=900 \
+	--dot-color-min=0a0 \
+	--dot-color-max=900 \
+	--tree-font-color=444 \
+	--toplists-font-color=444 \
+	--toplists-pid-font-color=777 \
+	--toplists-bar-background=999 \
+	--toplists-bar-color=ddbf54 \
 	--max-children=55 \
 	--tree-radius-increment=110 \
 	--dot-radius=3 \

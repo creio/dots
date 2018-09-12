@@ -1,0 +1,28 @@
+*.foreground:    #383a42
+*.background:    [90]#F9F9F9
+*.cursorColor:   #383A42
+
+! Negro y gris
+*.color0:        #F9F9F9
+*.color8:        #A0A1A7
+! Rojos
+*.color1:        #E45649
+*.color9:        #E45649
+! Verde
+*.color2:        #50A14F
+*.color10:       #50A14F
+! Amarillo
+*.color3:        #986801
+*.color11:       #986801
+! Azul
+*.color4:        #5a74ca
+*.color12:       #5a74ca
+! Magenta
+*.color5:        #A626A4
+*.color13:       #A626A4
+! Cyan
+*.color6:        #0184BC
+*.color14:       #0184BC
+! Blanco
+*.color7:        #A0A1A7
+*.color15:       #FFFFFF
