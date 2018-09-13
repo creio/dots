@@ -3,8 +3,9 @@ tint2 -c ~/.config/tint2/my.tint2rc &
 tint2 -c ~/.config/tint2/launchy.tint2rc &
 # sh ~/.config/polybar/launch.sh &
 # nitrogen --restore &
-# xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop ~/.config/wall/wl7.gif &
-# xwinwrap -ov -ni -fs -- gifview -w WID ~/.config/wall/bg.gif -a &
+# xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop ~/.wall/wl7.gif &
+# gifsicle --resize 1366x768 wl7.gif -o bg.gif
+# xwinwrap -ov -ni -fs -- gifview -w WID ~/.wall/bg.gif -a &
 # feh --randomize --bg-fill ~/Pictures/dark
 # feh --bg-fill ~/Pictures/E0Zl1BM.jpg
 # conky &

@@ -49,7 +49,6 @@ USER_PATHS=(
 ".config/Thunar"
 ".config/tint2"
 ".config/volumeicon"
-".config/wall"
 ".config/xfce4"
 ".config/youtube-viewer"
 ".config/compton.conf"
@@ -58,6 +57,7 @@ USER_PATHS=(
 ".config/Trolltech.conf"
 ".config/user-dirs.dirs"
 ".config/user-dirs.locale"
+".wall"
 ".alias_zsh"
 ".dotsrc"
 ".gitignore"
@@ -73,11 +73,13 @@ USER_PATHS=(
 )
 
 ROOT_PATHS=(
+"/etc/environment"
 "/etc/fstab"
 "/etc/pacman.conf"
-"/etc/environment"
+"/etc/sddm.conf"
 "/etc/oblogout.conf"
 "/etc/vconsole.conf"
+"/usr/share/sddm/themes/minimal"
 "/usr/share/themes/adeos-archlabs"
 "/usr/share/themes/adeos-branco"
 "/usr/share/themes/adeos-cores"

@@ -1,0 +1,15 @@
+[SddmGreeterTheme]
+Name=Minimal
+Description=Minimal SDDM theme
+Type=sddm-theme
+Author=Egidio Docile
+Copyright=(c) 2018, Egidio Docile
+Screenshot=minimal.png
+License=GPL
+Version=0.1
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=minimal
+Theme-API=2.0
+Website=https://github.com/egdoc/sddm-theme-minimal

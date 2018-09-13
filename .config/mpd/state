@@ -2,8 +2,8 @@ sw_volume: 100
 audio_device_state:1:MPD pulse
 audio_device_state:1:MPD FIFO
 state: pause
-current: 2
-time: 142.880000
+current: 1
+time: 318.868000
 random: 0
 repeat: 0
 single: 0
@@ -12,72 +12,21 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Top Tracks - Led Zeppelin/Babe I'm Gonna Leave You - Led Zeppelin.mp3
-1:Top Tracks - Led Zeppelin/Bonzo's montreux.mp3
-2:Top Tracks - Led Zeppelin/For Your Life LedZeppelin.mp3
-3:Top Tracks - Led Zeppelin/Friends- Led Zeppelin Lyrics.mp3
-4:Top Tracks - Led Zeppelin/Going to California - Led Zeppelin (with lyrics).mp3
-5:Top Tracks - Led Zeppelin/La La - Unreleased 1969 Led Zeppelin.mp3
-6:Top Tracks - Led Zeppelin/Led Zeppelin   Darlene.mp3
-7:Top Tracks - Led Zeppelin/Led Zeppelin   Out On The Tiles.mp3
-8:Top Tracks - Led Zeppelin/Led Zeppelin  - Live in Pittsburgh 1973 - Rare film.mp3
-9:Top Tracks - Led Zeppelin/Led Zeppelin -  Stairway to Heaven Live.mp3
-10:Top Tracks - Led Zeppelin/Led Zeppelin - 'What Is And What Should Never Be' [Official Music Video].mp3
-11:Top Tracks - Led Zeppelin/Led Zeppelin - Achilles Last Stand (LA 1977).mp3
-12:Top Tracks - Led Zeppelin/Led Zeppelin - All of My Love.mp3
-13:Top Tracks - Led Zeppelin/Led Zeppelin - Baby Come On Home (Rare).mp3
-14:Top Tracks - Led Zeppelin/Led Zeppelin - Battle of Evermore.mp3
-15:Top Tracks - Led Zeppelin/Led Zeppelin - Candy Store Rock.mp3
-16:Top Tracks - Led Zeppelin/LED ZEPPELIN - CD3 02 Sick Again (Early Version).mp3
-17:Top Tracks - Led Zeppelin/Led Zeppelin - Celebration Day.mp3
-18:Top Tracks - Led Zeppelin/Led Zeppelin - Custard Pie ( Remastered ) [ Lyrics ].mp3
-19:Top Tracks - Led Zeppelin/Led Zeppelin - D'yer Maker HD (sub español english).mp3
-20:Top Tracks - Led Zeppelin/Led Zeppelin - Dazed and Confused (Supershow 1969).mp3
-21:Top Tracks - Led Zeppelin/Led Zeppelin - Desire (The Wanton Song) (Rough Mix) 2015 Deluxe Edition.mp3
-22:Top Tracks - Led Zeppelin/Led Zeppelin - Four Sticks.mp3
-23:Top Tracks - Led Zeppelin/Led Zeppelin - Heartbreaker Studio Version (Not 0_00).mp3
-24:Top Tracks - Led Zeppelin/led zeppelin - Hot Dog - In Through the Out Door.mp3
-25:Top Tracks - Led Zeppelin/Led Zeppelin - How Many More Times (Danish TV 1969).mp3
-26:Top Tracks - Led Zeppelin/Led Zeppelin - How The West Was Won - Dancing Days.mp3
-27:Top Tracks - Led Zeppelin/Led Zeppelin - I Can't Quit You Baby.mp3
-28:Top Tracks - Led Zeppelin/Led Zeppelin - I'm Gonna Crawl.mp3
-29:Top Tracks - Led Zeppelin/Led Zeppelin - Immigrant Song (Live 1972).mp3
-30:Top Tracks - Led Zeppelin/Led Zeppelin - In My Time of Dying.mp3
-31:Top Tracks - Led Zeppelin/Led Zeppelin - In The Evening ( Remastered ).mp3
-32:Top Tracks - Led Zeppelin/Led Zeppelin - Kashmir - Celebration Day.mp3
-33:Top Tracks - Led Zeppelin/Led Zeppelin - Living Loving Maid (She's Just a Woman) (HQ).mp3
-34:Top Tracks - Led Zeppelin/Led Zeppelin - Night Flight (Better Version).mp3
-35:Top Tracks - Led Zeppelin/Led Zeppelin - No Quarter (Madison Square Garden 1973).mp3
-36:Top Tracks - Led Zeppelin/Led Zeppelin - Nobody's Fault but Mine.mp3
-37:Top Tracks - Led Zeppelin/Led Zeppelin - Over the Hills and Far Away (Promo Video).mp3
-38:Top Tracks - Led Zeppelin/Led Zeppelin - Ramble On (Official Remastered Audio).mp3
-39:Top Tracks - Led Zeppelin/Led Zeppelin - Royal Orleans.mp3
-40:Top Tracks - Led Zeppelin/Led Zeppelin - Sugar Mama.mp3
-41:Top Tracks - Led Zeppelin/Led Zeppelin - Sunshine Woman rare BBC.mp3
-42:Top Tracks - Led Zeppelin/Led Zeppelin - Thank You.mp3
-43:Top Tracks - Led Zeppelin/Led Zeppelin - That's The Way (HD).mp3
-44:Top Tracks - Led Zeppelin/Led Zeppelin - The Lemon Song.mp3
-45:Top Tracks - Led Zeppelin/Led Zeppelin - The Rain Song (2014 Remaster).mp3
-46:Top Tracks - Led Zeppelin/Led Zeppelin - The Rover.mp3
-47:Top Tracks - Led Zeppelin/Led Zeppelin - Travelling Riverside Blues (promo video).mp3
-48:Top Tracks - Led Zeppelin/Led Zeppelin - Walter's Walk.mp3
-49:Top Tracks - Led Zeppelin/Led Zeppelin - Whole Lotta Love (1997 Promo).mp3
-50:Top Tracks - Led Zeppelin/Led Zeppelin - Your Time Is Gonna Come.mp3
-51:Top Tracks - Led Zeppelin/Led Zeppelin — Bring It On Home (Rough Mix).mp3
-52:Top Tracks - Led Zeppelin/Led Zeppelin — Gallows Pole (Rough Mix).mp3
-53:Top Tracks - Led Zeppelin/Led Zeppelin — White Summer_Black Mountain Side (Live in Paris, 1969).mp3
-54:Top Tracks - Led Zeppelin/LED ZEPPELIN '10 Ribs & All_Carrot Pod Pod (Pod)'.mp3
-55:Top Tracks - Led Zeppelin/Led Zeppelin perform Rock and Roll Hall of Fame inductions 1995.mp3
-56:Top Tracks - Led Zeppelin/Led Zeppelin- Bron-Yr-Aur Stomp.mp3
-57:Top Tracks - Led Zeppelin/Led Zeppelin- Good Times And Bad Times.mp3
-58:Top Tracks - Led Zeppelin/Led Zeppelin- Hey Hey What Can I Do Lyrics.mp3
-59:Top Tracks - Led Zeppelin/Led Zeppelin-Carouselambra.mp3
-60:Top Tracks - Led Zeppelin/Led Zeppelin-Hots on for Nowhere.mp3
-61:Top Tracks - Led Zeppelin/Led Zeppelin-In the Light.mp3
-62:Top Tracks - Led Zeppelin/Led Zeppelin-Since I've Been Loving You w_ lyrics.mp3
-63:Top Tracks - Led Zeppelin/St. Tristan's Sword (Rough Mix)- Led Zeppelin.mp3
-64:Top Tracks - Led Zeppelin/Ten Years Gone - Led Zeppelin - Remastered.mp3
-65:Top Tracks - Led Zeppelin/Trampled Under Foot-Led Zeppelin.mp3
-66:Top Tracks - Led Zeppelin/Wearing and Tearing-Led Zeppelin.mp3
-67:Top Tracks - Led Zeppelin/You Shook Me - Led Zeppelin (live Paris 1969-10-10).mp3
+0:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/01. Born to Touch Your Feelings (Studio Edit).mp3
+1:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/02. Still Loving You.mp3
+2:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/03. Wind of Change.mp3
+3:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/04. Always Somewhere.mp3
+4:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/05. Send Me an Angel (Acoustic Version 2017).mp3
+5:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/06. Holiday.mp3
+6:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/07. Eye of the Storm (Radio Edit).mp3
+7:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/08. When The Smoke Is Going Down.mp3
+8:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/09. Lonely Nights.mp3
+9:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/10. Gypsy Life.mp3
+10:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/11. House of Cards (Single Edit).mp3
+11:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/12. The Best Is Yet to Come.mp3
+12:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/13. When You Came into My Life (Studio Edit).mp3
+13:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/14. Lady Starlight.mp3
+14:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/15. Follow Your Heart.mp3
+15:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/16. Melrose Avenue.mp3
+16:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/17. Always Be with You.mp3
 playlist_end

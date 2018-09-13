@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
-fi
+# if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+#   exec startx
+# fi
 
 ZSH=/usr/share/oh-my-zsh/
 

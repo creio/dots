@@ -3,7 +3,7 @@ color listnormal color246 default
 color listnormal_unread color244 default
 color listfocus_unread color15 color4
 color listfocus color15 color4
-color article color244 color234
+color article color15 default
 
 # generals
 confirm-exit yes

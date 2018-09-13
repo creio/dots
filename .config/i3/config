@@ -225,7 +225,7 @@ assign [class="(?i)virtualbox"] $ws9
 
 
 # start app
-# Update locker, run: betterlockscreen -u path/to/directory -r 1920x1080 -b 0.5
+# Update locker, run: betterlockscreen -u path/to/directory -r 1366x768 -b 0.5
 bindsym $mod1+l exec --no-startup-id "betterlockscreen -l dimblur"
 bindsym $mod1+space exec --no-startup-id "skippy-xd"
 bindsym $mod1+d exec --no-startup-id "rofi -show drun"
@@ -253,8 +253,8 @@ bindsym $mod+Ctrl+d exec mpc del 0
 exec_always --no-startup-id "xrdb -load $HOME/.Xresources"
 #exec_always --no-startup-id "nitrogen --restore"
 # gifsicle --resize 1366x768 wl7.gif -o bg.gif
-exec_always --no-startup-id "xwinwrap -ov -ni -fs -- gifview -w WID ~/.config/wall/bg.gif -a"
-# exec_always --no-startup-id "xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop ~/.config/wall/wl7.gif"
+exec_always --no-startup-id "xwinwrap -ov -ni -fs -- gifview -w WID ~/.wall/bg.gif -a"
+# exec_always --no-startup-id "xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop ~/.wall/wl7.gif"
 exec --no-startup-id "numlockx"
 exec --no-startup-id "compton -b --paint-on-overlay --unredir-if-possible --backend xr_glx_hybrid --vsync drm --glx-swap-method -1 --glx-no-stencil"
 #exec --no-startup-id "compton -b --config ~/.config/compton.conf"

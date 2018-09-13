@@ -40,9 +40,13 @@
     <property name="tooltip-size" type="double" value="64.000000"/>
     <property name="show-thumbnails" type="bool" value="false"/>
     <property name="icon-size" type="uint" value="36"/>
+    <property name="show-tooltips" type="bool" value="false"/>
   </property>
   <property name="last" type="empty">
     <property name="window-width" type="int" value="844"/>
     <property name="window-height" type="int" value="549"/>
+  </property>
+  <property name="desktop-menu" type="empty">
+    <property name="show" type="bool" value="true"/>
   </property>
 </channel>

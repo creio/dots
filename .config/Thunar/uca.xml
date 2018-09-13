@@ -1,7 +1,7 @@
 <?xml encoding="UTF-8" version="1.0"?>
 <actions>
 <action>
-	<icon>utilities-terminal</icon>
+	<icon>utilities-x-terminal</icon>
 	<name>Открыть терминал</name>
 	<unique-id>1516939589099320-1</unique-id>
 	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
