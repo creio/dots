@@ -34,6 +34,6 @@
     <property name="MenuBarAccel" type="empty"/>
     <property name="CursorThemeName" type="string" value="capitaine-cursors"/>
     <property name="CursorThemeSize" type="empty"/>
-    <property name="DecorationLayout" type="empty"/>
+    <property name="DecorationLayout" type="string" value="menu:minimize,maximize,close"/>
   </property>
 </channel>

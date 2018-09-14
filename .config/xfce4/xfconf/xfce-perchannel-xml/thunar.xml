@@ -22,6 +22,6 @@
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_SMALLEST"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
-  <property name="last-show-hidden" type="bool" value="false"/>
+  <property name="last-show-hidden" type="bool" value="true"/>
   <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
 </channel>
