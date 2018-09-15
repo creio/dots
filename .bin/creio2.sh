@@ -92,7 +92,11 @@ echo "FONT=cyr-sun16" >> /etc/vconsole.conf
 mkinitcpio -p linux
 
 pacman -S --noconfirm --needed grub
+# pacman -S --noconfirm --needed grub efibootmgr
+
 grub-install /dev/$DISK
+# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch --force
+
 grub-mkconfig -o /boot/grub/grub.cfg
 
 

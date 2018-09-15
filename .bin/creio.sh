@@ -28,13 +28,22 @@ setfont cyr-sun16
 timedatectl set-ntp true
 
 mkfs.ext4 /dev/$R_DISK -L root
+
 mkfs.ext2 /dev/$B_DISK -L boot
+# mkfs.fat -F32 /dev/$B_DISK -L boot
+
 mkfs.ext4 /dev/$H_DISK -L home
 mkswap /dev/$S_DISK -L swap
 
 mount /dev/$R_DISK /mnt
+
 mkdir /mnt/{boot,home}
+# mkdir -p /mnt/{boot/efi,home}
+
 mount /dev/$B_DISK /mnt/boot
+# mount /dev/$B_DISK /mnt/boot/efi
+
+
 mount /dev/$H_DISK /mnt/home
 swapon /dev/$S_DISK
 
