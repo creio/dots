@@ -25,6 +25,14 @@ aget () {
 	curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
 }
 
+# build and install pkg from aur
+abuild () {
+	curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
+	tar -xvf $1.tar.gz
+	cd $1
+	makepkg -si --skipinteg
+}
+
 #alias neo="neofetch"
 alias neo="neofetch --w3m ~/.config/neofetch/ctl.png"
 # alias neo="neofetch --w3m"
