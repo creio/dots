@@ -27,6 +27,7 @@ USER_PATHS=(
 ".nano"
 ".ncmpcpp"
 ".ssh"
+".grub-themes"
 ".themes"
 ".icons"
 ".urxvt"

@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Color Highlight",
 		"CSScomb",
 		"Emmet",
 		"Expand Selection to Quotes",
