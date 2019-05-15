@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="32.000004"
+   height="32.000004"
+   viewBox="0 0 8.4666676 8.4666674"
+   version="1.1"
+   id="svg1663"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="titlebutton-close-active@2.svg">
+  <defs
+     id="defs1657" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="42.777778"
+     inkscape:cx="15.364958"
+     inkscape:cy="16.894826"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="px"
+     inkscape:window-width="839"
+     inkscape:window-height="740"
+     inkscape:window-x="1738"
+     inkscape:window-y="169"
+     inkscape:window-maximized="0"
+     inkscape:measure-start="1,16"
+     inkscape:measure-end="1.02857,15.9429"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       originx="2.116667"
+       originy="2.116672" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata1660">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(2.1166671,-290.65003)">
+    <circle
+       style="opacity:1;fill:#214478;fill-opacity:1;stroke:#ffa762;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path822"
+       cx="2.1166666"
+       cy="294.88336"
+       r="4.2333331" />
+  </g>
+</svg>

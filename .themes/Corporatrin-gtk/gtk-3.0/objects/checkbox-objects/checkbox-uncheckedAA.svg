@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="20"
+   height="20"
+   viewBox="0 0 20 20"
+   version="1.1"
+   id="SVGRoot"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="checkbox-unchecked.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="26.4375"
+     inkscape:cx="8"
+     inkscape:cy="7.9432624"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="978"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:grid-bbox="true" />
+  <defs
+     id="defs4503" />
+  <metadata
+     id="metadata4506">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Laag 1"
+     transform="translate(0,4)">
+    <path
+       inkscape:connector-curvature="0"
+       d="M 15.4375,-2.5 H 3.5624999 C 1.603125,-2.5 0,-1.065625 0,0.6875 v 10.625 C 0,13.065625 1.603125,14.5 3.5624999,14.5 H 15.4375 C 17.396875,14.5 19,13.065625 19,11.3125 V 0.6875 C 19,-1.065625 17.396875,-2.5 15.4375,-2.5 Z m 1.1875,13.8125 c 0,0.575875 -0.543875,1.062501 -1.1875,1.062501 H 3.5624999 C 2.918875,12.375001 2.375,11.888375 2.375,11.3125 V 0.6875 c 0,-0.575875 0.543875,-1.0625 1.1874999,-1.0625 H 15.4375 c 0.643625,0 1.1875,0.486625 1.1875,1.0625 z"
+       id="path2-4"
+       style="fill:#4d4d4d;stroke-width:1.12326264" />
+  </g>
+</svg>

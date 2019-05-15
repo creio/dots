@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Ctlos-dark-compact
+Comment=A Material Design theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Ctlos-dark-compact
+MetacityTheme=Ctlos-dark-compact
+IconTheme=Adwaita
+CursorTheme=Adwaita
+CursorSize=24
