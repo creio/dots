@@ -33,6 +33,9 @@ ROOT=$(df -h / | awk '/[0-9]%/{print $(NF-1)" | "$(NF-2)}')
 # Home /home
 HOME=$(df -h /home | awk '/[0-9]%/{print $(NF-1)" | "$(NF-2)}')
 
+# Home /media
+FILES=$(df -h /media/files | awk '/[0-9]%/{print $(NF-1)" | "$(NF-2)}')
+
 # install date
 if [[ -e /var/log/pacman.log ]]; then
     INST="$(head -n1 /var/log/pacman.log)"
@@ -107,15 +110,16 @@ cat <<- EOF
 
  ${FG5}===>$FG ${USR}${FG2}@${FG6}${HOST:-$FB}
  ${FG5}$(rep_char '=')>
- ${FG6}->$FG   wm$FG1:      ${FG4}$(cur_wm)
- ${FG6}->$FG   term$FG1:    ${FG4}${TRM:-$FB}
- ${FG6}->$FG   shell$FG1:   ${FG4}${SHLL:-$FB}
- ${FG6}->$FG   pkgs$FG1:    ${FG4}$(pkg_cnt)
- ${FG6}->$FG   kernel$FG1:  ${FG4}${KERN:-$FB}
- ${FG6}->$FG   distro$FG1:  ${FG4}${DIST:-$FB}
- ${FG6}->$FG   install$FG1: ${FG4}${INST:-$FB}
- ${FG6}->$FG   /$FG1:       ${FG4}${ROOT:-$FB}
- ${FG6}->$FG   /home$FG1:   ${FG4}${HOME:-$FB}
+ ${FG6}->$FG   wm$FG1:           ${FG4}$(cur_wm)
+ ${FG6}->$FG   term$FG1:         ${FG4}${TRM:-$FB}
+ ${FG6}->$FG   shell$FG1:        ${FG4}${SHLL:-$FB}
+ ${FG6}->$FG   pkgs$FG1:         ${FG4}$(pkg_cnt)
+ ${FG6}->$FG   kernel$FG1:       ${FG4}${KERN:-$FB}
+ ${FG6}->$FG   distro$FG1:       ${FG4}${DIST:-$FB}
+ ${FG6}->$FG   install$FG1:      ${FG4}${INST:-$FB}
+ ${FG6}->$FG   /$FG1:            ${FG4}${ROOT:-$FB}
+ ${FG6}->$FG   /home$FG1:        ${FG4}${HOME:-$FB}
+ ${FG6}->$FG   /media/files$FG1: ${FG4}${FILES:-$FB}
  ${FG6}->$FG   ram$FG1: ${FG4}${MEM:-$FB}
  ${FG6}->$FG   cpu$FG1: ${FG4}${CPU:-$FB}
 

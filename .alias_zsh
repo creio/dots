@@ -18,6 +18,9 @@ alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias iip="curl --max-time 10 -w '\n' http://ident.me"
 alias tb="nc termbin.com 9999"
 
+alias pkglist="LANG=C pacman -Sl | awk '/\[installed\]$/ {print $2}' > ~/.pkglist.txt"
+alias aurlist="pacman -Qqm > ~/.aurlist.txt"
+
 # fzf
 zzh() {
 	du -a ~/ | awk '{print $2}' | fzf | xargs -r $EDITOR
