@@ -21,8 +21,8 @@
 *.color15:	#BEBEC1
 
 !State:           ´bg´,     ´fg´,     ´bgalt´,  ´hlbg´,   ´hlfg´
-rofi.color-normal: #111113,  #a49ca2,  #111113,  #111113,  #5A74CA
-rofi.color-urgent: #111113,  #a49ca2,  #111113,  #111113,  #5A74CA
-rofi.color-active: #111113,  #a49ca2,  #111113,  #111113,  #5A74CA
+rofi.color-normal: #282c37,  #d9e1e8,  #282c37,  #5A74CA,  #282c37
+rofi.color-urgent: #282c37,  #d9e1e8,  #282c37,  #5A74CA,  #282c37
+rofi.color-active: #282c37,  #d9e1e8,  #282c37,  #5A74CA,  #282c37
 !                  ´background´, ´border´
-rofi.color-window: #111113,      #75444A57
+rofi.color-window: #282c37,      #75444A57

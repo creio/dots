@@ -1,6 +1,6 @@
 [colors]
 # background = ${xrdb:background}
-background = #80000000
+background = #95000000
 foreground = #AEB4C6
 
 primary = #81A1C1
@@ -257,7 +257,7 @@ label = %layout%
 type = custom/text
 content = 
 content-foreground = ${colors.primary}
-click-left = ~/.bin/i3-logout
+click-left = ~/.bin/rofi-logout
 content-margin-right = 0
 
 

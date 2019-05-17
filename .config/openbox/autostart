@@ -1,0 +1,40 @@
+tint2 -c ~/.config/tint2/my.tint2rc &
+tint2 -c ~/.config/tint2/tray.tint2rc &
+sh ~/.config/polybar/launch.sh &
+# nitrogen --restore &
+# xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop ~/.wall/wl7.gif &
+## gifsicle --resize 1366x768 wl7.gif -o bg.gif
+# xwinwrap -ov -ni -fs -- gifview -w WID ~/.wall/bg.gif -a &
+# feh --randomize --bg-fill ~/Pictures/dark
+# feh --bg-fill ~/Pictures/E0Zl1BM.jpg
+# conky &
+#(sleep 10; ~/.bin/start-conkies.sh) &
+compton -b --config ~/.config/compton.conf &
+# nvidia (nouveau)
+# compton -b --paint-on-overlay --unredir-if-possible --backend xr_glx_hybrid --vsync drm --glx-swap-method -1 --glx-no-stencil &
+## Turn off/on System Beep
+# xset b off &
+thunar --daemon &
+urxvtd &
+setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
+# setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
+# setxkbmap -option terminate:ctrl_alt_bksp &
+numlockx &
+# xsettingsd &
+#xfce4-volumed &
+# xfce4-power-manager &
+#xscreensaver -no-splash &
+#xscreensaver &
+xfdesktop &
+pulseaudio --start &
+mpd &
+/usr/lib/xfce-polkit/xfce-polkit &
+# easystroke &
+telegram-desktop &
+(sleep 1; redshift-gtk) &
+(sleep 3; clipit) &
+# (sleep 5; nm-applet) &
+(sleep 2; volumeicon) &
+(sleep 5; megasync) &
+(sleep 2; caffeine) &
+#glava &

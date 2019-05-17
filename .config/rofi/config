@@ -12,7 +12,7 @@ rofi.columns:                        1
 rofi.font:                           ClearSansMedium 9
 rofi.drun-icon-theme:                Suru++
 rofi.show-icons:                     true
-rofi.bw:                             2
+rofi.bw:                             10
 rofi.location:                       0
 rofi.padding:                        20
 rofi.levenshtein-sort:               true

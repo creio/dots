@@ -44,7 +44,7 @@ export FZF_COMPLETION_TRIGGER="~~"
 
 export TERM="xterm-256color"
 # export TERM="rxvt-unicode-256color"
-export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'subl3'; else echo 'nano'; fi)"
+export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'micro'; else echo 'nano'; fi)"
 export BROWSER="chromium"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 
@@ -53,3 +53,5 @@ if [ -f ~/.alias_zsh ]; then
 fi
 
 # fortune|cowsay|lolcat
+
+export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH

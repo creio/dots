@@ -1,0 +1,130 @@
+!! Arc-Darker_ob by Ernest Shefer <shefernest@gmail.com>
+!! Inspired by Arc-Dark GTK+ theme.
+
+
+!! General
+window.handle.width: 0
+window.client.padding.width: 0
+window.client.padding.height: 0
+border.width: 0
+padding.width: 10
+padding.height: 4
+border.color: #d7d8dd
+window.frameColor: #e7e8eb
+window.*.client.color: #e7e8eb
+*.text.justify: center
+
+
+!! Fonts
+!window.active.label.text.font: shadow=y:shadowoffset=1:shadowtint=3
+!window.inactive.label.text.font: shadow=y:shadowoffset=1:shadowtint=0
+!menu.items.font:
+!menu.title.text.font: shadow=y:shadowoffset=1:shadowtint=30
+
+
+!! Menu
+menu.overlap: 0
+
+menu.border.width: 1
+menu.border.color: #ffffff
+menu.title.bg: flat solid
+menu.title.bg.color: #ffffff
+menu.title.bg.border.color: #ffffff
+menu.title.text.color: #5c616c
+
+menu.items.bg: flat solid
+menu.items.bg.color: #ffffff
+
+menu.separator.width: 1
+menu.separator.padding.height: 4
+menu.separator.color: #ffffff
+
+menu.items.text.color: #252a35
+menu.items.disabled.text.color: #a9acb2
+
+menu.items.active.bg: flat solid
+menu.items.active.bg.color: #5294e2
+menu.items.active.text.color: #ffffff
+menu.items.active.bg.border.color: #5294e2
+
+
+!! Active
+window.*.title.separator.color: #e7e8eb
+
+window.active.title.bg: flat border osx
+window.active.title.bg.color: #e7e8eb
+window.active.title.bg.border.color: #e7e8eb
+window.active.label.bg: parentrelative
+window.active.label.text.color: #252a35
+
+
+window.active.button.*.bg.border.color: #e7e8eb
+window.active.button.*hover.bg.border.color: #e7e8eb
+
+window.*.handle.bg: flat solid
+window.*.handle.bg.color: #e7e8eb
+window.*.grip.bg: parentrelative
+
+####
+window.active.button.unpressed.bg:                    flat boder osx
+window.active.button.unpressed.bg.color:              #e7e8eb
+
+window.active.button.iconify.unpressed.image.color:   #5c616c
+window.active.button.iconify.pressed.image.color:     #6aa8e9
+window.active.button.iconify.hover.image.color:       #f9f9fa
+
+window.active.button.max.unpressed.image.color:       #5c616c
+window.active.button.max.pressed.image.color:         #6aa8e9
+window.active.button.max.hover.image.color:           #f9f9fa
+
+window.active.button.close.unpressed.image.color:     #f25056 
+window.active.button.close.pressed.image.color:       #d52830
+window.active.button.close.hover.image.color:         #f58c92
+
+window.active.button.shade.unpressed.image.color:     #666a74
+window.active.button.shade.pressed.image.color:       #6aa8e9
+window.active.button.shade.hover.image.color:         #a3a3a3
+
+window.active.button.desk.unpressed.image.color:      #666a74
+window.active.button.desk.pressed.image.color:        #6aa8e9
+window.active.button.desk.hover.image.color:          #a3a3a3
+
+window.active.button.pressed.bg:                      flat border osx
+window.active.button.pressed.bg.color:                #e7e8eb
+
+window.active.button.disabled.bg:                     flat border osx
+window.active.button.disabled.bg.color:               #e7e8eb
+window.active.button.disabled.image.color:            #666a74
+
+window.active.button.toggled.bg:                      parentrelative
+window.active.button.toggled.image.color:             #666a74
+
+window.active.button.toggled.pressed.bg:              parentrelative
+window.active.button.toggled.pressed.image.color:     #666a74
+
+!! Inactive
+window.inactive.title.bg: flat border 
+window.inactive.title.bg.color: #e7e8eb
+window.inactive.title.bg.border.color: #e7e8eb
+window.inactive.label.bg: parentrelative
+window.inactive.label.text.color: #b6b8c0
+
+window.inactive.button.*.bg: parentrelative
+window.inactive.button.*.image.color:  #b6b8c0
+
+
+!! OSD
+osd.bg: flat solid
+osd.bg.color: #e7e8eb
+osd.border.width: 1
+osd.border.color:  #d7d8dd
+
+osd.*.label.bg: parentrelative
+osd.*.label.text.color: #252a35
+osd.active.label.bg.color: #5294e2
+osd.active.label.text.color: #252a35
+
+osd.hilight.bg: flat vertical
+osd.hilight.bg.color: #5294e2
+osd.unhilight.bg: flat vertical
+osd.unhilight.bg.color: #fefefe

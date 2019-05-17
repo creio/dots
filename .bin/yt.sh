@@ -2,7 +2,7 @@
 # by mhess
 
 # Font
-FN='ClearSansMedium:size=11'
+FN='ClearSansMedium:size=10'
 # Background Commands
 NB='#111113'
 # Foreground Commands

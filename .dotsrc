@@ -67,6 +67,7 @@ USER_PATHS=(
 ".config/mc"
 ".config/mpd"
 ".config/mpv"
+".config/menus"
 ".config/micro/bindings.json"
 ".config/micro/settings.json"
 ".config/neofetch"
