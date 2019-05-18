@@ -224,59 +224,85 @@
         <command>openbox --reconfigure</command>
       </action>
     </keybind>
-    <keybind key="C-A-Left">
-      <action name="SendToDesktop"/>
-    </keybind>
-    <keybind key="C-A-Right">
-      <action name="SendToDesktop"/>
-    </keybind>
-    <keybind key="C-A-Up">
-      <action name="SendToDesktop"/>
-    </keybind>
-    <keybind key="C-A-Down">
-      <action name="SendToDesktop"/>
-    </keybind>
     <keybind key="W-A-Left">
-      <action name="GoToDesktop"/>
+      <action name="DesktopPrevious"/>
     </keybind>
     <keybind key="W-A-Right">
-      <action name="GoToDesktop"/>
+      <action name="DesktopNext"/>
     </keybind>
-    <keybind key="W-A-Up">
-      <action name="GoToDesktop"/>
+    <!-- Move window -->
+    <keybind key="S-W-Up">
+      <action name="MoveRelative">
+        <x>0</x>
+        <y>-20</y>
+      </action>
     </keybind>
-    <keybind key="W-A-Down">
-      <action name="GoToDesktop"/>
+    <keybind key="S-W-Down">
+      <action name="MoveRelative">
+        <x>0</x>
+        <y>20</y>
+      </action>
     </keybind>
-    <keybind key="W-S-1">
+    <keybind key="S-W-Right">
+      <action name="MoveRelative">
+        <x>20</x>
+        <y>0</y>
+      </action>
+    </keybind>
+    <keybind key="S-W-Left">
+      <action name="MoveRelative">
+        <x>-20</x>
+        <y>0</y>
+      </action>
+    </keybind>
+    <!--  -->
+    <keybind key="W-C-Left">
+      <action name="SendToDesktop">
+        <to>previous</to>
+      </action>
+    </keybind>
+    <keybind key="W-C-Right">
+      <action name="SendToDesktop">
+        <to>next</to>
+      </action>
+    </keybind>
+    <keybind key="W-A-1">
       <action name="SendToDesktop"/>
     </keybind>
-    <keybind key="W-S-2">
+    <keybind key="W-A-2">
       <action name="SendToDesktop">
         <desktop>2</desktop>
       </action>
     </keybind>
-    <keybind key="W-S-3">
+    <keybind key="W-A-3">
       <action name="SendToDesktop">
         <desktop>3</desktop>
       </action>
     </keybind>
-    <keybind key="W-S-4">
+    <keybind key="W-A-4">
       <action name="SendToDesktop">
         <desktop>4</desktop>
       </action>
     </keybind>
     <keybind key="W-1">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop">
+        <to>1</to>
+      </action>
     </keybind>
     <keybind key="W-2">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop">
+        <to>2</to>
+      </action>
     </keybind>
     <keybind key="W-3">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop">
+        <to>3</to>
+      </action>
     </keybind>
     <keybind key="W-4">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop">
+        <to>4</to>
+      </action>
     </keybind>
     <keybind key="C-space">
       <action name="ShowMenu">
@@ -425,6 +451,13 @@
         <command>rofi -show window -show-icons -drun-icon-theme</command>
       </action>
     </keybind>
+    <keybind key="A-c">
+      <action name="MoveToCenter"/>
+      <!-- <action name="MoveResizeTo">
+        <x>center</x>
+        <y>center</y>
+      </action> -->
+    </keybind>
     <keybind key="W-Right">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
@@ -491,6 +524,7 @@
         <action name="Unshade"/>
       </mousebind>
       <mousebind action="Drag" button="W-Left">
+        <!-- <action name="Move"/> -->
         <action name="if">
           <maximized>no</maximized>
           <then>
@@ -526,16 +560,6 @@
         </action>
       </mousebind>
       <mousebind action="Click" button="W-Down">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-      <mousebind action="Click" button="C-A-Up">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind action="Click" button="C-A-Down">
         <action name="GoToDesktop">
           <to>next</to>
         </action>

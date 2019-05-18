@@ -163,8 +163,8 @@ type = custom/text
 content = 
 content-foreground = ${colors.primary}
 # click-left = "urxvtc -geometry 190x50 -name 'tmux' -e tmux new -s proc -d ranger\; splitw -dv htop\; splitw -dh gotop\; splitw -dh\; attach &"
-click-left = "urxvtc -geometry 190x50 -e sh -c '~/.bin/rxrun.sh'"
-click-right = "urxvtc -geometry 190x50 -name 'tmux' -e sh -c 'tmux attach || tmux new -s work' &"
+click-left = "urxvtc -geometry 189x48 -e sh -c '~/.bin/rxrun.sh'"
+click-right = "urxvtc -geometry 189x48 -name 'tmux' -e sh -c 'tmux attach || tmux new -s work' &"
 
 
 
