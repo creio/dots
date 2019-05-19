@@ -27,7 +27,7 @@ numlockx &
 #xscreensaver &
 xfdesktop &
 pulseaudio --start &
-mpd &
+# mpd &
 /usr/lib/xfce-polkit/xfce-polkit &
 # easystroke &
 telegram-desktop &

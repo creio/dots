@@ -105,5 +105,5 @@ ROOT_PATHS=(
 "/etc/sddm.conf"
 "/etc/vconsole.conf"
 "/etc/pulse/daemon.conf"
-"/usr/share/sddm/themes/clairvoyance"
+"/usr/share/sddm/themes/darkine"
 )

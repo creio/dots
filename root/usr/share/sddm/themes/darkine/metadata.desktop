@@ -1,0 +1,16 @@
+[SddmGreeterTheme]
+Name=Darkine
+Description=Darkine
+Type=sddm-theme
+Author=Rokin
+Copyright=(c) 2019, Rokin
+Screenshot=preview.jpg
+License=GPLv3
+Version=2.0
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=darkine
+Theme-API=2.0
+Website=https://github.com/Rokin05/SDDM-Themes
+
