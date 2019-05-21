@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#
+# Get Color from Xresource Database
+# usage :
+#    xrgc (colornumber|bg|fg)
+# example :
+#    $ xrgc 1
+#      return: #ff0000
+#    $ xrgc bg
+#      return: #101010
+#
+
+case $1 in 
+    fg)
+        xrdb -query | egrep -m1 "^\*\.?foreground:" | awk '{print $NF}' 
+    ;;
+    bg)
+        xrdb -query | egrep -m1 "^\*\.?background:" | awk '{print $NF}' 
+    ;;
+    *) 
+        xrdb -query | egrep -m1 "^\*\.?color$1:" | awk '{print $NF}'
+    ;;
+esac

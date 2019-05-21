@@ -1,5 +1,3 @@
-cd .config
-nvim
 search.config
 search .config
 search range
@@ -48,3 +46,5 @@ rename cn
 open_with
 rename xfce4.bak
 delete
+sear
+fin

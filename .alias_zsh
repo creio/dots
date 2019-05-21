@@ -92,7 +92,7 @@ alias l="ls -CF --color=auto"
 alias .l="dirs -v"
 
 alias mk="mkdir"
-mkj () {
+mkcd () {
 	mkdir -p "$1"
 	cd "$1"
 }
@@ -119,7 +119,7 @@ gc () {
 function gcj () {
 	git clone "$1"
 	cd "$2"
-	$EDITOR .
+	# $EDITOR .
 }
 alias gi="git init"
 alias gs="git status"
@@ -188,6 +188,7 @@ iso () {
 alias -s {mp3,m4a,flac}="mpv"
 alias -s {png,jpg,tiff,bmp}="viewnior"
 alias -s {conf,txt}="nvim"
+# alias {aurman,pikaur,trizen,yaourt}="yay"
 
 alias st="subl3"
 alias sst="sudo subl3"
@@ -201,8 +202,7 @@ alias th="thunar . &"
 alias na="nautilus . &"
 alias sna="sudo nautilus ."
 alias h="htop"
-alias vim="nvim"
-alias vi="nvim"
+alias {v,vi,vim}="nvim"
 
 alias packey="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Syy"
 alias sp="sudo pacman -S"

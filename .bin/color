@@ -25,20 +25,47 @@ initializeANSI()
   reset="${esc}[0m"
 }
 
+color0=$(xrdb -query | egrep -m1 '^\*\.?color0:' | awk '{print $NF}')
+color1=$(xrdb -query | egrep -m1 '^\*\.?color1:' | awk '{print $NF}')
+color2=$(xrdb -query | egrep -m1 '^\*\.?color2:' | awk '{print $NF}')
+color3=$(xrdb -query | egrep -m1 '^\*\.?color3:' | awk '{print $NF}')
+color4=$(xrdb -query | egrep -m1 '^\*\.?color4:' | awk '{print $NF}')
+color5=$(xrdb -query | egrep -m1 '^\*\.?color5:' | awk '{print $NF}')
+color6=$(xrdb -query | egrep -m1 '^\*\.?color6:' | awk '{print $NF}')
+color7=$(xrdb -query | egrep -m1 '^\*\.?color7:' | awk '{print $NF}')
+
+color8=$(xrdb -query | egrep -m1 '^\*\.?color8:' | awk '{print $NF}')
+color9=$(xrdb -query | egrep -m1 '^\*\.?color9:' | awk '{print $NF}')
+color10=$(xrdb -query | egrep -m1 '^\*\.?color10:' | awk '{print $NF}')
+color11=$(xrdb -query | egrep -m1 '^\*\.?color11:' | awk '{print $NF}')
+color12=$(xrdb -query | egrep -m1 '^\*\.?color12:' | awk '{print $NF}')
+color13=$(xrdb -query | egrep -m1 '^\*\.?color13:' | awk '{print $NF}')
+color14=$(xrdb -query | egrep -m1 '^\*\.?color14:' | awk '{print $NF}')
+color15=$(xrdb -query | egrep -m1 '^\*\.?color15:' | awk '{print $NF}')
 # note in this first use that switching colors doesn't require a reset
 # first - the new color overrides the old one.
 
+
+
 numbers (){
-
-initializeANSI
-
-cat << EOF
-
-${blackf}11111111${reset} ${redf}22222222${reset} ${greenf}33333333${reset} ${yellowf}44444444${reset} ${bluef}55555555${reset} ${purplef}66666666${reset} ${cyanf}77777777${reset} ${whitef}88888888${reset}
-${blackb}11111111${reset} ${redb}22222222${reset} ${greenb}33333333${reset} ${yellowb}44444444${reset} ${blueb}55555555${reset} ${purpleb}66666666${reset} ${cyanb}77777777${reset} ${whiteb}88888888${reset}
-
-EOF
-
+  echo -en "${blackf} ${color0} ${reset}"
+  echo -en "${redf} ${color1} ${reset}"
+  echo -en "${greenf} ${color2} ${reset}"
+  echo -en "${yellowf} ${color3} ${reset}"
+  echo -en "${bluef} ${color4} ${reset}"
+  echo -en "${purplef} ${color5} ${reset}"
+  echo -en "${cyanf} ${color6} ${reset}"
+  echo -en "${whiteb} ${color7} ${reset}"
+  echo -e "\n"
+  echo -en "${blackf} ${color8} ${reset}"
+  echo -en "${redf} ${color9} ${reset}"
+  echo -en "${greenf} ${color10} ${reset}"
+  echo -en "${yellowf} ${color11} ${reset}"
+  echo -en "${bluef} ${color12} ${reset}"
+  echo -en "${purplef} ${color13} ${reset}"
+  echo -en "${cyanf} ${color14} ${reset}"
+  echo -en "${whiteb} ${color15} ${reset}"
+  echo -e "\n"
 }
 
 blocks (){

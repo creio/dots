@@ -41,9 +41,9 @@
       <property name="&lt;Super&gt;t" type="string" value="urxvtc"/>
       <property name="&lt;Alt&gt;r" type="string" value="urxvtc -g 135x35+70+40 -e ranger"/>
       <property name="&lt;Super&gt;d" type="string" value="/home/st/.bin/search"/>
-      <property name="&lt;Super&gt;w" type="string" value="rofi -show window -show-icons -drun-icon-theme"/>
       <property name="&lt;Alt&gt;w" type="string" value="/home/st/.bin/findapp chromium"/>
       <property name="&lt;Alt&gt;c" type="string" value="/home/st/.bin/window-center"/>
+      <property name="&lt;Super&gt;w" type="string" value="rofi -show window -show-icons -drun-icon-theme"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

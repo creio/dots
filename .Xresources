@@ -9,18 +9,16 @@ Xft.lcdfilter: lcddefault
 
 
 #include ".colors/ln"
+!URxvt.font: -*-rissole-*
 
+URxvt.font: xft:Hack Nerd Font Mono:size=9
+!URxvt.font: xft:Roboto Mono Medium:size=9
+!URxvt.font: xft:RobotoMono Nerd Font:size=9
+!URxvt.font: xft:Iosevka Nerd Font:size=9:antialias=true
 !URxvt.font: xft:Iosevka Term:size=9:antialias=true
 
-!URxvt.font: -addy-canele-medium-r-normal-*-12-120-75-75-m-60-iso8859-1
-!URxvt.boldFont: -misc-fixed-medium-r-semicondensed--13-100-100-100-c-60-iso8859-1
-
-!URxvt.font: xft:Roboto Mono Medium:size=9
-
-!URxvt.font: xft:RobotoMono Nerd Font:size=9
-URxvt.font: xft:Hack Nerd Font Mono:size=9
-!URxvt.font: xft:Iosevka Nerd Font:size=9:antialias=true
-
+URxvt*geometry: 84x20
+URxvt.internalBorder: 15
 URxvt.letterSpace: 0
 URxvt.antialias: true
 
@@ -50,9 +48,6 @@ URxvt.keysym.Control-Up:\033[1;5A
 URxvt.keysym.Control-Down:\033[1;5B
 URxvt.keysym.Control-Left:\033[1;5D
 URxvt.keysym.Control-Right:\033[1;5C
-
-URxvt*geometry: 82x21
-URxvt.internalBorder: 15
 
 URxvt*transparent:false
 !URxvt*shading: 10
