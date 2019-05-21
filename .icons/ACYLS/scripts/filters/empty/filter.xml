@@ -1,0 +1,8 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="acyl-filter">
+  </g>
+  <g id="acyl-visual">
+    <use id="visible1" style="fill:url(#acyl-gradient)" xlink:href="#acyl-drawing"/>
+  </g>
+</root>
+

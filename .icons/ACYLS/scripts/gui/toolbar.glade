@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.18.3 -->
+<interface>
+  <requires lib="gtk+" version="3.10"/>
+  <object class="GtkToolbar" id="toolbar">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="toolbar_style">icons</property>
+    <child>
+      <object class="GtkToolButton" id="add_color_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Add new color to gradient.</property>
+        <property name="label" translatable="yes">Add Color</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-add</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="remove_color_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Remove current gradient color.</property>
+        <property name="label" translatable="yes">Remove Color</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-remove</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="copy_color_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Copy current color settings to program (not system) buffer. Use this option to transfer settings between icon groups.</property>
+        <property name="label" translatable="yes">Copy Color</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-copy</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="paste_color_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Paste setting from program buffer.</property>
+        <property name="label" translatable="yes">Paste Color</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-paste</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="save_settings_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Save current color settings to file.</property>
+        <property name="label" translatable="yes">Save Settings</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-save</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="load_settings_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Load color settings from file.</property>
+        <property name="label" translatable="yes">Load Settings</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-open</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="reset_settings_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Reset color setting to default.</property>
+        <property name="label" translatable="yes">Reset Settings</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-cancel</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparatorToolItem" id="sep1_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="edit_filter_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Edit active filter.</property>
+        <property name="label" translatable="yes">Edit Filter</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-edit</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="load_filter_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Load filter file.</property>
+        <property name="label" translatable="yes">Load Filter</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-open</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="save_filter_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Save filter to the same file.</property>
+        <property name="label" translatable="yes">Save Filter</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-save</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="save_as_filter_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Save filter to new file.</property>
+        <property name="label" translatable="yes">Save Filter As</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-save-as</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="revert_filter_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Revert filter to last saved version.</property>
+        <property name="label" translatable="yes">Revert Filter</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-revert-to-saved</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparatorToolItem" id="seaprator1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="make_backup_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Make backup of current application icons if they exist. Backups location can be set in config file.</property>
+        <property name="label" translatable="yes">Backup Theme</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-harddisk</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="restore_backup_toolbutton">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Restore icons from backup.</property>
+        <property name="label" translatable="yes">Restore Backup</property>
+        <property name="use_underline">True</property>
+        <property name="stock_id">gtk-redo</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <style>
+      <class name="primary-toolbar"/>
+    </style>
+  </object>
+</interface>

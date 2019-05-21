@@ -1,0 +1,12 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="acyl-filter">
+    <filter id="filter" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur id="feGaussianBlur1" stdDeviation="3.5" in="SourceAlpha"/>
+      <feOffset id="feOffset1" dy="1.0" dx="1.0"/>
+      <feComposite id="feComposite1" operator="out" in="SourceGraphic"/>
+    </filter>
+  </g>
+  <g id="acyl-visual">
+    <use id="visible1" transform="translate(24,24) scale(1.00) translate(-24,-24)" style="fill:url(#acyl-gradient);filter:url(#filter)" xlink:href="#acyl-drawing"/>
+  </g>
+</root>

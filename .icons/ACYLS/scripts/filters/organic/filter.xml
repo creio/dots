@@ -1,0 +1,19 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="acyl-filter">
+    <filter id="filter">
+      <feTurbulence id="feTurbulence1" numOctaves="3.0" baseFrequency="0.04 0.04" result="result0"/>
+      <feSpecularLighting id="feSpecularLighting1" specularExponent="18.0" surfaceScale="2.0" specularConstant="0.8" result="result1">
+        <feDistantLight elevation="45" azimuth="225"/>
+      </feSpecularLighting>
+      <feDiffuseLighting id="feSpecularLighting2" in="result0" surfaceScale="2.0" diffuseConstant="0.80">
+        <feDistantLight azimuth="225" elevation="42"/>
+      </feDiffuseLighting>
+      <feBlend in2="SourceGraphic" mode="multiply"/>
+      <feComposite id="feComposite1" operator="arithmetic" in="result1" k2="1.00" k3="1.00"/>
+      <feComposite id="feComposite2" in2="SourceAlpha" operator="in"/>
+    </filter>
+  </g>
+  <g id="acyl-visual">
+    <use id="visible1" transform="translate(24,24) scale(1.00) translate(-24,-24)" style="fill:url(#acyl-gradient);filter:url(#filter)" xlink:href="#acyl-drawing"/>
+  </g>
+</root>

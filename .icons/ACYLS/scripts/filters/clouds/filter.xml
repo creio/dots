@@ -1,0 +1,14 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="acyl-filter">
+    <filter id="filter">
+      <feTurbulence id="feTurbulence1" numOctaves="3.0" baseFrequency="0.04 0.12" type="fractalNoise"/>
+      <feColorMatrix id="feColorMatrix1" result="result0" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 5 -2.5"/>
+      <feFlood id="feFlood1" flood-opacity="1" flood-color="rgb(255,255,255)" result="result1"/>
+      <feComposite id="feComposite1" in2="result0" operator="in" result="result2"/>
+      <feComposite id="feComposite2" in2="SourceGraphic" operator="atop"/>
+    </filter>
+  </g>
+  <g id="acyl-visual">
+    <use id="visible1" transform="translate(24,24) scale(1.00) translate(-24,-24)" style="fill:url(#acyl-gradient);filter:url(#filter)" xlink:href="#acyl-drawing"/>
+  </g>
+</root>

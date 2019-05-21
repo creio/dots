@@ -1,0 +1,23 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="acyl-filter">
+    <linearGradient id="linearGradient1" gradientTransform="translate(24, 24) scale(1.5,1) translate(-24, -24)">
+      <stop style="stop-color:rgb(85,87,83);stop-opacity:0.70" offset="0" id="stop1"/>
+      <stop style="stop-color:rgb(85,87,83);stop-opacity:0" offset="1" id="stop2"/>
+    </linearGradient>
+    <radialGradient id="radialGradient1" xlink:href="#linearGradient1" gradientUnits="userSpaceOnUse" cx="24" cy="40" fx="24" fy="40" r="10"/>
+    <radialGradient id="radialGradient2" xlink:href="#linearGradient1" gradientUnits="userSpaceOnUse" cx="24" cy="8" fx="24" fy="8" r="12"/>
+    <filter id="filter">
+      <feGaussianBlur id="feGaussianBlur1" stdDeviation="1"/>
+    </filter>
+    <circle id="support-circle" cx="24" cy="24" r="22"/>
+    <g id="orb-visual">
+      <use id="c1" style="fill:rgb(85,87,83);fill-opacity:0.10;stroke:rgb(85,87,83);stroke-opacity:0.65;stroke-width:1.0" xlink:href="#support-circle"/>
+      <use id="c2" style="fill:url(#radialGradient1);filter:url(#filter)" xlink:href="#support-circle"/>
+      <use id="c3" style="fill:url(#radialGradient2);filter:url(#filter)" xlink:href="#support-circle"/>
+    </g>
+  </g>
+  <g id="acyl-visual">
+    <use id="visible1" transform="translate(24, 24) scale(1.0) translate(-24,-24)" xlink:href="#orb-visual"/>
+    <use id="visible2" transform="translate(24, 24) scale(0.65) translate(-24,-24)" style="fill:url(#acyl-gradient)" xlink:href="#acyl-drawing"/>
+  </g>
+</root>

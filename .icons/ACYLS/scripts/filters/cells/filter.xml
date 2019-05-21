@@ -1,0 +1,17 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="acyl-filter">
+    <filter id="filter">
+      <feTurbulence id="feTurbulence1" type="fractalNoise" baseFrequency="0.1 0.1" numOctaves="3.0"/>
+      <feColorMatrix id="feColorMatrix1" values="0" type="saturate"/>
+      <feColorMatrix id="feColorMatrix2" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 20 -12 " type="matrix"/>
+      <feGaussianBlur id="feGaussianBlur1" stdDeviation="2.0"/>
+      <feColorMatrix id="feColorMatrix3" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 10 -0.1 " type="matrix"/>
+      <feComposite id="feComposite1" in2="SourceGraphic" k1="0.8" k2="1.0" k3="0.0" operator="arithmetic"/>
+      <feBlend id="feBlend1" in2="SourceGraphic" mode="normal"/>
+      <feComposite id="feComposite3" in2="SourceGraphic" operator="atop"/>
+    </filter>
+  </g>
+  <g id="acyl-visual">
+    <use id="visible1" transform="translate(24,24) scale(1.00) translate(-24,-24)" style="fill:url(#acyl-gradient);filter:url(#filter)" xlink:href="#acyl-drawing"/>
+  </g>
+</root>

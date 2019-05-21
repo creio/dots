@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=ACYLS
+Exec=bash -c 'python3 ~/.icons/ACYLS/scripts/run.py'
+Icon=acyls
+Terminal=false
+Categories=GTK;Settings;
+Comment=ACYLS icon pack configuration program.

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48">
+  <defs id="acyl-settings">
+    <linearGradient id="acyl-gradient" x1="0%" x2="0%" y1="0%" y2="100%">
+      <stop offset="100%" style="stop-color:#A0A0A0;stop-opacity:1.000000"/>
+    </linearGradient>
+    <g id="acyl-filter">
+  </g>
+    <g id="acyl-drawing">
+      <path d="m 10.81,3.466 c -4.69,0 -8.8,4.107 -8.8,8.794 v 23.47 c 0,4.69 4.11,8.8 8.8,8.8 h 26.4 c 4.69,0 8.78,-4.11 8.78,-8.8 V 12.26 c 0,-4.687 -4.09,-8.794 -8.78,-8.794 z m 0,5.867 h 26.4 c 1.76,0 2.93,1.177 2.93,2.927 v 17.6 H 7.88 v -17.6 c 0,-1.75 1.17,-2.927 2.93,-2.927 z M 7.88,32.8 h 14.66 v 5.86 H 10.81 c -1.76,0 -2.93,-1.17 -2.93,-2.93 z m 17.6,0 h 14.66 v 2.93 c 0,1.76 -1.17,2.93 -2.93,2.93 H 25.48 Z" id="path-main"/>
+    </g>
+  </defs>
+  <g id="acyl-visual">
+    <use id="visible1" style="fill:url(#acyl-gradient)" xlink:href="#acyl-drawing"/>
+  </g>
+</svg>

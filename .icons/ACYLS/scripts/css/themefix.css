@@ -1,0 +1,8 @@
+GtkImage#ColorIconPreview, GtkImage#FilterIconPreview, GtkIconView {
+	background-color: @base_color;
+}
+
+GtkNotebook tab GtkLabel {
+	padding-left: 6px;
+	padding-right: 6px;
+}

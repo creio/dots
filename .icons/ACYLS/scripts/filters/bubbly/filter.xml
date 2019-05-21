@@ -1,0 +1,21 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="acyl-filter">
+    <filter id="filter" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence id="feTurbulence1" baseFrequency="0.20 0.20" numOctaves="3.0" result="result1" type="fractalNoise"/>
+      <feDisplacementMap scale="0" in="SourceGraphic" xChannelSelector="R"/>
+      <feComposite result="result2" operator="in" in2="result1"/>
+      <feComposite k3="3" in="SourceGraphic" operator="arithmetic"/>
+      <feBlend result="result3" mode="multiply" in2="result2"/>
+      <feColorMatrix values="1 0 0 -1 0 1 0 1 -1 0 1 0 0 -1 0 -1.8 -0.5 0 5.7 -3.5 " result="result4"/>
+      <feGaussianBlur id="feGaussianBlur1" stdDeviation="0.5"/>
+      <feSpecularLighting id="feSpecularLighting1" surfaceScale="5.0" specularExponent="5.0" specularConstant="1.0">
+        <feDistantLight azimuth="225" elevation="10"/>
+      </feSpecularLighting>
+      <feComposite id="feComposite1" in2="result4" operator="in"/>
+      <feComposite id="feComposite2" in="result3" operator="arithmetic" k2="1" k3="0.7"/>
+    </filter>
+  </g>
+  <g id="acyl-visual">
+    <use id="visible1" transform="translate(24,24) scale(1.00) translate(-24,-24)" style="fill:url(#acyl-gradient);filter:url(#filter)" xlink:href="#acyl-drawing"/>
+  </g>
+</root>
