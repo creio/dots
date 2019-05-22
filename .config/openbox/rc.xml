@@ -40,10 +40,10 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>trgm</name>
+    <name>obln</name>
     <cornerRadius>0</cornerRadius>
     <cornerRadius menu="yes">4</cornerRadius>
-    <titleLayout>DSLIMC</titleLayout>
+    <titleLayout>SLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -58,7 +58,7 @@
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
       <name>Clear Sans Medium, Medium</name>
-      <size>8</size>
+      <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -67,7 +67,7 @@
     </font>
     <font place="InactiveWindow">
       <name>Clear Sans Medium, Medium</name>
-      <size>8</size>
+      <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -438,7 +438,7 @@
     </keybind>
     <keybind key="A-space">
       <action name="Execute">
-        <command>toggle-tint.sh</command>
+        <command>toggle-tint_ob.sh</command>
       </action>
     </keybind>
     <keybind key="A-d">
@@ -460,7 +460,7 @@
     </keybind>
     <keybind key="W-Right">
       <action name="UnmaximizeFull"/>
-      <action name="Undecorate"/>
+      <!-- <action name="Undecorate"/> -->
       <action name="MoveResizeTo">
         <width>50%</width>
       </action>
@@ -472,7 +472,7 @@
     </keybind>
     <keybind key="W-Left">
       <action name="UnmaximizeFull"/>
-      <action name="Undecorate"/>
+      <!-- <action name="Undecorate"/> -->
       <action name="MoveResizeTo">
         <width>50%</width>
       </action>
@@ -897,20 +897,27 @@
   </menu>
   <applications>
     <application name="subl3">
-      <maximized>true</maximized>
+      <maximized>yes</maximized>
       <decor>no</decor>
       <shade>no</shade>
-      <!-- <focus>yes</focus> -->
+      <focus>yes</focus>
     </application>
     <application role="browser">
-      <maximized>true</maximized>
+      <maximized>yes</maximized>
       <decor>no</decor>
       <shade>no</shade>
-      <!-- <focus>yes</focus> -->
+      <focus>yes</focus>
+    </application>
+    <application name="tmux">
+      <maximized>yes</maximized>
+      <decor>no</decor>
+      <shade>no</shade>
+      <focus>yes</focus>
+      <desktop>2</desktop>
     </application>
     <!-- <application title="GLava">
       <fullscreen>yes</fullscreen>
-      <maximized>true</maximized>
+      <maximized>yes</maximized>
       <decor>no</decor>
       <shade>yes</shade>
       <layer>below</layer>

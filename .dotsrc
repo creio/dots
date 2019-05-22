@@ -53,7 +53,6 @@ USER_PATHS=(
 # config
 ".config/audacious/config"
 ".config/cava"
-".config/cherrytree"
 ".config/clipit"
 ".config/conky"
 ".config/dconf"
@@ -76,6 +75,7 @@ USER_PATHS=(
 ".config/nvim/init.vim"
 ".config/obmenu-generator"
 ".config/openbox"
+".config/orcsome"
 ".config/polybar"
 ".config/qt5ct"
 ".config/ranger"

@@ -1,7 +1,7 @@
 [colors]
 # background = ${xrdb:background}
-background = #95000000
-foreground = #AEB4C6
+background = #16191f
+foreground = #9baec8
 
 primary = #81A1C1
 accent = #5E81AC
@@ -162,9 +162,9 @@ click-left = xdg-open https://mail.google.com
 type = custom/text
 content = 
 content-foreground = ${colors.primary}
-# click-left = "urxvtc -geometry 190x50 -name 'tmux' -e tmux new -s proc -d ranger\; splitw -dv htop\; splitw -dh gotop\; splitw -dh\; attach &"
-click-left = "urxvtc -geometry 189x48 -e sh -c '~/.bin/rxrun.sh'"
-click-right = "urxvtc -geometry 189x48 -name 'tmux' -e sh -c 'tmux attach || tmux new -s work' &"
+# click-left = "urxvt -geometry 190x50 -name 'tmux' -e tmux new -s proc -d ranger\; splitw -dv htop\; splitw -dh gotop\; splitw -dh\; attach &"
+click-left = "urxvt -geometry 189x48 -e sh -c '~/.bin/rxrun.sh'"
+click-right = "urxvt -geometry 189x48 -name 'tmux' -e sh -c 'tmux attach || tmux new -s work' &"
 
 
 
@@ -182,7 +182,7 @@ click-right = ~/.bin/rofi-favapp
 type = custom/text
 content = 
 content-foreground = ${colors.primary}
-click-left = urxvtc -geometry 180x45 -e newsboat &
+click-left = urxvt -geometry 180x45 -e newsboat &
 click-right = 
 
 

@@ -1,8 +1,9 @@
 xsetroot -cursor_name left_ptr &
 xrdb -merge $HOME/.Xresources &
 xset +fp $HOME/.fonts/misc/ &
+xset -b
 # panel
-tint2 -c ~/.config/tint2/my.tint2rc &
+tint2 -c ~/.config/tint2/my_ob.tint2rc &
 tint2 -c ~/.config/tint2/tray.tint2rc &
 sh ~/.config/polybar/launch.sh &
 # wallpaper
@@ -17,13 +18,13 @@ sh ~/.config/polybar/launch.sh &
 #(sleep 10; ~/.bin/start-conkies.sh) &
 compton -b --config ~/.config/compton.conf &
 thunar --daemon &
-urxvtd &
+# urxvtd &
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
 # setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
 # setxkbmap -option terminate:ctrl_alt_bksp &
 numlockx &
 xsettingsd &
-xfsettingsd &
+# xfsettingsd &
 #xfce4-volumed &
 # xfce4-power-manager &
 #xscreensaver -no-splash &

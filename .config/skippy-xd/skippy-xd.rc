@@ -1,5 +1,5 @@
 [general]
-distance = 100
+distance = 50
 useNetWMFullscreen = false
 ignoreSkipTaskbar = true
 updateFreq = 10.0
@@ -19,7 +19,7 @@ preferredIconSize = 48
 clientDisplayModes = thumbnail icon filled
 iconFillSpec = orig mid mid #16191f
 fillSpec = orig mid mid #16191f
-background = orig mid mid #16191f77
+background = orig mid mid #282c3795
 
 [xinerama]
 showAll = true
@@ -27,7 +27,7 @@ showAll = true
 [normal]
 tint = #16191f
 tintOpacity = 0
-opacity = 200
+opacity = 150
 
 [highlight]
 tint = #16191f
@@ -42,9 +42,9 @@ offsetY = 20
 align = left
 border = #16191f
 background = #16191f
-opacity = 0
+opacity = 95
 text = #9baec8
-textShadow = black
+textShadow = #16191f
 font = Clear Sans Medium
 
 [bindings]

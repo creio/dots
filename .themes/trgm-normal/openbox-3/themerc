@@ -1,0 +1,64 @@
+# Theme name : teringatmantan 
+# Generate from obtgen
+
+# Section: menu
+menu.border.width:                      15
+menu.border.color:                      #dcdbd8
+menu.separator.color:                   #dcdbd8
+menu.*.bg:                              flat
+menu.*.bg.color:                        #dcdbd8
+menu.*.text.color:                      #0F1616
+menu.*.text.justify:                    center 
+menu.*.disabled.text.color:             #dcdbd8
+menu.*.active.text.color:               #dcdbd8
+menu.*.active.bg.color:                 #0F1616
+
+# Section: osd
+osd.border.width:                       0
+osd.border.color:                       #dcdbd8
+osd.bg:                                 flat
+osd.bg.color:                           #dcdbd8
+osd.label.bg:                           flat solid
+osd.label.bg.color:                     #dcdbd8
+osd.label.text.color:                   #0F1616
+osd.highlight.bg:                       flat solid
+osd.highlight.bg.color:                 #dcdbd8
+osd.unhighlight.bg:                     flat
+osd.unhighlight.bg.color:               #dcdbd8
+osd.button.unpressed.bg:                flat
+osd.button.unpressed.bg.color:          #dcdbd8
+osd.button.unpressed.*.border.color:    #dcdbd8
+osd.button.pressed.bg:                  flat
+osd.button.pressed.bg.color:            #dcdbd8
+osd.button.pressed.*.border.color:      #dcdbd8
+osd.button.focused.bg:                  flat  
+osd.button.focused.bg.color:            #dcdbd8
+osd.button.focused.*.border.color:      #dcdbd8
+osd.button.focused.box.color:           #dcdbd8
+
+# Section: window
+window.*.bg:                            flat parentrelative
+window.*.*.bg:                          flat parentrelative
+window.*.*.*.bg:                        flat parentrelative
+window.*.text.justify:                  left
+
+window.*.button.*.image.color:           #0F1616
+window.*.label.text.color:               #0F1616
+window.*.title.bg.color:                 #dcdbd8
+window.*.title.separator.color:          #dcdbd8
+window.*.border.color:                   #dcdbd8
+window.*.handle.bg.color:                #dcdbd8
+
+# Section: fonts
+window.active.label.text.font:          shadow=n
+window.inactive.label.text.font:        shadow=n
+menu.items.font:                        shadow=n
+menu.title.text.font:                   shadow=n
+
+# Section: misc
+border.width:                           0
+padding.width:                          10
+padding.height:                         10
+window.client.padding.height:           0
+window.client.padding.width:            0
+window.label.text.justify:              left
