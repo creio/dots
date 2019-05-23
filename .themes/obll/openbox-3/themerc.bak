@@ -52,6 +52,13 @@ window.inactive.title.bg.color:         #414458
 window.inactive.title.separator.color:  #414458
 window.inactive.border.color:           #67b2ef
 
+window.*.button.*.image.color:           #d9e1e8
+window.*.label.text.color:               #d9e1e8
+window.*.title.bg.color:                 #16191f
+window.*.title.separator.color:          #16191f
+window.*.border.color:                   #16191f
+window.*.handle.bg.color:                #d9e1e8
+
 # Section: fonts
 window.active.label.text.font:          shadow=n
 window.inactive.label.text.font:        shadow=n
@@ -61,7 +68,7 @@ menu.title.text.font:                   shadow=n
 # Section: misc
 border.width:                           0
 padding.width:                          10
-padding.height:                         4
-window.handle.width:                    0
+padding.height:                         7
+window.client.padding.height:           0
 window.client.padding.width:            0
 window.label.text.justify:              left

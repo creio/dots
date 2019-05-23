@@ -441,7 +441,7 @@ underline_char="-"
 #
 # Display colors 0-15 in the blocks. (16 colors)
 # neofetch --block_range 0 15
-block_range=(0 7)
+block_range=(0 15)
 
 # Toggle color blocks
 #
@@ -580,7 +580,7 @@ image_source=$HOME/.wall/lock.jpg
 # Example:
 # ascii_colors=(distro)      - Ascii is colored based on Distro colors.
 # ascii_colors=(4 6 1 8 8 6) - Ascii is colored using these colors.
-ascii_colors=(distro)
+ascii_colors=(1 7 2 3 4)
 
 # Bold ascii logo
 # Whether or not to bold the ascii logo.

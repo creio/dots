@@ -211,6 +211,10 @@ assign [class="(?i)telegram|discord"] $ws6
 assign [class="(?i)zathura|fbreader|mupdf"] $ws7
 
 
+#### hide/show bar
+#gaps top 32
+#bindsym $mod+p exec polybar-msg cmd toggle; exec i3-msg gaps top all toggle 32
+
 # start app
 # Update locker, run: betterlockscreen -u path/to/directory -r 1920x1080 -b 0.5
 bindsym $mod1+l exec --no-startup-id "betterlockscreen -l"

@@ -460,7 +460,7 @@
     </keybind>
     <keybind key="W-Right">
       <action name="UnmaximizeFull"/>
-      <!-- <action name="Undecorate"/> -->
+      <action name="Undecorate"/>
       <action name="MoveResizeTo">
         <width>50%</width>
       </action>
@@ -472,7 +472,7 @@
     </keybind>
     <keybind key="W-Left">
       <action name="UnmaximizeFull"/>
-      <!-- <action name="Undecorate"/> -->
+      <action name="Undecorate"/>
       <action name="MoveResizeTo">
         <width>50%</width>
       </action>

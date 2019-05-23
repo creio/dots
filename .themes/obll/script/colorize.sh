@@ -81,6 +81,13 @@ window.inactive.title.bg.color:         $(xrgc 8)
 window.inactive.title.separator.color:  $(xrgc 8)
 window.inactive.border.color:           $(xrgc 6)
 
+window.*.button.*.image.color:           $1
+window.*.label.text.color:               $1
+window.*.title.bg.color:                 $2
+window.*.title.separator.color:          $2
+window.*.border.color:                   $2
+window.*.handle.bg.color:                $(xrgc 6)
+
 # Section: fonts
 window.active.label.text.font:          shadow=n
 window.inactive.label.text.font:        shadow=n
@@ -91,7 +98,7 @@ menu.title.text.font:                   shadow=n
 border.width:                           0
 padding.width:                          10
 padding.height:                         7
-window.handle.width:                    0
+window.client.padding.height:           0
 window.client.padding.width:            0
 window.label.text.justify:              left
 EOF

@@ -1,5 +1,5 @@
 /* XPM */
-static char * hide_active_xpm[] = {
+static char * close_active_xpm[] = {
 "20 6 2 1",
 " 	c None",
 ".	c #C06C84",

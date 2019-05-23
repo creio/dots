@@ -50,7 +50,7 @@ our $CONFIG = {
   "force_icon_size"     => 0,
   "generic_fallback"    => 0,
   "gtk_rc_filename"     => "$ENV{HOME}/.gtkrc-2.0",
-  "icon_size"           => 32,
+  "icon_size"           => 24,
   "Linux::DesktopFiles" => {
                              desktop_files_paths     => [
                                                           "/usr/share/applications",

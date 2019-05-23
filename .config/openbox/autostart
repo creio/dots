@@ -17,6 +17,7 @@ sh ~/.config/polybar/launch.sh &
 # conky &
 #(sleep 10; ~/.bin/start-conkies.sh) &
 compton -b --config ~/.config/compton.conf &
+dunst &
 thunar --daemon &
 # urxvtd &
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &

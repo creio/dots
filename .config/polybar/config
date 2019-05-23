@@ -72,8 +72,10 @@ modules-right = fs wtr tor alsa xkeyboard off
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-override-redirect = false
 # wm-restack = i3
+override-redirect = false
+enable-ipc = true
+# "polybar-msg cmd toggle" hide/show bar
 
 
 # ##########################################
@@ -259,6 +261,31 @@ content = 
 content-foreground = ${colors.primary}
 click-left = ~/.bin/rofi-logout
 content-margin-right = 0
+
+
+
+[module/network]
+type = internal/network
+interface = enp2s5
+interval = 1.0
+
+# format-connected = "<ramp-signal> <label-connected>"
+format-connected = "  <label-connected> "
+format-packetloss = <animation-packetloss>
+label-connected =  %upspeed:2% %downspeed:2%
+# label-connected = %signal%%
+
+ramp-signal-0 = 😱
+ramp-signal-1 = 😠
+ramp-signal-2 = 😒
+ramp-signal-3 = 😊
+ramp-signal-4 = 😃
+ramp-signal-5 = 😈
+
+animation-packetloss-0 = ⚠
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = #000000
 
 
 
