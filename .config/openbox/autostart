@@ -7,11 +7,16 @@ tint2 -c ~/.config/tint2/my_ob.tint2rc &
 tint2 -c ~/.config/tint2/tray.tint2rc &
 sh ~/.config/polybar/launch.sh &
 # wallpaper
-# hsetroot -center $HOME/.wall/wl3.jpg &
+hsetroot -center $HOME/.wall/wl3.jpg &
 # nitrogen --restore &
-# xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop ~/.wall/wl7.gif &
+
+#### gif bg 
+# xwinwrap -b -fs -sp -fs -ov -ni -nf -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --x11-bypass-compositor=no --aid=no --hwdec=auto --really-quiet ~/.wall/heart.gif &
+#### mp4 bg 
+# xwinwrap -b -fs -sp -fs -ov -ni -nf -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --vd-lavc-fast --x11-bypass-compositor=no --aid=no --vo=xv --hwdec=auto --really-quiet ~/.wall/heart.mp4 &
 ## gifsicle --resize 1366x768 wl7.gif -o bg.gif
-# xwinwrap -ov -ni -fs -- gifview -w WID ~/.wall/bg.gif -a &
+# xwinwrap -b -fs -sp -fs -ov -ni -nf -- gifview -w WID ~/.wall/bg.gif -a &
+
 # feh --randomize --bg-fill ~/Pictures/dark
 # feh --bg-fill ~/Pictures/E0Zl1BM.jpg
 # conky &
@@ -29,7 +34,6 @@ xsettingsd &
 #xfce4-volumed &
 # xfce4-power-manager &
 #xscreensaver -no-splash &
-xfdesktop &
 pulseaudio --start &
 # mpd &
 /usr/lib/xfce-polkit/xfce-polkit &
@@ -42,4 +46,7 @@ telegram-desktop &
 (sleep 2; volumeicon) &
 (sleep 5; megasync) &
 (sleep 2; caffeine) &
+
+# devilspie ~/.devilspie/urxvt_bg.ds &
+# devilspie &
 #glava &

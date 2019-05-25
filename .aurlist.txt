@@ -6,6 +6,7 @@ cava
 ckbcomp
 clipit
 conky-cairo
+cornora-git
 ddgr
 discord
 dmenu2
@@ -14,10 +15,10 @@ fmui-git
 fortune-mod-ru
 fzf-extras
 gotop-bin
+gtk-youtube-viewer-git
 hardcode-fixer-git
 hardcode-tray-git
 i3ipc-glib-git
-i3lock-color
 inxi
 lemonbar-xft-git
 libc++
@@ -33,15 +34,11 @@ nomachine
 obmenu-generator
 oh-my-zsh-git
 oomox-git
-openbox-patched
 pacui
 peerflix
-perl-linux-desktopfiles
 polybar-git
 pscircle-git
-python-pystache
 qgnomeplatform-git
-resvg
 rxvt-unicode-patched
 sddm-config-editor-git
 shantz-xwinwrap-bzr
@@ -61,6 +58,7 @@ ttf-symbola
 ttf-wps-fonts
 virtualbox-ext-oracle
 wpa_actiond
+wpgtk-git
 wps-office
 wps-office-extension-russian-dictionary
 wps-office-mui-ru-ru

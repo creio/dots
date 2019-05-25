@@ -164,9 +164,9 @@ click-left = xdg-open https://mail.google.com
 type = custom/text
 content = 
 content-foreground = ${colors.primary}
-# click-left = "urxvt -geometry 190x50 -name 'tmux' -e tmux new -s proc -d ranger\; splitw -dv htop\; splitw -dh gotop\; splitw -dh\; attach &"
-click-left = "urxvt -geometry 189x48 -e sh -c '~/.bin/rxrun.sh'"
-click-right = "urxvt -geometry 189x48 -name 'tmux' -e sh -c 'tmux attach || tmux new -s work' &"
+# click-left = "urxvt -name tmux -geometry 190x50 -e tmux new -s proc -d ranger\; splitw -dv htop\; splitw -dh gotop\; splitw -dh\; attach &"
+click-left = "urxvt -name tmux -e sh -c '~/.bin/rxrun.sh'"
+click-right = "urxvt -name tmux -e sh -c 'tmux attach || tmux new -s work' &"
 
 
 
@@ -175,7 +175,8 @@ type = custom/text
 content = 
 content-foreground = ${colors.primary}
 #click-left = ulauncher
-click-left = "xfdesktop --menu >/dev/null 2>&1 &"
+#click-left = "xfdesktop --menu >/dev/null 2>&1 &"
+click-left = "jgmenu_run >/dev/null 2>&1 &"
 click-right = ~/.bin/rofi-favapp
 
 

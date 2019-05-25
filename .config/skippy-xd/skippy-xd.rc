@@ -27,7 +27,7 @@ showAll = true
 [normal]
 tint = #16191f
 tintOpacity = 0
-opacity = 150
+opacity = 220
 
 [highlight]
 tint = #16191f

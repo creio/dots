@@ -1,5 +1,5 @@
 [Configuration]
-FontName=rissole 12
+FontName=Hack Nerd Font Mono 9
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBellUrgent=FALSE
@@ -34,4 +34,5 @@ ColorBoldUseDefault=FALSE
 TabActivityColor=#dc322f
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingLines=5000
+BackgroundDarkness=0,000000
 

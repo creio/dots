@@ -915,6 +915,12 @@
       <focus>yes</focus>
       <desktop>2</desktop>
     </application>
+    <!-- <application name="urxvt_bg">
+      <maximized>yes</maximized>
+      <decor>no</decor>
+      <shade>no</shade>
+      <layer>below</layer>
+    </application> -->
     <!-- <application title="GLava">
       <fullscreen>yes</fullscreen>
       <maximized>yes</maximized>
