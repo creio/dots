@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec startx
 fi
 
@@ -47,6 +47,7 @@ export TERM="xterm-256color"
 export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'micro'; else echo 'nano'; fi)"
 export BROWSER="chromium"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 if [ -f ~/.alias_zsh ]; then
   . ~/.alias_zsh

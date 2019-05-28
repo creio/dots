@@ -9,7 +9,7 @@ tmux split-window -h
 tmux select-pane -t 1
 tmux resize-pane -L 5
 tmux split-window -v
-tmux resize-pane -D 5
+tmux resize-pane -D 1
 tmux send-keys "cava" C-m
 tmux select-pane -t 3
 tmux send-keys "fetch" C-m

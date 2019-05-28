@@ -66,13 +66,14 @@ font-4 = "unifont:fontformat=truetype:size=8:antialias=false;1"
 
 
 modules-left = app web term rss mail cpu memory uparch mpd
-modules-center = title
+modules-center = bspwm
 modules-right = fs wtr tor alsa xkeyboard off
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 # wm-restack = i3
+# wm-restack = bspwm
 override-redirect = false
 enable-ipc = true
 # "polybar-msg cmd toggle" hide/show bar
@@ -340,3 +341,36 @@ label-empty = %name%
 label-empty-padding = 4
 label-empty-foreground = ${colors.foreground}
 label-empty-background = ${colors.background}
+
+
+
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+ws-icon-4 = V;
+ws-icon-5 = VI;
+ws-icon-6 = VII;
+ws-icon-7 = VIII;
+ws-icon-8 = IX;
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+
+label-focused = %icon%
+label-focused-background = #88000000
+label-focused-underline= #ddd
+label-focused-padding = 4
+
+label-occupied = %icon%
+label-occupied-padding = 4
+
+label-urgent = %icon%
+label-urgent-padding = 4
+
+label-empty = %icon%
+label-empty-foreground = #44ffffff
+label-empty-padding = 4
