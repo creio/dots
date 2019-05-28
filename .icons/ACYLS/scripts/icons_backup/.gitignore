@@ -1,5 +1,0 @@
-# This is directory for user configs
-# Ignore everything in this directory
-*
-# Except this file
-!.gitignore
