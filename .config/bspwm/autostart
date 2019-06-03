@@ -1,0 +1,25 @@
+#! /bin/sh
+
+sxhkd &
+
+setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
+compton -b --config ~/.config/compton.conf &
+hsetroot -center $HOME/.wall/wl3.jpg &
+$HOME/.config/bspwm/polybar/launch.sh &
+tint2 -c ~/.config/tint2/tray.tint2rc &
+dunst &
+thunar --daemon &
+numlockx &
+xsettingsd &
+# pulseaudio --start &
+# mpd &
+/usr/lib/xfce-polkit/xfce-polkit &
+redshift-gtk &
+xfce4-power-manager &
+# caffeine &
+# udiskie -t &
+# nm-applet &
+greenclip daemon &
+unclutter &
+megasync &
+telegram-desktop &

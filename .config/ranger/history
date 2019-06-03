@@ -27,7 +27,6 @@ find icons
 open_with 4
 rename .xinitrc
 search .themes
-search .wall
 open_with 0
 filter
 findh
@@ -47,4 +46,5 @@ open_with
 rename xfce4.bak
 sear
 fin
+search .wall
 delete

@@ -76,6 +76,9 @@ C=${C:-1}
 CPU=$(ps aux | awk 'BEGIN {sum = 0} {sum += $3}; END {print sum}')
 CPU=${CPU/\.*}
 
+# wtr
+WTR=$(curl wttr.in?format=1)
+
 # For multi core/thread, CPU needs to be divided by # of cores for average
 (( C > 1 )) && CPU=$((CPU / C))
 (( CPU > 100 )) && CPU="$C cores @ 100% avg" || CPU="$C cores @ $CPU% avg"
@@ -83,7 +86,7 @@ CPU=${CPU/\.*}
 rep_char() {
     local str char num
     char="${1:-=}"
-    num="${2:-$((${#USR} + 4 + ${#HOST}))}"
+    num="${2:-$((${#USR} + 6 + ${#HOST}))}"
     str="$(printf "%${num}s")"
     echo "${str// /$char}"
 }
@@ -108,20 +111,21 @@ clear
  # ${FG6}->$FG   uptime$FG1:  ${FG4}${UPT:-$FB}
 cat <<- EOF
 
- ${FG5}===>$FG ${USR}${FG2}@${FG6}${HOST:-$FB}
- ${FG5}$(rep_char '=')>
- ${FG6}->$FG   wm$FG1:           ${FG4}$(cur_wm)
- ${FG6}->$FG   term$FG1:         ${FG4}${TRM:-$FB}
- ${FG6}->$FG   shell$FG1:        ${FG4}${SHLL:-$FB}
- ${FG6}->$FG   pkgs$FG1:         ${FG4}$(pkg_cnt)
- ${FG6}->$FG   kernel$FG1:       ${FG4}${KERN:-$FB}
- ${FG6}->$FG   distro$FG1:       ${FG4}${DIST:-$FB}
- ${FG6}->$FG   install$FG1:      ${FG4}${INST:-$FB}
- ${FG6}->$FG   /$FG1:            ${FG4}${ROOT:-$FB}
- ${FG6}->$FG   /home$FG1:        ${FG4}${HOME:-$FB}
- ${FG6}->$FG   /media/files$FG1: ${FG4}${FILES:-$FB}
- ${FG6}->$FG   ram$FG1: ${FG4}${MEM:-$FB}
- ${FG6}->$FG   cpu$FG1: ${FG4}${CPU:-$FB}
+ ${FG5}===$FG ${USR}${FG2}@${FG6}${HOST:-$FB}
+ ${FG5}$(rep_char '=')
+ ${FG6}->$FG wm$FG1:           ${FG4}$(cur_wm)
+ ${FG6}->$FG term$FG1:         ${FG4}${TRM:-$FB}
+ ${FG6}->$FG shell$FG1:        ${FG4}${SHLL:-$FB}
+ ${FG6}->$FG pkgs$FG1:         ${FG4}$(pkg_cnt)
+ ${FG6}->$FG kernel$FG1:       ${FG4}${KERN:-$FB}
+ ${FG6}->$FG distro$FG1:       ${FG4}${DIST:-$FB}
+ ${FG6}->$FG install$FG1:      ${FG4}${INST:-$FB}
+ ${FG6}->$FG /$FG1:            ${FG4}${ROOT:-$FB}
+ ${FG6}->$FG /home$FG1:        ${FG4}${HOME:-$FB}
+ ${FG6}->$FG /m/files$FG1:     ${FG4}${FILES:-$FB}
+ ${FG6}->$FG ram$FG1:          ${FG4}${MEM:-$FB}
+ ${FG6}->$FG cpu$FG1:          ${FG4}${CPU:-$FB}
+ ${FG6}->$FG wtr$FG1:          ${FG4}${WTR:-$FB}
 
  ${FG1}████${FG2}████${FG3}████${FG4}████${FG5}████${FG6}████${FG7}████${FG}
 

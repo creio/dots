@@ -17,11 +17,17 @@ alias vga="lspci -k | grep -A 2 -E '(VGA|3D)'"
 alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias iip="curl --max-time 10 -w '\n' http://ident.me"
 alias tb="nc termbin.com 9999"
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
 alias pkglist="pacman -Qneq > ~/.pkglist.txt"
 alias aurlist="pacman -Qmeq > ~/.aurlist.txt"
 
 alias run="dmenu_run -i -x 30 -y 30 -l 10 -w 400 -p 'Search:' -fn 'Clear Sans Medium-13' -nb '#141c21' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
+
+# blur img: blur 4 .wall/wl3.jpg blur.jpg
+function blur() {
+	convert -filter Gaussian -blur 0x$1 $2 $3
+}
 
 function tbg() {
 	urxvt -bg '[0]red' -b 0 -depth 32 +sb -name urxvt_bg &

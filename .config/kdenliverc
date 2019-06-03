@@ -1,18 +1,25 @@
+[FileDialogSize]
+Height 768=512
+Width 1366=836
+
+[KFileDialog Settings]
+Recent Files[$e]=2019-05-29_17-19.png,file:$HOME/Pictures/screen/2019-05-29_17-19.png
+Recent URLs[$e]=file:$HOME/Pictures/screen/
+
 [MainWindow]
-Height 768=678
-State=AAAA/wAAAAD9AAAAAQAAAAIAAATeAAABLPwBAAAADfsAAAAYAG4AbwB0AGUAcwBfAHcAaQBkAGcAZQB0AAAAAAD/////AAAAYAEAAAP7AAAADgBsAGkAYgByAGEAcgB5AAAAAAD/////AAAAZAEAAAP7AAAAGgBhAHUAZABpAG8AcwBwAGUAYwB0AHIAdQBtAAAAAAD/////AAAAZQEAAAP7AAAAFgBwAHIAbwBqAGUAYwB0AF8AYgBpAG4BAAAAAAAAAGAAAABgAQAAA/wAAABhAAAAxQAAAGAA////+gAAAAABAAAAAvsAAAAYAGUAZgBmAGUAYwB0AF8AcwB0AGEAYwBrAQAAAAD/////AAAAYAEAAAP7AAAAHgBjAGwAaQBwAF8AcAByAG8AcABlAHIAdABpAGUAcwAAAAAA/////wAAAGABAAAD/AAAAScAAAEdAAAAiwD////6AAAAAQEAAAAC+wAAAB4AdAByAGEAbgBzAGkAdABpAG8AbgBfAGwAaQBzAHQBAAAAAP////8AAAAEAQAAA/sAAAAWAGUAZgBmAGUAYwB0AF8AbABpAHMAdAEAAAAA/////wAAAAQBAAAD/AAAAkUAAAKZAAABRAD////6AAAAAQEAAAAC+wAAABgAYwBsAGkAcABfAG0AbwBuAGkAdABvAHIBAAAAAP////8AAAFEAQAAA/sAAAAeAHAAcgBvAGoAZQBjAHQAXwBtAG8AbgBpAHQAbwByAQAAAAD/////AAABRAEAAAP7AAAAGAB1AG4AZABvAF8AaABpAHMAdABvAHIAeQAAAAAA/////wAAAGABAAAD+wAAABYAdgBlAGMAdABvAHIAcwBjAG8AcABlAAAAAAD/////AAABmQEAAAP7AAAAEAB3AGEAdgBlAGYAbwByAG0AAAAAAP////8AAAC3AQAAA/sAAAAUAHIAZwBiAF8AcABhAHIAYQBkAGUAAAAAAP////8AAACpAQAAA/sAAAASAGgAaQBzAHQAbwBnAHIAYQBtAAAAAAD/////AAABRwEAAAP7AAAAFABzAGMAcgBlAGUAbgBnAHIAYQBiAAAAAAD/////AAAAYAEAAAMAAATeAAABFgAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAACAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAABgAZQB4AHQAcgBhAFQAbwBvAGwAQgBhAHIBAAADAv////8AAAAAAAAAAA==
+Height 768=674
+State=AAAA/wAAAAD9AAAAAQAAAAIAAAVWAAABLPwBAAAADfsAAAAYAG4AbwB0AGUAcwBfAHcAaQBkAGcAZQB0AAAAAAD/////AAAAYAEAAAP7AAAADgBsAGkAYgByAGEAcgB5AAAAAAD/////AAAAZAEAAAP7AAAAGgBhAHUAZABpAG8AcwBwAGUAYwB0AHIAdQBtAAAAAAD/////AAAAZQEAAAP7AAAAFgBwAHIAbwBqAGUAYwB0AF8AYgBpAG4BAAAAAAAAAREAAABmAQAAA/wAAAESAAABGAAAAGAA////+gAAAAABAAAAAvsAAAAYAGUAZgBmAGUAYwB0AF8AcwB0AGEAYwBrAQAAAAD/////AAAAYAEAAAP7AAAAHgBjAGwAaQBwAF8AcAByAG8AcABlAHIAdABpAGUAcwAAAAAA/////wAAAGABAAAD/AAAAisAAAFOAAAA1AD////6AAAAAQEAAAAC+wAAAB4AdAByAGEAbgBzAGkAdABpAG8AbgBfAGwAaQBzAHQBAAAAAP////8AAABgAQAAA/sAAAAWAGUAZgBmAGUAYwB0AF8AbABpAHMAdAEAAAAA/////wAAANQBAAAD/AAAA3oAAAHcAAABRAD////6AAAAAAEAAAAC+wAAABgAYwBsAGkAcABfAG0AbwBuAGkAdABvAHIBAAAAAP////8AAAFEAQAAA/sAAAAeAHAAcgBvAGoAZQBjAHQAXwBtAG8AbgBpAHQAbwByAQAAAAD/////AAABRAEAAAP7AAAAGAB1AG4AZABvAF8AaABpAHMAdABvAHIAeQAAAAAA/////wAAAGABAAAD+wAAABYAdgBlAGMAdABvAHIAcwBjAG8AcABlAAAAAAD/////AAABmQEAAAP7AAAAEAB3AGEAdgBlAGYAbwByAG0AAAAAAP////8AAAC3AQAAA/sAAAAUAHIAZwBiAF8AcABhAHIAYQBkAGUAAAAAAP////8AAACpAQAAA/sAAAASAGgAaQBzAHQAbwBnAHIAYQBtAAAAAAD/////AAABRwEAAAP7AAAAFABzAGMAcgBlAGUAbgBnAHIAYQBiAAAAAAD/////AAAAAAAAAAAAAAVWAAABXAAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAACAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAABgAZQB4AHQAcgBhAFQAbwBvAGwAQgBhAHIBAAADAv////8AAAAAAAAAAA==
 ToolBarsMovable=Disabled
 Width 1366=1246
 Window-Maximized 768x1366=true
 
 [Recent Dirs]
-KdenliveProjectsFolder[$e]=$HOME/Documents
+KdenliveClipFolder[$e]=$HOME/Pictures/screen/,$HOME/Documents
+KdenliveProjectsFolder[$e]=$HOME/Videos/KdenliveProject,$HOME/Documents/,$HOME/Documents
 
 [Recent Files]
-File1[$e]=$HOME/Documents/default-2500.kdenlive
-File2[$e]=$HOME/Documents/default.kdenlive
-Name1[$e]=default-2500.kdenlive
-Name2[$e]=default.kdenlive
+File1[$e]=$HOME/Videos/KdenliveProject/1080p30fps.kdenlive
+Name1[$e]=1080p30fps.kdenlive
 
 [Scope_Histogram]
 autoRefresh=true
@@ -52,20 +59,25 @@ rec601=false
 ColorScheme=Breeze, высококонтрастный вариант
 
 [bin]
-treeviewheaders=AAAA/wAAAAAAAAABAAAAAQAAAAABAAAAAAAAAAAAAAADBgAAAAIAAAACAAAAZAAAAAEAAABDAAAAZAAAAAMBAQABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAMAAABkAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAPoAAAAAD8=
+treeviewheaders=AAAA/wAAAAAAAAABAAAAAQAAAAABAAAAAAAAAAAAAAADBgAAAAIAAAACAAAAZAAAAAEAAABDAAAA5QAAAAMBAQABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAMAAADlAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAPoAAAAAD8=
 
 [capture]
+decklink_capturedevice=4294967295
+decklink_device_found=false
 decklink_extension=mov
 decklink_parameters=vcodec=dnxhd vb=145000k acodec=pcm_s16le threads=%threads
+detectedv4ldevices=4294967295
 grab_extension=mov
 grab_parameters=-crf 25 -vcodec libx264 -preset veryfast -threads 0
 v4l_extension=mpg
 v4l_parameters=qscale=4 ab=192k vcodec=mpeg2video acodec=mp2 threads=%threads
 
 [env]
+customprojectfolder=true
 defaultaudioapp=/usr/bin/audacity
 defaultimageapp=/usr/bin/gimp
-defaultprojectfolder[$e]=$HOME/Documents
+defaultprojectfolder[$e]=$HOME/Videos/KdenliveProject
+encodethreads=2
 ffmpegpath[$e]=/usr/bin/ffmpeg
 ffplaypath[$e]=/usr/bin/ffplay
 ffprobepath[$e]=/usr/bin/ffprobe
@@ -78,23 +90,28 @@ proxyparams=-vf scale=960:-2 -g 1 -bf 0 -vb 0 -qscale 6 -ab 128k -vcodec mpeg2vi
 
 [sdl]
 audiobackend=sdl2_audio
+blackmagic_output_device=-1
 sdlAudioBackend=sdl2_audio
+
+[shuttle]
+shuttlebuttons=button0=monitor_pause
 
 [timeline]
 trackheight=62
 
 [unmanaged]
 colortheme=/usr/share/color-schemes/BreezeDark.colors
-current_profile=atsc_1080p_25
-default_profile=atsc_1080p_25
+current_profile=atsc_1080p_30
+default_profile=atsc_1080p_30
 defaultrescaleheight=180
 force_breeze=true
 monitor_audio=false
-producerslist=ladspa.1047,ladspa.1050,abnormal,color,colour,consumer,hold,loader,melt,melt_file,noise,timewarp,tone,slowmotion,pgm,pango,pixbuf,avformat,avformat-novalidate,decklink,sdl_image,blipflash,count,qimage,qtext,kdenlivetitle,framebuffer,xml,xml-string,xml-nogl,frei0r.ising0r,frei0r.lissajous0r,frei0r.nois0r,frei0r.onecol0r,frei0r.partik0l,frei0r.plasma,frei0r.test_pat_B,frei0r.test_pat_C,frei0r.test_pat_G,frei0r.test_pat_I,frei0r.test_pat_L,frei0r.test_pat_R
+producerslist=abnormal,color,colour,consumer,hold,loader,melt,melt_file,noise,timewarp,tone,slowmotion,pgm,pango,pixbuf,avformat,avformat-novalidate,decklink,sdl_image,blipflash,count,qimage,qtext,kdenlivetitle,framebuffer,xml,xml-string,xml-nogl,frei0r.ising0r,frei0r.lissajous0r,frei0r.nois0r,frei0r.onecol0r,frei0r.partik0l,frei0r.plasma,frei0r.test_pat_B,frei0r.test_pat_C,frei0r.test_pat_G,frei0r.test_pat_I,frei0r.test_pat_L,frei0r.test_pat_R
 project_display_ratio=1.7777777777777777
+project_fps=30
 showOnMonitorScene=false
 use_dark_breeze=true
 widgetstyle=Breeze
 
 [version]
-version=19.04.1
+version=18.12.3

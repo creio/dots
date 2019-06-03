@@ -2,50 +2,32 @@ xsetroot -cursor_name left_ptr &
 xrdb -merge $HOME/.Xresources &
 xset +fp $HOME/.fonts/misc/ &
 xset -b
-# panel
 tint2 -c ~/.config/tint2/my_ob.tint2rc &
 tint2 -c ~/.config/tint2/tray.tint2rc &
 sh ~/.config/polybar/launch.sh &
-# wallpaper
 hsetroot -center $HOME/.wall/wl3.jpg &
-# nitrogen --restore &
-
-#### gif bg 
-# xwinwrap -b -fs -sp -fs -ov -ni -nf -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --x11-bypass-compositor=no --aid=no --hwdec=auto --really-quiet ~/.wall/heart.gif &
-#### mp4 bg 
-# xwinwrap -b -fs -sp -fs -ov -ni -nf -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --vd-lavc-fast --x11-bypass-compositor=no --aid=no --vo=xv --hwdec=auto --really-quiet ~/.wall/heart.mp4 &
-## gifsicle --resize 1366x768 wl7.gif -o bg.gif
-# xwinwrap -b -fs -sp -fs -ov -ni -nf -- gifview -w WID ~/.wall/bg.gif -a &
-
-# feh --randomize --bg-fill ~/Pictures/dark
-# feh --bg-fill ~/Pictures/E0Zl1BM.jpg
-# conky &
-#(sleep 10; ~/.bin/start-conkies.sh) &
 compton -b --config ~/.config/compton.conf &
-dunst &
-#thunar --daemon &
-# urxvtd &
+thunar --daemon &
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
 # setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
-# setxkbmap -option terminate:ctrl_alt_bksp &
 numlockx &
 xsettingsd &
 # xfsettingsd &
-#xfce4-volumed &
-# xfce4-power-manager &
-#xscreensaver -no-splash &
+xfce4-power-manager &
 pulseaudio --start &
 # mpd &
+dunst &
 /usr/lib/xfce-polkit/xfce-polkit &
-# easystroke &
-cornora -tl "skippy-xd" -tr "rofi -show run" &
-telegram-desktop &
+# cornora -tl "skippy-xd" -tr "rofi -show run" &
 (sleep 1; redshift-gtk) &
 (sleep 3; clipit) &
+# greenclip daemon &
 # (sleep 5; nm-applet) &
-(sleep 2; volumeicon) &
+# (sleep 2; volumeicon) &
 (sleep 5; megasync) &
-(sleep 2; caffeine) &
+# (sleep 2; caffeine) &
+# udiskie -t &
+telegram-desktop &
 
 # devilspie ~/.devilspie/urxvt_bg.ds &
 # devilspie &

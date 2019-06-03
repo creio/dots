@@ -1,0 +1,3 @@
+#!/bin/bash
+# Open a command in float mode
+bspc rule -a \* -o state=floating && $@

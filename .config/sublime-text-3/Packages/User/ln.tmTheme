@@ -10647,6 +10647,61 @@
 				<string>#9F9F9FFF</string>
 			</dict>
 		</dict>
+		<dict>
+			<key>scope</key>
+			<string>col_363636FF</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#363636FF</string>
+				<key>foreground</key>
+				<string>#B6B6B6FF</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>col_367BF0FF</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#367BF0FF</string>
+				<key>foreground</key>
+				<string>#F3F3F3FF</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>col_D41919FF</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#D41919FF</string>
+				<key>foreground</key>
+				<string>#D0D0D0FF</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>col_17917AFF</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#17917AFF</string>
+				<key>foreground</key>
+				<string>#E9E9E9FF</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>col_FFD86EFF</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FFD86EFF</string>
+				<key>foreground</key>
+				<string>#575757FF</string>
+			</dict>
+		</dict>
 	</array>
 	<key>uuid</key>
 	<string>dbe3b67f-56f7-4da3-9855-c64ea60ceaab</string>

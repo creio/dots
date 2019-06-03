@@ -4,8 +4,8 @@
   <property name="last-view" type="string" value="ThunarIconView"/>
   <property name="last-location-bar" type="string" value="ThunarLocationEntry"/>
   <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_75_PERCENT"/>
-  <property name="last-window-width" type="int" value="1246"/>
-  <property name="last-window-height" type="int" value="674"/>
+  <property name="last-window-width" type="int" value="774"/>
+  <property name="last-window-height" type="int" value="412"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-show-hidden" type="bool" value="true"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
@@ -33,6 +33,12 @@
     <value type="string" value="8caf1d8a-772f-48f2-905e-2601cac4f1c6"/>
     <value type="string" value="43177fd4-1d0e-4456-8fe8-974174f5468b"/>
     <value type="string" value="2019-05-24-08-20-48-00"/>
+    <value type="string" value="2019-06-02-00-39-39-00"/>
+    <value type="string" value="c8b6ec8d-52a2-464c-9be3-654ed2678ed5"/>
+    <value type="string" value="b0c81cf7-84c4-4a61-a5b2-311810517552"/>
+    <value type="string" value="2019-06-03-03-03-19-00"/>
+    <value type="string" value="66634e1f-6071-452c-859a-f0b2e12675f4"/>
+    <value type="string" value="bfb7b25f-39b1-4da3-abf3-c45f616af122"/>
   </property>
   <property name="last-statusbar-visible" type="bool" value="false"/>
   <property name="misc-single-click" type="bool" value="false"/>

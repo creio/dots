@@ -17,12 +17,12 @@ URxvt.font: xft:Hack Nerd Font Mono:size=9
 !URxvt.font: xft:Iosevka Nerd Font:size=9:antialias=true
 !URxvt.font: xft:Iosevka Term:size=9:antialias=true
 
-URxvt*geometry: 84x20
+URxvt*geometry: 84x22
 URxvt.internalBorder: 15
 URxvt.letterSpace: 0
 URxvt.antialias: true
 
-URxvt.termname: xterm-256color
+!URxvt.termname: xterm-256color
 URxvt.iconFile: /usr/share/icons/Papirus/48x48/apps/urxvt.svg
 
 URxvt.pointerBlank: true

@@ -1,7 +1,7 @@
-*.background:    [95]#1e1f28
+*.background:    #1e1f28
 *.foreground:    #FDFDFD
-*.cursorColor:  #C574DD
-*.border:       [95]#1e1f28
+*.cursorColor:   #C574DD
+*.border:        #1e1f28
 
 *.color0:   #2A253E
 *.color1:   #F84547
