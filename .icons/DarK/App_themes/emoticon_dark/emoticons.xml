@@ -1,0 +1,190 @@
+<?xml version='1.0'?>
+<messaging-emoticon-map>
+    <emoticon file="face-angel">
+        <string>O:)</string>
+        <string>O-)</string>
+        <string>O;</string>
+        <string>O:-)</string>
+        <string>0:-)</string>
+        <string>0=)</string>
+        <string>0:)</string>
+        <string>0;)</string>
+        <string>^j^</string>
+        <string>(a)</string>
+        <string>😇</string>
+    </emoticon>
+    <emoticon file="face-angry">
+        <string>X-(</string>
+        <string>:-@</string>
+        <string>:@</string>devilish
+        <string>>:(</string>
+        <string>>:-(</string>
+        <string>-_-+</string>
+        <string>>-(</string>
+        <string>:-||</string>
+    </emoticon>
+    <emoticon file="face-confused">
+        <string>:-S</string>
+        <string>:S</string>
+        <string>:-s</string>
+        <string>:s</string>
+        <string>O.o</string>
+        <string>=?</string>
+        <string>O.o?</string>
+        <string>:-Q</string>
+        <string>:-/</string>
+        <string>(@_@)</string>
+        <string>,':(</string>
+        <string>😕</string>
+    </emoticon>
+    <emoticon file="face-cool">
+        <string>B-)</string>
+        <string>(H)</string>
+        <string>(h)</string>
+        <string>8-)</string>
+        <string>8)</string>
+    </emoticon>
+    <emoticon file="face-crying">
+        <string>:'(</string>
+        <string>:'-(</string>
+        <string>;-(</string>
+        <string>;(</string>
+        <string>😢</string>
+        <string>😭</string>
+        <string>😿</string>
+        <string>:_(</string>
+        <string>T_T</string>
+        <string>;_;</string>
+        <string>QQ</string>
+        <string>:"-(</string>
+        <string>='(</string>
+        <string>8:::(</string>
+        <string>i_i</string>
+        <string>:*(</string>
+        <string>:((</string>
+    </emoticon>
+    <emoticon file="face-devilish">
+        <string>>:)</string>
+        <string>}:-)</string>
+        <string>3:)</string>
+        <string>(6)</string>
+        <string>]:-></string>
+    </emoticon>
+    <emoticon file="face-embarassed">
+        <string>:-$</string>
+        <string>:-[</string>
+        <string>😓</string>
+        <string>😓</string>
+        <string>😰</string>
+    </emoticon>
+    <emoticon file="face-glasses">
+        <string>-o-o-</string>
+        <string>??</string>
+        <string>\~/</string>
+        <string>8-)</string>
+        <string>()-()</string>
+        <string>\o-o/</string>
+    </emoticon>
+    <emoticon file="face-kiss">
+        <string>:-*</string>
+        <string>:-)*</string>
+        <string>:*</string>
+        <string>= #</string>
+        <string>;-(!)</string>
+        <string>:*)</string>
+        <string>(K)</string>
+        <string>(k)</string>
+        <string>😗</string>
+        <string>😙</string>
+        <string>😘</string>
+        <string>😚</string>
+        <string>😽</string>
+        <string>💋</string>
+        <string>💏</string>
+    </emoticon>
+    <emoticon file="face-laughing">
+        <string>XD</string>
+        <string>:))</string>
+        <string>:'D</string>
+        <string>=^D</string>
+    </emoticon>
+    <emoticon file="face-plain">
+        <string>:-|</string>
+    </emoticon>
+    <emoticon file="face-raspberry">
+        <string>:-t</string>
+        <string>:-P</string>
+        <string>:P</string>
+        <string>:-p</string>
+        <string>:p</string>
+        <string>😝</string>
+        <string>👅</string>
+        <string>😛</string>
+    </emoticon>
+    <emoticon file="face-sad">
+        <string>:-(</string>
+        <string>=(</string>
+        <string>:(</string>
+        <string>T.T</string>
+        <string>t.t</string>
+        <string>=[</string>
+        <string>:c</string>
+        <string>:C</string>
+        <string>D:</string>
+        <string>D=</string>
+        <string>Y_Y</string>
+        <string>y_y</string>
+        <string>😞</string>
+    </emoticon>
+    <emoticon file="face-smile-big">
+        <string>:-))</string>
+        <string>:|))</string>
+        <string>:-D</string>
+        <string>:D</string>
+        <string>😸</string>
+        <string>😁</string>
+        <string>😂</string>
+        <string>😃</string>
+        <string>😄</string>
+        <string>😀</string>
+    </emoticon>
+    <emoticon file="face-smile">
+        <string>:-)</string>
+        <string>:)</string>
+        <string>☺</string>
+        <string>😊</string>
+    </emoticon>
+    <emoticon file="face-smirk">
+        <string>(smirk)</string>
+    </emoticon>
+    <emoticon file="face-surprise">
+        <string>:-O</string>
+        <string>:O</string>
+        <string>:-o</string>
+        <string>:o</string>
+        <string>😮</string>
+    </emoticon>
+    <emoticon file="face-uncertain">
+        <string>:/</string>
+        <string>:\</string>
+    </emoticon>
+    <emoticon file="face-wink">
+        <string>;-)</string>
+        <string>;)</string>
+        <string>😉</string>
+        <string>😜</string>
+    </emoticon>
+    <emoticon file="face-yawn">
+        <string>(:|</string>
+        <string>|-O</string>
+    </emoticon>
+    <emoticon file="face-sick.png">
+        <string>:-&amp;</string>
+        <string>+o(</string>
+        <string>(s)</string>
+    </emoticon>
+    <emoticon file="face-worried.png">
+        <string>>w&lt;</string>
+        <string>/00\</string>
+    </emoticon>
+</messaging-emoticon-map>

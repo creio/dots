@@ -5,18 +5,20 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"Color Highlight",
 		"CSScomb",
 		"Emmet",
 		"Expand Selection to Quotes",
 		"Gist",
+		"gruvbox",
 		"Markdown Extended",
+		"One Dark Color Scheme",
 		"Package Control",
 		"Sass",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeLinter",
-		"Terminal",
-		"Theme - Spacegray"
+		"Terminal"
 	]
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme type="pidgin status icon" name="DarK" author="SSF" image="48/person.png">
+  <description>DarK status icon theme</description>
+  <icon id="pidgin-status-available" file="available.png" />
+  <icon id="pidgin-status-available-i" file="available.png" />
+  <icon id="pidgin-status-away" file="away.png" />
+  <icon id="pidgin-status-away-i" file="away.png" />
+  <icon id="pidgin-status-busy" file="busy.png" />
+  <icon id="pidgin-status-busy-i" file="busy.png" />
+  <icon id="pidgin-status-chat" file="chat.png" />
+  <icon id="pidgin-status-invisible" file="invisible.png" />
+  <icon id="pidgin-status-xa" file="extended-away.png" />
+  <icon id="pidgin-status-xa-i" file="extended-away.png" />
+  <icon id="pidgin-status-login" file="log-in.png" />
+  <icon id="pidgin-status-logout" file="log-out.png" />
+  <icon id="pidgin-status-offline" file="offline.png" />
+  <icon id="pidgin-status-person" file="person.png" />
+</theme>

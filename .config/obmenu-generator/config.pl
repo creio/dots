@@ -68,6 +68,6 @@ our $CONFIG = {
                            },
   "locale_support"      => 1,
   "missing_icon"        => "gtk-missing-image",
-  "terminal"            => "urxvt",
+  "terminal"            => "kitty",
   "VERSION"             => 0.85,
 }

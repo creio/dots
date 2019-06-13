@@ -23,7 +23,7 @@
        mouse into it, also raise the window -->
   </focus>
   <placement>
-    <policy>UnderMouse</policy>
+    <policy>Smart</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
@@ -378,17 +378,17 @@
     </keybind>
     <keybind key="A-r">
       <action name="Execute">
-        <command>urxvt -g 135x35+70+40 -e ranger</command>
+        <command>kitty --name=ranger -e ranger</command>
       </action>
     </keybind>
     <keybind key="A-t">
       <action name="Execute">
-        <command>findapp urxvt</command>
+        <command>findapp kitty</command>
       </action>
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>urxvt</command>
+        <command>kitty</command>
       </action>
     </keybind>
     <keybind key="A-Return">
@@ -896,6 +896,13 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
+    <application name="*">
+      <decor>no</decor>
+      <!-- <position force="yes">
+        <x>center</x>
+        <y>center</y>
+      </position> -->
+    </application>
     <application name="subl3">
       <maximized>yes</maximized>
       <decor>no</decor>
@@ -913,9 +920,31 @@
       <decor>no</decor>
       <shade>no</shade>
       <focus>yes</focus>
-      <desktop>2</desktop>
+      <!-- <desktop>2</desktop> -->
     </application>
-    <!-- <application name="urxvt_bg">
+    <application name="ranger">
+      <focus>yes</focus>
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <size>
+        <width>95/100</width>
+        <height>95/100</height>
+      </size>
+    </application>
+    <application name="newsboat">
+      <focus>yes</focus>
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <size>
+        <width>85/100</width>
+        <height>85/100</height>
+      </size>
+    </application>
+    <!-- <application name="kitty_bg">
       <maximized>yes</maximized>
       <decor>no</decor>
       <shade>no</shade>

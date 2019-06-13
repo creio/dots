@@ -1,6 +1,6 @@
 rofi.modi:                           window,drun,run
 rofi.sidebar-mode:                   true
-rofi.terminal:                       urxvt
+rofi.terminal:                       kitty
 rofi.run-command:                    {cmd}
 rofi.run-shell-command:              {terminal} -e {cmd}
 rofi.ssh-client:                     ssh
@@ -10,7 +10,7 @@ rofi.width:                          25
 rofi.lines:                          7
 rofi.columns:                        1
 rofi.font:                           ClearSansMedium 9
-rofi.drun-icon-theme:                Suru++
+rofi.icon-theme:                     ln-ico
 rofi.show-icons:                     true
 rofi.bw:                             10
 rofi.location:                       0

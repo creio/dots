@@ -17,7 +17,7 @@ alias vga="lspci -k | grep -A 2 -E '(VGA|3D)'"
 alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias iip="curl --max-time 10 -w '\n' http://ident.me"
 alias tb="nc termbin.com 9999"
-alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
 alias pkglist="pacman -Qneq > ~/.pkglist.txt"
 alias aurlist="pacman -Qmeq > ~/.aurlist.txt"
@@ -76,8 +76,8 @@ abuild () {
 }
 
 alias neoa="neofetch --ascii ~/.config/neofetch/tux"
-alias neo="neofetch --w3m ~/.config/neofetch/cn.jpg"
-# alias neo="neofetch --kitty ~/.config/neofetch/cn.jpg"
+# alias neo="neofetch --w3m ~/.config/neofetch/cn.jpg"
+alias neo="neofetch --kitty ~/.config/neofetch/cn.jpg"
 # alias neo="neofetch --w3m"
 
 # Погода, не только по городу, но и по месту. Нет привязки к регистру и языку.

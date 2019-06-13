@@ -17,8 +17,9 @@ xfce4-power-manager &
 pulseaudio --start &
 # mpd &
 dunst &
-/usr/lib/xfce-polkit/xfce-polkit &
-# cornora -tl "skippy-xd" -tr "rofi -show run" &
+unclutter --timeout 2 &
+/usr/bin/lxqt-policykit-agent &
+# cornora -bl "skippy-xd" -tl "rofi -show run" &
 (sleep 1; redshift-gtk) &
 (sleep 3; clipit) &
 # greenclip daemon &
@@ -28,6 +29,7 @@ dunst &
 # (sleep 2; caffeine) &
 # udiskie -t &
 telegram-desktop &
+# sh -c "kunst --music_dir /media/files/mega/music --size 250x250 --x 1080 --y 60"
 
 # devilspie ~/.devilspie/urxvt_bg.ds &
 # devilspie &

@@ -17,7 +17,7 @@ ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=3"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=white"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # fzf & fd
@@ -28,7 +28,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --preview 'file {}' --preview-window down:1"
 export FZF_COMPLETION_TRIGGER="~~"
 
-# export TERM="xterm-256color"
+export TERM="xterm-kitty"
 # export TERM="rxvt-unicode-256color"
 export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'micro'; else echo 'nano'; fi)"
 export BROWSER="chromium"

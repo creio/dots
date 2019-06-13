@@ -14,17 +14,18 @@ PREF_LIGHT_DECO="ll"
 PREF_LIGHT_BG="$HOME/.wall/wl1.jpg"
 PREF_LIGHT_ICO="ll-ico"
 
-sublime_theme_light="Spacegray Light"
+sublime_theme_light="gruvbox"
 sublime_colorscheme_light="Packages\\/User\\/Boxy Yesterday.tmTheme"
+
+sublime_theme_dark="gruvbox"
+sublime_colorscheme_dark="Packages\\/One Dark Color Scheme\\/One Dark.tmTheme"
+
 # preferences for dark theme mode
 OB_DARK_THEME="obln"
 PREF_DARK_THEME="ln"
 PREF_DARK_DECO="ln"
 PREF_DARK_BG="$HOME/.wall/wl3.jpg"
 PREF_DARK_ICO="ln-ico"
-
-sublime_theme_dark="Spacegray"
-sublime_colorscheme_dark="Packages\\/User\\/ln.tmTheme"
 
 
 # Xresources color theme ~/.colors
@@ -39,11 +40,6 @@ de_theme="$(xfconf-query -c xsettings -p /Net/ThemeName)"
 
 if [[ "$de_theme" == "$PREF_LIGHT_THEME" ]]; then
     xfconf-query -c xsettings -p /Net/ThemeName -s $PREF_DARK_THEME
-    for i in $(xfconf-query -c xfce4-desktop -p /backdrop -l|egrep -e "screen.*/monitor.*image-path$" -e "screen.*/monitor.*/last-image$"); do
-        # if [ ! -z "$PREF_DARK_BG" ]; then xfconf-query -c xfce4-desktop -p $i -n -t string -s $PREF_DARK_BG ; fi
-        if [ ! -z "$PREF_DARK_BG" ]; then xfconf-query -c xfce4-desktop -p $i -s $PREF_DARK_BG ; fi
-        # if [ ! -z "$PREF_DARK_BG" ]; then xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s $PREF_DARK_BG ; fi
-    done
     # xfconf-query -c xsettings -p /Gtk/DecorationLayout -s menu:
 
     gsettings set org.gnome.desktop.interface gtk-theme $PREF_DARK_THEME
@@ -71,13 +67,10 @@ if [[ "$de_theme" == "$PREF_LIGHT_THEME" ]]; then
     # qt5ct
     sed -i -e "s/icon_theme=$PREF_LIGHT_ICO/icon_theme=$PREF_DARK_ICO/g" "$qt_conf"
 
+    # wall
+    hsetroot -center $PREF_DARK_BG
 else
     xfconf-query -c xsettings -p /Net/ThemeName -s $PREF_LIGHT_THEME
-    for i in $(xfconf-query -c xfce4-desktop -p /backdrop -l|egrep -e "screen.*/monitor.*image-path$" -e "screen.*/monitor.*/last-image$"); do
-        # if [ ! -z "$PREF_LIGHT_BG" ]; then xfconf-query -c xfce4-desktop -p $i -n -t string -s $PREF_LIGHT_BG ; fi
-        if [ ! -z "$PREF_LIGHT_BG" ]; then xfconf-query -c xfce4-desktop -p $i -s $PREF_LIGHT_BG ; fi
-        # if [ ! -z "$PREF_LIGHT_BG" ]; then xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s $PREF_LIGHT_BG ; fi
-    done
     # xfconf-query -c xsettings -p /Gtk/DecorationLayout -s menu:
 
     gsettings set org.gnome.desktop.interface gtk-theme $PREF_LIGHT_THEME
@@ -104,4 +97,7 @@ else
 
     # qt5ct
     sed -i -e "s/icon_theme=$PREF_DARK_ICO/icon_theme=$PREF_LIGHT_ICO/g" "$qt_conf"
+
+    # wall
+    hsetroot -center $PREF_LIGHT_BG
 fi

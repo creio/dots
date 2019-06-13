@@ -30,7 +30,6 @@ USER_PATHS=(
 ".grub-themes"
 ".themes"
 ".icons"
-".urxvt"
 ".wall"
 # files
 ".aurlist.txt"
@@ -52,7 +51,7 @@ USER_PATHS=(
 "README.md"
 # config
 ".config/audacious/config"
-".config/awesome"
+# ".config/awesome"
 ".config/bspwm"
 ".config/sxhkd"
 ".config/cava"
@@ -70,8 +69,6 @@ USER_PATHS=(
 ".config/mpd"
 ".config/mpv"
 ".config/menus"
-".config/micro/bindings.json"
-".config/micro/settings.json"
 ".config/neofetch"
 ".config/netwmpager"
 ".config/newsboat"

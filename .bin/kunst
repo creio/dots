@@ -137,6 +137,8 @@ update_cover() {
 	# Get the status of the previous command
 	STATUS=$?
 
+	killall n30f
+
 	# Check if the file has a embbeded album art
 	if [ $STATUS -eq 0 ];then
         if [ ! $SILENT ];then 
@@ -187,7 +189,6 @@ pre_exit() {
     # exit kunst, an error will be shown
     # from kill and we dont want that
 	kill -9 $(cat /tmp/kunst.pid) &> /dev/null
- 
 }
 
 main() {
@@ -198,6 +199,8 @@ main() {
 	while true; do
 
 		update_cover
+		notify-send "Now Playing ♫" "$(mpc current)" &
+		n30f -x $X -y $Y $COVER -t Kunst -c "killall n30f" &
 
 		if [ $ARTLESS == true ];then
 			# Dhange the path to COVER because the music note
@@ -220,7 +223,8 @@ main() {
 			# Display the album art using sxiv
 			# sxiv -g $SIZE -b $COVER -N "Kunst" &
 
-			n30f -x $X -y $Y $COVER &
+			notify-send "Now Playing ♫" "$(mpc current)" &
+			n30f -x $X -y $Y $COVER -t Kunst -c "killall n30f" &
 			# Save the process ID so that we can kill
 			# sxiv when the user exits the script
 			echo $! >/tmp/kunst.pid

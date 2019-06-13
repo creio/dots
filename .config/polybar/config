@@ -1,32 +1,19 @@
 [colors]
 # background = ${xrdb:background}
-background = #16191f
-foreground = #9baec8
-
-primary = #81A1C1
-accent = #5E81AC
-red = #BF616A
-green = #A3BE8C
-yellow = #EBCB8B
-blue = #88C0D0
-magenta = #B48EAD
-cyan = #D08770
-white = #ECEFF4
-dark = #2E3440
-
-
+background = #902A253E
+foreground = ${xrdb:color7}
+accent = #958485CE
+text = #9baec8
 
 [settings]
 screenchange-reload = true
-
-
 
 [global/wm]
 margin-top = 0
 margin-bottom = 0
 
 
-# //////////////////////////////////////
+# /////////////////////////////////////
 [bar/top]
 # xrandr -q | grep " connected" | cut -d ' ' -f1
 #monitor = ${env:MONITOR:VGA-1}
@@ -35,42 +22,12 @@ monitor-fallback = VGA-1
 #monitor-fallback = HDMI1
 #monitor-strict = false
 width = 100%
-height = 20
+height = 24
 offset-x = 0
 offset-y = 0
 fixed-center = true
 bottom = false
 locale = ru_RU.UTF-8
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 0
-line-color = #f00
-
-border-size = 0
-border-color = #00000000
-
-padding-left = 3
-padding-right = 3
-
-module-margin-left = 5
-module-margin-right = 0
-
-font-0 = ClearSansMedium:size=9:antialias=false;1
-# Cat unicode: echo -e "\uF31A"
-font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
-font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
-font-3 = "Font Awesome 5 Brands:pixelsize=8;1"
-font-4 = "unifont:fontformat=truetype:size=8:antialias=false;1"
-
-
-modules-left = app web term rss mail cpu memory uparch mpd
-modules-center = bspwm
-modules-right = fs wtr tor alsa xkeyboard off
-
-cursor-click = pointer
-cursor-scroll = ns-resize
 
 # wm-restack = i3
 # wm-restack = bspwm
@@ -78,6 +35,35 @@ override-redirect = false
 enable-ipc = true
 # "polybar-msg cmd toggle" hide/show bar
 
+background = ${colors.background}
+foreground = ${colors.text}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 5
+module-margin-right = 0
+
+font-0 = "ClearSansMedium:size=9:antialias=false;1"
+# Cat unicode: echo -e "\uF31A"
+font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
+font-3 = "Font Awesome 5 Brands:pixelsize=8;1"
+font-4 = "Hack Nerd Font Mono:pixelsize=8:antialias=false;1"
+
+
+modules-left = app term rss mail cpu memory uparch title
+modules-center = 
+modules-right = tor mpd alsa date xkeyboard power
+
+cursor-click = pointer
+cursor-scroll = ns-resize
 
 # ##########################################
 [module/fs]
@@ -113,7 +99,8 @@ type = custom/script
 exec = ~/.config/polybar/uparch.sh
 interval = 600
 format-prefix = " "
-format-prefix-foreground = ${colors.red}
+format-prefix-foreground = ${colors.accent}
+click-left = "urxvt -name Pacui -e pacui &"
 
 
 
@@ -142,20 +129,21 @@ click-right = "systemctl stop tor"
 
 [module/title]
 type = internal/xwindow
-format-padding = 1
-label = "%title:0:20:...%"
-label-maxlen = 20
+format-prefix = "| "
+format-padding = 0
+label = "%title:0:30:...%"
+label-maxlen = 30
 
 
 
 [module/mail]
 type = custom/script
-; 600s = 10min
+# 600s = 10min
 # interval = 600
 # format = " <label> "
 # format-prefix = " "
 tail = true
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = ${colors.accent}
 exec = "~/.config/polybar/gmail/launch.py --prefix ' ' --color '#88C0D0' --nosound"
 click-left = xdg-open https://mail.google.com
 
@@ -164,39 +152,32 @@ click-left = xdg-open https://mail.google.com
 [module/term]
 type = custom/text
 content = 
-content-foreground = ${colors.primary}
+content-foreground = ${colors.accent}
 # click-left = "urxvt -name tmux -geometry 190x50 -e tmux new -s proc -d ranger\; splitw -dv htop\; splitw -dh gotop\; splitw -dh\; attach &"
-click-left = "urxvt -name tmux -e sh -c '~/.bin/rxrun.sh'"
-click-right = "urxvt -name tmux -e sh -c 'tmux attach || tmux new -s work' &"
+click-left = "kitty --name tmux -e sh -c '~/.bin/rxrun.sh' &"
+click-right = "kitty --name tmux -e sh -c 'tmux attach || tmux new -s work' &"
 
 
 
 [module/app]
 type = custom/text
-content = 
-content-foreground = ${colors.primary}
-#click-left = ulauncher
-#click-left = "xfdesktop --menu >/dev/null 2>&1 &"
-click-left = "jgmenu_run >/dev/null 2>&1 &"
+content = 
+content-foreground = ${xrdb:color7}
+content-background = ${colors.accent}
+content-padding = 3
+click-left = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
+# click-left = "jgmenu_run >/dev/null 2>&1 &"
 click-right = ~/.bin/rofi-favapp
+# click-right = mylaunchpad xfce-applications
 
 
 
 [module/rss]
 type = custom/text
 content = 
-content-foreground = ${colors.primary}
-click-left = urxvt -geometry 180x45 -e newsboat &
-click-right = 
-
-
-
-[module/web]
-type = custom/text
-content = 
-content-foreground = ${colors.primary}
-click-left = ~/.bin/findapp chromium &
-click-right = 
+content-foreground = ${colors.accent}
+click-left = kitty --name newsboat -e newsboat &
+click-right =
 
 
 
@@ -204,7 +185,7 @@ click-right =
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = ${colors.accent}
 label = %percentage%%
 
 
@@ -213,7 +194,7 @@ label = %percentage%%
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = ${colors.accent}
 label = %percentage_used%%
 
 
@@ -233,7 +214,7 @@ label-warn-foreground = ${colors.secondary}
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.primary}
+ramp-foreground = ${colors.accent}
 
 
 
@@ -244,7 +225,7 @@ format-muted =  0%
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
-ramp-volume-foreground = ${colors.primary}
+ramp-volume-foreground = ${colors.accent}
 
 
 
@@ -252,17 +233,8 @@ ramp-volume-foreground = ${colors.primary}
 type = internal/xkeyboard
 blacklist-0 = num lock
 format-prefix = " "
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = ${colors.accent}
 label = %layout%
-
-
-
-[module/off]
-type = custom/text
-content = 
-content-foreground = ${colors.primary}
-click-left = ~/.bin/rofi-logout
-content-margin-right = 0
 
 
 
@@ -291,6 +263,17 @@ animation-packetloss-1-foreground = #000000
 
 
 
+[module/kunst]
+type = custom/text
+content = 
+content-foreground = ${xrdb:color4}
+# content-background = ${colors.accent}
+content-padding = 0
+click-left = ~/.bin/start_kunst
+click-right = 
+
+
+
 [module/mpd]
 type = internal/mpd
 host = 127.0.0.1
@@ -304,11 +287,11 @@ icon-pause = 
 icon-stop = 
 icon-prev = 
 icon-next = 
-icon-play-foreground = ${colors.primary}
-icon-pause-foreground = ${colors.primary}
-icon-stop-foreground = ${colors.primary}
-icon-prev-foreground = ${colors.primary}
-icon-next-foreground = ${colors.primary}
+icon-play-foreground = ${colors.accent}
+icon-pause-foreground = ${colors.accent}
+icon-stop-foreground = ${colors.accent}
+icon-prev-foreground = ${colors.accent}
+icon-next-foreground = ${colors.accent}
 
 
 
@@ -324,53 +307,47 @@ label-monitor = %name%
 # tokens: %index% %icon% %name%
 label-active = %name%
 label-active-padding = 4
-label-active-foreground = ${colors.dark}
+label-active-foreground = ${xrdb:color7}
 label-active-background = ${colors.accent}
 
 label-occupied = %name%
-label-occupied-foreground = ${colors.foreground}
-label-occupied-background = ${colors.magenta}
+label-occupied-foreground = ${colors.accent}
+# label-occupied-background = ${colors.magenta}
 label-occupied-padding = 4
 
 label-urgent = %name%
 label-urgent-padding = 4
-label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
+label-urgent-foreground = ${xrdb:color5}
+# label-urgent-background = #bd2c40
 
 label-empty = %name%
 label-empty-padding = 4
-label-empty-foreground = ${colors.foreground}
-label-empty-background = ${colors.background}
+label-empty-foreground = ${colors.text}
+# label-empty-background = ${colors.background}
 
 
 
-[module/bspwm]
-type = internal/bspwm
+[module/date]
+type = internal/date
+interval = 1
+# date = "%e %b,"
+date-alt = "%e %B %Y,"
+time = "%H:%M"
+time-alt = "%H:%M:%S"
+format-prefix = " "
+format-prefix-foreground = ${colors.accent}
+# format-underline = #5294E2
+label =%{A3:gsimplecal & disown:}%date% %time%%{A} %{A}
+# label = %date% %time%
+# format-background = #132332
+label-foreground = ${colors.text}
+# format-padding =
 
-ws-icon-0 = I;
-ws-icon-1 = II;
-ws-icon-2 = III;
-ws-icon-3 = IV;
-ws-icon-4 = V;
-ws-icon-5 = VI;
-ws-icon-6 = VII;
-ws-icon-7 = VIII;
-ws-icon-8 = IX;
-ws-icon-default = 
 
-format = <label-state> <label-mode>
-
-label-focused = %icon%
-label-focused-background = #88000000
-label-focused-underline= #ddd
-label-focused-padding = 4
-
-label-occupied = %icon%
-label-occupied-padding = 4
-
-label-urgent = %icon%
-label-urgent-padding = 4
-
-label-empty = %icon%
-label-empty-foreground = #44ffffff
-label-empty-padding = 4
+[module/power]
+type = custom/text
+content = 
+content-foreground = ${xrdb:color7}
+content-background = ${colors.accent}
+content-padding = 3
+click-left = ~/.bin/rofi-logout

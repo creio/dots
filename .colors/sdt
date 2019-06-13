@@ -1,0 +1,45 @@
+! Challenger Deep Xresources palette
+
+! special
+*.foreground:   #cbe3e7
+*.background:   #1e1f28
+*.cursorColor:  #fbfcfc
+
+! black
+*.color0:       #100e23
+*.color8:       #565575
+
+! red
+*.color1:       #ff8080
+*.color9:       #ff5458
+
+! green
+*.color2:       #95ffa4
+*.color10:      #62d196
+
+! yellow
+*.color3:       #ffe9aa
+*.color11:      #ffb378
+
+! blue
+*.color4:       #91ddff
+*.color12:      #65b2ff
+
+! magenta
+*.color5:       #c991e1
+*.color13:      #906cff
+
+! cyan
+*.color6:       #aaffe4
+*.color14:      #63f2f1
+
+! white
+*.color7:       #cbe3e7
+*.color15:      #a6b3cc
+
+!State:           ´bg´,     ´fg´,     ´bgalt´,  ´hlbg´,   ´hlfg´
+rofi.color-normal: #1e1f28,  #d9e1e8,  #1e1f28,  #5A74CA,  #1e1f28
+rofi.color-urgent: #1e1f28,  #d9e1e8,  #1e1f28,  #5A74CA,  #1e1f28
+rofi.color-active: #1e1f28,  #d9e1e8,  #1e1f28,  #5A74CA,  #1e1f28
+!                  ´background´, ´border´
+rofi.color-window: #1e1f28,      #75444A57
