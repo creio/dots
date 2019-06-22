@@ -1,9 +1,11 @@
 [colors]
 # background = ${xrdb:background}
-background = #902A253E
+background = #16171A
 foreground = ${xrdb:color7}
-accent = #958485CE
-text = #9baec8
+accent = #798BC7
+# text = #9baec8
+text = #AEB4C6
+suffix = ${xrdb:color8}
 
 [settings]
 screenchange-reload = true
@@ -58,7 +60,7 @@ font-3 = "Font Awesome 5 Brands:pixelsize=8;1"
 font-4 = "Hack Nerd Font Mono:pixelsize=8:antialias=false;1"
 
 
-modules-left = app term rss mail cpu memory uparch title
+modules-left = app mail cpu memory uparch title
 modules-center = 
 modules-right = tor mpd alsa date xkeyboard power
 
@@ -100,7 +102,7 @@ exec = ~/.config/polybar/uparch.sh
 interval = 600
 format-prefix = " "
 format-prefix-foreground = ${colors.accent}
-click-left = "urxvt -name Pacui -e pacui &"
+click-left = "kitty --name Pacui -e pacui &"
 
 
 
@@ -130,8 +132,9 @@ click-right = "systemctl stop tor"
 [module/title]
 type = internal/xwindow
 format-prefix = "| "
+format-prefix-foreground = ${colors.text}
 format-padding = 0
-label = "%title:0:30:...%"
+label = "   %title:0:30:...%"
 label-maxlen = 30
 
 
@@ -141,21 +144,11 @@ type = custom/script
 # 600s = 10min
 # interval = 600
 # format = " <label> "
-# format-prefix = " "
+# format-prefix = "// "
 tail = true
 format-prefix-foreground = ${colors.accent}
 exec = "~/.config/polybar/gmail/launch.py --prefix ' ' --color '#88C0D0' --nosound"
 click-left = xdg-open https://mail.google.com
-
-
-
-[module/term]
-type = custom/text
-content = 
-content-foreground = ${colors.accent}
-# click-left = "urxvt -name tmux -geometry 190x50 -e tmux new -s proc -d ranger\; splitw -dv htop\; splitw -dh gotop\; splitw -dh\; attach &"
-click-left = "kitty --name tmux -e sh -c '~/.bin/rxrun.sh' &"
-click-right = "kitty --name tmux -e sh -c 'tmux attach || tmux new -s work' &"
 
 
 
@@ -169,15 +162,6 @@ click-left = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 
 # click-left = "jgmenu_run >/dev/null 2>&1 &"
 click-right = ~/.bin/rofi-favapp
 # click-right = mylaunchpad xfce-applications
-
-
-
-[module/rss]
-type = custom/text
-content = 
-content-foreground = ${colors.accent}
-click-left = kitty --name newsboat -e newsboat &
-click-right =
 
 
 
@@ -260,17 +244,6 @@ animation-packetloss-0 = ⚠
 animation-packetloss-0-foreground = #ffa64c
 animation-packetloss-1 = 
 animation-packetloss-1-foreground = #000000
-
-
-
-[module/kunst]
-type = custom/text
-content = 
-content-foreground = ${xrdb:color4}
-# content-background = ${colors.accent}
-content-padding = 0
-click-left = ~/.bin/start_kunst
-click-right = 
 
 
 

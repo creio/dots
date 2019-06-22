@@ -1,0 +1,248 @@
+#!/usr/bin/env bash
+# ┬┌─┬ ┬┌┐┌┌─┐┌┬┐
+# ├┴┐│ ││││└─┐ │
+# ┴ ┴└─┘┘└┘└─┘ ┴
+# Created by Siddharth Dushantha
+#
+# Dependencies: sxiv, imagemagick, bash, ffmpeg, mpc, jq
+
+
+VERSION=1.2.3
+COVER=/tmp/kunst.png
+MUSIC_DIR=~/Music/
+SIZE=250x250
+X=50
+Y=50
+
+
+show_help() {
+	echo "usage: kunst [-h] [--size "px"] [--music_dir "path/to/dir"] [--silent] [--version]"
+	echo " "
+	echo "┬┌─┬ ┬┌┐┌┌─┐┌┬┐"
+	echo "├┴┐│ ││││└─┐ │"
+	echo "┴ ┴└─┘┘└┘└─┘ ┴"
+	echo "Download and display album art or display embedded album art"
+	echo " "
+	echo "optional arguments:"
+	echo "   -h, --help            show this help message and exit"
+	echo "   --size                what size to display the album art in"
+	echo "   --x                   X"
+	echo "   --y                   Y"
+	echo "   --music_dir           the music directory which MPD plays from"
+	echo "   --silent              dont show the output"
+	echo "   --version             show the version of kunst you are using"
+}
+
+
+# Parse the arguments
+options=$(getopt -o h --long size:,x:,y:,music_dir:,version,silent,help -- "$@")
+eval set -- "$options"
+
+while true; do
+    case "$1" in 
+        --size)
+            shift;
+            SIZE=$1
+            ;;
+        --x)
+            shift;
+            X=$1
+            ;;
+        --y)
+            shift;
+            Y=$1
+            ;;
+        --music_dir)
+            shift;
+            MUSIC_DIR=$1
+            ;;
+        -h|--help)
+		    show_help
+			exit
+            ;;
+		--version)
+		    echo $VERSION
+			exit
+			;;
+        --silent)
+            SILENT=true
+            ;;
+        --)
+            shift
+            break
+            ;;
+    esac
+    shift
+done
+
+# This is a base64 endcoded image which will be used if
+# the file does not have an emmbeded album art.
+# The image is an image of a music note
+read -d '' MUSIC_NOTE << EOF
+iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJESURBVGhD7Zg/axRRFMVXAtpYphEVREKClnHfJI0MmReSfAC3tRejhaBgo70fwN7aD2BvEU0gfztbu5AqMxNjoVnvG87KZXy7z5m5dxLI/OCw8Pade+7M3n3Dbq+jo6OjY8RwMJhKk+hhlph3eRJ9w/LF5jCOr1PTj6jpD7mNjkjDkbDl4vFjpX87teZJlkSfSD9501zYfv5QJ1fyZHGexuJtZs12ZqMzX8NlwX4+nK3NXMutWaOm39Nd/u5rMCSUao80fjBNwY+p8Y+krNxQVaGsLsfWzFLYS2r4M30Rf5WbaCJE6OILlhIidPEFSwkRuviCpYQIXXzB1WX26bR6ky4v3OPriNCFB1YRHa079Pr6eKk/h1IFfA+WdOGBk+QeXtT0Ft3pV6e2fxf2f+AeLOnCA8tC0xv09H1xGi/cgWUi3I8lXXigEzX8u3gmWPP8JI5uYdt/w2thSRceSM0/zVfnb+CtWvB6WNJFOlC6XhDpQOl6QaQDpesFkQ6UrhdEOlC6XpA6gcPB/avumKXnxCadXHkha766tTr1GlE18CRZvEmN7nHfOMGiS5XA4mdmYg64Z5Jg06VKYHlEQoKtOVIz6zx8f0iwNUNyZt2F+3zjBFt9pGe22gWYFLb6lEckJNjGUmWEssR8ga0+0jNL9Z75fD7Rp7UOW32kZxb/1u37vFyUu+sODtjqozGzxaFADfprFM3vuD3Y3gytmf17LJPHXbgTNb5BWhe58yNan1lpWp9ZDVqdWS1am9mOjo7LRq/3B1ESKyYUVquzAAAAAElFTkSuQmCC
+EOF
+
+
+is_connected() {
+	# Check if internet is connected. We are using api.deezer.com to test
+	# if the internet is connected because if api.deezer.com is down or 
+	# the internet is not connected this script will work as expected
+	if ping -q -c 1 -W 1 api.deezer.com >/dev/null; then
+		connected=true
+	else
+        if [ ! $SILENT ];then
+            echo "kunst: unable to check online for the album art"
+        fi
+		connected=false
+	fi
+}
+
+
+get_cover_online() {
+	# Check if connected to internet
+	is_connected
+
+	if [ $connected == false ];then
+		ARTLESS=true
+		return
+	fi
+
+	# Try to get the album cover online from api.deezer.com
+	API_URL="http://api.deezer.com/search/autocomplete?q=$(mpc current)" && API_URL=${API_URL//' '/'%20'}
+
+	# Extract the albumcover from the json returned
+	IMG_URL=$(curl -s "$API_URL" | jq -r '.playlists.data[0] | .picture_big')
+
+	if [ "$IMG_URL" = '' ] || [ "$IMG_URL" = 'null' ];then
+        if [ ! $SILENT ];then
+            echo "error: cover not found online"
+        fi
+		ARTLESS=true
+	else
+        if [ ! $SILENT ];then
+            echo "kunst: cover found online"
+        fi
+		curl -o $COVER -s $IMG_URL
+		ARTLESS=false
+	fi
+
+}
+
+
+update_cover() {
+	# Extract the album art from the mp3 file and dont show the messsy
+	# output of ffmpeg
+	ffmpeg -i "$MUSIC_DIR$(mpc current -f %file%)" $COVER -y &> /dev/null
+
+	# Get the status of the previous command
+	STATUS=$?
+
+	# killall n30f
+
+	# Check if the file has a embbeded album art
+	if [ $STATUS -eq 0 ];then
+        if [ ! $SILENT ];then 
+            echo "kunst: extracted album art"
+        fi
+		ARTLESS=false
+	else
+        DIR="$MUSIC_DIR$(dirname "$(mpc current -f %file%)")"
+        if [ ! $SILENT ];then
+            echo "kunst: inspecting $DIR"
+        fi
+
+		# Check if there is an album cover/art in the folder.
+		# Look at issue #9 for more details
+        for CANDIDATE in "$DIR/cover."{png,jpg}; do
+            if [ -f "$CANDIDATE" ]; then
+                STATUS=0
+                ARTLESS=false
+                convert "$CANDIDATE" $COVER
+                if [ ! $SILENT ];then
+                    echo "kunst: found cover.png"
+                fi
+            fi
+        done
+    fi
+
+	if [ $STATUS -ne 0 ];then
+        if [ ! $SILENT ];then
+            echo "error: file does not have an album art"
+        fi
+		get_cover_online
+	fi
+
+	# Resize the image to 250x250
+	if [ $ARTLESS == false ]; then
+		convert $COVER -resize $SIZE $COVER
+        if [ ! $SILENT ];then
+            echo "kunst: resized album art to $SIZE"
+        fi
+	fi
+
+}
+
+pre_exit() {
+	# Get the proccess ID of kunst and kill it.
+    # We are dumping the output of kill to /dev/null
+    # because if the user quits sxiv before they
+    # exit kunst, an error will be shown
+    # from kill and we dont want that
+	kill -9 $(cat /tmp/kunst.pid) &> /dev/null
+}
+
+main() {
+
+	# Flag to run some commands only once in the loop
+	FIRST_RUN=true
+
+	while true; do
+
+		update_cover
+		# notify-send "Now Playing ♫" "$(mpc current)" &
+		n30f -x $X -y $Y $COVER -t Kunst -c "killall n30f" &
+
+		if [ $ARTLESS == true ];then
+			# Dhange the path to COVER because the music note
+			# image is a png not jpg
+			COVER=/tmp/kunst.png
+
+			# Decode the base64 encoded image and save it
+			# to /tmp/kunst.png
+			echo "$MUSIC_NOTE" | base64 --decode > $COVER
+		fi
+        
+        if [ ! $SILENT ];then
+            echo "kunst: swapped album art to $(mpc current)"
+            printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+        fi
+
+		if [ $FIRST_RUN == true ]; then
+			FIRST_RUN=false
+
+			# Display the album art using sxiv
+			# sxiv -g $SIZE -b $COVER -N "Kunst" &
+
+			# notify-send "Now Playing ♫" "$(mpc current)" &
+			n30f -x $X -y $Y $COVER -t Kunst -c "killall n30f" &
+			# Save the process ID so that we can kill
+			# sxiv when the user exits the script
+			echo $! >/tmp/kunst.pid
+		fi
+
+		# Waiting for an event from mpd; play/pause/next/previous
+		# this is lets kunst use less CPU :)
+		mpc idle &> /dev/null
+        if [ ! $SILENT ];then
+            echo "kunst: received event from mpd"
+        fi
+	done
+}
+
+# Disable CTRL-Z because if we allowed this key press,
+# then the script would exit but, sxiv would still be
+# running
+trap "" SIGTSTP
+
+trap pre_exit EXIT
+main

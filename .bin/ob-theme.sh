@@ -4,6 +4,7 @@
 sublime_conf="$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
 qt_conf="$HOME/.config/qt5ct/qt5ct.conf"
 ob_rc="$HOME/.config/openbox/rc.xml"
+ob_autostart="$HOME/.config/openbox/autostart"
 xsettings_d="$HOME/.xsettingsd"
 
 
@@ -12,6 +13,7 @@ OB_LIGHT_THEME="obll"
 PREF_LIGHT_THEME="ll"
 PREF_LIGHT_DECO="ll"
 PREF_LIGHT_BG="$HOME/.wall/wl1.jpg"
+PREF_LIGHT_BG_OB=".wall\\/wl1.jpg"
 PREF_LIGHT_ICO="ll-ico"
 
 sublime_theme_light="gruvbox"
@@ -25,6 +27,7 @@ OB_DARK_THEME="obln"
 PREF_DARK_THEME="ln"
 PREF_DARK_DECO="ln"
 PREF_DARK_BG="$HOME/.wall/wl3.jpg"
+PREF_DARK_BG_OB=".wall\\/wl3.jpg"
 PREF_DARK_ICO="ln-ico"
 
 
@@ -57,18 +60,22 @@ if [[ "$de_theme" == "$PREF_LIGHT_THEME" ]]; then
 
     # openbox theme
     sed -i -e "s/$OB_LIGHT_THEME/$OB_DARK_THEME/g" "$ob_rc"
+    sed -i -e "s/$PREF_LIGHT_BG_OB/$PREF_DARK_BG_OB/g" "$ob_autostart"
     openbox --reconfigure
 
     # urxvt color palet
-    sed -i -e "s/$xresources_color_light/$xresources_color_dark/g" "$xresources_conf"
-    xrdb -merge $HOME/.Xresources
-    kill -1 $(pidof urxvt)
+    # sed -i -e "s/$xresources_color_light/$xresources_color_dark/g" "$xresources_conf"
+    # xrdb -merge $HOME/.Xresources
+    # kill -1 $(pidof urxvt)
+
+    # kitty
+    # kitty @ set-colors -a $HOME/.config/kitty/night.conf
 
     # qt5ct
     sed -i -e "s/icon_theme=$PREF_LIGHT_ICO/icon_theme=$PREF_DARK_ICO/g" "$qt_conf"
 
     # wall
-    hsetroot -center $PREF_DARK_BG
+    hsetroot -fill $PREF_DARK_BG
 else
     xfconf-query -c xsettings -p /Net/ThemeName -s $PREF_LIGHT_THEME
     # xfconf-query -c xsettings -p /Gtk/DecorationLayout -s menu:
@@ -88,16 +95,20 @@ else
 
     # openbox theme
     sed -i -e "s/$OB_DARK_THEME/$OB_LIGHT_THEME/g" "$ob_rc"
+    sed -i -e "s/$PREF_DARK_BG_OB/$PREF_LIGHT_BG_OB/g" "$ob_autostart"
     openbox --reconfigure
 
     # urxvt color palet
-    sed -i -e "s/$xresources_color_dark/$xresources_color_light/g" "$xresources_conf"
-    xrdb -merge $HOME/.Xresources
-    kill -1 $(pidof urxvt)
+    # sed -i -e "s/$xresources_color_light/$xresources_color_dark/g" "$xresources_conf"
+    # xrdb -merge $HOME/.Xresources
+    # kill -1 $(pidof urxvt)
+
+    # kitty
+    # kitty @ set-colors -a $HOME/.config/kitty/light.conf
 
     # qt5ct
     sed -i -e "s/icon_theme=$PREF_DARK_ICO/icon_theme=$PREF_LIGHT_ICO/g" "$qt_conf"
 
     # wall
-    hsetroot -center $PREF_LIGHT_BG
+    hsetroot -fill $PREF_LIGHT_BG
 fi

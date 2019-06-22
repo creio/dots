@@ -1,5 +1,5 @@
 # geometry
-geometry = "320x34+20-10"
+geometry = "320x34+1-1"
 border_width = 0
 win_shift_x = 0
 win_shift_y = 0

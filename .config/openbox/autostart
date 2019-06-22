@@ -5,7 +5,7 @@ xset -b
 tint2 -c ~/.config/tint2/my_ob.tint2rc &
 tint2 -c ~/.config/tint2/tray.tint2rc &
 sh ~/.config/polybar/launch.sh &
-hsetroot -center $HOME/.wall/wl3.jpg &
+hsetroot -fill $HOME/.wall/wl3.jpg &
 compton -b --config ~/.config/compton.conf &
 thunar --daemon &
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
