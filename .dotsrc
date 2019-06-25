@@ -90,6 +90,7 @@ USER_PATHS=(
 ".config/viewnior"
 ".config/volumeicon"
 ".config/xfce4"
+".config/yay"
 ".config/youtube-viewer"
 ".config/compton.conf"
 ".config/kdenliverc"
