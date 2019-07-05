@@ -30,7 +30,7 @@ export FZF_COMPLETION_TRIGGER="~~"
 
 export TERM="xterm-kitty"
 # export TERM="rxvt-unicode-256color"
-export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'micro'; else echo 'nano'; fi)"
+export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'subl3'; else echo 'nano'; fi)"
 export BROWSER="chromium"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 export XDG_CONFIG_HOME="$HOME/.config"
