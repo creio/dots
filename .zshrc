@@ -17,8 +17,7 @@ ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=white"
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=white"
 
 # fzf & fd
 [[ -e "/usr/share/fzf/fzf-extras.zsh" ]] && source /usr/share/fzf/fzf-extras.zsh
@@ -28,8 +27,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --preview 'file {}' --preview-window down:1"
 export FZF_COMPLETION_TRIGGER="~~"
 
-export TERM="xterm-kitty"
-# export TERM="rxvt-unicode-256color"
+# export TERM="xterm-kitty"
+export TERM="rxvt-unicode"
 export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'subl3'; else echo 'nano'; fi)"
 export BROWSER="chromium"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -38,3 +37,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 [[ -f ~/.alias_zsh ]] && . ~/.alias_zsh
 
 # export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+PATH="/home/st/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/st/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/st/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/st/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/st/perl5"; export PERL_MM_OPT;

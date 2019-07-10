@@ -1,9 +1,10 @@
 # Dotfiles
 
  - Distro: [Ctlos/Arch Linux](https://ctlos.github.io/)
- - DE(WM): openbox
+ - DE(WM): xfwm
  - Panel: tint2,polybar
- - Demo video: [youtube.com](https://www.youtube.com/watch?v=EcEbV-CMGKU)
+ - Info: [r/unixporn](https://www.reddit.com/r/unixporn/comments/cbf98s/xfwm_light/etf1549/)
+ <!-- - Demo video: [youtube.com](https://www.youtube.com/watch?v=EcEbV-CMGKU) -->
  <!-- - Yt: [youtube.com](https://www.youtube.com/channel/UCPCp_ZnMKEwYdnA_YfOZrZg) -->
 
-![preview-ob-dark](https://raw.githubusercontent.com/creio/dots/master/screen/ob.png)
+![preview](https://raw.githubusercontent.com/creio/dots/master/screen/xfce-dui.png)

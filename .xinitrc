@@ -43,7 +43,9 @@ xsetroot -cursor_name left_ptr &
 # fc-cache -fv &
 
 # exec i3
-exec openbox-session
+# exec awesome
+# exec openbox-session
+exec startxfce4
 
 # ### bspwm autostart
 # [ -f /etc/xprofile ] && source /etc/xprofile

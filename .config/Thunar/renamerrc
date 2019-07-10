@@ -4,7 +4,7 @@ LastActiveRenamer=ThunarSbrReplaceRenamer
 
 [ThunarSbrReplaceRenamer]
 CaseSensitive=FALSE
-Replacement=icon
-Pattern=ico
+Replacement=inactive
+Pattern=active
 Regexp=FALSE
 

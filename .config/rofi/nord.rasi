@@ -53,6 +53,9 @@
 
 #window {
     background-color: @background;
+    border:       10px;
+    border-color: @nord6;
+    border-radius: 5px;
 }
 
 #mainbox {

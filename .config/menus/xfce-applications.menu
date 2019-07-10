@@ -24,6 +24,9 @@
 			<Filename>xdvi.desktop</Filename>
 		</Exclude>
 		<AppDir>/home/st/.local/share/applications</AppDir>
+		<Exclude>
+			<Filename>libreoffice-draw.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Accessories</Name>
@@ -49,6 +52,12 @@
 		</Exclude>
 		<Exclude>
 			<Filename>com.valvesoftware.Steam.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>NoMachine-base-xfce.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>NoMachine-status-xfce.desktop</Filename>
 		</Exclude>
 	</Menu>
 	<Menu>
@@ -101,6 +110,9 @@
 		<Exclude>
 			<Filename>assistant-qt4.desktop</Filename>
 		</Exclude>
+		<Exclude>
+			<Filename>electron.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>System</Name>
@@ -120,6 +132,12 @@
 		<Exclude>
 			<Filename>avahi-discover.desktop</Filename>
 		</Exclude>
+		<Exclude>
+			<Filename>Thunar.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>Thunar-bulk-rename.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Exclude>
 		<Filename>xfce4-about.desktop</Filename>
@@ -136,5 +154,32 @@
 		<Exclude>
 			<Filename>wps-office-wpp.desktop</Filename>
 		</Exclude>
+	</Menu>
+	<Layout>
+		<Merge type="menus"/>
+		<Menuname>Settings</Menuname>
+		<Separator/>
+		<Menuname>Internet</Menuname>
+		<Menuname>Graphics</Menuname>
+		<Menuname>Games</Menuname>
+		<Menuname>Accessories</Menuname>
+		<Menuname>Network</Menuname>
+		<Menuname>Multimedia</Menuname>
+		<Menuname>Education</Menuname>
+		<Menuname>Office</Menuname>
+		<Menuname>Other</Menuname>
+		<Menuname>Development</Menuname>
+		<Menuname>System</Menuname>
+		<Separator/>
+		<Filename>xfce4-about.desktop</Filename>
+		<Filename>xfce4-session-logout.desktop</Filename>
+		<Merge type="files"/>
+	</Layout>
+	<Menu>
+		<Name>Education</Name>
+		<Exclude>
+			<Filename>libreoffice-math.desktop</Filename>
+		</Exclude>
+		<AppDir>/home/st/.local/share/applications</AppDir>
 	</Menu>
 </Menu>

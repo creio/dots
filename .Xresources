@@ -9,7 +9,7 @@ Xft.lcdfilter: lcddefault
 #include ".colors/ln"
 
 !URxvt.font: -*-rissole-*
-URxvt.font: xft:Roboto Mono Medium:size=9
+URxvt.font: xft:Hack Nerd Font Mono:size=9
 
 URxvt*geometry: 84x22
 URxvt.internalBorder: 15
@@ -31,6 +31,15 @@ URxvt*scrollTtyKeypress: true
 ! Disable ISO 14755 unicode input so we can use Ctrl-Shift bindings
 URxvt.iso14755:        false
 URxvt.iso14755_52:     false
+
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,matcher,config-reload
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+URxvt.matcher.button: 1
+
+URxvt.clipboard.autocopy: true
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 ! ctrl + arrows
 URxvt.keysym.Control-Up:    \033[1;5A

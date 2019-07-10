@@ -323,4 +323,4 @@ content = 
 content-foreground = ${xrdb:color7}
 content-background = ${colors.accent}
 content-padding = 3
-click-left = ~/.bin/rofi-logout
+click-left = ~/.bin/xfce-logout

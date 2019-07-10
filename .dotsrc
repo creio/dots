@@ -86,7 +86,6 @@ USER_PATHS=(
 ".config/termite"
 ".config/Thunar"
 ".config/tint2"
-".config/kitty"
 ".config/viewnior"
 ".config/volumeicon"
 ".config/xfce4"

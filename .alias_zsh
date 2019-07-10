@@ -22,7 +22,7 @@ alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/maste
 alias pkglist="pacman -Qneq > ~/.pkglist.txt"
 alias aurlist="pacman -Qmeq > ~/.aurlist.txt"
 
-alias run="dmenu_run -i -x 30 -y 30 -l 10 -w 400 -p 'Search:' -fn 'Clear Sans Medium-13' -nb '#141c21' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
+alias run="dmenu_run -i -x 30 -y 30 -l 10 -w 400 -p 'Search:' -fn 'Clear Sans Medium-12' -nb '#282c37' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
 
 # blur img: blur 4 .wall/wl3.jpg blur.jpg
 function blur() {
@@ -41,6 +41,7 @@ zz() {
 	du -a . | awk '{print $2}' | fzf | xargs -r $EDITOR
 }
 
+# зависимость source-highlight
 hcat () {
 	/usr/bin/src-hilite-lesspipe.sh "$1" | less -m -N
 }
@@ -75,7 +76,7 @@ abuild () {
 	rm -rf ~/.build/$1
 }
 
-alias neoa="neofetch --ascii ~/.config/neofetch/tux"
+alias neoa="neofetch --ascii ~/.config/neofetch/mario"
 # alias neo="neofetch --w3m ~/.config/neofetch/cn.jpg"
 alias neo="neofetch --kitty ~/.config/neofetch/cn.jpg"
 # alias neo="neofetch --w3m"
@@ -240,7 +241,7 @@ alias yu="yay -Syu"
 alias yun="yay -Syu --noconfirm"
 alias yr="yay -R"
 alias yrn="yay -R --noconfirm"
-alias ygpg="yay --mflags '--nocheck --skippgpcheck --noconfirm'"
+alias yskip="yay --mflags '--nocheck --skippgpcheck --noconfirm'"
 alias ynskip="yay --mflags --skipinteg --noconfirm"
 
 # Python
