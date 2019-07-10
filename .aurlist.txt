@@ -10,7 +10,6 @@ downgrade
 fzf-extras
 gotop-bin
 gtk-youtube-viewer-git
-gweled
 hardcode-fixer-git
 hardcode-tray-git
 i3lock-fancy-rapid-git

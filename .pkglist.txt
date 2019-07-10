@@ -1,7 +1,6 @@
 acpid
 adobe-source-code-pro-fonts
 alacarte
-alacritty-terminfo
 alsa-utils
 arch-install-scripts
 archiso
@@ -19,7 +18,6 @@ bison
 breeze
 breeze-gtk
 breeze-icons
-bspwm
 btrfs-progs
 bzip2
 capitaine-cursors
@@ -30,7 +28,6 @@ coreutils
 cryptsetup
 ctags
 device-mapper
-devilspie
 dhcpcd
 diffutils
 docker
@@ -42,7 +39,6 @@ f2fs-tools
 fakeroot
 fasd
 fd
-fff
 ffmpeg
 ffmpegthumbnailer
 file
@@ -56,7 +52,6 @@ firejail
 fish
 flameshot
 flatpak
-flatpak-builder
 flex
 frei0r-plugins
 garcon
@@ -99,7 +94,6 @@ gvfs-mtp
 gvfs-nfs
 gvfs-smb
 gzip
-hashcat
 haveged
 highlight
 hsetroot
@@ -166,7 +160,6 @@ numlockx
 nvidia-390xx
 nvidia-390xx-settings
 nvidia-390xx-utils
-openbox
 opencl-headers
 opencl-nvidia-390xx
 openssh
@@ -190,7 +183,6 @@ procps-ng
 psmisc
 pulseaudio
 pulseaudio-alsa
-pulsemixer
 pv
 python
 python-ewmh
@@ -224,7 +216,6 @@ source-highlight
 squashfs-tools
 streamlink
 sudo
-sxhkd
 sxiv
 syntax-highlighting
 sysfsutils
@@ -265,7 +256,6 @@ veracrypt
 vi
 viewnior
 virtualbox
-volumeicon
 vte3
 w3m
 wget
