@@ -77,8 +77,8 @@ abuild () {
 }
 
 alias neoa="neofetch --ascii ~/.config/neofetch/mario"
-# alias neo="neofetch --w3m ~/.config/neofetch/cn.jpg"
-alias neo="neofetch --kitty ~/.config/neofetch/cn.jpg"
+alias neo="neofetch --w3m ~/.config/neofetch/cn.jpg"
+# alias neo="neofetch --kitty ~/.config/neofetch/cn.jpg"
 # alias neo="neofetch --w3m"
 
 # Погода, не только по городу, но и по месту. Нет привязки к регистру и языку.
