@@ -1,7 +1,7 @@
 # Background 1: Панель
 rounded = 0
 border_width = 0
-border_sides = LR
+border_sides =
 border_content_tint_weight = 0
 background_content_tint_weight = 0
 background_color = #17181a 100
@@ -20,7 +20,7 @@ panel_items = PPPPP
 panel_size = 100% 34
 panel_margin = 0 0
 panel_padding = 7 0 0
-panel_background_id = 1
+panel_background_id = 7
 wm_menu = 1
 panel_dock = 0
 panel_position = bottom center horizontal
@@ -53,7 +53,7 @@ button_dwheel_command =
 button_font = Font Awesome 5 Free 10
 button_font_color = #aeb4c6 100
 button_padding = 5 0
-button_background_id = 0
+button_background_id = 6
 button_centered = 0
 button_max_icon_size = 0
 
@@ -69,7 +69,7 @@ button_dwheel_command =
 button_font = Font Awesome 5 Free 8
 button_font_color = #aeb4c6 100
 button_padding = 5 0
-button_background_id = 0
+button_background_id = 6
 button_centered = 0
 button_max_icon_size = 0
 
@@ -85,7 +85,7 @@ button_dwheel_command =
 button_font = Font Awesome 5 Free 8
 button_font_color = #aeb4c6 100
 button_padding = 5 0
-button_background_id = 0
+button_background_id = 6
 button_centered = 0
 button_max_icon_size = 0
 
@@ -101,7 +101,7 @@ button_dwheel_command =
 button_font = Font Awesome 5 Free 8
 button_font_color = #aeb4c6 100
 button_padding = 5 0
-button_background_id = 0
+button_background_id = 6
 button_centered = 0
 button_max_icon_size = 0
 
@@ -117,6 +117,44 @@ button_dwheel_command =
 button_font = Font Awesome 5 Free 9
 button_font_color = #aeb4c6 100
 button_padding = 5 0
-button_background_id = 0
+button_background_id = 6
 button_centered = 0
 button_max_icon_size = 0
+# bg
+rounded = 15
+border_width = 0
+border_sides = TBLR
+background_color = #8a757e 100
+
+# panel
+panel_items = C:B
+panel_size = 110 30
+panel_position = bottom right horizontal
+panel_layer = bottom
+panel_monitor = all
+panel_margin = 10 10
+panel_padding = 10 8
+panel_background_id = 1
+
+separator = new
+separator_color = #2c3539 100
+separator_style = line
+separator_size = 1
+separator_padding = 0 0
+# clock
+time1_format = %H:%M
+time1_font = Unifont medium 8
+#%a %d %b
+clock_font_color = #2c3539 100
+clock_padding = 0 0
+clock_background_id = 0
+
+# battery
+bat1_format = %p
+bat1_font = Unifont medium 8
+battery_hide = never
+battery_low_status = 20
+# battery_low_cmd = cmd here
+battery_font_color = #2c3539 100
+battery_padding = 0 0
+battery_background_id = 0

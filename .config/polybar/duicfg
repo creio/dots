@@ -56,13 +56,13 @@ font-0 = "ClearSans:style=Bold:pixelsize=9:antialias=false;1"
 # Cat unicode: echo -e "\uF31A"
 font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
 font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
-font-3 = "Font Awesome 5 Brands:pixelsize=8;1"
-font-4 = "Hack Nerd Font:antialias=false:pixelsize=12;2"
+font-3 = "Hack Nerd Font:antialias=false:pixelsize=9;2"
+font-4 = "Weather Icons:style=Regular:pixelsize=9;2"
 
 
 modules-left = app mail cpu memory uparch title
-modules-center = 
-modules-right = tor mpd alsa date xkeyboard power
+modules-center =
+modules-right = wtr tor mpd alsa date xkeyboard power
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -94,7 +94,8 @@ exec = ~/.config/polybar/wtr.sh
 format-foreground = ${colors.text}
 # format-padding = 1
 interval = 600
-label-font = 0
+# label-font = 5
+# click-left =
 
 
 
@@ -113,7 +114,7 @@ type = custom/script
 interval = 600
 format = "<label>"
 format-prefix = "ip: "
-format-prefix-foreground = ${colors.magenta}
+format-prefix-foreground = ${colors.accent}
 # format-padding = 1
 exec = echo "$(wget -qO- https://canihazip.com/s | sed -e 's/[^[:digit:]\|.]//g')"
 exec-if = ping -c 1 ya.ru
@@ -125,7 +126,7 @@ type = custom/script
 exec = ~/.config/polybar/status tor
 interval = 6
 format = <label>
-format-suffix = "   \\"
+format-suffix = "    \\"
 format-suffix-foreground = ${colors.suffix}
 # format-padding = 1
 click-left = "systemctl restart tor"
@@ -148,9 +149,10 @@ type = custom/script
 # 600s = 10min
 # interval = 600
 # format = " <label> "
-# format-prefix = "// "
 tail = true
+format-prefix = " //    "
 format-prefix-foreground = ${colors.suffix}
+# format-prefix-margin = 2
 exec = "~/.config/polybar/gmail/launch.py --prefix ' ' --color '#798BC7' --nosound"
 click-left = xdg-open https://mail.google.com
 
@@ -162,8 +164,6 @@ content = 
 content-foreground = ${colors.text}
 content-background = ${colors.background}
 content-padding = 0
-content-suffix = "    //"
-content-suffix-foreground = ${colors.suffix}
 click-left = xfdesktop --menu
 click-right = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
 # click-left = "jgmenu_run >/dev/null 2>&1 &"
@@ -223,9 +223,11 @@ ramp-volume-foreground = ${colors.accent}
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-format-prefix = " "
+format-prefix = "  "
 format-prefix-foreground = ${colors.accent}
 label = %layout%
+format-suffix = "   \\"
+format-suffix-foreground = ${colors.suffix}
 
 
 
@@ -332,6 +334,4 @@ content = 
 content-foreground = ${colors.text}
 content-background = ${colors.background}
 content-padding = 0
-content-prefix = "\\    "
-content-prefix-foreground = ${colors.suffix}
 click-left = ~/.bin/xfce-logout

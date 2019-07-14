@@ -6,10 +6,11 @@
 	"installed_packages":
 	[
 		"A File Icon",
+		"ApacheConf",
 		"Color Highlight",
 		"CSScomb",
 		"Emmet",
-		"Expand Selection to Quotes",
+		"FTPSync",
 		"Gist",
 		"gruvbox",
 		"Markdown Extended",
@@ -19,6 +20,8 @@
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"SublimeLinter-php",
 		"Terminal"
 	]
 }

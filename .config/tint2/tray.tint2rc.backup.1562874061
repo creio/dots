@@ -1,7 +1,7 @@
-# Background 1: Панель, Системный лоток
+# Background 1: Панель
 rounded = 0
 border_width = 0
-border_sides = L
+border_sides = TBLR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
 background_color = #17181a 100
@@ -17,7 +17,7 @@ panel_items = S
 panel_size = 100% 34
 panel_margin = 0 0
 panel_padding = 5 0 0
-panel_background_id = 1
+panel_background_id = 6
 wm_menu = 1
 panel_dock = 0
 panel_position = bottom right horizontal
@@ -41,7 +41,7 @@ scale_relative_to_screen_height = 0
 #-------------------------------------
 # System tray (notification area)
 systray_padding = 8 2 4
-systray_background_id = 1
+systray_background_id = 5
 systray_sort = right2left
 systray_icon_size = 16
 systray_icon_asb = 40 0 0

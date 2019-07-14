@@ -27,7 +27,7 @@ sublime_colorscheme_dark="Packages\\/One Dark Color Scheme\\/One Dark.tmTheme"
 xresources_conf="$HOME/.Xresources"
 
 xresources_color_light="colors\\/ll"
-xresources_color_dark="colors\\/ln"
+xresources_color_dark="colors\\/materia"
 
 # rofi conf
 rofi_conf="$HOME/.config/rofi/config"
@@ -54,7 +54,7 @@ if [[ "$de_theme" == "$PREF_LIGHT_THEME" ]]; then
 
     gsettings set org.gnome.desktop.interface gtk-theme $PREF_DARK_THEME
     gsettings set org.gnome.desktop.wm.preferences button-layout '"menu:"'
-    
+
     sed -i -e "s/$sublime_colorscheme_light/$sublime_colorscheme_dark/g" "$sublime_conf"
     sed -i -e "s/$sublime_theme_light.sublime-theme/$sublime_theme_dark.sublime-theme/g" "$sublime_conf"
 
@@ -82,7 +82,7 @@ else
 
     gsettings set org.gnome.desktop.interface gtk-theme $PREF_LIGHT_THEME
     gsettings set org.gnome.desktop.wm.preferences button-layout '"menu:"'
-    
+
     sed -i -e "s/$sublime_colorscheme_dark/$sublime_colorscheme_light/g" "$sublime_conf"
     sed -i -e "s/$sublime_theme_dark.sublime-theme/$sublime_theme_light.sublime-theme/g" "$sublime_conf"
 
@@ -92,7 +92,7 @@ else
     kill -1 $(pidof urxvtd)
 
     sed -i -e "s/$PREF_DARK_ICO/$PREF_LIGHT_ICO/g" "$rofi_conf"
-    
+
     sed -i -e "s/$br_color_dark/$br_color_light/g" "$gtk_css"
 
     sed -i -e "s/icon_theme=$PREF_DARK_ICO/icon_theme=$PREF_LIGHT_ICO/g" "$qt_conf"

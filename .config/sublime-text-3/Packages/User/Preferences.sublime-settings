@@ -8,8 +8,11 @@
 		}
 	],
 	"color_scheme": "Packages/One Dark Color Scheme/One Dark.tmTheme",
+	"detect_indentation": false,
 	"draw_shadows": false,
+	"draw_white_space": "all",
 	"enable_tab_scrolling": false,
+	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Roboto Mono Medium",
 	"font_size": 9,
 	"gruvbox_accent_blue": true,
@@ -36,13 +39,24 @@
 	"ignored_packages":
 	[
 	],
+	"indent_guide_options":
+	[
+		"draw_active"
+	],
+	"indent_to_bracket": true,
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
 	"margin": 3,
+	"rulers":
+	[
+		120
+	],
 	"show_encoding": true,
 	"show_scroll_tabs": false,
 	"tab_size": 2,
 	"theme": "gruvbox.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
 	"update_check": false,
 	"word_wrap": true
 }

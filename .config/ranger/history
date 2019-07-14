@@ -1,7 +1,3 @@
-search .config
-search range
-rename scope.sh.bak
-rename scope.sh
 open_wit
 q
 Q
@@ -45,6 +41,10 @@ open_with
 rename xfce4.bak
 sear
 fin
-search .wall
 find zs
 delete
+rename .bin
+search .wall
+search wall
+search wa
+search wal

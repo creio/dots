@@ -28,7 +28,9 @@ export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --preview 'file 
 export FZF_COMPLETION_TRIGGER="~~"
 
 # export TERM="xterm-kitty"
-export TERM="rxvt-unicode"
+# export TERM="rxvt-unicode"
+# export TERM="rxvt-unicode-256color"
+export TERM="xterm-256color"
 export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'subl3'; else echo 'nano'; fi)"
 export BROWSER="chromium"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -37,8 +39,3 @@ export XDG_CONFIG_HOME="$HOME/.config"
 [[ -f ~/.alias_zsh ]] && . ~/.alias_zsh
 
 # export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
-PATH="/home/st/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/st/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/st/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/st/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/st/perl5"; export PERL_MM_OPT;
