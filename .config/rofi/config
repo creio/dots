@@ -10,7 +10,7 @@ rofi.width:                          25
 rofi.lines:                          7
 rofi.columns:                        1
 rofi.font:                           ClearSansMedium 9
-rofi.icon-theme:                     ln-ico
+rofi.icon-theme:                     dui-ico
 rofi.show-icons:                     true
 rofi.bw:                             7
 rofi.location:                       0
