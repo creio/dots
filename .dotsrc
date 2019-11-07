@@ -34,7 +34,7 @@ USER_PATHS=(
 # files
 ".aurlist.txt"
 ".pkglist.txt"
-# 
+#
 ".alias_zsh"
 ".dotsrc"
 ".gitignore"
@@ -74,6 +74,7 @@ USER_PATHS=(
 ".config/newsboat"
 ".config/nvim/init.vim"
 ".config/obmenu-generator"
+".config/oomox/colors"
 ".config/openbox"
 ".config/orcsome"
 ".config/polybar"
