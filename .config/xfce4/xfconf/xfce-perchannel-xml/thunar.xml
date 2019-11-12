@@ -5,8 +5,8 @@
   <property name="last-location-bar" type="string" value="ThunarLocationEntry"/>
   <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_75_PERCENT"/>
   <property name="last-show-hidden" type="bool" value="true"/>
-  <property name="last-window-width" type="int" value="764"/>
-  <property name="last-window-height" type="int" value="380"/>
+  <property name="last-window-width" type="int" value="781"/>
+  <property name="last-window-height" type="int" value="417"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="tree-icon-emblems" type="bool" value="true"/>
@@ -17,14 +17,19 @@
   </property>
   <property name="hidden-devices" type="array">
     <value type="string" value="b3c773a2-2bb6-4de2-9829-b87b2dd1f887"/>
-    <value type="string" value="b9494637-e3f4-4c2f-9f95-57c0b69e3db1"/>
     <value type="string" value="33de6b56-6568-46a4-9fcc-de16dc9562f3"/>
     <value type="string" value="9f7a7cce-a588-43bb-96c4-5262652cb4fc"/>
     <value type="string" value="be178ac6-44b1-46b2-a86a-466b3612ed54"/>
     <value type="string" value="77D95D3C0CBB4385"/>
+    <value type="string" value="2019-11-08-00-24-40-00"/>
+    <value type="string" value="2019-11-08-12-00-09-00"/>
+    <value type="string" value="a1947747-5155-45c5-a06d-3081577608c0"/>
+    <value type="string" value="b9494637-e3f4-4c2f-9f95-57c0b69e3db1"/>
+    <value type="string" value="b08f1f50-bd5c-4761-84a1-94ce1c0912c8"/>
+    <value type="string" value="9d0a9cc5-db13-4e1e-a4fe-48f5b04f32f1"/>
   </property>
-  <property name="last-separator-position" type="int" value="113"/>
-  <property name="last-statusbar-visible" type="bool" value="false"/>
+  <property name="last-separator-position" type="int" value="134"/>
+  <property name="last-statusbar-visible" type="bool" value="true"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
   <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
 </channel>
