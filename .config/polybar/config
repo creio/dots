@@ -61,7 +61,7 @@ font-4 = "Hack Nerd Font Mono:pixelsize=8:antialias=false;1"
 
 
 modules-left = app mail cpu memory uparch title
-modules-center = 
+modules-center =
 modules-right = tor mpd alsa date xkeyboard power
 
 cursor-click = pointer

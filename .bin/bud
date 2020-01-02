@@ -1,0 +1,112 @@
+#!/bin/sh -f
+#
+# pywalesque posix sh alternative.
+
+img() {
+    [ -d "$1" ] && {
+        set +f
+        set -f -- "$1/"*
+        shift "$(shuf -i "1-$#" -n 1)"
+    }
+
+    [ -f "${img:=$1}" ] || exit 1
+
+    printf '%s\n' "$img"
+}
+
+hex2rgb() {
+    set -- "${1##\#}"
+
+    r=${1%%????}
+    g=${1##??}
+    g=${g%%??}
+    b=${1##????}
+
+    r=$((0x$r))
+    g=$((0x$g))
+    b=$((0x$b))
+}
+
+mod() {
+    hex2rgb "$2"
+
+    # The operator is stored in a variable
+    # which makes shellcheck freak out.
+    # shellcheck disable=1102,2086
+    {
+        r=$((r $3 $4))
+        g=$((g $3 $4))
+        b=$((b $3 $4))
+    }
+
+    r=$((r > 255 ? 255 : r < 0 ? 0 : r))
+    g=$((g > 255 ? 255 : g < 0 ? 0 : g))
+    b=$((b > 255 ? 255 : b < 0 ? 0 : b))
+
+    export "$1=$(printf '%02x%02x%02x' "$r" "$g" "$b")"
+}
+
+col() {
+    cache_file=$(printf %s "$img" | base64)
+
+    # Backticks need to be used here to fix bugs in
+    # some specific POSIX shells.
+    #
+    # Word splitting is also intentional and safe here.
+    # shellcheck disable=2046,2006
+    if [ -f "$cache_dir/$cache_file" ]; then
+        paleta < "$cache_dir/$cache_file" &
+
+    else
+        set -- `\
+            convert "$img" \
+                -alpha off \
+                -resize 64x64 \
+                -posterize 16 \
+                -fill white \
+                -colorize 30% \
+                -modulate 125,175,100 \
+                -unique-colors \
+                txt:- |
+
+            while IFS='# ' read -r _ _ col _; do
+                i=$((i+1))
+
+                [ "$i" -lt 11 ] && continue
+                [ "$i" -gt 16 ] && continue
+
+                printf '%s\n' "$col"
+            done
+        `
+
+        # These variables are dynamically defined,
+        # ignore undeclared variable warnings.
+        # shellcheck disable=2154
+        {
+            mod bg "$2"  / 4
+            mod fg "$2"  + 150
+            mod co "$bg" + 125
+
+            set -- "$bg" "$@" "$fg" "$co" "$@" "$fg"
+        }
+
+        printf '%s\n' "$@" | paleta &
+        printf '%s\n' "$@" > "$cache_dir/$cache_file"
+    fi
+}
+
+main() {
+    mkdir -p "${cache_dir:=${XDG_CACHE_HOME:=${HOME}/.cache}/bud}"
+
+    img "$1"
+
+    display \
+        -page 3200x \
+        -sample 3200x \
+        -window root \
+        "$img" &
+
+    col &
+}
+
+main "$1"

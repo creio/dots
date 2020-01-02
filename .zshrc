@@ -38,4 +38,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 [[ -f ~/.alias_zsh ]] && . ~/.alias_zsh
 
-# export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+
+export PF_INFO="ascii os kernel wm shell pkgs memory palette"
+
+# export NVM_DIR="$HOME/.config/nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

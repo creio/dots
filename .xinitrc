@@ -46,6 +46,10 @@ xsetroot -cursor_name left_ptr &
 # exec awesome
 # exec openbox-session
 exec startxfce4
+# $HOME/.config/sowm/sowm.sh &
+# exec sowm
+# sxhkd -c $HOME/.config/berry/sxhkdrc &
+# exec berry
 
 # ### bspwm autostart
 # [ -f /etc/xprofile ] && source /etc/xprofile

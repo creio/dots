@@ -14,11 +14,11 @@ read -r X Y W H < <(slop -f "%x %y %w %h" -b 4 -t 0 -q)
 g=${W}x${H}+${X}+${Y}
 
 # Remove current URxvt rules
-bspc rule -r URxvt
+# bspc rule -r URxvt
 
 # Draw with floating rule
 # bspc rule -a URxvt -o state=floating follow=on focus=on
-urxvt -name Draw -g $g &
+urxvtc -name Draw -g $g &
 
 # Restore the rule
-bspc rule -a URxvt:Draw state=floating follow=on focus=on
+# bspc rule -a URxvt:Draw state=floating follow=on focus=on

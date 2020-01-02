@@ -19,7 +19,7 @@ ROOT_DIR="root"
 USER_PATHS=(
 # dir
 "screen"
-"startpage"
+"docs"
 ".bin"
 ".colors"
 ".fonts"

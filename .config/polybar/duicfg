@@ -60,7 +60,7 @@ font-3 = "Hack Nerd Font:antialias=false:pixelsize=9;2"
 font-4 = "Weather Icons:style=Regular:pixelsize=9;2"
 
 
-modules-left = app mail cpu memory uparch title
+modules-left = app cpu memory uparch title
 modules-center =
 modules-right = wtr tor mpd alsa date xkeyboard power
 
@@ -105,7 +105,7 @@ exec = ~/.config/polybar/uparch.sh
 interval = 600
 format-prefix = " "
 format-prefix-foreground = ${colors.accent}
-click-left = "urxvtc -name Pacui -e pacui"
+# click-left = "urxvtc -name Pacui -e pacui"
 
 
 
@@ -308,6 +308,16 @@ label-empty = %name%
 label-empty-padding = 4
 label-empty-foreground = ${colors.text}
 # label-empty-background = ${colors.background}
+
+
+[module/berry]
+type = custom/script
+interval = 0
+exec = xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}'
+format = <label>
+label = %output%
+label-background = ${colors.accent}
+label-padding = 4
 
 
 
