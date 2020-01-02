@@ -1,3 +1,7 @@
+---
+permalink: /
+---
+
 # Dotfiles
 
  - Distro: [Ctlos/Arch Linux](https://ctlos.github.io/)
