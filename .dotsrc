@@ -37,6 +37,7 @@ USER_PATHS=(
 #
 ".alias_zsh"
 ".dotsrc"
+".github"
 ".gitignore"
 ".gitconfig"
 ".gtkrc-2.0"
@@ -48,6 +49,7 @@ USER_PATHS=(
 ".xsettingsd"
 ".zshrc"
 ".face.icon"
+"_config.yml"
 "README.md"
 # config
 ".config/audacious/config"

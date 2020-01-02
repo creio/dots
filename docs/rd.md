@@ -1,5 +1,0 @@
----
-permalink: /
----
-
-{% include ../README.md %}

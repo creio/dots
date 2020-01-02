@@ -1,0 +1,24 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run script
+      run: |
+        cp -r README.md docs/README.md
+    - name: Commit files
+      run: |
+        git config --local user.email "mailcreio@gmail.com"
+        git config --local user.name "creio"
+        git add .
+        git commit -m "Add changes" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.PUSH_TOKEN }}
