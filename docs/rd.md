@@ -1,3 +1,5 @@
 ---
 permalink: /
 ---
+
+{% include ../README.md %}

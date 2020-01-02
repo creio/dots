@@ -30,7 +30,7 @@
     <value type="string" value="afa32d24-5db8-410d-ad89-ef227d27af78"/>
     <value type="string" value="ad3c8ab0-2d5c-4e7e-bd6a-adeac88aae90"/>
   </property>
-  <property name="last-separator-position" type="int" value="134"/>
+  <property name="last-separator-position" type="int" value="94"/>
   <property name="last-statusbar-visible" type="bool" value="true"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
   <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
