@@ -27,7 +27,7 @@ clock() {
 # loops
 loop() {
 	while :; do
-		echo "%{c}%{A:calendar &:}$(clock)%{A}$bg"
+		echo "%{c}%{A:calendar &:}$(clock)%{A}$f"
 		sleep "$refresh"
 	done |\
 
@@ -38,7 +38,7 @@ loop() {
 		-f "$font4" \
 		-g "75x$height+$offx+$offy" \
 		-F "$text" \
-		-B "$background" \
+		-B "$color0" \
 		-d \
 	| bash &
 
