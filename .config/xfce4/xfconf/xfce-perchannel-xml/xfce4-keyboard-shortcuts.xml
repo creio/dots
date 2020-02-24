@@ -34,7 +34,6 @@
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Super&gt;p" type="string" value="xfce4-settings-manager"/>
       <property name="&lt;Alt&gt;d" type="string" value="rofi -show drun"/>
-      <property name="&lt;Alt&gt;w" type="string" value="/home/st/.bin/findapp chromium"/>
       <property name="&lt;Alt&gt;t" type="string" value="/home/st/.bin/findapp urxvtc"/>
       <property name="&lt;Alt&gt;r" type="string" value="urxvtc -e ranger"/>
       <property name="&lt;Alt&gt;c" type="string" value="/home/st/.bin/window-center"/>
@@ -50,6 +49,7 @@
       <property name="&lt;Primary&gt;&lt;Super&gt;Print" type="string" value="scrot -d 5 &apos;scrot_%Y-%m-%d-%S_$wx$h.png&apos; -e &apos;mv $f ~/Pictures/screen ; viewnior ~/Pictures/screen/$f&apos;"/>
       <property name="&lt;Alt&gt;space" type="string" value="/home/st/.bin/toggle-tint_ob.sh"/>
       <property name="&lt;Primary&gt;space" type="string" value="xfdesktop --menu"/>
+      <property name="&lt;Alt&gt;w" type="string" value="/home/st/.bin/findapp firefox"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

@@ -22,7 +22,7 @@ alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/maste
 alias pkglist="pacman -Qneq > ~/.pkglist.txt"
 alias aurlist="pacman -Qmeq > ~/.aurlist.txt"
 
-alias run="dmenu_run -i -x 30 -y 30 -l 10 -w 400 -p 'Search:' -fn 'Clear Sans Medium-12' -nb '#282c37' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
+alias run="dmenu_run -l 10 -p 'Search:' -fn 'ClearSansMedium 12' -nb '#282c37' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
 
 # blur img: blur 4 .wall/wl3.jpg blur.jpg
 function blur() {
@@ -153,8 +153,8 @@ alias gp="git push"
 alias gpm="git push origin master"
 alias ghab="$BROWSER http://github.com/ctlos &"
 
-# tor chromium
-alias torc="$BROWSER --proxy-server='socks://127.0.0.1:9050' &"
+# tor chromium, min
+alias torc="min --proxy-server='socks://127.0.0.1:9050' &"
 
 # full screen flags -fs
 alias yt="youtube-viewer"

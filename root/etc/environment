@@ -3,3 +3,4 @@
 #
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
+QT_STYLE_OVERRIDE=qt5ct

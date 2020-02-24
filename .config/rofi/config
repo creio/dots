@@ -1,6 +1,6 @@
 rofi.modi:                           window,drun,run
 rofi.sidebar-mode:                   true
-rofi.terminal:                       kitty
+rofi.terminal:                       urxvt
 rofi.run-command:                    {cmd}
 rofi.run-shell-command:              {terminal} -e {cmd}
 rofi.ssh-client:                     ssh

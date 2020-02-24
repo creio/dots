@@ -100,6 +100,7 @@ USER_PATHS=(
 ".config/Trolltech.conf"
 ".config/user-dirs.dirs"
 ".config/user-dirs.locale"
+".mozilla/firefox/vos2wqqo.default-release/chrome/userChrome.css"
 )
 
 ROOT_PATHS=(
