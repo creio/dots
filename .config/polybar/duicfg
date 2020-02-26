@@ -346,3 +346,4 @@ content-foreground = ${colors.text}
 content-background = ${colors.background}
 content-padding = 0
 click-left = ~/.bin/xfce-logout
+click-right = "urxvtc -geometry 189x48 -e sh -c '~/.bin/rxrun.sh'"

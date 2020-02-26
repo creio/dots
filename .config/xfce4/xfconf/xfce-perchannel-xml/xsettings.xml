@@ -2,7 +2,7 @@
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="string" value="dui"/>
+    <property name="ThemeName" type="string" value="dui_materia"/>
     <property name="IconThemeName" type="string" value="dui-ico"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
