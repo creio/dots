@@ -19,9 +19,6 @@ alias iip="curl --max-time 10 -w '\n' http://ident.me"
 alias tb="nc termbin.com 9999"
 alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
-alias pkglist="pacman -Qneq > ~/.pkglist.txt"
-alias aurlist="pacman -Qmeq > ~/.aurlist.txt"
-
 alias run="dmenu_run -l 10 -p 'Search:' -fn 'ClearSansMedium 12' -nb '#282c37' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
 
 # blur img: blur 4 .wall/wl3.jpg blur.jpg
@@ -154,7 +151,7 @@ alias gpm="git push origin master"
 alias ghab="$BROWSER http://github.com/ctlos &"
 
 # tor chromium, min
-alias torc="min --proxy-server='socks://127.0.0.1:9050' &"
+alias torc="$BROWSER --proxy-server='socks://127.0.0.1:9050' &"
 
 # full screen flags -fs
 alias yt="youtube-viewer"
@@ -165,11 +162,11 @@ ytv () {
 # youtube-dl --ignore-errors -o '~/Видео/youtube/%(playlist)s/%(title)s.%(ext)s' https://www.youtube.com/playlist?list=PL-UzghgfytJQV-JCEtyuttutudMk7
 # Загрузка Видео ~/Videos или ~/Видео
 # Пример: dlv https://www.youtube.com/watch?v=gBAfejjUQoA
-ytv () {
+dlv () {
   youtube-dl --ignore-errors -o '~/Videos/youtube/%(title)s.%(ext)s' "$1"
 }
 # dlp https://www.youtube.com/playlist?list=PL-UzghgfytJQV-JCEtyuttutudMk7
-ytp () {
+dlp () {
   youtube-dl --ignore-errors -o '~/Videos/youtube/%(playlist)s/%(title)s.%(ext)s' "$1"
 }
 
@@ -220,6 +217,9 @@ alias sna="sudo nautilus ."
 alias h="htop"
 alias {v,vi,vim}="nvim"
 
+alias pkglist="pacman -Qneq > ~/.pkglist.txt"
+alias aurlist="pacman -Qmeq > ~/.aurlist.txt"
+
 alias packey="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Syy"
 alias sp="sudo pacman -S"
 alias spU="sudo pacman -U"
@@ -232,6 +232,7 @@ alias spr="sudo pacman -R"
 
 alias y="yay -S"
 alias yn="yay -S --noconfirm"
+alias yl="yay -S --noconfirm - < .aurlist.txt"
 alias ys="yay"
 alias ysn="yay --noconfirm"
 alias yc="yay -Sc"

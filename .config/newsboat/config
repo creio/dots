@@ -9,12 +9,12 @@ color info                 color4 default
 color article              color4 default
 
 # highlights
-highlight article "^(Feed|Title|Link|Date|Author):.*$" color4 default 
+highlight article "^(Feed|Title|Link|Date|Author):.*$" color4 default
 highlight article "https?://[^ ]+" color15 default protect
 
 # generals
 confirm-exit yes
-browser chromium
+browser firefox
 auto-reload yes
 cleanup-on-quit yes
 player mpv

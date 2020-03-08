@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/sh
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 
@@ -40,7 +40,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 export PF_INFO="ascii os kernel wm shell pkgs memory palette"
 
-# export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 # export PATH="$PATH:`yarn global bin`"
 # export NVM_DIR="$HOME/.config/nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

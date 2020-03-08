@@ -157,12 +157,12 @@
       <property name="&lt;Super&gt;x" type="string" value="hide_window_key"/>
       <property name="&lt;Super&gt;c" type="string" value="maximize_window_key"/>
       <property name="&lt;Super&gt;f" type="string" value="fullscreen_key"/>
-      <property name="&lt;Super&gt;y" type="string" value="above_key"/>
       <property name="&lt;Super&gt;Left" type="string" value="tile_left_key"/>
       <property name="&lt;Super&gt;Right" type="string" value="tile_right_key"/>
       <property name="&lt;Super&gt;d" type="string" value="show_desktop_key"/>
       <property name="&lt;Alt&gt;&lt;Super&gt;Left" type="string" value="move_window_left_workspace_key"/>
       <property name="&lt;Alt&gt;&lt;Super&gt;Right" type="string" value="move_window_right_workspace_key"/>
+      <property name="&lt;Super&gt;g" type="string" value="above_key"/>
     </property>
   </property>
   <property name="providers" type="array">
