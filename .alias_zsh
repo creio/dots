@@ -57,6 +57,7 @@ aget () {
   # curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
   cd $1
   makepkg -s
+  # makepkg -s --sign
   cd ..
 }
 
@@ -229,6 +230,7 @@ alias spcc="sudo pacman -Scc"
 alias spy="sudo pacman -Syy"
 alias spu="sudo pacman -Syu"
 alias spr="sudo pacman -R"
+alias spo="sudo pacman -S --overwrite='*'"
 
 alias y="yay -S"
 alias yn="yay -S --noconfirm"

@@ -24,7 +24,7 @@
     <property name="CanChangeAccels" type="empty"/>
     <property name="ColorPalette" type="empty"/>
     <property name="FontName" type="string" value="Clear Sans Medium, Medium 9"/>
-    <property name="MonospaceFontName" type="string" value="Roboto Mono Medium 9"/>
+    <property name="MonospaceFontName" type="string" value="Hack Nerd Font Mono 9"/>
     <property name="IconSizes" type="empty"/>
     <property name="KeyThemeName" type="empty"/>
     <property name="ToolbarStyle" type="empty"/>

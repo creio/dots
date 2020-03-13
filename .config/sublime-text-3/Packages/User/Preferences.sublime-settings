@@ -7,6 +7,7 @@
 			"selector": "text.html"
 		}
 	],
+  "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "work"],
 	"color_scheme": "Packages/One Dark Color Scheme/One Dark.tmTheme",
 	"detect_indentation": false,
 	"draw_shadows": false,

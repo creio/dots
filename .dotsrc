@@ -100,12 +100,14 @@ USER_PATHS=(
 ".config/Trolltech.conf"
 ".config/user-dirs.dirs"
 ".config/user-dirs.locale"
+".gnupg/gpg.conf"
 ".mozilla/firefox/vos2wqqo.default-release/chrome/userChrome.css"
 )
 
 ROOT_PATHS=(
 "/etc/environment"
 "/etc/fstab"
+"/etc/makepkg.conf"
 "/etc/pacman.conf"
 "/etc/sddm.conf"
 "/etc/vconsole.conf"

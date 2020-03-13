@@ -38,7 +38,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 [[ -f ~/.alias_zsh ]] && . ~/.alias_zsh
 
-export PF_INFO="ascii os kernel wm shell pkgs memory palette"
+export PF_INFO="ascii os kernel wm shell pkgs memory"
 
 export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 # export PATH="$PATH:`yarn global bin`"
