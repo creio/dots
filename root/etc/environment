@@ -5,3 +5,4 @@
 #
 QT_STYLE_OVERRIDE=qt5ct
 VDPAU_DRIVER=nvidia
+#BROWSER=/usr/bin/chromium

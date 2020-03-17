@@ -1,3 +1,4 @@
 TerminalEmulator=urxvt
-WebBrowser=firefox
+WebBrowser=chromium
+FileManager=custom-FileManager
 

@@ -52,13 +52,19 @@ vboxshare () {
 }
 
 # aur pkg
-aget () {
+amake () {
   git clone https://aur.archlinux.org/"$1".git
   # curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
   cd $1
   makepkg -s
   # makepkg -s --sign
   cd ..
+}
+
+aget () {
+  git clone https://aur.archlinux.org/"$1".git
+  # curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
+  cd $1
 }
 
 # build and install pkg from aur
@@ -123,9 +129,6 @@ alias ctliso="cd /media/files/github/ctlosiso"
 alias wiki="cd /media/files/github/wiki"
 alias ghc="cd /media/files/github/creio"
 alias ghcd="cd /media/files/github/creio/dots"
-#
-alias gl="cd /media/files/gitlab"
-alias glc="cd /media/files/gitlab/creio"
 
 gc () {
   git clone "$1"
@@ -137,7 +140,7 @@ function gcj () {
 }
 alias gi="git init"
 alias gs="git status"
-alias glog="git log --stat --pretty=oneline --graph --date=short"
+alias gl="git log --stat --pretty=oneline --graph --date=short"
 alias gg="gitg &"
 alias gad="git add --all"
 gac () {
@@ -151,7 +154,7 @@ alias gp="git push"
 alias gpm="git push origin master"
 alias ghab="$BROWSER http://github.com/ctlos &"
 
-# tor chromium, min
+# tor chromium
 alias torc="$BROWSER --proxy-server='socks://127.0.0.1:9050' &"
 
 # full screen flags -fs
@@ -195,7 +198,7 @@ wgetw () {
   wget -rkx "$1"
 }
 iso () {
-  sudo dd bs=4M if=/home/st/files/linux/distr/"$1".iso of=/dev/"$2" status=progress && sync
+  sudo dd bs=4M if="$1" of=/dev/"$2" status=progress && sync
 }
 
 
@@ -218,19 +221,23 @@ alias sna="sudo nautilus ."
 alias h="htop"
 alias {v,vi,vim}="nvim"
 
+# LANG=C pacman -Sl | awk '/\[installed\]$/ {print $2}' > ~/.pkglist.txt
+# LANG=C pacman -Sl | awk '/\[installed\]$/ {print $1 "/" $2 "-" $3}' > ~/.pkglist.txt
 alias pkglist="pacman -Qneq > ~/.pkglist.txt"
 alias aurlist="pacman -Qmeq > ~/.aurlist.txt"
 
 alias packey="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Syy"
 alias sp="sudo pacman -S"
+alias spo="sudo pacman -S --overwrite='*'"
 alias spU="sudo pacman -U"
+alias spoU="sudo pacman -U --overwrite='*'"
+alias spo="sudo pacman -S --overwrite='*'"
 alias sps="sudo pacman -Ss"
 alias spc="sudo pacman -Sc"
 alias spcc="sudo pacman -Scc"
 alias spy="sudo pacman -Syy"
 alias spu="sudo pacman -Syu"
 alias spr="sudo pacman -R"
-alias spo="sudo pacman -S --overwrite='*'"
 
 alias y="yay -S"
 alias yn="yay -S --noconfirm"

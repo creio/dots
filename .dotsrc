@@ -18,7 +18,6 @@ ROOT_DIR="root"
 # file paths which will be backed up into the directories above
 USER_PATHS=(
 # dir
-"screen"
 "docs"
 ".bin"
 ".colors"
@@ -54,6 +53,7 @@ USER_PATHS=(
 # config
 ".config/audacious/config"
 # ".config/awesome"
+".config/berry"
 ".config/bspwm"
 ".config/sxhkd"
 ".config/cava"
@@ -78,7 +78,6 @@ USER_PATHS=(
 ".config/obmenu-generator"
 ".config/oomox/colors"
 ".config/openbox"
-".config/orcsome"
 ".config/polybar"
 ".config/qt5ct"
 ".config/ranger"
@@ -87,20 +86,18 @@ USER_PATHS=(
 ".config/streamlink"
 ".config/sublime-text-3/Packages/User"
 ".config/termite"
-".config/Thunar"
 ".config/tint2"
 ".config/viewnior"
 ".config/volumeicon"
 ".config/xfce4"
 ".config/yay"
 ".config/youtube-viewer"
-".config/compton.conf"
+".config/picom.conf"
 ".config/kdenliverc"
 ".config/redshift.conf"
 ".config/Trolltech.conf"
 ".config/user-dirs.dirs"
 ".config/user-dirs.locale"
-".gnupg/gpg.conf"
 ".mozilla/firefox/vos2wqqo.default-release/chrome/userChrome.css"
 )
 

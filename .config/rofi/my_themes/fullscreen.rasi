@@ -1,0 +1,55 @@
+configuration {
+	show-icons: true;
+	icon-theme: "Papirus-Dark";
+	location: 2;
+}
+
+* {
+	background-color: black;
+	text-color: white;
+}
+
+window {
+	fullscreen: false;
+	width: 100%;
+	height: 96.6%;
+	font: "Noto Sans 11";
+}
+
+prompt { enabled: false; }
+
+entry  {
+	padding: 10px 0 10px 0;
+	horizontal-align: 0.5;
+	margin: 65px 40% 0 40%;
+	color: #333;
+	background-color: #fff;
+	font: "Noto Sans 14";
+	border-radius: 30px;
+	placeholder: "Pesquisar";
+}
+
+listview {
+	columns: 4;
+	margin: 5% 32% 5% 32%;
+}
+
+element {
+	padding: 0.8%;
+	margin: 1%;
+	orientation: vertical;
+}
+
+element selected {
+	text-color: #fff;
+	background-color: #111;
+	border-radius: 10px;
+}
+
+element-icon {
+	size: 60;
+}
+
+element-text {
+	horizontal-align: 0.5;
+}

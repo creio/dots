@@ -1,9 +1,9 @@
 # colors
 color background           color4 default
 color listnormal           color4 default
-color listfocus            color15 color4
+color listfocus            color0 color4
 color listnormal_unread    color4 default
-color listfocus_unread     color15 color4
+color listfocus_unread     color0 color4
 #color info                 color31 default
 color info                 color4 default
 color article              color4 default
@@ -14,7 +14,7 @@ highlight article "https?://[^ ]+" color15 default protect
 
 # generals
 confirm-exit yes
-browser firefox
+browser chromium
 auto-reload yes
 cleanup-on-quit yes
 player mpv

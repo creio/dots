@@ -1,0 +1,9 @@
+/** Configured For Applets **/
+
+configuration {
+  show-icons:         true;
+  icon-theme:         "dui-ico";
+  location: 6;
+  yoffset: -30;
+  xoffset: 0;
+}

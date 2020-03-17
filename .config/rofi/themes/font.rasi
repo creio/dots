@@ -1,0 +1,6 @@
+* {
+  /* General */
+  text-font:                            "Clear Sans Medium 12";
+  icon-font:                            "Hack Nerd Font Mono 32";
+  icon-font-small:                      "Hack Nerd Font Mono 24";
+}

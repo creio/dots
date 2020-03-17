@@ -6,9 +6,9 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-#include ".colors/materia"
+#include ".colors/2dark"
 
-!URxvt.font: -*-rissole-*
+!URxvt.font: xft:Cozette:size=9
 URxvt.font: xft:Hack Nerd Font Mono:size=9
 
 URxvt*geometry: 84x22

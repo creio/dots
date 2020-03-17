@@ -11,7 +11,7 @@ ZSH_THEME="af-magic"
 DISABLE_AUTO_UPDATE="true"
 plugins=(
 )
-export PATH=$HOME/.bin:$HOME/.bin/popup:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.bin:$HOME/.bin/rofi/scripts:$HOME/.local/bin:/usr/local/bin:$PATH
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 [[ ! -d $ZSH_CACHE_DIR ]] && mkdir $ZSH_CACHE_DIR
 source $ZSH/oh-my-zsh.sh
@@ -32,16 +32,21 @@ export FZF_COMPLETION_TRIGGER="~~"
 # export TERM="rxvt-unicode-256color"
 export TERM="xterm-256color"
 export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'subl3'; else echo 'nano'; fi)"
-export BROWSER="firefox"
+export BROWSER="chromium"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 [[ -f ~/.alias_zsh ]] && . ~/.alias_zsh
 
-export PF_INFO="ascii os kernel wm shell pkgs memory"
+export PF_INFO="ascii os kernel wm shell pkgs memory palette"
+# export PF_ASCII="arch"
 
 export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 # export PATH="$PATH:`yarn global bin`"
 # export NVM_DIR="$HOME/.config/nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
+export PATH="$PATH:$GOBIN"

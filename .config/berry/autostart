@@ -1,0 +1,54 @@
+#!/bin/bash
+
+
+# Set decoration geometry
+berryc border_width       1
+berryc inner_border_width 1
+berryc title_height       4
+berryc top_gap            22
+
+# Set decoration colors
+berryc focus_color         5a74ca
+berryc unfocus_color       292D3E
+berryc inner_focus_color   5a74ca
+berryc inner_unfocus_color 282c37
+berryc text_focus_color    9baec8
+berryc text_unfocus_color  9baec8
+
+# Other options
+berryc smart_place "true"
+berryc draw_text   "false"
+berryc edge_lock   "true"
+berryc set_font    "ClearSansMedium-8"
+
+
+# custom
+sh ~/.bin/wallpaper.sh &
+# hsetroot -add '#2c3539' -add '#b89ca8' -gradient 130 &
+# hsetroot -fill $HOME/.wall/wl3.jpg &
+
+tint2 -c ~/.config/tint2/tray.tint2rc &
+sh ~/.config/polybar/ctlos/launch.sh &
+# picom -b --config ~/.config/picom.conf &
+picom -b --backend xrender &
+# picom -b --experimental-backends &
+urxvtd &
+setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
+# setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
+# setxkbmap -option "terminate:ctrl_alt_bksp" &
+numlockx &
+#xsettingsd &
+# xfsettingsd &
+# xfce4-power-manager &
+# pulseaudio --start &
+# mpd &
+dunst &
+# unclutter --timeout 2 &
+/usr/bin/lxqt-policykit-agent &
+redshift-gtk &
+clipit &
+# greenclip daemon &
+# nm-applet &
+# volumeicon &
+# caffeine &
+telegram-desktop &

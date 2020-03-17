@@ -16,7 +16,7 @@ sublime_colorscheme_light="Packages\\/User\\/Boxy Yesterday.tmTheme"
 # preferences for dark theme mode
 PREF_DARK_THEME="dui"
 PREF_DARK_DECO="dui"
-PREF_DARK_BG="$HOME/.wall/Crow.png"
+PREF_DARK_BG="$HOME/.wall/lcrow.png"
 PREF_DARK_ICO="dui-ico"
 
 sublime_theme_dark="gruvbox"
@@ -27,7 +27,7 @@ sublime_colorscheme_dark="Packages\\/One Dark Color Scheme\\/One Dark.tmTheme"
 xresources_conf="$HOME/.Xresources"
 
 xresources_color_light="colors\\/ll"
-xresources_color_dark="colors\\/materia"
+xresources_color_dark="colors\\/2dark"
 
 # rofi conf
 rofi_conf="$HOME/.config/rofi/config"
@@ -45,11 +45,12 @@ if [[ "$de_theme" == "$PREF_LIGHT_THEME" ]]; then
     xfconf-query -c xsettings -p /Net/ThemeName -s $PREF_DARK_THEME
     xfconf-query -c xfwm4 -p /general/theme -s $PREF_DARK_DECO
     xfconf-query -c xsettings -p /Net/IconThemeName -s $PREF_DARK_ICO
-    for i in $(xfconf-query -c xfce4-desktop -p /backdrop -l|egrep -e "screen.*/monitor.*image-path$" -e "screen.*/monitor.*/last-image$"); do
-        # if [ ! -z "$PREF_DARK_BG" ]; then xfconf-query -c xfce4-desktop -p $i -n -t string -s $PREF_DARK_BG ; fi
-        if [ ! -z "$PREF_DARK_BG" ]; then xfconf-query -c xfce4-desktop -p $i -s $PREF_DARK_BG ; fi
-        # if [ ! -z "$PREF_DARK_BG" ]; then xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s $PREF_DARK_BG ; fi
-    done
+    hsetroot -fill $PREF_DARK_BG
+    # for i in $(xfconf-query -c xfce4-desktop -p /backdrop -l|egrep -e "screen.*/monitor.*image-path$" -e "screen.*/monitor.*/last-image$"); do
+    #     # if [ ! -z "$PREF_DARK_BG" ]; then xfconf-query -c xfce4-desktop -p $i -n -t string -s $PREF_DARK_BG ; fi
+    #     if [ ! -z "$PREF_DARK_BG" ]; then xfconf-query -c xfce4-desktop -p $i -s $PREF_DARK_BG ; fi
+    #     # if [ ! -z "$PREF_DARK_BG" ]; then xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s $PREF_DARK_BG ; fi
+    # done
     xfconf-query -c xsettings -p /Gtk/DecorationLayout -s menu:minimize,maximize,close
 
     gsettings set org.gnome.desktop.interface gtk-theme $PREF_DARK_THEME
@@ -61,7 +62,7 @@ if [[ "$de_theme" == "$PREF_LIGHT_THEME" ]]; then
     sed -i -e "s/$xresources_color_light/$xresources_color_dark/g" "$xresources_conf"
     # https://github.com/budlabs/youtube/tree/master/letslinux/021-urxvt-reload
     xrdb -merge $HOME/.Xresources
-    kill -1 $(pidof urxvtd)
+    # kill -1 $(pidof urxvtd)
 
     sed -i -e "s/$PREF_LIGHT_ICO/$PREF_DARK_ICO/g" "$rofi_conf"
 
@@ -73,11 +74,12 @@ else
     xfconf-query -c xsettings -p /Net/ThemeName -s $PREF_LIGHT_THEME
     xfconf-query -c xfwm4 -p /general/theme -s $PREF_LIGHT_DECO
     xfconf-query -c xsettings -p /Net/IconThemeName -s $PREF_LIGHT_ICO
-    for i in $(xfconf-query -c xfce4-desktop -p /backdrop -l|egrep -e "screen.*/monitor.*image-path$" -e "screen.*/monitor.*/last-image$"); do
-        # if [ ! -z "$PREF_LIGHT_BG" ]; then xfconf-query -c xfce4-desktop -p $i -n -t string -s $PREF_LIGHT_BG ; fi
-        if [ ! -z "$PREF_LIGHT_BG" ]; then xfconf-query -c xfce4-desktop -p $i -s $PREF_LIGHT_BG ; fi
-        # if [ ! -z "$PREF_LIGHT_BG" ]; then xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s $PREF_LIGHT_BG ; fi
-    done
+    hsetroot -fill $PREF_LIGHT_BG
+    # for i in $(xfconf-query -c xfce4-desktop -p /backdrop -l|egrep -e "screen.*/monitor.*image-path$" -e "screen.*/monitor.*/last-image$"); do
+    #     # if [ ! -z "$PREF_LIGHT_BG" ]; then xfconf-query -c xfce4-desktop -p $i -n -t string -s $PREF_LIGHT_BG ; fi
+    #     if [ ! -z "$PREF_LIGHT_BG" ]; then xfconf-query -c xfce4-desktop -p $i -s $PREF_LIGHT_BG ; fi
+    #     # if [ ! -z "$PREF_LIGHT_BG" ]; then xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s $PREF_LIGHT_BG ; fi
+    # done
     xfconf-query -c xsettings -p /Gtk/DecorationLayout -s menu:minimize,maximize,close
 
     gsettings set org.gnome.desktop.interface gtk-theme $PREF_LIGHT_THEME
@@ -89,7 +91,7 @@ else
     sed -i -e "s/$xresources_color_dark/$xresources_color_light/g" "$xresources_conf"
     # https://github.com/budlabs/youtube/tree/master/letslinux/021-urxvt-reload
     xrdb -merge $HOME/.Xresources
-    kill -1 $(pidof urxvtd)
+    # kill -1 $(pidof urxvtd)
 
     sed -i -e "s/$PREF_DARK_ICO/$PREF_LIGHT_ICO/g" "$rofi_conf"
 

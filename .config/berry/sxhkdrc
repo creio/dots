@@ -1,0 +1,98 @@
+#
+# wm independent hotkeys
+#
+
+super + w
+    sh -c "$HOME/.bin/wallpaper.sh"
+
+super + s
+    sh -c "$HOME/.bin/search"
+
+# terminal emulator
+alt + t
+    urxvtc
+
+super + Return
+    sh -c "$HOME/.bin/draw"
+
+alt + r
+    urxvtc -name Ranger -e ranger
+
+alt + w
+    chromium
+
+alt + s
+    subl3
+
+alt + f
+    nemo
+
+# program launcher
+alt + d
+    rofi -show drun
+super + a
+    rofi -show window
+
+super + Tab
+    skippy-xd
+
+alt + space
+    polybar-msg cmd toggle; \
+    berryc top_gap {0,22}
+
+super + Down
+    berryc window_move_absolute 280 190; \
+    berryc window_resize_absolute 800 400
+
+super + t
+    berryc window_move_absolute 960 30;
+
+# make sxhkd reload its configuration files:
+super + Escape
+    pkill -USR1 -x sxhkd
+
+#
+# berry hotkeys
+#
+
+super + {h, j, k, l}
+    berryc window_move {-50 0, 0 50, 0 -50, 50 0}
+
+# super + ~button1
+#     berryc window_move
+
+super + shift +  {h, j, k, l}
+    berryc window_resize {-50 0, 0 50, 0 -50, 50 0}
+
+super + {1-9}
+    berryc switch_workspace {0-9}
+
+super + shift + {0-9}
+    berryc send_to_workspace {0-9}
+
+super + c
+    berryc window_monocle
+
+super + f
+    berryc fullscreen
+
+# alt + f
+#     berryc fullscreen_state
+
+super + {Left,Up,Right}
+    berryc {snap_left,window_monocle,snap_right}
+
+super + x
+    berryc toggle_decorations
+
+alt + Tab
+    berryc cycle_focus
+
+super + z
+    berryc window_close
+
+alt + c
+    berryc window_center
+
+~button1
+    berryc pointer_focus

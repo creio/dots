@@ -11,18 +11,18 @@ WALL=/tmp/list.txt
 down() {
 for num in {1..2}; do
     curl -s "https://wallhaven.cc/search?q=&resolutions=1920x1080&sorting=random&page=$num" --compressed |
-    grep -o -E 'https://wallhaven.cc/w/-([0-9 & A-Z & a-z]+)' |
+    grep -o -E 'https://wallhaven.cc/w/([0-9 & A-Z & a-z]+)' |
     cut -f2 -d '-' >> ${WALL}
 done
 
 for list in $(cat /tmp/list.txt); do
 
-  wget --quiet -O ${FOLDER}/${list}.jpg "https://w.wallhaven.cc/wallpapers/full/wallhaven-${list}.jpg"
+  wget --quiet -O ${FOLDER}/${list}.jpg "https://w.wallhaven.cc/full/wallhaven-${list}.jpg"
   FILE="${FOLDER}/${list}"
 
   if [ $(du -h ${FILE}.jpg | cut -f1) = "0" ]; then
   rm ${FILE}.jpg
-  wget --quiet -O ${FOLDER}/${list}.png "https://w.wallhaven.cc/wallpapers/full/wallhaven-${list}.png"
+  wget --quiet -O ${FOLDER}/${list}.png "https://w.wallhaven.cc/full/wallhaven-${list}.png"
   fi
 done
 }

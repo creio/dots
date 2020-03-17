@@ -21,15 +21,12 @@
       <property name="Print" type="empty"/>
     </property>
     <property name="custom" type="empty">
-      <property name="XF86Display" type="string" value="xfce4-display-settings --minimal"/>
       <property name="&lt;Alt&gt;F3" type="empty">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;Delete" type="string" value="xflock4"/>
       <property name="&lt;Alt&gt;F2" type="empty">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
-      <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-applicationsmenu"/>
       <property name="XF86Mail" type="string" value="exo-open --launch MailReader"/>
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Super&gt;p" type="string" value="xfce4-settings-manager"/>
@@ -39,17 +36,20 @@
       <property name="&lt;Alt&gt;c" type="string" value="/home/st/.bin/window-center"/>
       <property name="&lt;Super&gt;w" type="string" value="rofi -show window -show-icons -drun-icon-theme"/>
       <property name="&lt;Super&gt;s" type="string" value="/home/st/.bin/search"/>
-      <property name="&lt;Alt&gt;&lt;Super&gt;Delete" type="string" value="/home/st/.bin/xfce-logout"/>
       <property name="&lt;Super&gt;l" type="string" value="betterlockscreen -l dimblur"/>
       <property name="&lt;Super&gt;Tab" type="string" value="skippy-xd"/>
       <property name="&lt;Super&gt;Print" type="string" value="flameshot gui"/>
-      <property name="&lt;Alt&gt;f" type="string" value="/home/st/.bin/findapp thunar"/>
       <property name="&lt;Alt&gt;s" type="string" value="/home/st/.bin/findapp subl3"/>
-      <property name="Print" type="string" value="scrot &apos;scrot_%Y-%m-%d-%S_$wx$h.png&apos; -e &apos;mv $f ~/Pictures/screen ; viewnior ~/Pictures/screen/$f&apos;"/>
-      <property name="&lt;Primary&gt;&lt;Super&gt;Print" type="string" value="scrot -d 5 &apos;scrot_%Y-%m-%d-%S_$wx$h.png&apos; -e &apos;mv $f ~/Pictures/screen ; viewnior ~/Pictures/screen/$f&apos;"/>
-      <property name="&lt;Alt&gt;space" type="string" value="/home/st/.bin/toggle-tint_ob.sh"/>
-      <property name="&lt;Primary&gt;space" type="string" value="xfdesktop --menu"/>
-      <property name="&lt;Alt&gt;w" type="string" value="/home/st/.bin/findapp firefox"/>
+      <property name="Print" type="string" value="flameshot full -c -p /home/st/Pictures/screen"/>
+      <property name="&lt;Alt&gt;&lt;Super&gt;p" type="string" value="flameshot full -c -d 5000 -p /home/st/Pictures/screen"/>
+      <property name="&lt;Alt&gt;w" type="string" value="/home/st/.bin/findapp chromium"/>
+      <property name="&lt;Primary&gt;&lt;Super&gt;Print" type="string" value="flameshot gui -d 5000"/>
+      <property name="&lt;Alt&gt;space" type="string" value="/home/st/.bin/toggle-tint.sh"/>
+      <property name="&lt;Super&gt;Delete" type="string" value="i3lock-fancy"/>
+      <property name="&lt;Alt&gt;&lt;Super&gt;l" type="string" value="/home/st/.config/rofi/scripts/menu_quicklinks.sh"/>
+      <property name="&lt;Primary&gt;space" type="string" value="polybar-msg cmd toggle"/>
+      <property name="&lt;Alt&gt;&lt;Super&gt;Delete" type="string" value="/home/st/.config/rofi/scripts/menu_powermenu.sh"/>
+      <property name="&lt;Alt&gt;f" type="string" value="/home/st/.bin/findapp nemo"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

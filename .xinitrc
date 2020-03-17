@@ -45,6 +45,7 @@ xsetroot -cursor_name left_ptr &
 # exec i3
 # exec awesome
 # exec openbox-session
+hsetroot -fill ~/.wall/lcrow.png &
 exec startxfce4
 # $HOME/.config/sowm/sowm.sh &
 # exec sowm

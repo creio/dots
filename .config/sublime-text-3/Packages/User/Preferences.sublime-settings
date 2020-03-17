@@ -7,13 +7,20 @@
 			"selector": "text.html"
 		}
 	],
-  "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "work"],
 	"color_scheme": "Packages/One Dark Color Scheme/One Dark.tmTheme",
 	"detect_indentation": false,
 	"draw_shadows": false,
 	"draw_white_space": "all",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": true,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"work"
+	],
 	"font_face": "Roboto Mono Medium",
 	"font_size": 9,
 	"gruvbox_accent_blue": true,
