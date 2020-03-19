@@ -108,6 +108,8 @@ ROOT_PATHS=(
 "/etc/pacman.conf"
 "/etc/sddm.conf"
 "/etc/vconsole.conf"
+#
+"/etc/pulse/daemon.conf"
 "/etc/pulse/default.pa"
 "/usr/share/sddm/themes/darkine"
 )

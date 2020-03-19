@@ -18,7 +18,7 @@ g=${W}x${H}+${X}+${Y}
 
 # Draw with floating rule
 # bspc rule -a URxvt -o state=floating follow=on focus=on
-urxvtc -name Draw -g $g &
+urxvtc -name Float -g $g &
 
 # Restore the rule
 # bspc rule -a URxvt:Draw state=floating follow=on focus=on

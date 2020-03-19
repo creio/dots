@@ -200,7 +200,7 @@ exec_always --no-startup-id "hsetroot -center $HOME/.wall/wl3.jpg"
 # exec_always --no-startup-id "xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop ~/.config/wall/wl7.gif"
 
 exec --no-startup-id numlockx
-exec --no-startup-id "compton -b --config $HOME/.config/compton.conf"
+exec --no-startup-id "picom -b --config $HOME/.config/picom.conf"
 exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:win_space_toggle,grp_led:scroll'"
 #exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_mod1_toggle,grp_led:scroll'"
 exec --no-startup-id "thunar --daemon"

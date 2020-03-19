@@ -1,12 +1,3 @@
-open_wit
-q
-Q
-!q
-shell thunar
-open_with 1
-find sc
-find st
-find .bi
 find .confi
 find f
 find fil
@@ -35,16 +26,25 @@ shell makepkg -s
 shell
 shell ./update.sh
 shell gap
-open_with 
 rename cn
 open_with
 rename xfce4.bak
 sear
 fin
 find zs
-delete
 rename .bin
 search .wall
-search wall
 search wa
 search wal
+delete
+open_with 
+search .xin
+search xi
+search conf
+search bsp
+search ran
+search ,zsh
+search .zsh
+open_with mi
+open_with micro
+search wall

@@ -27,10 +27,10 @@ bspc config gapless_monocle       false
 bspc config single_monocle        true
 bspc config focus_follows_pointer true
 
-bspc desktop ^1 -l monocle
+# bspc desktop ^1 -l monocle
 bspc desktop ^2 -l monocle
-bspc desktop ^5 -l monocle
-bspc desktop ^6 -l monocle
+# bspc desktop ^5 -l monocle
+# bspc desktop ^6 -l monocle
 bspc desktop ^9 -l monocle
 bspc desktop ^10 -l monocle
 
@@ -39,9 +39,9 @@ bspc rule -a URxvt:Tiled desktop='^1' follow=on
 bspc rule -a URxvt:Tmux desktop='^1' follow=on
 bspc rule -a Chromium desktop='^2'
 bspc rule -a Subl3 desktop='^3'
-# bspc rule -a Thunar desktop='^4' state=pseudo_tiled
-bspc rule -a Thunar desktop='^4'
-bspc rule -a Thunar:Dialog state=floating center=true
+# bspc rule -a Nemo desktop='^4' state=pseudo_tiled
+bspc rule -a Nemo desktop='^4'
+bspc rule -a Nemo:Dialog state=floating center=true
 bspc rule -a TelegramDesktop desktop='^5' follow=on
 bspc rule -a discord desktop='^5' follow=on
 bspc rule -a Gimp-2.10 desktop='^6'
@@ -61,6 +61,7 @@ bspc rule -a URxvt:Ranger sticky=on state=floating rectangle=1220x650+0+0 center
 bspc rule -a URxvt:Pacui sticky=on state=floating rectangle=800x450+0+0 center=on
 bspc rule -a URxvt:Float state=floating
 bspc rule -a Gnome-calculator state=floating
+bspc rule -a Galculator state=floating
 bspc rule -a Gpick state=floating
 bspc rule -a GParted state=floating
 bspc rule -a File-roller state=floating
@@ -82,10 +83,10 @@ bspc rule -a Tint2 border=off manage=off layer=above state=floating
 bspc rule -a '*:Kunst' sticky=on layer=below border=off focus=off
 # bspc rule -a Sxiv:Kunst sticky=on layer=below border=off focus=off manage=off rectangle=250x250+1055+60
 
-# Set Desktop 7 to start with floating windows
-FLOATING_DESKTOP_ID=$(bspc query -D -d '^7')
-bspc subscribe node_manage | while read -a msg ; do
-	desk_id=${msg[2]}
-	wid=${msg[3]}
-	[ "$FLOATING_DESKTOP_ID" = "$desk_id" ] && bspc node "$wid" -t floating
+# Set Desktop to start with floating windows
+FLOATING_DESKTOP_ID_5=$(bspc query -D -d '^5')
+bspc subscribe node | while read -a msg ; do
+  desk_id=${msg[2]}
+  wid=${msg[3]}
+  [ "$FLOATING_DESKTOP_ID_5" = "$desk_id" ] && bspc node "$wid" -t floating
 done

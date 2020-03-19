@@ -8,7 +8,7 @@ qt_conf="$HOME/.config/qt5ct/qt5ct.conf"
 # preferences for light theme mode
 PREF_LIGHT_THEME="lui"
 PREF_LIGHT_DECO="lui"
-PREF_LIGHT_BG="$HOME/.wall/wl2.jpg"
+PREF_LIGHT_BG="$HOME/.wall/Crowl.png"
 PREF_LIGHT_ICO="lui-ico"
 
 sublime_theme_light="gruvbox"
@@ -26,8 +26,8 @@ sublime_colorscheme_dark="Packages\\/One Dark Color Scheme\\/One Dark.tmTheme"
 # Xresources color theme ~/.colors
 xresources_conf="$HOME/.Xresources"
 
-xresources_color_light="colors\\/ll"
-xresources_color_dark="colors\\/2dark"
+xresources_color_light="colors\\/lui"
+xresources_color_dark="colors\\/dui"
 
 # rofi conf
 rofi_conf="$HOME/.config/rofi/config"

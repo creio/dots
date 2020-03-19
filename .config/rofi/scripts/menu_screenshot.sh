@@ -9,18 +9,22 @@ rofi_command="rofi -theme themes/menu/screenshot.rasi"
 
 # Options
 screen=""
+screen_d=""
 area=""
 crop_d=""
 window=""
 
 # Variable passed to rofi
-options="$screen\n$area\n$crop_d\n$window"
+options="$screen\n$screen_d\n$area\n$crop_d\n$window"
 
-chosen="$(echo -e "$options" | $rofi_command -p '' -dmenu -selected-row 1)"
+chosen="$(echo -e "$options" | $rofi_command -p '' -dmenu -selected-row 0)"
 case $chosen in
     $screen)
         # sleep 1; scrot 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
-        flameshot full -c -p $(xdg-user-dir PICTURES)
+        flameshot full -c -p $(xdg-user-dir PICTURES)/screen
+        ;;
+    $screen_d)
+        flameshot full -d 5000 -c -p $(xdg-user-dir PICTURES)/screen
         ;;
     $area)
         # scrot -s 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
@@ -30,6 +34,6 @@ case $chosen in
         flameshot gui -d 5000
         ;;
     $window)
-        sleep 1; scrot -u 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/screen ; viewnior $$(xdg-user-dir PICTURES)/screen/$f'
+        scrot -d 2 -u 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/screen ; viewnior $$(xdg-user-dir PICTURES)/screen/$f'
         ;;
 esac

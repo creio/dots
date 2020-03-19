@@ -47,6 +47,7 @@ module-margin-left = 5
 module-margin-right = 0
 
 font-0 = "Ubuntu:style=Bold:size=8:antialias=false;2"
+#font-2 = "Siji:pixelsize=8;1"
 # Cat unicode: echo -e "\uF31A"
 font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=8;2"
 font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=8;2"

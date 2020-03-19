@@ -1,14 +1,15 @@
 #! /bin/sh
 
-sxhkd &
+sxhkd -c $HOME/.config/sxhkd/sxhkdrc.bspwm &
 
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
-compton -b --config ~/.config/compton.conf &
-hsetroot -center $HOME/.wall/wl3.jpg &
+picom -b --config ~/.config/picom.conf &
+hsetroot -fill $HOME/.wall/Crow.png &
+# hsetroot -add '#b89ca8' -add '#202029' -gradient 130 &
+# hsetroot -solid '#35303e' &
 $HOME/.config/bspwm/polybar/launch.sh &
 tint2 -c ~/.config/tint2/tray.tint2rc &
 dunst &
-thunar --daemon &
 numlockx &
 xsettingsd &
 # pulseaudio --start &
@@ -16,10 +17,11 @@ xsettingsd &
 /usr/lib/xfce-polkit/xfce-polkit &
 redshift-gtk &
 xfce4-power-manager &
-# caffeine &
+caffeine &
 # udiskie -t &
 # nm-applet &
-greenclip daemon &
-unclutter &
-megasync &
+clipit &
+# greenclip daemon &
+# unclutter &
+# megasync &
 telegram-desktop &

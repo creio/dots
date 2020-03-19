@@ -45,8 +45,8 @@ xsetroot -cursor_name left_ptr &
 # exec i3
 # exec awesome
 # exec openbox-session
-hsetroot -fill ~/.wall/lcrow.png &
-exec startxfce4
+# hsetroot -fill ~/.wall/lcrow.png &
+# exec startxfce4
 # $HOME/.config/sowm/sowm.sh &
 # exec sowm
 # sxhkd -c $HOME/.config/berry/sxhkdrc &
@@ -55,4 +55,5 @@ exec startxfce4
 # ### bspwm autostart
 # [ -f /etc/xprofile ] && source /etc/xprofile
 # [ -f ~/.xprofile ] && source ~/.xprofile
-# exec bspwm
+sh "${HOME}/.config/bspwm/autostart" &
+exec bspwm

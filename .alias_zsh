@@ -153,6 +153,8 @@ alias gpl="git pull"
 alias gp="git push"
 alias gpm="git push origin master"
 alias ghab="$BROWSER http://github.com/ctlos &"
+# yarn global add github-search-repos-cli
+alias gsc="github-search-repos -i"
 
 # tor chromium
 alias torc="$BROWSER --proxy-server='socks://127.0.0.1:9050' &"
@@ -253,6 +255,14 @@ alias yr="yay -R"
 alias yrn="yay -R --noconfirm"
 alias yskip="yay --mflags '--nocheck --skippgpcheck --noconfirm'"
 alias ynskip="yay --mflags --skipinteg --noconfirm"
+
+# systemd
+alias sse="sudo systemctl enable"
+alias ssd="sudo systemctl disable"
+alias ssen="sudo systemctl enable --now"
+alias ssdn="sudo systemctl disable --now"
+alias ssr="sudo systemctl restart"
+alias sss="sudo systemctl status"
 
 # Python
 alias ve="virtualenv ve"

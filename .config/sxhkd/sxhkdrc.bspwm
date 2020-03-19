@@ -2,6 +2,10 @@
 # wm independent hotkeys
 #
 
+# show help on key bindings
+super + F1
+  $HOME/.config/bspwm/bspwmfloat urxvt -name Float -e ~/.config/bspwm/show_keys
+
 # terminal emulator
 alt + Return
   sh -c "$HOME/.bin/draw"
@@ -23,7 +27,7 @@ alt + s
   subl3
 
 alt + f
-  thunar
+  nemo
 
 alt + m
   telegram-desktop
@@ -31,8 +35,11 @@ alt + m
 alt + r
   urxvt -name Ranger -e ranger
 
+# alt + c
+#   #rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+#   bspc node focused -t center=on
 alt + c
-  rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+  sh -c "$HOME/.bin/window-center"
 
 super + ctrl + p
   polybar-msg cmd toggle
@@ -65,7 +72,7 @@ super + b
   bspc node @focused:/ -B
 
 # make sxhkd reload its configuration files:
-super + Escape
+alt + Escape
   pkill -USR1 -x sxhkd
 
 #
@@ -184,7 +191,7 @@ super + ctrl + {1-9}
   bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-ctrl + alt + space
+ctrl + Escape
   bspc node -p cancel
 
 # cancel the preselection for the focused desktop
