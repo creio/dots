@@ -7,4 +7,4 @@
 <!-- - Demo video: [youtube.com](https://www.youtube.com/watch?v=EcEbV-CMGKU) -->
 <!-- - Yt: [youtube.com](https://www.youtube.com/channel/UCPCp_ZnMKEwYdnA_YfOZrZg) -->
 
-![preview](https://raw.githubusercontent.com/creio/dots/master/docs/screen/xfwm.png)
+![preview](https://raw.githubusercontent.com/creio/dots/master/screen/xfce-dui.png)
