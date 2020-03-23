@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
 # Ctlos Linux https://ctlos.github.io
-# 
-# Dot file management script using zenity, git & rsync
+#
+# Dot file management script using git & rsync
 # Written by Nathaniel Maia, November 2017 - March 2018
 
 # Config ~/.dotsrc
@@ -136,9 +136,7 @@ clean_backup_dirs() {
     if [[ ${PREV_BACKUPS[*]} ]] && sub_choice "Perform clean backup (wipe BASE_DIR)" "${R}$BASE_DIR${N}"; then
         for dir in "${PREV_BACKUPS[@]}"; do
             if [[ -d $dir ]] && sub_choice "Wipe all files in /$(basename "$dir")" "${R}$dir${N}"; then
-                cd "$dir"
-                git rm -r -f .
-                # rm -rf$V "$dir"
+                rm -rf$V "$dir"
                 [[ $V ]] && sleep 0.5
             fi
         done

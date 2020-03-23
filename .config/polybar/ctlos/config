@@ -77,7 +77,8 @@ content = 
 content-foreground = ${colors.accent}
 content-background = ${xrdb:color0}
 content-padding = 3
-click-left = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
+click-left = "rofi -no-lazy-grab -show drun -theme launchers/style_normal_rainbow_sidebar.rasi &"
+# click-left = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
 click-right = "~/.config/rofi/scripts/apps.sh &"
 # click-right = "jgmenu_run >/dev/null 2>&1 &"
 # click-right = ~/.bin/rofi-favapp
@@ -211,8 +212,8 @@ format = <label>
 format-prefix = "  "
 format-prefix-foreground = ${colors.accent}
 format-padding = 0
-click-left = "systemctl restart tor"
-click-right = "systemctl stop tor"
+click-left = "systemctl restart tor &"
+click-right = "systemctl stop tor &"
 
 
 

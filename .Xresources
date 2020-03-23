@@ -8,7 +8,7 @@ Xft.lcdfilter: lcddefault
 
 #include ".colors/dui"
 
-!URxvt.font: xft:Cozette:size=9
+!URxvt.font: xft:CozetteVector:size=9
 !URxvt.font: xft:Hack Nerd Font Mono:size=9
 
 !!! xlsfonts | grep ttyp0
@@ -36,7 +36,7 @@ URxvt*scrollTtyKeypress: true
 URxvt.iso14755:        false
 URxvt.iso14755_52:     false
 
-URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,matcher,config-reload
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,matcher,font-size,config-reload
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
 URxvt.matcher.button: 1
@@ -50,6 +50,13 @@ URxvt.keysym.Control-Up:    \033[1;5A
 URxvt.keysym.Control-Down:  \033[1;5B
 URxvt.keysym.Control-Left:  \033[1;5D
 URxvt.keysym.Control-Right: \033[1;5C
+
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
 
 URxvt*transparent:false
 URxvt*depth: 32

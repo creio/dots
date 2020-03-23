@@ -316,7 +316,8 @@
     </keybind>
     <keybind key="A-Tab">
       <action name="NextWindow">
-        <dialog>icons</dialog>
+        <!-- <dialog>icons</dialog> -->
+        <dialog>no</dialog>
         <bar>no</bar>
       </action>
     </keybind>
@@ -368,7 +369,7 @@
     </keybind>
     <keybind key="A-f">
       <action name="Execute">
-        <command>findapp thunar</command>
+        <command>findapp nemo</command>
       </action>
     </keybind>
     <keybind key="A-s">
@@ -378,17 +379,17 @@
     </keybind>
     <keybind key="A-r">
       <action name="Execute">
-        <command>kitty --name=ranger -e ranger</command>
+        <command>urxvt -name ranger -e ranger</command>
       </action>
     </keybind>
     <keybind key="A-t">
       <action name="Execute">
-        <command>findapp kitty</command>
+        <command>findapp urxvt</command>
       </action>
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>kitty</command>
+        <command>urxvt</command>
       </action>
     </keybind>
     <keybind key="A-Return">
@@ -915,6 +916,16 @@
       <shade>no</shade>
       <focus>yes</focus>
     </application>
+    <application role="GtkFileChooserDialog">
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <size>
+        <width>60/100</width>
+        <height>60/100</height>
+      </size>
+    </application>
     <application name="tmux">
       <maximized>yes</maximized>
       <decor>no</decor>
@@ -991,7 +1002,7 @@
   # order that they appear in this list
 
 
-    # each rule element can be left out or set to 'default' to specify to not 
+    # each rule element can be left out or set to 'default' to specify to not
     # change that attribute of the window
 
     <decor>yes</decor>

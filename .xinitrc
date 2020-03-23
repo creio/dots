@@ -42,18 +42,23 @@ xsetroot -cursor_name left_ptr &
 # xset fp rehash &
 # fc-cache -fv &
 
-# exec i3
+# exec 2bwm
 # exec awesome
-# exec openbox-session
+# exec dwm
+# exec i3
+exec openbox-session
+
 # hsetroot -fill ~/.wall/lcrow.png &
 # exec startxfce4
-# $HOME/.config/sowm/sowm.sh &
-# exec sowm
+
 # sxhkd -c $HOME/.config/berry/sxhkdrc &
 # exec berry
 
 # ### bspwm autostart
 # [ -f /etc/xprofile ] && source /etc/xprofile
 # [ -f ~/.xprofile ] && source ~/.xprofile
-sh "${HOME}/.config/bspwm/autostart" &
-exec bspwm
+# sh "${HOME}/.config/bspwm/autostart" &
+# exec bspwm
+
+# sh "${HOME}/.config/sowm/sowm.sh" &
+# exec sowm

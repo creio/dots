@@ -1,5 +1,3 @@
-find .confi
-find f
 find fil
 find me
 find .wa
@@ -36,7 +34,6 @@ rename .bin
 search .wall
 search wa
 search wal
-delete
 open_with 
 search .xin
 search xi
@@ -48,3 +45,6 @@ search .zsh
 open_with mi
 open_with micro
 search wall
+trash
+search wm
+delete

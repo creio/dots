@@ -25,7 +25,6 @@ export FZF_DEFAULT_COMMAND="fd --type file --color=always --follow --hidden --ex
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # export FZF_DEFAULT_OPTS="--ansi"
 export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --preview 'file {}' --preview-window down:1"
-export FZF_COMPLETION_TRIGGER="~~"
 
 # export TERM="xterm-kitty"
 # export TERM="rxvt-unicode"
@@ -36,6 +35,7 @@ export BROWSER="chromium"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 export XDG_CONFIG_HOME="$HOME/.config"
 
+export FZF_COMPLETION_TRIGGER="~~"
 [[ -f ~/.alias_zsh ]] && . ~/.alias_zsh
 
 export PF_INFO="ascii os kernel wm shell pkgs memory palette"
@@ -50,3 +50,5 @@ export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
 export PATH="$PATH:$GOBIN"
+
+export PATH=$HOME/.emacs.d/bin:$PATH
