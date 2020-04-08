@@ -184,9 +184,9 @@ icon-next-foreground = ${colors.accent}
 
 [module/fs]
 type = internal/fs
-mount-0 = /
-mount-1 = /home
-mount-2 = /media/files
+mount-0 = /home
+# mount-1 = /
+# mount-2 = /media/files
 interval = 10
 fixed-values = true
 spacing = 1

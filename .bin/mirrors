@@ -1,3 +1,11 @@
 #!/bin/bash
 
-sudo reflector -c "Belarus" -c "Russia" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
+if [ "$1" = "-c" ]; then
+  # mirrors -c
+  sudo reflector -c "Belarus" -c "Russia" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --sort rate --save /etc/pacman.d/mirrorlist
+else
+  # mirrors
+  sudo reflector --verbose -a1 -f15 -l50 -phttps --sort rate --save /etc/pacman.d/mirrorlist
+fi
+
+sudo pacman -Syy

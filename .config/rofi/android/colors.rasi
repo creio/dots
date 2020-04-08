@@ -19,4 +19,4 @@
  *
  */
 
-@import "../themes/colorschemes/arc.rasi"
+@import "../themes/colorschemes/material-dark/indigo.rasi"

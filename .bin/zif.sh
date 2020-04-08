@@ -19,7 +19,7 @@
 man_partition() {
 list=` lsblk -lno NAME,TYPE,SIZE,MOUNTPOINT | grep "disk" `
 
-zenity --info --height=500 width=450 --title="$title" --text "Below is a list of the available drives on your system:\n\n$list" 
+zenity --info --height=500 width=450 --title="$title" --text "Below is a list of the available drives on your system:\n\n$list"
 
 lsblk -lno NAME,TYPE | grep 'disk' | awk '{print "/dev/" $1 " " $2}' | sort -u > devices.txt
 sed -i 's/\<disk\>//g' devices.txt
@@ -37,7 +37,7 @@ fi
 	# Select root partition
 	root_part=$(zenity --list --radiolist --height=500 --width=450 --title="$title" --text="Choose a partition to use for the root partition\nWarning, this list shows all available partitions on all available drives.\nPlease choose with care." --column ' ' --column Partitions $(sudo fdisk -l | grep dev | grep -v Disk | awk '{print $1}' | awk '{ printf " FALSE ""\0"$0"\0" }'))
 	#mounting root partition
-touch root_part.txt    
+touch root_part.txt
 echo $root_part >> root_part.txt
 	mount $root_part /mnt
 
@@ -60,7 +60,7 @@ echo $root_part >> root_part.txt
 		fi
 
 	# Boot Partition?
-	zenity --question --height=500 --width=450 --title="$title" --text "Do you want to use a seperate boot partition?" 
+	zenity --question --height=500 --width=450 --title="$title" --text "Do you want to use a seperate boot partition?"
 		if [ "$?" = "0" ]
 		then boot_part=$(zenity --list --radiolist --height=500 --width=450 --title="$title" --text="Please select a partition for /boot. This list shows all available drives on your system, so choose with care." --column ' ' --column Partitions $(sudo fdisk -l | grep dev | grep -v Disk | awk '{print $1}' | awk '{ printf " FALSE ""\0"$0"\0" }'))
 
@@ -70,7 +70,7 @@ echo $root_part >> root_part.txt
 		fi
 
 	# Home Partition?
-	zenity --question --height=500 --width=450 --title="$title" --text "Do you want to use a seperate home partition?" 
+	zenity --question --height=500 --width=450 --title="$title" --text "Do you want to use a seperate home partition?"
 		if [ "$?" = "0" ]
 		then home_part=$(zenity --list --radiolist --height=500 --width=450 --title="$title" --text="Select your home partition" --column ' ' --column Partitions $(sudo fdisk -l | grep dev | grep -v Disk | awk '{print $1}' | awk '{ printf " FALSE ""\0"$0"\0" }'))
 		# mounting home partition
@@ -82,7 +82,7 @@ echo $root_part >> root_part.txt
 auto_partition() {
 	list=` lsblk -lno NAME,TYPE,SIZE,MOUNTPOINT | grep "disk" `
 
-	zenity --info --height=500 --width=450 --title="$title" --text "Below is a list of the available drives on your system:\n\n$list" 
+	zenity --info --height=500 --width=450 --title="$title" --text "Below is a list of the available drives on your system:\n\n$list"
 
 	lsblk -lno NAME,TYPE | grep 'disk' | awk '{print "/dev/" $1 " " $2}' | sort -u > devices.txt
 	sed -i 's/\<disk\>//g' devices.txt
@@ -96,7 +96,7 @@ auto_partition() {
         if [ "$SYSTEM" = "BIOS" ]
 	then echo {$dev}1 >> root_part.txt
 	else echo {$dev}2 >> root_part.txt
-        fi 
+        fi
 	if [ "$yn" = "1" ]
 	then partition
 	fi
@@ -110,7 +110,7 @@ auto_partition() {
 		then swap_space=4096
 		else swap_space=$ram
 	fi
-	
+
 	uefi_swap=$(($swap_space + 513))
 
 
@@ -149,7 +149,7 @@ auto_partition() {
 		swapon /mnt/swapfile
 		swapfile="yes") | zenity --progress --title="$title" --width=450 --pulsate --auto-close --no-cancel
 	fi
-			
+
 }
 
 partition() {
@@ -187,11 +187,11 @@ fi
 
 setxkbmap $layout
 
-if [ "$model" = "0" ] 
-then setxkbmap -model $model 
+if [ "$model" = "0" ]
+then setxkbmap -model $model
 fi
 
-if [ "$vary" = "0" ] 
+if [ "$vary" = "0" ]
 then setxkbmap -variant $variant
 fi
 # Getting Timezone
@@ -336,8 +336,8 @@ fi
 }
 
 installapps() {
-extra=$(zenity --list --height=500 --width=450 --title="$title" --radiolist --text "If you would like to select more applications to install,\nChoose the category from the 
-list below.\nWhen you are finished selecting applications\nin each category you will be returned to this menu.\nThen simply select 'finished' when you are 
+extra=$(zenity --list --height=500 --width=450 --title="$title" --radiolist --text "If you would like to select more applications to install,\nChoose the category from the
+list below.\nWhen you are finished selecting applications\nin each category you will be returned to this menu.\nThen simply select 'finished' when you are
 finished." --column Select --column Category FALSE internet FALSE media FALSE office FALSE utilities FALSE finished)
 
 if [ "$extra" = "internet" ]
@@ -404,7 +404,7 @@ fi
 
 # installing video and audio packages
 echo "# Installing Desktop, Sound, and Video Drivers..."
-pacstrap /mnt  mesa xorg-server xorg-apps xorg-xinit xorg-twm xterm xorg-drivers alsa-utils pulseaudio pulseaudio-alsa xf86-input-synaptics xf86-input-keyboard xf86-input-mouse xf86-input-libinput intel-ucode b43-fwcutter networkmanager nm-connection-editor network-manager-applet polkit-gnome ttf-dejavu gnome-keyring xdg-user-dirs gvfs
+pacstrap /mnt mesa xorg-server xorg-apps xorg-xinit xorg-twm xterm xorg-drivers alsa-utils pulseaudio pulseaudio-alsa xf86-input-synaptics xf86-input-keyboard xf86-input-mouse xf86-input-libinput intel-ucode b43-fwcutter networkmanager nm-connection-editor network-manager-applet polkit-gnome ttf-dejavu gnome-keyring xdg-user-dirs gvfs
 
 # virtualbox
 if [ "$vb" = "0" ]
@@ -455,7 +455,7 @@ fi
 
 # AUR
 if [ "$abs" = "0" ]
-	then echo "[spooky_aur]" >> /mnt/etc/pacman.conf;echo "SigLevel = Optional TrustAll" >> /mnt/etc/pacman.conf;echo "Server = https://raw.github.com/spookykidmm/spooky_aur/master/x86_64" >> /mnt/etc/pacman.conf 
+	then echo "[spooky_aur]" >> /mnt/etc/pacman.conf;echo "SigLevel = Optional TrustAll" >> /mnt/etc/pacman.conf;echo "Server = https://raw.github.com/spookykidmm/spooky_aur/master/x86_64" >> /mnt/etc/pacman.conf
     arch_chroot "pacman -Syy"
 	arch_chroot "pacman -S --noconfirm pacaur"
 

@@ -3,7 +3,7 @@
 mixer-element=Master
 
 [audgui]
-about_win=707,304,623,180
+about_win=89,246,582,354
 filebrowser_win=378,80,672,480
 filesel_path=/home/st/files/mega
 info_win=399,181,560,398
@@ -14,8 +14,8 @@ infoarea_visible=FALSE
 menu_visible=FALSE
 player_height=368
 player_width=686
-player_x=132
-player_y=229
+player_x=466
+player_y=143
 playlist_columns=artist title length
 playlist_headers=FALSE
 playlist_tabs_visible=FALSE

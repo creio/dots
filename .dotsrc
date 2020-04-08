@@ -92,6 +92,7 @@ USER_PATHS=(
 ".config/volumeicon"
 ".config/xfce4"
 ".config/yay"
+".config/clean-chroot-manager.conf"
 ".config/picom.conf"
 ".config/kdenliverc"
 ".config/redshift.conf"

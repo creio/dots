@@ -2,10 +2,10 @@ sw_volume: 100
 audio_device_state:1:MPD pulse
 audio_device_state:1:MPD FIFO
 state: pause
-current: 7
-time: 216.247000
+current: 32
+time: 160.560000
 random: 0
-repeat: 1
+repeat: 0
 single: 0
 consume: 0
 crossfade: 0
@@ -29,53 +29,28 @@ playlist_begin
 14:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/15. Follow Your Heart.mp3
 15:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/16. Melrose Avenue.mp3
 16:Scorpions - Born to Touch Your Feelings. Best of Rock Ballads (2017)/17. Always Be with You.mp3
-17:Rammstein - Essentials (2018)/01. Du hast.mp3
-18:Rammstein - Essentials (2018)/02. Sonne.mp3
-19:Rammstein - Essentials (2018)/03. Amerika.mp3
-20:Rammstein - Essentials (2018)/04. Engel.mp3
-21:Rammstein - Essentials (2018)/05. Feuer Frei!.mp3
-22:Rammstein - Essentials (2018)/06. Bueck dich.mp3
-23:Rammstein - Essentials (2018)/07. Rammstein.mp3
-24:Rammstein - Essentials (2018)/08. Mein Teil.mp3
-25:Rammstein - Essentials (2018)/09. Rosenrot.mp3
-26:Rammstein - Essentials (2018)/10. Ich Will.mp3
-27:Rammstein - Essentials (2018)/11. Keine Lust.mp3
-28:Rammstein - Essentials (2018)/12. Sehnsucht.mp3
-29:Rammstein - Essentials (2018)/13. Mutter.mp3
-30:Rammstein - Essentials (2018)/14. Du riechst so gut.mp3
-31:Rammstein - Essentials (2018)/15. Mein Herz Brennt.mp3
-32:Rammstein - Essentials (2018)/16. Mein Land.mp3
-33:Rammstein - Essentials (2018)/17. Links 2 3 4.mp3
-34:Rammstein - Essentials (2018)/18. Pussy.mp3
-35:Rammstein - Essentials (2018)/19. Te Quiero Puta!.mp3
-36:Rammstein - Essentials (2018)/20. Haifisch.mp3
-37:Rammstein - Essentials (2018)/21. Benzin.mp3
-38:Rammstein - Essentials (2018)/22. Klavier.mp3
-39:Rammstein - Essentials (2018)/23. Asche zu Asche.mp3
-40:Rammstein - Essentials (2018)/24. Ich Tu Dir Weh.mp3
-41:Rammstein - Essentials (2018)/25. Reise, Reise.mp3
-42:Metallica - Essentials (2018)/01. Enter Sandman.mp3
-43:Metallica - Essentials (2018)/02. One.mp3
-44:Metallica - Essentials (2018)/03. Nothing Else Matters.mp3
-45:Metallica - Essentials (2018)/04. For Whom The Bell Tolls (Remastered).mp3
-46:Metallica - Essentials (2018)/05. The Unforgiven.mp3
-47:Metallica - Essentials (2018)/06. Fade To Black (Remastered).mp3
-48:Metallica - Essentials (2018)/07. Welcome Home (Sanitarium).mp3
-49:Metallica - Essentials (2018)/08. Sad But True.mp3
-50:Metallica - Essentials (2018)/09. Seek & Destroy (Remastered).mp3
-51:Metallica - Essentials (2018)/10. Harvester Of Sorrow.mp3
-52:Metallica - Essentials (2018)/11. Hardwired.mp3
-53:Metallica - Essentials (2018)/12. Fuel.mp3
-54:Metallica - Essentials (2018)/13. Wherever I May Roam.mp3
-55:Metallica - Essentials (2018)/14. Battery.mp3
-56:Metallica - Essentials (2018)/15. Ride The Lightning (Remastered).mp3
-57:Metallica - Essentials (2018)/16. The Four Horsemen (Remastered).mp3
-58:Metallica - Essentials (2018)/17. ...And Justice For All.mp3
-59:Metallica - Essentials (2018)/18. King Nothing.mp3
-60:Metallica - Essentials (2018)/19. Creeping Death (Remastered).mp3
-61:Metallica - Essentials (2018)/20. Blackened.mp3
-62:Metallica - Essentials (2018)/21. Moth Into Flame.mp3
-63:Metallica - Essentials (2018)/22. I Disappear.mp3
-64:Metallica - Essentials (2018)/23. Until It Sleeps.mp3
-65:Metallica - Essentials (2018)/24. Whiskey In The Jar.mp3
+17:Metallica - Essentials (2018)/01. Enter Sandman.mp3
+18:Metallica - Essentials (2018)/02. One.mp3
+19:Metallica - Essentials (2018)/03. Nothing Else Matters.mp3
+20:Metallica - Essentials (2018)/04. For Whom The Bell Tolls (Remastered).mp3
+21:Metallica - Essentials (2018)/05. The Unforgiven.mp3
+22:Metallica - Essentials (2018)/06. Fade To Black (Remastered).mp3
+23:Metallica - Essentials (2018)/07. Welcome Home (Sanitarium).mp3
+24:Metallica - Essentials (2018)/08. Sad But True.mp3
+25:Metallica - Essentials (2018)/09. Seek & Destroy (Remastered).mp3
+26:Metallica - Essentials (2018)/10. Harvester Of Sorrow.mp3
+27:Metallica - Essentials (2018)/11. Hardwired.mp3
+28:Metallica - Essentials (2018)/12. Fuel.mp3
+29:Metallica - Essentials (2018)/13. Wherever I May Roam.mp3
+30:Metallica - Essentials (2018)/14. Battery.mp3
+31:Metallica - Essentials (2018)/15. Ride The Lightning (Remastered).mp3
+32:Metallica - Essentials (2018)/16. The Four Horsemen (Remastered).mp3
+33:Metallica - Essentials (2018)/17. ...And Justice For All.mp3
+34:Metallica - Essentials (2018)/18. King Nothing.mp3
+35:Metallica - Essentials (2018)/19. Creeping Death (Remastered).mp3
+36:Metallica - Essentials (2018)/20. Blackened.mp3
+37:Metallica - Essentials (2018)/21. Moth Into Flame.mp3
+38:Metallica - Essentials (2018)/22. I Disappear.mp3
+39:Metallica - Essentials (2018)/23. Until It Sleeps.mp3
+40:Metallica - Essentials (2018)/24. Whiskey In The Jar.mp3
 playlist_end

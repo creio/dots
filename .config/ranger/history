@@ -33,7 +33,6 @@ find zs
 rename .bin
 search .wall
 search wa
-search wal
 open_with 
 search .xin
 search xi
@@ -44,7 +43,8 @@ search ,zsh
 search .zsh
 open_with mi
 open_with micro
-search wall
 trash
 search wm
 delete
+search wal
+search wall

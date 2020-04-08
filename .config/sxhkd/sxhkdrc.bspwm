@@ -53,13 +53,13 @@ super + alt + Delete
   sh -c "$HOME/.config/bspwm/power"
 
 Print
-  flameshot full -c -p ~/Pictures/screen
+  flameshot full -c -p "$(xdg-user-dir PICTURES)"/screen
 
 super + Print
   flameshot gui
 
 super + alt + Print
-  flameshot full -c -d 5000 -p ~/Pictures/screen
+  flameshot full -c -d 5000 -p "$(xdg-user-dir PICTURES)"/screen
 
 super + alt + m
   notify-send "Now Playing ♫" "$(mpc current)"

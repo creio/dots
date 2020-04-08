@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# qemu-img create -f qcow2 ctlos.qcow2 14G
+
+# -net nic -net user,hostfwd=tcp::22222-:22 \
+# sudo systemctl start sshd
+# ssh -p 22222 liveuser@localhost
+# -net nic -net user \
+
+if [ "$1" = "-i" ]; then
+  # qvirt -i
+  qemu-system-x86_64 \
+    -enable-kvm \
+    -m 2048M \
+    -net nic -net user,hostfwd=tcp::22222-:22 \
+    -vga qxl \
+    -soundhw ac97 \
+    -hda $HOME/.qvirt/arch.qcow2 \
+    -cdrom $HOME/ctlosiso/out/ctlos_xfce_net-1.0_20200407.iso \
+    -boot d
+else
+  # qvirt
+  qemu-system-x86_64 \
+    -enable-kvm \
+    -m 2048M \
+    -net nic -net user,hostfwd=tcp::22222-:22 \
+    -vga qxl \
+    -soundhw ac97 \
+    -hda $HOME/.qvirt/arch.qcow2
+fi

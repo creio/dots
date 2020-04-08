@@ -18,6 +18,7 @@ alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias iip="curl --max-time 10 -w '\n' http://ident.me"
 alias tb="nc termbin.com 9999"
 alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+alias updir="LC_ALL=C xdg-user-dirs-update --force"
 
 alias run="dmenu_run -l 10 -p 'Search:' -fn 'ClearSansMedium 12' -nb '#282c37' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
 
@@ -49,6 +50,11 @@ vboxshare () {
   mkdir vboxshare
   sudo mount -t vboxsf -o rw,uid=1000,gid=1000 vboxshare vboxshare
   # sudo mount -t vboxsf -o rw,uid=st,gid=users vboxshare vboxshare
+}
+# shre qemu
+vmshare () {
+  mkdir vmshare
+  sudo mount -t 9p -o trans=virtio,version=9p2000.L /vmshare vmshare
 }
 
 # aur pkg
@@ -160,9 +166,9 @@ alias gsc="github-search-repos -i"
 alias torc="$BROWSER --proxy-server='socks://127.0.0.1:9050' &"
 
 # full screen flags -fs
-alias yt="youtube-viewer"
+alias yt="straw-viewer"
 ytv () {
-  youtube-viewer "$1"
+  straw-viewer "$1"
 }
 
 # youtube-dl --ignore-errors -o '~/Видео/youtube/%(playlist)s/%(title)s.%(ext)s' https://www.youtube.com/playlist?list=PL-UzghgfytJQV-JCEtyuttutudMk7
@@ -209,8 +215,8 @@ alias -s {png,jpg,tiff,bmp}="viewnior"
 alias -s {conf,txt}="nvim"
 # alias {aurman,pikaur,trizen,yaourt}="yay"
 
-alias st="subl3"
-alias sst="sudo subl3"
+alias sub="subl3"
+alias ssub="sudo subl3"
 alias tm="tmux attach || tmux new -s work"
 alias tmd="tmux detach"
 alias tmk="tmux kill-server"

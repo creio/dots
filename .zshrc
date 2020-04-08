@@ -11,9 +11,9 @@ ZSH_THEME="af-magic"
 DISABLE_AUTO_UPDATE="true"
 plugins=(
 )
-export PATH=$HOME/.bin:$HOME/.bin/rofi/scripts:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.bin:$HOME/.config/rofi/scripts:$HOME/.local/bin:/usr/local/bin:$PATH
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-[[ ! -d $ZSH_CACHE_DIR ]] && mkdir $ZSH_CACHE_DIR
+[[ ! -d $ZSH_CACHE_DIR ]] && mkdir -p $ZSH_CACHE_DIR
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -30,7 +30,7 @@ export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --preview 'file 
 # export TERM="rxvt-unicode"
 # export TERM="rxvt-unicode-256color"
 export TERM="xterm-256color"
-export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'subl3'; else echo 'nano'; fi)"
+export EDITOR="$(if [[ -n $DISPLAY ]]; then if [[ `which subl3` != 'subl3 not found' ]]; then echo 'subl3'; else echo 'nano'; fi; fi)"
 export BROWSER="chromium"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 export XDG_CONFIG_HOME="$HOME/.config"
