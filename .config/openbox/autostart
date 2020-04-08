@@ -6,7 +6,8 @@ tint2 -c ~/.config/tint2/button.tint2rc &
 tint2 -c ~/.config/tint2/tray.tint2rc &
 sh ~/.config/polybar/ctlos/launch.sh &
 # hsetroot -add '#2c3539' -add '#b89ca8' -gradient 130 &
-hsetroot -fill $HOME/.wall/lcrow.png &
+# hsetroot -fill $HOME/.wall/pscircle.png &
+sh ~/.bin/pscircle-dark.sh &
 picom -b --config ~/.config/picom.conf &
 thunar --daemon &
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# ffmpeg -i .wall/Crowl.png -s 1366x768 .pscircle.png
+# convert -resize 1366x768 .wall/Crowl.png .pscircle.png
+
 # xfce wall
 # xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s ~/.pscircle.png
 
@@ -7,16 +10,17 @@ TIME_INTERVAL=3 # Seconds
 
 # gsettings set org.gnome.desktop.background picture-uri file:///tmp/output.png
 # xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s ~/.pscircle.png
-xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVGA-0/workspace0/last-image -s ~/.pscircle.png
+# xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVGA-0/workspace0/last-image -s ~/.pscircle.png
+# hsetroot -fill $HOME/.pscircle.png
 
-output=$HOME/.pscircle.png
+output=$HOME/.wall/pscircle.png
 
 while [ 1 ]; do
     # Replace the next line with any parameters given in the examples.
     pscircle \
 			--output-width=1366 \
 			--output-height=768 \
-			--background-image=$HOME/.wall/wl.png \
+			--background-image=$HOME/.wall/.pscircle.png \
 			--link-color-min=375143a0 \
 			--link-color-max=375143 \
 			--dot-color-min=7c762f \
@@ -40,5 +44,7 @@ while [ 1 ]; do
 			--memlist-center=400.0:80.0 \
 			--interval=0 \
 			--output=$output
+
+    hsetroot -fill $output
     sleep $TIME_INTERVAL
 done
