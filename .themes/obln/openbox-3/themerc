@@ -5,10 +5,10 @@ menu.separator.color:                   #282c37
 menu.*.bg:                              flat
 menu.*.bg.color:                        #282c37
 menu.*.text.color:                      #9baec8
-menu.*.text.justify:                    center 
+menu.*.text.justify:                    center
 menu.*.disabled.text.color:             #282c37
 menu.*.active.text.color:               #282c37
-menu.*.active.bg.color:                 #9baec8
+menu.*.active.bg.color:                 #5a74ca
 
 # Section: osd
 osd.border.width:                       0
@@ -28,7 +28,7 @@ osd.button.unpressed.*.border.color:    #282c37
 osd.button.pressed.bg:                  flat
 osd.button.pressed.bg.color:            #282c37
 osd.button.pressed.*.border.color:      #282c37
-osd.button.focused.bg:                  flat  
+osd.button.focused.bg:                  flat
 osd.button.focused.bg.color:            #282c37
 osd.button.focused.*.border.color:      #282c37
 osd.button.focused.box.color:           #282c37
@@ -44,9 +44,9 @@ window.active.title.bg.color:           #16191f
 window.active.title.separator.color:    #16191f
 window.active.border.color:             #16191f
 window.inactive.button.*.*.image.color: #9baec8
-window.inactive.label.text.color:       #16191f
-window.inactive.title.bg.color:         #414458
-window.inactive.title.separator.color:  #414458
+window.inactive.label.text.color:       #9baec8
+window.inactive.title.bg.color:         #282c37
+window.inactive.title.separator.color:  #282c37
 window.inactive.border.color:           #16191f
 
 window.*.button.*.image.color:           #9baec8

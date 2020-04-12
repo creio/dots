@@ -1,0 +1,4 @@
+#!/bin/bash
+
+killall jgmenu
+jgmenu --config-file="$HOME/.config/jgmenu/jgmenurc" &

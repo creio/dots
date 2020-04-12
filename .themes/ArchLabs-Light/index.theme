@@ -1,0 +1,6 @@
+[X-GNOME-Metatheme]
+Name=ArchLabs-Light
+Type=X-GNOME-Metatheme
+Comment=ArchLabs-Light theme used with permission from the Stilo theme
+Encoding=UTF-8
+GtkTheme=ArchLabs-Light

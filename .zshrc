@@ -50,5 +50,3 @@ export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
 export PATH="$PATH:$GOBIN"
-
-export PATH=$HOME/.emacs.d/bin:$PATH

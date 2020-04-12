@@ -8,32 +8,32 @@ sublime_conf="$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-set
 
 
 # preferences for light theme mode
-PREF_LIGHT_THEME="cltw"
-PREF_LIGHT_BG="$HOME/.wall/wl1.png"
-PREF_LIGHT_ICO="Papirus"
+PREF_LIGHT_THEME="lui"
+PREF_LIGHT_BG="$HOME/.wall/Crowl.png"
+PREF_LIGHT_ICO="lui-ico"
 
-sublime_theme_light="Boxy Yesterday"
-sublime_colorscheme_light="Packages\\/Boxy Theme\\/schemes\\/Boxy Yesterday.tmTheme"
+sublime_theme_light="gruvbox"
+sublime_colorscheme_light="Packages\\/User\\/Boxy Yesterday.tmTheme"
 
 # preferences for dark theme mode
-PREF_DARK_THEME="cntw"
-PREF_DARK_BG="$HOME/.wall/wl2.jpg"
-PREF_DARK_ICO="Papirus-Dark"
+PREF_DARK_THEME="dui"
+PREF_DARK_BG="$HOME/.wall/lcrow.png"
+PREF_DARK_ICO="dui-ico"
 
-sublime_theme_dark="Boxy Tomorrow"
-sublime_colorscheme_dark="Packages\\/User\\/cntw.tmTheme"
+sublime_theme_dark="gruvbox"
+sublime_colorscheme_dark="Packages\\/One Dark Color Scheme\\/One Dark.tmTheme"
 
 
 # wall
-hsetroot_autostart_light="hsetroot -fill ~\\/.wall\\/wl1.png"
-hsetroot_autostart_dark="hsetroot -fill ~\\/.wall\\/wl2.jpg"
+hsetroot_autostart_light="hsetroot -fill ~\\/.wall\\/Crowl.png"
+hsetroot_autostart_dark="hsetroot -fill ~\\/.wall\\/lcrow.png"
 
 
 # Xresources color theme ~/.colors
 xresources_conf="$HOME/.Xresources"
 
-xresources_color_light="colors\\/cltw"
-xresources_color_dark="colors\\/cntw"
+xresources_color_light="colors\\/lui"
+xresources_color_dark="colors\\/dui"
 
 
 ob_theme="$(awk -F "[<,>]" '/<theme/ {getline; print $3}' "$ob_rc_xml")"
@@ -48,7 +48,7 @@ if [[ "$ob_theme" == "$PREF_LIGHT_THEME" ]]; then
     sed -i -e "s/$PREF_LIGHT_THEME/$PREF_DARK_THEME/g" "$xsettingsd_conf"
     sed -i -e 's/IconThemeName "$PREF_LIGHT_ICO"/IconThemeName "$PREF_DARK_ICO"/g' "$xsettingsd_conf"
     xsettingsd &
-    
+
     sed -i -e "s/$sublime_colorscheme_light/$sublime_colorscheme_dark/g" "$sublime_conf"
     sed -i -e "s/$sublime_theme_light.sublime-theme/$sublime_theme_dark.sublime-theme/g" "$sublime_conf"
 
@@ -63,11 +63,11 @@ else
     sed -i -e "s/$hsetroot_autostart_dark/$hsetroot_autostart_light/g" "$openbox_autostart"
     sed -i -e "s/$PREF_DARK_THEME/$PREF_LIGHT_THEME/g" "$ob_rc_xml"
     openbox --reconfigure
-    
+
     sed -i -e "s/$PREF_DARK_THEME/$PREF_LIGHT_THEME/g" "$xsettingsd_conf"
     sed -i -e 's/IconThemeName "$PREF_DARK_ICO"/IconThemeName "$PREF_LIGHT_ICO"/g' "$xsettingsd_conf"
     xsettingsd &
-    
+
     sed -i -e "s/$sublime_colorscheme_dark/$sublime_colorscheme_light/g" "$sublime_conf"
     sed -i -e "s/$sublime_theme_dark.sublime-theme/$sublime_theme_light.sublime-theme/g" "$sublime_conf"
 

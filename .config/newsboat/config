@@ -23,5 +23,5 @@ reload-time 20
 reload-threads 2
 notify-program notify-send
 
-# add video or audio to play queue using mpv (requires: mpv, youtube-dl, youtube-viewer)
-macro y set browser "youtube-viewer %u"; open-in-browser ; set browser "$BROWSER %u"
+# add video or audio to play queue using mpv (requires: mpv, youtube-dl, straw-viewer)
+macro y set browser "straw-viewer %u"; open-in-browser ; set browser "$BROWSER %u"

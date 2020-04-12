@@ -1,23 +1,30 @@
-xsetroot -cursor_name left_ptr &
-xrdb -merge $HOME/.Xresources &
+#!/usr/bin/sh
+
+# xsetroot -cursor_name left_ptr &
+# xrdb -merge $HOME/.Xresources &
 xset +fp $HOME/.fonts/misc/ &
 xset -b
 tint2 -c ~/.config/tint2/button.tint2rc &
 tint2 -c ~/.config/tint2/tray.tint2rc &
 sh ~/.config/polybar/ctlos/launch.sh &
 # hsetroot -add '#2c3539' -add '#b89ca8' -gradient 130 &
-# hsetroot -fill $HOME/.wall/pscircle.png &
-sh ~/.bin/pscircle-dark.sh &
+hsetroot -fill ~/.wall/lcrow.png &
+# sh ~/.bin/pscircle-dark.sh &
 picom -b --config ~/.config/picom.conf &
-thunar --daemon &
+if [ "$(which thunar)" != "thunar not found" ]; then
+  thunar --daemon &
+fi
+urxvtd -q -o -f &
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
 # setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
+alttab -fg "#9baec8" -bg "#161720" -frame "#5a74ca" -t 128x128 -i 128x48 -d 2 -theme diu-ico -font "xft:ClearSansMedium:size=9:antialias=false" -pk "Left" -nk "Right" &
 numlockx &
 xsettingsd &
 # xfsettingsd &
 xfce4-power-manager &
 dunst &
 /usr/lib/xfce-polkit/xfce-polkit &
+gnome-keyring-daemon --start --components=pkcs11,secrets &
 # cornora -bl "skippy-xd" -tl "rofi -show run" &
 # (sleep 1; redshift-gtk) &
 # (sleep 2; caffeine) &

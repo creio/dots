@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="22"
+   height="22"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="mail-archive.svg">
+  <metadata
+     id="metadata18">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview14" />
+  <path
+     d="M.5.5h21.165v21.165H.5z"
+     fill="none"
+     id="path2" />
+  <g
+     fill="#f5f5f5"
+     id="g10">
+    <path
+       d="M3.15 5.79A2.64 2.64 0 0 0 .5 8.44v10.58c0 1.465 1.18 2.65 2.65 2.65h6.61v-1.325h1.325V19.02H9.76V17.7h1.325v-1.325H9.76V15.05h1.325l-7.94-3.965v-2.65l7.94 3.97 7.935-3.97v2.65l-7.935 3.965v1.325h1.32V17.7h-1.32v1.32h1.32v1.325h-1.32v1.32h7.935c1.465 0 2.65-1.18 2.65-2.645V8.435a2.64 2.64 0 0 0-2.65-2.645zm2.64 7.935l1.655.845-4.3 4.45v-2.65zm10.585 0l2.65 2.645v2.65l-4.3-4.45z"
+       id="path4" />
+    <path
+       d="M3.15 3.15A2.64 2.64 0 0 0 .5 5.79v1.325c0-1.465 1.18-2.65 2.65-2.65h15.87a2.65 2.65 0 0 1 2.65 2.65V5.79a2.64 2.64 0 0 0-2.65-2.645z"
+       opacity=".5"
+       id="path6" />
+    <path
+       d="M3.15.5A2.64 2.64 0 0 0 .5 3.15v1.32C.5 3 1.68 1.82 3.15 1.82h15.87a2.65 2.65 0 0 1 2.65 2.65V3.145A2.64 2.64 0 0 0 19.015.5z"
+       opacity=".5"
+       id="path8" />
+  </g>
+</svg>

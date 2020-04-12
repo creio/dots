@@ -9,7 +9,7 @@
 
 alias sz="source $HOME/.zshrc"
 alias ez="$EDITOR $HOME/.zshrc"
-alias eaz="$EDITOR $HOME/.alias_zsh"
+alias ea="$EDITOR $HOME/.alias_zsh"
 alias mi="micro"
 alias merge="xrdb -merge $HOME/.Xresources"
 alias xcolor="xrdb -query | grep"
@@ -20,7 +20,7 @@ alias tb="nc termbin.com 9999"
 alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 alias updir="LC_ALL=C xdg-user-dirs-update --force"
 
-alias run="dmenu_run -l 10 -p 'Search:' -fn 'ClearSansMedium 12' -nb '#282c37' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
+alias run="dmenu_run -l 10 -p 'app>' -fn 'ClearSansMedium 9' -nb '#282c37' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
 
 # blur img: blur 4 .wall/wl3.jpg blur.jpg
 function blur() {
@@ -103,6 +103,9 @@ wts () {
   curl "wttr.in/$1?M&lang=ru"
 }
 alias moon="curl 'wttr.in/Moon'"
+
+alias srm="sudo rm -rf"
+alias rm="rm -rf"
 
 alias dir="dir --color=auto"
 alias vdir="vdir --color=auto"
@@ -255,6 +258,7 @@ alias yy="yay -Syy"
 alias yu="yay -Syu"
 alias yun="yay -Syu --noconfirm"
 alias yr="yay -R"
+alias yrsn="yay -Rsn $(pacman -Qdtq)"
 alias yrn="yay -R --noconfirm"
 alias yskip="yay --mflags '--nocheck --skippgpcheck --noconfirm'"
 alias ynskip="yay --mflags --skipinteg --noconfirm"

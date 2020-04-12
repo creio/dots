@@ -8,7 +8,7 @@ NB='#111113'
 # Foreground Commands
 NF='#FFF'
 # Background Prompt
-SB='#5A74CA'
+SB='#5a74ca'
 # Foreground Prompt
 SF='#FFF'
 

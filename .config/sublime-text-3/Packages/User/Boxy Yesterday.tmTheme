@@ -14918,6 +14918,50 @@ a {
 				<string>#ACACACFF</string>
 			</dict>
 		</dict>
+		<dict>
+			<key>scope</key>
+			<string>col_DC143CFF</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#DC143CFF</string>
+				<key>foreground</key>
+				<string>#D4D4D4FF</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>col_2C3539FF</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#2C3539FF</string>
+				<key>foreground</key>
+				<string>#B2B2B2FF</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>col_161720FF</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#161720FF</string>
+				<key>foreground</key>
+				<string>#979797FF</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>col_B89CA8FF</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#B89CA8FF</string>
+				<key>foreground</key>
+				<string>#252525FF</string>
+			</dict>
+		</dict>
 	</array>
 	<key>uuid</key>
 	<string>644320da-6e11-4c6d-9050-f2ed6b8c5049</string>

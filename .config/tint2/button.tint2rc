@@ -69,8 +69,8 @@ button_max_icon_size = 0
 # Button 2
 button = new
 button_text = 
-button_lclick_command = urxvtc -name tmux -g 190x50 -e sh -c '~/.bin/rxrun.sh'
-button_rclick_command = urxvtc -name tmux -g 190x50 -e sh -c 'tmux attach || tmux new -s work'
+button_lclick_command = urxvt -name rxtmux -g 190x50 -e sh -c '~/.bin/rxrun.sh'
+button_rclick_command = urxvt -name rxtmux -g 190x50 -e sh -c 'tmux attach || tmux new -s work'
 button_mclick_command =
 button_uwheel_command =
 button_dwheel_command =
@@ -85,7 +85,7 @@ button_max_icon_size = 0
 # Button 3
 button = new
 button_text = 
-button_lclick_command = urxvtc -name newsboat -g 190x50 -e newsboat
+button_lclick_command = urxvt -name newsboat -g 190x50 -e newsboat
 button_rclick_command =
 button_mclick_command =
 button_uwheel_command =
@@ -117,7 +117,7 @@ button_max_icon_size = 0
 # Button 5
 button = new
 button_text = 
-button_lclick_command = sh $HOME/.bin/xfce-theme.sh
+button_lclick_command = sh $HOME/.bin/openbox-theme.sh
 button_rclick_command = $HOME/.bin/picom.sh
 button_mclick_command =
 button_uwheel_command =

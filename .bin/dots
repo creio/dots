@@ -9,7 +9,6 @@
 # Ignore github ~/.gitignore
 # git.io/ctldotsrc
 # wget git.io/ctldots
-# sudo cp -fv ~/.bin/dots /usr/bin/dots
 
 # immutable values
 readonly NAME=$(basename "$0")

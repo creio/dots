@@ -1,6 +1,8 @@
 #! /bin/bash
 #
 
+nvidia-settings --assign="0/AllowFlipping=0" &>/dev/null
+
 # For Pulseaudio with ALSA:
 ffmpeg -y \
 -f x11grab \
