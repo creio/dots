@@ -12,8 +12,8 @@ Xft.lcdfilter: lcddefault
 !URxvt.font: xft:Hack Nerd Font Mono:size=9
 
 !!! xlsfonts | grep ttyp0
-URxvt.font: -uw-ttyp0-medium-r-normal--14-130-75-75-c-70-iso10646-1,xft:Hack Nerd Font Mono:size=9
-URxvt.boldFont: -uw-ttyp0-medium-r-normal--14-130-75-75-c-70-iso10646-1,xft:Hack Nerd Font Mono:size=9
+URxvt.font: -*-ttyp0-medium-r-*--13-120-*-*-*-*-iso10646-1,xft:Hack Nerd Font Mono:size=9
+URxvt.boldFont: -*-ttyp0-medium-r-*--13-120-*-*-*-*-iso10646-1,xft:Hack Nerd Font Mono:size=9
 
 !URxvt.font: -*-rissole-*
 !URxvt.boldFont: -*-rissole-*

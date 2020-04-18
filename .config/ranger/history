@@ -1,5 +1,3 @@
-find fil
-find me
 find .wa
 search creio
 cd
@@ -46,5 +44,7 @@ open_with micro
 trash
 search wm
 delete
+search video
+search vid
 search wall
 search wal

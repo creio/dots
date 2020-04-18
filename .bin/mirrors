@@ -1,11 +1,15 @@
 #!/bin/bash
+# reflector --list-countries
 
 if [ "$1" = "-c" ]; then
   # mirrors -c
-  sudo reflector -c "Belarus" -c "Russia" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --sort rate --save /etc/pacman.d/mirrorlist
+  sudo reflector -c "BY" -c "RU" -c "YA" -c "PL" -f 20 -l 20 -p https -p http -n 20 --sort rate --save /etc/pacman.d/mirrorlist
+elif [ "$1" = "-c1" ]; then
+  # mirrors -c1 RU
+  sudo reflector -c "$2" -f 20 -l 20 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist
 else
   # mirrors
-  sudo reflector --verbose -a1 -f15 -l50 -phttps --sort rate --save /etc/pacman.d/mirrorlist
+  sudo reflector --verbose -a1 -f15 -l50 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist
 fi
 
 sudo pacman -Syy

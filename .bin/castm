@@ -12,4 +12,4 @@ ffmpeg -y \
 -f alsa -ar 44100 -i default \
 -r 30 \
 -c:v libx264rgb -crf 23 -preset ultrafast -c:a aac \
--y ~/Videos/screen/output.mkv
+-y ~/Videos/output.mkv

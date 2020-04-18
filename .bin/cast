@@ -10,7 +10,7 @@ nvidia-settings --assign="0/AllowFlipping=0" &>/dev/null
 # -i :0+0,0 \
 # -r 30 \
 # -c:v gif -threads 0 \
-# -y ~/Videos/screen/output.gif
+# -y ~/Videos/output.gif
 
 ffmpeg -y \
 -f x11grab \
@@ -19,4 +19,4 @@ ffmpeg -y \
 -i :0.0 \
 -r 30 \
 -c:v libx264rgb -crf 0 -preset ultrafast -threads 0 \
--y ~/Videos/screen/output.mkv
+-y ~/Videos/output.mkv
