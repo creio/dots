@@ -23,6 +23,7 @@ USER_PATHS=(
 ".colors"
 ".fonts"
 ".gnupg"
+".mozilla/firefox/vos2wqqo.default-release/chrome"
 ".nano"
 ".ncmpcpp"
 ".ssh"
@@ -100,7 +101,6 @@ USER_PATHS=(
 ".config/Trolltech.conf"
 ".config/user-dirs.dirs"
 ".config/user-dirs.locale"
-".mozilla/firefox/vos2wqqo.default-release/chrome/userChrome.css"
 )
 
 ROOT_PATHS=(
@@ -113,5 +113,5 @@ ROOT_PATHS=(
 #
 "/etc/pulse/daemon.conf"
 "/etc/pulse/default.pa"
-"/usr/share/sddm/themes/darkine"
+"/usr/share/sddm/themes/slice"
 )

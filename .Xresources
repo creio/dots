@@ -15,9 +15,6 @@ Xft.lcdfilter: lcddefault
 URxvt.font: -*-ttyp0-medium-r-*--13-120-*-*-*-*-iso10646-1,xft:Hack Nerd Font Mono:size=9
 URxvt.boldFont: -*-ttyp0-medium-r-*--13-120-*-*-*-*-iso10646-1,xft:Hack Nerd Font Mono:size=9
 
-!URxvt.font: -*-rissole-*
-!URxvt.boldFont: -*-rissole-*
-
 !URxvt.termname: xterm-256color
 URxvt.iconFile: /usr/share/icons/Papirus/48x48/apps/urxvt.svg
 URxvt.geometry: 84x22

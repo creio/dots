@@ -12,3 +12,6 @@ gradient = 1
 gradient_count = 2
 gradient_color_1 = '#364670'
 gradient_color_2 = '#93cfbd'
+
+[output]
+method = ncurses

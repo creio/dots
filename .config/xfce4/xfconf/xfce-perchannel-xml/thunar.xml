@@ -7,10 +7,10 @@
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_16"/>
   <property name="last-window-width" type="int" value="788"/>
-  <property name="last-window-height" type="int" value="391"/>
+  <property name="last-window-height" type="int" value="394"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
-  <property name="last-separator-position" type="int" value="107"/>
+  <property name="last-separator-position" type="int" value="122"/>
   <property name="last-show-hidden" type="bool" value="true"/>
   <property name="hidden-bookmarks" type="array">
     <value type="string" value="file:///"/>
@@ -24,5 +24,8 @@
     <value type="string" value="9f7a7cce-a588-43bb-96c4-5262652cb4fc"/>
     <value type="string" value="caae28e3-1df0-4572-9d17-e38612a05706"/>
     <value type="string" value="39a4ba06-f49f-45e7-b423-40b8fa366737"/>
+    <value type="string" value="da9b5181-ada8-4fff-a49f-fb91a4c5f3e1"/>
+    <value type="string" value="ebf2472f-0c68-4db1-aec1-57bbe7460d43"/>
+    <value type="string" value="5d76a486-b791-4a7e-9eba-e5b56fd8d7a7"/>
   </property>
 </channel>

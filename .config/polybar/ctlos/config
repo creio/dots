@@ -69,6 +69,14 @@ enable-ipc = true
 # "polybar-msg cmd toggle" hide/show bar
 # dock = true
 
+# tray-position = right
+# tray-padding = 1
+# tray-transparent = false
+# tray-background = #000000
+# tray-detached = false
+# tray-maxsize = 16
+# tray-scale = 1.0
+
 
 # ##########################################
 [module/app]

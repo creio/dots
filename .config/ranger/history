@@ -1,4 +1,3 @@
-find .wa
 search creio
 cd
 shell -w dh
@@ -43,8 +42,9 @@ open_with mi
 open_with micro
 trash
 search wm
-delete
 search video
 search vid
 search wall
 search wal
+search qt
+delete

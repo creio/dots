@@ -195,9 +195,9 @@ exec_always --no-startup-id "xset +fp $HOME/.fonts/misc/"
 #exec_always --no-startup-id "nitrogen --restore"
 exec_always --no-startup-id "hsetroot -center $HOME/.wall/wl3.jpg"
 
-# xwinwrap -g 1920x1080 -ni -s -nf -b -un -argb -sh rectangle -fdt -- mpv -wid WID --keepaspect=no --loop ~/.wall/wall.webm
-# xwinwrap -g 1920x1080 -ni -s -nf -b -un -argb -sh rectangle -fdt -- gifview -w WID -a ~/.wall/wall.gif
-# exec_always --no-startup-id "xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop ~/.config/wall/wl7.gif"
+# (optimal) xwinwrap -g 1366x768 -ni -s -nf -b -argb -sh rectangle -- mpv -wid WID --keepaspect=no --loop ~/.wall/bg.mp4
+# xwinwrap -g 1920x1080 -ov -ni -sh -nf -- gifview -w WID -a ~/.wall/wall.gif
+# exec_always --no-startup-id "xwinwrap -g 1366x768 -ov -ni -sh -nf -- mpv -wid WID --keepaspect=no --loop ~/.wall/modern.gif"
 
 exec --no-startup-id numlockx
 exec --no-startup-id "picom -b --config $HOME/.config/picom.conf"

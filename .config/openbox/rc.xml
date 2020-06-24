@@ -306,7 +306,7 @@
     </keybind>
     <keybind key="C-space">
       <action name="Execute">
-        <command>ob_jgmenu</command>
+        <command>polybar-msg cmd toggle</command>
       </action>
     </keybind>
     <keybind key="W-Tab">
@@ -384,7 +384,7 @@
     </keybind>
     <keybind key="A-t">
       <action name="Execute">
-        <command>findapp urxvtc</command>
+        <command>findapp urxvt</command>
       </action>
     </keybind>
     <keybind key="W-t">
@@ -424,12 +424,12 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/screen ; viewnior $$(xdg-user-dir PICTURES)/screen/$f'</command>
+        <command>flameshot.sh -c</command>
       </action>
     </keybind>
     <keybind key="A-Print">
       <action name="Execute">
-        <command>scrot -d 5 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/screen ; viewnior $$(xdg-user-dir PICTURES)/screen/$f'</command>
+        <command>flameshot.sh -d 3000</command>
       </action>
     </keybind>
     <keybind key="W-Print">

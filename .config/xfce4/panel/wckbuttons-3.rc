@@ -1,0 +1,8 @@
+only_maximized=true
+show_on_desktop=true
+sync_wm_theme=true
+button_layout=HMC
+theme=Arc-Dark
+inactive_text_alpha=60
+inactive_text_shade=110
+
