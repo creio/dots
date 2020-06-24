@@ -10,3 +10,7 @@
 .config/polybar/wtr.sh
 .config/polybar/wtrd.sh
 .dots
+
+!.wall/
+.wall/*
+!.wall/lcrow.png
