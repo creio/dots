@@ -11,6 +11,7 @@
 .config/polybar/wtrd.sh
 .dots
 
-!.wall/
-.wall/*
-!.wall/lcrow.png
+## include file
+# !.wall/
+# .wall/*
+# !.wall/lcrow.png

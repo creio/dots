@@ -30,7 +30,6 @@ USER_PATHS=(
 ".grub-themes"
 ".themes"
 ".icons"
-".wall"
 # files
 ".aurlist.txt"
 ".pkglist.txt"
@@ -101,6 +100,7 @@ USER_PATHS=(
 ".config/Trolltech.conf"
 ".config/user-dirs.dirs"
 ".config/user-dirs.locale"
+".wall/lcrow.png"
 )
 
 ROOT_PATHS=(
