@@ -170,6 +170,7 @@ backup_files() {
     if [[ ${USER_PATHS[*]} || ${ROOT_PATHS[*]} ]]; then
 
         echo -e "$INF ${B}Copying files, please wait..$N\n"
+        cp $HOME/README.md $HOME/docs/README.md
         for f in "${USER_PATHS[@]}"; do
             [[ -e $f ]] && rsync -aR$V $f "$BASE_DIR/$USER_DIR/"
             [[ $V ]] && sleep 0.5
