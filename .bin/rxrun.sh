@@ -37,7 +37,7 @@ else
   tmux split-window -h
   tmux resize-pane -R 40
   tmux select-pane -t 2
-  tmux send-keys "ssh dj" C-m
+  tmux send-keys C-m
   #
   tmux select-window -t $SESSION:1
   tmux attach-session -t $SESSION

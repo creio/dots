@@ -1,0 +1,9 @@
+^sep()
+Lock,i3lock-fancy -p,system-lock-screen
+Exit,^checkout(exit),system-shutdown
+
+exit,^tag(exit)
+exit to prompt,openbox --exit,system-log-out
+suspend,systemctl -i suspend,system-log-out
+reboot,systemctl -i reboot,system-reboot
+poweroff,systemctl -i poweroff,system-shutdown

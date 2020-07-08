@@ -1,0 +1,27 @@
+---
+openbox_menu:
+    - Drun: rofi -show drun
+    - Terminal: $terminal  # defaults to xterm. Use eg. --terminal rxvt for a different one
+    - File Manager: $terminal -name ranger -e ranger
+    - Web Search: search
+    - separator:
+    - Development:
+        - Subl Txt: subl3
+        - Micro: $terminal -name w_max -e micro
+        - Vim: $terminal -e nvim
+    - Browser:
+        - Chromium:
+    - Mail/Chat:
+        - Telegram: telegram-desktop
+    - Multimedia:
+        - Audacious:
+        - PVC: pavucontrol
+    # - Pipemenus:
+        # - Remote Hosts: |
+            # ~/bin/bl-sshconfig-pipemenu
+    - System:
+        - htop: $terminal -name w_max -e htop
+        - Openbox:
+            - Reconfigure: openbox --reconfigure
+    - separator:
+    - Logout: rofi-logout

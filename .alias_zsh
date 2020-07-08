@@ -23,11 +23,11 @@ alias updir="LC_ALL=C xdg-user-dirs-update --force"
 alias run="dmenu_run -l 10 -p 'app>' -fn 'ClearSansMedium 9' -nb '#282c37' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
 
 # blur img: blur 4 .wall/wl3.jpg blur.jpg
-function blur() {
+blur() {
   convert -filter Gaussian -blur 0x$1 $2 $3
 }
 
-function tbg() {
+tbg() {
   urxvt -bg '[0]red' -b 0 -depth 32 +sb -name urxvt_bg &
 }
 
@@ -116,6 +116,7 @@ alias egrep="egrep --color=auto"
 
 alias ls="ls --color=auto"
 alias ll="ls -alFh --color=auto"
+alias llp="stat -c '%A %a %n' {*,.*}"
 alias la="ls -a --color=auto"
 alias l="ls -CF --color=auto"
 alias .l="dirs -v"
@@ -139,7 +140,7 @@ alias gh="cd /media/files/github"
 alias ctliso="cd /media/files/github/ctlosiso"
 alias wiki="cd /media/files/github/wiki"
 alias ghc="cd /media/files/github/creio"
-alias ghcd="cd /media/files/github/creio/dots"
+alias dot="cd /media/files/github/creio/dots"
 
 gc () {
   git clone "$1"
@@ -153,7 +154,7 @@ alias gi="git init"
 alias gs="git status"
 alias gl="git log --stat --pretty=oneline --graph --date=short"
 alias gg="gitg &"
-alias gad="git add --all"
+alias ga="git add --all"
 gac () {
   git add --all
   git commit -am "$1"
@@ -273,7 +274,7 @@ alias ssd="sudo systemctl disable"
 alias ssen="sudo systemctl enable --now"
 alias ssdn="sudo systemctl disable --now"
 alias ssr="sudo systemctl restart"
-alias ssp="sudo systemctl stop"
+alias ssk="sudo systemctl stop"
 alias sss="sudo systemctl status"
 
 # Python

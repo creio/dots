@@ -27,5 +27,9 @@
     <value type="string" value="da9b5181-ada8-4fff-a49f-fb91a4c5f3e1"/>
     <value type="string" value="ebf2472f-0c68-4db1-aec1-57bbe7460d43"/>
     <value type="string" value="5d76a486-b791-4a7e-9eba-e5b56fd8d7a7"/>
+    <value type="string" value="7a67c70b-fdd3-4652-b11e-f1cb953e1703"/>
+    <value type="string" value="cf97150e-3880-4555-965f-2295f30afe4a"/>
+    <value type="string" value="F620-8E96"/>
   </property>
+  <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
 </channel>

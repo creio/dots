@@ -60,6 +60,7 @@ modules-left = app cpu memory uparch wtr title
 modules-center = mpd_sh mpd
 modules-right = fs tor alsa date xkeyboard power
 
+click-right = "sleep 0.2; xdotool key ctrl+space &"
 cursor-click = pointer
 cursor-scroll = ns-resize
 
@@ -85,9 +86,10 @@ content = 
 content-foreground = ${colors.accent}
 content-background = ${xrdb:color0}
 content-padding = 3
-click-left = "jgmenu_run >/dev/null 2>&1 &"
+#click-left = "jgmenu_run >/dev/null 2>&1 &"
+click-right = "sleep 0.2; xdotool key ctrl+space &"
 # click-left = "rofi -no-lazy-grab -show drun -theme launchers/style_normal_rainbow_sidebar.rasi &"
-click-right = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
+click-left = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
 # click-right = "~/.config/rofi/scripts/apps.sh &"
 # click-right = ~/.bin/rofi-favapp
 # click-right = mylaunchpad xfce-applications

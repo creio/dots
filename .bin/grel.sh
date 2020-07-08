@@ -2,7 +2,7 @@
 
 tag_name="v$1"
 target_name="$2"
-asset_dir="./out"
+asset_dir="./test"
 cr_date=$(date +%Y%m%d)
 
 assets=()

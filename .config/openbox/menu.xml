@@ -1,6 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
-<openbox_menu xmlns="http://openbox.org/"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://openbox.org/">
-    <menu id="root-menu" label="obmenu-generator" execute="/usr/bin/obmenu-generator" />
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu>
+  <menu id="root-menu" label="Openbox 3">
+    <item label="Drun"> <action name="Execute">
+    	<execute>rofi -show drun</execute>
+    </action></item>
+    <item label="Terminal"> <action name="Execute">
+    	<execute>urxvtc</execute>
+    </action></item>
+    <item label="File Manager"> <action name="Execute">
+    	<execute>urxvtc -name ranger -e ranger</execute>
+    </action></item>
+    <item label="Web Search"> <action name="Execute">
+    	<execute>search</execute>
+    </action></item>
+    <separator />
+    <menu id="0" label="Development">
+      <item label="Subl Txt"> <action name="Execute">
+      	<execute>subl3</execute>
+      </action></item>
+      <item label="Micro"> <action name="Execute">
+      	<execute>urxvtc -name w_max -e micro</execute>
+      </action></item>
+      <item label="Vim"> <action name="Execute">
+      	<execute>urxvtc -e nvim</execute>
+      </action></item>
+    </menu>
+    <menu id="1" label="Browser">
+      <item label="Chromium"> <action name="Execute">
+      	<execute>chromium</execute>
+      </action></item>
+    </menu>
+    <menu id="2" label="Mail/Chat">
+      <item label="Telegram"> <action name="Execute">
+      	<execute>telegram-desktop</execute>
+      </action></item>
+    </menu>
+    <menu id="3" label="Multimedia">
+      <item label="Audacious"> <action name="Execute">
+      	<execute>audacious</execute>
+      </action></item>
+      <item label="PVC"> <action name="Execute">
+      	<execute>pavucontrol</execute>
+      </action></item>
+    </menu>
+    <menu id="4" label="System">
+      <item label="htop"> <action name="Execute">
+      	<execute>urxvtc -name w_max -e htop</execute>
+      </action></item>
+      <menu id="5" label="Openbox">
+        <item label="Reconfigure"> <action name="Execute">
+        	<execute>openbox --reconfigure</execute>
+        </action></item>
+      </menu>
+    </menu>
+    <separator />
+    <item label="Logout"> <action name="Execute">
+    	<execute>rofi-logout</execute>
+    </action></item>
+  </menu>
 </openbox_menu>

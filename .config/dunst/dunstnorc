@@ -14,7 +14,7 @@
     separator_color = frame
     sort = yes
     idle_threshold = 120
-    font = Roboto Mono Medium 9
+    font = Clear Sans Medium 9
     line_height = 0
     markup = full
     format = "<span foreground='#b3bdcb'>%s %p</span>\n%b"
@@ -28,7 +28,7 @@
     show_indicators = yes
     icon_position = left
     max_icon_size = 32
-    icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/:/usr/share/icons/Papirus/16x16/apps/
+    icon_path = /usr/share/icons/Papirus-Dark/16x16/actions:/usr/share/icons/Papirus-Dark/16x16/apps/:/usr/share/icons/Papirus-Dark/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/status/
     # icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
     sticky_history = yes
     history_length = 20
@@ -62,7 +62,7 @@
     foreground = "#F0E0E0"
     frame_color = "#D64E4E"
     timeout = 10
-    icon = /usr/share/icons/Papirus/22x22/status/dialog-error.svg
+    icon = /usr/share/icons/Papirus-Dark/22x22/status/dialog-error.svg
 
 [ignore-all]
     summary = "*"

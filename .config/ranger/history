@@ -1,6 +1,3 @@
-search creio
-cd
-shell -w dh
 shell -w df
 search icons
 find them
@@ -44,7 +41,10 @@ trash
 search wm
 search video
 search vid
-search wall
 search wal
 search qt
 delete
+search wall
+q
+help
+find zsh

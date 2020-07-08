@@ -1,4 +1,4 @@
 TerminalEmulator=urxvt
 WebBrowser=chromium
-FileManager=nautilus
+FileManager=Thunar
 

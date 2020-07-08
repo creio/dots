@@ -1,22 +1,37 @@
 #! /bin/bash
-#
 
 nvidia-settings --assign="0/AllowFlipping=0" &>/dev/null
 
-# ffmpeg -y \
-# -f x11grab \
-# -framerate 30 \
-# -s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
-# -i :0+0,0 \
-# -r 30 \
-# -c:v gif -threads 0 \
-# -y ~/Videos/output.gif
+RES=$(xdpyinfo | grep dimensions | awk '{print $2;}')
 
-ffmpeg -y \
--f x11grab \
--framerate 30 \
--s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
--i :0.0 \
--r 30 \
--c:v libx264rgb -crf 0 -preset ultrafast -threads 0 \
--y ~/Videos/output.mkv
+if [ "$1" = "-m" ]; then
+  ffmpeg -y \
+  -f x11grab -s $RES -i :0.0 \
+  -f alsa -i default \
+  -c:v libx264rgb -r 30 -crf 23 -preset superfast -threads 0 \
+  -c:a aac \
+  -y ~/Videos/output.mkv
+elif [ "$1" = "-c" ]; then
+  slop=$(slop -f "%x %y %w %h %g %i") || exit 1
+  read -r X Y W H G ID < <(echo $slop)
+  ffmpeg -f x11grab -s "$W"x"$H" -i :0.0+$X,$Y -c:v libx264 -r 30 -preset superfast -qp 0 -y ~/Videos/output.mp4
+elif [ "$1" = "-s" ]; then
+  slop=$(slop -f "%x %y %w %h %g %i") || exit 1
+  read -r X Y W H G ID < <(echo $slop)
+  ffmpeg -y \
+  -f x11grab -s "$W"x"$H" -i :0.0+$X,$Y \
+  -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
+  -c:v libx264rgb -r 30 -crf 23 -preset superfast -threads 0 \
+  -y ~/Videos/output.mp4
+elif [ "$1" = "-c" ]; then
+  ffmpeg -y \
+  -f x11grab -s $RES -i :0+0,0 \
+  -c:v gif -r 30 -threads 0 \
+  -y ~/Videos/output.gif
+else
+  ffmpeg -y \
+  -f x11grab -s $RES -i :0.0 \
+  -f pulse -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
+  -c:v libx264rgb -r 30 -crf 23 -preset superfast -threads 0 \
+  -y ~/Videos/output.mp4
+fi

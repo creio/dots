@@ -304,10 +304,20 @@
         <to>4</to>
       </action>
     </keybind>
-    <keybind key="C-space">
+    <keybind key="W-p">
       <action name="Execute">
         <command>polybar-msg cmd toggle</command>
       </action>
+    </keybind>
+    <!-- <keybind key="C-space">
+      <action name="Execute">
+        <command>phide.sh</command>
+      </action>
+    </keybind> -->
+    <keybind key="C-space">
+     <action name="ShowMenu">
+       <menu>root-menu</menu>
+     </action>
     </keybind>
     <keybind key="W-Tab">
       <action name="Execute">
@@ -372,7 +382,7 @@
         <command>findapp thunar</command>
       </action>
     </keybind>
-    <keybind key="A-s">
+    <keybind key="A-e">
       <action name="Execute">
         <command>findapp subl3</command>
       </action>
@@ -412,9 +422,9 @@
         <command>search</command>
       </action>
     </keybind>
-    <keybind key="W-A-l">
+    <keybind key="A-s">
       <action name="Execute">
-        <command>oblogout</command>
+        <command>rofi -show "Search.. " -modi "Search.. ":~/.bin/finder.sh</command>
       </action>
     </keybind>
     <keybind key="W-A-Delete">
@@ -842,16 +852,16 @@
           <menu>client-list-combined-menu</menu>
         </action>
       </mousebind>
-      <!-- <mousebind action="Press" button="Right">
+      <mousebind action="Press" button="Right">
         <action name="ShowMenu">
           <menu>root-menu</menu>
         </action>
-      </mousebind> -->
-      <mousebind action="Release" button="Right">
+      </mousebind>
+      <!-- <mousebind action="Release" button="Right">
         <action name="Execute">
           <command>ob_jgmenu</command>
         </action>
-      </mousebind>
+      </mousebind> -->
     </context>
     <context name="MoveResize">
       <mousebind action="Click" button="Up">
@@ -931,7 +941,17 @@
         <height>60/100</height>
       </size>
     </application>
-    <application name="tmux">
+    <application name="polkit-gnome-authentication-agent-1">
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <size>
+        <width>40/100</width>
+        <!-- <height>60/100</height> -->
+      </size>
+    </application>
+    <application name="rxtmux">
       <maximized>yes</maximized>
       <decor>no</decor>
       <shade>no</shade>
@@ -939,6 +959,17 @@
       <!-- <desktop>2</desktop> -->
     </application>
     <application name="ranger">
+      <focus>yes</focus>
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <size>
+        <width>95/100</width>
+        <height>95/100</height>
+      </size>
+    </application>
+    <application name="w_max">
       <focus>yes</focus>
       <position force="no">
         <x>center</x>
@@ -965,6 +996,13 @@
       <!-- <decor>no</decor> -->
       <shade>no</shade>
       <layer>below</layer>
+    </application>
+    <application name="urxvt_bg">
+      <maximized>yes</maximized>
+      <decor>no</decor>
+      <shade>yes</shade>
+      <layer>below</layer>
+      <desktop>2</desktop>
     </application>
     <!-- <application name="kitty_bg">
       <maximized>yes</maximized>

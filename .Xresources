@@ -40,8 +40,8 @@ URxvt.url-select.underline: true
 URxvt.matcher.button: 1
 URxvt.keysym.C-u: perl:url-select:select_next
 
-URxvt.keysym.C-v: perl:keyboard-select:activate
-URxvt.keysym.C-s: perl:keyboard-select:search
+URxvt.keysym.C-Escape: perl:keyboard-select:activate
+URxvt.keysym.C-/: perl:keyboard-select:search
 
 URxvt.clipboard.autocopy: true
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
