@@ -38,6 +38,12 @@ zzh() {
 zz() {
   du -a . | awk '{print $2}' | fzf | xargs -r $EDITOR
 }
+zzd() {
+  du -a $1 | awk '{print $2}' | fzf | xargs -r $EDITOR
+}
+zzr() {
+  find -H "/usr/bin" "$HOME/.bin" -executable -print | sed -e 's=.*/==g' | fzf | sh
+}
 
 # зависимость source-highlight
 hcat () {

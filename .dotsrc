@@ -117,4 +117,5 @@ ROOT_PATHS=(
 "/etc/pulse/daemon.conf"
 "/etc/pulse/default.pa"
 "/usr/share/sddm/themes/slice"
+"/etc/X11/xorg.conf"
 )

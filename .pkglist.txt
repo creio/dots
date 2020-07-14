@@ -16,6 +16,7 @@ bat
 bind-tools
 binutils
 bison
+bleachbit
 bmon
 bridge-utils
 brightnessctl
@@ -30,6 +31,7 @@ cpio
 cronie
 ctlos-keyring
 ctlos-korla-icon
+ctlos-mirrorlist
 curl
 devilspie
 devtools
@@ -49,6 +51,7 @@ file
 file-roller
 filezilla
 findutils
+fio
 firefox
 firefox-i18n-ru
 fish
@@ -72,12 +75,12 @@ gnu-netcat
 go
 gotop-bin
 gparted
-gpick
 grep
 groff
 grub
 gsimplecal
 gst-libav
+gst-plugins-bad
 gtk-engine-murrine
 gtk-engines
 gtk2-perl
@@ -103,11 +106,11 @@ jq
 kakoune
 kdenlive
 keybase-gui
-kitemmodels
 lib32-libva-vdpau-driver
 lib32-mesa-vdpau
 lib32-vulkan-intel
 lib32-vulkan-radeon
+libcurl-gnutls
 libnma
 libtool
 libva-mesa-driver
@@ -115,6 +118,7 @@ libva-utils
 libva-vdpau-driver
 libvirt
 libwnck
+libxnvctrl-390xx
 linux
 linux-firmware
 linux-headers
@@ -146,12 +150,14 @@ noto-fonts-emoji
 npm
 ntfs-3g
 numlockx
+nvidia-390xx-settings
 oh-my-zsh-git
 openbox
 openssh
 optipng
 p7zip
 pacman
+pamixer
 papirus-icon-theme
 parallel
 patch
@@ -177,11 +183,13 @@ qgnomeplatform-git
 qogir-icon-theme-git
 qt5-styleplugins
 qt5ct
+qutebrowser
 ranger
 redshift
 reflector
 rofi
 rsync
+ruby-ffi
 rxvt-unicode-patched
 sassc
 scrot
@@ -190,6 +198,7 @@ sed
 simplescreenrecorder
 skippy-xd-git
 slop
+smplayer
 source-highlight
 speech-dispatcher
 spice-protocol
@@ -220,6 +229,7 @@ ttf-opensans
 ttf-roboto
 ttf-ubuntu-font-family
 tumbler
+ueberzug
 unrar
 unzip
 urxvt-perls
@@ -235,6 +245,7 @@ volumeicon
 vte-common
 vte3
 w3m
+weechat
 wget
 which
 whois
@@ -242,6 +253,8 @@ wireless_tools
 wmctrl
 xclip
 xdg-user-dirs
+xdg-user-dirs-gtk
+xdo
 xdotool
 xf86-input-evdev
 xfce4-power-manager

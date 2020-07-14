@@ -941,16 +941,6 @@
         <height>60/100</height>
       </size>
     </application>
-    <application name="polkit-gnome-authentication-agent-1">
-      <position force="no">
-        <x>center</x>
-        <y>center</y>
-      </position>
-      <size>
-        <width>40/100</width>
-        <!-- <height>60/100</height> -->
-      </size>
-    </application>
     <application name="rxtmux">
       <maximized>yes</maximized>
       <decor>no</decor>

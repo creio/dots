@@ -1,12 +1,9 @@
 #!/usr/bin/sh
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+# zmodload zsh/zprof
 
 ZSH=/usr/share/oh-my-zsh/
-
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="oxide"
-# ZSH_THEME="refined"
 ZSH_THEME="af-magic"
 DISABLE_AUTO_UPDATE="true"
 plugins=(
@@ -18,6 +15,16 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=white"
+
+export HISTSIZE=5000
+export HISTFILESIZE=5000
+export HISTFILE=~/.zhistory
+
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
 
 # fzf & fd
 [[ -e "/usr/share/fzf/fzf-extras.zsh" ]] && source /usr/share/fzf/fzf-extras.zsh
@@ -41,6 +48,8 @@ export FZF_COMPLETION_TRIGGER="~~"
 export PF_INFO="ascii os kernel wm shell pkgs memory palette"
 # export PF_ASCII="arch"
 
+export MANPAGER="sh -c 'sed -e s/.\\\\x08//g | bat -l man -p'"
+
 # export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
 # export PATH="$PATH:`yarn global bin`"
 # export NVM_DIR="$HOME/.config/nvm"
@@ -50,3 +59,4 @@ export PF_INFO="ascii os kernel wm shell pkgs memory palette"
 # export GOPATH=$HOME/.go
 # export GOBIN=$GOPATH/bin
 # export PATH="$PATH:$GOBIN"
+# zprof
