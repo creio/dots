@@ -10,7 +10,6 @@
 alias sz="source $HOME/.zshrc"
 alias ez="$EDITOR $HOME/.zshrc"
 alias ea="$EDITOR $HOME/.alias_zsh"
-alias mi="micro"
 alias merge="xrdb -merge $HOME/.Xresources"
 alias xcolor="xrdb -query | grep"
 alias vga="lspci -k | grep -A 2 -E '(VGA|3D)'"
@@ -20,7 +19,7 @@ alias tb="nc termbin.com 9999"
 alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 alias updir="LC_ALL=C xdg-user-dirs-update --force"
 
-alias run="dmenu_run -l 10 -p 'app>' -fn 'ClearSansMedium 9' -nb '#282c37' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
+alias dmrun="dmenu_run -l 10 -p 'app>' -fn 'ClearSansMedium 9' -nb '#282c37' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
 
 # blur img: blur 4 .wall/wl3.jpg blur.jpg
 blur() {
@@ -73,6 +72,22 @@ amake () {
   cd ..
 }
 
+# aur clean chroot manager
+accm () {
+  git clone https://aur.archlinux.org/"$2".git
+  # curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
+  cd $2
+  sudo ccm "$1" &&
+  gpg --detach-sign "$2"-*.pkg*
+  cd ..
+}
+
+# pkg clean chroot manager
+lccm () {
+  sudo ccm "$1" &&
+  gpg --detach-sign *.pkg*
+}
+
 aget () {
   git clone https://aur.archlinux.org/"$1".git
   # curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
@@ -92,6 +107,8 @@ abuild () {
   rm -rf ~/.build/$1
 }
 
+
+alias neofetch="neofetch --ascii ~/.config/neofetch/ctlos"
 alias neoa="neofetch --ascii ~/.config/neofetch/mario"
 alias neo="neofetch --w3m ~/.config/neofetch/cn.jpg"
 # alias neo="neofetch --kitty ~/.config/neofetch/cn.jpg"
@@ -130,7 +147,7 @@ alias lss="ls -sh | sort -h"
 alias duh="du -d 1 -h | sort -h"
 
 alias mk="mkdir"
-mkcd () {
+mkj () {
   mkdir -p "$1"
   cd "$1"
 }
@@ -221,14 +238,15 @@ iso () {
   sudo dd bs=4M if="$1" of=/dev/"$2" status=progress && sync
 }
 
-
 alias -s {mp3,m4a,flac}="mpv"
 alias -s {png,jpg,tiff,bmp}="viewnior"
-alias -s {conf,txt}="nvim"
+# alias -s {conf,txt}="nvim"
 # alias {aurman,pikaur,trizen,yaourt}="yay"
 
-alias sub="subl3"
-alias ssub="sudo subl3"
+alias mi="micro"
+alias smi="sudo micro"
+alias st="subl3"
+alias sst="sudo subl3"
 alias tm="tmux attach || tmux new -s work"
 alias tmd="tmux detach"
 alias tmk="tmux kill-server"
@@ -239,16 +257,17 @@ alias sth="sudo thunar &"
 alias na="nautilus . &"
 alias sna="sudo nautilus &"
 alias h="htop"
-alias {v,vi,vim}="nvim"
+# alias {v,vi,vim}="nvim"
 
 # LANG=C pacman -Sl | awk '/\[installed\]$/ {print $2}' > ~/.pkglist.txt
 # LANG=C pacman -Sl | awk '/\[installed\]$/ {print $1 "/" $2 "-" $3}' > ~/.pkglist.txt
 alias pkglist="pacman -Qneq > ~/.pkglist.txt"
 alias aurlist="pacman -Qmeq > ~/.aurlist.txt"
 
-alias packey="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Syy"
+alias packey="sudo pacman-key --init && sudo pacman-key --populate && sudo pacman-key --refresh-keys && sudo pacman -Syy"
 alias sp="sudo pacman -S"
 alias spo="sudo pacman -S --overwrite='*'"
+# alias spl="sudo pacman -S --noconfirm - < ~/.pkglist.txt"
 alias spU="sudo pacman -U"
 alias spoU="sudo pacman -U --overwrite='*'"
 alias sps="sudo pacman -Ss"
@@ -260,7 +279,7 @@ alias spr="sudo pacman -R"
 
 alias y="yay -S"
 alias yn="yay -S --noconfirm"
-alias yl="yay -S --noconfirm - < .aurlist.txt"
+# alias yl="yay -S --noconfirm - < ~/.aurlist.txt"
 alias ys="yay"
 alias ysn="yay --noconfirm"
 alias yc="yay -Sc"

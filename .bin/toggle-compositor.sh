@@ -1,16 +1,14 @@
 #!/bin/bash
 
-
 # vars
-pid="$(pidof compton)"
-
+pid="$(pidof picom)"
 
 # exec
 if test "$pid"; then
 	kill -9 "$pid"
 	notify-send "compositor disabled"
 else
-	compton &
+	picom &
 	disown
 	notify-send "compositor enabled"
 fi

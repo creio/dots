@@ -19,7 +19,8 @@
 		".git",
 		".hg",
 		"CVS",
-		"work"
+		"work",
+    "node_modules"
 	],
 	"font_face": "Roboto Mono Medium",
 	"font_size": 9,

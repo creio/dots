@@ -1,11 +1,11 @@
 #!/bin/bash
-#=======================================================================================    
+#=======================================================================================
 #
 # Transforms cava music visualizer in a cool desktop decoration
 #
 # Author: Guido_Fe
 #
-# Dependencies (and credits): 
+# Dependencies (and credits):
 #   xdotool
 #   cava
 #   URxvt
@@ -19,7 +19,7 @@
 #
 #   This script starts the cava music visualizer on a transparent backround through URxvt
 #   ('cause it's easy to customize and support transparent foreground and background). It
-#   then uses devilspie to strip it of his window decorations and rules, move it to the 
+#   then uses devilspie to strip it of his window decorations and rules, move it to the
 #   right place and resize it.
 #   Problem: the panel doesn't allow you to focus the windows below it.
 #   My solution: move cava under the screen when the mouse pointer go over
@@ -52,7 +52,7 @@ cavaConf=''
 # Set these parameters if you want to transform a default terminal color to another one.
 # This is useful if you want to have semitransparent cava bars. To do so, first set the
 # cava bar colors to a default one, different to the background (white, red, green...),
-# form the cava config file, and assign it's color number to the inColor variable. 
+# form the cava config file, and assign it's color number to the inColor variable.
 # The numbers are:
 #
 # black='0', red='1', green='2', yellow='3', blue='4', magenta='5', cyan='6', white='7'
@@ -112,7 +112,7 @@ if [ $# -eq 0 ]; then
 		setsid $0 'start' >/dev/null 2>&1 < /dev/null &
 		# focus on the right window
 		eval $(xdotool getmouselocation --shell)
-		sleep 0.3
+		sleep 0.1
 		xdotool windowfocus $WINDOW
 		exit
 	fi

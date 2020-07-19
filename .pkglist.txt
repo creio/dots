@@ -5,11 +5,11 @@ arc-gtk-theme
 arch-install-scripts
 archiso
 archlinux-appstream-data
+asciinema
 audacious
 audacity
 autoconf
 automake
-avidemux-qt
 base
 bash-completion
 bat
@@ -20,17 +20,16 @@ bleachbit
 bmon
 bridge-utils
 brightnessctl
+calamares-net
 capitaine-cursors
 catfish
 chromium
 ckbcomp
 clamav
-clipit
 conky
 cpio
 cronie
 ctlos-keyring
-ctlos-korla-icon
 ctlos-mirrorlist
 curl
 devilspie
@@ -96,7 +95,6 @@ hdparm
 hsetroot
 htop
 hub
-i3lock-fancy-git
 imagemagick
 inkscape
 inxi
@@ -104,7 +102,6 @@ jdk8-openjdk
 jgmenu
 jq
 kakoune
-kdenlive
 keybase-gui
 lib32-libva-vdpau-driver
 lib32-mesa-vdpau
@@ -118,7 +115,6 @@ libva-utils
 libva-vdpau-driver
 libvirt
 libwnck
-libxnvctrl-390xx
 linux
 linux-firmware
 linux-headers
@@ -150,8 +146,6 @@ noto-fonts-emoji
 npm
 ntfs-3g
 numlockx
-nvidia-390xx-settings
-oh-my-zsh-git
 openbox
 openssh
 optipng
@@ -160,6 +154,7 @@ pacman
 pamixer
 papirus-icon-theme
 parallel
+parcellite
 patch
 pavucontrol
 pepper-flash
@@ -198,10 +193,10 @@ sed
 simplescreenrecorder
 skippy-xd-git
 slop
-smplayer
 source-highlight
 speech-dispatcher
 spice-protocol
+spice-vdagent
 straw-viewer-git
 streamlink
 sudo
@@ -229,7 +224,6 @@ ttf-opensans
 ttf-roboto
 ttf-ubuntu-font-family
 tumbler
-ueberzug
 unrar
 unzip
 urxvt-perls
@@ -252,8 +246,6 @@ whois
 wireless_tools
 wmctrl
 xclip
-xdg-user-dirs
-xdg-user-dirs-gtk
 xdo
 xdotool
 xf86-input-evdev
@@ -301,6 +293,3 @@ yarn
 yay-bin
 youtube-dl
 zsh
-zsh-autosuggestions
-zsh-fast-syntax-highlighting-git
-zsh-syntax-highlighting

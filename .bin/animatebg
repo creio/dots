@@ -4,7 +4,7 @@ looping=$1
 
 if [ -z $looping ]
 then
-  looping=~/.wall/heart.gif
+  looping=~/.wall/1.gif
 fi
 
 #### 20% cpu gif, best result, convert mp4 -> gif:

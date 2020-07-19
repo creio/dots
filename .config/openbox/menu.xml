@@ -51,6 +51,9 @@
         <item label="Reconfigure"> <action name="Execute">
         	<execute>openbox --reconfigure</execute>
         </action></item>
+        <item label="Restart"> <action name="Execute">
+        	<execute>openbox --restart</execute>
+        </action></item>
       </menu>
     </menu>
     <separator />

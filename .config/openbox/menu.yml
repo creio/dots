@@ -23,5 +23,6 @@ openbox_menu:
         - htop: $terminal -name w_max -e htop
         - Openbox:
             - Reconfigure: openbox --reconfigure
+            - Restart: openbox --restart
     - separator:
     - Logout: rofi-logout
