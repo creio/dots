@@ -10,10 +10,12 @@ if [[ ! -d ~/.zplug ]];then
 fi
 source ~/.zplug/init.zsh
 zplug "plugins/sudo", from:oh-my-zsh
+zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
 zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh"
 zplug "robbyrussell/oh-my-zsh", use:"themes/af-magic.zsh-theme", as:theme
+zplug "lukechilds/zsh-nvm"
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -55,9 +57,6 @@ export MANPAGER="sh -c 'sed -e s/.\\\\x08//g | bat -l man -p'"
 
 # export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
 # export PATH="$PATH:`yarn global bin`"
-# export NVM_DIR="$HOME/.config/nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # export GOPATH=$HOME/.go
 # export GOBIN=$GOPATH/bin

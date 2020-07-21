@@ -1,12 +1,16 @@
 #!/bin/bash
 # reflector --list-countries
 
-if [ "$1" = "-c" ]; then
+if [ "$(which curl)" != "curl not found" ]; then
+  check_country=$(curl -s https://ipinfo.io/country)
+fi
+
+if [ "$1" = "-lc" ]; then
+  # mirrors -lc
+  sudo reflector --verbose -c "$check_country" -c "RU" -c "YA" -c "PL" -f 20 -l 20 -p https -p http -n 20 --sort rate --save /etc/pacman.d/mirrorlist
+elif [ "$1" = "-c" ]; then
   # mirrors -c
-  sudo reflector -c "BY" -c "RU" -c "YA" -c "PL" -f 20 -l 20 -p https -p http -n 20 --sort rate --save /etc/pacman.d/mirrorlist
-elif [ "$1" = "-c1" ]; then
-  # mirrors -c1 RU
-  sudo reflector -c "$2" -f 20 -l 20 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist
+  sudo reflector -c "$check_country" -f 20 -l 20 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist
 else
   # mirrors
   sudo reflector --verbose -a1 -f15 -l50 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist

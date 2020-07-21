@@ -15,7 +15,7 @@ alias xcolor="xrdb -query | grep"
 alias vga="lspci -k | grep -A 2 -E '(VGA|3D)'"
 alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias iip="curl --max-time 10 -w '\n' http://ident.me"
-alias tb="nc termbin.com 9999"
+alias tb="nc termbin.com 9999 | xsel -b -i"
 alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 alias updir="LC_ALL=C xdg-user-dirs-update --force"
 
