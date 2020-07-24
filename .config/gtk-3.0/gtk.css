@@ -2,6 +2,8 @@ VteTerminal, vte-terminal {
     padding: 20px;
 }
 
+/*.xfce4-panel {border-radius: 10px;}*/
+
 /*decoration {
 	border: 4px solid #F4F5F6;
 	border-radius: 7px;

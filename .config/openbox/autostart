@@ -11,6 +11,7 @@ fi
 hsetroot -fill ~/.wall/lcrow.png &
 # sh ~/.bin/pscircle-dark.sh &
 picom -b --config ~/.config/picom.conf &
+# picom -b --experimental-backends --config ~/.config/picom_blur.conf &
 if [ "$(which thunar)" != "thunar not found" ]; then
   thunar --daemon &
 fi

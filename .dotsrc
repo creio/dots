@@ -93,6 +93,7 @@ USER_PATHS=(
 ".config/yay"
 ".config/clean-chroot-manager.conf"
 ".config/picom.conf"
+".config/picom_blur.conf"
 ".config/kdenliverc"
 ".config/mpd/mpd.conf"
 ".config/obmenu-generator/config.pl"

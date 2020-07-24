@@ -14,13 +14,14 @@
         <value type="int" value="1"/>
         <value type="int" value="2"/>
         <value type="int" value="5"/>
-        <value type="int" value="6"/>
         <value type="int" value="9"/>
         <value type="int" value="11"/>
         <value type="int" value="12"/>
         <value type="int" value="13"/>
-        <value type="int" value="3"/>
       </property>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="leave-opacity" type="uint" value="75"/>
+      <property name="enter-opacity" type="uint" value="75"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -40,17 +41,6 @@
       <property name="style" type="uint" value="0"/>
       <property name="expand" type="bool" value="true"/>
     </property>
-    <property name="plugin-6" type="string" value="systray">
-      <property name="show-frame" type="bool" value="false"/>
-      <property name="square-icons" type="bool" value="true"/>
-      <property name="names-ordered" type="array">
-        <value type="string" value="caffeine"/>
-        <value type="string" value="telegramdesktop"/>
-        <value type="string" value="redshift-gtk"/>
-        <value type="string" value="clipit"/>
-      </property>
-      <property name="size-max" type="uint" value="16"/>
-    </property>
     <property name="plugin-7" type="string" value="statusnotifier">
       <property name="square-icons" type="bool" value="true"/>
       <property name="symbolic-icons" type="bool" value="true"/>
@@ -64,10 +54,24 @@
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-12" type="string" value="clock"/>
+    <property name="plugin-12" type="string" value="clock">
+      <property name="tooltip-format" type="string" value="%A %d %B %Y"/>
+      <property name="digital-format" type="string" value="%T"/>
+    </property>
     <property name="plugin-13" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-3" type="string" value="wckbuttons"/>
+    <property name="plugin-6" type="string" value="statusnotifier">
+      <property name="known-items" type="array">
+        <value type="string" value="flameshot"/>
+        <value type="string" value="redshift"/>
+        <value type="string" value="caffeine"/>
+        <value type="string" value="TelegramDesktop"/>
+      </property>
+      <property name="icon-size" type="int" value="16"/>
+      <property name="single-row" type="bool" value="false"/>
+      <property name="square-icons" type="bool" value="false"/>
+      <property name="symbolic-icons" type="bool" value="false"/>
+    </property>
   </property>
 </channel>
