@@ -20,7 +20,7 @@
 		".hg",
 		"CVS",
 		"work",
-    "node_modules"
+		"node_modules"
 	],
 	"font_face": "Roboto Mono Medium",
 	"font_size": 9,

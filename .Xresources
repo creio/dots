@@ -6,7 +6,7 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-#include ".colors/dui"
+#include ".colors/moonlight"
 
 !URxvt.font: xft:CozetteVector:size=9
 !URxvt.font: xft:Hack Nerd Font Mono:size=9

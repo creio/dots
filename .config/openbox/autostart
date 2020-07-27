@@ -30,13 +30,12 @@ gnome-keyring-daemon --start --components=pkcs11,secrets &
 # cornora -bl "skippy-xd" -tl "rofi -show run" &
 # (sleep 1; redshift-gtk) &
 # (sleep 2; caffeine) &
-(sleep 3; clipit) &
+# (sleep 3; parcellite) &
 # greenclip daemon &
 # (sleep 5; nm-applet) &
 # (sleep 2; volumeicon) &
 # (sleep 5; megasync) &
 # udiskie -t &
-telegram-desktop &
 # sh -c "kunst --music_dir /media/files/mega/music --size 250x250 --x 1080 --y 60"
 
 # devilspie ~/.devilspie/urxvt_bg.ds &

@@ -11,7 +11,7 @@
       <property name="icon-size" type="uint" value="16"/>
       <property name="size" type="uint" value="24"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="1"/>
+        <value type="int" value="3"/>
         <value type="int" value="2"/>
         <value type="int" value="5"/>
         <value type="int" value="9"/>
@@ -25,10 +25,6 @@
     </property>
   </property>
   <property name="plugins" type="empty">
-    <property name="plugin-1" type="string" value="applicationsmenu">
-      <property name="button-title" type="string" value=""/>
-      <property name="show-button-title" type="bool" value="true"/>
-    </property>
     <property name="plugin-2" type="string" value="tasklist">
       <property name="grouping" type="uint" value="1"/>
       <property name="show-handle" type="bool" value="false"/>
@@ -73,5 +69,6 @@
       <property name="square-icons" type="bool" value="false"/>
       <property name="symbolic-icons" type="bool" value="false"/>
     </property>
+    <property name="plugin-3" type="string" value="whiskermenu"/>
   </property>
 </channel>

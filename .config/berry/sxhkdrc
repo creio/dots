@@ -101,3 +101,9 @@ alt + c
 
 ~button1
     berryc pointer_focus
+
+super + ~button1
+  berryc move_mask
+
+alt + ~button1
+  berryc resize_mask

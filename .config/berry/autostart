@@ -30,25 +30,23 @@ sh ~/.bin/wallpaper.sh &
 tint2 -c ~/.config/tint2/tray.tint2rc &
 sh ~/.config/polybar/ctlos/launch.sh &
 # picom -b --config ~/.config/picom.conf &
-picom -b --backend xrender &
-# picom -b --experimental-backends &
-urxvtd &
+# picom -b --backend xrender &
+picom -b --experimental-backends --config ~/.config/picom_blur.conf &
+urxvtd -q -o -f &
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
 # setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
 # setxkbmap -option "terminate:ctrl_alt_bksp" &
-# numlockx &
+numlockx &
 #xsettingsd &
 # xfsettingsd &
 # xfce4-power-manager &
-# pulseaudio --start &
-# mpd &
 dunst &
 # unclutter --timeout 2 &
-/usr/bin/lxqt-policykit-agent &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 redshift-gtk &
 clipit &
 # greenclip daemon &
 # nm-applet &
 # volumeicon &
 # caffeine &
-telegram-desktop &
+# telegram-desktop &

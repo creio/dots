@@ -46,6 +46,7 @@ padding-right = 0
 module-margin-left = 5
 module-margin-right = 0
 
+# font-0 = "UW Ttyp0:style=Regular:size=8:antialias=false;2"
 font-0 = "Ubuntu:style=Bold:size=8:antialias=false;2"
 #font-2 = "Siji:pixelsize=8;1"
 # Cat unicode: echo -e "\uF31A"

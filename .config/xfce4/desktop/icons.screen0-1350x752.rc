@@ -1,7 +1,11 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[2020-03-13-16-05-06-00]
+[9f7a7cce-a588-43bb-96c4-5262652cb4fc]
+row=4
+col=0
+
+[F620-8E96]
 row=0
 col=0
 
@@ -9,7 +13,7 @@ col=0
 row=3
 col=0
 
-[39a4ba06-f49f-45e7-b423-40b8fa366737]
+[7a67c70b-fdd3-4652-b11e-f1cb953e1703]
 row=6
 col=0
 
@@ -17,16 +21,12 @@ col=0
 row=2
 col=0
 
-[caae28e3-1df0-4572-9d17-e38612a05706]
+[cf97150e-3880-4555-965f-2295f30afe4a]
 row=5
 col=0
 
 [0e8adc0e-b94b-4c36-83db-160e248d8e44]
 row=1
-col=0
-
-[9f7a7cce-a588-43bb-96c4-5262652cb4fc]
-row=4
 col=0
 
 [Корзина]

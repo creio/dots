@@ -40,7 +40,7 @@ zz() {
 zzd() {
   du -a $1 | awk '{print $2}' | fzf | xargs -r $EDITOR
 }
-zzr() {
+zzb() {
   find -H "/usr/bin" "$HOME/.bin" -executable -print | sed -e 's=.*/==g' | fzf | sh
 }
 
@@ -138,9 +138,9 @@ alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 
 alias ls="ls --color=auto"
-alias ll="ls -alFh --color=auto"
+alias la="ls -alFh --color=auto"
 alias llp="stat -c '%A %a %n' {*,.*}"
-alias la="ls -a --color=auto"
+alias ll="ls -a --color=auto"
 alias l="ls -CF --color=auto"
 alias .l="dirs -v"
 alias lss="ls -sh | sort -h"

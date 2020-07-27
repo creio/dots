@@ -1,43 +1,11 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[40e27fff-a72e-48a5-bdbf-86f8805b14db]
-row=3
-col=0
-
-[7a67c70b-fdd3-4652-b11e-f1cb953e1703]
-row=3
-col=1
-
-[b9494637-e3f4-4c2f-9f95-57c0b69e3db1]
-row=2
-col=0
-
-[cf97150e-3880-4555-965f-2295f30afe4a]
-row=5
-col=0
-
-[0e8adc0e-b94b-4c36-83db-160e248d8e44]
-row=1
-col=0
-
-[9f7a7cce-a588-43bb-96c4-5262652cb4fc]
-row=4
-col=0
-
-[F620-8E96]
-row=0
-col=0
-
 [Корзина]
-row=0
-col=1
-
-[/]
 row=1
-col=1
+col=0
 
 [/home/st]
-row=2
-col=1
+row=0
+col=0
 
