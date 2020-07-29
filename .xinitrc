@@ -47,6 +47,7 @@ xset fp rehash &
 # exec dwm
 # exec i3
 exec openbox-session
+# exec startinstantos
 
 # hsetroot -fill ~/.wall/lcrow.png &
 # exec startxfce4

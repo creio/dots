@@ -1,5 +1,8 @@
 # Dotfiles
 
+Date: 29.07.2020,18:19:46
+
+- Repo: [creio/dots](https://github.com/creio/dots)
 - Distro: [Ctlos/Arch Linux](https://ctlos.github.io/)
 - DE(WM): openbox
 - Panel: tint2,polybar

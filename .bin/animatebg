@@ -4,16 +4,18 @@ looping=$1
 
 if [ -z $looping ]
 then
-  looping=~/.wall/1.gif
+  looping=~/.wall/hhh.gif
 fi
 
 #### 20% cpu gif, best result, convert mp4 -> gif:
+## ffmpeg -i input.webm -pix_fmt rgb24 output.gif
 ## ffmpeg -i .wall/heart.mp4 .wall/heart.gif
-xwinwrap -b -fs -sp -fs -ov -ni -nf -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --x11-bypass-compositor=no --aid=no --hwdec=auto --really-quiet $looping
+xwinwrap -b -sp -fs -ov -ni -nf -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --x11-bypass-compositor=no --aid=no --hwdec=auto --really-quiet $looping
 
 #### 40% cpu mp4
-# xwinwrap -b -fs -sp -fs -ov -ni -nf -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --vd-lavc-fast --x11-bypass-compositor=no --aid=no --vo=xv --hwdec=auto --really-quiet $looping
+# xwinwrap -b -sp -fs -ov -ni -nf -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --vd-lavc-fast --x11-bypass-compositor=no --aid=no --vo=xv --hwdec=auto --really-quiet $looping
 
 #### 60% cpu gif
-#### gifsicle --resize 1366x768 wl7.gif -o bg.gif
-# xwinwrap -b -fs -sp -fs -ov -ni -nf -- gifview -w WID $looping -a
+## gifsicle --resize 1366x768 wl7.gif -o bg.gif
+## gifsicle -i .wall/gg.gif --optimize=3 -o ~/.wall/ggo.gif
+# xwinwrap -b -sp -fs -ov -ni -nf -- gifview -w WID $looping -a

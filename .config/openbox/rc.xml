@@ -994,6 +994,22 @@
       <layer>below</layer>
       <desktop>2</desktop>
     </application>
+    <application title="m_sticky">
+      <desktop>all</desktop>
+      <decor>no</decor>
+      <shade>no</shade>
+      <layer>above</layer>
+      <!-- <skip_pager>yes</skip_pager> -->
+      <!-- <skip_taskbar>yes</skip_taskbar> -->
+      <position force="no">
+        <x>1010</x>
+        <y>480</y>
+      </position>
+      <size>
+        <width>25/100</width>
+        <height>25/100</height>
+      </size>
+    </application>
     <!-- <application name="kitty_bg">
       <maximized>yes</maximized>
       <decor>no</decor>

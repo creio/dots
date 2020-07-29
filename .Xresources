@@ -6,7 +6,7 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-#include ".colors/moonlight"
+#include ".colors/dui"
 
 !URxvt.font: xft:CozetteVector:size=9
 !URxvt.font: xft:Hack Nerd Font Mono:size=9
@@ -34,7 +34,7 @@ URxvt.depth: 32
 URxvt.iso14755:        false
 URxvt.iso14755_52:     false
 
-URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select,url-select
+URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select,resize-font,url-select
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
 URxvt.matcher.button: 1
@@ -52,3 +52,9 @@ URxvt.keysym.Control-Up:    \033[1;5A
 URxvt.keysym.Control-Down:  \033[1;5B
 URxvt.keysym.Control-Left:  \033[1;5D
 URxvt.keysym.Control-Right: \033[1;5C
+
+! urxvt-resize-font-git
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
