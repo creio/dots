@@ -170,6 +170,7 @@ backup_files() {
     if [[ ${USER_PATHS[*]} || ${ROOT_PATHS[*]} ]]; then
 
         echo -e "$INF ${B}Copying files, please wait..$N\n"
+        sed -i -e "s/Date:.*/Date: $(date '+%d.%m.%Y,%H:%M:%S')/g" $HOME/README.md
         cp $HOME/README.md $HOME/docs/README.md
         for f in "${USER_PATHS[@]}"; do
             [[ -e $f ]] && rsync -aR$V $f "$BASE_DIR/$USER_DIR/"
