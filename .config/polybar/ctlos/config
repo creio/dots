@@ -59,7 +59,7 @@ font-5 = "Weather Icons:style=Regular:pixelsize=9;2"
 
 modules-left = app cpu memory uparch wtr title
 modules-center = mpd_sh mpd
-modules-right = fs tor alsa date xkeyboard power
+modules-right = bri_sh fs tor alsa date xkeyboard power
 
 click-right = "sleep 0.2; xdotool key ctrl+space &"
 cursor-click = pointer
@@ -190,6 +190,17 @@ icon-pause-foreground = ${colors.accent}
 icon-stop-foreground = ${colors.accent}
 icon-prev-foreground = ${colors.accent}
 icon-next-foreground = ${colors.accent}
+
+
+
+[module/bri_sh]
+type = custom/text
+content = 
+content-foreground = ${colors.accent}
+content-background = ${xrdb:color0}
+content-padding = 3
+click-left = "~/.bin/bri.sh 0.7 0.9:0.9:0.9 &"
+click-right = "~/.bin/bri.sh 1 1:1:1 &"
 
 
 

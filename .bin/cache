@@ -1,4 +1,7 @@
 #!/bin/bash
 
 # fc-cache -vf
-sudo pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
+sudo pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) & \
+rm -rf ~/.cache/thumbnails/* && \
+rm -rf ~/.build/* && \
+rm -rf ~/.cache/telegram/*
