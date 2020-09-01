@@ -35,6 +35,7 @@ USER_PATHS=(
 ".pkglist.txt"
 #
 ".alias_zsh"
+".env"
 ".dotsrc"
 ".github"
 ".gitignore"

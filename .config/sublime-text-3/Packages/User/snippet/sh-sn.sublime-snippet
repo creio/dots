@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-```${1:sh}
+```${1:bash}
 ${2:code}
 ```
 ]]></content>

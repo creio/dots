@@ -10,7 +10,7 @@
   <property name="last-window-height" type="int" value="374"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
-  <property name="last-separator-position" type="int" value="112"/>
+  <property name="last-separator-position" type="int" value="127"/>
   <property name="last-show-hidden" type="bool" value="true"/>
   <property name="hidden-bookmarks" type="array">
     <value type="string" value="network:///"/>
@@ -30,6 +30,9 @@
     <value type="string" value="7a67c70b-fdd3-4652-b11e-f1cb953e1703"/>
     <value type="string" value="cf97150e-3880-4555-965f-2295f30afe4a"/>
     <value type="string" value="361A-F3C3"/>
+    <value type="string" value="a415e362-b968-4b71-82dc-4c2df55a96cd"/>
+    <value type="string" value="4b38b1b1-c1dc-499b-8c32-c52dbdda1ad1"/>
+    <value type="string" value="00aee3e5-cdda-498a-a80e-cad304a645dc"/>
   </property>
   <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
 </channel>

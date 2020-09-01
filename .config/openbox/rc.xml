@@ -199,11 +199,11 @@
         </then>
         <else>
           <action name="UnmaximizeFull"/>
-          <action name="Decorate"/>
-          <action name="MoveResizeTo">
+          <!-- <action name="Decorate"/> -->
+          <!-- <action name="MoveResizeTo">
             <x>center</x>
             <y>center</y>
-          </action>
+          </action> -->
         </else>
       </action>
     </keybind>
@@ -414,7 +414,7 @@
     </keybind>
     <keybind key="W-l">
       <action name="Execute">
-        <command>betterlockscreen -l dimblur</command>
+        <command>multilockscreen -l dimblur</command>
       </action>
     </keybind>
     <keybind key="W-s">
@@ -919,6 +919,16 @@
         <y>center</y>
       </position> -->
     </application>
+    <application role="GtkFileChooserDialog">
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <size>
+        <width>60/100</width>
+        <height>60/100</height>
+      </size>
+    </application>
     <application name="subl3">
       <maximized>yes</maximized>
       <decor>no</decor>
@@ -930,16 +940,6 @@
       <decor>no</decor>
       <shade>no</shade>
       <focus>yes</focus>
-    </application>
-    <application role="GtkFileChooserDialog">
-      <position force="no">
-        <x>center</x>
-        <y>center</y>
-      </position>
-      <size>
-        <width>60/100</width>
-        <height>60/100</height>
-      </size>
     </application>
     <application name="rxtmux">
       <maximized>yes</maximized>

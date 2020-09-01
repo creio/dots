@@ -6,6 +6,7 @@
 # sudo systemctl start sshd
 # ssh -p 22222 liveuser@localhost
 # -net nic -net user \
+# -vnc :1 \
 
 QVIRT_DIR=$HOME/.qvirt
 QVIRT_QCOW=arch.qcow2
@@ -22,10 +23,10 @@ if [ "$1" = "-i" ]; then
   qemu-system-x86_64 \
     -enable-kvm \
     -m 2048M \
-    -net nic -net user,hostfwd=tcp::22222-:22 \
+    -net nic,model=virtio -net user,hostfwd=tcp::22222-:22 \
     -vga qxl \
-    -soundhw ac97 \
-    -hda $QVIRT_DIR/$QVIRT_QCOW \
+    -device AC97 \
+    -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
     -cdrom $2 \
     -boot d
 else
@@ -33,8 +34,8 @@ else
   qemu-system-x86_64 \
     -enable-kvm \
     -m 2048M \
-    -net nic -net user,hostfwd=tcp::22222-:22 \
+    -net nic,model=virtio-net-pci -net user,hostfwd=tcp::22222-:22 \
     -vga qxl \
-    -soundhw ac97 \
+    -device AC97 \
     -hda $1
 fi

@@ -47,13 +47,16 @@ export PF_INFO="ascii os kernel wm shell pkgs memory palette"
 
 export MANPAGER="sh -c 'sed -e s/.\\\\x08//g | bat -l man -p'"
 
+[[ -f ~/.env ]] && . ~/.env
 [[ -f ~/.alias_zsh ]] && . ~/.alias_zsh
 
-# export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
-# export PATH="$PATH:`yarn global bin`"
+export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
+export PATH="$PATH:`yarn global bin`"
 
-# export GOPATH=$HOME/.go
-# export GOBIN=$GOPATH/bin
-# export PATH="$PATH:$GOBIN"
+export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
+export PATH="$PATH:$GOBIN"
+
+export PATH=$HOME/opt/diode:$PATH
 
 # zprof

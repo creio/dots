@@ -21,6 +21,10 @@ alias updir="LC_ALL=C xdg-user-dirs-update --force"
 
 alias dmrun="dmenu_run -l 10 -p 'app>' -fn 'ClearSansMedium 9' -nb '#282c37' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
 
+drop() {
+  rsync -auvCL ~/ctlosiso/out/ cretm@${dev_ctlos_ru}:~/app/dev.ctlos.ru/iso/$1
+}
+
 # blur img: blur 4 .wall/wl3.jpg blur.jpg
 blur() {
   convert -filter Gaussian -blur 0x$1 $2 $3
@@ -76,6 +80,7 @@ amake () {
 accm () {
   git clone https://aur.archlinux.org/"$2".git
   # curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
+  # tar -xvf $1.tar.gz
   cd $2
   sudo ccm "$1" &&
   gpg --detach-sign "$2"-*.pkg*
@@ -91,6 +96,7 @@ lccm () {
 aget () {
   git clone https://aur.archlinux.org/"$1".git
   # curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
+  # tar -xvf $1.tar.gz
   cd $1
 }
 
@@ -193,6 +199,7 @@ alias gsc="github-search-repos -i"
 
 # tor chromium
 alias torc="$BROWSER --proxy-server='socks://127.0.0.1:9050' &"
+alias psi="$BROWSER --proxy-server='socks://127.0.0.1:1081' &"
 
 # full screen flags -fs
 alias yt="straw-viewer"
@@ -289,7 +296,9 @@ alias yy="yay -Syy"
 alias yu="yay -Syu"
 alias yun="yay -Syu --noconfirm"
 alias yr="yay -R"
-alias yrsn="yay -Rsn $(pacman -Qdtq)"
+alias yrs="yay -Rs"
+alias yrsn="yay -Rsn"
+alias yrsnp="yay -Rsn $(pacman -Qdtq)"
 alias yrn="yay -R --noconfirm"
 alias yskip="yay --mflags '--nocheck --skippgpcheck --noconfirm'"
 alias ynskip="yay --mflags --skipinteg --noconfirm"
