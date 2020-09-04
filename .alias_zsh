@@ -21,7 +21,7 @@ alias updir="LC_ALL=C xdg-user-dirs-update --force"
 
 alias dmrun="dmenu_run -l 10 -p 'app>' -fn 'ClearSansMedium 9' -nb '#282c37' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
 
-drop() {
+doiso() {
   rsync -auvCL ~/ctlosiso/out/ cretm@${dev_ctlos_ru}:~/app/dev.ctlos.ru/iso/$1
 }
 

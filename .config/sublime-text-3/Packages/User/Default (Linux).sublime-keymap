@@ -8,8 +8,7 @@
 	// { "keys": ["ctrl+k", "ctrl+l"], "command": "gist_list" },
 	{ "keys": ["ctrl+k", "ctrl+["], "command": "insert_gist_list" },
 	{ "keys": ["ctrl+k", "ctrl+]"], "command": "gist_add_file" },
-	// 
+	//
 	{ "keys": ["ctrl+."], "command": "toggle_comment", "args": { "block": false } },
 	{ "keys": ["ctrl+'"], "command": "expand_selection_to_quotes" }
 ]
-// Ctrl+Shift+G оборачивание emmet
