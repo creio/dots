@@ -34,6 +34,13 @@ xset +fp ~/.fonts &
 xset fp rehash &
 # fc-cache -fv &
 
+# dbus-update-activation-environment --all
+
+# flashfocus &
+# ~/.config/frankenwm/autostart &
+# exec frankenwm
+# exec monsterwm
+
 # exec xmonad > $HOME/.xmonad/log.txt 2>&1
 # exec 2bwm
 # exec awesome
@@ -41,6 +48,8 @@ xset fp rehash &
 # exec i3
 exec openbox-session
 # exec startinstantos
+
+# exec gnome-session
 
 # hsetroot -fill ~/.wall/lcrow.png &
 # exec startxfce4

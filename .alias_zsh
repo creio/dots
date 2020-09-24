@@ -52,6 +52,9 @@ zzb() {
 hcat () {
   /usr/bin/src-hilite-lesspipe.sh "$1" | less -m -N
 }
+ccat () {
+  cat "$1" | xsel -b -i
+}
 
 # share vbox В локальной машине mkdir vboxshare
 # в виртуалке uid={имя пользователя} git={группа}
@@ -283,11 +286,11 @@ alias spcc="sudo pacman -Scc"
 alias spy="sudo pacman -Syy"
 alias spu="sudo pacman -Syu"
 alias spr="sudo pacman -R"
-alias pres="pacman -Qqn | sudo pacman -S -"
+alias pres="sudo pacman -S $(pacman -Qqn)"
 
 alias y="yay -S"
 alias yn="yay -S --noconfirm"
-alias yl="yay -S --noconfirm --needed - < ~/.aurlist.txt"
+alias yl="yay -S --noconfirm --needed $(cat ~/.pkglist.txt)"
 alias ys="yay"
 alias ysn="yay --noconfirm"
 alias yc="yay -Sc"
@@ -302,6 +305,7 @@ alias yrsnp="yay -Rsn $(pacman -Qdtq)"
 alias yrn="yay -R --noconfirm"
 alias yskip="yay --mflags '--nocheck --skippgpcheck --noconfirm'"
 alias ynskip="yay --mflags --skipinteg --noconfirm"
+# pacman -Qqo /usr/lib/python3.8/
 
 # systemd
 alias sse="sudo systemctl enable"

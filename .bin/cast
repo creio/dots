@@ -1,6 +1,7 @@
 #! /bin/bash
 
-sudo nvidia-settings --assign="0/AllowFlipping=0" &>/dev/null
+# nvidia-settings --load-config-only
+nvidia-settings --assign="SyncToVBlank=0" --assign="0/AllowFlipping=0" &>/dev/null
 
 RES=$(xdpyinfo | grep dimensions | awk '{print $2;}')
 ALSA_OUT="alsa_output.pci-0000_00_14.2.analog-stereo.monitor"
@@ -9,8 +10,8 @@ if [ "$1" = "-m" ]; then
   ffmpeg \
   -f x11grab -s $RES -i :0.0 \
   -f alsa -i default \
-  -c:v libx264 -pix_fmt yuv420p -r 30 -crf 23 -preset superfast -threads 0 \
-  -c:a aac \
+  -c:v libx264 -pix_fmt yuv420p -r 30 -crf 23 -preset superfast -s 1920x1080 -threads 0 -qp 0 \
+  -c:a libvorbis -b:a 128k \
   -y ~/Videos/output.mkv
 elif [ "$1" = "-n" ]; then
   ffmpeg \
@@ -37,6 +38,6 @@ else
   -f x11grab -video_size $RES -i :0.0 \
   -f pulse -i $ALSA_OUT \
   -c:a libvorbis -b:a 128k \
-  -c:v libx264 -pix_fmt yuv420p -crf 23 -preset superfast -s 1920x1080 -r 30 \
+  -c:v libx264 -pix_fmt yuv420p -r 30 -crf 23 -preset superfast -s 1920x1080 \
   -y ~/Videos/output.mp4
 fi

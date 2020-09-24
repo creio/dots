@@ -22,7 +22,7 @@ if [ "$1" = "-i" ]; then
   # qvirt -i
   qemu-system-x86_64 \
     -enable-kvm \
-    -m 2048M \
+    -m 4G \
     -net nic,model=virtio -net user,hostfwd=tcp::22222-:22 \
     -vga qxl \
     -device AC97 \
@@ -33,7 +33,7 @@ else
   # qvirt
   qemu-system-x86_64 \
     -enable-kvm \
-    -m 2048M \
+    -m 4G \
     -net nic,model=virtio-net-pci -net user,hostfwd=tcp::22222-:22 \
     -vga qxl \
     -device AC97 \

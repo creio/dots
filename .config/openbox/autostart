@@ -12,6 +12,7 @@ hsetroot -fill ~/.wall/lcrow.png &
 # sh ~/.bin/pscircle-dark.sh &
 picom -b --config ~/.config/picom.conf &
 # picom -b --experimental-backends --config ~/.config/picom_blur.conf &
+# flashfocus &
 if [ "$(which thunar)" != "thunar not found" ]; then
   thunar --daemon &
 fi
@@ -27,7 +28,10 @@ dunst &
 # /usr/lib/xfce-polkit/xfce-polkit &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 gnome-keyring-daemon --start --components=pkcs11,secrets &
+unclutter &
+urxvt &
 # cornora -bl "skippy-xd" -tl "rofi -show run" &
+redshift -c ~/.config/redshift.conf &
 # (sleep 1; redshift-gtk) &
 # (sleep 2; caffeine) &
 # (sleep 3; parcellite) &

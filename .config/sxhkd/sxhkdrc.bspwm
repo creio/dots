@@ -10,57 +10,66 @@ super + F1
 alt + Return
   sh -c "$HOME/.bin/draw"
 
+# terminal emulator Tiled
 super + Return
   urxvt -name Tiled
 
+# terminal emulator Float
 alt + t
   $HOME/.config/bspwm/bspwmfloat urxvt -name Float
 
-# program launcher
+# program launcher rofi
 alt + d
   rofi -show drun
 
+# firefox
 alt + w
-  chromium
+  firefox
 
+# sublime text3
 alt + s
   subl3
 
+# thunar
 alt + f
-  nemo
+  thunar
 
+# telegram
 alt + m
   telegram-desktop
 
+# ranger
 alt + r
   urxvt -name Ranger -e ranger
 
 # alt + c
-#   #rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
-#   bspc node focused -t center=on
-alt + c
-  sh -c "$HOME/.bin/window-center"
+#   rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
+# polybar toggle
 super + ctrl + p
   polybar-msg cmd toggle
 
-# betterlockscreen -u path/to/directory -r 1920x1080 -b 0.5
+# multilock.sh
 super + Delete
-  betterlockscreen -l blur
+  sh -c "$HOME/.config/bspwm/multilock.sh -l blur"
 
-# betterlockscreen -s blur
+# power menu rofi
 super + alt + Delete
   sh -c "$HOME/.config/bspwm/power"
 
+# flameshot full save PICTURES
 Print
-  flameshot full -c -p "$(xdg-user-dir PICTURES)"/screen
+  flameshot full -c -p "$(xdg-user-dir PICTURES)"
 
+# flameshot gui
 super + Print
   flameshot gui
 
+# flameshot delay 5s save PICTURES
 super + alt + Print
-  flameshot full -c -d 5000 -p "$(xdg-user-dir PICTURES)"/screen
+  flameshot full -c -d 5000 -p "$(xdg-user-dir PICTURES)"
 
+# mpc current
 super + alt + m
   notify-send "Now Playing ♫" "$(mpc current)"
 
@@ -72,7 +81,7 @@ super + b
   bspc node @focused:/ -B
 
 # make sxhkd reload its configuration files:
-alt + Escape
+super + Escape
   pkill -USR1 -x sxhkd
 
 #
@@ -155,6 +164,7 @@ super + {_,shift + }{h,j,k,l}
 alt + {_,shift + }Tab
   bspc node -f {next,prev}.local
 
+# focus desktop prev,next
 super + alt + {Left,Right}
   bspc desktop -f {prev,next}.local
 
@@ -164,6 +174,7 @@ super + shift + {Left,Right}
   bspc node {older,newer} -f; \
   bspc wm -h on
 
+# focus desktop 1-10
 super + {q,w,e,r,t,y,u,i,o,0}
   bspc desktop -f '^{1-9,10}'
 
@@ -171,6 +182,7 @@ super + {q,w,e,r,t,y,u,i,o,0}
 super + {_,alt + }{1-9,0}
   bspc {desktop -f,node -d} '^{1-9,10}'
 
+# focus or send desktop next,prev
 super + ctrl + {Right,Left}
   bspc node -d {next,prev} -f
 
@@ -191,7 +203,7 @@ super + ctrl + {1-9}
   bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-ctrl + Escape
+ctrl + alt + space
   bspc node -p cancel
 
 # cancel the preselection for the focused desktop

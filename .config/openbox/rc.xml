@@ -128,7 +128,7 @@
       <name>3</name>
       <name>4</name>
     </names>
-    <popupTime>400</popupTime>
+    <popupTime>0</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -410,6 +410,11 @@
     <keybind key="A-w">
       <action name="Execute">
         <command>findapp chromium</command>
+      </action>
+    </keybind>
+    <keybind key="A-m">
+      <action name="Execute">
+        <command>findapp telegram-desktop</command>
       </action>
     </keybind>
     <keybind key="W-l">
@@ -931,12 +936,14 @@
     </application>
     <application name="subl3">
       <maximized>yes</maximized>
+      <!-- <desktop>3</desktop> -->
       <decor>no</decor>
       <shade>no</shade>
       <focus>yes</focus>
     </application>
     <application role="browser">
       <maximized>yes</maximized>
+      <!-- <desktop>2</desktop> -->
       <decor>no</decor>
       <shade>no</shade>
       <focus>yes</focus>
@@ -946,9 +953,18 @@
       <decor>no</decor>
       <shade>no</shade>
       <focus>yes</focus>
-      <!-- <desktop>2</desktop> -->
+      <desktop>1</desktop>
+    </application>
+    <!-- <application name="telegram-desktop">
+      <desktop>all</desktop>
+      <focus>yes</focus>
+    </application>
+    <application name="thunar">
+      <desktop>4</desktop>
+      <focus>yes</focus>
     </application>
     <application name="ranger">
+      <desktop>4</desktop>
       <focus>yes</focus>
       <position force="no">
         <x>center</x>
@@ -958,7 +974,7 @@
         <width>95/100</width>
         <height>95/100</height>
       </size>
-    </application>
+    </application> -->
     <application name="w_max">
       <focus>yes</focus>
       <position force="no">

@@ -22,7 +22,7 @@
   menu-prompt-padding:                   10px 20px 10px 20px;
   menu-prompt-margin:                    0px 0px 0px -2px;
   menu-element-border:                   10px;
-  menu-element-padding:                  3px 17px -1px -40px;
+  menu-element-padding:                  3px 17px -1px 3px;
 }
 
 /* ########### */

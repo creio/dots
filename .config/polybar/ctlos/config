@@ -24,7 +24,7 @@ monitor-fallback = VGA-1
 #monitor-fallback = HDMI1
 #monitor-strict = false
 width = 100%
-height = 24
+height = 22
 offset-x = 0
 offset-y = 0
 fixed-center = true
@@ -34,7 +34,7 @@ locale = ru_RU.UTF-8
 background = ${colors.background}
 foreground = ${colors.text}
 
-line-size = 0
+line-size = 1
 line-color = #f00
 
 border-size = 0
@@ -58,7 +58,7 @@ font-5 = "Weather Icons:style=Regular:pixelsize=9;2"
 
 
 modules-left = app cpu memory uparch wtr title
-modules-center = mpd_sh mpd
+modules-center = zentile workspaces mpd mpd_sh
 modules-right = bri_sh fs tor alsa date xkeyboard power
 
 click-right = "sleep 0.2; xdotool key ctrl+space &"
@@ -151,6 +151,56 @@ label = "%title:0:30:...%"
 label-maxlen = 30
 
 
+[module/zentile]
+type = custom/text
+content = "  "
+content-foreground = ${colors.accent}
+content-background = ${xrdb:color0}
+click-left = "~/.config/polybar/ctlos/zentile.sh &"
+click-middle =
+click-right =
+
+
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-5 = 6;
+icon-6 = 7;
+icon-7 = 8;
+icon-8 = 9;
+icon-9 = 10;
+icon-default = 
+
+format = <label-state>
+
+label-active = %icon%
+label-active-foreground = ${colors.accent}
+label-active-background = ${xrdb:color0}
+label-active-underline = ${colors.accent}
+label-active-padding = 3
+
+label-empty = %icon%
+label-empty-padding = 3
+label-empty-foreground = ${colors.text}
+
+label-occupied = %icon%
+label-occupied-foreground = ${colors.accent}
+label-occupied-background = ${xrdb:color0}
+label-occupied-padding = 3
+
+label-urgent = %icon%
+label-urgent-foreground = ${xrdb:color5}
+label-urgent-padding = 3
+
+
 
 [module/mpd_sh]
 type = custom/text
@@ -199,8 +249,8 @@ content = 
 content-foreground = ${colors.accent}
 content-background = ${xrdb:color0}
 content-padding = 3
-click-left = "~/.bin/bri.sh 0.7 0.9:0.9:0.9 &"
-click-right = "~/.bin/bri.sh 1 1:1:1 &"
+click-left = "pkill -9 redshift; ~/.bin/bri.sh 0.7 0.9:0.9:0.9 &"
+click-right = "~/.bin/bri.sh 1 1:1:1; pkill -9 redshift &"
 
 
 
@@ -287,4 +337,4 @@ content-background = ${xrdb:color0}
 content-padding = 3
 click-left = "rofi-logout"
 #click-left = "~/.config/rofi/scripts/powermenu.sh &"
-click-right= "i3lock-fancy"
+click-right= "multilockscreen -l blur"
