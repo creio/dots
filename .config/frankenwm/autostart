@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# wmname LG3D &
+
+tint2 -c ~/.config/tint2/tray.tint2rc &
+~/.config/frankenwm/polybar/launch.sh &
+hsetroot -fill ~/.wall/lcrow.png &
+picom -b --config ~/.config/picom.conf &
+numlockx on &
+redshift -c ~/.config/redshift.conf &
+urxvtd -q -o -f &
+setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
+xsettingsd &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+gnome-keyring-daemon --start --components=pkcs11,secrets &
+xfce4-power-manager &
+dunst &
+unclutter &

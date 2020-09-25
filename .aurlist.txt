@@ -23,8 +23,6 @@ ob-yml-menu
 opencl-nvidia-390xx
 picom-tryone-git
 pscircle-git
-python-dpkt-git
-quicktile-git
 recapp-git
 rxvt-unicode-pixbuf
 shantz-xwinwrap-bzr
@@ -34,10 +32,6 @@ sublime-text-dev
 toilet
 ttf-symbola
 ttf-weather-icons
-ttf-wps-fonts
 urxvt-resize-font-git
 ventoy-bin
-wps-office
-wps-office-extension-russian-dictionary
-wps-office-mui-ru-ru
 zentile-bin
