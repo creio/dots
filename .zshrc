@@ -42,6 +42,7 @@ export EDITOR="$(if [[ -n $DISPLAY ]]; then if [[ `which subl3` != 'subl3 not fo
 export BROWSER="chromium"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 export XDG_CONFIG_HOME="$HOME/.config"
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 export PF_INFO="ascii os kernel wm shell pkgs memory palette"
 # export PF_ASCII="arch"
@@ -57,7 +58,5 @@ export PATH="$PATH:`yarn global bin`"
 export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
 export PATH="$PATH:$GOBIN"
-
-export PATH=$HOME/opt/diode:$PATH
 
 # zprof

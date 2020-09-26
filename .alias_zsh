@@ -136,8 +136,11 @@ wts () {
 }
 alias moon="curl 'wttr.in/Moon'"
 
-alias srm="sudo rm -rf"
-alias rm="rm -rf"
+alias srm="sudo rm -rfv"
+alias rm="rm -rfv"
+brm () {
+  /bin/bash -c "yes | rm -rfv $1"{.\*\,\*}
+}
 
 alias dir="dir --color=auto"
 alias vdir="vdir --color=auto"

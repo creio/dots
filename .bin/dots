@@ -145,6 +145,7 @@ clean_dir()
 
 b_keybase()
 {
+  # systemctl start --user kbfs
   cmd="$(systemctl status --user kbfs | grep -i running 2>/dev/null || echo '')"
 
   if [[ "$cmd" ]]; then
@@ -154,7 +155,6 @@ b_keybase()
     else
       to="$KB_PATH"
     fi
-    # systemctl start --user kbfs
     [[ -d $KB_PATH ]] && rsync -ahC --info=progress2 --no-i-r --delete --delete-excluded --exclude={".wall/",".icons/",".themes/",".config/sublime-text-3/"} --safe-links --progress "$BPATH/" "$to" || return 1
   else
     echo "run: systemctl start --user kbfs"

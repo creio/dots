@@ -15,3 +15,7 @@
 !.ssh/
 .ssh/*
 !.ssh/id_rsa.pub
+
+!.wall/
+.wall/*
+!.wall/lcrow.png

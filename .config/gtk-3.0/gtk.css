@@ -2,6 +2,17 @@ VteTerminal, vte-terminal {
     padding: 20px;
 }
 
+.window-frame, .window-frame:backdrop {
+  box-shadow: 0 0 0 black;
+  border-style: none;
+  border-radius: 0;
+  margin: 0;
+}
+
+/*.titlebar {
+  border-radius: 0;
+}*/
+
 /*.xfce4-panel {border-radius: 10px;}*/
 
 /*decoration {

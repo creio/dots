@@ -6,7 +6,7 @@ REPO='https://github.com/creio/dots'
 BRANCH=''
 BKPS=(
 {docs,_config.yml,README.md}
-.{github,bin,colors,fonts,gnupg,nano,ncmpcpp,ssh,themes,icons}
+.{github,bin,colors,fonts,gnupg,nano,ncmpcpp,ssh,themes,icons,wall}
 .{zshrc,alias_zsh,xinitrc,Xresources,xsettingsd,gitconfig,gitignore,aurlist.txt,pkglist.txt}
 .{env,dotsrc,gtkrc-2.0,nanorc,pam_environment,tmux.conf,face.icon}
 .config/{berry,bspwm,sxhkd,i3,openbox,xfce4,frankenwm}

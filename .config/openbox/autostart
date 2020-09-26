@@ -1,6 +1,8 @@
 #!/usr/bin/sh
 
 xset -b
+# wmname LG3D &
+
 tint2 -c ~/.config/tint2/button.tint2rc &
 tint2 -c ~/.config/tint2/tray.tint2rc &
 if [ "$(which polybar)" != "polybar not found" ]; then
