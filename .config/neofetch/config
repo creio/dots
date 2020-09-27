@@ -21,12 +21,13 @@ print_info() {
     #info "CPU Usage" cpu_usage
     #info "Battery" Battery
     info "Disk" disk
+    info "Memory" memory
     info "Local IP" local_ip
     # info "Public IP" public_ip
     # info "Song" song
     #prin "Weather" "$(curl wttr.in/?0?q?T | awk '/°(C|F)/ {printf $(NF-1) $(NF) " ("a")"} /,/ {a=$0}')"
     # prin "Weather" "$(curl wttr.in/60.04,30.32?0?q?T | awk '/°(C|F)/ {printf $(NF-1) $(NF)}')"
-    # prin "Weather" "$(curl wttr.in/Gomel?0?q?T | awk '/°(C|F)/ {printf $(NF-1) $(NF)}')"
+    # prin "Weather" "$(curl wttr.in/Moscow?0?q?T | awk '/°(C|F)/ {printf $(NF-1) $(NF)}')"
     info line_break
     info cols
     # info line_break

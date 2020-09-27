@@ -9,7 +9,7 @@ BKPS=(
 .{github,bin,colors,fonts,gnupg,nano,ncmpcpp,ssh,themes,icons,wall}
 .{zshrc,alias_zsh,xinitrc,Xresources,xsettingsd,gitconfig,gitignore,aurlist.txt,pkglist.txt}
 .{env,dotsrc,gtkrc-2.0,nanorc,pam_environment,tmux.conf,face.icon}
-.config/{berry,bspwm,sxhkd,i3,openbox,xfce4,frankenwm}
+.config/{berry,bspwm,sxhkd,i3,openbox,xfce4,frankenwm,xfwm}
 .config/{gtk-2.0,gtk-3.0,cava,clipit,conky,dconf,dunst,fontconfig,fish,htop}
 .config/{jgmenu,mc,mpv,menus,neofetch,netwmpager,newsboat,polybar,qt5ct,yay}
 .config/{ranger,rofi,skippy-xd,straw-viewer,streamlink,termite,tint2,viewnior,volumeicon}

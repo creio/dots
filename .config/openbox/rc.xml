@@ -314,9 +314,14 @@
         <command>phide.sh</command>
       </action>
     </keybind> -->
-    <keybind key="C-space">
+    <!-- <keybind key="C-space">
      <action name="ShowMenu">
        <menu>root-menu</menu>
+     </action>
+    </keybind> -->
+    <keybind key="C-space">
+     <action name="Execute">
+       <command>jgmenu_run</command>
      </action>
     </keybind>
     <keybind key="W-Tab">
@@ -857,16 +862,16 @@
           <menu>client-list-combined-menu</menu>
         </action>
       </mousebind>
-      <mousebind action="Press" button="Right">
+      <!-- <mousebind action="Press" button="Right">
         <action name="ShowMenu">
           <menu>root-menu</menu>
         </action>
-      </mousebind>
-      <!-- <mousebind action="Release" button="Right">
-        <action name="Execute">
-          <command>ob_jgmenu</command>
-        </action>
       </mousebind> -->
+      <mousebind action="Release" button="Right">
+        <action name="Execute">
+          <command>jgmenu_run</command>
+        </action>
+      </mousebind>
     </context>
     <context name="MoveResize">
       <mousebind action="Click" button="Up">

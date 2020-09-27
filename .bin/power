@@ -1,0 +1,27 @@
+#!/bin/sh
+
+DIALOG_RESULT=$(echo -e 'Lock\nSuspend Lock\nHibernate\nReboot\nPoweroff\nExit' | rofi -dmenu -i -p "SYSTEM" -hide-scrollbar -tokenize -lines 7 -eh 1 -width 25 -location 0 -xoffset 0 -yoffset 0 -padding 20 -disable-history)
+
+echo "This result is : $DIALOG_RESULT"
+sleep 1;
+
+if [ "$DIALOG_RESULT" = "Lock" ];
+then
+    exec $HOME/.bin/multilock.sh -l blur
+elif [ "$DIALOG_RESULT" = "Suspend Lock" ];
+then
+    # exec systemctl suspend
+    exec $HOME/.bin/multilock.sh -s blur
+elif [ "$DIALOG_RESULT" = "Hibernate" ];
+then
+    exec systemctl hibernate
+elif [ "$DIALOG_RESULT" = "Reboot" ];
+then
+    exec systemctl reboot
+elif [ "$DIALOG_RESULT" = "Poweroff" ];
+then
+    exec systemctl poweroff
+elif [ "$DIALOG_RESULT" = "Exit" ];
+then
+    exit 0
+fi

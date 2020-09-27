@@ -1,0 +1,86 @@
+#
+# wm independent hotkeys
+#
+
+# show help on key bindings
+super + F1
+  urxvt -name Float -e ~/.config/xfwm/show_keys
+
+# program launcher rofi
+alt + d
+  rofi -show drun
+
+# Jgmenu
+ctrl + space
+  sh -c "jgmenu_run >/dev/null 2>&1 &"
+
+# terminal emulator slop
+alt + Return
+  sh -c "$HOME/.bin/draw"
+
+# terminal emulator
+super + t
+  urxvt
+
+# terminal emulator findapp
+alt + t
+  sh -c "$HOME/.bin/findapp urxvt"
+
+# chromium
+alt + w
+  sh -c "$HOME/.bin/findapp chromium"
+
+# sublime text3
+alt + e
+  sh -c "$HOME/.bin/findapp subl3"
+
+# thunar
+alt + f
+  sh -c "$HOME/.bin/findapp thunar"
+
+# telegram
+alt + m
+  sh -c "$HOME/.bin/findapp telegram-desktop"
+
+# ranger
+alt + r
+  urxvt -name Ranger -e ranger
+
+# alt + c
+#   rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+# polybar toggle
+super + p
+  sh -c "polybar-msg cmd toggle"
+
+# multilock.sh
+super + l
+  sh -c "$HOME/.bin/multilock.sh -l blur"
+
+# power menu rofi
+super + alt + Delete
+  sh -c "$HOME/.bin/power"
+
+# flameshot full save ~/Pictures
+Print
+  flameshot full -c -p "$(xdg-user-dir PICTURES)"
+
+# flameshot gui
+super + Print
+  flameshot gui
+
+# flameshot delay 5s save PICTURES
+super + alt + Print
+  flameshot full -c -d 5000 -p "$(xdg-user-dir PICTURES)"
+
+# mpc current
+super + alt + m
+  notify-send "Now Playing ♫" "$(mpc current)"
+
+# make sxhkd reload its configuration files:
+super + Escape
+  pkill -USR1 -x sxhkd
+
+# gaps toggle
+super + v
+  sh -c "~/.config/bspwm/gaps.sh"

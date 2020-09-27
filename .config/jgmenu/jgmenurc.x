@@ -11,14 +11,16 @@ arrow_string         = ➤
 # arrow_width         = 15
 
 #position_mode       = center
-position_mode       = pointer
+#position_mode       = pointer
+#menu_height_max      = 400
 
-#columns = 2
-
+menu_margin_x     = 35
+menu_margin_y     = 0
 menu_width        = 200
-#menu_height_max      = 450
 menu_radius       = 1
 menu_border       = 1
+menu_halign       = left
+menu_valign       = top
 
 item_margin_x     = 3
 item_margin_y     = 3
@@ -34,8 +36,6 @@ icon_size         = 16
 icon_theme        = dui-ico
 # ignore_xsettings  = 1
 # ignore_icon_cache = 1
-# icon_norm_alpha = 10
-# icon_sel_alpha = 100
 show_title        = 1
 
 color_menu_bg     = #373d49 100

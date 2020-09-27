@@ -6,7 +6,7 @@ xset -b
 tint2 -c ~/.config/tint2/button.tint2rc &
 tint2 -c ~/.config/tint2/tray.tint2rc &
 if [ "$(which polybar)" != "polybar not found" ]; then
-  sh ~/.config/polybar/ctlos/launch.sh &
+  sh ~/.config/polybar/launch.sh &
   # (sleep 2; sh ~/.bin/phide.sh) &
 fi
 # hsetroot -add '#2c3539' -add '#b89ca8' -gradient 130 &
@@ -34,6 +34,7 @@ unclutter &
 urxvt &
 # cornora -bl "skippy-xd" -tl "rofi -show run" &
 redshift -c ~/.config/redshift.conf &
+jgmenu_run start &
 # (sleep 1; redshift-gtk) &
 # (sleep 2; caffeine) &
 # (sleep 3; parcellite) &

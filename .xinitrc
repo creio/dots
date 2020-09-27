@@ -54,6 +54,9 @@ exec openbox-session
 # hsetroot -fill ~/.wall/lcrow.png &
 # exec startxfce4
 
+# ~/.config/xfwm/autostart &
+# exec xfwm4
+
 # sxhkd -c $HOME/.config/berry/sxhkdrc &
 # exec berry
 
@@ -63,5 +66,5 @@ exec openbox-session
 # sh "${HOME}/.config/bspwm/autostart" &
 # exec bspwm
 
-# sh "${HOME}/.config/sowm/sowm.sh" &
+# sh "${HOME}/sowm/autostart.sh" &
 # exec sowm

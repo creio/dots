@@ -1,70 +1,33 @@
-#!/usr/bin/env python
+#!/bin/bash
 
-import os
-import shutil
+CLEAN_ALL=(
+~/.bzr.log
+~/.ncmpcpp/error.log
+~/.pki
+~/.xsession-errors.old
+~/.cache/{babl,gegl-0.2,google-chrome,gstreamer-1.0,menu}
+~/.local/share/{gegl-0.2,recently-used.xbel}
+)
+CLEAN_DIR=(
+~/.cache/thumbnails/
+~/.local/share/Trash/
+)
 
-CLEAN_FILES = [
-    '~/hostr/',
-    '~/.bzr.log',
-    '~/.cache/babl/',
-    '~/.cache/gegl-0.2/',
-    '~/.cache/google-chrome/',
-    '~/.cache/gstreamer-1.0/',
-    '~/.cache/menu/',
-    '~/.cache/thumbnails/',
-    '~/.local/share/gegl-0.2/',
-    '~/.local/share/recently-used.xbel',
-    '~/.local/share/Trash/',
-    '~/.ncmpcpp/error.log',
-    # '~/.npm/',
-    # '~/.nv/',
-    '~/.pki/',
-    '~/.pylint.d/',
-    '~/.recently-used',
-    '~/.thumbnails/',
-    '~/.w3m/',
-    '~/.xsession-errors.old'
-]
+clean_all()
+{
+  echo "clean all"
+  for i in "${CLEAN_ALL[@]}"; do
+    [[ $i ]] && rm -rfv $i
+  done
+}
 
+clean_d()
+{
+  echo "clean dir"
+  for i in "${CLEAN_DIR[@]}"; do
+    [[ $i ]] && find $i -mindepth 1 -delete
+  done
+}
 
-def answer(question, default="n"):
-    prompt = "%s (y/[n]) " % question
-    ans = input(prompt).strip().lower()
-
-    if not ans:
-        ans = default
-
-    if ans == "y":
-        return True
-    return False
-
-
-def remove_clean():
-    found = []
-
-    print("\n")
-    for jfile in CLEAN_FILES:
-        extra = os.path.expanduser(jfile)
-        if os.path.exists(extra):
-            found.append(extra)
-            print("    %s" % jfile)
-    total = len(found)
-
-    if total == 0:
-        print("No clean files found :)\n")
-        return
-
-    if answer("\nRemove all?", default="n"):
-        for jfile in found:
-            if os.path.isfile(jfile):
-                os.remove(jfile)
-            else:
-                shutil.rmtree(jfile)
-        print("\nAll clean cleaned")
-
-    else:
-        print("\nNo files removed")
-
-
-if __name__ == '__main__':
-    remove_clean()
+clean_all
+clean_d
