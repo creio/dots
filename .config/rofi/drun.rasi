@@ -7,8 +7,7 @@ configuration {
 
 * {
   /*background-color:               transparent;*/
-  background-color:               #00000050;
-  background:                     #00000066;
+  background-color:               #00000095;
   background-alt:                 #f2f2f233;
   text-color:                     #D8DEE9;
   selected-text-color:            #ffffff;
@@ -19,12 +18,12 @@ configuration {
 window {
   transparency:                   "real";
   background-color:               @background;
-  height:                         710px;
-  width:                          1356px;
+  height:                         96%;
+  width:                          99%;
   location:                       northwest;
   anchor:                         northwest;
   x-offset:                       5;
-  y-offset:                       5;
+  y-offset:                       26;
   border-radius:                  12;
 }
 
@@ -46,7 +45,7 @@ entry {
 
 
 listview {
-  columns: 6;
+  columns: 5;
   spacing: 4;
   dynamic: false;
 }

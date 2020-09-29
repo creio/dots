@@ -19,17 +19,16 @@ if [ "$(which thunar)" != "thunar not found" ]; then
   thunar --daemon &
 fi
 urxvtd -q -o -f &
-setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
-# setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
 alttab -fg "#9baec8" -bg "#161720" -frame "#5a74ca" -t 128x128 -i 128x48 -d 2 -theme diu-ico -font "xft:ClearSansMedium:size=9:antialias=false" -pk "Left" -nk "Right" &
 numlockx &
 xsettingsd &
 # xfsettingsd &
 xfce4-power-manager &
 dunst &
-# /usr/lib/xfce-polkit/xfce-polkit &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 gnome-keyring-daemon --start --components=pkcs11,secrets &
+setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
+# setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
 unclutter &
 urxvt &
 # cornora -bl "skippy-xd" -tl "rofi -show run" &

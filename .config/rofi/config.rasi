@@ -1,0 +1,28 @@
+configuration {
+  /*theme: "drun.rasi";*/
+  show-icons: true;
+  icon-theme: "dui-ico";
+  font: "ClearSansMedium 9";
+  terminal: "urxvt";
+	modi: "drun,run,window";
+	width: 25;
+	lines: 7;
+	columns: 1;
+	bw: 7;
+	location: 0;
+	padding: 20;
+	ssh-client: "ssh";
+	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
+	run-command: "{cmd}";
+	run-shell-command: "{terminal} -e {cmd}";
+	window-command: "wmctrl -i -R {window}";
+	sidebar-mode: true;
+	line-margin: 10;
+	separator-style: "none";
+	hide-scrollbar: true;
+	scrollbar-width: 0;
+	color-normal: "#161720, #e8eaef, #161720, #5A74CA, #161720";
+	color-urgent: "#161720, #e8eaef, #161720, #5A74CA, #161720";
+	color-active: "#161720, #e8eaef, #161720, #5A74CA, #161720";
+	color-window: "#161720, #75444A57";
+}

@@ -464,12 +464,12 @@
     </keybind>
     <keybind key="A-d">
       <action name="Execute">
-        <command>rofi -show drun</command>
+        <command>rofi -show drun -theme-str 'element-icon {size: 16;}'</command>
       </action>
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>rofi -show window -show-icons -drun-icon-theme</command>
+        <command>rofi -show window -theme-str 'element-icon {size: 16;}'</command>
       </action>
     </keybind>
     <keybind key="A-c">

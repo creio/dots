@@ -50,3 +50,4 @@ x-scheme-handler/vnc=org.remmina.Remmina.desktop;
 x-scheme-handler/remmina=org.remmina.Remmina.desktop;
 application/x-remmina=org.remmina.Remmina.desktop;
 text/x-chdr=sublime_text_3.desktop;
+text/x-csrc=sublime_text_3.desktop;

@@ -58,7 +58,6 @@ firefox
 firefox-i18n-ru
 fish
 flameshot
-flashplugin
 flex
 freeglut
 fzf
@@ -148,7 +147,6 @@ netstat-nat
 newsboat
 nmap
 nmon
-nnn
 noto-fonts-emoji
 npm
 ntfs-3g
@@ -225,7 +223,6 @@ thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
-tigervnc
 timeshift
 tint2-git
 tmux
@@ -269,7 +266,6 @@ wireless_tools
 wmctrl
 xclip
 xdg-user-dirs
-xdg-user-dirs-gtk
 xdo
 xdotool
 xf86-input-evdev

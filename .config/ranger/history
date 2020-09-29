@@ -1,5 +1,3 @@
-shell -w df
-search icons
 find them
 find icons
 open_with 4
@@ -48,3 +46,5 @@ q
 help
 find zsh
 search wall
+search rofi
+shell th
