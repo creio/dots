@@ -4,6 +4,7 @@
 .config/sublime-text-3/Packages/User/linters
 .config/sublime-text-3/Packages/User/Package Control.cache
 .env
+.gauth
 .gitconfig
 .gnupg
 .config/polybar/gmail

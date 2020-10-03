@@ -306,8 +306,8 @@ alias yrs="yay -Rs"
 alias yrsn="yay -Rsn"
 alias yrsnp="yay -Rsn $(pacman -Qdtq)"
 alias yrn="yay -R --noconfirm"
-alias yskip="yay --mflags '--nocheck --skippgpcheck --noconfirm'"
-alias ynskip="yay --mflags --skipinteg --noconfirm"
+alias ynskip='yay --noconfirm --mflags "--nocheck --skipchecksums --skippgpcheck"'
+alias ygpg='yay --noconfirm --gpgflags "--keyserver keys.gnupg.net"'
 # pacman -Qqo /usr/lib/python3.8/
 
 # systemd

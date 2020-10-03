@@ -22,6 +22,7 @@ bmon
 bridge-utils
 brightnessctl
 capitaine-cursors
+catfish
 cava
 chromium
 clamav
@@ -56,8 +57,9 @@ findutils
 fio
 firefox
 firefox-i18n-ru
+firejail
 fish
-flameshot
+flatpak
 flex
 freeglut
 fzf
@@ -187,6 +189,7 @@ qgnomeplatform-git
 qogir-icon-theme-git
 qt5-styleplugins
 qt5ct
+qutebrowser
 ranger
 redshift
 reflector
@@ -194,6 +197,7 @@ ripgrep
 rofi
 rsync
 ruby-ffi
+rust
 sassc
 scrot
 sddm
@@ -271,6 +275,7 @@ xdotool
 xf86-input-evdev
 xf86-video-qxl
 xfconf
+xfwm4
 xorg-bdftopcf
 xorg-iceauth
 xorg-luit
@@ -315,4 +320,3 @@ yay-bin
 youtube-dl
 zsh
 zsh-autosuggestions
-zsh-fast-syntax-highlighting-git

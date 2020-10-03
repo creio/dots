@@ -4,6 +4,7 @@ clean-chroot-manager
 colorpicker
 cornora-git
 downgrade
+flameshot-git
 hardcode-tray-git
 ifuse
 imgur.sh
@@ -35,3 +36,4 @@ ttf-weather-icons
 urxvt-resize-font-git
 ventoy-bin
 zentile-bin
+zsh-fast-syntax-highlighting

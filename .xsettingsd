@@ -7,5 +7,5 @@ Xft/RGBA "rgb"
 Xft/HintStyle "hintslight"
 Xft/Antialias 1
 
-#Net/IconThemeName "dui-ico"
-#Net/ThemeName "dui"
+#Net/IconThemeName "Qogir-dark"
+#Net/ThemeName "ctlos-qogir-dark"

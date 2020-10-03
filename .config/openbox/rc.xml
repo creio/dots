@@ -442,6 +442,11 @@
         <command>rofi-logout</command>
       </action>
     </keybind>
+    <keybind key="W-A-g">
+      <action name="Execute">
+        <command>rofi-totp</command>
+      </action>
+    </keybind>
     <keybind key="Print">
       <action name="Execute">
         <command>flameshot.sh -c</command>
@@ -929,17 +934,7 @@
         <y>center</y>
       </position> -->
     </application>
-    <application role="GtkFileChooserDialog">
-      <position force="no">
-        <x>center</x>
-        <y>center</y>
-      </position>
-      <size>
-        <width>60/100</width>
-        <height>60/100</height>
-      </size>
-    </application>
-    <application name="subl3">
+    <application class="Subl3" type="normal">
       <maximized>yes</maximized>
       <!-- <desktop>3</desktop> -->
       <decor>no</decor>
@@ -952,6 +947,16 @@
       <decor>no</decor>
       <shade>no</shade>
       <focus>yes</focus>
+    </application>
+    <application role="GtkFileChooserDialog">
+      <position force="yes">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <size>
+        <width>60/100</width>
+        <height>60/100</height>
+      </size>
     </application>
     <application name="rxtmux">
       <maximized>yes</maximized>
