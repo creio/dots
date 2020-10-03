@@ -197,7 +197,6 @@ ripgrep
 rofi
 rsync
 ruby-ffi
-rust
 sassc
 scrot
 sddm

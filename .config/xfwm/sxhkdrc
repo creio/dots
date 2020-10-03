@@ -4,15 +4,19 @@
 
 # show help on key bindings
 super + F1
-  urxvt -name Float -e ~/.config/xfwm/show_keys
+  urxvt -name Float -e $HOME/.config/xfwm/show_keys
 
 # program launcher rofi
 alt + d
-  rofi -show drun
+  sh -c "$HOME/.bin/rofi.sh"
 
 # Jgmenu
 ctrl + space
   sh -c "jgmenu_run >/dev/null 2>&1 &"
+
+# toggle tint buuton
+alt + space
+  sh -c "$HOME/.bin/toggle-tint.sh"
 
 # terminal emulator slop
 alt + Return
@@ -77,10 +81,6 @@ super + alt + Print
 super + alt + m
   notify-send "Now Playing ♫" "$(mpc current)"
 
-# make sxhkd reload its configuration files:
+# sxhkd reload:
 super + Escape
   pkill -USR1 -x sxhkd
-
-# gaps toggle
-super + v
-  sh -c "~/.config/bspwm/gaps.sh"

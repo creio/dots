@@ -37,7 +37,7 @@ else
   ffmpeg \
   -f x11grab -video_size $RES -i :0.0 \
   -f pulse -i $ALSA_OUT \
-  -c:a libvorbis -b:a 128k \
-  -c:v libx264 -pix_fmt yuv420p -r 30 -crf 23 -preset superfast -s 1920x1080 \
+  -c:a aac -b:a 128k \
+  -c:v libx264 -pix_fmt yuv420p -r 30 -crf 0 -preset ultrafast -s 1920x1080 \
   -y ~/Videos/output.mp4
 fi
