@@ -19,7 +19,7 @@ alias tb="nc termbin.com 9999 | xsel -b -i"
 alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 alias updir="LC_ALL=C xdg-user-dirs-update --force"
 
-alias dmrun="dmenu_run -l 10 -p 'app>' -fn 'ClearSansMedium 9' -nb '#282c37' -nf '#93a1a1' -sb '#5a74ca' -sf '#fff'"
+alias dmrun="dmenu_run -l 10 -p 'app>' -fn 'ClearSansMedium 9' -nb '#282c37' -nf '#f2f3f4' -sb '#5a74ca' -sf '#fff'"
 
 doiso() {
   rsync -auvCL ~/ctlosiso/out/ cretm@${dev_ctlos_ru}:~/app/dev.ctlos.ru/iso/$1
@@ -258,8 +258,8 @@ alias -s {png,jpg,tiff,bmp}="viewnior"
 
 alias mi="micro"
 alias smi="sudo micro"
-alias st="subl3"
-alias sst="sudo subl3"
+alias s="subl3"
+alias ss="sudo subl3"
 alias tm="tmux attach || tmux new -s work"
 alias tmd="tmux detach"
 alias tmk="tmux kill-server"

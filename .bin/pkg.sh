@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 pkg_list=$(grep -h -v ^# ~/.pkglist.txt)
 sudo pacman -S --noconfirm --needed - < $pkg_list

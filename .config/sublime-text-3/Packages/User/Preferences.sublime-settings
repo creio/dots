@@ -18,6 +18,7 @@
 		".svn",
 		".git",
 		".hg",
+    ".sass-cache",
 		"CVS",
 		"work",
 		"node_modules"

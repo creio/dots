@@ -447,6 +447,11 @@
         <command>rofi-totp</command>
       </action>
     </keybind>
+    <keybind key="W-A-b">
+      <action name="Execute">
+        <command>keepmenu</command>
+      </action>
+    </keybind>
     <keybind key="Print">
       <action name="Execute">
         <command>flameshot.sh -c</command>
@@ -1006,6 +1011,13 @@
         <width>85/100</width>
         <height>85/100</height>
       </size>
+    </application>
+    <application name="Xpass">
+      <focus>yes</focus>
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
     </application>
     <application name="Kunst">
       <!-- <maximized>yes</maximized> -->
