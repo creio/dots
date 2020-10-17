@@ -1,0 +1,66 @@
+* {
+    background-color: rgba(0,0,0,10%);
+    background: #282c34;
+    foreground: #dcdfe4;
+    border-color: @background;
+    spacing: 0;
+    border: 0;
+    padding: 0;
+
+    active-background: #6ba86d;
+    active-foreground: @foreground;
+    normal-background: @background;
+    normal-foreground: @foreground;
+    urgent-background: #fe6d32;
+    urgent-foreground: @foreground;
+
+    alternate-active-background: @background;
+    alternate-active-foreground: @foreground;
+    alternate-normal-background: @background;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @background;
+    alternate-urgent-foreground: @foreground;
+
+    selected-active-background: #5A74CA;
+    selected-active-foreground: @foreground;
+    selected-normal-background: #6ba86d;
+    selected-normal-foreground: @foreground;
+    selected-urgent-background: #af9a0a;
+    selected-urgent-foreground: @foreground;
+}
+window {
+    background-color: @background;
+    width: 75%;
+    padding: 0px;
+    children: [ listview ];
+}
+mainbox {
+    border:  10;
+}
+inputbar {
+    enabled: false;
+}
+message {
+    enabled: false;
+}
+textbox {
+    enabled: false;
+}
+listview {
+    columns: 5;
+    fixed-height: true;
+    lines: 1;
+}
+element {
+    width: 15em;
+}
+element-text {
+    enabled: false;
+}
+element-icon {
+    padding: 10px;
+    size: 10em;
+}
+element-icon selected{
+    background-color: @selected-active-background;
+}

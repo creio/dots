@@ -330,6 +330,11 @@
       </action>
     </keybind>
     <!-- <keybind key="A-Tab">
+      <action name="Execute">
+        <command>at.sh</command>
+      </action>
+    </keybind> -->
+    <!-- <keybind key="A-Tab">
       <action name="NextWindow">
         <dialog>icons</dialog>
         <dialog>no</dialog>

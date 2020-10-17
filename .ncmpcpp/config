@@ -22,6 +22,7 @@ now_playing_suffix = "$/b$9"
 playlist_display_mode = classic
 autocenter_mode = yes
 #progressbar_look = "─⊙┄"
+#progressbar_look = "─┄"
 progressbar_look = "▃▃▃"
 # progressbar_look = "─╼ "
 header_visibility = no

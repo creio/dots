@@ -56,7 +56,7 @@ SHLL="$(basename $SHELL)"
 TRM="${TERM/-256color/}"
 
 # hostname
-HOST="${HOST:-$(hostname)}"
+HOST="${HOST:-$(cat /etc/hostname)}"
 
 # kernel version
 KERN="${KERN:-$(uname -r)}"

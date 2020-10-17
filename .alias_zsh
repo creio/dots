@@ -251,8 +251,8 @@ iso () {
   sudo dd bs=4M if="$1" of=/dev/"$2" status=progress && sync
 }
 
-alias -s {mp3,m4a,flac}="mpv"
-alias -s {png,jpg,tiff,bmp}="viewnior"
+alias -s {mp3,m4a,flac,mp4,mkv,webm}="mpv"
+alias -s {png,jpg,tiff,bmp,gif}="viewnior"
 # alias -s {conf,txt}="nvim"
 # alias {aurman,pikaur,trizen,yaourt}="yay"
 

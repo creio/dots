@@ -58,11 +58,11 @@ super + Escape
 super + {h, j, k, l}
     berryc window_move {-50 0, 0 50, 0 -50, 50 0}
 
-super + ~button1
-    berryc move_mask
+# super + ~button1
+#     berryc move_mask
 
-alt + ~button1
-    berryc resize_mask
+# alt + ~button1
+#     berryc resize_mask
 
 super + shift +  {h, j, k, l}
     berryc window_resize {-50 0, 0 50, 0 -50, 50 0}
@@ -101,9 +101,3 @@ alt + c
 
 ~button1
     berryc pointer_focus
-
-super + ~button1
-  berryc move_mask
-
-alt + ~button1
-  berryc resize_mask
