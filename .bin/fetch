@@ -38,12 +38,7 @@ FILES=$(df -h /media/files | awk '/[0-9]%/{print $(NF-1)" | "$(NF-2)}')
 
 # install date
 if [[ -e /var/log/pacman.log ]]; then
-    INST="$(head -n1 /var/log/pacman.log)"
-    INST="${INST/ */}"
-    INST="${INST/\[/}"
-    INST="${INST//\-/ }"
-    INST="${INST/\]/}"
-    INST="${INST/\T/ }"
+    INST="$(ls -ctl --time-style +"%H:%M:%S %d.%m.%Y" /etc | awk 'END{print $6, $7}')"
 fi
 
 # check if root user

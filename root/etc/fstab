@@ -4,16 +4,16 @@
 # <file system> <dir> <type> <options> <dump> <pass>
 
 # /dev/sdb1 LABEL=root
-UUID=da9b5181-ada8-4fff-a49f-fb91a4c5f3e1	/         	ext4      	rw,relatime	0 1
+UUID=da9b5181-ada8-4fff-a49f-fb91a4c5f3e1 / ext4 rw,relatime 0 0
 
 # /dev/sdb4 LABEL=home
-UUID=5d76a486-b791-4a7e-9eba-e5b56fd8d7a7	/home     	ext4      	rw,relatime	0 2
+UUID=5d76a486-b791-4a7e-9eba-e5b56fd8d7a7 /home ext4 rw,relatime 0 0
 
 # /dev/sdb2 LABEL=boot
-UUID=ebf2472f-0c68-4db1-aec1-57bbe7460d43	/boot     	ext2      	rw,relatime	0 2
+UUID=ebf2472f-0c68-4db1-aec1-57bbe7460d43 /boot ext2 rw,relatime 0 0
 
 # /dev/sdb3 LABEL=swap
-UUID=6f84117e-64c8-451a-855e-4bb6dc64d527	none      	swap      	defaults  	0 0
+UUID=6f84117e-64c8-451a-855e-4bb6dc64d527 none swap defaults 0 0
 
 # /dev/sda5: LABEL="files"
-UUID=9f7a7cce-a588-43bb-96c4-5262652cb4fc       /media/files    ext4          defaults,relatime 0 0
+UUID=c7b68393-4c50-42b3-ae0f-1b4cfe080117 /media/files ext4 defaults,relatime 0 0

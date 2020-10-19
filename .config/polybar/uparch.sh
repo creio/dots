@@ -17,4 +17,15 @@ if [ "$updates" -gt 0 ]; then
     echo "$updates"
 else
     echo "NoUp:)"
+    echo
+fi
+
+dialog_up() {
+  if read -re -p "System upgrade? [y/N]: " ans && [[ $ans == 'y' || $ans == 'Y' ]]; then
+    yay -Syyu
+  fi
+}
+
+if [ $1 = "d_up" ]; then
+    dialog_up
 fi

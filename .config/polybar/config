@@ -81,7 +81,8 @@ content = 
 content-foreground = ${colors.accent}
 content-background = ${xrdb:color0}
 content-padding = 3
-click-left = "jgmenu_run >/dev/null 2>&1 &"
+click-left = "jgmenu_run &"
+#click-left = "jgmenu_run >/dev/null 2>&1 &"
 # click-right = "sleep 0.2; xdotool key ctrl+space &"
 # click-left = "rofi -no-lazy-grab -show drun -theme launchers/style_normal_rainbow_sidebar.rasi &"
 click-right = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
@@ -110,12 +111,12 @@ label = %percentage_used%%
 
 [module/uparch]
 type = custom/script
-exec = ~/.config/bspwm/polybar/uparch.sh
+exec = ~/.config/polybar/uparch.sh
 interval = 600
 format-prefix = " "
 format-prefix-foreground = ${colors.accent}
-click-left = "urxvt -e yay -Syyu &"
-click-right = "urxvt -name Pacui -e pacui &"
+click-left = "urxvt -name term_center -e ~/.config/polybar/uparch.sh d_up &"
+click-right = "urxvt -name term_center -e pacui &"
 
 # [module/pkg]
 # type = custom/script

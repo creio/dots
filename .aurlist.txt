@@ -1,10 +1,14 @@
+bitwarden-rofi
 blackarch-keyring
 caffeine-ng
 clean-chroot-manager
 colorpicker
 cornora-git
+criptext-bin
+devilspie
 downgrade
 flameshot-git
+googler
 hardcode-tray-git
 ifuse
 imgur.sh
@@ -24,7 +28,7 @@ ob-yml-menu
 opencl-nvidia-390xx
 picom-tryone-git
 pscircle-git
-recapp-git
+python-keepmenu-git
 rxvt-unicode-pixbuf
 shantz-xwinwrap-bzr
 sia-ui
@@ -35,5 +39,4 @@ ttf-symbola
 ttf-weather-icons
 urxvt-resize-font-git
 ventoy-bin
-zentile-bin
 zsh-fast-syntax-highlighting

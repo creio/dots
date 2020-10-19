@@ -12,13 +12,14 @@ BKPS=(
 .config/{berry,bspwm,sxhkd,i3,openbox,xfce4,frankenwm,xfwm}
 .config/{gtk-2.0,gtk-3.0,cava,clipit,conky,dconf,dunst,fontconfig,fish,htop}
 .config/{jgmenu,mc,mpv,menus,neofetch,netwmpager,newsboat,polybar,qt5ct,yay}
-.config/{ranger,rofi,skippy-xd,straw-viewer,streamlink,termite,tint2,viewnior,volumeicon}
+.config/{ranger,rofi,skippy-xd,streamlink,termite,tint2,viewnior,volumeicon}
 .config/audacious/config
 .config/mpd/mpd.conf
 .config/nvim/init.vim
 .config/oomox/colors
 .config/obmenu-generator/{config.pl,schema.pl}
 .config/qutebrowser/{autoconfig.yml,config.py}
+.config/straw-viewer/straw-viewer.conf
 .config/sublime-text-3/Packages/User
 .config/{clean-chroot-manager.conf,picom.conf,picom_blur.conf}
 .config/{redshift.conf,Trolltech.conf,kdenliverc,mimeapps.list}

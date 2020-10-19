@@ -13,17 +13,17 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-NEW_USER=cretm
+NEW_USER=creio
 
 PASSWORD=$(/usr/bin/openssl passwd -crypt "$NEW_USER")
 
 # cfdisk -z /dev/sda
-DISK=/dev/sda
+DISK=/dev/sdb
 
 R_DISK=${DISK}1
-B_DISK=${DISK}5
-# H_DISK=${DISK}4
-S_DISK=${DISK}6
+B_DISK=${DISK}2
+S_DISK=${DISK}3
+H_DISK=${DISK}4
 
 timedatectl set-ntp true
 
@@ -51,22 +51,22 @@ timedatectl set-ntp true
 
 ### ////// ext4 mbr & efi ///////
 yes | mkfs.ext4 $R_DISK -L root
-# yes | mkfs.ext4 $H_DISK -L home
-# yes | mkfs.ext2 $B_DISK -L boot
+yes | mkfs.ext2 $B_DISK -L boot
 # yes | mkfs.fat -F32 $B_DISK -L boot
+yes | mkfs.ext4 $H_DISK -L home
 
-# mkswap $S_DISK -L swap
-# swapon $S_DISK
+mkswap $S_DISK -L swap
+swapon $S_DISK
 
 mount $R_DISK /mnt
 
-# mkdir /mnt/{boot,home}
+mkdir /mnt/{boot,home}
 # mkdir -p /mnt/{boot/efi,home}
 
-# mount $B_DISK /mnt/boot
+mount $B_DISK /mnt/boot
 # mount $B_DISK /mnt/boot/efi
 
-# mount $H_DISK /mnt/home
+mount $H_DISK /mnt/home
 ### ////// end ext4 mbr & efi ///////
 
 
@@ -74,12 +74,12 @@ pacman -Sy --noconfirm --needed reflector
 reflector -a 12 -l 30 -f 30 -p https --sort rate --save /etc/pacman.d/mirrorlist
 
 PKGS=(
-base base-devel linux nano grub reflector nano
+base base-devel linux nano grub reflector nano openssh
 linux-headers linux-firmware lvm2
-amd-ucode intel-ucode
-dhcpcd iwd openssh
+# amd-ucode intel-ucode
+# dhcpcd iwd
 wget git rsync gnu-netcat pv
-# netctl unzip unrar p7zip zsh htop tmux
+netctl unzip unrar p7zip zsh htop tmux
 )
 
 for i in "${PKGS[*]}"; do
@@ -130,7 +130,8 @@ echo "FONT=cyr-sun16" >> /etc/vconsole.conf
 ## btrfs rm fsck
 # sed -i "s/keyboard fsck/keyboard keymap/g" /etc/mkinitcpio.conf
 
-#mkinitcpio -p linux
+sed -i "s/^HOOKS=\(.*keyboard\)/HOOKS=\1 keymap/" /etc/mkinitcpio.conf
+mkinitcpio -p linux
 
 if [ "$virt_d" = "oracle" ]; then
   echo "Virtualbox"
@@ -149,15 +150,25 @@ fi
 grub-install $DISK
 # grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch --force
 
-sed -i -e 's/^GRUB_TIMEOUT=.*$/GRUB_TIMEOUT=1/' /etc/default/grub
+sed -i -e 's/^GRUB_TIMEOUT=.*$/GRUB_TIMEOUT=0/' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
-systemctl enable dhcpcd
+# systemctl enable dhcpcd
 # systemctl enable sshd
 
 # systemctl enable NetworkManager
-# systemctl enable systemd-networkd
-# systemctl enable systemd-resolved
+
+cat <<EOF >/etc/systemd/network/20-ethernet.network
+[Match]
+Name=en*
+Name=eth*
+
+[Network]
+DHCP=yes
+EOF
+
+systemctl enable systemd-networkd
+systemctl enable systemd-resolved
 
 echo "System Setup Complete"
 LOL
@@ -168,7 +179,7 @@ rm /mnt/settings.sh
 
 echo "==== Done settings.sh ===="
 
-# swapoff $S_DISK
+swapoff $S_DISK
 umount -R /mnt
 
 echo "==== Finish Him ===="

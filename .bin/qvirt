@@ -10,10 +10,10 @@
 
 QVIRT_DIR=$HOME/.qvirt
 QVIRT_QCOW=arch.qcow2
-QVIRT_SIZE=10G
+QVIRT_SIZE=8G
 
 # create dir & drive
-if [ ! -d $QVIRT_DIR ]; then
+if [ -d $QVIRT_DIR ]; then
   mkdir -p $QVIRT_DIR
   qemu-img create -f qcow2 $QVIRT_DIR/$QVIRT_QCOW $QVIRT_SIZE
 fi

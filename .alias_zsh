@@ -117,9 +117,9 @@ abuild () {
 }
 
 
-alias neofetch="neofetch --ascii ~/.config/neofetch/ctlos"
+# alias neofetch="neofetch --ascii ~/.config/neofetch/ctlos"
 alias neoa="neofetch --ascii ~/.config/neofetch/mario"
-alias neo="neofetch --w3m ~/.config/neofetch/cn.jpg"
+alias neo="neofetch --w3m ~/.config/neofetch/cnr.png"
 # alias neo="neofetch --kitty ~/.config/neofetch/cn.jpg"
 # alias neo="neofetch --w3m"
 

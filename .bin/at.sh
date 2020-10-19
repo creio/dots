@@ -1,6 +1,6 @@
 #!/bin/bash
 
-xdotool search --sync --syncsleep 10 --limit 1 --class Rofi keyup --delay 0 Tab key --delay 0 Tab &
+xdotool search --sync 10 --limit 1 --class Rofi keyup --delay 0 Tab key --delay 0 Tab &
 
 rofi \
   -show window -show-icons -window-thumbnail -theme alttab.rasi \

@@ -975,6 +975,13 @@
       <focus>yes</focus>
       <desktop>1</desktop>
     </application>
+    <application name="term_center">
+      <focus>yes</focus>
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+    </application>
     <!-- <application name="telegram-desktop">
       <desktop>all</desktop>
       <focus>yes</focus>
