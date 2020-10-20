@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BPATH='/media/files/github/creio/dots'
-KB_PATH='/run/user/1001/keybase/kbfs/private/cvc/dots'
+KB_PATH='/run/user/1000/keybase/kbfs/private/cvc/dots'
 REPO='https://github.com/creio/dots'
 BRANCH=''
 BKPS=(
@@ -21,7 +21,7 @@ BKPS=(
 .config/qutebrowser/{autoconfig.yml,config.py}
 .config/straw-viewer/straw-viewer.conf
 .config/sublime-text-3/Packages/User
-.config/{clean-chroot-manager.conf,picom.conf,picom_blur.conf}
+.config/{clean-chroot-manager.conf,chromium-flags.conf,picom.conf,picom_blur.conf}
 .config/{redshift.conf,Trolltech.conf,kdenliverc,mimeapps.list}
 .config/user-dirs.{dirs,locale}
 .mozilla/firefox/vos2wqqo.default-release/chrome

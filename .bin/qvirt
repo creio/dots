@@ -13,7 +13,7 @@ QVIRT_QCOW=arch.qcow2
 QVIRT_SIZE=8G
 
 # create dir & drive
-if [ -d $QVIRT_DIR ]; then
+if [ ! -d $QVIRT_DIR ]; then
   mkdir -p $QVIRT_DIR
   qemu-img create -f qcow2 $QVIRT_DIR/$QVIRT_QCOW $QVIRT_SIZE
 fi
@@ -29,6 +29,17 @@ if [ "$1" = "-i" ]; then
     -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
     -cdrom $2 \
     -boot d
+elif [ "$1" = "-u" ]; then
+  # qvirt -u
+  qemu-system-x86_64 \
+    -enable-kvm -machine q35,accel=kvm \
+    -cpu host -m 4G \
+    -net nic,model=virtio -net user,hostfwd=tcp::22222-:22 \
+    -vga qxl \
+    -device AC97 \
+    -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd \
+    -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_VARS.fd \
+    -hda $2
 else
   # qvirt
   qemu-system-x86_64 \

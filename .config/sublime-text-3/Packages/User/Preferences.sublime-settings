@@ -7,7 +7,7 @@
 			"selector": "text.html"
 		}
 	],
-	"color_scheme": "Packages/One Dark Color Scheme/One Dark.tmTheme",
+	"color_scheme": "Packages/One Dark Material - Theme/schemes/OneDark.tmTheme",
 	"detect_indentation": false,
 	"draw_shadows": false,
 	"draw_white_space": "all",

@@ -11,9 +11,9 @@ Xft.lcdfilter: lcddefault
 !URxvt.font: xft:CozetteVector:size=9
 !URxvt.font: xft:Hack Nerd Font Mono:size=9
 
-!!! xlsfonts | grep ttyp0
-URxvt.font: -uw-ttyp0-medium-r-normal--13-120-75-75-c-70-iso10646-1,xft:Hack Nerd Font Mono:size=9
-URxvt.boldFont: -uw-ttyp0-medium-r-normal--13-120-75-75-c-70-iso10646-1,xft:Hack Nerd Font Mono:size=9
+!!! xlsfonts | grep ttyp0    &&    fc-list : family style
+URxvt.font: xft:UW Ttyp0:size=10,xft:Hack Nerd Font Mono:size=9
+URxvt.boldFont: xft:UW Ttyp0:size=10,xft:Hack Nerd Font Mono:size=9
 
 !URxvt.termname: xterm-256color
 URxvt.iconFile: /usr/share/icons/Papirus/48x48/apps/urxvt.svg
