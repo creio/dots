@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "\033[0;32mDeploy to GitHub...\033[0m"
+echo -e "\033[0;32mDeploy to Git Repo...\033[0m"
 
 git add .
 msg="$(date +%d.%m.%Y) Update"

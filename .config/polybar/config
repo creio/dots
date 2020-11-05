@@ -9,6 +9,7 @@ suffix = #ff0404
 
 [settings]
 screenchange-reload = true
+# pseudo-transparency = true
 
 [global/wm]
 margin-top = 0
@@ -21,6 +22,7 @@ width = 100%
 height = 22
 offset-x = 0
 offset-y = 0
+radius = 0
 fixed-center = true
 bottom = false
 locale = ru_RU.UTF-8
@@ -55,7 +57,8 @@ modules-left = app cpu memory uparch wtr title
 modules-center = mpd mpd_sh
 modules-right = bri_sh fs tor alsa date xkeyboard power
 
-click-right = "jgmenu_run >/dev/null 2>&1 &"
+#click-right = "jgmenu_run >/dev/null 2>&1 &"
+click-right = "sleep 0.1; xdotool key ctrl+space &"
 cursor-click = pointer
 cursor-scroll = ns-resize
 
@@ -66,26 +69,27 @@ enable-ipc = true
 # dock = true
 
 # tray-position = right
-# tray-padding = 1
-# tray-transparent = false
-# tray-background = #000000
+# tray-padding = 3
+# tray-transparent = true
+# tray-background = #00000000
 # tray-detached = false
 # tray-maxsize = 16
 # tray-scale = 1.0
+# tray-offset-x = 100
 
 
 # ##########################################
 [module/app]
 type = custom/text
-content = 
+content = %{A1:sleep 0.1; xdotool key ctrl+space & disown:}%{A3:rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 & disown:}%{A}%{A}
 content-foreground = ${colors.accent}
 content-background = ${xrdb:color0}
 content-padding = 3
-click-left = "jgmenu_run &"
+#click-left = "jgmenu_run &"
 #click-left = "jgmenu_run >/dev/null 2>&1 &"
-# click-right = "sleep 0.2; xdotool key ctrl+space &"
-# click-left = "rofi -no-lazy-grab -show drun -theme launchers/style_normal_rainbow_sidebar.rasi &"
-click-right = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
+#click-left = "sleep 0.2; xdotool key ctrl+space &"
+#click-right = "rofi -no-lazy-grab -show drun -theme launchers/style_normal_rainbow_sidebar.rasi &"
+#click-right = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme &
 # click-right = ~/.bin/rofi-favapp
 # click-right = mylaunchpad xfce-applications
 

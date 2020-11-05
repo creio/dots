@@ -1,6 +1,5 @@
 alsa-utils
 alttab-git
-appstream
 arc-gtk-theme
 archlinux-appstream-data
 audacity
@@ -23,7 +22,7 @@ cpio
 cronie
 ctlos-keyring
 ctlos-mirrorlist
-dhcpcd
+devilspie
 dialog
 discord
 dmenu
@@ -77,7 +76,6 @@ hsetroot
 htop
 hub
 inxi
-jgmenu
 jq
 keybase-gui
 libtool
@@ -89,7 +87,6 @@ llvm
 lolcat
 lvm2
 lxappearance
-lxmenu-data
 m4
 make
 mesa-demos
@@ -112,6 +109,7 @@ noto-fonts-emoji
 npm
 ntfs-3g
 numlockx
+nyx
 oh-my-zsh-git
 openbox
 openssh
@@ -150,7 +148,7 @@ reflector
 ripgrep
 rofi
 rsync
-rxvt-unicode
+rxvt-unicode-patched
 sassc
 scrot
 sed
@@ -163,7 +161,6 @@ strace
 straw-viewer-git
 streamlink
 sudo
-sxhkd
 syntax-highlighting
 sysstat
 telegram-desktop
@@ -186,6 +183,7 @@ ttf-clear-sans
 ttf-dejavu
 ttf-font-awesome
 ttf-hack
+ttf-opensans
 ttf-ubuntu-font-family
 ttyload
 tumbler
@@ -208,6 +206,7 @@ wireless_tools
 wmctrl
 xclip
 xdotool
+xfce4-power-manager
 xorg-server
 xorg-xinit
 xreader

@@ -314,16 +314,16 @@
         <command>phide.sh</command>
       </action>
     </keybind> -->
-    <!-- <keybind key="C-space">
+    <keybind key="C-space">
      <action name="ShowMenu">
        <menu>root-menu</menu>
      </action>
-    </keybind> -->
-    <keybind key="C-space">
+    </keybind>
+    <!-- <keybind key="C-space">
      <action name="Execute">
        <command>jgmenu_run</command>
      </action>
-    </keybind>
+    </keybind> -->
     <keybind key="W-Tab">
       <action name="Execute">
         <command>skippy-xd</command>
@@ -399,7 +399,7 @@
     </keybind>
     <keybind key="A-r">
       <action name="Execute">
-        <command>urxvtc -name ranger -e ranger</command>
+        <command>urxvtc -name term_center -e ranger</command>
       </action>
     </keybind>
     <keybind key="A-t">
@@ -877,16 +877,16 @@
           <menu>client-list-combined-menu</menu>
         </action>
       </mousebind>
-      <!-- <mousebind action="Press" button="Right">
+      <mousebind action="Press" button="Right">
         <action name="ShowMenu">
           <menu>root-menu</menu>
         </action>
-      </mousebind> -->
-      <mousebind action="Release" button="Right">
+      </mousebind>
+      <!-- <mousebind action="Release" button="Right">
         <action name="Execute">
           <command>jgmenu_run</command>
         </action>
-      </mousebind>
+      </mousebind> -->
     </context>
     <context name="MoveResize">
       <mousebind action="Click" button="Up">
@@ -1040,9 +1040,9 @@
     <application name="urxvt_bg">
       <maximized>yes</maximized>
       <decor>no</decor>
-      <shade>yes</shade>
+      <shade>no</shade>
       <layer>below</layer>
-      <desktop>2</desktop>
+      <!-- <desktop>all</desktop> -->
     </application>
     <application title="m_sticky">
       <desktop>all</desktop>

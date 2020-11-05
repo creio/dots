@@ -1,28 +1,59 @@
 ---
 openbox_menu:
-    - Drun: rofi -show drun
-    - Terminal: $terminal  # defaults to xterm. Use eg. --terminal rxvt for a different one
-    - File Manager: $terminal -name ranger -e ranger
+    - Drun Rofi: "rofi -show drun -theme-str 'element-icon {size: 16;}'"
+    - Terminal: $terminal  # defaults to xterm.
+    - File Manager: $terminal -name term_center -e ranger
     - Web Search: search
     - separator:
     - Development:
         - Subl Txt: subl3
         - Micro: $terminal -name w_max -e micro
         - Vim: $terminal -e nvim
-    - Browser:
+    - Network:
         - Chromium:
+        # - Firefox:
+        - Qutebrowser:
+        - separator:
+        - Transmission: transmission-gtk
+        - Filezilla:
     - Mail/Chat:
         - Telegram: telegram-desktop
+        - Discord:
+        - Keybase: keybase-gui
     - Multimedia:
-        - Audacious:
+        - Audacity:
+        - Simplescreenrecorder:
+        - Mpv:
         - PVC: pavucontrol
-    # - Pipemenus:
-        # - Remote Hosts: |
-            # ~/bin/bl-sshconfig-pipemenu
+    - Tools:
+        - File-roller:
+        - Galculator:
+        - Xreader:
+        - Catfish:
+        - separator:
+        - Virtualbox:
+        - Veracrypt:
+        - Gufw:
+    - Settings:
+        - Lxappearance:
+        - Qt5ct:
+        - Tint2conf:
+        - Power manager: xfce4-power-manager-settings
     - System:
         - htop: $terminal -name w_max -e htop
+        - gotop: $terminal -name w_max -e gotop
+        - separator:
+        - Gparted:
+        - Bleachbit:
+        - Bleachbit(Root): pkexec bleachbit
+        - Timeshift: timeshift-gtk
+        - separator:
         - Openbox:
             - Reconfigure: openbox --reconfigure
             - Restart: openbox --restart
     - separator:
+    - Lock: multilock.sh -l dimblur
     - Logout: rofi-logout
+    # - Pipemenus:
+        # - Remote Hosts: |
+            # ~/bin/bl-sshconfig-pipemenu

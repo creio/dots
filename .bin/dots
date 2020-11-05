@@ -81,11 +81,11 @@ backup()
     cp -rf $HOME/README.md $HOME/docs/README.md
   fi
   for i in "${BKPS[@]}"; do
-    [[ -e "$i" ]] && rsync -aRhv --delete --safe-links --progress "$i" "$to"
+    [[ -e "$i" ]] && rsync -aRhv --delete-excluded --delete --safe-links --progress "$i" "$to"
   done
   [[ ! -d $BPATH/$ROOT_DIR ]] && mkdir -pv $BPATH/$ROOT_DIR
   for i in "${ROOT_BKPS[@]}"; do
-    [[ -e "/$i" ]] && rsync -aRhv --delete --safe-links --progress "/$i" "$to/$ROOT_DIR"
+    [[ -e "/$i" ]] && rsync -aRhv --delete-excluded --delete --safe-links --progress "/$i" "$to/$ROOT_DIR"
   done
 
   (( ! PUSH )) && return || git_commit

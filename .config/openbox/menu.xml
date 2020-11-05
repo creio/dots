@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openbox_menu>
   <menu id="root-menu" label="Openbox 3">
-    <item label="Drun"> <action name="Execute">
-    	<execute>rofi -show drun</execute>
+    <item label="Drun Rofi"> <action name="Execute">
+    	<execute>rofi -show drun -theme-str 'element-icon {size: 16;}'</execute>
     </action></item>
     <item label="Terminal"> <action name="Execute">
-    	<execute>urxvtc</execute>
+    	<execute>urxvt</execute>
     </action></item>
     <item label="File Manager"> <action name="Execute">
-    	<execute>urxvtc -name ranger -e ranger</execute>
+    	<execute>urxvt -name term_center -e ranger</execute>
     </action></item>
     <item label="Web Search"> <action name="Execute">
     	<execute>search</execute>
@@ -19,35 +19,112 @@
       	<execute>subl3</execute>
       </action></item>
       <item label="Micro"> <action name="Execute">
-      	<execute>urxvtc -name w_max -e micro</execute>
+      	<execute>urxvt -name w_max -e micro</execute>
       </action></item>
       <item label="Vim"> <action name="Execute">
-      	<execute>urxvtc -e nvim</execute>
+      	<execute>urxvt -e nvim</execute>
       </action></item>
     </menu>
-    <menu id="1" label="Browser">
+    <menu id="1" label="Network">
       <item label="Chromium"> <action name="Execute">
       	<execute>chromium</execute>
+      </action></item>
+      <item label="Qutebrowser"> <action name="Execute">
+      	<execute>qutebrowser</execute>
+      </action></item>
+      <separator />
+      <item label="Transmission"> <action name="Execute">
+      	<execute>transmission-gtk</execute>
+      </action></item>
+      <item label="Filezilla"> <action name="Execute">
+      	<execute>filezilla</execute>
       </action></item>
     </menu>
     <menu id="2" label="Mail/Chat">
       <item label="Telegram"> <action name="Execute">
       	<execute>telegram-desktop</execute>
       </action></item>
+      <item label="Discord"> <action name="Execute">
+      	<execute>discord</execute>
+      </action></item>
+      <item label="Keybase"> <action name="Execute">
+      	<execute>keybase-gui</execute>
+      </action></item>
     </menu>
     <menu id="3" label="Multimedia">
-      <item label="Audacious"> <action name="Execute">
-      	<execute>audacious</execute>
+      <item label="Audacity"> <action name="Execute">
+      	<execute>audacity</execute>
+      </action></item>
+      <item label="Simplescreenrecorder"> <action name="Execute">
+      	<execute>simplescreenrecorder</execute>
+      </action></item>
+      <item label="Mpv"> <action name="Execute">
+      	<execute>mpv</execute>
       </action></item>
       <item label="PVC"> <action name="Execute">
       	<execute>pavucontrol</execute>
       </action></item>
     </menu>
-    <menu id="4" label="System">
-      <item label="htop"> <action name="Execute">
-      	<execute>urxvtc -name w_max -e htop</execute>
+    <menu id="4" label="Tools">
+      <item label="File-roller"> <action name="Execute">
+      	<execute>file-roller</execute>
       </action></item>
-      <menu id="5" label="Openbox">
+      <item label="Galculator"> <action name="Execute">
+      	<execute>galculator</execute>
+      </action></item>
+      <item label="Xreader"> <action name="Execute">
+      	<execute>xreader</execute>
+      </action></item>
+      <item label="Catfish"> <action name="Execute">
+      	<execute>catfish</execute>
+      </action></item>
+      <separator />
+      <item label="Virtualbox"> <action name="Execute">
+      	<execute>virtualbox</execute>
+      </action></item>
+      <item label="Veracrypt"> <action name="Execute">
+      	<execute>veracrypt</execute>
+      </action></item>
+      <item label="Gufw"> <action name="Execute">
+      	<execute>gufw</execute>
+      </action></item>
+    </menu>
+    <menu id="5" label="Settings">
+      <item label="Lxappearance"> <action name="Execute">
+      	<execute>lxappearance</execute>
+      </action></item>
+      <item label="Qt5ct"> <action name="Execute">
+      	<execute>qt5ct</execute>
+      </action></item>
+      <item label="Tint2conf"> <action name="Execute">
+      	<execute>tint2conf</execute>
+      </action></item>
+      <item label="Power manager"> <action name="Execute">
+      	<execute>xfce4-power-manager-settings</execute>
+      </action></item>
+    </menu>
+    <menu id="6" label="System">
+      <item label="htop"> <action name="Execute">
+      	<execute>urxvt -name w_max -e htop</execute>
+      </action></item>
+      <item label="gotop"> <action name="Execute">
+      	<execute>urxvt -name w_max -e gotop</execute>
+      </action></item>
+      <separator />
+      <item label="Gparted"> <action name="Execute">
+      	<execute>gparted</execute>
+      </action></item>
+      <item label="Bleachbit"> <action name="Execute">
+      	<execute>bleachbit</execute>
+      </action></item>
+      <item label="Bleachbit(Root)"> <action name="Execute">
+      	<execute>pkexec bleachbit</execute>
+      </action></item>
+      <item label="Timeshift"> <action name="Execute">
+      	<execute>timeshift-gtk</execute>
+      </action></item>
+      <separator />
+      <menu id="7" label="Openbox">
         <item label="Reconfigure"> <action name="Execute">
         	<execute>openbox --reconfigure</execute>
         </action></item>
@@ -57,6 +134,9 @@
       </menu>
     </menu>
     <separator />
+    <item label="Lock"> <action name="Execute">
+    	<execute>multilock.sh -l dimblur</execute>
+    </action></item>
     <item label="Logout"> <action name="Execute">
     	<execute>rofi-logout</execute>
     </action></item>

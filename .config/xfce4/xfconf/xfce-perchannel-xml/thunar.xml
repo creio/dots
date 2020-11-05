@@ -48,10 +48,10 @@
     <value type="string" value="e98142ec-de9b-494a-81cc-08894f697efa"/>
     <value type="string" value="5fa3a748-7b5c-478c-82e4-d38c75cf42a7"/>
     <value type="string" value="9490fad1-5c97-4eda-8fc1-fc0f9c64a7fc"/>
-    <value type="string" value="7915-2227"/>
     <value type="string" value="94dacebc-2804-4245-80a2-c62d0d1f326f"/>
     <value type="string" value="36b592f2-3dd9-4c42-88c9-608992e490c3"/>
     <value type="string" value="c7b68393-4c50-42b3-ae0f-1b4cfe080117"/>
+    <value type="string" value="7915-2227"/>
   </property>
   <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
   <property name="last-statusbar-visible" type="bool" value="true"/>

@@ -2,7 +2,6 @@ archiso-git
 caffeine-ng
 clean-chroot-manager
 colorpicker
-devilspie
 downgrade
 googler
 hardcode-tray-git
@@ -18,9 +17,12 @@ ob-yml-menu
 opencl-nvidia-390xx
 otb-uw_ttyp0
 picom-tryone-git
+pkgbuild-introspection
 sublime-text-dev
 toilet
 ttf-symbola
 ttf-weather-icons
 urxvt-resize-font-git
 ventoy-bin
+xmind
+xwinwrap-git

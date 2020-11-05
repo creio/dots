@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-# Стеганография
 # cat molot-tora.mp4 eraz.zip > data.mp4
 # unzip date.mp4
 
@@ -168,13 +167,10 @@ alias /="cd /"
 alias ~="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
-# alias ....="cd ../../.."
-# alias .....="cd ../../../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 alias q="exit"
 alias gh="cd /media/files/github"
-alias ctliso="cd /media/files/github/ctlosiso"
-alias wiki="cd /media/files/github/wiki"
-alias ghc="cd /media/files/github/creio"
 alias dot="cd /media/files/github/creio/dots"
 
 gc () {
@@ -188,7 +184,7 @@ function gcj () {
 alias gi="git init"
 alias gs="git status"
 alias gl="git log --stat --pretty=oneline --graph --date=short"
-alias gg="gitg &"
+# alias gg="gitg &"
 alias ga="git add --all"
 gac () {
   git add --all
@@ -199,9 +195,8 @@ alias gf="git fetch"
 alias gpl="git pull"
 alias gp="git push"
 alias gpm="git push origin master"
-alias ghab="$BROWSER http://github.com/ctlos &"
 # yarn global add github-search-repos-cli
-alias gsc="github-search-repos -i"
+# alias gsc="github-search-repos -i"
 
 # tor chromium
 alias torc="$BROWSER --proxy-server='socks://127.0.0.1:9050' &"
@@ -263,12 +258,8 @@ alias ss="sudo subl3"
 alias tm="tmux attach || tmux new -s work"
 alias tmd="tmux detach"
 alias tmk="tmux kill-server"
-alias fm="ranger"
-alias sfm="sudo ranger"
-alias th="thunar . &"
-alias sth="sudo thunar &"
-alias na="nautilus . &"
-alias sna="sudo nautilus &"
+alias rr="ranger"
+alias srr="sudo ranger"
 alias h="htop"
 # alias {v,vi,vim}="nvim"
 
@@ -309,21 +300,6 @@ alias yrn="yay -R --noconfirm"
 alias ynskip='yay --noconfirm --mflags "--nocheck --skipchecksums --skippgpcheck"'
 alias ygpg='yay --noconfirm --gpgflags "--keyserver keys.gnupg.net"'
 # pacman -Qqo /usr/lib/python3.8/
-
-# systemd
-alias sse="sudo systemctl enable"
-alias ssd="sudo systemctl disable"
-alias ssen="sudo systemctl enable --now"
-alias ssdn="sudo systemctl disable --now"
-alias ssr="sudo systemctl restart"
-alias ssk="sudo systemctl stop"
-alias sss="sudo systemctl status"
-
-# Python
-alias ve="virtualenv ve"
-alias vea="source ve/bin/activate"
-alias ved="deactivate"
-alias pipr="pip install -r requirements.txt"
 
 # распаковать архив не указывая тип распаковщика
 function ex {

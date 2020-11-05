@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+curl \
+  --disable \
+  --ipv4 \
+  --location \
+  --retry 2 \
+  --progress-bar \
+  --continue-at - \
+  --url "$1" \
+  --output "${2:-${1##*/}}"

@@ -13,7 +13,7 @@ elif [ "$1" = "-c" ]; then
   sudo reflector -c "$check_country" -f 20 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist
 else
   # mirrors
-  sudo reflector --verbose -a 12 -l 50 -f 15  -p https -p http --sort rate --save /etc/pacman.d/mirrorlist
+  sudo reflector --verbose -a 12 -l 50 -f 15 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist
 fi
 
 sudo pacman -Syy

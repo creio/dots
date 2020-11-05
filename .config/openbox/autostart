@@ -30,10 +30,14 @@ gnome-keyring-daemon --start --components=pkcs11,secrets &
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
 # setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
 unclutter &
-urxvt &
-# cornora -bl "skippy-xd" -tl "rofi -show run" &
 redshift -c ~/.config/redshift.conf &
-jgmenu_run start &
+parcellite &
+devilspie ~/.devilspie/urxvt_bg.ds &
+(sleep 3; urxvt -bg '[0]red' -depth 32 +sb -name urxvt_bg) &
+
+
+# jgmenu_run start &
+# cornora -bl "skippy-xd" -tl "rofi -show run" &
 # (sleep 1; redshift-gtk) &
 # (sleep 2; caffeine) &
 # (sleep 3; parcellite) &

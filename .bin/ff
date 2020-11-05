@@ -1,0 +1,31 @@
+#!/bin/bash
+
+w="$(tput setaf 4)"
+c="${w}$(tput bold)"
+r="$(tput sgr0)$(tput setaf 6)"
+
+f=$(tput sgr0)
+for n in {0..7}; do
+  printf -v f${n} "%b" $(tput setaf ${n})
+done
+
+wm=$(wmctrl -m 2>/dev/null |
+  grep "Name" |
+  cut -d " " -f2)
+
+[[ -z $wm ]] && wm="bspwm"
+
+os=$(
+  # shellcheck disable=SC1091
+  source /etc/os-release
+  echo "$ID"
+)
+pk=$(pacman -Qq | wc -l)
+
+echo "${w}  卑${r}    os ${c}::${r} $os
+${w} 卑卑${r}   wm ${c}::${r} $wm
+${w}卑卑卑${r}  pk ${c}::${r} $pk
+"
+cat <<- LOL
+${f1}██${f2}██${f3}██${f4}██${f5}██${f6}██${f7}██${f}
+LOL

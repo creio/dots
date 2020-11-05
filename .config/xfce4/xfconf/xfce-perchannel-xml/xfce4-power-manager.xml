@@ -2,8 +2,16 @@
 
 <channel name="xfce4-power-manager" version="1.0">
   <property name="xfce4-power-manager" type="empty">
-    <property name="general-notification" type="bool" value="false"/>
+    <property name="general-notification" type="bool" value="true"/>
     <property name="show-tray-icon" type="bool" value="false"/>
     <property name="show-panel-label" type="int" value="0"/>
+    <property name="power-button-action" type="uint" value="4"/>
+    <property name="sleep-button-action" type="uint" value="1"/>
+    <property name="hibernate-button-action" type="uint" value="2"/>
+    <property name="inactivity-sleep-mode-on-ac" type="uint" value="2"/>
+    <property name="inactivity-on-ac" type="uint" value="14"/>
+    <property name="blank-on-ac" type="int" value="4"/>
+    <property name="dpms-on-ac-off" type="uint" value="20"/>
+    <property name="battery-button-action" type="uint" value="3"/>
   </property>
 </channel>

@@ -1,28 +1,25 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'jiangmiao/auto-pairs' 
+Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 " color theme
-Plug 'arcticicestudio/nord-vim'
-Plug 'morhetz/gruvbox'
+Plug 'ghifarit53/tokyonight-vim'
 Plug 'rking/ag.vim'
 
 call plug#end()
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-syntax on
 let g:mapleader=','
 let NERDTreeShowHidden=1
 
 "" Visual Setting
+syntax on
 set background=dark
-colorscheme nord
-"colorscheme gruvbox
 
 set number
 set mouse=a
@@ -72,6 +69,13 @@ vmap uc :norm ^x<CR>
 " http://git.io/lightline
 set laststatus=2
 let g:lightline = {
-  \ 'colorscheme': 'wombat',
+  \ 'colorscheme': 'jellybeans',
   \ 'separator': { 'left': '', 'right': '' },
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'readonly', 'filename', 'modified', 'helloworld' ] ]
+  \ },
+  \ 'component': {
+  \   'helloworld': 'Хули, гули!'
+  \ },
   \ }

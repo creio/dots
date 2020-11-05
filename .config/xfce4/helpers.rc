@@ -1,5 +1,4 @@
 TerminalEmulator=urxvt
 WebBrowser=chromium
 FileManager=Thunar
-MailReader=custom-MailReader
 

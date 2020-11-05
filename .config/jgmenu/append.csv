@@ -1,5 +1,5 @@
 ^sep()
-Lock,i3lock-fancy -p,system-lock-screen
+Lock,multilock.sh -l dimblur,system-lock-screen
 Exit,^checkout(exit),system-shutdown
 
 exit,^tag(exit)
