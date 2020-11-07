@@ -11,19 +11,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-<title>New Tab</title>
+<title>Start Page</title>
 
 <style type="text/css">
 /*
     >> Search and Replace to change color scheme
 
     * (If you make two or more the same value you will need to
-       manually separate the colors in the code later to undo) 
+       manually separate the colors in the code later to undo)
 
-    #17181A - Background        #D54A56 - Color Mnu1
-    #27282B - Content BG        #84BD3F - Color Mnu2
-    #AAABAD - Content FG        #D753A4 - Color Mnu3
-    #CECFD1 - C FG Light        #6F67E6 - Color Mnu4
+    #17181A - Background        #FF7A93 - Color Mnu1
+    #27282B - Content BG        #baffd9 - Color Mnu2
+    #A9B1D6 - Content FG        #ffbdf1 - Color Mnu3
+    #f2f3f4 - C FG Light        #aeb1ff - Color Mnu4
     #111113 - L FG Hover
 
     Transition: "transition: .2s ease-out"
@@ -74,7 +74,7 @@ a:hover, a:active    { color: #111113; }
 }
 
 #more {
-    background: transparent; color: #AAABAD; display: block; 
+    background: transparent; color: #AAABAD; display: block;
     text-align: center; margin: 0 auto; width: 32px; height: 32px;
     font-weight: bold; cursor: default;
 }
@@ -140,8 +140,6 @@ var search=[ // Search engines
     ["",    "https://www.google.no/#q="],                           // Google (Default)
     ["!g",  "https://www.google.no/#q="],                           // Google
     ["!i",  "https://www.google.no/search?tbm=isch&q="],            // Google Images
-    ["!m",  "http://www.imdb.com/find?q="],                         // IMDb
-    ["!u",  "http://www.urbandictionary.com/define.php?term="],     // Urban Dictionary
     ["!w",  "http://en.wikipedia.org/w/index.php?search="],         // Wikipedia
     ["!y",  "https://www.youtube.com/results?search_query="],       // YouTube
 ];
@@ -161,65 +159,35 @@ var showPreview = true;                                             // Enable/Di
 var links=[
     // News -           mnu_1
     ["Arch Linux",                      "http://archlinux.org",                 ""],
-    ["Dagbladet",                       "http://dagbladet.no",                  ""],
-    ["Gamer",                           "http://gamer.no",                      ""],
-    ["Hardware",                        "http://hardware.no",                   ""],
-    ["IGN",                             "http://ign.com",                       ""],
-    ["IT-Avisen",                       "http://itavisen.no",                   "http://www.itavisen.no/sites/itavisen.no/files/favicon.ico"],
-    ["NRK",                             "http://nrk.no",                        ""],
-    ["OA",                              "http://oa.no",                         ""],
-    ["PressFire",                       "http://pressfire.no",                  "http://www.pressfire.no/gfx/icons/application/favico.ico"],
-    ["Teknofil",                        "http://teknofil.no",                   ""],
-    ["TorrentFreak",                    "http://torrentfreak.com",              ""],
-    ["VG",                              "http://vg.no",                         ""],
+    ["OpenNet",                         "https://www.opennet.ru/opennews/",     ""],
+    ["LOR",                             "https://www.linux.org.ru/news/",       ""],
 
     ["", "", ""],
 
     // 4chan -          mnu_2
     ["/b/ - Random",                    "https://boards.4chan.org/b/catalog",   ""],
-    ["/e/ - Ecchi",                     "https://boards.4chan.org/e/catalog",   ""],
-    ["/f/ - Flash",                     "https://boards.4chan.org/f/",          ""],
-    ["/g/ - Technology",                "https://boards.4chan.org/g/catalog",   "http://s.4cdn.org/image/favicon-ws.ico"],
+    ["/g/ - Technology",                "https://boards.4chan.org/g/catalog",   ""],
     ["/gif/ - Adult GIF",               "https://boards.4chan.org/gif/catalog", ""],
-    ["/h/ - Hentai",                    "https://boards.4chan.org/h/catalog",   ""],
-    ["/mlp/ - Pony",                    "https://boards.4chan.org/mlp/catalog", "http://s.4cdn.org/image/favicon-ws.ico"],
-    ["/mu/ - Music",                    "https://boards.4chan.org/mu/catalog",  "http://s.4cdn.org/image/favicon-ws.ico"],
+    ["/mu/ - Music",                    "https://boards.4chan.org/mu/catalog",  ""],
     ["/pol/ - Politically Incorrect",   "https://boards.4chan.org/pol/catalog", ""],
     ["/wg/ - Wallpaper General",        "https://boards.4chan.org/wg/catalog",  ""],
-    ["/wsg/ - Worksafe GIF",            "https://boards.4chan.org/wsg/catalog", "http://s.4cdn.org/image/favicon-ws.ico"],
-    ["/x/ - Paranormal",                "https://boards.4chan.org/x/catalog",   "http://s.4cdn.org/image/favicon-ws.ico"],
 
     ["", "", ""],
 
     // Entertainment -  mnu_3
-    ["Derpibooru",                      "https://derpibooru.org/",              ""],
     ["DeviantArt",                      "http://deviantart.com/",               ""],
-    ["I Am Bored",                      "http://www.i-am-bored.com/",           ""],
     ["Imgur",                           "https://imgur.com/",                   ""],
-    ["MetArt",                          "http://members.met-art.com/members/",  ""],
     ["Netflix",                         "http://netflix.com",                   ""],
-    ["/pone/",                          "https://8chan.co/pone/catalog.html",   ""],
     ["Reddit",                          "http://reddit.com",                    ""],
-    ["StumbleUpon",                     "http://stumbleupon.com",               "https://nb9-stumbleupon.netdna-ssl.com/-G-ChSR8MQAl3Skvq8oNZg"],
-    ["Your World of Text",              "http://www.yourworldoftext.com/",      ""],
     ["YouTube",                         "http://youtube.com",                   ""],
-    ["xHamster",                        "http://xhamster.com/",                 ""],
+    ["xHamster",                        "http://xhamster.com/",                 "https://static-lvlt.xhcdn.com/xh-tpl3/images/favicon/favicon.ico"],
 
     ["", "", ""],
 
     // Other -          mnu_4
-    ["Altinn",                          "https://www.altinn.no/",               ""],
-    ["CockMail",                        "https://mail.cock.li",                 "https://mail.cock.li/skins/larry/images/favicon.ico"],
-    ["DnB",                             "http://www.dnb.no/en/",                ""],
-    ["Dropbox",                         "https://www.dropbox.com",              "https://cf.dropboxstatic.com/static/images/favicon-vflk5FiAC.ico"],
-    ["Facebook",                        "http://facebook.com",                  ""],
-    ["Outlook",                         "http://outlook.com",                   ""],
-    ["Pastebin",                        "http://pastebin.com/u/Twilypastes",    ""],
-    ["PayPal",                          "http://www.paypal.com/",               ""],
-    ["MaxFile",                         "http://maxfile.ro",                    ""],
-    ["Userstyles",                      "http://userstyles.org/",               ""],
-    ["Wallgig",                         "http://wallgig.net",                   ""],
-    ["Wallhaven",                       "http://alpha.wallhaven.cc",            ""],
+    ["CockMail",                        "https://mail.cock.li",                 ""],
+    ["Wallhaven",                       "https://wallhaven.cc/",                ""],
+    ["Unsplash",                        "https://unsplash.com/t/wallpapers",    ""],
 ];
 
 var i,ss="";

@@ -1,6 +1,5 @@
 alsa-utils
 alttab-git
-arc-gtk-theme
 archlinux-appstream-data
 audacity
 autoconf
@@ -49,7 +48,6 @@ gawk
 gcc
 geoip
 gettext
-gifsicle
 gimp
 git
 gnu-netcat
@@ -98,7 +96,6 @@ mpv
 multilockscreen-git
 nano
 ncmpcpp
-neofetch
 neovim
 nerd-fonts-hack
 netctl
@@ -110,7 +107,6 @@ npm
 ntfs-3g
 numlockx
 nyx
-oh-my-zsh-git
 openbox
 openssh
 openvpn
@@ -125,7 +121,6 @@ patch
 pavucontrol
 pepper-flash
 perl-linux-desktopfiles
-pfetch-git
 pkgconf
 polkit-gnome
 polybar
@@ -136,6 +131,7 @@ pulseaudio
 pulseaudio-alsa
 pv
 python-pip-api
+python2
 qemu
 qgnomeplatform-git
 qogir-icon-theme-git
@@ -205,6 +201,7 @@ whois
 wireless_tools
 wmctrl
 xclip
+xdg-user-dirs
 xdotool
 xfce4-power-manager
 xorg-server
@@ -216,5 +213,3 @@ yarn
 yay-bin
 youtube-dl
 zsh
-zsh-autosuggestions
-zsh-fast-syntax-highlighting-git

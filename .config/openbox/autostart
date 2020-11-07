@@ -32,22 +32,17 @@ setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
 unclutter &
 redshift -c ~/.config/redshift.conf &
 parcellite &
-devilspie ~/.devilspie/urxvt_bg.ds &
-(sleep 3; urxvt -bg '[0]red' -depth 32 +sb -name urxvt_bg) &
+(sleep 2; sh -c ~/.bin/urxvt_bg) &
+# animatebg &
 
+#glava &
 
 # jgmenu_run start &
 # cornora -bl "skippy-xd" -tl "rofi -show run" &
-# (sleep 1; redshift-gtk) &
 # (sleep 2; caffeine) &
-# (sleep 3; parcellite) &
 # greenclip daemon &
 # (sleep 5; nm-applet) &
 # (sleep 2; volumeicon) &
-# (sleep 5; megasync) &
 # udiskie -t &
-# sh -c "kunst --music_dir /media/files/mega/music --size 250x250 --x 1080 --y 60"
+# sh -c "kunst --music_dir /media/files/music --size 250x250 --x 1080 --y 60"
 
-# devilspie ~/.devilspie/urxvt_bg.ds &
-# devilspie &
-#glava &

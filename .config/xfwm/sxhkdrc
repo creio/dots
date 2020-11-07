@@ -23,7 +23,7 @@ alt + Return
   sh -c "$HOME/.bin/draw"
 
 # terminal emulator
-super + plus
+super + t
   urxvt
 
 # terminal emulator findapp

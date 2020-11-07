@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/zsh
 
 # cat molot-tora.mp4 eraz.zip > data.mp4
 # unzip date.mp4
@@ -13,12 +13,13 @@ alias merge="xrdb -merge $HOME/.Xresources"
 alias xcolor="xrdb -query | grep"
 alias vga="lspci -k | grep -A 2 -E '(VGA|3D)'"
 alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias iip="curl --max-time 10 -w '\n' http://ident.me"
-alias tb="nc termbin.com 9999 | xsel -b -i"
-alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 alias updir="LC_ALL=C xdg-user-dirs-update --force"
 
 alias dmrun="dmenu_run -l 10 -p 'app>' -fn 'ClearSansMedium 9' -nb '#282c37' -nf '#f2f3f4' -sb '#5a74ca' -sf '#fff'"
+
+alias iip="curl --max-time 10 -w '\n' http://ident.me"
+alias tb="nc termbin.com 9999 | xsel -b -i"
+alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
 doiso() {
   rsync -auvCL ~/ctlosiso/out/ cretm@${dev_ctlos_ru}:~/app/dev.ctlos.ru/iso/$1
@@ -173,9 +174,10 @@ alias q="exit"
 alias gh="cd /media/files/github"
 alias dot="cd /media/files/github/creio/dots"
 
-gc () {
+function gc () {
   git clone "$1"
 }
+
 function gcj () {
   git clone "$1"
   cd "$2"
@@ -268,38 +270,32 @@ alias h="htop"
 alias pkglist="pacman -Qneq > ~/.pkglist.txt"
 alias aurlist="pacman -Qmeq > ~/.aurlist.txt"
 
-alias packey="sudo pacman-key --init && sudo pacman-key --populate && sudo pacman-key --refresh-keys && sudo pacman -Syy"
-alias sp="sudo pacman -S"
-alias spo="sudo pacman -S --overwrite='*'"
-alias spU="sudo pacman -U"
-alias spoU="sudo pacman -U --overwrite='*'"
-alias sps="sudo pacman -Ss"
-alias spc="sudo pacman -Sc"
-alias spcc="sudo pacman -Scc"
-alias spy="sudo pacman -Syy"
-alias spu="sudo pacman -Syu"
-alias spr="sudo pacman -R"
-alias pres="sudo pacman -S $(pacman -Qqn)"
-
+alias packey="sudo pacman-key --init && sudo pacman-key --populate && sudo pacman-key --refresh-keys --keyserver hkps://keyserver.ubuntu.com && sudo pacman -Syy"
 alias y="yay -S"
 alias yn="yay -S --noconfirm"
 alias yl="yay -S --noconfirm --needed - < ~/.pkglist.txt"
-# alias yal="yay -S --noconfirm --needed $(cat ~/.aurlist.txt)"
 alias ys="yay"
 alias ysn="yay --noconfirm"
+alias yo="yay -S --overwrite='*'"
+alias yuo="yay -U --overwrite='*'"
 alias yc="yay -Sc"
 alias ycc="yay -Scc"
 alias yy="yay -Syy"
-alias yu="yay -Syu"
-alias yun="yay -Syu --noconfirm"
+alias yu="yay -Syyu"
+alias yun="yay -Syyu --noconfirm"
 alias yr="yay -R"
 alias yrs="yay -Rs"
 alias yrsn="yay -Rsn"
-alias yrsnp="yay -Rsn $(pacman -Qdtq)"
 alias yrn="yay -R --noconfirm"
 alias ynskip='yay --noconfirm --mflags "--nocheck --skipchecksums --skippgpcheck"'
 alias ygpg='yay --noconfirm --gpgflags "--keyserver keys.gnupg.net"'
+
+# alias pres="sudo pacman -S $(pacman -Qqn)"
+# alias yrsnp="yay -Rsn $(pacman -Qdtq)"
+# alias yal="yay -S --noconfirm --needed $(cat ~/.aurlist.txt)"
 # pacman -Qqo /usr/lib/python3.8/
+
+
 
 # распаковать архив не указывая тип распаковщика
 function ex {

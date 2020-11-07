@@ -43,8 +43,8 @@ search qt
 q
 help
 find zsh
-search wall
 search rofi
 shell th
 delete
 cd .wall
+search wall

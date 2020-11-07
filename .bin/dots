@@ -78,7 +78,7 @@ backup()
   if [[ -e "$HOME/README.md" ]]; then
     sed -i -e "s/Date:.*/Date: $(date '+%d.%m.%Y,%H:%M:%S')/g" $HOME/README.md
     [[ ! -d $HOME/docs ]] && mkdir $HOME/docs
-    cp -rf $HOME/README.md $HOME/docs/README.md
+    # cp -rf $HOME/README.md $HOME/docs/README.md
   fi
   for i in "${BKPS[@]}"; do
     [[ -e "$i" ]] && rsync -aRhv --delete-excluded --delete --safe-links --progress "$i" "$to"
@@ -155,7 +155,7 @@ b_keybase()
     else
       to="$KB_PATH"
     fi
-    [[ -d $KB_PATH ]] && rsync -ahC --info=progress2 --no-i-r --delete --delete-excluded --exclude={".wall/",".icons/",".themes/",".config/sublime-text-3/"} --safe-links --progress "$BPATH/" "$to" || return 1
+    [[ -d $KB_PATH ]] && rsync -ahC --info=progress2 --no-i-r --safe-links --progress --delete --delete-excluded --exclude={".wall/",".icons/",".themes/",".config/sublime-text-3/"} "$BPATH/" "$to" || return 1
   else
     echo "run: systemctl start --user kbfs"
     exit 0
@@ -188,7 +188,7 @@ BRANCH=''
 BPATH=''
 
 # location kbfs
-KB_PATH='/run/user/1001/keybase/kbfs/private/cvc/dots'
+KB_PATH='/run/user/1000/keybase/kbfs/private/cvc/dots'
 
 # file paths to back up as BPATH/BKPS
 # qoutes surround paths that contain spaces or expect errors

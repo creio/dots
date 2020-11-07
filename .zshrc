@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/zsh
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx &> /dev/null
 # [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -- vt1 &> /dev/null
@@ -11,24 +11,22 @@ export HISTFILE=~/.zhistory
 export HISTSIZE=10000
 export SAVEHIST=10000
 
-autoload -Uz compinit
-for dump in ~/.zcompdump(N.mh+24); do
-  compinit
-done
-compinit -C
-
-### ohmyzsh
-export ZSH="/usr/share/oh-my-zsh"
-ZSH_THEME="af-magic"
-source $ZSH/oh-my-zsh.sh
-DISABLE_AUTO_UPDATE="true"
-ENABLE_CORRECTION="true"
-plugins=()
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-[[ ! -d $ZSH_CACHE_DIR ]] && mkdir -p $ZSH_CACHE_DIR
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=white"
+### load zgen
+## git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
+source "${HOME}/.zgen/zgen.zsh"
+if ! zgen saved; then
+  echo "Creating a zgen save"
+  zgen oh-my-zsh
+  # plugins
+  zgen load zsh-users/zsh-autosuggestions
+  # zgen load zsh-users/zsh-syntax-highlighting
+  # zgen load zsh-users/zsh-history-substring-search
+  # zgen load zsh-users/zsh-completions src
+  zgen load zdharma/fast-syntax-highlighting
+  # theme
+  zgen oh-my-zsh themes/af-magic
+  zgen save
+fi
 
 # fzf & fd
 [[ -e "/usr/share/fzf/fzf-extras.zsh" ]] && source /usr/share/fzf/fzf-extras.zsh
@@ -39,14 +37,11 @@ export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --preview 'file 
 export FZF_COMPLETION_TRIGGER="~~"
 
 export TERM="rxvt-256color"
-export EDITOR="$(if [[ -n $DISPLAY ]]; then if [[ `which subl3` != 'subl3 not found' ]]; then echo 'subl3'; else echo 'nano'; fi; fi)"
+export EDITOR="$([[ -n $DISPLAY && $(command -v subl3) ]] && echo 'subl3' || echo 'nano')"
 export BROWSER="chromium"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 export XDG_CONFIG_HOME="$HOME/.config"
 export _JAVA_AWT_WM_NONREPARENTING=1
-
-export PF_INFO="ascii os kernel wm shell pkgs memory palette"
-export PF_ASCII="arch"
 
 export MANPAGER="sh -c 'sed -e s/.\\\\x08//g | bat -l man -p'"
 

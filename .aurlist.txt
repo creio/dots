@@ -3,8 +3,6 @@ caffeine-ng
 clean-chroot-manager
 colorpicker
 downgrade
-googler
-hardcode-tray-git
 lib32-opencl-nvidia-390xx
 libxnvctrl-390xx
 mkinitcpio-archiso-git
@@ -24,5 +22,4 @@ ttf-symbola
 ttf-weather-icons
 urxvt-resize-font-git
 ventoy-bin
-xmind
 xwinwrap-git
