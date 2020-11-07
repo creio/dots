@@ -130,8 +130,7 @@ var $=function(id) { return document.getElementById(id); };
 var help="<ul> \
     <li><b>!g</b> = Search Google (Default)</li> \
     <li><b>!i</b> = Search Google Images</li> \
-    <li><b>!m</b> = Search IMDb</li> \
-    <li><b>!u</b> = Search Urban Dictionary</li> \
+    <li><b>!d</b> = Search Duckduckgo</li> \
     <li><b>!w</b> = Search Wikipedia</li> \
     <li><b>!y</b> = Search YouTube</li> \
 </ul>";
@@ -140,6 +139,7 @@ var search=[ // Search engines
     ["",    "https://www.google.no/#q="],                           // Google (Default)
     ["!g",  "https://www.google.no/#q="],                           // Google
     ["!i",  "https://www.google.no/search?tbm=isch&q="],            // Google Images
+    ["!d",  "https://duckduckgo.com/?q="],                          // Duckduckgo
     ["!w",  "http://en.wikipedia.org/w/index.php?search="],         // Wikipedia
     ["!y",  "https://www.youtube.com/results?search_query="],       // YouTube
 ];

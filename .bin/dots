@@ -78,6 +78,7 @@ backup()
   if [[ -e "$HOME/README.md" ]]; then
     sed -i -e "s/Date:.*/Date: $(date '+%d.%m.%Y,%H:%M:%S')/g" $HOME/README.md
     [[ ! -d $HOME/docs ]] && mkdir $HOME/docs
+    ### run github ci
     # cp -rf $HOME/README.md $HOME/docs/README.md
   fi
   for i in "${BKPS[@]}"; do
