@@ -141,6 +141,9 @@ alias rm="rm -rfv"
 brm () {
   /bin/bash -c "yes | rm -rfv $1"{.\*\,\*}
 }
+sbrm () {
+  sudo /bin/bash -c "yes | rm -rfv $1"{.\*\,\*}
+}
 
 alias dir="dir --color=auto"
 alias vdir="vdir --color=auto"
@@ -277,7 +280,8 @@ alias yl="yay -S --noconfirm --needed - < ~/.pkglist.txt"
 alias ys="yay"
 alias ysn="yay --noconfirm"
 alias yo="yay -S --overwrite='*'"
-alias yuo="yay -U --overwrite='*'"
+alias yU="yay -U"
+alias yUo="yay -U --overwrite='*'"
 alias yc="yay -Sc"
 alias ycc="yay -Scc"
 alias yy="yay -Syy"

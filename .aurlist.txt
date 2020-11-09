@@ -5,6 +5,7 @@ colorpicker
 downgrade
 lib32-opencl-nvidia-390xx
 libxnvctrl-390xx
+lightcord-bin
 mkinitcpio-archiso-git
 netwmpager
 ngrok
@@ -13,7 +14,6 @@ nvidia-390xx-settings
 nvidia-390xx-utils
 ob-yml-menu
 opencl-nvidia-390xx
-otb-uw_ttyp0
 picom-tryone-git
 pkgbuild-introspection
 sublime-text-dev

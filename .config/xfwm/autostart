@@ -18,5 +18,5 @@ dunst &
 unclutter &
 parcellite &
 urxvt &
-jgmenu_run start &
 (sleep 3; $HOME/.config/polybar/launch.sh) &
+(sleep 4; sh -c $HOME/.bin/urxvt_bg) &

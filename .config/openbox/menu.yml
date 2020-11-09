@@ -18,11 +18,11 @@ openbox_menu:
         - Filezilla:
     - Mail/Chat:
         - Telegram: telegram-desktop
-        - Discord:
+        - Discord: lightcord
         - Keybase: keybase-gui
     - Multimedia:
         - Audacity:
-        - Simplescreenrecorder:
+        - SSR: simplescreenrecorder
         - Mpv:
         - PVC: pavucontrol
     - Tools:

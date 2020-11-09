@@ -30,10 +30,10 @@
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Super&gt;p" type="string" value="xfce4-settings-manager"/>
       <property name="&lt;Alt&gt;d" type="string" value="rofi -show drun"/>
-      <property name="&lt;Alt&gt;e" type="string" value="/home/st/.bin/findapp subl3"/>
-      <property name="&lt;Alt&gt;f" type="string" value="/home/st/.bin/findapp thunar"/>
-      <property name="&lt;Alt&gt;w" type="string" value="/home/st/.bin/findapp chromium"/>
-      <property name="&lt;Alt&gt;t" type="string" value="/home/st/.bin/findapp urxvt"/>
+      <property name="&lt;Alt&gt;e" type="string" value="/home/creio/.bin/findapp subl3"/>
+      <property name="&lt;Alt&gt;f" type="string" value="/home/creio/.bin/findapp thunar"/>
+      <property name="&lt;Alt&gt;w" type="string" value="/home/creio/.bin/findapp chromium"/>
+      <property name="&lt;Alt&gt;t" type="string" value="/home/creio/.bin/findapp urxvt"/>
       <property name="&lt;Super&gt;t" type="string" value="urxvt"/>
     </property>
   </property>

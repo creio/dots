@@ -5,19 +5,14 @@ xset -b
 
 tint2 -c ~/.config/tint2/button.tint2rc &
 tint2 -c ~/.config/tint2/tray.tint2rc &
-if [ "$(which polybar)" != "polybar not found" ]; then
-  sh ~/.config/polybar/launch.sh &
-  # (sleep 2; sh ~/.bin/phide.sh) &
-fi
+[[ $(command -v polybar) ]] && sh ~/.config/polybar/launch.sh &
 # hsetroot -add '#2c3539' -add '#b89ca8' -gradient 130 &
 hsetroot -fill ~/.wall/lcrow.png &
 # sh ~/.bin/pscircle-dark.sh &
 picom -b --config ~/.config/picom.conf &
 # picom -b --experimental-backends --config ~/.config/picom_blur.conf &
 # flashfocus &
-if [ "$(which thunar)" != "thunar not found" ]; then
-  thunar --daemon &
-fi
+[[ $(command -v thunar) ]] && thunar --daemon &
 urxvtd -q -o -f &
 alttab -fg "#9baec8" -bg "#161720" -frame "#5a74ca" -t 128x128 -i 128x48 -d 2 -theme diu-ico -font "xft:ClearSansMedium:size=9:antialias=false" -pk "Left" -nk "Right" &
 numlockx &
@@ -32,7 +27,7 @@ setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
 unclutter &
 redshift -c ~/.config/redshift.conf &
 parcellite &
-(sleep 2; sh -c ~/.bin/urxvt_bg) &
+(sleep 4; sh -c ~/.bin/urxvt_bg) &
 # animatebg &
 
 #glava &

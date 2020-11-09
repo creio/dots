@@ -55,4 +55,7 @@ export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
 # export GOBIN=$GOPATH/bin
 # export PATH="$PATH:$GOBIN"
 
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 # zprof

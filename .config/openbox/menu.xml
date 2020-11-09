@@ -45,7 +45,7 @@
       	<execute>telegram-desktop</execute>
       </action></item>
       <item label="Discord"> <action name="Execute">
-      	<execute>discord</execute>
+      	<execute>lightcord</execute>
       </action></item>
       <item label="Keybase"> <action name="Execute">
       	<execute>keybase-gui</execute>
@@ -55,7 +55,7 @@
       <item label="Audacity"> <action name="Execute">
       	<execute>audacity</execute>
       </action></item>
-      <item label="Simplescreenrecorder"> <action name="Execute">
+      <item label="SSR"> <action name="Execute">
       	<execute>simplescreenrecorder</execute>
       </action></item>
       <item label="Mpv"> <action name="Execute">
