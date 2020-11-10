@@ -4,7 +4,7 @@ xset -b
 # wmname LG3D &
 
 tint2 -c ~/.config/tint2/button.tint2rc &
-tint2 -c ~/.config/tint2/tray.tint2rc &
+tint2 -c ~/.config/tint2/hide_tray.tint2rc &
 [[ $(command -v polybar) ]] && sh ~/.config/polybar/launch.sh &
 # hsetroot -add '#2c3539' -add '#b89ca8' -gradient 130 &
 hsetroot -fill ~/.wall/lcrow.png &
@@ -14,7 +14,7 @@ picom -b --config ~/.config/picom.conf &
 # flashfocus &
 [[ $(command -v thunar) ]] && thunar --daemon &
 urxvtd -q -o -f &
-alttab -fg "#9baec8" -bg "#161720" -frame "#5a74ca" -t 128x128 -i 128x48 -d 2 -theme diu-ico -font "xft:ClearSansMedium:size=9:antialias=false" -pk "Left" -nk "Right" &
+alttab -fg "#9baec8" -bg "#161720" -frame "#5a74ca" -t 128x128 -i 128x48 -d 2 -theme Qogir-dark -font "xft:ClearSansMedium:size=9:antialias=false" -pk "Left" -nk "Right" &
 numlockx &
 xsettingsd &
 # xfsettingsd &

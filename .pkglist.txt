@@ -72,7 +72,6 @@ hdparm
 hsetroot
 htop
 hub
-inkscape
 inxi
 jq
 keybase-gui
