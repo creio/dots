@@ -72,9 +72,11 @@ hdparm
 hsetroot
 htop
 hub
+inkscape
 inxi
 jq
 keybase-gui
+kvantum-qt5
 libtool
 linux
 linux-firmware
@@ -130,7 +132,6 @@ python2
 qemu
 qgnomeplatform-git
 qogir-icon-theme-git
-qt5-styleplugins
 qt5ct
 qutebrowser
 ranger

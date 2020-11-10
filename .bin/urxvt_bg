@@ -2,4 +2,4 @@
 
 devilspie ~/.devilspie/rxbg.ds &
 
-sleep 3 && urxvt -bg '[80]#161720' -depth 32 +sb -name urxvt_bg
+sleep 4 && urxvt -bg '[80]#161720' -depth 32 +sb -name urxvt_bg
