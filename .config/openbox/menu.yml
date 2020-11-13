@@ -37,6 +37,7 @@ openbox_menu:
     - Settings:
         - Lxappearance:
         - Qt5ct:
+        - Kvantummanager:
         - Tint2conf:
         - Power manager: xfce4-power-manager-settings
     - System:

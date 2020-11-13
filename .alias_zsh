@@ -178,7 +178,7 @@ alias gh="cd /media/files/github"
 alias dot="cd /media/files/github/creio/dots"
 
 function gc () {
-  git clone "$1"
+  git clone "$1" ${2}
 }
 
 function gcj () {

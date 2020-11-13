@@ -10,6 +10,7 @@
 .config/polybar/gmail
 .config/polybar/wtr.sh
 .config/polybar/wtrd.sh
+.config/jgmenu/backup
 .dots
 
 ## include file

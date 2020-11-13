@@ -25,7 +25,7 @@ alt + s
     subl3
 
 alt + f
-    nemo
+    thunar
 
 # program launcher
 alt + d
@@ -57,12 +57,6 @@ super + Escape
 
 super + {h, j, k, l}
     berryc window_move {-50 0, 0 50, 0 -50, 50 0}
-
-# super + ~button1
-#     berryc move_mask
-
-# alt + ~button1
-#     berryc resize_mask
 
 super + shift +  {h, j, k, l}
     berryc window_resize {-50 0, 0 50, 0 -50, 50 0}

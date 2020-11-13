@@ -1,6 +1,6 @@
 configuration {
   show-icons:                     true;
-  icon-theme:                     "dui-ico";
+  icon-theme:                     "Qogir";
   font:                           "ClearSansMedium 9";
   drun-display-format:            "{name}";
 }

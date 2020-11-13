@@ -96,6 +96,9 @@
       <item label="Qt5ct"> <action name="Execute">
       	<execute>qt5ct</execute>
       </action></item>
+      <item label="Kvantummanager"> <action name="Execute">
+      	<execute>kvantummanager</execute>
+      </action></item>
       <item label="Tint2conf"> <action name="Execute">
       	<execute>tint2conf</execute>
       </action></item>

@@ -4976,15 +4976,6 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
   border-width: 0 0 0 1px;
 }
 
-window.thunar notebook scrolledwindow.frame.standard-view, .nemo-window .nemo-window-pane notebook scrolledwindow.view,
-.nautilus-window,
-.nautilus-window notebook,
-.nautilus-window notebook > stack {
-  background-image: -gtk-scaled(url("assets/backimage-dark.png"), url("assets/backimage-dark@2.png"));
-  background-repeat: no-repeat;
-  background-position: bottom right;
-}
-
 .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.flat.text-button.toggle,
 .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.flat.image-button.text-button.toggle {
   background: none;
@@ -5104,6 +5095,13 @@ window.thunar notebook scrolledwindow.frame.standard-view, .nemo-window .nemo-wi
 .caja-list-dim-label:selected,
 .nautilus-list-dim-label:selected:focus {
   color: #dee3f4;
+}
+
+window.thunar notebook scrolledwindow.frame.standard-view, .nemo-window .nemo-window-pane notebook scrolledwindow.view,
+.nautilus-window,
+.nautilus-window notebook,
+.nautilus-window notebook > stack {
+  background-image: none;
 }
 
 .nautilus-window .searchbar-container {

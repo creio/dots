@@ -27,7 +27,8 @@ sh ~/.bin/wallpaper.sh &
 # hsetroot -add '#2c3539' -add '#b89ca8' -gradient 130 &
 # hsetroot -fill $HOME/.wall/wl3.jpg &
 
-tint2 -c ~/.config/tint2/tray.tint2rc &
+# tint2 -c ~/.config/tint2/button.tint2rc &
+tint2 -c ~/.config/tint2/hide_tray.tint2rc &
 sh ~/.config/polybar/launch.sh &
 picom -b --config ~/.config/picom.conf &
 # picom -b --backend xrender &
@@ -36,15 +37,16 @@ urxvtd -q -o -f &
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
 # setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
 # setxkbmap -option "terminate:ctrl_alt_bksp" &
+[[ $(command -v thunar) ]] && thunar --daemon &
 # numlockx &
-#xsettingsd &
-# xfsettingsd &
+xsettingsd &
 # xfce4-power-manager &
 dunst &
-# unclutter --timeout 2 &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-redshift-gtk &
-# clipit &
+gnome-keyring-daemon --start --components=pkcs11,secrets &
+redshift -c ~/.config/redshift.conf &
+parcellite &
+# unclutter --timeout 2 &
 # greenclip daemon &
 # nm-applet &
 # volumeicon &

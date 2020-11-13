@@ -8,25 +8,43 @@
 export PATH=$HOME/.bin:$HOME/.config/rofi/scripts:$HOME/.local/bin:/usr/local/bin:$PATH
 
 export HISTFILE=~/.zhistory
-export HISTSIZE=10000
-export SAVEHIST=10000
+export HISTSIZE=3000
+export SAVEHIST=3000
 
-### load zgen
-## git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
-source "${HOME}/.zgen/zgen.zsh"
-if ! zgen saved; then
-  echo "Creating a zgen save"
-  zgen oh-my-zsh
-  # plugins
-  zgen load zsh-users/zsh-autosuggestions
-  # zgen load zsh-users/zsh-syntax-highlighting
-  # zgen load zsh-users/zsh-history-substring-search
-  # zgen load zsh-users/zsh-completions src
-  zgen load zdharma/fast-syntax-highlighting
-  # theme
-  zgen oh-my-zsh themes/af-magic
-  zgen save
-fi
+# ### load zgen
+# ## git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
+# source "${HOME}/.zgen/zgen.zsh"
+# if ! zgen saved; then
+#   echo "Creating a zgen save"
+#   zgen oh-my-zsh
+#   # plugins
+#   zgen load zsh-users/zsh-autosuggestions
+#   # zgen load zsh-users/zsh-syntax-highlighting
+#   # zgen load zsh-users/zsh-history-substring-search
+#   # zgen load zsh-users/zsh-completions src
+#   zgen load zdharma/fast-syntax-highlighting
+#   # theme
+#   zgen oh-my-zsh themes/af-magic
+#   zgen save
+# fi
+
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
+
+# ohmyzsh
+export ZSH="/usr/share/oh-my-zsh"
+ZSH_THEME="af-magic"
+DISABLE_AUTO_UPDATE="true"
+plugins=()
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+[[ ! -d $ZSH_CACHE_DIR ]] && mkdir -p $ZSH_CACHE_DIR
+source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=white"
 
 # fzf & fd
 [[ -e "/usr/share/fzf/fzf-extras.zsh" ]] && source /usr/share/fzf/fzf-extras.zsh
@@ -56,6 +74,22 @@ export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
 # export PATH="$PATH:$GOBIN"
 
 export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Lazy load
+if [[ -s "$NVM_DIR/nvm.sh" ]]; then
+  NODE_GLOBALS=(`find $NVM_DIR/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
+  NODE_GLOBALS+=("node")
+  NODE_GLOBALS+=("nvm")
+  # Lazy-loading nvm + npm on node globals
+  load_nvm () {
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  }
+  # Making node global trigger the lazy loading
+  for cmd in "${NODE_GLOBALS[@]}"; do
+    eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
+  done
+fi
 
 # zprof

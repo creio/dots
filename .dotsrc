@@ -6,11 +6,11 @@ REPO='https://github.com/creio/dots'
 BRANCH=''
 BKPS=(
 {docs,_config.yml,README.md}
-.{github,bin,colors,devilspie,fonts,gnupg,nano,ncmpcpp,ssh,themes,icons,wall}
+.{github,bin,colors,devilspie,fonts,gnupg,nano,ssh,themes,icons,wall}
 .{zshrc,alias_zsh,xinitrc,Xresources,xsettingsd,gitconfig,gitignore,aurlist.txt,pkglist.txt}
 .{env,gauth,dotsrc,hushlogin,gtkrc-2.0,nanorc,pam_environment,tmux.conf,face.icon}
 .config/{berry,bspwm,sxhkd,i3,openbox,xfce4,frankenwm,xfwm}
-.config/{gtk-2.0,gtk-3.0,cava,clipit,conky,dconf,dunst,fontconfig,fish,htop}
+.config/{gtk-2.0,gtk-3.0,cava,clipit,conky,dconf,dunst,fontconfig,fish,htop,parcellite}
 .config/{jgmenu,mc,mpv,menus,neofetch,netwmpager,newsboat,polybar,Kvantum,qt5ct,yay}
 .config/{ranger,rofi,skippy-xd,streamlink,termite,tint2,viewnior,volumeicon}
 .config/audacious/config
@@ -25,6 +25,7 @@ BKPS=(
 .config/{redshift.conf,Trolltech.conf,kdenliverc,mimeapps.list}
 .config/user-dirs.{dirs,locale}
 .mozilla/firefox/vos2wqqo.default-release/chrome
+.ncmpcpp/config
 .wall/lcrow.png
 )
 ROOT_DIR='root'
@@ -34,4 +35,5 @@ etc/{makepkg,pacman,sddm,vconsole}.conf
 etc/pulse/{daemon.conf,default.pa}
 usr/share/sddm/themes/slice
 etc/X11/xorg.conf
+etc/X11/xorg.conf.d/00-keyboard.conf
 )

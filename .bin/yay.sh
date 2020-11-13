@@ -2,13 +2,12 @@
 # Install script yay
 # autor: Alex Creio https://creio.github.io/
 
-# wget git.io/yay.sh
-# sh yay.sh
+# curl -L git.io/yay.sh | sh
 
-sudo pacman -S --noconfirm --needed wget curl git
+sudo pacman -S --noconfirm --needed curl git
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 # makepkg -si
-makepkg -si --skipinteg
+makepkg -si --skipinteg --noconfirm
 cd ..
 rm -rf yay-bin

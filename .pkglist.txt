@@ -28,6 +28,7 @@ dnsmasq
 docker
 docker-compose
 dunst
+dzen2
 ebtables
 edk2-ovmf
 exo
@@ -72,11 +73,9 @@ hdparm
 hsetroot
 htop
 hub
-inkscape
 inxi
 jq
 keybase-gui
-kvantum-qt5
 libtool
 linux
 linux-firmware
@@ -104,6 +103,7 @@ nmap
 noto-fonts-emoji
 ntfs-3g
 numlockx
+oh-my-zsh-git
 openbox
 openssh
 optipng
@@ -130,8 +130,8 @@ pv
 python-pip-api
 python2
 qemu
-qgnomeplatform-git
 qogir-icon-theme-git
+qt5-styleplugins
 qt5ct
 qutebrowser
 ranger
@@ -149,8 +149,8 @@ skippy-xd-git
 slop
 source-highlight
 squashfs-tools
-straw-viewer-git
 sudo
+sxhkd
 syntax-highlighting
 sysstat
 telegram-desktop
@@ -172,13 +172,11 @@ tree
 ttf-clear-sans
 ttf-dejavu
 ttf-font-awesome
-ttf-hack
 ttf-opensans
 ttf-ubuntu-font-family
 ttyload
 tumbler
 ueberzug
-ui-ico
 unclutter
 unrar
 unzip
@@ -199,8 +197,11 @@ xdotool
 xfce4-power-manager
 xorg-server
 xorg-xinit
+xorg-xkill
 xreader
 xsettingsd
+yad
 yay-bin
 youtube-dl
 zsh
+zsh-autosuggestions

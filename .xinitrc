@@ -66,5 +66,5 @@ exec openbox-session
 # sh "${HOME}/.config/bspwm/autostart" &
 # exec bspwm
 
-# sh "${HOME}/sowm/autostart.sh" &
+# sh "${HOME}/.config/sowm/autostart" &
 # exec sowm

@@ -6,8 +6,8 @@
   <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_75_PERCENT"/>
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_16"/>
-  <property name="last-window-width" type="int" value="750"/>
-  <property name="last-window-height" type="int" value="388"/>
+  <property name="last-window-width" type="int" value="785"/>
+  <property name="last-window-height" type="int" value="391"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
   <property name="last-separator-position" type="int" value="112"/>
@@ -52,6 +52,9 @@
     <value type="string" value="36b592f2-3dd9-4c42-88c9-608992e490c3"/>
     <value type="string" value="c7b68393-4c50-42b3-ae0f-1b4cfe080117"/>
     <value type="string" value="7915-2227"/>
+    <value type="string" value="6d8e4b4e-977c-4fbc-8583-9695dc3612ba"/>
+    <value type="string" value="5931d3b2-5819-4ab6-973d-df7be50bf896"/>
+    <value type="string" value="7D29-FAAF"/>
   </property>
   <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
   <property name="last-statusbar-visible" type="bool" value="true"/>

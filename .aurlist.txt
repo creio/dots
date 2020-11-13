@@ -1,4 +1,5 @@
 archiso-git
+berry-git
 caffeine-ng
 clean-chroot-manager
 colorpicker
@@ -23,3 +24,4 @@ ttf-weather-icons
 urxvt-resize-font-git
 ventoy-bin
 xwinwrap-git
+zsh-fast-syntax-highlighting
