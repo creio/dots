@@ -33,6 +33,11 @@ xresources = read_xresources('*')
 
 config.load_autoconfig()
 
+config.bind(',p', 'spawn --userscript qute-pass --username-target secret')
+config.bind(',u', 'spawn --userscript qute-pass --username-target secret --username-only')
+config.bind(',P', 'spawn --userscript qute-pass --username-target secret --password-only')
+config.bind(',v', 'spawn mpv {url}')
+
 c.colors.completion.category.bg                 = xresources['*.background']
 c.colors.completion.category.border.bottom      = xresources['*.color8']
 c.colors.completion.category.border.top         = xresources['*.color0']

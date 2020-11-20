@@ -12,7 +12,7 @@ BKPS=(
 .config/{berry,bspwm,sxhkd,i3,openbox,xfce4,frankenwm,xfwm}
 .config/{gtk-2.0,gtk-3.0,cava,clipit,conky,dconf,dunst,fontconfig,fish,htop,parcellite}
 .config/{jgmenu,mc,mpv,menus,neofetch,netwmpager,newsboat,polybar,Kvantum,qt5ct,yay}
-.config/{ranger,rofi,skippy-xd,streamlink,termite,tint2,viewnior,volumeicon}
+.config/{ranger,rofi,rofi-pass,skippy-xd,streamlink,termite,tint2,viewnior,volumeicon}
 .config/audacious/config
 .config/mpd/mpd.conf
 .config/nvim/init.vim
@@ -34,6 +34,7 @@ etc/{environment,fstab}
 etc/{makepkg,pacman,sddm,vconsole}.conf
 etc/pulse/{daemon.conf,default.pa}
 usr/share/sddm/themes/slice
+etc/pacman.d/gnupg/gpg.conf
 etc/X11/xorg.conf
 etc/X11/xorg.conf.d/00-keyboard.conf
 )

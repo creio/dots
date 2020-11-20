@@ -1,0 +1,140 @@
+#!/usr/bin/env bash
+
+# extremely simple system info script
+# requires: awk, grep, and bash v4+
+# written by Nathaniel Maia, 2017-2018
+
+# fallback
+FB="unknown"
+
+# colours
+FG=$'\e[0m'
+for n in {0..7}; do
+    printf -v FG${n} "%b" "\e[3${n}m"
+done
+
+# distro name
+if [[ -e /etc/os-release ]] && . /etc/os-release 2>/dev/null; then
+    DIST="${ID,,}"
+elif [[ -e /etc/lsb-release ]] && . /etc/lsb-release 2>/dev/null; then
+    DIST="${DISTRIB_ID,,}"
+fi
+
+# system uptime
+# UPT="$(uptime -p)"
+# UPT="${UPT/up /}"
+# UPT="${UPT/ day?/d}"
+# UPT="${UPT/ hour?/h}"
+# UPT="${UPT/ minute?/m}"
+
+# Root /
+ROOT=$(df -h / | awk '/[0-9]%/{print $(NF-1)" | "$(NF-2)}')
+
+# Home /home
+HOME=$(df -h /home | awk '/[0-9]%/{print $(NF-1)" | "$(NF-2)}')
+
+# Home /media
+FILES=$(df -h /media/files | awk '/[0-9]%/{print $(NF-1)" | "$(NF-2)}')
+
+# install date
+if [[ -e /var/log/pacman.log ]]; then
+    INST="$(ls -ctl --time-style +"%H:%M:%S %d.%m.%Y" /etc | awk 'END{print $7}')"
+fi
+
+# check if root user
+[[ $(whoami) != 'root' ]] && USR="${FG4}${USER}" || USR="${FG1}root"
+
+# login shell
+SHLL="$(basename $SHELL)"
+
+# terminal name
+TRM="${TERM/-256color/}"
+
+# hostname
+HOST="${HOST:-$(cat /etc/hostname)}"
+
+# kernel version
+KERN="${KERN:-$(uname -r)}"
+KERN="${KERN/-*/}"
+
+# MEM = used / total
+FREE="$(free --mega)"
+MB=$(awk 'NR==2 {print $3}' <<< "$FREE")
+GB=$(awk 'NR==2 {print $3 / 1000}' <<< "$FREE")
+TOT=$(awk 'NR==2 {print $2 / 1000}' <<< "$FREE")
+(( MB > 1000 )) && MEM="${GB:0:5}gb / ${TOT/\.*}gb" || MEM="${MB}mb / ${TOT/\.*}gb"
+
+# C = number of cores
+C=$(grep -c "^processor" /proc/cpuinfo)
+C=${C:-$(grep -c "^core" /proc/cpuinfo)}
+C=${C:-1}
+
+# CPU = usage / cores
+CPU=$(ps aux | awk 'BEGIN {sum = 0} {sum += $3}; END {print sum}')
+CPU=${CPU/\.*}
+
+# wtr
+# WTR=$(curl wttr.in?format=1)
+
+# art
+# ART=$(curl -L git.io/unix)
+# ART=$(curl -L git.io/coffee)
+
+# For multi core/thread, CPU needs to be divided by # of cores for average
+(( C > 1 )) && CPU=$((CPU / C))
+(( CPU > 100 )) && CPU="$C cores @ 100% avg" || CPU="$C cores @ $CPU% avg"
+
+rep_char() {
+    local str char num
+    char="${1:-=}"
+    num="${2:-$((${#USR} + 6 + ${#HOST}))}"
+    str="$(printf "%${num}s")"
+    echo "${str// /$char}"
+}
+
+pkg_cnt() {
+    pacman -Qq 2>/dev/null | wc -l
+}
+
+cur_wm() {
+    if [[ $DISPLAY && ! $WM ]]; then
+        ID="$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)"
+        WM="$(xprop -id ${ID##* } -notype -len 100 -f _NET_WM_NAME 8t)"
+        WM=${WM/*WM_NAME = } WM=${WM/\"} WM=${WM/\"*} WM=${WM,,}
+        echo "${WM:-$FB}"
+    else
+        echo "${WM:-tty$XDG_VTNR}"
+    fi
+}
+
+has() {
+    _cmd=$(command -v "$1") 2>/dev/null || return 1
+    [ -x "$_cmd" ] || return 1
+}
+
+clear
+
+ # ${ART}
+
+ # ${FG6}->$FG   uptime$FG1:  ${FG4}${UPT:-$FB}
+ # ${FG6}->$FG cpu$FG1:          ${FG4}${CPU:-$FB}
+ # ${FG6}->$FG wtr$FG1:          ${FG4}${WTR:-$FB}
+cat <<- EOF
+
+ ${FG5}===$FG ${USR}${FG2}@${FG6}${HOST:-$FB}
+ ${FG5}$(rep_char '=')
+ ${FG6}->$FG install$FG1:      ${FG4}${INST:-$FB}
+ ${FG6}->$FG distro$FG1:       ${FG4}${DIST:-$FB}
+ ${FG6}->$FG kernel$FG1:       ${FG4}${KERN:-$FB}
+ ${FG6}->$FG shell$FG1:        ${FG4}${SHLL:-$FB}
+ ${FG6}->$FG pkgs$FG1:         ${FG4}$(pkg_cnt)
+ ${FG6}->$FG wm$FG1:           ${FG4}$(cur_wm)
+ ${FG6}->$FG term$FG1:         ${FG4}${TRM:-$FB}
+ ${FG6}->$FG /$FG1:            ${FG4}${ROOT:-$FB}
+ ${FG6}->$FG /home$FG1:        ${FG4}${HOME:-$FB}
+ ${FG6}->$FG /m/files$FG1:     ${FG4}${FILES:-$FB}
+ ${FG6}->$FG ram$FG1:          ${FG4}${MEM:-$FB}
+
+ ${FG1}████${FG2}████${FG3}████${FG4}████${FG5}████${FG6}████${FG7}████${FG}
+
+EOF

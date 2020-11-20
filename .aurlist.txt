@@ -1,5 +1,5 @@
 archiso-git
-berry-git
+brainfuck-psiphon-pro-go-bin
 caffeine-ng
 clean-chroot-manager
 colorpicker
@@ -17,6 +17,7 @@ ob-yml-menu
 opencl-nvidia-390xx
 picom-tryone-git
 pkgbuild-introspection
+ssrt
 sublime-text-dev
 toilet
 ttf-symbola

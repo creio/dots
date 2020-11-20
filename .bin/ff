@@ -1,7 +1,5 @@
 #!/bin/bash
 
-tput reset
-
 w="$(tput setaf 4)"
 c="${w}$(tput bold)"
 r="$(tput sgr0)$(tput setaf 6)"
@@ -20,7 +18,7 @@ wm=$(wmctrl -m 2>/dev/null |
   grep "Name" |
   cut -d " " -f2)
 
-[[ -z $wm ]] && wm="bspwm"
+[[ -z $wm ]] && wm="$(xprop -root -notype _NET_WM_NAME | awk 'END{print $3}' | tr -d \")" || wm="bspwm"
 
 os=$(
   # shellcheck disable=SC1091
@@ -34,6 +32,8 @@ tr="${TERM/-256color/}"
 
 mm=$(free -m | grep Mem | awk '{print $3}' )
 mm+=" Mb"
+
+clear
 
 cat <<- LOL
 ${f4}  ____     ${w}os${c}:${r} $os

@@ -18,7 +18,10 @@ settings:
   backend:
     global: webengine
   bindings.commands:
-    global: null
+    global:
+      normal:
+        spawn: '--userscript qute-pass --dmenu-invocation bemenu --username-target
+          secret --username-pattern "[Uu]sername: (.+)"'
   bindings.key_mappings:
     global:
       <Ctrl-6>: <Ctrl-^>
@@ -55,16 +58,18 @@ settings:
     global: 9pt default_family
   fonts.statusbar:
     global: 9pt default_family
-  fonts.tabs:
+  fonts.tabs.selected:
     global: 9pt default_family
-  statusbar.hide:
-    global: false
+  fonts.tabs.unselected:
+    global: 9pt default_family
   statusbar.padding:
     global:
       bottom: 3
       left: 0
       right: 0
       top: 3
+  statusbar.show:
+    global: always
   tabs.favicons.show:
     global: never
   tabs.indicator.width:

@@ -243,6 +243,7 @@ pf () {
   peerflix "$1" --mpv
 }
 alias rss="newsboat"
+alias wget="wget --no-hsts"
 # download web site
 wgetw () {
   wget -rkx "$1"

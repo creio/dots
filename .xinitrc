@@ -25,7 +25,7 @@ fi
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-# xset b off
+xset -b off
 xsetroot -cursor_name left_ptr &
 xset +fp /usr/share/fonts/local &
 xset +fp /usr/share/fonts/misc &
@@ -42,14 +42,18 @@ xset fp rehash &
 # exec monsterwm
 
 # exec xmonad > $HOME/.xmonad/log.txt 2>&1
-# exec 2bwm
 # exec awesome
 # exec dwm
 # exec i3
+# exec spectrwm
 exec openbox-session
+# exec startfluxbox
+# exec pekwm
 # exec startinstantos
-
 # exec gnome-session
+
+# ~/.config/2bwm/autostart &
+# exec 2bwm
 
 # hsetroot -fill ~/.wall/lcrow.png &
 # exec startxfce4

@@ -55,7 +55,7 @@ export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --preview 'file 
 export FZF_COMPLETION_TRIGGER="~~"
 
 export TERM="rxvt-256color"
-export EDITOR="$([[ -n $DISPLAY && $(command -v subl3) ]] && echo 'subl3' || echo 'nano')"
+export EDITOR="$([[ -n $DISPLAY && $(command -v micro) ]] && echo 'micro' || echo 'nano')"
 export BROWSER="chromium"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 export XDG_CONFIG_HOME="$HOME/.config"

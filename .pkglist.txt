@@ -12,6 +12,8 @@ binutils
 bison
 bleachbit
 brightnessctl
+browserpass
+browserpass-chromium
 capitaine-cursors
 catfish
 cava
@@ -114,6 +116,7 @@ pacman
 pamixer
 papirus-icon-theme
 parcellite
+pass
 patch
 pavucontrol
 pepper-flash
@@ -123,11 +126,11 @@ polkit-gnome
 polybar
 progress
 proxychains-ng
-psiphon-tunnel-core-git
 pulseaudio
 pulseaudio-alsa
 pv
 python-pip-api
+python-tldextract
 python2
 qemu
 qogir-icon-theme-git
@@ -139,6 +142,7 @@ redshift
 reflector
 ripgrep
 rofi
+rofi-pass
 rsync
 rxvt-unicode-patched
 sassc
@@ -151,6 +155,7 @@ source-highlight
 squashfs-tools
 sudo
 sxhkd
+syncthing
 syntax-highlighting
 sysstat
 telegram-desktop

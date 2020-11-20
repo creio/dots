@@ -454,7 +454,7 @@
     </keybind>
     <keybind key="W-A-b">
       <action name="Execute">
-        <command>keepmenu</command>
+        <command>rofi-pass</command>
       </action>
     </keybind>
     <keybind key="Print">
