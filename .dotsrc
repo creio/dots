@@ -34,6 +34,7 @@ etc/{environment,fstab}
 etc/{makepkg,pacman,sddm,vconsole}.conf
 etc/pulse/{daemon.conf,default.pa}
 usr/share/sddm/themes/slice
+etc/pacman.d/hooks/mirrorupgrade.hook
 etc/pacman.d/gnupg/gpg.conf
 etc/X11/xorg.conf
 etc/X11/xorg.conf.d/00-keyboard.conf

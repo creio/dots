@@ -1,10 +1,9 @@
 mpd_host = localhost
 mpd_port = 6600
 mpd_crossfade_time = 2
-visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_data_source = /tmp/mpd.fifo
 visualizer_output_name = "Visualizer feed"
 visualizer_in_stereo = no
-visualizer_sync_interval = 30
 ## Available values: spectrum, wave, wave_filled, ellipse.
 visualizer_type = spectrum
 visualizer_look = ●┃

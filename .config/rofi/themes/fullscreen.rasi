@@ -1,19 +1,19 @@
 configuration {
 	show-icons: true;
-	icon-theme: "Papirus-Dark";
+	icon-theme: "dui-ico";
 	location: 2;
 }
 
 * {
-	background-color: black;
+	background-color: #00000099;
 	text-color: white;
 }
 
 window {
 	fullscreen: false;
 	width: 100%;
-	height: 96.6%;
-	font: "Noto Sans 11";
+	height: 100%;
+	font: "ClearSansMedium 9";
 }
 
 prompt { enabled: false; }
@@ -24,14 +24,14 @@ entry  {
 	margin: 65px 40% 0 40%;
 	color: #333;
 	background-color: #fff;
-	font: "Noto Sans 14";
+	font: "ClearSansMedium 12";
 	border-radius: 30px;
-	placeholder: "Pesquisar";
+	placeholder: "Search";
 }
 
 listview {
-	columns: 4;
-	margin: 5% 32% 5% 32%;
+	columns: 5;
+	margin: 5% 20% 5% 20%;
 }
 
 element {
@@ -47,7 +47,7 @@ element selected {
 }
 
 element-icon {
-	size: 60;
+	size: 48;
 }
 
 element-text {

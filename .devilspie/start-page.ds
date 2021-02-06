@@ -1,0 +1,14 @@
+(and
+  (is (window_name) "creio.github.io__dots_sp.html")
+  (is (window_class) "Chromium")
+  (begin
+    (stick)
+    (below)
+    (pin)
+    (undecorate)
+    (skip_pager)
+    (skip_tasklist)
+    (wintype "desktop")
+    (geometry "1367x758+0+10")
+  )
+)

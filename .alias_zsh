@@ -151,7 +151,6 @@ alias grep="grep --color=always"
 #alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
-
 alias ls="ls --color=auto"
 alias la="ls -alFh --color=auto"
 alias llp="stat -c '%A %a %n' {*,.*}"
@@ -173,6 +172,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+alias ......='cd ../../../../..'
 alias q="exit"
 alias gh="cd /media/files/github"
 alias dot="cd /media/files/github/creio/dots"
@@ -183,7 +183,8 @@ function gc () {
 
 function gcj () {
   git clone "$1"
-  cd "$2"
+  local to=$(echo ${1##*/}|sed 's/\..*//')
+  cd $to
   # $EDITOR .
 }
 alias gi="git init"
@@ -274,7 +275,7 @@ alias h="htop"
 alias pkglist="pacman -Qneq > ~/.pkglist.txt"
 alias aurlist="pacman -Qmeq > ~/.aurlist.txt"
 
-alias packey="sudo pacman-key --init && sudo pacman-key --populate && sudo pacman-key --refresh-keys --keyserver hkps://keyserver.ubuntu.com && sudo pacman -Syy"
+alias packey="sudo pacman-key --init && sudo pacman-key --populate && sudo pacman-key --refresh-keys --keyserver hkp://keys.gnupg.net && sudo pacman -Syy"
 alias y="yay -S"
 alias yn="yay -S --noconfirm"
 alias yl="yay -S --noconfirm --needed - < ~/.pkglist.txt"
@@ -293,14 +294,21 @@ alias yrs="yay -Rs"
 alias yrsn="yay -Rsn"
 alias yrn="yay -R --noconfirm"
 alias ynskip='yay --noconfirm --mflags "--nocheck --skipchecksums --skippgpcheck"'
-alias ygpg='yay --noconfirm --gpgflags "--keyserver keys.gnupg.net"'
+alias yngpg='yay --noconfirm --gpgflags "--keyserver keys.gnupg.net"'
 
 # alias pres="sudo pacman -S $(pacman -Qqn)"
 # alias yrsnp="yay -Rsn $(pacman -Qdtq)"
 # alias yal="yay -S --noconfirm --needed $(cat ~/.aurlist.txt)"
 # pacman -Qqo /usr/lib/python3.8/
 
-
+# top history
+tophist() {
+  cat ~/.zhistory \
+    | cut -d ';' -f 2- 2>/dev/null \
+    | awk '{a[$1]++ } END{for(i in a){print a[i] " " i}}' \
+    | sort -rn \
+    | head
+}
 
 # распаковать архив не указывая тип распаковщика
 function ex {

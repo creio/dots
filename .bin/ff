@@ -18,17 +18,16 @@ wm=$(wmctrl -m 2>/dev/null |
   grep "Name" |
   cut -d " " -f2)
 
-[[ -z $wm ]] && wm="$(xprop -root -notype _NET_WM_NAME | awk 'END{print $3}' | tr -d \")" || wm="bspwm"
+[[ -z $wm ]] && wm="$(xprop -root -notype _NET_WM_NAME | awk 'END{print $3}' | tr -d \")" || wm=$wm
 
 os=$(
-  # shellcheck disable=SC1091
   source /etc/os-release
   echo "$NAME"
 )
 
 pk=$(pacman -Qq | wc -l)
 
-tr="${TERM/-256color/}"
+tr="$([[ -n $DISPLAY && $(command -v urxvt) ]] && echo urxvt || echo ${TERM/-256color/})"
 
 mm=$(free -m | grep Mem | awk '{print $3}' )
 mm+=" Mb"

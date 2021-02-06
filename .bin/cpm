@@ -1,0 +1,150 @@
+#!/bin/sh
+
+# fork https://github.com/willeccles/cpm
+
+phi() {
+    >&2 printf "\033[33;1m-> \033[35;1m%s | %s\033[m %s\n" "$1" "$2" "$3"
+}
+
+usage() {
+    >&2 echo "cpm [i|in|r|l|C|u|U|s|S|I|c|h] [pkg]..."
+    phi "i " "install  " "install packages"
+    phi "in" "install_n" "install packages --noconfirm"
+    phi "r " "remove   " "remove one or more packages"
+    phi "l " "list     " "list installed packages"
+    phi "C " "count    " "count installed packages"
+    phi "u " "update   " "update package lists"
+    phi "U " "upgrade  " "upgrade all packages"
+    phi "s " "search   " "search for a package"
+    phi "S " "show     " "show information about a package"
+    phi "I " "info     " "same as show"
+    phi "c " "clean    " "clean up leftover files/caches/orphans"
+    phi "h " "help     " "show this message"
+}
+
+pem() {
+    >&2 printf "\033[31;1merror:\033[m %s\n" "$1"
+}
+
+case "$1" in
+    i|install)
+        OP='install'
+        if [ $# -lt 2 ]; then
+            pem "$OP: no package(s) specified"
+            exit 1
+        fi
+        ;;
+    in|install_n)
+        OP='install_n'
+        if [ $# -lt 2 ]; then
+            pem "$OP: no package(s) specified"
+            exit 1
+        fi
+        ;;
+    r|remove)
+        OP='remove'
+        if [ $# -lt 2 ]; then
+            pem "$OP: no package(s) specified"
+            exit 1
+        fi
+        ;;
+    l|list)
+        OP='list'
+        ;;
+    C|count)
+        OP='count'
+        ;;
+    u|update)
+        OP='update'
+        ;;
+    U|upgrade)
+        OP='upgrade'
+        ;;
+    s|search)
+        OP='search'
+        if [ $# -lt 2 ]; then
+            pem "$OP: please specify a package"
+            exit 1
+        elif [ $# -gt 2 ]; then
+            pem "$OP: only one package may be queried at a time"
+            exit 1
+        fi
+        ;;
+    S|show|I|info)
+        OP='show'
+        if [ $# -lt 2 ]; then
+            pem "$OP: please specify a package"
+            exit 1
+        elif [ $# -gt 2 ]; then
+            pem "$OP: only one argument is allowed"
+            exit 1
+        fi
+        ;;
+    c|clean)
+        OP='clean'
+        ;;
+    h|help)
+        usage
+        exit 0
+        ;;
+    "")
+        usage
+        exit 1
+        ;;
+    *)
+        pem "Unrecognized operation: $1"
+        exit 1
+        ;;
+esac
+shift
+
+has() {
+    case "$(command -v $1 2>/dev/null)" in
+        alias*|"") return 1
+    esac
+}
+
+SUDO=
+if command -v sudo >/dev/null; then
+    SUDO=sudo
+elif [ "$(whoami)" != root ]; then
+    SUDO='su root -c '\''"$@"'\'' -- -'
+fi
+
+_yay() {
+    case "$OP" in
+        install)   yay -S "$@";;
+        install_n) yay -S "$@" --noconfirm;;
+        remove)    yay -Rs "$@" --noconfirm;;
+        list)      pacman -Q;;
+        count)     pacman -Q | wc -l;;
+        update)    yay -Syy --noconfirm;;
+        upgrade)   yay -Syyu --noconfirm;;
+        search)    yay "$1" --noconfirm;;
+        show)      yay -Si "$1";;
+        clean)     yay -Rns $(pacman -Qtdq) --noconfirm && yay -Scc;;
+    esac
+}
+
+_pacman() {
+    case "$OP" in
+        install) $SUDO pacman -S "$@";;
+        remove) $SUDO pacman -Rs "$@";;
+        list) pacman -Q;;
+        count) pacman -Q | wc -l;;
+        update) $SUDO pacman -Syy;;
+        upgrade) $SUDO pacman -Syyu;;
+        search) pacman -Ss $1;;
+        show) pacman -Si $1;;
+        clean) $SUDO pacman -Rns $(pacman -Qtdq) && $SUDO pacman -Sc;;
+    esac
+}
+
+if   has yay; then
+    _yay "$@"
+elif has pacman-key; then
+    _pacman "$@"
+else
+    pem "No valid package manager detected."
+    exit 1
+fi

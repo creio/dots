@@ -22,13 +22,14 @@ xfce4-power-manager &
 dunst &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 gnome-keyring-daemon --start --components=pkcs11,secrets &
-setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
+setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" -option "compose:ralt" &
 # setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
 unclutter --timeout 2 &
 redshift -c ~/.config/redshift.conf &
-parcellite &
-(sleep 4; sh -c ~/.bin/urxvt_bg) &
-# animatebg &
+# parcellite &
+animatebg -v https://www.youtube.com/watch?v=N1FuK9KC1vc &
+# ~/.bin/mpv_bg &
+# sh -c ~/.bin/urxvt_bg &
 
 #glava &
 

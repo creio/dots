@@ -8,8 +8,6 @@ APPS=(
 APP_conky1_cmd="conky -c $HOME/.conkyrc1"
 APP_conky2_cmd="conky -c $HOME/.conkyrc2"
 
-
-
 desktop=`$HOME/bin/show_desktop -q`
 [ $? -eq 0 ] || exit 1
 

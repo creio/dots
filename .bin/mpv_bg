@@ -1,0 +1,12 @@
+#!/bin/sh
+
+devilspie ~/.devilspie/mpv_bg.ds &
+
+mpv --profile=mpv_bg https://www.youtube.com/watch?v=N1FuK9KC1vc &
+
+while [ "0" -lt 5 ] || exit; do
+  sleep 1
+  xdotool search --title "mpv_bg" windowunmap --sync windowmap windowsize %1 1366 768 && break
+  echo none
+done
+echo Done!

@@ -3,5 +3,5 @@
 UUID=aad5bf7d-7bfc-43dd-9f88-db63a2871cb5	/	ext4	rw,relatime	0	1
 UUID=1745b9ff-c0c6-48e4-974f-dfca183831f3	/boot	ext2	rw,relatime	0	2
 UUID=7fdfd7a6-e0ac-4852-ae9c-2085f9ecf9af	/home	ext4	rw,relatime	0	2
-UUID=8ec3d01d-9508-4338-9d84-34f14036f172	none	swap	defaults	0	0
+#UUID=8ec3d01d-9508-4338-9d84-34f14036f172	none	swap	defaults	0	0
 UUID=c7b68393-4c50-42b3-ae0f-1b4cfe080117	/media/files	ext4	defaults,relatime	0	0

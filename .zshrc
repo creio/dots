@@ -47,26 +47,30 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=white"
 
 # fzf & fd
-[[ -e "/usr/share/fzf/fzf-extras.zsh" ]] && source /usr/share/fzf/fzf-extras.zsh
+[[ -e /usr/share/fzf/fzf-extras.zsh ]] && source /usr/share/fzf/fzf-extras.zsh
 export FZF_DEFAULT_COMMAND="fd --type file --color=always --follow --hidden --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # export FZF_DEFAULT_OPTS="--ansi"
 export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --preview 'file {}' --preview-window down:1"
 export FZF_COMPLETION_TRIGGER="~~"
 
-export TERM="rxvt-256color"
-export EDITOR="$([[ -n $DISPLAY && $(command -v micro) ]] && echo 'micro' || echo 'nano')"
-export BROWSER="chromium"
+# export TERM="rxvt-256color"
+export TERM="xterm-256color"
+# export TERMINAL="kitty"
+export EDITOR="$([[ -n $DISPLAY && $(command -v subl3) ]] && echo 'subl3' || echo 'micro' || echo 'nano')"
+export BROWSER="$([[ -n $DISPLAY && $(command -v chromium) ]] && echo 'chromium' || echo 'firefox')"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 export XDG_CONFIG_HOME="$HOME/.config"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-export MANPAGER="sh -c 'sed -e s/.\\\\x08//g | bat -l man -p'"
+# export GPG_TTY=$(tty)
 
-[[ -f ~/.env ]] && . ~/.env
+[[ $(command -v bat) ]] && export MANPAGER="sh -c 'sed -e s/.\\\\x08//g | bat -l man -p'"
+
+[[ -s ~/.env ]] && . ~/.env
 [[ -f ~/.alias_zsh ]] && . ~/.alias_zsh
 
-export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
+[[ -d $HOME/.gem/ruby/2.7.0 ]] && export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
 # export PATH="$PATH:`yarn global bin`"
 
 # export GOPATH=$HOME/.go

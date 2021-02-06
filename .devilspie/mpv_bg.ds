@@ -1,0 +1,12 @@
+(and
+  (is (window_name) "mpv_bg")
+  (is (window_class) "mpv")
+  (begin
+    (below)
+    (undecorate)
+    (fullscreen)
+    (skip_pager)
+    (skip_tasklist)
+    (wintype "desktop")
+  )
+)

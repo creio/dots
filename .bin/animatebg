@@ -10,7 +10,12 @@ fi
 #### 20% cpu gif, best result, convert mp4 -> gif:
 ## ffmpeg -i input.webm -pix_fmt rgb24 output.gif
 ## ffmpeg -i .wall/heart.mp4 .wall/heart.gif
-xwinwrap -ni -fs -st -sp -b -nf -un -ov -o 1 -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --x11-bypass-compositor=no --aid=no --hwdec=auto --really-quiet $looping
+
+if [[ "$1" == "-v" ]]; then
+  xwinwrap -fs -st -sp -b -nf -un -ov -o 1 -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --x11-bypass-compositor=no --hwdec=auto --really-quiet $2
+else
+  xwinwrap -ni -fs -st -sp -b -nf -un -ov -o 1 -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --x11-bypass-compositor=no --aid=no --hwdec=auto --really-quiet $looping
+fi
 
 #### 40% cpu mp4
 # xwinwrap -b -sp -fs -ov -ni -nf -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --vd-lavc-fast --x11-bypass-compositor=no --aid=no --vo=xv --hwdec=auto --really-quiet $looping

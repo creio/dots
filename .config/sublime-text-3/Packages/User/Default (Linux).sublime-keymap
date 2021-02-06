@@ -10,5 +10,20 @@
 	{ "keys": ["ctrl+k", "ctrl+]"], "command": "gist_add_file" },
 	//
 	{ "keys": ["ctrl+."], "command": "toggle_comment", "args": { "block": false } },
-	{ "keys": ["ctrl+'"], "command": "expand_selection_to_quotes" }
+	{ "keys": ["ctrl+'"], "command": "expand_selection_to_quotes" },
+  // ru
+  { "keys": ["ctrl+ч"], "command": "cut" },
+  { "keys": ["ctrl+ы"], "command": "save" },
+  { "keys": ["ctrl+с"], "command": "copy" },
+  { "keys": ["ctrl+м"], "command": "paste" },
+  { "keys": ["ctrl+я"], "command": "undo" },
+  { "keys": ["ctrl+н"], "command": "redo_or_repeat" },
+  { "keys": ["ctrl+shift+к"], "command": "reindent" },
+  { "keys": ["ctrl+л", "ctrl+ь"], "command": "toggle_menu" },
+  { "keys": ["ctrl+ю"], "command": "toggle_comment", "args": { "block": false } },
+  { "keys": ["ctrl+л", "ctrl+ш"], "command": "title_case" },
+  { "keys": ["ctrl+л", "ctrl+г"], "command": "upper_case" },
+  { "keys": ["ctrl+л", "ctrl+д"], "command": "lower_case" },
+  { "keys": ["ctrl+а"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
+  { "keys": ["ctrl+д"], "command": "expand_selection", "args": {"to": "line"} }
 ]

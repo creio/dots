@@ -112,6 +112,8 @@ bindsym $mod+mod1+8 move container to workspace $ws8
 bindsym $mod+mod1+9 move container to workspace $ws9
 bindsym $mod+mod1+0 move container to workspace $ws10
 
+set $i3l 3columns 0.66 0.5 2 left to workspace $ws4
+
 bindsym $mod+mod1+c reload
 bindsym $mod+mod1+r restart
 bindsym $mod+mod1+Delete exec ~/.bin/rofi-logout
@@ -155,7 +157,7 @@ for_window [workspace=$ws3] layout tabbed
 
 ## Specific workspaces
 assign [window_role="browser"] $ws1
-assign [title="(?i)term-tiling"] $ws2
+# assign [title="(?i)term-tiling"] $ws2
 assign [title="htop"] $ws2
 assign [class="(?i)subl3|thunar"] $ws3
 assign [class="(?i)smplayer"] $ws4
@@ -179,8 +181,8 @@ bindsym $mod1+t exec --no-startup-id "urxvt -name 'term-float'"
 bindsym $mod1+h exec --no-startup-id "urxvt -e htop"
 bindsym $mod1+r exec --no-startup-id "urxvt -e ranger"
 bindsym $mod1+f exec --no-startup-id "thunar"
-bindsym $mod1+s exec --no-startup-id "subl3"
-bindsym $mod1+w exec --no-startup-id "firefox"
+bindsym $mod1+e exec --no-startup-id "subl3"
+bindsym $mod1+w exec --no-startup-id "chromium"
 
 
 bindsym $mod+Ctrl+Up exec mpc volume +2
@@ -189,26 +191,20 @@ bindsym $mod+Ctrl+Left exec mpc prev
 bindsym $mod+Ctrl+Right exec mpc next
 bindsym $mod+Ctrl+d exec mpc del 0
 
-
-exec_always --no-startup-id "xset +fp $HOME/.fonts/misc/"
-##### autostart app
-#exec_always --no-startup-id "nitrogen --restore"
-exec_always --no-startup-id "hsetroot -center $HOME/.wall/wl3.jpg"
-
-# (optimal) xwinwrap -g 1366x768 -ni -s -nf -b -argb -sh rectangle -- mpv -wid WID --keepaspect=no --loop ~/.wall/bg.mp4
-# xwinwrap -g 1920x1080 -ov -ni -sh -nf -- gifview -w WID -a ~/.wall/wall.gif
-# exec_always --no-startup-id "xwinwrap -g 1366x768 -ov -ni -sh -nf -- mpv -wid WID --keepaspect=no --loop ~/.wall/modern.gif"
-
+##### autostart
+exec --no-startup-id "hsetroot -center $HOME/.wall/lcrow.png"
 exec --no-startup-id numlockx
 exec --no-startup-id "picom -b --config $HOME/.config/picom.conf"
 exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:win_space_toggle,grp_led:scroll'"
 #exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_mod1_toggle,grp_led:scroll'"
+exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+exec --no-startup-id "gnome-keyring-daemon --start --components=pkcs11,secrets"
 exec --no-startup-id "thunar --daemon"
 exec --no-startup-id "dunst -config $HOME/.config/dunst/dunstrc"
 ##### Start bar
-exec_always --no-startup-id "$HOME/.config/polybar/i3cfg.sh"
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
+# exec_always --no-startup-id "tint2 -c ~/.config/tint2/hide_tray.tint2rc"
+exec --no-startup-id "redshift -c ~/.config/redshift.conf"
 # exec --no-startup-id nm-applet
-exec --no-startup-id redshift-gtk
-exec --no-startup-id clipit
-# exec --no-startup-id megasync
+exec --no-startup-id parcellite
 exec --no-startup-id caffeine

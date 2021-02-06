@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # fc-cache -vf
-sudo pacman -Scc --noconfirm && sudo pacman -Rsn $(pacman -Qdtq) --noconfirm
+yes | sudo pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) --noconfirm
 sudo rm -rfv /var/cache/pacman/pkg/*
 rm -rf ~/.cache/thumbnails/*
 rm -rf ~/.build/*

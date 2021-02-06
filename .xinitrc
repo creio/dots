@@ -44,6 +44,7 @@ xset fp rehash &
 # exec xmonad > $HOME/.xmonad/log.txt 2>&1
 # exec awesome
 # exec dwm
+# python $HOME/.local/bin/i3-layouts &
 # exec i3
 # exec spectrwm
 exec openbox-session

@@ -18,10 +18,7 @@ settings:
   backend:
     global: webengine
   bindings.commands:
-    global:
-      normal:
-        spawn: '--userscript qute-pass --dmenu-invocation bemenu --username-target
-          secret --username-pattern "[Uu]sername: (.+)"'
+    global: null
   bindings.key_mappings:
     global:
       <Ctrl-6>: <Ctrl-^>

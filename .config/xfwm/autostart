@@ -11,6 +11,7 @@ redshift -c $HOME/.config/redshift.conf &
 # urxvtd -q -o -f &
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" &
 xsettingsd &
+# xfsettingsd &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 gnome-keyring-daemon --start --components=pkcs11,secrets &
 xfce4-power-manager &
@@ -19,4 +20,4 @@ unclutter &
 parcellite &
 urxvt &
 (sleep 3; $HOME/.config/polybar/launch.sh) &
-(sleep 4; sh -c $HOME/.bin/urxvt_bg) &
+(sleep 5; sh -c $HOME/.bin/urxvt_bg) &

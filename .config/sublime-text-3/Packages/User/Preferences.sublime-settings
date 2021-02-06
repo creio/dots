@@ -9,10 +9,12 @@
 	],
 	"color_scheme": "Packages/One Dark Material - Theme/schemes/OneDark.tmTheme",
 	"detect_indentation": false,
+	"dictionary": "Packages/User/Russian.dic",
 	"draw_shadows": false,
 	"draw_white_space": "all",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": true,
+	"fallback_encoding": "Cyrillic (Windows 1251)",
 	"folder_exclude_patterns":
 	[
 		".svn",
@@ -63,6 +65,7 @@
 	],
 	"show_encoding": true,
 	"show_scroll_tabs": false,
+	"spell_check": false,
 	"tab_size": 2,
 	"theme": "gruvbox.sublime-theme",
 	"translate_tabs_to_spaces": true,
