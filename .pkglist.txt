@@ -1,7 +1,6 @@
 alsa-plugins
 alsa-utils
 alttab-git
-archlinux-appstream-data
 audacity
 autoconf
 automake
@@ -10,10 +9,9 @@ bash-completion
 bat
 bind
 binutils
-bison
 brightnessctl
+ca-certificates
 capitaine-cursors
-cava
 chromium
 clean-chroot-manager
 cmake
@@ -26,10 +24,11 @@ dmenu
 dnsmasq
 docker
 docker-compose
+downgrade
 dunst
 ebtables
 edk2-ovmf
-exo
+expac
 fakeroot
 ffmpegthumbnailer
 figlet
@@ -73,13 +72,13 @@ hsetroot
 htop
 hub
 inxi
+john
 jq
 keybase-gui
 kvantum-qt5
 libtool
 lightcord-bin
 linux
-linux-firmware
 linux-headers
 lldb
 llvm
@@ -88,6 +87,7 @@ lvm2
 lxappearance-gtk3
 m4
 make
+man-db
 mesa-demos
 mesa-vdpau
 micro-bin
@@ -110,7 +110,6 @@ ob-yml-menu
 oh-my-zsh-git
 openbox
 openssh
-optipng
 otb-uw_ttyp0
 p7zip
 packer
@@ -123,7 +122,6 @@ patch
 pavucontrol
 pkgconf
 polkit-gnome
-prelockd
 progress
 psensor
 pulseaudio
@@ -162,7 +160,6 @@ texinfo
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
-thunar-volman
 timeshift
 tmux
 tor
@@ -188,6 +185,7 @@ vdpauinfo
 ventoy-bin
 veracrypt
 viewnior
+virt-manager
 virtualbox
 virtualbox-host-modules-arch
 weechat
@@ -201,7 +199,6 @@ wmctrl
 xclip
 xdg-user-dirs
 xdotool
-xfce4-power-manager
 xorg-server
 xorg-xinit
 xorg-xkill

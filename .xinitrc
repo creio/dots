@@ -47,11 +47,12 @@ xset fp rehash &
 # python $HOME/.local/bin/i3-layouts &
 # exec i3
 # exec spectrwm
-exec openbox-session
 # exec startfluxbox
 # exec pekwm
 # exec startinstantos
 # exec gnome-session
+# exec leftwm
+exec openbox-session
 
 # ~/.config/2bwm/autostart &
 # exec 2bwm

@@ -21,7 +21,7 @@ alt + r
 alt + w
     chromium
 
-alt + s
+alt + e
     subl3
 
 alt + f
@@ -68,9 +68,9 @@ super + shift + {0-9}
     berryc send_to_workspace {0-9}
 
 super + c
-    berryc window_monocle
-    # berryc window_monocle; \
-    # berryc toggle_decorations
+    berryc window_monocle; \
+    berryc toggle_decorations
+    # berryc window_monocle
 
 super + f
     berryc fullscreen

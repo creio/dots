@@ -59,14 +59,14 @@ ccat () {
 # share vbox В локальной машине mkdir vboxshare
 # в виртуалке uid={имя пользователя} git={группа}
 vboxshare () {
-  mkdir vboxshare
+  [[ ! -d ~/vboxshare ]] && mkdir -p ~/vboxshare
   sudo mount -t vboxsf -o rw,uid=1000,gid=1000 vboxshare vboxshare
   # sudo mount -t vboxsf -o rw,uid=st,gid=users vboxshare vboxshare
 }
-# shre qemu
+# share qemu
 vmshare () {
-  mkdir vmshare
-  sudo mount -t 9p -o trans=virtio,version=9p2000.L /vmshare vmshare
+  [[ ! -d ~/vmshare ]] && mkdir -p ~/vmshare
+  sudo mount -t 9p -o trans=virtio,version=9p2000.L host0 vmshare
 }
 
 # aur pkg
@@ -299,7 +299,7 @@ alias yngpg='yay --noconfirm --gpgflags "--keyserver keys.gnupg.net"'
 # alias pres="sudo pacman -S $(pacman -Qqn)"
 # alias yrsnp="yay -Rsn $(pacman -Qdtq)"
 # alias yal="yay -S --noconfirm --needed $(cat ~/.aurlist.txt)"
-# pacman -Qqo /usr/lib/python3.8/
+# pacman -Qqo /usr/lib/python3.9/
 
 # top history
 tophist() {

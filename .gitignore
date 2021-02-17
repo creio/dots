@@ -11,6 +11,7 @@
 .config/polybar/gmail
 .config/polybar/wtr.sh
 .config/polybar/wtrd.sh
+.config/ranger/{bookmarks,history}
 .config/jgmenu/backup
 .dots
 

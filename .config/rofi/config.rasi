@@ -21,14 +21,4 @@ configuration {
   separator-style: "none";
   hide-scrollbar: true;
   scrollbar-width: 0;
-  /*dark color*/
-  /*color-normal: "#161720, #e8eaef, #161720, #5A74CA, #161720";
-  color-urgent: "#161720, #e8eaef, #161720, #5A74CA, #161720";
-  color-active: "#161720, #e8eaef, #161720, #5A74CA, #161720";
-  color-window: "#161720, #75444A57";*/
-  /*light color*/
-  /*color-normal: "#f2f3f4, #9c9c9c, #f2f3f4, #9c9c9c, #161720";
-  color-urgent: "#f2f3f4, #9c9c9c, #f2f3f4, #9c9c9c, #161720";
-  color-active: "#f2f3f4, #9c9c9c, #f2f3f4, #9c9c9c, #161720";
-  color-window: "#f2f3f4, #75444A57";*/
 }

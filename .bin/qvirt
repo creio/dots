@@ -9,21 +9,24 @@
 # -vnc :1 \
 
 QVIRT_DIR=$HOME/.qvirt
+WMSHARE_DIR=$HOME/vmshare
 QVIRT_QCOW=arch.qcow2
 QVIRT_SIZE=8G
 
 # create dir & drive
-if [ ! -d $QVIRT_DIR ]; then
-  mkdir -p $QVIRT_DIR
-  qemu-img create -f qcow2 $QVIRT_DIR/$QVIRT_QCOW $QVIRT_SIZE
-fi
+[[ ! -d $QVIRT_DIR ]] && mkdir -p $QVIRT_DIR
+
+## create dir share
+[[ ! -d $WMSHARE_DIR ]] && mkdir -p $WMSHARE_DIR
+## vm virt
+# mkdir vmshare && sudo mount -t 9p -o trans=virtio,version=9p2000.L host0 vmshare
 
 if [ "$1" = "-i" ]; then
   # qvirt -i
   qemu-system-x86_64 \
     -enable-kvm \
     -m 4G \
-    -net nic,model=virtio -net user,hostfwd=tcp::22222-:22 \
+    -net nic -net user,hostfwd=tcp::22222-:22 \
     -vga qxl \
     -device AC97 \
     -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
@@ -34,7 +37,7 @@ elif [ "$1" = "-u" ]; then
   qemu-system-x86_64 \
     -enable-kvm -machine q35,accel=kvm \
     -cpu host -m 4G \
-    -net nic,model=virtio -net user,hostfwd=tcp::22222-:22 \
+    -net nic -net user,hostfwd=tcp::22222-:22 \
     -vga qxl \
     -device AC97 \
     -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd \
@@ -43,10 +46,11 @@ elif [ "$1" = "-u" ]; then
 else
   # qvirt
   qemu-system-x86_64 \
-    -enable-kvm \
+    -enable-kvm -machine accel=kvm \
     -m 4G \
-    -net nic,model=virtio-net-pci -net user,hostfwd=tcp::22222-:22 \
+    -net nic -net user,hostfwd=tcp::22222-:22 \
     -vga qxl \
     -device AC97 \
+    -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
     -hda $1
 fi
