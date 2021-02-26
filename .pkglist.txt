@@ -1,6 +1,7 @@
 alsa-plugins
 alsa-utils
 alttab-git
+archlinux-appstream-data
 audacity
 autoconf
 automake
@@ -9,14 +10,19 @@ bash-completion
 bat
 bind
 binutils
+brainfuck-psiphon-pro-go-bin
 brightnessctl
 ca-certificates
 capitaine-cursors
+cava
 chromium
 clean-chroot-manager
 cmake
+colorpicker
 cpio
 cronie
+ctlos-keyring
+ctlos-mirrorlist
 devilspie
 dhcpcd
 dialog
@@ -28,6 +34,7 @@ downgrade
 dunst
 ebtables
 edk2-ovmf
+espeak-ng
 expac
 fakeroot
 ffmpegthumbnailer
@@ -100,6 +107,7 @@ ncmpcpp
 neovim
 nerd-fonts-hack
 netctl
+netwmpager
 newsboat
 nmap
 nohang-git
@@ -116,7 +124,6 @@ packer
 pacman
 pamixer
 papirus-icon-theme
-parcellite
 pass
 patch
 pavucontrol
@@ -133,10 +140,12 @@ qemu
 qogir-icon-theme-git
 qutebrowser
 ranger
+recode
 redshift
 reflector
 ripgrep
 rofi
+rofi-greenclip
 rofi-pass
 rsync
 rxvt-unicode-patched
@@ -161,8 +170,10 @@ thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 timeshift
+tint2-git
 tmux
 tor
+torrserver-bin
 torsocks
 traceroute
 transmission-cli
@@ -174,8 +185,8 @@ ttf-dejavu
 ttf-font-awesome
 ttf-opensans
 ttf-ubuntu-font-family
-ttyload
 tumbler
+udiskie
 ueberzug
 unclutter
 unrar

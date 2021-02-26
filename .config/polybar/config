@@ -1,6 +1,5 @@
 [colors]
-# background = ${xrdb:background}
-background = #000000
+background = ${xrdb:background}
 foreground = #ffffff
 accent = #798BC7
 text = #9baec8
@@ -49,16 +48,16 @@ font-0 = "Ubuntu:style=Bold:size=8:antialias=false;2"
 font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=8;2"
 font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=8;2"
 font-3 = "Font Awesome 5 Brands:pixelsize=8;2"
-font-4 = "Hack Nerd Font Mono:pixelsize=8:antialias=false;2"
+font-4 = "Hack Nerd Font Mono:size=12:antialias=false;2"
 font-5 = "Weather Icons:style=Regular:pixelsize=9;2"
 
 
 modules-left = app cpu memory uparch wtr title
 modules-center = mpd mpd_sh
-modules-right = bri_sh fs tor alsa date xkeyboard power
+modules-right = blur_picom bri_sh fs tor alsa date xkeyboard power
 
 #click-right = "jgmenu_run >/dev/null 2>&1 &"
-click-right = "sleep 0.2; xdotool key ctrl+space &"
+#click-right = "sleep 0.2; xdotool key ctrl+space &"
 cursor-click = pointer
 cursor-scroll = ns-resize
 
@@ -81,7 +80,7 @@ enable-ipc = true
 # ##########################################
 [module/app]
 type = custom/text
-content = %{A1:sleep 0.1; xdotool key ctrl+space & disown:}%{A3:rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 & disown:}%{A}%{A}
+content = %{A1:sleep 0.1; xdotool key ctrl+space & disown:}%{A3:rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 & disown:}%{A}%{A}
 content-foreground = ${colors.accent}
 content-background = ${xrdb:color0}
 content-padding = 3
@@ -241,6 +240,17 @@ icon-next-foreground = ${colors.accent}
 
 
 
+[module/blur_picom]
+type = custom/ipc
+hook-0 = echo 
+hook-1 = echo 
+click-left = ~/.config/polybar/blurtoggle.sh
+click-right = ~/.bin/toggle-compositor.sh
+initial = 1
+format-foreground = ${colors.accent}
+
+
+
 [module/bri_sh]
 type = custom/text
 content = 
@@ -289,7 +299,7 @@ click-right = "systemctl stop tor &"
 
 [module/alsa]
 type = internal/alsa
-format-volume = %{A3:~/.config/rofi/scripts/volume.sh & disown:}<ramp-volume> <label-volume>%{A} %{A}
+format-volume = <ramp-volume> <label-volume>
 format-muted =  0%
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -308,7 +318,7 @@ time-alt = "%H:%M:%S"
 format-prefix = " "
 format-prefix-foreground = ${colors.accent}
 # format-underline = #5294E2
-label =%{A3:gsimplecal & disown:}%date% %time%%{A} %{A}
+label =%{A3:gsimplecal & disown:}%date% %time%%{A}
 # label = %date% %time%
 # format-background = #132332
 label-foreground = ${colors.text}

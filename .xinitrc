@@ -26,12 +26,12 @@ fi
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 xset -b off
-xsetroot -cursor_name left_ptr &
-xset +fp /usr/share/fonts/local &
-xset +fp /usr/share/fonts/misc &
-xset +fp /usr/share/fonts/bitmap &
-xset +fp ~/.fonts &
-xset fp rehash &
+# xsetroot -cursor_name left_ptr &
+# xset +fp /usr/share/fonts/local &
+# xset +fp /usr/share/fonts/misc &
+# xset +fp /usr/share/fonts/bitmap &
+# xset +fp ~/.fonts &
+# xset fp rehash &
 # fc-cache -fv &
 
 # dbus-update-activation-environment --all
@@ -52,6 +52,7 @@ xset fp rehash &
 # exec startinstantos
 # exec gnome-session
 # exec leftwm
+
 exec openbox-session
 
 # ~/.config/2bwm/autostart &
@@ -60,7 +61,7 @@ exec openbox-session
 # hsetroot -fill ~/.wall/lcrow.png &
 # exec startxfce4
 
-# ~/.config/xfwm/autostart &
+# sh ~/.config/xfwm/autostart &
 # exec xfwm4
 
 # sxhkd -c $HOME/.config/berry/sxhkdrc &

@@ -14,7 +14,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 NEW_USER=creio
-
+HOST_NAME=ctlos
 PASSWORD=$(/usr/bin/openssl passwd -crypt "$NEW_USER")
 
 # cfdisk -z /dev/sda
@@ -91,6 +91,7 @@ genfstab -pU /mnt >> /mnt/etc/fstab
 echo "==== create settings.sh ===="
 virt_d=$(systemd-detect-virt)
 
+# sed '1,/^#chroot$/d'
 cat <<LOL >/mnt/settings.sh
 reflector -a 12 -l 30 -f 30 -p https --sort rate --save /etc/pacman.d/mirrorlist
 pacman-key --init
@@ -148,10 +149,18 @@ fi
 # pacman -S --noconfirm --needed efibootmgr
 
 grub-install $DISK
-# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch --force
+# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
 
 sed -i -e 's/^GRUB_TIMEOUT=.*$/GRUB_TIMEOUT=0/' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
+
+echo "$HOST_NAME" > /mnt/etc/hostname
+
+cat <<EOF >/mnt/etc/hosts
+127.0.0.1       localhost
+::1             localhost
+127.0.1.1       $HOST_NAME.localdomain $HOST_NAME
+EOF
 
 # systemctl enable dhcpcd
 # systemctl enable sshd

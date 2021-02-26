@@ -27,6 +27,7 @@ setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" -option "c
 # setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
 unclutter --timeout 2 &
 redshift -c ~/.config/redshift.conf &
+greenclip daemon &
 # parcellite &
 animatebg -v https://www.youtube.com/watch?v=N1FuK9KC1vc &
 # ~/.bin/mpv_bg &
@@ -37,7 +38,6 @@ animatebg -v https://www.youtube.com/watch?v=N1FuK9KC1vc &
 # jgmenu_run start &
 # cornora -bl "skippy-xd" -tl "rofi -show run" &
 # (sleep 2; caffeine) &
-# greenclip daemon &
 # (sleep 5; nm-applet) &
 # (sleep 2; volumeicon) &
 # udiskie -t &

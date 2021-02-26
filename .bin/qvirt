@@ -27,6 +27,7 @@ if [ "$1" = "-i" ]; then
     -enable-kvm \
     -m 4G \
     -net nic -net user,hostfwd=tcp::22222-:22 \
+    -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
     -vga qxl \
     -device AC97 \
     -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
@@ -38,6 +39,7 @@ elif [ "$1" = "-u" ]; then
     -enable-kvm -machine q35,accel=kvm \
     -cpu host -m 4G \
     -net nic -net user,hostfwd=tcp::22222-:22 \
+    -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
     -vga qxl \
     -device AC97 \
     -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd \
@@ -49,8 +51,8 @@ else
     -enable-kvm -machine accel=kvm \
     -m 4G \
     -net nic -net user,hostfwd=tcp::22222-:22 \
+    -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
     -vga qxl \
     -device AC97 \
-    -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
     -hda $1
 fi

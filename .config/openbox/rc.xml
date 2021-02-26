@@ -444,7 +444,7 @@
     </keybind>
     <keybind key="W-A-Delete">
       <action name="Execute">
-        <command>rofi-logout</command>
+        <command>power</command>
       </action>
     </keybind>
     <keybind key="W-A-g">
@@ -485,6 +485,11 @@
     <keybind key="W-w">
       <action name="Execute">
         <command>rofi -show window -theme-str 'element-icon {size: 16;}'</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-h">
+      <action name="Execute">
+        <command>rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -width 500 -lines 18 -font "ClearSansMedium 10"</command>
       </action>
     </keybind>
     <keybind key="A-c">
@@ -877,16 +882,16 @@
           <menu>client-list-combined-menu</menu>
         </action>
       </mousebind>
-      <mousebind action="Press" button="Right">
+      <!-- <mousebind action="Press" button="Right">
         <action name="ShowMenu">
           <menu>root-menu</menu>
         </action>
-      </mousebind>
-      <!-- <mousebind action="Release" button="Right">
-        <action name="Execute">
-          <command>jgmenu_run</command>
-        </action>
       </mousebind> -->
+      <mousebind action="Release" button="Right">
+        <action name="Execute">
+          <command>pmenu.sh</command>
+        </action>
+      </mousebind>
     </context>
     <context name="MoveResize">
       <mousebind action="Click" button="Up">

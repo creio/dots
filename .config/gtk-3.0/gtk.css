@@ -1,5 +1,5 @@
 VteTerminal, vte-terminal {
-    padding: 20px;
+  padding: 8px;
 }
 
 .window-frame, .window-frame:backdrop {
@@ -8,7 +8,6 @@ VteTerminal, vte-terminal {
   border-radius: 0;
   margin: 0;
 }
-
 /*.titlebar {
   border-radius: 0;
 }*/

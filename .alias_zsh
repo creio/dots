@@ -15,7 +15,7 @@ alias vga="lspci -k | grep -A 2 -E '(VGA|3D)'"
 alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias updir="LC_ALL=C xdg-user-dirs-update --force"
 
-alias dmrun="dmenu_run -l 10 -p 'app>' -fn 'ClearSansMedium 9' -nb '#282c37' -nf '#f2f3f4' -sb '#5a74ca' -sf '#fff'"
+alias dmrun="dmenu_run -l 10 -p 'run >' -fn 'ClearSansMedium 9' -nb '#282c37' -nf '#f2f3f4' -sb '#5a74ca' -sf '#fff'"
 
 alias iip="curl --max-time 10 -w '\n' http://ident.me"
 alias tb="nc termbin.com 9999 | xsel -b -i"
@@ -175,7 +175,7 @@ alias .....="cd ../../../.."
 alias ......='cd ../../../../..'
 alias q="exit"
 alias gh="cd /media/files/github"
-alias dot="cd /media/files/github/creio/dots"
+alias ghd="cd /media/files/github/creio/dots"
 
 function gc () {
   git clone "$1" ${2}
@@ -260,12 +260,13 @@ alias -s {png,jpg,tiff,bmp,gif}="viewnior"
 
 alias mi="micro"
 alias smi="sudo micro"
-alias s="subl3"
-alias ss="sudo subl3"
+alias s="subl3 -a"
+alias ss="sudo subl3 -a"
 alias tm="tmux attach || tmux new -s work"
 alias tmd="tmux detach"
 alias tmk="tmux kill-server"
-alias rr="ranger"
+# ~/.config/ranger/rc.conf ## set save_tabs_on_exit true
+alias rr='ranger --cmd="tab_shift 4" --cmd=tab_close'
 alias srr="sudo ranger"
 alias h="htop"
 # alias {v,vi,vim}="nvim"
@@ -275,7 +276,9 @@ alias h="htop"
 alias pkglist="pacman -Qneq > ~/.pkglist.txt"
 alias aurlist="pacman -Qmeq > ~/.aurlist.txt"
 
-alias packey="sudo pacman-key --init && sudo pacman-key --populate && sudo pacman-key --refresh-keys --keyserver hkp://keys.gnupg.net && sudo pacman -Syy"
+alias pqo="pacman -Qqo"
+
+alias pkey="sudo pacman-key --init && sudo pacman-key --populate && sudo pacman-key --refresh-keys --keyserver hkp://keys.gnupg.net && sudo pacman -Syy"
 alias y="yay -S"
 alias yn="yay -S --noconfirm"
 alias yl="yay -S --noconfirm --needed - < ~/.pkglist.txt"

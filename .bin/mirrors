@@ -17,4 +17,4 @@ else
 fi
 
 cat /etc/pacman.d/mirrorlist
-sudo pacman -Syy
+sudo pacman -Syy --noconfirm
