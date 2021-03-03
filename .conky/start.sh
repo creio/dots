@@ -10,5 +10,5 @@ conky -c ~/.conky/conky_hdd &
 conky -c ~/.conky/conky_cal &
 conky -c ~/.conky/conky_loggs &
 conky -c ~/.conky/conky_processes &
-conky -c ~/.conky/conky_gmail &
-conky -c ~/.conky/conky_weather &
+# conky -c ~/.conky/conky_gmail &
+# conky -c ~/.conky/conky_weather &
