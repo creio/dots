@@ -11,14 +11,14 @@ border_width = 0
 border_sides = LR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
-background_color = #17181a 100
-border_color = #17181a 100
+background_color = #161720 100
+border_color = #161720 100
 gradient_id = 0
-background_color_hover = #17181a 100
-border_color_hover = #17181a 100
+background_color_hover = #161720 100
+border_color_hover = #161720 100
 gradient_id_hover = 0
-background_color_pressed = #17181a 100
-border_color_pressed = #17181a 100
+background_color_pressed = #161720 100
+border_color_pressed = #161720 100
 gradient_id_pressed = 0
 
 #-------------------------------------
@@ -85,7 +85,7 @@ button_max_icon_size = 0
 # Button 3
 button = new
 button_text = 
-button_lclick_command = urxvt -name newsboat -g 190x50 -e newsboat
+button_lclick_command = urxvt -name w_95 -g 190x50 -e newsboat
 button_rclick_command =
 button_mclick_command =
 button_uwheel_command =
@@ -115,54 +115,6 @@ button_max_icon_size = 0
 
 #-------------------------------------
 # Button 5
-button = new
-button_text = 
-button_lclick_command = sh $HOME/.bin/openbox-theme.sh
-button_rclick_command = $HOME/.bin/picom.sh
-button_mclick_command =
-button_uwheel_command =
-button_dwheel_command =
-button_font = Font Awesome 5 Free 9
-button_font_color = #aeb4c6 100
-button_padding = 5 0
-button_background_id = 0
-button_centered = 0
-button_max_icon_size = 0
-
-#-------------------------------------
-# Button 6
-button = new
-button_text = 
-button_lclick_command = $HOME/.config/rofi/scripts/quicklinks.sh
-button_rclick_command =
-button_mclick_command =
-button_uwheel_command =
-button_dwheel_command =
-button_font = Font Awesome 5 Free 9
-button_font_color = #aeb4c6 100
-button_padding = 5 0
-button_background_id = 0
-button_centered = 0
-button_max_icon_size = 0
-
-#-------------------------------------
-# Button 7
-button = new
-button_text = 
-button_lclick_command = $HOME/.config/rofi/scripts/screenshot.sh
-button_rclick_command = simplescreenrecorder
-button_mclick_command =
-button_uwheel_command =
-button_dwheel_command =
-button_font = Font Awesome 5 Free 9
-button_font_color = #aeb4c6 100
-button_padding = 5 0
-button_background_id = 0
-button_centered = 0
-button_max_icon_size = 0
-
-#-------------------------------------
-# Button 8
 button = new
 button_text = 
 button_lclick_command = $HOME/.bin/wallpaper.sh

@@ -6,8 +6,8 @@
   <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_75_PERCENT"/>
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_16"/>
-  <property name="last-window-width" type="int" value="774"/>
-  <property name="last-window-height" type="int" value="397"/>
+  <property name="last-window-width" type="int" value="765"/>
+  <property name="last-window-height" type="int" value="368"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
   <property name="last-separator-position" type="int" value="115"/>

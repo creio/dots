@@ -8,7 +8,7 @@
 # weather=$(cat /tmp/weather.tmp)
 # date=$(date +"%H:%M")
 savelocation=/tmp/wall.jpg
-default_wall="$HOME/.wall/lcrow.png"
+default_wall="$HOME/.wall/sudo.png"
 imgprovider=https://source.unsplash.com/1920x1080/?nature,dark
 
 if [ "$1" = "d" ]; then

@@ -22,10 +22,10 @@ fi
 
 dialog_up() {
   if read -re -p "System upgrade? [y/N]: " ans && [[ $ans == 'y' || $ans == 'Y' ]]; then
-    yay -Syyu
+    yay -Syyuu
   fi
 }
 
-if [ $1 = "d_up" ]; then
+if [[ $1 == "d_up" ]]; then
     dialog_up
 fi

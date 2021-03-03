@@ -1,54 +1,191 @@
-# Window and Color
-client.focused          #364670 #364670 #93CFBD #364670 #364670
-client.focused_inactive #2F2F38 #2F2F38 #CCCCCC #2F2F38 #2F2F38
-client.unfocused        #2F2F38 #2F2F38 #93CFBD #2F2F38 #2F2F38
-client.urgent           #6B3659 #6B3659 #93CFBD #6B3659 #6B3659
-client.placeholder      #666666 #666666 #CCCCCC #666666 #666666
-client.background       #364670
-
-hide_edge_borders smart
-new_window pixel 2
-new_float pixel 2
-
 set $mod Mod4
 set $mod1 Mod1
 
-font pango:ClearSansMedium 10
+# Font
+font pango:Ubuntu 9
 
+# Gaps
+gaps inner 3
+gaps top 26
+gaps left 207
+gaps right 207
+gaps bottom 0
+
+# Borders
+
+for_window [class=".*"] border pixel 1
+
+set $borderFocused   #748c90
+set $borderUnfocused #4C596D
+
+#                        Border            Background        Foreground        Indicator         Child Border
+client.focused           $borderFocused    $borderFocused    $borderFocused    $borderFocused    $borderFocused
+client.unfocused         $borderUnfocused  $borderUnfocused  $borderUnfocused  $borderUnfocused  $borderUnfocused
+client.focused_inactive  $borderUnfocused  $borderUnfocused  $borderUnfocused  $borderUnfocused  $borderUnfocused
+client.urgent            $borderFocused    $borderFocused    $borderFocused    $borderFocused    $borderFocused
+
+# Focus
+focus_follows_mouse no
+
+# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# kill focused window
+###################
+#### AUTOSTART ####
+###################
+
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets
+exec --no-startup-id setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" -option "compose:ralt"
+exec --no-startup-id urxvtd -q -o -f
+exec --no-startup-id unclutter --timeout 2
+exec --no-startup-id greenclip daemon
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id redshift -c ~/.config/redshift.conf
+## numlockx conflict xclickroot
+# exec --no-startup-id numlockx on
+exec --no-startup-id xclickroot -r $HOME/.bin/pmenu.sh
+
+exec_always --no-startup-id hsetroot -solid "#161720"
+exec_always --no-startup-id dunst
+exec_always --no-startup-id xsettingsd
+
+# Launch popup terminal on i3 startup
+for_window [instance="popup"] floating enable
+for_window [instance="popup"] move scratchpad
+exec --no-startup-id urxvt -name popup
+
+# Start conky
+exec_always --no-startup-id $HOME/.hax/conky.sh
+
+# Start polybar
+exec_always --no-startup-id $HOME/.hax/polybar.sh
+
+################
+#### ASSIGN ####
+################
+
+# Place these in workspace 2
+assign [class="(?i)firefox"] 2
+assign [class="(?i)chromium"] 2
+assign [class="(?i)surf"] 2
+
+# Place these in workspace 3
+assign [class="(?i)Subl3"] 3
+
+# Place these in workspace 4
+assign [class="(?i)TelegramDesktop"] 4
+
+## Specific window
+for_window [window_role="pop-up|bubble|task_dialog|Preferences|setup"] floating enable
+for_window [window_type="dialog|menu"] floating enable
+for_window [window_role="browser|GtkFileChooserDialog"] resize set 800 600, move position center
+for_window [class="(?i)simplescreenrecorder"] floating enable, move position 5 30
+for_window [class="(?i)nitrogen|engrampa|file-roller|fsearch|qt5ct"] floating enable, resize set 600 500, move position center
+for_window [class="(?i)atril|pavucontrol|lxappearance|viewnior|keepassxc|veracrypt"] floating enable
+for_window [title="(?i)m_sticky"] floating enable, resize set 350 250, sticky enable, move window to position 1000 85
+
+# for_window [title="(?i)htop"] floating enable, resize set 1280 600, move position center, focus
+# for_window [class="(?i)firefox|xfce4-terminal|thunar|subl3|mousepad"] focus
+# for_window [window_role="demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
+# for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 350, move absolute position 0 418
+
+############
+#### i3 ####
+############
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+##################
+#### TERMINAL ####
+##################
+
+# Launch new terminal window
+bindsym $mod+Return exec --no-startup-id urxvt
+
+# Toggle popup terminal
+bindsym $mod+p exec --no-startup-id $HOME/.hax/popup.sh
+
+#################
+#### GENERAL ####
+#################
+
+# Kill focused window
 bindsym $mod+z kill
 
-# change focus
-bindsym $mod1+Tab focus right
-# bindsym $mod+Tab focus left
-bindsym $mod+Tab workspace back_and_forth
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+# Lock screen
+# bindsym $mod+Shift+x exec i3lock -c "#161720"
+bindsym $mod+$mod1+l exec --no-startup-id "$HOME/.bin/multilock.sh -l blur"
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+######################
+#### APPLICATIONS ####
+######################
 
-# move focused window
-bindsym $mod+mod1+j move left
-bindsym $mod+mod1+k move down
-bindsym $mod+mod1+l move up
-bindsym $mod+mod1+semicolon move right
+# Launch chrome browser
+bindsym $mod1+w exec --no-startup-id chromium
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+mod1+Left move left
-bindsym $mod+mod1+Down move down
-bindsym $mod+mod1+Up move up
-bindsym $mod+mod1+Right move right
+# Launch chrome browser
+bindsym $mod+Control+f exec --no-startup-id firefox
+
+# Launch spotify
+bindsym $mod+Control+s exec --no-startup-id spotify
+
+# Launch surf browser
+bindsym $mod+Control+u exec --no-startup-id surf
+
+# Launch postman
+bindsym $mod+Control+p exec --no-startup-id postman
+
+# Launch gimp
+bindsym $mod+Control+g exec --no-startup-id gimp
+
+# Launch inkscape
+bindsym $mod+Control+i exec --no-startup-id inkscape
+
+###############
+#### UTILS ####
+###############
+
+bindsym $mod+$mod1+Delete exec $HOME/.bin/power
+
+# Take screenshot
+bindsym Print exec --no-startup-id "$HOME/.bin/flameshot.sh -c"
+bindsym $mod+Print exec --no-startup-id "flameshot gui"
+bindsym Control+Print exec --no-startup-id "$HOME/.bin/flameshot.sh -d 3000"
+
+# Launch dmenu
+# bindsym $mod+d exec dmenu_run -i -p "Launch: " -nb "#161720" -nf "#a6c8ce" -sb "#161720" -sf "#748c90" -fn "ubuntu-9"
+
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+$mod1+g exec $HOME/.bin/rofi-totp
+
+bindsym Control+$mod1+h exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -width 500 -lines 18 -font "Ubuntu 9"
+
+#################################
+#### WORKSPACES & NAVIGATION ####
+#################################
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -57,36 +194,58 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
-bindsym $mod+c floating toggle
-
 # change focus between tiling / floating windows
-bindsym $mod+x focus mode_toggle
+bindsym Control+space focus mode_toggle
+
+# toggle tiling / floating
+bindsym $mod1+space floating toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
-bindsym $mod+d focus child
+# bindsym $mod+d focus child
 
-bindsym $mod+g sticky toggle
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 web
-set $ws2 term
-set $ws3 code
-set $ws4 media
-set $ws5 gimp
-set $ws6 chat
-set $ws7 doc
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
+
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default" notify-send "Exit resize mode"
+    bindsym Escape mode "default" notify-send "Exit resize mode"
+}
+
+bindsym $mod+r mode "resize" notify-send "Enter resize mode"
+
+# define names for default workspaces for which we configure key bindings later on.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -98,113 +257,37 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+mod1+1 move container to workspace $ws1
-bindsym $mod+mod1+2 move container to workspace $ws2
-bindsym $mod+mod1+3 move container to workspace $ws3
-bindsym $mod+mod1+4 move container to workspace $ws4
-bindsym $mod+mod1+5 move container to workspace $ws5
-bindsym $mod+mod1+6 move container to workspace $ws6
-bindsym $mod+mod1+7 move container to workspace $ws7
-bindsym $mod+mod1+8 move container to workspace $ws8
-bindsym $mod+mod1+9 move container to workspace $ws9
-bindsym $mod+mod1+0 move container to workspace $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
 
-set $i3l 3columns 0.66 0.5 2 left to workspace $ws4
+############################
+#### ACTION KEYBINDINGS ####
+############################
 
-bindsym $mod+mod1+c reload
-bindsym $mod+mod1+r restart
-bindsym $mod+mod1+Delete exec ~/.bin/rofi-logout
-# bindsym $mod+mod1+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# Resize focused window
+bindsym $mod+Control+h resize shrink width 1 px or 1 ppt
+bindsym $mod+Control+j resize shrink height 1 px or 1 ppt
+bindsym $mod+Control+k resize grow height 1 px or 1 ppt
+bindsym $mod+Control+l resize grow width 1 px or 1 ppt
 
-mode "resize" {
-        bindsym j resize shrink width 3 px or 3 ppt
-        bindsym k resize grow height 3 px or 3 ppt
-        bindsym l resize shrink height 3 px or 3 ppt
-        bindsym semicolon resize grow width 3 px or 3 ppt
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
-        bindsym Left resize shrink width 3 px or 3 ppt
-        bindsym Down resize grow height 3 px or 3 ppt
-        bindsym Up resize shrink height 3 px or 3 ppt
-        bindsym Right resize grow width 3 px or 3 ppt
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-bindsym $mod+r mode "resize"
-
-
-## Specific window
-for_window [window_role="pop-up|bubble|task_dialog|Preferences"] floating enable
-for_window [window_type="dialog|menu"] floating enable
-for_window [window_role="browser|GtkFileChooserDialog"] resize set 800 600, move position center
-for_window [window_role="demo"] resize set 800 600, move position center
-for_window [class="(?i)simplescreenrecorder"] floating enable, move position 5 30
-for_window [class="(?i)nitrogen|engrampa|fsearch|qt5ct"] floating enable, resize set 600 500, move position center
-for_window [class="(?i)pavucontrol|lxappearance"] floating enable
-for_window [title="(?i)term-float"] floating enable, focus
-for_window [title="(?i)ranger"] floating enable, resize set 1280 600, move position center, focus
-for_window [class="(?i)mpv"] floating enable, resize set 350 250, sticky enable, move window to position 1000 85
-# for_window [title="(?i)htop"] floating enable, resize set 1280 600, move position center, focus
-for_window [class="(?i)chromium|urxvt|thunar|subl3|mupdf|viewnior"] focus
-for_window [window_role="demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
-for_window [workspace=$ws1] layout tabbed
-for_window [workspace=$ws3] layout tabbed
-
-
-## Specific workspaces
-assign [window_role="browser"] $ws1
-# assign [title="(?i)term-tiling"] $ws2
-assign [title="htop"] $ws2
-assign [class="(?i)subl3|thunar"] $ws3
-assign [class="(?i)smplayer"] $ws4
-assign [window_role="gimp"] $ws5
-assign [class="(?i)telegram|discord"] $ws6
-assign [class="(?i)zathura|fbreader|mupdf"] $ws7
-
-
-#### hide/show bar
-#gaps top 32
-#bindsym $mod+p exec polybar-msg cmd toggle; exec i3-msg gaps top all toggle 32
-
-# start app
-# Update locker, run: betterlockscreen -u path/to/directory -r 1920x1080 -b 0.5
-bindsym $mod1+l exec --no-startup-id "betterlockscreen -l"
-bindsym $mod1+d exec --no-startup-id "rofi -show run"
-# bindsym $mod1+space exec --no-startup-id "rofi -show window"
-bindsym $mod1+space exec --no-startup-id "$HOME/.bin/toggle-tint.sh"
-bindsym $mod+Return exec --no-startup-id "urxvt -name 'term-tiling'"
-bindsym $mod1+t exec --no-startup-id "urxvt -name 'term-float'"
-bindsym $mod1+h exec --no-startup-id "urxvt -e htop"
-bindsym $mod1+r exec --no-startup-id "urxvt -e ranger"
-bindsym $mod1+f exec --no-startup-id "thunar"
-bindsym $mod1+e exec --no-startup-id "subl3"
-bindsym $mod1+w exec --no-startup-id "chromium"
-
-
-bindsym $mod+Ctrl+Up exec mpc volume +2
-bindsym $mod+Ctrl+Down exec mpc volume -2
-bindsym $mod+Ctrl+Left exec mpc prev
-bindsym $mod+Ctrl+Right exec mpc next
-bindsym $mod+Ctrl+d exec mpc del 0
-
-##### autostart
-exec --no-startup-id "hsetroot -center $HOME/.wall/lcrow.png"
-exec --no-startup-id numlockx
-exec --no-startup-id "picom -b --config $HOME/.config/picom.conf"
-exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:win_space_toggle,grp_led:scroll'"
-#exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_mod1_toggle,grp_led:scroll'"
-exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-exec --no-startup-id "gnome-keyring-daemon --start --components=pkcs11,secrets"
-exec --no-startup-id "thunar --daemon"
-exec --no-startup-id "dunst -config $HOME/.config/dunst/dunstrc"
-##### Start bar
-exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
-# exec_always --no-startup-id "tint2 -c ~/.config/tint2/hide_tray.tint2rc"
-exec --no-startup-id "redshift -c ~/.config/redshift.conf"
-# exec --no-startup-id nm-applet
-exec --no-startup-id parcellite
-exec --no-startup-id caffeine
+# audio controls
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioStop exec mpc stop
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioMute exec pamixer -t
+bindsym XF86AudioLowerVolume exec pamixer -d 5
+bindsym XF86AudioRaiseVolume exec pamixer -i 5

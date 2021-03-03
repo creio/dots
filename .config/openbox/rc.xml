@@ -1008,6 +1008,12 @@
       </size>
     </application> -->
     <application name="w_max">
+      <maximized>yes</maximized>
+      <decor>no</decor>
+      <focus>yes</focus>
+      <desktop>1</desktop>
+    </application>
+    <application name="w_95">
       <focus>yes</focus>
       <position force="no">
         <x>center</x>
@@ -1018,7 +1024,7 @@
         <height>95/100</height>
       </size>
     </application>
-    <application name="newsboat">
+    <application name="w_85">
       <focus>yes</focus>
       <position force="no">
         <x>center</x>

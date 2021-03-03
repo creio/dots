@@ -1,0 +1,95 @@
+[global/wm]
+    margin-top = 0
+    margin-bottom = 0
+
+[settings]
+    throttle-output = 5
+    throttle-output-for = 10
+    throttle-input-for = 30
+
+[bar/slim]
+    monitor = VGA-0
+    monitor-fallback = VGA-0
+    fixed-center = true
+    override-redirect = true
+    wm-restack = i3
+    enable-ipc = true
+
+    click-right = ~/.bin/power
+
+    dpi-x = 0
+    dpi-y = 0
+
+    offset-y = 0
+
+    height = 24
+
+    background = #161720
+    foreground = #a6c8ce
+
+    border-size = 0
+    border-color = #916277
+
+    line-size = 1
+    line-color = #916277
+
+    padding-left = 0
+    padding-right = 0
+
+    module-margin-left = 1
+    module-margin-right = 1
+
+    font-0 = "Ubuntu:size=9;3"
+
+[bar/slim-top]
+    inherit = bar/slim
+    bottom = false
+
+    offset-x = 220
+    width = 926
+
+    modules-left = i3
+    modules-right = title
+
+[module/i3]
+    type = internal/i3
+    format = <label-state>
+    index-sort = true
+    wrapping-scroll = false
+    enable-click = true
+    pin-workspaces = true
+    strip-wsnumbers = false
+
+    label-focused = %name%
+    label-focused-foreground = #a6c8ce
+    label-focused-background = #161720
+    label-focused-underline = #748c90
+    label-focused-padding = 3
+
+    label-unfocused = %name%
+    label-unfocused-foreground = #a6c8ce
+    label-unfocused-background = #161720
+    label-unfocused-padding = 3
+
+    label-urgent = %name%
+    label-urgent-foreground = #354D5F
+    label-urgent-background = #161720
+    label-urgent-padding = 3
+
+[module/title]
+    type = internal/xwindow
+
+    format = <label>
+
+    label = %title%
+    label-maxlen = 50
+    label-foreground = #a6c8ce
+    label-background = #161720
+    label-underline = #748c90
+    label-padding = 3
+
+    label-empty = Empty
+    label-empty-foreground = #a6c8ce
+    label-empty-background = #161720
+    label-empty-underline = #748c90
+    label-empty-padding = 3

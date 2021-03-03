@@ -5,7 +5,8 @@
 
 # zmodload zsh/zprof
 
-export PATH=$HOME/.bin:$HOME/.config/rofi/scripts:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.bin:$HOME/.config/rofi/scripts:$HOME/.local/bin:/usr/local/bin:$PATH
+export CPR_LIB=~/cpr
 
 export HISTFILE=~/.zhistory
 export HISTSIZE=3000
