@@ -1,14 +1,17 @@
 #!/bin/bash
 
-conky -c ~/.conky/conky_asset &
-conky -c ~/.conky/conky_connections &
-conky -c ~/.conky/conky_biclock &
-conky -c ~/.conky/conky.conf &
-conky -c ~/.conky/conky_cpus &
-conky -c ~/.conky/conky_sensors &
-conky -c ~/.conky/conky_hdd &
-conky -c ~/.conky/conky_cal &
-conky -c ~/.conky/conky_loggs &
-conky -c ~/.conky/conky_processes &
-# conky -c ~/.conky/conky_gmail &
-# conky -c ~/.conky/conky_weather &
+killall -q conky
+
+conky -c ~/.conky/conky_asset -d
+conky -c ~/.conky/conky_connections -d
+conky -c ~/.conky/conky_biclock -d
+conky -c ~/.conky/conky.conf -d
+conky -c ~/.conky/conky_cpus -d
+conky -c ~/.conky/conky_sensors -d
+conky -c ~/.conky/conky_wtr -d
+conky -c ~/.conky/conky_hdd -d
+conky -c ~/.conky/conky_cal -d
+conky -c ~/.conky/conky_loggs -d
+conky -c ~/.conky/conky_processes -d
+# conky -c ~/.conky/conky_gmail -d
+# conky -c ~/.conky/conky_weather -d

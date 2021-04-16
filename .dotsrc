@@ -19,7 +19,7 @@ BKPS=(
 .config/oomox/colors
 .config/obmenu-generator/{config.pl,schema.pl}
 .config/qutebrowser/{autoconfig.yml,config.py}
-.config/straw-viewer/straw-viewer.conf
+.config/pipe-viewer/pipe-viewer.conf
 .config/sublime-text-3/Packages/User
 .config/{clean-chroot-manager.conf,chromium-flags.conf,picom.conf,picom_blur.conf}
 .config/{redshift.conf,Trolltech.conf,kdenliverc,mimeapps.list}

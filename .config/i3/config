@@ -49,6 +49,7 @@ exec --no-startup-id xclickroot -r $HOME/.bin/pmenu.sh
 exec_always --no-startup-id hsetroot -solid "#161720"
 exec_always --no-startup-id dunst
 exec_always --no-startup-id xsettingsd
+exec_always --no-startup-id picom -b
 
 # Launch popup terminal on i3 startup
 for_window [instance="popup"] floating enable

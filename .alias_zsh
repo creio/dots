@@ -60,7 +60,7 @@ ccat () {
 # в виртуалке uid={имя пользователя} git={группа}
 vboxshare () {
   [[ ! -d ~/vboxshare ]] && mkdir -p ~/vboxshare
-  sudo mount -t vboxsf -o rw,uid=1000,gid=1000 vboxshare vboxshare
+  sudo mount -t vboxsf -o rw,uid=1000,gid=985 vboxshare vboxshare
   # sudo mount -t vboxsf -o rw,uid=st,gid=users vboxshare vboxshare
 }
 # share qemu
@@ -209,9 +209,9 @@ alias torc="$BROWSER --proxy-server='socks://127.0.0.1:9050' &"
 alias psi="$BROWSER --proxy-server='socks://127.0.0.1:1081' &"
 
 # full screen flags -fs
-alias yt="straw-viewer"
+alias yt="pipe-viewer"
 ytv () {
-  straw-viewer "$1"
+  pipe-viewer "$1"
 }
 
 # youtube-dl --ignore-errors -o '~/Видео/youtube/%(playlist)s/%(title)s.%(ext)s' https://www.youtube.com/playlist?list=PL-UzghgfytJQV-JCEtyuttutudMk7

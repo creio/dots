@@ -71,7 +71,7 @@ mount $H_DISK /mnt/home
 
 
 pacman -Sy --noconfirm --needed reflector
-reflector -a 12 -l 30 -f 30 -p https --sort rate --save /etc/pacman.d/mirrorlist
+reflector -a 12 -l 30 -f 30 -p https,http --sort rate --save /etc/pacman.d/mirrorlist
 
 PKGS=(
 base base-devel linux nano grub reflector nano openssh
@@ -82,7 +82,7 @@ wget git rsync gnu-netcat pv
 netctl unzip unrar p7zip zsh htop tmux
 )
 
-for i in "${PKGS[*]}"; do
+for i in "${PKGS[@]}"; do
   pacstrap /mnt $i
 done
 
@@ -93,7 +93,7 @@ virt_d=$(systemd-detect-virt)
 
 # sed '1,/^#chroot$/d'
 cat <<LOL >/mnt/settings.sh
-reflector -a 12 -l 30 -f 30 -p https --sort rate --save /etc/pacman.d/mirrorlist
+reflector -a 12 -l 30 -f 30 -p https,http --sort rate --save /etc/pacman.d/mirrorlist
 pacman-key --init
 pacman-key --populate
 

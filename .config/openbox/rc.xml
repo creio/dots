@@ -472,6 +472,11 @@
         <command>flameshot gui</command>
       </action>
     </keybind>
+    <keybind key="W-A-Print">
+      <action name="Execute">
+        <command>flameshot gui -d 3000</command>
+      </action>
+    </keybind>
     <keybind key="A-space">
       <action name="Execute">
         <command>toggle-tint.sh</command>
@@ -1055,6 +1060,16 @@
       <layer>below</layer>
       <!-- <desktop>all</desktop> -->
     </application>
+    <application title="m_fixed">
+      <position force="yes">
+        <x>1010</x>
+        <y>360</y>
+      </position>
+      <size>
+        <width>25/100</width>
+        <height>25/100</height>
+      </size>
+    </application>
     <application title="m_sticky">
       <desktop>all</desktop>
       <decor>no</decor>
@@ -1069,6 +1084,28 @@
       <size>
         <width>25/100</width>
         <height>25/100</height>
+      </size>
+    </application>
+    <application title="w_90">
+      <focus>yes</focus>
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <size>
+        <width>90/100</width>
+        <height>90/100</height>
+      </size>
+    </application>
+    <application title="w_50">
+      <focus>yes</focus>
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <size>
+        <width>50/100</width>
+        <height>50/100</height>
       </size>
     </application>
     <!-- <application title="mpv_bg">

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-notifyd" version="1.0">
+  <property name="primary-monitor" type="uint" value="0"/>
+  <property name="notify-location" type="uint" value="2"/>
+  <property name="log-level" type="uint" value="0"/>
+  <property name="log-level-apps" type="uint" value="0"/>
+  <property name="applications" type="empty">
+    <property name="known_applications" type="array">
+      <value type="string" value="chromium"/>
+      <value type="string" value="discord"/>
+      <value type="string" value="flameshot"/>
+      <value type="string" value="lightcord"/>
+      <value type="string" value="nohang"/>
+      <value type="string" value="notify-send"/>
+      <value type="string" value="Transmission"/>
+      <value type="string" value="Xfce4-notifyd settings"/>
+    </property>
+  </property>
+  <property name="expire-timeout" type="int" value="3"/>
+</channel>

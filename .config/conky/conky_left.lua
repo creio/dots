@@ -1,14 +1,14 @@
 conky.config = {
     alignment = 'top_left',
     background = true,
-    default_color = 'a6c8ce',
-    color0 = '748c90',
-    color1 = '354D5F',
-    color2 = '385068',
-    color3 = '4C596D',
-    color4 = '916277',
-    color5 = '375598',
-    color6 = 'a6c8ce',
+    default_color = 'a5adff',
+    color0 = '494b5a',
+    color1 = '494b5a',
+    color2 = '494b5a',
+    color3 = '23ada0',
+    color4 = 'af2445',
+    color5 = 'a5adff',
+    color6 = 'a5adff',
     cpu_avg_samples = 2,
     diskio_avg_samples = 2,
     double_buffer = true,
@@ -90,7 +90,7 @@ ${color}RAM${alignr}${color2}${mem} of ${memmax}
 ${color0}${hr}
 
 # MEM GRAPH
-${color5}${memgraph 35,220}
+${color5}${memgraph 35,220 af2445 14151f scale 100KiB -l}
 
 # TOP RAM
 ${font2}${color1}TOP RAM${alignr}${color0}PID | NAME | RAM${font}

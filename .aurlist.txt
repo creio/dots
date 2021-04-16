@@ -1,11 +1,14 @@
-archiso-git
+acestream-engine-stable
 aurutils
-caffeine-ng
+chaotic-keyring
+chaotic-mirrorlist
+duc
+ifuse
 lib32-opencl-nvidia-390xx
 libxnvctrl-390xx
-mkinitcpio-archiso-git
+mpv-acestream
 ngrok
-nvidia-390xx
+nvidia-390xx-dkms
 nvidia-390xx-settings
 nvidia-390xx-utils
 opencl-nvidia-390xx
@@ -15,6 +18,7 @@ picom-tryone-git
 pkgbuild-introspection
 polybar
 pup-bin
+python-pywapi
 rhvoice-git
 ssrt
 sublime-text-dev
@@ -23,5 +27,6 @@ toilet
 ttf-symbola
 ttf-weather-icons
 urxvt-resize-font-git
+xclickroot-git
 xwinwrap-git
 zsh-fast-syntax-highlighting

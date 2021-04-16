@@ -1,7 +1,7 @@
 configuration {
   theme: "default.rasi";
   show-icons: true;
-  icon-theme: "Qogir";
+  icon-theme: "Qogir-dark";
   font: "ClearSansMedium 9";
   terminal: "urxvt";
   modi: "drun,run,window";

@@ -8,8 +8,7 @@ typeset -gr NAME=dots
 typeset -gr CFG="$HOME/.${NAME}rc"
 typeset -i BACKUP RESTORE PUSH # ints
 
-main()
-{
+main() {
   prep_dir || exit 1
   if (( BACKUP )); then
     backup && echo "Backup complete"
@@ -20,8 +19,7 @@ main()
   fi
 }
 
-menu()
-{
+menu() {
   printf "\e[H\e[2J\n"
   opts=("Backup" "Restore" "Clean and backup" "Clean, backup, and push")
   PS3=$'\nEnter selection (0/q to exit): '
@@ -40,8 +38,7 @@ menu()
   esac
 }
 
-usage()
-{
+usage() {
   cat <<EOF
 USAGE:  $NAME [OPTIONS]
 
@@ -61,8 +58,7 @@ EOF
   exit 0
 }
 
-backup()
-{
+backup() {
   local to="" from=""
 
   (( ${#BKPS[@]} )) || { printf "no paths to backup..\nconfiguration is done in ${CFG}\n"; return 1; }
@@ -75,12 +71,6 @@ backup()
 
   mkdir -pv "$to"
   cd $HOME
-  if [[ -e "$HOME/README.md" ]]; then
-    sed -i -e "s/Date:.*/Date: $(date '+%d.%m.%Y,%H:%M:%S')/g" $HOME/README.md
-    [[ ! -d $HOME/docs ]] && mkdir $HOME/docs
-    ### run github ci
-    # cp -rf $HOME/README.md $HOME/docs/README.md
-  fi
   for i in "${BKPS[@]}"; do
     [[ -e "$i" ]] && rsync -aRhv --delete-excluded --delete --safe-links --progress "$i" "$to"
   done
@@ -92,8 +82,7 @@ backup()
   (( ! PUSH )) && return || git_commit
 }
 
-restore()
-{
+restore() {
   [[ -d $BPATH ]] || { echo "error: missing directory: $BPATH"; return 1; }
   local to='' from='' ans=''
 
@@ -128,8 +117,7 @@ restore()
   done
 }
 
-prep_dir()
-{
+prep_dir() {
   [[ $BPATH ]] || { echo "BPATH must be set in config."; return 1; }
   [[ $REPO ]] || { mkdir -p "$BPATH"; return 0; }
   if [[ -d $BPATH/.git ]]; then
@@ -139,13 +127,11 @@ prep_dir()
   fi
 }
 
-clean_dir()
-{
+clean_dir() {
   [[ -d $BPATH ]] && cd "$BPATH" && git clean -f -d -x || return 1
 }
 
-b_keybase()
-{
+b_keybase() {
   # systemctl start --user kbfs
   cmd="$(systemctl status --user kbfs | grep -i running 2>/dev/null || echo '')"
 
@@ -163,8 +149,7 @@ b_keybase()
   fi
 }
 
-git_commit()
-{
+git_commit() {
   [[ $REPO ]] && cd "$BPATH" || return 1
   git add .
   read -re -p $'\nEnter a short summary of this commit.\n\n> ' msg
@@ -172,8 +157,7 @@ git_commit()
   git push origin "${BRANCH:-HEAD}"
 }
 
-mk_cfg()
-{
+mk_cfg() {
   cat <<LOL >${CFG}
 # sourced as a bash script, this allows command substitution,
 # brace expansion, additional scripting, and anything else that works.
@@ -235,5 +219,3 @@ else
 fi
 
 (( BACKUP || RESTORE || PUSH )) && main
-
-# vim:ft=sh:fdm=marker:fmr={,}

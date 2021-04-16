@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # URL='https://yubnub.org/parser/parse?command='
+# https://startpage.com/do/search?q=
 
 URL='https://duckduckgo.com/?q='
 QUERY=$(cat ~/.cache/search_history | rofi -dmenu -p "Search")

@@ -125,7 +125,7 @@ label = %percentage_used%%
 [module/uparch]
 type = custom/script
 exec = ~/.config/polybar/uparch.sh
-interval = 600
+interval = 3600
 format-prefix = " "
 format-prefix-foreground = ${colors.accent}
 click-left = "urxvt -name w_85 -e ~/.config/polybar/uparch.sh d_up &"
@@ -145,7 +145,7 @@ type = custom/script
 exec = ~/.config/polybar/wtr.sh
 format-foreground = ${colors.text}
 # format-padding = 1
-interval = 600
+interval = 1800
 # label-font = 5
 # click-left =
 

@@ -1,14 +1,14 @@
 conky.config = {
     alignment = 'top_right',
     background = true,
-    default_color = 'a6c8ce',
-    color0 = '748c90',
-    color1 = '354D5F',
-    color2 = '385068',
-    color3 = '4C596D',
-    color4 = '916277',
-    color5 = '375598',
-    color6 = 'a6c8ce',
+    default_color = 'a5adff',
+    color0 = '494b5a',
+    color1 = '494b5a',
+    color2 = '494b5a',
+    color3 = '23ada0',
+    color4 = 'af2445',
+    color5 = 'a5adff',
+    color6 = 'a5adff',
     cpu_avg_samples = 2,
     diskio_avg_samples = 2,
     double_buffer = true,
@@ -60,10 +60,10 @@ ${color0}${hr}
 
 ${font2}${color1}NETWORK TRAFFIC${font}
 ${color}DOWN${alignr}${color6}${downspeedf enp2s5} KiB/s (${totaldown enp2s5})
-${downspeedgraph enp2s5 50,220}
+${downspeedgraph enp2s5 50,220 af2445 14151f scale 975KiB -l}
 
 ${color}UP${alignr}${color6}${upspeedf enp2s5} KiB/s (${totalup enp2s5})
-${upspeedgraph enp2s5 50,220}
+${upspeedgraph enp2s5 50,220 14151f 494a5b scale 100KiB -l}
 
 # CPU USAGE
 ${font2}${color1}CPU USAGE${font}
@@ -74,7 +74,7 @@ ${color0}${hr}
 
 # CPU FREQ/GRAPH
 ${font2}${color1}CPU FREQ${alignr}${freq_g}GHz${font}
-${color5}${loadgraph 80,220}
+${loadgraph 80,220 af2445 14151f scale 975KiB -l}
 
 # TOP CPU
 ${font2}${color1}TOP CPU${alignr}${color0}PID | NAME | CPU${font}

@@ -3,7 +3,7 @@ Lock,$HOME/.bin/multilock.sh -l blur,system-lock-screen
 Exit,^checkout(exit),system-shutdown
 
 exit,^tag(exit)
-exit to prompt,openbox --exit,system-log-out
-suspend,systemctl -i suspend,system-suspend
+exit to prompt,killall xfwm4,system-log-out
+suspend,systemctl -i suspend,system-log-out
 reboot,systemctl -i reboot,system-reboot
 poweroff,systemctl -i poweroff,system-shutdown
