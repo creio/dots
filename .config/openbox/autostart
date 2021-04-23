@@ -20,8 +20,8 @@ numlockx on &
 xsettingsd &
 # xfsettingsd &
 xfce4-power-manager &
-/usr/lib/xfce4/notifyd/xfce4-notifyd &
-# dunst &
+# /usr/lib/xfce4/notifyd/xfce4-notifyd &
+dunst &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 gnome-keyring-daemon --start --components=pkcs11,secrets &
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" -option "compose:ralt" &

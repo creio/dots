@@ -3,7 +3,7 @@
 <channel name="xfce4-power-manager" version="1.0">
   <property name="xfce4-power-manager" type="empty">
     <property name="general-notification" type="bool" value="true"/>
-    <property name="show-tray-icon" type="bool" value="false"/>
+    <property name="show-tray-icon" type="bool" value="true"/>
     <property name="show-panel-label" type="int" value="0"/>
     <property name="power-button-action" type="uint" value="4"/>
     <property name="sleep-button-action" type="uint" value="1"/>

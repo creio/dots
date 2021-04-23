@@ -1,30 +1,17 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-wm="$(xprop -root -notype _NET_WM_NAME | awk 'END{print $3}' | tr -d \")"
-if [[ $wm == i3 ]]; then
-  wm_res=I3
-else
-  wm_res=Openbox
-fi
+wm=$(wmctrl -m 2>/dev/null | grep "Name" | cut -d " " -f2)
+[[ -z $wm ]] && wm="$(xprop -root -notype _NET_WM_NAME | awk 'END{print $3}' | tr -d \")" || wm=$wm
 
-DIALOG_RESULT=$(echo -e "Exit $wm_res\nLock\nSuspend Lock\nHibernate\nReboot\nPoweroff\nExit Menu" | rofi -dmenu -i -p "SYSTEM" -hide-scrollbar -tokenize -lines 7 -eh 1 -width 25 -location 0 -xoffset 0 -yoffset 0 -padding 20 -disable-history)
+[[ $wm == i3 ]] && Logout_command="i3-msg 'exit'" || Logout_command="openbox --exit"
+Suspend_command="$HOME/.bin/multilock.sh -s blur & systemctl suspend"
+Hibernate_command="systemctl hibernate"
+Reboot_command="systemctl reboot"
+Poweroff_command="systemctl poweroff"
+Exit_command="exit 0"
 
-echo "This result is : $DIALOG_RESULT"
-sleep 1;
+options=$'Logout\nSuspend\nHibernate\nReboot\nPoweroff\nExit'
 
-if [ "$DIALOG_RESULT" = "Exit $wm_res" ]; then
-    [[ $wm == i3 ]] && i3-msg 'exit' || openbox --exit
-elif [ "$DIALOG_RESULT" = "Lock" ]; then
-    exec $HOME/.bin/multilock.sh -l blur
-elif [ "$DIALOG_RESULT" = "Suspend Lock" ]; then
-    exec $HOME/.bin/multilock.sh -s blur
-    exec systemctl suspend
-elif [ "$DIALOG_RESULT" = "Hibernate" ]; then
-    exec systemctl hibernate
-elif [ "$DIALOG_RESULT" = "Reboot" ]; then
-    exec systemctl reboot
-elif [ "$DIALOG_RESULT" = "Poweroff" ]; then
-    exec systemctl poweroff
-elif [ "$DIALOG_RESULT" = "Exit Menu" ]; then
-    exit 0
-fi
+rofi_command="rofi -hide-scrollbar -tokenize -lines 6 -eh 1 -width 25 -location 0 -xoffset 0 -yoffset 0 -padding 20 -disable-history"
+
+eval \$"$(echo "$options" | $rofi_command -dmenu -i -p "SYSTEM")_command"

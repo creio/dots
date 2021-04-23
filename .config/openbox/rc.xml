@@ -494,7 +494,7 @@
     </keybind>
     <keybind key="C-A-h">
       <action name="Execute">
-        <command>rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -width 500 -lines 18 -font "ClearSansMedium 10"</command>
+        <command>rofi -modi "Clip  :greenclip print" -show "Clip  " -run-command '{cmd}' -width 500 -lines 18 -font "ClearSansMedium 10"</command>
       </action>
     </keybind>
     <keybind key="A-c">

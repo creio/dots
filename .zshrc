@@ -71,7 +71,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 [[ -s ~/.env ]] && . ~/.env
 [[ -f ~/.alias_zsh ]] && . ~/.alias_zsh
 
-[[ -d $HOME/.gem/ruby/2.7.0 ]] && export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
+[[ $(command -v ruby) ]] && export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 # export PATH="$PATH:`yarn global bin`"
 
 # export GOPATH=$HOME/.go
