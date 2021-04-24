@@ -1,4 +1,4 @@
 TerminalEmulator=urxvt
-WebBrowser=chromium
 FileManager=Thunar
 
+WebBrowser=brave-browser

@@ -2,7 +2,7 @@
 # Install script for Arch Linux
 # https://raw.githubusercontent.com/creio/dots/master/.bin/creio.sh
 
-# curl -OL git.io/creio.sh
+# curl -LO git.io/creio.sh
 # nano creio.sh
 # sh creio.sh
 
@@ -28,7 +28,7 @@ H_DISK=${DISK}4
 timedatectl set-ntp true
 
 
-### ////// btrfs mbr ///////
+### ////// btrfs ///////
 # mkfs.btrfs -f -L "root" $R_DISK
 # mkfs.ext2 -L "boot" $B_DISK
 # mkswap -L "swap" $S_DISK
@@ -46,7 +46,6 @@ timedatectl set-ntp true
 # # mount -o subvol=@,compress=lzo,ssd,discard,relatime,space_cache,autodefrag $R_DISK /mnt
 # # mount -o subvol=@home,compress=lzo,ssd,discard,relatime,space_cache,autodefrag $R_DISK /mnt/home
 # swapon $S_DISK
-### ////// end btrfs mbr ///////
 
 
 ### ////// ext4 mbr & efi ///////
@@ -69,7 +68,6 @@ mount $B_DISK /mnt/boot
 mount $H_DISK /mnt/home
 ### ////// end ext4 mbr & efi ///////
 
-
 pacman -Sy --noconfirm --needed reflector
 reflector -a 12 -l 30 -f 30 -p https,http --sort rate --save /etc/pacman.d/mirrorlist
 
@@ -80,6 +78,9 @@ linux-headers linux-firmware lvm2
 # dhcpcd iwd
 wget git rsync gnu-netcat pv
 netctl unzip unrar p7zip zsh htop tmux
+xorg-apps xorg-server xorg-server-common xorg-xinit xorg-xkill xorg-xrdb xorg-xinput
+xf86-input-libinput xf86-video-dummy xf86-video-fbdev xf86-video-nouveau xf86-video-vesa
+plasma kde-system-meta konsole dolphin kdeconnect
 )
 
 for i in "${PKGS[@]}"; do
@@ -107,7 +108,7 @@ useradd -m -g users -G "log,network,storage,power,wheel" -s /bin/bash "$NEW_USER
 usermod -p ${PASSWORD} "$NEW_USER"
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
-echo "ctlos" > /etc/hostname
+echo $HOST_NAME > /etc/hostname
 
 ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 hwclock --systohc --utc
@@ -129,9 +130,9 @@ echo "FONT=cyr-sun16" >> /etc/vconsole.conf
 # sed -i "s/^HOOKS=\(.*block\)/HOOKS=\1 lvm2 ventoy/" /etc/mkinitcpio.conf
 # sed -i "s/keyboard fsck/keyboard keymap fsck/g" /etc/mkinitcpio.conf
 ## btrfs rm fsck
-# sed -i "s/keyboard fsck/keyboard keymap/g" /etc/mkinitcpio.conf
+sed -i "s/keyboard fsck/keyboard keymap/g" /etc/mkinitcpio.conf
 
-sed -i "s/^HOOKS=\(.*keyboard\)/HOOKS=\1 keymap/" /etc/mkinitcpio.conf
+# sed -i "s/^HOOKS=\(.*keyboard\)/HOOKS=\1 keymap/" /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 if [ "$virt_d" = "oracle" ]; then
@@ -146,17 +147,15 @@ else
   echo "Virt $virt_d"
 fi
 
-# pacman -S --noconfirm --needed efibootmgr
+pacman -S --noconfirm --needed efibootmgr
 
-grub-install $DISK
-# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
+# grub-install $DISK
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
 
-sed -i -e 's/^GRUB_TIMEOUT=.*$/GRUB_TIMEOUT=0/' /etc/default/grub
+# sed -i -e 's/^GRUB_TIMEOUT=.*$/GRUB_TIMEOUT=0/' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
-echo "$HOST_NAME" > /mnt/etc/hostname
-
-cat <<EOF >/mnt/etc/hosts
+cat <<EOF >/etc/hosts
 127.0.0.1       localhost
 ::1             localhost
 127.0.1.1       $HOST_NAME.localdomain $HOST_NAME
@@ -165,7 +164,10 @@ EOF
 # systemctl enable dhcpcd
 # systemctl enable sshd
 
-# systemctl enable NetworkManager
+systemctl enable NetworkManager
+
+# systemctl enable systemd-networkd
+# systemctl enable systemd-resolved
 
 cat <<EOF >/etc/systemd/network/20-ethernet.network
 [Match]
@@ -173,11 +175,10 @@ Name=en*
 Name=eth*
 
 [Network]
-DHCP=yes
+# DHCP=yes
 EOF
 
-systemctl enable systemd-networkd
-systemctl enable systemd-resolved
+systemctl enable sddm
 
 echo "System Setup Complete"
 LOL

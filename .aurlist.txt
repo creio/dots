@@ -1,11 +1,15 @@
 acestream-engine-stable
 aurutils
+brave-bin
 chaotic-keyring
 chaotic-mirrorlist
 duc
+exodus
+gtkhash-thunar
 ifuse
 lib32-opencl-nvidia-390xx
 libxnvctrl-390xx
+memavaild
 mpv-acestream
 ngrok
 nvidia-390xx-dkms
@@ -17,6 +21,7 @@ perl-linux-desktopfiles
 picom-tryone-git
 pkgbuild-introspection
 polybar
+prelockd
 pup-bin
 python-pywapi
 rhvoice-git

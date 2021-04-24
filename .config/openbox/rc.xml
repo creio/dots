@@ -419,7 +419,7 @@
     </keybind>
     <keybind key="A-w">
       <action name="Execute">
-        <command>findapp chromium</command>
+        <command>findapp brave</command>
       </action>
     </keybind>
     <keybind key="A-m">
