@@ -15,10 +15,10 @@ fi
 
 NEW_USER=creio
 HOST_NAME=ctlos
-PASSWORD=$(/usr/bin/openssl passwd -crypt "$NEW_USER")
+PASSWORD="1"
 
 # cfdisk -z /dev/sda
-DISK=/dev/sdb
+DISK=/dev/sda
 
 R_DISK=${DISK}1
 B_DISK=${DISK}2
@@ -27,45 +27,42 @@ H_DISK=${DISK}4
 
 timedatectl set-ntp true
 
-
 ### ////// btrfs ///////
-# mkfs.btrfs -f -L "root" $R_DISK
+mkfs.btrfs -f -L "root" $R_DISK
+mkfs.fat -F32 $B_DISK
 # mkfs.ext2 -L "boot" $B_DISK
 # mkswap -L "swap" $S_DISK
 
-# mount $R_DISK /mnt
-# btrfs subvolume create /mnt/@
-# btrfs subvolume create /mnt/@home
-# umount /mnt
+mount $R_DISK /mnt
+btrfs subvolume create /mnt/@
+btrfs subvolume create /mnt/@home
+umount /mnt
 
-# mount -o subvol=@,compress=lzo,relatime,space_cache,autodefrag $R_DISK /mnt
-# mkdir /mnt/{boot,home}
-# mount $B_DISK /mnt/boot
-# mount -o subvol=@home,compress=lzo,relatime,space_cache,autodefrag $R_DISK /mnt/home
-# # // ssd trim
-# # mount -o subvol=@,compress=lzo,ssd,discard,relatime,space_cache,autodefrag $R_DISK /mnt
-# # mount -o subvol=@home,compress=lzo,ssd,discard,relatime,space_cache,autodefrag $R_DISK /mnt/home
+mount -o subvol=@,compress=lzo,relatime,space_cache,autodefrag $R_DISK /mnt
+mkdir -p /mnt/{boot/efi,home}
+mount $B_DISK /mnt/boot/efi
+mount -o subvol=@home,compress=lzo,relatime,space_cache,autodefrag $R_DISK /mnt/home
+
 # swapon $S_DISK
 
-
 ### ////// ext4 mbr & efi ///////
-yes | mkfs.ext4 $R_DISK -L root
-yes | mkfs.ext2 $B_DISK -L boot
-# yes | mkfs.fat -F32 $B_DISK -L boot
-yes | mkfs.ext4 $H_DISK -L home
+# yes | mkfs.ext4 $R_DISK -L root
+# yes | mkfs.ext2 $B_DISK -L boot
+# yes | mkfs.fat -F32 $B_DISK
+# yes | mkfs.ext4 $H_DISK -L home
 
-mkswap $S_DISK -L swap
-swapon $S_DISK
+# mkswap $S_DISK -L swap
+# swapon $S_DISK
 
-mount $R_DISK /mnt
+# mount $R_DISK /mnt
 
-mkdir /mnt/{boot,home}
+# mkdir /mnt/{boot,home}
 # mkdir -p /mnt/{boot/efi,home}
 
-mount $B_DISK /mnt/boot
+# mount $B_DISK /mnt/boot
 # mount $B_DISK /mnt/boot/efi
 
-mount $H_DISK /mnt/home
+# mount $H_DISK /mnt/home
 ### ////// end ext4 mbr & efi ///////
 
 pacman -Sy --noconfirm --needed reflector
@@ -80,7 +77,7 @@ wget git rsync gnu-netcat pv
 netctl unzip unrar p7zip zsh htop tmux
 xorg-apps xorg-server xorg-server-common xorg-xinit xorg-xkill xorg-xrdb xorg-xinput
 xf86-input-libinput xf86-video-dummy xf86-video-fbdev xf86-video-nouveau xf86-video-vesa
-plasma kde-system-meta konsole dolphin kdeconnect
+plasma kde-system-meta konsole dolphin kdeconnect networkmanager sddm
 )
 
 for i in "${PKGS[@]}"; do
@@ -137,9 +134,8 @@ mkinitcpio -p linux
 
 if [ "$virt_d" = "oracle" ]; then
   echo "Virtualbox"
-  pacman -S --noconfirm --needed virtualbox-guest-utils-nox nfs-utils
+  pacman -S --noconfirm --needed virtualbox-guest-utils virtualbox-guest-dkms
   systemctl enable vboxservice
-  systemctl enable rpcbind
   usermod -a -G vboxsf ${NEW_USER}
 elif [ "$virt_d" = "vmware" ]; then
   echo
@@ -189,7 +185,7 @@ rm /mnt/settings.sh
 
 echo "==== Done settings.sh ===="
 
-swapoff $S_DISK
+# swapoff $S_DISK
 umount -R /mnt
 
 echo "==== Finish Him ===="
