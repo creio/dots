@@ -13,9 +13,9 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-NEW_USER=creio
+NEW_USER=cretm
 HOST_NAME=ctlos
-PASSWORD="1"
+PASSWORD=$(/usr/bin/openssl passwd -crypt "$NEW_USER")
 
 # cfdisk -z /dev/sda
 DISK=/dev/sda
