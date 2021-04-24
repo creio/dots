@@ -76,8 +76,8 @@ linux-headers linux-firmware lvm2
 wget git rsync gnu-netcat pv
 netctl unzip unrar p7zip zsh htop tmux
 xorg-apps xorg-server xorg-server-common xorg-xinit xorg-xkill xorg-xrdb xorg-xinput
-xf86-input-libinput xf86-video-dummy xf86-video-fbdev xf86-video-nouveau xf86-video-vesa
-plasma kde-system-meta konsole dolphin kdeconnect networkmanager sddm
+xorg-drivers
+plasma-meta kde-system-meta packagekit-qt5 konsole dolphin kdeconnect networkmanager sddm
 )
 
 for i in "${PKGS[@]}"; do
