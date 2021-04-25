@@ -15,7 +15,8 @@ fi
 
 NEW_USER=cretm
 HOST_NAME=ctlos
-PASSWORD=$(/usr/bin/openssl passwd -crypt "$NEW_USER")
+PASSWORD="1"
+# PASSWORD=$(/usr/bin/openssl passwd -crypt "$NEW_USER")
 
 # cfdisk -z /dev/sda
 DISK=/dev/sda
@@ -66,7 +67,7 @@ mount -o subvol=@home,compress=lzo,relatime,space_cache,autodefrag $R_DISK /mnt/
 ### ////// end ext4 mbr & efi ///////
 
 pacman -Sy --noconfirm --needed reflector
-reflector -a 12 -l 30 -f 30 -p https,http --sort rate --save /etc/pacman.d/mirrorlist
+reflector -a 12 -l 15 -f 15 -p https,http --sort rate --save /etc/pacman.d/mirrorlist
 
 PKGS=(
 base base-devel linux nano grub reflector nano openssh
@@ -76,8 +77,10 @@ linux-headers linux-firmware lvm2
 wget git rsync gnu-netcat pv
 netctl unzip unrar p7zip zsh htop tmux
 xorg-apps xorg-server xorg-server-common xorg-xinit xorg-xkill xorg-xrdb xorg-xinput
-xorg-drivers
-plasma-meta kde-system-meta packagekit-qt5 konsole dolphin kdeconnect networkmanager sddm
+xorg-drivers networkmanager sddm
+plasma-meta kde-system-meta kde-utilities-meta plasma-pa packagekit-qt5
+plasma-desktop plasma-wayland-session egl-wayland
+konsole dolphin ark kate kwalletmanager kdeconnect latte-dock
 )
 
 for i in "${PKGS[@]}"; do
@@ -91,7 +94,7 @@ virt_d=$(systemd-detect-virt)
 
 # sed '1,/^#chroot$/d'
 cat <<LOL >/mnt/settings.sh
-reflector -a 12 -l 30 -f 30 -p https,http --sort rate --save /etc/pacman.d/mirrorlist
+reflector -a 12 -l 15 -f 15 -p https,http --sort rate --save /etc/pacman.d/mirrorlist
 pacman-key --init
 pacman-key --populate
 
@@ -143,9 +146,8 @@ else
   echo "Virt $virt_d"
 fi
 
-pacman -S --noconfirm --needed efibootmgr
-
 # grub-install $DISK
+pacman -S --noconfirm --needed efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
 
 # sed -i -e 's/^GRUB_TIMEOUT=.*$/GRUB_TIMEOUT=0/' /etc/default/grub
