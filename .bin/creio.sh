@@ -66,7 +66,7 @@ mount -o subvol=@home,compress=lzo,relatime,space_cache,autodefrag $R_DISK /mnt/
 # mount $H_DISK /mnt/home
 ### ////// end ext4 mbr & efi ///////
 
-pacman -Sy --noconfirm --needed reflector
+pacman -Syy --noconfirm --needed reflector
 reflector --verbose -a 12 -l 15 -f 15 -p https,http --sort rate --save /etc/pacman.d/mirrorlist
 
 PKGS=(
@@ -81,11 +81,13 @@ linux-firmware lvm2
 wget git rsync gnu-netcat pv bash-completion
 netctl unzip unrar p7zip zsh htop tmux
 xorg-apps xorg-server xorg-server-common xorg-xinit xorg-xkill xorg-xrdb xorg-xinput
-xorg-drivers networkmanager sddm
+xf86-video-intel xf86-video-amdgpu xf86-video-ati xf86-video-nouveau xf86-video-fbdev xf86-video-dummy
+xf86-video-vesa xf86-video-openchrome xf86-video-sisusb xf86-video-vmware xf86-video-voodoo
+networkmanager sddm
 plasma-meta kde-system-meta kde-utilities-meta plasma-pa packagekit-qt5
 plasma-desktop plasma-wayland-session egl-wayland
 konsole dolphin ark kate kwalletmanager kdeconnect latte-dock
-brave-bin vlc
+brave-bin vlc yay-bin
 )
 
 for i in "${PKGS[@]}"; do
