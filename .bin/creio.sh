@@ -12,17 +12,17 @@ if [[ $EUID -ne 0 ]]; then
    echo "Try 'sudo sh'"
    exit 1
 fi
-# sonya
-NEW_USER=cretm
+
+NEW_USER=sonya
 HOST_NAME=ctlos
 C_PASS="1"
 PASSWORD=$(/usr/bin/openssl passwd -crypt "$C_PASS")
 
 # cfdisk -z /dev/sda
-DISK=/dev/sda
+DISK=/dev/sdc
 
-R_DISK=${DISK}1
-B_DISK=${DISK}2
+R_DISK=${DISK}2
+B_DISK=${DISK}1
 S_DISK=${DISK}3
 H_DISK=${DISK}4
 
