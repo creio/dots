@@ -83,6 +83,7 @@ netctl unzip unrar p7zip zsh htop tmux
 xorg-apps xorg-server xorg-server-common xorg-xinit xorg-xkill xorg-xrdb xorg-xinput
 xf86-video-intel xf86-video-amdgpu xf86-video-ati xf86-video-nouveau xf86-video-fbdev xf86-video-dummy
 xf86-video-vesa xf86-video-openchrome xf86-video-sisusb xf86-video-vmware xf86-video-voodoo
+xf86-input-libinput xf86-input-elographics xf86-input-evdev xf86-input-void xf86-input-vmmouse
 networkmanager sddm
 plasma-meta kde-system-meta kde-utilities-meta plasma-pa packagekit-qt5
 plasma-desktop plasma-wayland-session egl-wayland
