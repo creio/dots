@@ -12,11 +12,11 @@ if [[ $EUID -ne 0 ]]; then
    echo "Try 'sudo sh'"
    exit 1
 fi
-
+# sonya
 NEW_USER=cretm
 HOST_NAME=ctlos
-PASSWORD="1"
-# PASSWORD=$(/usr/bin/openssl passwd -crypt "$NEW_USER")
+C_PASS="1"
+PASSWORD=$(/usr/bin/openssl passwd -crypt "$C_PASS")
 
 # cfdisk -z /dev/sda
 DISK=/dev/sda
@@ -70,11 +70,15 @@ pacman -Sy --noconfirm --needed reflector
 reflector -a 12 -l 15 -f 15 -p https,http --sort rate --save /etc/pacman.d/mirrorlist
 
 PKGS=(
-base base-devel linux nano grub reflector nano openssh
-linux-headers linux-firmware lvm2
+base base-devel iwd nano grub reflector openssh
+linux linux-headers
+# linux-lts linux-lts-headers
+# linux-zen linux-zen-headers
+linux-firmware lvm2
+# arch-install-scripts
 # amd-ucode intel-ucode
-# dhcpcd iwd
-wget git rsync gnu-netcat pv
+# dhcpcd
+wget git rsync gnu-netcat pv bash-completion
 netctl unzip unrar p7zip zsh htop tmux
 xorg-apps xorg-server xorg-server-common xorg-xinit xorg-xkill xorg-xrdb xorg-xinput
 xorg-drivers networkmanager sddm
@@ -169,11 +173,10 @@ systemctl enable NetworkManager
 
 cat <<EOF >/etc/systemd/network/20-ethernet.network
 [Match]
-Name=en*
-Name=eth*
+Type=ether
 
 [Network]
-# DHCP=yes
+DHCP=yes
 EOF
 
 systemctl enable sddm
