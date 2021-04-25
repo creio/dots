@@ -1,6 +1,6 @@
 # Dotfiles
 
-Date: 25.04.2021,12:30:22
+Date: 16.04.2021,12:49:44
 
 - Repo: [creio/dots](https://github.com/creio/dots)
 - Distro: [Ctlos/Arch Linux](https://ctlos.github.io/)

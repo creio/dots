@@ -3,6 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Start ~ page</title>
+  <!-- <link rel="icon" href="logo.png" type="image/icon type"> -->
   <style type="text/css">
     html {
       background-image: url("https://raw.githubusercontent.com/creio/dots/master/docs/screen/bg.png");
@@ -80,7 +81,29 @@
       49% { opacity: 0; }
       50% { opacity: 1; }
     }
+    .data {
+      background: transparent;
+      width: 89%;
+      border: none;
+      outline:0;
+      color: transparent;
+      text-shadow:0 0 0 #cfd1dd;
+      caret-color: #aeb1ff;
+      font-size: 16px; font-family: "Hack Nerd Font Mono", "Droid Sans Mono", "Liberation Sans Mono", monospace;
+    }
   </style>
+  <script>
+    function send_data(event){
+      var str = document.getElementById("pososi").value;
+      if(event.keyCode == 13){
+        if(str != ""){
+          window.open("https://gg.ctlos.ru/search?q=" + str, '_blank');
+          // location = "https://startpage.com/do/search?q=" + str;
+          // location = "https://duckduckgo.com/?q=" + str;
+        }
+      }
+    }
+  </script>
 </head>
 <body>
   <p><span id="ps1">~ </span><span id="prompt">  </span>ls</p>
@@ -96,6 +119,11 @@
     <a id="url" href="https://youtube.com">youtube</a>
     <a id="url" href="https://xhamster.com/">xhamster</a>
   </nav>
-  <p><span id="ps1">~ </span><span id="prompt">  </span><span id="cursor">_</span></p>
+  <p>
+    <span id="ps1">~ </span>
+    <span id="prompt">  </span>
+      <input id="pososi" onkeypress="send_data(event)" autocomplete=off class=data type = text autofocus maxlength="2048">
+    </span>
+  </p>
 </body>
 </html>
