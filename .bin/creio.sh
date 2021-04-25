@@ -67,7 +67,7 @@ mount -o subvol=@home,compress=lzo,relatime,space_cache,autodefrag $R_DISK /mnt/
 ### ////// end ext4 mbr & efi ///////
 
 pacman -Sy --noconfirm --needed reflector
-reflector -a 12 -l 15 -f 15 -p https,http --sort rate --save /etc/pacman.d/mirrorlist
+reflector --verbose -a 12 -l 15 -f 15 -p https,http --sort rate --save /etc/pacman.d/mirrorlist
 
 PKGS=(
 base base-devel iwd nano grub reflector openssh
@@ -85,13 +85,14 @@ xorg-drivers networkmanager sddm
 plasma-meta kde-system-meta kde-utilities-meta plasma-pa packagekit-qt5
 plasma-desktop plasma-wayland-session egl-wayland
 konsole dolphin ark kate kwalletmanager kdeconnect latte-dock
+brave-bin vlc
 )
 
 for i in "${PKGS[@]}"; do
-  pacstrap /mnt $i
+  pacstrap /mnt $i 2>&1 | tee -a /tmp/log
 done
 
-genfstab -pU /mnt >> /mnt/etc/fstab
+genfstab -pU /mnt > /mnt/etc/fstab
 
 echo "==== create settings.sh ===="
 virt_d=$(systemd-detect-virt)
@@ -185,7 +186,7 @@ echo "System Setup Complete"
 LOL
 
 chmod +x /mnt/settings.sh
-arch-chroot /mnt /bin/bash -c /settings.sh
+arch-chroot /mnt /bin/bash -c /settings.sh 2>&1 | tee -a /tmp/log
 rm /mnt/settings.sh
 
 echo "==== Done settings.sh ===="
