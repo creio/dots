@@ -19,26 +19,26 @@
 	[
 		".svn", ".git", ".hg", "CVS",
 		"work",
-    ".sass-cache",
+		".sass-cache",
 		"node_modules",
-    "bitrix/cache",
-    "bitrix/managed_cache",
-    "bitrix/stack_cache",
-    "bitrix/backup",
-    "bitrix/tmp",
-    "bitrix/updates",
-    // "bitrix/wizards",
-    "upload"
+		"bitrix/cache",
+		"bitrix/managed_cache",
+		"bitrix/stack_cache",
+		"bitrix/backup",
+		"bitrix/tmp",
+		"bitrix/updates",
+		// "bitrix/wizards",
+		"upload"
 	],
-  "file_exclude_patterns": [
-    "*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace",
+	"file_exclude_patterns": [
+		"*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace",
 
-    // "*.min.js",
-    // "*.min.css",
-    "*.map.js",
-    "*.js.map",
-    "*.bundle.js",
-    "*.bundle.css"
+		// "*.min.js",
+		// "*.min.css",
+		"*.map.js",
+		"*.js.map",
+		"*.bundle.js",
+		"*.bundle.css"
 	],
 	"font_face": "Roboto Mono Medium",
 	"font_size": 9,

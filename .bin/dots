@@ -72,11 +72,11 @@ backup() {
   mkdir -pv "$to"
   cd $HOME
   for i in "${BKPS[@]}"; do
-    [[ -e "$i" ]] && rsync -aRhv --delete-excluded --delete --safe-links --progress "$i" "$to"
+    [[ -e "$i" ]] && rsync -aRhvP --delete-excluded --delete --safe-links "$i" "$to"
   done
   [[ ! -d $BPATH/$ROOT_DIR ]] && mkdir -pv $BPATH/$ROOT_DIR
   for i in "${ROOT_BKPS[@]}"; do
-    [[ -e "/$i" ]] && rsync -aRhv --delete-excluded --delete --safe-links --progress "/$i" "$to/$ROOT_DIR"
+    [[ -e "/$i" ]] && rsync -aRhvP --delete-excluded --delete --safe-links "/$i" "$to/$ROOT_DIR"
   done
 
   (( ! PUSH )) && return || git_commit
@@ -100,7 +100,7 @@ restore() {
       to+='/'
       from+='/.'
     fi
-    [[ ! $i == $HOME/* ]] && rsync -ahv --exclude={"$BPATH/$ROOT_DIR"} --safe-links --progress "$from" "$to"
+    [[ ! $i == $HOME/* ]] && rsync -ahvP --exclude={"$BPATH/$ROOT_DIR"} --safe-links "$from" "$to"
   done
 
   echo "send backup root directory"
@@ -113,7 +113,7 @@ restore() {
       to+='/'
       from+='/.'
     fi
-    [[ ! $i == /* ]] && sudo rsync -ahv --safe-links --progress "$from" "$to"
+    [[ ! $i == /* ]] && sudo rsync -ahvP --safe-links "$from" "$to"
   done
 }
 
@@ -142,7 +142,7 @@ b_keybase() {
     else
       to="$KB_PATH"
     fi
-    [[ -d $KB_PATH ]] && rsync -ahC --info=progress2 --no-i-r --safe-links --progress --delete --delete-excluded --include={".wall/wl.jpg",".wall/wl.png",".wall/lock.png"} --exclude={".wall/*",".icons/",".themes/",".config/sublime-text-3/"} "$BPATH/" "$to" || return 1
+    [[ -d $KB_PATH ]] && rsync -ahCvP --no-i-r --safe-links --delete --delete-excluded --include={".wall/wl.jpg",".wall/wl.png",".wall/lock.png"} --exclude={".wall/*",".icons/",".themes/",".config/sublime-text-3/"} "$BPATH/" "$to" || return 1
   else
     echo "run: systemctl start --user kbfs"
     exit 0
