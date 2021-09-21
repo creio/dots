@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [[ $EUID -ne 0 ]]; then
-  echo "This script must be run as root." >&2
-  exit 1
+	echo "This script must be run as root." >&2
+	exit 1
 fi
 
 cpu_temp=$(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))

@@ -3,7 +3,7 @@
 # NAME: yad-progress-bar
 # PATH: /mnt/e/bin
 # DESC: Display yad progress bar % with names.
-# DATE: Apr 23, 2018.  Modified Oct 18, 2019.
+# DATE: Apr 23, 2018.	 Modified Oct 18, 2019.
 
 Source="/bin"
 Title="Processing files for: $Source"
@@ -11,14 +11,14 @@ Count=0
 AllFiles=$(cat /tmp/log | wc -l)
 
 for f in $(cat /tmp/log); do
-    echo "#$f"              # Display file name in progress bar.
-    Count=$(( $Count + 1 ))
-    Percent=$(( Count * 100 / AllFiles ))
-    echo $Percent           # Display percent complete in progress bar.
-    sleep .025
-done | yad --progress       --auto-close \
-    --width=500             --height=300 \
-    --title="$Title"        --enable-log "Current filename" \
-    --log-expanded          --log-height=250 \
-    --log-on-top            --percentage=0 \
-    --no-cancel             --center
+		echo "#$f"							# Display file name in progress bar.
+		Count=$(( $Count + 1 ))
+		Percent=$(( Count * 100 / AllFiles ))
+		echo $Percent						# Display percent complete in progress bar.
+		sleep .025
+done | yad --progress				--auto-close \
+		--width=500							--height=300 \
+		--title="$Title"				--enable-log "Current filename" \
+		--log-expanded					--log-height=250 \
+		--log-on-top						--percentage=0 \
+		--no-cancel							--center

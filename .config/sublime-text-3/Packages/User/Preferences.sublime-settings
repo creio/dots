@@ -83,7 +83,7 @@
 	"spell_check": false,
 	"tab_size": 2,
 	"theme": "gruvbox.sublime-theme",
-	"translate_tabs_to_spaces": true,
+	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
 	"update_check": false,
 	"word_wrap": true,

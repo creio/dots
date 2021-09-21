@@ -10,11 +10,11 @@ LINK_MUSIC="$1"
 WORKDIR="$HOME/Videos"
 OLDPATH="$(pwd)"
 agentsList=(
-    "Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0"
-    "Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201"
-    "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.1 Safari/537.36"
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36"
+		"Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0"
+		"Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201"
+		"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
+		"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.1 Safari/537.36"
+		"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36"
 )
 RANDOM=$$$(date +%s)
 rand=$[$RANDOM % ${#agentsList[@]}]
@@ -26,16 +26,16 @@ echo "Downloading $LINK_MUSIC..."
 # --proxy "socks5://127.0.0.1:${TOR_PORT:-9050}" \
 
 youtube-dl \
-  --proxy "socks5://127.0.0.1:9050" \
-  --user-agent "$agent" \
-  --add-metadata \
-  --ignore-errors \
-  -f bestaudio \
-  --extract-audio \
-  --audio-format mp3 \
-  --audio-quality 0 \
-  -o '%(playlist)s/%(title)s.%(ext)s' \
-  "$LINK_MUSIC" || exit 1
+	--proxy "socks5://127.0.0.1:9050" \
+	--user-agent "$agent" \
+	--add-metadata \
+	--ignore-errors \
+	-f bestaudio \
+	--extract-audio \
+	--audio-format mp3 \
+	--audio-quality 0 \
+	-o '%(playlist)s/%(title)s.%(ext)s' \
+	"$LINK_MUSIC" || exit 1
 
 echo "$LINK_MUSIC success"
 cd $OLDPATH

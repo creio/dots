@@ -52,12 +52,12 @@ c1="${reset}${cyan}"			# second color
 
 cat <<EOF
 
-${c0}        /\        ${nc}${USER}${c1}@${nc}${host}${reset}
-${c0}       /  \       ${lc}OS:        ${c1}${os}${reset}
-${c0}      /    \      ${lc}KERNEL:    ${c1}${kernel}${reset}
-${c0}     /  ${c1}__  \     ${lc}UPTIME:    ${c1}${uptime}${reset}
-${c1}    /  (**)  \    ${lc}PACKAGES:  ${c1}${packages}${reset}
-${c1}   //__|  |__\\\\   ${lc}SHELL:     ${c1}${shell}${reset}
-${c1}  ///        \\\\\  ${lc}${envtype}:        ${c1}${WM}${reset}
+${c0}				 /\				 ${nc}${USER}${c1}@${nc}${host}${reset}
+${c0}				/	 \			 ${lc}OS:				 ${c1}${os}${reset}
+${c0}			 /		\			 ${lc}KERNEL:		 ${c1}${kernel}${reset}
+${c0}			/	 ${c1}__	\			${lc}UPTIME:		${c1}${uptime}${reset}
+${c1}		 /	(**)	\		 ${lc}PACKAGES:	 ${c1}${packages}${reset}
+${c1}		//__|	 |__\\\\	 ${lc}SHELL:		 ${c1}${shell}${reset}
+${c1}	 ///				\\\\\	 ${lc}${envtype}:				 ${c1}${WM}${reset}
 
 EOF

@@ -2,18 +2,18 @@
 # reflector --list
 
 if [ "$(which curl)" != "curl not found" ]; then
-  check_country=$(curl -s https://ipinfo.io/country)
+	check_country=$(curl -s https://ipinfo.io/country)
 fi
 
 if [ "$1" = "-lc" ]; then
-  # mirrors -lc
-  sudo reflector -c $check_country,ru,ua,pl,gb -p https,http -a 12 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
+	# mirrors -lc
+	sudo reflector -c $check_country,ru,ua,pl,gb -p https,http -a 12 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 elif [ "$1" = "-c" ]; then
-  # mirrors -c
-  sudo reflector -c $check_country -p https,http -a 12 --sort score -f 20 --save /etc/pacman.d/mirrorlist
+	# mirrors -c
+	sudo reflector -c $check_country -p https,http -a 12 --sort score -f 20 --save /etc/pacman.d/mirrorlist
 else
-  # mirrors
-  sudo reflector --verbose -a 12 -l 50 -p https,http --sort score -f 15 --save /etc/pacman.d/mirrorlist
+	# mirrors
+	sudo reflector --verbose -a 12 -l 50 -p https,http --sort score -f 15 --save /etc/pacman.d/mirrorlist
 fi
 
 cat /etc/pacman.d/mirrorlist

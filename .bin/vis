@@ -6,10 +6,10 @@
 # Author: Guido_Fe
 #
 # Dependencies (and credits):
-#   xdotool
-#   cava
-#   URxvt
-#   devilspie
+#		xdotool
+#		cava
+#		URxvt
+#		devilspie
 #
 # Usage:
 #
@@ -17,14 +17,14 @@
 #
 # Description:
 #
-#   This script starts the cava music visualizer on a transparent backround through URxvt
-#   ('cause it's easy to customize and support transparent foreground and background). It
-#   then uses devilspie to strip it of his window decorations and rules, move it to the
-#   right place and resize it.
-#   Problem: the panel doesn't allow you to focus the windows below it.
-#   My solution: move cava under the screen when the mouse pointer go over
-#   it, and reset its position when I move the pointer away. I accomplished this
-#   behavior with xdotool.
+#		This script starts the cava music visualizer on a transparent backround through URxvt
+#		('cause it's easy to customize and support transparent foreground and background). It
+#		then uses devilspie to strip it of his window decorations and rules, move it to the
+#		right place and resize it.
+#		Problem: the panel doesn't allow you to focus the windows below it.
+#		My solution: move cava under the screen when the mouse pointer go over
+#		it, and reset its position when I move the pointer away. I accomplished this
+#		behavior with xdotool.
 #
 #========================================================================================
 
@@ -82,8 +82,6 @@ trPixel=10
 #=============
 
 # Process parameters
-
-
 if [ ! $cavaConf = '' ]; then
 	cavaConf=" -p $cavaConf"
 fi
@@ -124,18 +122,18 @@ elif [ "$1" = 'start' ]; then
 	echo 0 > $isTriggeredFile
 	#Write the conf file for devilspie
 	echo '(and
-	    (is (window_name) "cava")
-	    (is (window_class) "URxvt")
-	    (begin
-	        (stick)
-	        (above)
-	        (pin)
-	        (undecorate)
-	        (skip_pager)
-	        (skip_tasklist)
-	        (wintype "dock")
-	        (geometry "'$Xscreen'x'$h'+0+'`expr $Yscreen - $h + $offset`'")
-	    )
+			(is (window_name) "cava")
+			(is (window_class) "URxvt")
+			(begin
+					(stick)
+					(above)
+					(pin)
+					(undecorate)
+					(skip_pager)
+					(skip_tasklist)
+					(wintype "dock")
+					(geometry "'$Xscreen'x'$h'+0+'`expr $Yscreen - $h + $offset`'")
+			)
 	)' > /tmp/cava.ds
 	#Start urxvt and execute cava in it. Change the color white to the one chosen
 	urxvt -bg "[0]red"$inCol$outCol -b 0 -depth 32 +sb -e cava$cavaConf &
@@ -171,8 +169,8 @@ elif [ "$1" = 'start' ]; then
 		cursorExited=0;
 		# wait for the mouse to leave the bottom of the screen
 		while [ $cursorExited -eq 0 ]; do
-		    eval $(xdotool getmouselocation --shell)
-		    if [ $Y -lt `expr $Yscreen - $h + $offset` ]; then
+				eval $(xdotool getmouselocation --shell)
+				if [ $Y -lt `expr $Yscreen - $h + $offset` ]; then
 			# Reset cava position
 			cursorExited=1
 			Yd=$Yscreen
@@ -183,8 +181,8 @@ elif [ "$1" = 'start' ]; then
 				xdotool windowmove $wId x $Yd
 			done
 			xdotool windowmove $wId x $Ydefault
-		    fi
-		    sleep $mouseDelay
+				fi
+				sleep $mouseDelay
 		done
 	done
 fi

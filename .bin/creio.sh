@@ -8,7 +8,7 @@
 
 # Check for root
 if [[ $EUID -ne 0 ]]; then
-  echo "run root" && exit 1
+	echo "run root" && exit 1
 fi
 
 HOST_NAME=rach
@@ -22,7 +22,7 @@ echo "sda,vda,nvme..?"
 read -p "Disk? : " I_DISK
 DISK=/dev/$I_DISK
 if [[ ! $(lsblk -d | grep $I_DISK) ]]; then
-  echo "Error no disk."; exit 1
+	echo "Error no disk."; exit 1
 fi
 
 dd if=/dev/zero of=${DISK} status=progress bs=4096 count=256
@@ -82,7 +82,7 @@ wget git rsync gnu-netcat pv bash-completion htop tmux networkmanager
 )
 
 for i in "${PKGS[@]}"; do
-  pacstrap /mnt $i 2>&1 | tee -a /tmp/log
+	pacstrap /mnt $i 2>&1 | tee -a /tmp/log
 done
 
 genfstab -pU /mnt > /mnt/etc/fstab
@@ -136,14 +136,14 @@ sed -i "s/^HOOKS=\(.*keyboard\)/HOOKS=\1 keymap/" /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 if [ "$virt_d" = "oracle" ]; then
-  echo "Virtualbox"
-  pacman -S --noconfirm --needed virtualbox-guest-utils virtualbox-guest-dkms
-  systemctl enable vboxservice
-  usermod -a -G vboxsf ${NEW_USER}
+	echo "Virtualbox"
+	pacman -S --noconfirm --needed virtualbox-guest-utils virtualbox-guest-dkms
+	systemctl enable vboxservice
+	usermod -a -G vboxsf ${NEW_USER}
 elif [ "$virt_d" = "vmware" ]; then
-  echo
+	echo
 else
-  echo "Virt $virt_d"
+	echo "Virt $virt_d"
 fi
 
 # bootctl install
@@ -211,9 +211,9 @@ cp /boot/EFI/GRUB/grubx64.efi /boot/EFI/GRUB/loader.efi
 efibootmgr -c -d $DISK -p 1 -L "PreLoader" -l /EFI/GRUB/PreLoader.efi
 
 cat <<EOF >/etc/hosts
-127.0.0.1       localhost
-::1             localhost
-127.0.1.1       $HOST_NAME.localdomain $HOST_NAME
+127.0.0.1				localhost
+::1							localhost
+127.0.1.1				$HOST_NAME.localdomain $HOST_NAME
 EOF
 
 # systemctl enable dhcpcd

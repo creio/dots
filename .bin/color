@@ -1,28 +1,28 @@
 #!/usr/bin/env bash
 
 # ANSI Color -- use these variables to easily have different color
-#    and format output. Make sure to output the reset sequence after 
-#    colors (f = foreground, b = background), and use the 'off'
-#    feature for anything you turn on.
+#		 and format output. Make sure to output the reset sequence after 
+#		 colors (f = foreground, b = background), and use the 'off'
+#		 feature for anything you turn on.
 
 initializeANSI()
 {
-  esc=""
+	esc=""
 
-  blackf="${esc}[30m";   redf="${esc}[31m";    greenf="${esc}[32m"
-  yellowf="${esc}[33m"   bluef="${esc}[34m";   purplef="${esc}[35m"
-  cyanf="${esc}[36m";    whitef="${esc}[37m"
-  
-  blackb="${esc}[1;30m";   redb="${esc}[1;31m";    greenb="${esc}[1;32m"
-  yellowb="${esc}[1;33m"   blueb="${esc}[1;34m";   purpleb="${esc}[1;35m"
-  cyanb="${esc}[1;36m";    whiteb="${esc}[1;37m"
+	blackf="${esc}[30m";	 redf="${esc}[31m";		 greenf="${esc}[32m"
+	yellowf="${esc}[33m"	 bluef="${esc}[34m";	 purplef="${esc}[35m"
+	cyanf="${esc}[36m";		 whitef="${esc}[37m"
+	
+	blackb="${esc}[1;30m";	 redb="${esc}[1;31m";		 greenb="${esc}[1;32m"
+	yellowb="${esc}[1;33m"	 blueb="${esc}[1;34m";	 purpleb="${esc}[1;35m"
+	cyanb="${esc}[1;36m";		 whiteb="${esc}[1;37m"
 
-  boldon="${esc}[1m";    boldoff="${esc}[22m"
-  italicson="${esc}[3m"; italicsoff="${esc}[23m"
-  ulon="${esc}[4m";      uloff="${esc}[24m"
-  invon="${esc}[7m";     invoff="${esc}[27m"
+	boldon="${esc}[1m";		 boldoff="${esc}[22m"
+	italicson="${esc}[3m"; italicsoff="${esc}[23m"
+	ulon="${esc}[4m";			 uloff="${esc}[24m"
+	invon="${esc}[7m";		 invoff="${esc}[27m"
 
-  reset="${esc}[0m"
+	reset="${esc}[0m"
 }
 
 color0=$(xrdb -query | egrep -m1 '^\*\.?color0:' | awk '{print $NF}')
@@ -48,24 +48,24 @@ color15=$(xrdb -query | egrep -m1 '^\*\.?color15:' | awk '{print $NF}')
 
 
 numbers (){
-  echo -en "${blackf} ${color0} ${reset}"
-  echo -en "${redf} ${color1} ${reset}"
-  echo -en "${greenf} ${color2} ${reset}"
-  echo -en "${yellowf} ${color3} ${reset}"
-  echo -en "${bluef} ${color4} ${reset}"
-  echo -en "${purplef} ${color5} ${reset}"
-  echo -en "${cyanf} ${color6} ${reset}"
-  echo -en "${whiteb} ${color7} ${reset}"
-  echo -e "\n"
-  echo -en "${blackf} ${color8} ${reset}"
-  echo -en "${redf} ${color9} ${reset}"
-  echo -en "${greenf} ${color10} ${reset}"
-  echo -en "${yellowf} ${color11} ${reset}"
-  echo -en "${bluef} ${color12} ${reset}"
-  echo -en "${purplef} ${color13} ${reset}"
-  echo -en "${cyanf} ${color14} ${reset}"
-  echo -en "${whiteb} ${color15} ${reset}"
-  echo -e "\n"
+	echo -en "${blackf} ${color0} ${reset}"
+	echo -en "${redf} ${color1} ${reset}"
+	echo -en "${greenf} ${color2} ${reset}"
+	echo -en "${yellowf} ${color3} ${reset}"
+	echo -en "${bluef} ${color4} ${reset}"
+	echo -en "${purplef} ${color5} ${reset}"
+	echo -en "${cyanf} ${color6} ${reset}"
+	echo -en "${whiteb} ${color7} ${reset}"
+	echo -e "\n"
+	echo -en "${blackf} ${color8} ${reset}"
+	echo -en "${redf} ${color9} ${reset}"
+	echo -en "${greenf} ${color10} ${reset}"
+	echo -en "${yellowf} ${color11} ${reset}"
+	echo -en "${bluef} ${color12} ${reset}"
+	echo -en "${purplef} ${color13} ${reset}"
+	echo -en "${cyanf} ${color14} ${reset}"
+	echo -en "${whiteb} ${color15} ${reset}"
+	echo -e "\n"
 }
 
 blocks (){
@@ -86,5 +86,5 @@ case $1 in
 	b)	blocks;;
 	n)	numbers;;
 	a)	blocks && numbers;;
-	*)  blocks && numbers;;
+	*)	blocks && numbers;;
 esac

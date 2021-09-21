@@ -18,7 +18,7 @@ addaftercurrent(){
 	#mpd is stopped, so just add to the end
 	elif [ -z "$(mpc -p 6600 current)" ]; then 
 		mpc -p 6600 play
-		CUR_POS=$(mpc -p 6600  | tail -2 | head -1 | awk '{print $2}' | sed 's/#//' | awk -F/ '{print $1}')
+		CUR_POS=$(mpc -p 6600	 | tail -2 | head -1 | awk '{print $2}' | sed 's/#//' | awk -F/ '{print $1}')
 		END_POS=$(mpc -p 6600 playlist | wc -l)
 		mpc -p 6600 add "$1"
 		mpc -p 6600 move $(($END_POS+1)) $(($CUR_POS+1))	
@@ -28,7 +28,7 @@ addaftercurrent(){
 	#currently played song and add $1 after it
 	else
 
-		CUR_POS=$(mpc -p 6600  | tail -2 | head -1 | awk '{print $2}' | sed 's/#//' | awk -F/ '{print $1}')
+		CUR_POS=$(mpc -p 6600	 | tail -2 | head -1 | awk '{print $2}' | sed 's/#//' | awk -F/ '{print $1}')
 		END_POS=$(mpc -p 6600 playlist | wc -l)
 		mpc -p 6600 add "$1"
 		mpc -p 6600 move $(($END_POS+1)) $(($CUR_POS+1))	
@@ -46,7 +46,7 @@ addaftercurrentandplay(){
 	#mpd is stopped, so just add to the end
 	elif [ -z "$(mpc -p 6600 current)" ]; then 
 		mpc -p 6600play
-		CUR_POS=$(mpc -p 6600  | tail -2 | head -1 | awk '{print $2}' | sed 's/#//' | awk -F/ '{print $1}')
+		CUR_POS=$(mpc -p 6600	 | tail -2 | head -1 | awk '{print $2}' | sed 's/#//' | awk -F/ '{print $1}')
 		END_POS=$(mpc -p 6600 playlist | wc -l)
 		mpc -p 6600 add "$1"
 		mpc -p 6600 move $(($END_POS+1)) $(($CUR_POS+1))	
@@ -83,7 +83,7 @@ case $1 in
 				CUR_SONG=$(mpc -p 6600 current)
 				mpc -p 6600 clear
 				mpc -p 6600 find artist "$ARTIST" | mpc -p 6600 add 
-				if [ -n "$CUR_SONG" ]; then mpc -p 6600  play; fi
+				if [ -n "$CUR_SONG" ]; then mpc -p 6600	 play; fi
 				$ESC_ACTION
 			elif [ "$ALBUM" = "add all" ]; then 
 				mpc -p 6600 find artist "$ARTIST" | mpc -p 6600 add
@@ -229,7 +229,7 @@ case $1 in
 
 	-h|--help)
 	echo "-a, --artist		search for artist, then album, then title"
-    	echo "-t, --track		search for a single track in the whole database"
+			echo "-t, --track		search for a single track in the whole database"
 	echo "-p, --playlist		search for a playlist load it"
 	echo "-j, --jump		jump to another song in the current playlist"		 
 	echo "-l, --longplayer	search for album, then title"

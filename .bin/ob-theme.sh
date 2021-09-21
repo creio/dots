@@ -42,73 +42,73 @@ de_theme="$(xfconf-query -c xsettings -p /Net/ThemeName)"
 
 
 if [[ "$de_theme" == "$PREF_LIGHT_THEME" ]]; then
-    xfconf-query -c xsettings -p /Net/ThemeName -s $PREF_DARK_THEME
-    # xfconf-query -c xsettings -p /Gtk/DecorationLayout -s menu:
+		xfconf-query -c xsettings -p /Net/ThemeName -s $PREF_DARK_THEME
+		# xfconf-query -c xsettings -p /Gtk/DecorationLayout -s menu:
 
-    gsettings set org.gnome.desktop.interface gtk-theme $PREF_DARK_THEME
-    # gsettings set org.gnome.desktop.wm.preferences button-layout '"menu:"'
-    
-    # sublime text
-    sed -i -e "s/$sublime_colorscheme_light/$sublime_colorscheme_dark/g" "$sublime_conf"
-    sed -i -e "s/$sublime_theme_light.sublime-theme/$sublime_theme_dark.sublime-theme/g" "$sublime_conf"
+		gsettings set org.gnome.desktop.interface gtk-theme $PREF_DARK_THEME
+		# gsettings set org.gnome.desktop.wm.preferences button-layout '"menu:"'
+		
+		# sublime text
+		sed -i -e "s/$sublime_colorscheme_light/$sublime_colorscheme_dark/g" "$sublime_conf"
+		sed -i -e "s/$sublime_theme_light.sublime-theme/$sublime_theme_dark.sublime-theme/g" "$sublime_conf"
 
-    # ~/.xsettingsd
-    sed -i -e "s/$PREF_LIGHT_THEME/$PREF_DARK_THEME/g" "$xsettings_d"
-    sed -i -e "s/$PREF_LIGHT_ICO/$PREF_DARK_ICO/g" "$xsettings_d"
-    killall xsettingsd
-    xsettingsd &
+		# ~/.xsettingsd
+		sed -i -e "s/$PREF_LIGHT_THEME/$PREF_DARK_THEME/g" "$xsettings_d"
+		sed -i -e "s/$PREF_LIGHT_ICO/$PREF_DARK_ICO/g" "$xsettings_d"
+		killall xsettingsd
+		xsettingsd &
 
-    # openbox theme
-    sed -i -e "s/$OB_LIGHT_THEME/$OB_DARK_THEME/g" "$ob_rc"
-    sed -i -e "s/$PREF_LIGHT_BG_OB/$PREF_DARK_BG_OB/g" "$ob_autostart"
-    openbox --reconfigure
+		# openbox theme
+		sed -i -e "s/$OB_LIGHT_THEME/$OB_DARK_THEME/g" "$ob_rc"
+		sed -i -e "s/$PREF_LIGHT_BG_OB/$PREF_DARK_BG_OB/g" "$ob_autostart"
+		openbox --reconfigure
 
-    # urxvt color palet
-    # sed -i -e "s/$xresources_color_light/$xresources_color_dark/g" "$xresources_conf"
-    # xrdb -merge $HOME/.Xresources
-    # kill -1 $(pidof urxvt)
+		# urxvt color palet
+		# sed -i -e "s/$xresources_color_light/$xresources_color_dark/g" "$xresources_conf"
+		# xrdb -merge $HOME/.Xresources
+		# kill -1 $(pidof urxvt)
 
-    # kitty
-    # kitty @ set-colors -a $HOME/.config/kitty/night.conf
+		# kitty
+		# kitty @ set-colors -a $HOME/.config/kitty/night.conf
 
-    # qt5ct
-    sed -i -e "s/icon_theme=$PREF_LIGHT_ICO/icon_theme=$PREF_DARK_ICO/g" "$qt_conf"
+		# qt5ct
+		sed -i -e "s/icon_theme=$PREF_LIGHT_ICO/icon_theme=$PREF_DARK_ICO/g" "$qt_conf"
 
-    # wall
-    hsetroot -fill $PREF_DARK_BG
+		# wall
+		hsetroot -fill $PREF_DARK_BG
 else
-    xfconf-query -c xsettings -p /Net/ThemeName -s $PREF_LIGHT_THEME
-    # xfconf-query -c xsettings -p /Gtk/DecorationLayout -s menu:
+		xfconf-query -c xsettings -p /Net/ThemeName -s $PREF_LIGHT_THEME
+		# xfconf-query -c xsettings -p /Gtk/DecorationLayout -s menu:
 
-    gsettings set org.gnome.desktop.interface gtk-theme $PREF_LIGHT_THEME
-    # gsettings set org.gnome.desktop.wm.preferences button-layout '"menu:"'
-    
-    # sublime text
-    sed -i -e "s/$sublime_colorscheme_dark/$sublime_colorscheme_light/g" "$sublime_conf"
-    sed -i -e "s/$sublime_theme_dark.sublime-theme/$sublime_theme_light.sublime-theme/g" "$sublime_conf"
+		gsettings set org.gnome.desktop.interface gtk-theme $PREF_LIGHT_THEME
+		# gsettings set org.gnome.desktop.wm.preferences button-layout '"menu:"'
+		
+		# sublime text
+		sed -i -e "s/$sublime_colorscheme_dark/$sublime_colorscheme_light/g" "$sublime_conf"
+		sed -i -e "s/$sublime_theme_dark.sublime-theme/$sublime_theme_light.sublime-theme/g" "$sublime_conf"
 
-    # ~/.xsettingsd
-    sed -i -e "s/$PREF_DARK_THEME/$PREF_LIGHT_THEME/g" "$xsettings_d"
-    sed -i -e "s/$PREF_DARK_ICO/$PREF_LIGHT_ICO/g" "$xsettings_d"
-    killall xsettingsd
-    xsettingsd &
+		# ~/.xsettingsd
+		sed -i -e "s/$PREF_DARK_THEME/$PREF_LIGHT_THEME/g" "$xsettings_d"
+		sed -i -e "s/$PREF_DARK_ICO/$PREF_LIGHT_ICO/g" "$xsettings_d"
+		killall xsettingsd
+		xsettingsd &
 
-    # openbox theme
-    sed -i -e "s/$OB_DARK_THEME/$OB_LIGHT_THEME/g" "$ob_rc"
-    sed -i -e "s/$PREF_DARK_BG_OB/$PREF_LIGHT_BG_OB/g" "$ob_autostart"
-    openbox --reconfigure
+		# openbox theme
+		sed -i -e "s/$OB_DARK_THEME/$OB_LIGHT_THEME/g" "$ob_rc"
+		sed -i -e "s/$PREF_DARK_BG_OB/$PREF_LIGHT_BG_OB/g" "$ob_autostart"
+		openbox --reconfigure
 
-    # urxvt color palet
-    # sed -i -e "s/$xresources_color_light/$xresources_color_dark/g" "$xresources_conf"
-    # xrdb -merge $HOME/.Xresources
-    # kill -1 $(pidof urxvt)
+		# urxvt color palet
+		# sed -i -e "s/$xresources_color_light/$xresources_color_dark/g" "$xresources_conf"
+		# xrdb -merge $HOME/.Xresources
+		# kill -1 $(pidof urxvt)
 
-    # kitty
-    # kitty @ set-colors -a $HOME/.config/kitty/light.conf
+		# kitty
+		# kitty @ set-colors -a $HOME/.config/kitty/light.conf
 
-    # qt5ct
-    sed -i -e "s/icon_theme=$PREF_DARK_ICO/icon_theme=$PREF_LIGHT_ICO/g" "$qt_conf"
+		# qt5ct
+		sed -i -e "s/icon_theme=$PREF_DARK_ICO/icon_theme=$PREF_LIGHT_ICO/g" "$qt_conf"
 
-    # wall
-    hsetroot -fill $PREF_LIGHT_BG
+		# wall
+		hsetroot -fill $PREF_LIGHT_BG
 fi

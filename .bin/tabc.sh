@@ -3,9 +3,9 @@
 # Usage:
 # tabc.sh <tabbed-id> <command>
 # Commands:
-#    add <window-id> 	- Add window to tabbed
-#    remove <window-id> - Remove window from tabbed
-#    list				- List all clients of tabbed
+#		 add <window-id>	- Add window to tabbed
+#		 remove <window-id> - Remove window from tabbed
+#		 list				- List all clients of tabbed
 
 #
 # Functions

@@ -1,7 +1,7 @@
 #!/bin/bash
 times=("$@")
 for t in ${times[@]}; do
-  (( minutes+=${t%%:*}*60, minutes+=${t##*:} ))
+	(( minutes+=${t%%:*}*60, minutes+=${t##*:} ))
 done
 ((hour=$minutes/60))
 ((min=$minutes-$hour*60))

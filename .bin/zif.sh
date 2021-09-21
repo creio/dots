@@ -44,13 +44,13 @@ echo $root_part >> root_part.txt
 	# Swap partition?
 	zenity --question --height=500 --width=450 --title="$title" --text "Do you want to use a swap partition?"
 		if [ "$?" = "0" ]
-		then swap_part=$(zenity --list  --radiolist --height=500 --width=450 --title="$title" --text="Choose a partition to use for the swap partition\nWarning, this list shows all available partitions on all available drives.\nPlease choose with care." --column ' ' --column 'Partitions' $(sudo fdisk -l | grep dev | grep -v Disk | awk '{print $1}' | awk '{ printf " FALSE ""\0"$0"\0" }'))
+		then swap_part=$(zenity --list	--radiolist --height=500 --width=450 --title="$title" --text="Choose a partition to use for the swap partition\nWarning, this list shows all available partitions on all available drives.\nPlease choose with care." --column ' ' --column 'Partitions' $(sudo fdisk -l | grep dev | grep -v Disk | awk '{print $1}' | awk '{ printf " FALSE ""\0"$0"\0" }'))
 		mkswap $swap_part
 		swapon $swap_part
 		fi
 	zenity --question --height=500 --width=450 --title="$title" --text "Would you like to create a 1GB swapfile on root?\nIf you've already mounted a swap partition or don't want swap, select \"No\".\nThis process could take some time, so please be patient."
 		if [ "$?" = "0" ]
-	 	then swapfile="yes"
+		then swapfile="yes"
 		(echo "# Creating swapfile..."
 		touch /mnt/swapfile
 		dd if=/dev/zero of=/mnt/swapfile bs=1M count=1024
@@ -88,15 +88,15 @@ auto_partition() {
 	sed -i 's/\<disk\>//g' devices.txt
 	devices=` awk '{print "FALSE " $0}' devices.txt `
 
-	dev=$(zenity --list  --radiolist --height=500 --width=450 --title="$title" --text "Select the drive that you want to use for installation." --column Drive --column Info $devices)
+	dev=$(zenity --list	 --radiolist --height=500 --width=450 --title="$title" --text "Select the drive that you want to use for installation." --column Drive --column Info $devices)
 
 	zenity --question --height=500 --width=450 --title="$title" --text "Warning! This will erase all data on $dev\!\nAre you sure you want to continue?\nSelect 'Yes' to continue and 'No' to go back."
-        yn="$?"
-        touch root_part.txt
-        if [ "$SYSTEM" = "BIOS" ]
+				yn="$?"
+				touch root_part.txt
+				if [ "$SYSTEM" = "BIOS" ]
 	then echo {$dev}1 >> root_part.txt
 	else echo {$dev}2 >> root_part.txt
-        fi
+				fi
 	if [ "$yn" = "1" ]
 	then partition
 	fi
@@ -115,26 +115,26 @@ auto_partition() {
 
 
 	#BIOS or UEFI
-    if [ "$SYSTEM" = "BIOS" ]
-        then
-	       (echo "# Creating Partitions for BIOS..."
-	        dd if=/dev/zero of=$dev bs=512 count=1
-	        Parted "mklabel msdos"
-	        Parted "mkpart primary ext4 1MiB 100%"
-	        Parted "set 1 boot on"
-	        mkfs.ext4 -F ${dev}1
-	        mount ${dev}1 /mnt
+		if [ "$SYSTEM" = "BIOS" ]
+				then
+				 (echo "# Creating Partitions for BIOS..."
+					dd if=/dev/zero of=$dev bs=512 count=1
+					Parted "mklabel msdos"
+					Parted "mkpart primary ext4 1MiB 100%"
+					Parted "set 1 boot on"
+					mkfs.ext4 -F ${dev}1
+					mount ${dev}1 /mnt
 		touch /mnt/swapfile
 		dd if=/dev/zero of=/mnt/swapfile bs=1M count=${swap_space}
 		chmod 600 /mnt/swapfile
 		mkswap /mnt/swapfile
 		swapon /mnt/swapfile
 		swapfile="yes") | zenity --progress --title="$title" --width=450 --pulsate --auto-close --no-cancel
-	    else
-            	(echo "# Creating Partitions for UEFI..."
-            	dd if=/dev/zero of=$dev bs=512 count=1
-            	Parted "mklabel gpt"
-            	Parted "mkpart primary fat32 1MiB 513MiB"
+			else
+							(echo "# Creating Partitions for UEFI..."
+							dd if=/dev/zero of=$dev bs=512 count=1
+							Parted "mklabel gpt"
+							Parted "mkpart primary fat32 1MiB 513MiB"
 		Parted "mkpart primary ext4 513MiB 100%"
 		Parted "set 1 boot on"
 		mkfs.fat -F32 ${dev}1
@@ -165,7 +165,7 @@ partition() {
 
 configure() {
 # Getting Locale
-locales=$(cat /etc/locale.gen | grep -v "#  " | sed 's/#//g' | sed 's/ UTF-8//g' | grep .UTF-8 | sort | awk '{ printf "FALSE ""\0"$0"\0" }')
+locales=$(cat /etc/locale.gen | grep -v "#	" | sed 's/#//g' | sed 's/ UTF-8//g' | grep .UTF-8 | sort | awk '{ printf "FALSE ""\0"$0"\0" }')
 
 locale=$(zenity --list --radiolist --height=500 --width=450 --title="$title" --text "Select your locale/language.\nThe default is American English 'en_US.UTF-8'." --column Select --column Locale TRUE en_US.UTF-8 $locales)
 
@@ -226,7 +226,7 @@ card=$(lspci -k | grep -A 2 -E "(VGA|3D)")
 if [[ $(echo $card | grep -i 'nvidia') != "" ]]
 	then zenity --question --height=500 --width=450 --title="$title" --text "The Revenge Installer has detected that you are currently running an Nvidia graphics card.\nWould you like to install Proprietary Nvidia graphics drivers to the installed system?"
 		if [ "$?" = "0" ]
-			then video=$(zenity --list  --checklist --height=500 --width=450 --title="$title" --text "You will need to know what model of NVIDIA graphics card you are using.\nFor NVIDIA 400 series and newer install nvidia and nvidia-libgl.\nFor 8000-9000 or 100-300 series install nvidia-304xx and nvidia-304xx-libgl.\n\nYour current graphics card is:\n$card\n\nSelect the NVIDIA drivers that you would like to install." --column "Select" --column "Driver" FALSE "nvidia nvidia-utils nvidia-settings" FALSE "nvidia-304xx nvidia-304xx-utils nvidia-settings" FALSE "nvidia-340xx nvidia-340xx-utils nvidia-settings" FALSE "nvidia-lts nvidia-settings nvidia-utils" FALSE "nvidia-340xx-lts nvidia-340xx-utils nvidia-settings" FALSE "nvidia-304xx-lts nvidia-304xx-utils nvidia-settings" FALSE "nvidia-dkms" FALSE "nvidia-340xx-dkms" FALSE "nvidia-304xx-dkms")
+			then video=$(zenity --list	--checklist --height=500 --width=450 --title="$title" --text "You will need to know what model of NVIDIA graphics card you are using.\nFor NVIDIA 400 series and newer install nvidia and nvidia-libgl.\nFor 8000-9000 or 100-300 series install nvidia-304xx and nvidia-304xx-libgl.\n\nYour current graphics card is:\n$card\n\nSelect the NVIDIA drivers that you would like to install." --column "Select" --column "Driver" FALSE "nvidia nvidia-utils nvidia-settings" FALSE "nvidia-304xx nvidia-304xx-utils nvidia-settings" FALSE "nvidia-340xx nvidia-340xx-utils nvidia-settings" FALSE "nvidia-lts nvidia-settings nvidia-utils" FALSE "nvidia-340xx-lts nvidia-340xx-utils nvidia-settings" FALSE "nvidia-304xx-lts nvidia-304xx-utils nvidia-settings" FALSE "nvidia-dkms" FALSE "nvidia-340xx-dkms" FALSE "nvidia-304xx-dkms")
 			else video="mesa xf86-video-nouveau"
 		fi
 	else video="mesa xf86-video-nouveau"
@@ -234,7 +234,7 @@ fi
 }
 
 kernel() {
-kernel=$(zenity --list  --radiolist --height=500 --width=450 --title="$title" --text "There are several kernels available for the system.\n\nThe most common is the current linux kernel.\nThis kernel is the most up to date, providing the best hardware support.\nHowever, there could be possible bugs in this kernel, despite testing.\n\nThe linux-lts kernel provides a focus on stability.\nIt is based on an older kernel, so it may lack some newer features.\n\nThe linux-hardened kernel is focused on security\nIt contains the Grsecurity Patchset and PaX for increased security.\n\nThe linux-zen kernel is the result of a collaboration of kernel hackers\nto provide the best possible kernel for everyday systems.\n\nPlease select the kernel that you would like to install." --column "Select" --column "Kernel" FALSE linux FALSE linux-lts FALSE linux-hardened FALSE linux-zen)
+kernel=$(zenity --list	--radiolist --height=500 --width=450 --title="$title" --text "There are several kernels available for the system.\n\nThe most common is the current linux kernel.\nThis kernel is the most up to date, providing the best hardware support.\nHowever, there could be possible bugs in this kernel, despite testing.\n\nThe linux-lts kernel provides a focus on stability.\nIt is based on an older kernel, so it may lack some newer features.\n\nThe linux-hardened kernel is focused on security\nIt contains the Grsecurity Patchset and PaX for increased security.\n\nThe linux-zen kernel is the result of a collaboration of kernel hackers\nto provide the best possible kernel for everyday systems.\n\nPlease select the kernel that you would like to install." --column "Select" --column "Kernel" FALSE linux FALSE linux-lts FALSE linux-hardened FALSE linux-zen)
 }
 
 root_password() {
@@ -274,11 +274,11 @@ fi
 }
 
 displaymanager() {
-dm=$(zenity --list --title="$title" --radiolist  --height=500 --width=450 --text "What display manager would you like to use?" --column "Select" --column "Display Manager" FALSE "lightdm" FALSE "lxdm" FALSE "sddm" FALSE "gdm" FALSE "default")
+dm=$(zenity --list --title="$title" --radiolist	 --height=500 --width=450 --text "What display manager would you like to use?" --column "Select" --column "Display Manager" FALSE "lightdm" FALSE "lxdm" FALSE "sddm" FALSE "gdm" FALSE "default")
 }
 
 revengerepo() {
-zenity --question --title="$title"  --height=500 --width=450 --text="Would you like to add the revenge_repo to your /etc/pacman.conf?\n The revenge_repo contains a few extra packages, such as spotify and pamac."
+zenity --question --title="$title"	--height=500 --width=450 --text="Would you like to add the revenge_repo to your /etc/pacman.conf?\n The revenge_repo contains a few extra packages, such as spotify and pamac."
 rr="$?"
 }
 
@@ -294,19 +294,19 @@ abs="$?"
 
 # internet app list
 internet_apps() {
-zenity --list  --checklist --height=500 --width=450 --title="$title" --text "Select the Internet Applications that You Would Like to Install" --column "Select" --column "Applications" FALSE "chromium " FALSE "midori " FALSE "qupzilla " FALSE "netsurf " FALSE "filezilla " FALSE "opera " FALSE "evolution " FALSE "geary " FALSE "thunderbird " FALSE "transmission-gtk " FALSE "qbittorrent " FALSE "hexchat " > int2.txt
+zenity --list	 --checklist --height=500 --width=450 --title="$title" --text "Select the Internet Applications that You Would Like to Install" --column "Select" --column "Applications" FALSE "chromium " FALSE "midori " FALSE "qupzilla " FALSE "netsurf " FALSE "filezilla " FALSE "opera " FALSE "evolution " FALSE "geary " FALSE "thunderbird " FALSE "transmission-gtk " FALSE "qbittorrent " FALSE "hexchat " > int2.txt
 sed -i -e 's/[|]//g' int2.txt
 }
 
 # media app list
 media_apps() {
-zenity --list --checklist  --height=500 --width=450 --title="$title" --text "Select the Media Applications that You Would Like to Install" --column "Select" --column "Applications" FALSE "kodi " FALSE "gimp " FALSE "vlc " FALSE "phonon-qt4-vlc " FALSE "totem " FALSE "parole " FALSE "audacious " FALSE "clementine " FALSE "gthumb " FALSE "shotwell " FALSE "ristretto " FALSE "gpicview " FALSE "brasero " FALSE "audacity " FALSE "simplescreenrecorder " FALSE "xfburn " FALSE "kdenlive " > med2.txt
+zenity --list --checklist	 --height=500 --width=450 --title="$title" --text "Select the Media Applications that You Would Like to Install" --column "Select" --column "Applications" FALSE "kodi " FALSE "gimp " FALSE "vlc " FALSE "phonon-qt4-vlc " FALSE "totem " FALSE "parole " FALSE "audacious " FALSE "clementine " FALSE "gthumb " FALSE "shotwell " FALSE "ristretto " FALSE "gpicview " FALSE "brasero " FALSE "audacity " FALSE "simplescreenrecorder " FALSE "xfburn " FALSE "kdenlive " > med2.txt
 sed -i -e 's/[|]//g' med2.txt
 }
 
 # office app list
 office_apps() {
-zenity --list  --checklist --height=500 --width=450 --title="$title" --text "Select the Office Applications that You Would Like to Install" --column "Select" --column "Applications" FALSE "calligra " FALSE "abiword " FALSE "gnumeric " FALSE "pdfmod " FALSE "evince " FALSE "epdfview " FALSE "calibre " FALSE "fbreader " > off2.txt
+zenity --list	 --checklist --height=500 --width=450 --title="$title" --text "Select the Office Applications that You Would Like to Install" --column "Select" --column "Applications" FALSE "calligra " FALSE "abiword " FALSE "gnumeric " FALSE "pdfmod " FALSE "evince " FALSE "epdfview " FALSE "calibre " FALSE "fbreader " > off2.txt
 sed -i -e 's/[|]//g' off2.txt
 }
 
@@ -331,7 +331,7 @@ firefox() {
 zenity --question --height=500 --width=450 --title="$title" --text="Would you like to install Firefox, a browser by the Mozilla foundation?"
 frf="$?"
 if [ "$frf" = "0" ]
-then fflang=$(zenity --list --radiolist --height=500 --width=450 --column Select --column Langpack $(pacman -Ssq firefox lang  | awk '{ printf " FALSE ""\0"$0"\0" }'))
+then fflang=$(zenity --list --radiolist --height=500 --width=450 --column Select --column Langpack $(pacman -Ssq firefox lang	 | awk '{ printf " FALSE ""\0"$0"\0" }'))
 fi
 }
 
@@ -399,7 +399,7 @@ echo "# Generating File System Table..."
 genfstab -p /mnt >> /mnt/etc/fstab
 if grep -q "/mnt/swapfile" "/mnt/etc/fstab"; then
 sed -i '/swapfile/d' /mnt/etc/fstab
-echo "/swapfile		none	swap	defaults	0	0" >> /mnt/etc/fstab
+echo "/swapfile		none	swap	defaults	0 0" >> /mnt/etc/fstab
 fi
 
 # installing video and audio packages
@@ -411,7 +411,7 @@ if [ "$vb" = "0" ]
 	then
 	if [ "$kernel" = "linux" ]
 		then pacstrap /mnt virtualbox-guest-modules-arch virtualbox-guest-utils
-        	echo -e "vboxguest\nvboxsf\nvboxvideo" > /mnt/etc/modules-load.d/virtualbox.conf
+					echo -e "vboxguest\nvboxsf\nvboxvideo" > /mnt/etc/modules-load.d/virtualbox.conf
 	elif [ "$kernel" = "linux-lts" ]
 		then pacstrap /mnt virtualbox-guest-dkms virtualbox-guest-utils linux-lts-headers
 		echo -e "vboxguest\nvboxsf\nvboxvideo" > /mnt/etc/modules-load.d/virtualbox.conf
@@ -441,7 +441,7 @@ fi
 arch_chroot "systemctl enable NetworkManager"
 echo "50"
 # adding revenge_repo
-if [ "$rr" = "0"  ]
+if [ "$rr" = "0"	]
 then echo "[revenge_repo]" >> /mnt/etc/pacman.conf;echo "SigLevel = Optional TrustAll" >> /mnt/etc/pacman.conf;echo "Server = https://raw.github.com/obrevenge/revenge_repo/master/x86_64" >> /mnt/etc/pacman.conf;echo "Server = https://downloads.sourceforge.net/project/revenge-repo/revenge_repo/x86_64" >> /mnt/etc/pacman.conf;echo "Server = ftp://ftp.heanet.ie/mirrors/sourceforge/r/re/revenge-repo/revenge_repo/x86_64" >> /mnt/etc/pacman.conf
 arch_chroot "sudo pacman -Syy"
 fi
@@ -456,7 +456,7 @@ fi
 # AUR
 if [ "$abs" = "0" ]
 	then echo "[spooky_aur]" >> /mnt/etc/pacman.conf;echo "SigLevel = Optional TrustAll" >> /mnt/etc/pacman.conf;echo "Server = https://raw.github.com/spookykidmm/spooky_aur/master/x86_64" >> /mnt/etc/pacman.conf
-    arch_chroot "pacman -Syy"
+		arch_chroot "pacman -Syy"
 	arch_chroot "pacman -S --noconfirm pacaur"
 
 fi
@@ -481,7 +481,7 @@ if [ "$grb" = "0" ]
 		|| bl_root=$"PARTUUID="$(blkid -s PARTUUID ${root_part} | sed 's/.*=//g' | sed 's/"//g')
 
 		arch_chroot "bootctl --path=/boot install"
-		echo -e "default  Arch\ntimeout  10" > /mnt/boot/loader/loader.conf
+		echo -e "default	Arch\ntimeout	 10" > /mnt/boot/loader/loader.conf
 		[[ -e /mnt/boot/initramfs-linux.img ]] && echo -e "title\tArch Linux\nlinux\t/vmlinuz-linux\ninitrd\t/initramfs-linux.img\noptions\troot=${bl_root} rw" > /mnt/boot/loader/entries/Arch.conf
 		[[ -e /mnt/boot/initramfs-linux-lts.img ]] && echo -e "title\tArchLinux LTS\nlinux\t/vmlinuz-linux-lts\ninitrd\t/initramfs-linux-lts.img\noptions\troot=${bl_root} rw" > /mnt/boot/loader/entries/Arch-lts.conf
 		[[ -e /mnt/boot/initramfs-linux-hardened.img ]] && echo -e "title\tArch Linux hardened\nlinux\t/vmlinuz-linux-hardened\ninitrd\t/initramfs-linux-hardened.img\noptions\troot=${bl_root} rw" > /mnt/boot/loader/entries/Arch-hardened.conf
@@ -510,7 +510,7 @@ if [ "$lbr" = "0" ]
 then arch_chroot "pacman -S --noconfirm libreoffice-$lover $lolang"
 fi
 if [ "$frf" = "0" ]
-then arch_chroot "pacman -S --noconfirm firefox  $fflang"
+then arch_chroot "pacman -S --noconfirm firefox	 $fflang"
 fi
 #root password
 echo "# Setting root password..."
@@ -561,7 +561,7 @@ else arch_chroot "sudo pacman -S --noconfirm $shell;chsh -s /usr/bin/$shell"
 fi
 
 # starting desktop manager
-if [ "$dm"  = "default" ]
+if [ "$dm"	= "default" ]
 then if [ "$desktop" == "gnome" ]
 	then arch_chroot "systemctl enable gdm.service"
 	elif [ "$desktop" = "budgie-desktop" ]
@@ -589,9 +589,9 @@ fi
 # execution
 # System Detection
 if [[ -d "/sys/firmware/efi/" ]]; then
-      SYSTEM="UEFI"
-      else
-      SYSTEM="BIOS"
+			SYSTEM="UEFI"
+			else
+			SYSTEM="BIOS"
 fi
 
 
@@ -600,7 +600,7 @@ title="Zen Installer Framework 1.00 $SYSTEM"
 
 # Adapted from AIS. An excellent bit of code!
 arch_chroot() {
-    arch-chroot /mnt /bin/bash -c "${1}"
+		arch-chroot /mnt /bin/bash -c "${1}"
 }
 
 # Adapted from Feliz Installer

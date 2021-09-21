@@ -8,7 +8,7 @@ set -e
 : "${_ext=gif}"
 
 __usage () {
-  cat << EOH
+	cat << EOH
 $0 path
 $0 -h
 
@@ -24,9 +24,9 @@ EOH
 
 # parsing options
 case "$1" in
-  -h|help) __usage ; exit 0 ;;
-  "") __usage >&2  ; exit 1 ;;
-  *) _path="$1" ;;
+	-h|help) __usage ; exit 0 ;;
+	"") __usage >&2	 ; exit 1 ;;
+	*) _path="$1" ;;
 esac
 
 # simple, stupid check
@@ -36,17 +36,17 @@ ls "$_path" >/dev/null
 _tmp="$(mktemp -dt "$(basename "$0").XXXX")"
 
 __cleanup () {
-  [ -d "$_tmp" ] && rm -rf "${_tmp:?}"
+	[ -d "$_tmp" ] && rm -rf "${_tmp:?}"
 }
 
 trap __cleanup INT TERM
 
 __create_list () {
-  # We list the files and store that have the good extension
-  : > "$_tmp/list"
-  for _e in $_ext; do
-    find "$_path" -name '*.'$_e >> "$_tmp/list"
-  done
+	# We list the files and store that have the good extension
+	: > "$_tmp/list"
+	for _e in $_ext; do
+		find "$_path" -name '*.'$_e >> "$_tmp/list"
+	done
 }
 
 __create_list
@@ -54,39 +54,39 @@ __create_list
 trap __create_list USR2
 
 __pick_one () {
-  # We randomly pick one file and return its path
-  shuf "$_tmp/list" | head -n 1
+	# We randomly pick one file and return its path
+	shuf "$_tmp/list" | head -n 1
 }
 
 __bg () {
-  # Select bg color:
-  # convert(1) to extract the single top-left pixel and extract its color
-  # throughout the .gif; then grep for its only values that are NOT transparent
-  # and then take the first one
-  _solid_color="$(convert "$1" -crop 1x1+0+0 -depth 8 txt: | grep -Eo \
-    '#[A-F0-9]{6}(FF|)' | sort -u | head -n 1)"
+	# Select bg color:
+	# convert(1) to extract the single top-left pixel and extract its color
+	# throughout the .gif; then grep for its only values that are NOT transparent
+	# and then take the first one
+	_solid_color="$(convert "$1" -crop 1x1+0+0 -depth 8 txt: | grep -Eo \
+		'#[A-F0-9]{6}(FF|)' | sort -u | head -n 1)"
 
-  # Now $_solid_color contains either #RRGGBB or #RRGGBBAA and we need to
-  # discard the 'AA' part (where AA = FF anyway, because we used grep earlier),
-  # hence the '%%FF'
-  _solid_color="${_solid_color%%FF}"
+	# Now $_solid_color contains either #RRGGBB or #RRGGBBAA and we need to
+	# discard the 'AA' part (where AA = FF anyway, because we used grep earlier),
+	# hence the '%%FF'
+	_solid_color="${_solid_color%%FF}"
 
-  printf '%s\n' "${_solid_color}"
+	printf '%s\n' "${_solid_color}"
 }
 
 __run_mpv () {
-  mpv --border --video-unscaled --background="$2" --wid=0 "$1" --loop-file=inf --speed=1.0 >/dev/null 2>&1 &
+	mpv --border --video-unscaled --background="$2" --wid=0 "$1" --loop-file=inf --speed=1.0 >/dev/null 2>&1 &
 }
 
 __kill () {
-  kill "$(pgrep -P "$$" "$1")" 2>/dev/null || :
+	kill "$(pgrep -P "$$" "$1")" 2>/dev/null || :
 }
 
 __set_a_wp () {
-  _gif="$(__pick_one)"
-  _bg="$(__bg "$_gif")"
-  __kill mpv
-  __run_mpv "$_gif" "$_bg"
+	_gif="$(__pick_one)"
+	_bg="$(__bg "$_gif")"
+	__kill mpv
+	__run_mpv "$_gif" "$_bg"
 }
 
 __set_a_wp

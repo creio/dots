@@ -7,20 +7,20 @@ sleep 1;
 
 if [ "$DIALOG_RESULT" = "exit i3" ];
 then
-    i3-msg 'exit'
+		i3-msg 'exit'
 elif [ "$DIALOG_RESULT" = "suspend" ];
 then
-    exec systemctl suspend
+		exec systemctl suspend
 elif [ "$DIALOG_RESULT" = "hibernate" ];
 then
-    exec systemctl hibernate
+		exec systemctl hibernate
 elif [ "$DIALOG_RESULT" = "reboot" ];
 then
-    exec systemctl reboot
+		exec systemctl reboot
 elif [ "$DIALOG_RESULT" = "poweroff" ];
 then
-    exec systemctl poweroff
+		exec systemctl poweroff
 elif [ "$DIALOG_RESULT" = "exit" ];
 then
-    exit 0
+		exit 0
 fi

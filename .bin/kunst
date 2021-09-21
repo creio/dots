@@ -24,13 +24,13 @@ show_help() {
 	echo "Download and display album art or display embedded album art"
 	echo " "
 	echo "optional arguments:"
-	echo "   -h, --help            show this help message and exit"
-	echo "   --size                what size to display the album art in"
-	echo "   --x                   X"
-	echo "   --y                   Y"
-	echo "   --music_dir           the music directory which MPD plays from"
-	echo "   --silent              dont show the output"
-	echo "   --version             show the version of kunst you are using"
+	echo "	 -h, --help						 show this help message and exit"
+	echo "	 --size								 what size to display the album art in"
+	echo "	 --x									 X"
+	echo "	 --y									 Y"
+	echo "	 --music_dir					 the music directory which MPD plays from"
+	echo "	 --silent							 dont show the output"
+	echo "	 --version						 show the version of kunst you are using"
 }
 
 
@@ -39,40 +39,40 @@ options=$(getopt -o h --long size:,x:,y:,music_dir:,version,silent,help -- "$@")
 eval set -- "$options"
 
 while true; do
-    case "$1" in 
-        --size)
-            shift;
-            SIZE=$1
-            ;;
-        --x)
-            shift;
-            X=$1
-            ;;
-        --y)
-            shift;
-            Y=$1
-            ;;
-        --music_dir)
-            shift;
-            MUSIC_DIR=$1
-            ;;
-        -h|--help)
-		    show_help
+		case "$1" in 
+				--size)
+						shift;
+						SIZE=$1
+						;;
+				--x)
+						shift;
+						X=$1
+						;;
+				--y)
+						shift;
+						Y=$1
+						;;
+				--music_dir)
+						shift;
+						MUSIC_DIR=$1
+						;;
+				-h|--help)
+				show_help
 			exit
-            ;;
+						;;
 		--version)
-		    echo $VERSION
+				echo $VERSION
 			exit
 			;;
-        --silent)
-            SILENT=true
-            ;;
-        --)
-            shift
-            break
-            ;;
-    esac
-    shift
+				--silent)
+						SILENT=true
+						;;
+				--)
+						shift
+						break
+						;;
+		esac
+		shift
 done
 
 # This is a base64 endcoded image which will be used if
@@ -90,9 +90,9 @@ is_connected() {
 	if ping -q -c 1 -W 1 api.deezer.com >/dev/null; then
 		connected=true
 	else
-        if [ ! $SILENT ];then
-            echo "kunst: unable to check online for the album art"
-        fi
+				if [ ! $SILENT ];then
+						echo "kunst: unable to check online for the album art"
+				fi
 		connected=false
 	fi
 }
@@ -114,14 +114,14 @@ get_cover_online() {
 	IMG_URL=$(curl -s "$API_URL" | jq -r '.playlists.data[0] | .picture_big')
 
 	if [ "$IMG_URL" = '' ] || [ "$IMG_URL" = 'null' ];then
-        if [ ! $SILENT ];then
-            echo "error: cover not found online"
-        fi
+				if [ ! $SILENT ];then
+						echo "error: cover not found online"
+				fi
 		ARTLESS=true
 	else
-        if [ ! $SILENT ];then
-            echo "kunst: cover found online"
-        fi
+				if [ ! $SILENT ];then
+						echo "kunst: cover found online"
+				fi
 		curl -o $COVER -s $IMG_URL
 		ARTLESS=false
 	fi
@@ -141,53 +141,53 @@ update_cover() {
 
 	# Check if the file has a embbeded album art
 	if [ $STATUS -eq 0 ];then
-        if [ ! $SILENT ];then 
-            echo "kunst: extracted album art"
-        fi
+				if [ ! $SILENT ];then 
+						echo "kunst: extracted album art"
+				fi
 		ARTLESS=false
 	else
-        DIR="$MUSIC_DIR$(dirname "$(mpc current -f %file%)")"
-        if [ ! $SILENT ];then
-            echo "kunst: inspecting $DIR"
-        fi
+				DIR="$MUSIC_DIR$(dirname "$(mpc current -f %file%)")"
+				if [ ! $SILENT ];then
+						echo "kunst: inspecting $DIR"
+				fi
 
 		# Check if there is an album cover/art in the folder.
 		# Look at issue #9 for more details
-        for CANDIDATE in "$DIR/cover."{png,jpg}; do
-            if [ -f "$CANDIDATE" ]; then
-                STATUS=0
-                ARTLESS=false
-                convert "$CANDIDATE" $COVER
-                if [ ! $SILENT ];then
-                    echo "kunst: found cover.png"
-                fi
-            fi
-        done
-    fi
+				for CANDIDATE in "$DIR/cover."{png,jpg}; do
+						if [ -f "$CANDIDATE" ]; then
+								STATUS=0
+								ARTLESS=false
+								convert "$CANDIDATE" $COVER
+								if [ ! $SILENT ];then
+										echo "kunst: found cover.png"
+								fi
+						fi
+				done
+		fi
 
 	if [ $STATUS -ne 0 ];then
-        if [ ! $SILENT ];then
-            echo "error: file does not have an album art"
-        fi
+				if [ ! $SILENT ];then
+						echo "error: file does not have an album art"
+				fi
 		get_cover_online
 	fi
 
 	# Resize the image to 250x250
 	if [ $ARTLESS == false ]; then
 		convert $COVER -resize $SIZE $COVER
-        if [ ! $SILENT ];then
-            echo "kunst: resized album art to $SIZE"
-        fi
+				if [ ! $SILENT ];then
+						echo "kunst: resized album art to $SIZE"
+				fi
 	fi
 
 }
 
 pre_exit() {
 	# Get the proccess ID of kunst and kill it.
-    # We are dumping the output of kill to /dev/null
-    # because if the user quits sxiv before they
-    # exit kunst, an error will be shown
-    # from kill and we dont want that
+		# We are dumping the output of kill to /dev/null
+		# because if the user quits sxiv before they
+		# exit kunst, an error will be shown
+		# from kill and we dont want that
 	kill -9 $(cat /tmp/kunst.pid) &> /dev/null
 }
 
@@ -211,11 +211,11 @@ main() {
 			# to /tmp/kunst.png
 			echo "$MUSIC_NOTE" | base64 --decode > $COVER
 		fi
-        
-        if [ ! $SILENT ];then
-            echo "kunst: swapped album art to $(mpc current)"
-            printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
-        fi
+				
+				if [ ! $SILENT ];then
+						echo "kunst: swapped album art to $(mpc current)"
+						printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+				fi
 
 		if [ $FIRST_RUN == true ]; then
 			FIRST_RUN=false
@@ -233,9 +233,9 @@ main() {
 		# Waiting for an event from mpd; play/pause/next/previous
 		# this is lets kunst use less CPU :)
 		mpc idle &> /dev/null
-        if [ ! $SILENT ];then
-            echo "kunst: received event from mpd"
-        fi
+				if [ ! $SILENT ];then
+						echo "kunst: received event from mpd"
+				fi
 	done
 }
 

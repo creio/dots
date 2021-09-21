@@ -4,7 +4,7 @@ looping=$1
 
 if [ -z $looping ]
 then
-  looping=~/.wall/wl6.gif
+	looping=~/.wall/wl6.gif
 fi
 
 #### 20% cpu gif, best result, convert mp4 -> gif:
@@ -12,9 +12,9 @@ fi
 ## ffmpeg -i .wall/heart.mp4 .wall/heart.gif
 
 if [[ "$1" == "-v" ]]; then
-  xwinwrap -fs -st -sp -b -nf -un -ov -o 1 -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --x11-bypass-compositor=no --hwdec=auto --really-quiet $2
+	xwinwrap -fs -st -sp -b -nf -un -ov -o 1 -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --x11-bypass-compositor=no --hwdec=auto --really-quiet $2
 else
-  xwinwrap -ni -fs -st -sp -b -nf -un -ov -o 1 -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --x11-bypass-compositor=no --aid=no --hwdec=auto --really-quiet $looping
+	xwinwrap -ni -fs -st -sp -b -nf -un -ov -o 1 -- mpv -wid WID --no-config --keepaspect=no --loop --no-border --x11-bypass-compositor=no --aid=no --hwdec=auto --really-quiet $looping
 fi
 
 #### 40% cpu mp4

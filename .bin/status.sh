@@ -21,36 +21,36 @@
 # depends: xdotool
 
 function printf_color {
-    printf "\033[0;$2m$1\033[0m";
+		printf "\033[0;$2m$1\033[0m";
 }
 
 function generate_tray {
-    local -n arr=$1;
-    declare -a local items;
+		local -n arr=$1;
+		declare -a local items;
 
-    for name in "${!arr[@]}"; do
-        cmd_output="${arr[$name]}";
-        if [[ $cmd_output ]]
-        then
-            items+=($name);
-        fi
-    done
+		for name in "${!arr[@]}"; do
+				cmd_output="${arr[$name]}";
+				if [[ $cmd_output ]]
+				then
+						items+=($name);
+				fi
+		done
 
-    items_str=${items[@]};
-    printf "${items_str// /  }";
+		items_str=${items[@]};
+		printf "${items_str// /	 }";
 }
 
 function finalize {
-    local ws="$1";
-    local datetime="$2";
-    local tray="$3";
+		local ws="$1";
+		local datetime="$2";
+		local tray="$3";
 
-    printf "\n ";
-    printf_color " $ws " 41;
-    printf_color "  $tray " 37;
-    printf "\n\n ";
-    printf_color "$datetime" 34;
-    printf "\n\n";
+		printf "\n ";
+		printf_color " $ws " 41;
+		printf_color "	$tray " 37;
+		printf "\n\n ";
+		printf_color "$datetime" 34;
+		printf "\n\n";
 }
 
 date=$(date "+%d %b %a %I:%M %p");

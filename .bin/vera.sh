@@ -5,7 +5,7 @@
 # chmod 700 ~/.env
 [[ -s ~/.env ]] && . ~/.env
 
-### --encryption=aes  &&  --filesystem=ext4   &&   -p pass_word
+### --encryption=aes	&&	--filesystem=ext4		&&	 -p pass_word
 # veracrypt --text --create --filesystem=ext4 /media/Ventoy/backup
 # veracrypt --text --create -k "" --pim=0 --encryption=AES-Twofish-Serpent --hash=sha-512 --random-source=/dev/urandom --volume-type=normal --filesystem=fat --size=25M /media/Ventoy/backup
 # veracrypt --text --create -k "" --pim=0 --encryption=AES-Twofish-Serpent --hash=sha-512 --random-source=/dev/urandom --volume-type=hidden --filesystem=fat --size=20M /media/Ventoy/backup

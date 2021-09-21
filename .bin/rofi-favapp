@@ -7,41 +7,41 @@ sleep 1;
 
 if [ "$DIALOG_RESULT" = "chromium" ];
 then
-    exec chromium
+		exec chromium
 
 elif [ "$DIALOG_RESULT" = "subl3" ];
 then
-    exec subl3
+		exec subl3
 
 elif [ "$DIALOG_RESULT" = "telegram" ];
 then
-    exec telegram-desktop
+		exec telegram-desktop
 
 elif [ "$DIALOG_RESULT" = "thunar" ];
 then
-    exec thunar
+		exec thunar
 
 elif [ "$DIALOG_RESULT" = "discord" ];
 then
-    exec discord
+		exec discord
 
 elif [ "$DIALOG_RESULT" = "steam" ];
 then
-    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/steam-wrapper --file-forwarding com.valvesoftware.Steam @@u %U @@
+		exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/steam-wrapper --file-forwarding com.valvesoftware.Steam @@u %U @@
 
 elif [ "$DIALOG_RESULT" = "pavucontrol" ];
 then
-    exec pavucontrol
+		exec pavucontrol
 
 elif [ "$DIALOG_RESULT" = "Calculator" ];
 then
-    exec gnome-calculator
+		exec gnome-calculator
 
 elif [ "$DIALOG_RESULT" = "lxappearance" ];
 then
-    exec lxappearance
+		exec lxappearance
 
 elif [ "$DIALOG_RESULT" = "gparted" ];
 then
-    exec gparted
+		exec gparted
 fi
