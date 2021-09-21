@@ -10,8 +10,8 @@ if [ "$1" = "-m" ]; then
   ffmpeg \
   -f x11grab -s $RES -i :0.0 \
   -f alsa -i default \
-  -c:v libx264 -r 30 -preset superfast -crf 23 -threads 0 -vf "format=yuv420p,scale=-2:1080" \
-  -c:a libvorbis -b:a 128k \
+  -c:v h264_nvenc -r 30 -preset superfast -crf 23 -threads 0 -vf "format=yuv420p,scale=-2:1080" \
+  -c:a ac3 -b:a 128k \
   -y ~/Videos/output.mkv
 elif [ "$1" = "-n" ]; then
   ffmpeg \
@@ -37,7 +37,7 @@ else
   ffmpeg \
   -f x11grab -video_size $RES -i :0.0 \
   -f pulse -i $ALSA_OUT \
-  -c:a aac -b:a 128k \
-  -c:v libx264 -r 30 -preset superfast -crf 20 -vf "format=yuv420p,scale=-2:1080" \
+  -c:a ac3 -b:a 128k \
+  -c:v h264_nvenc -r 30 -crf 20 -vf "format=yuv420p,scale=-2:1080" \
   -y ~/Videos/out.mp4
 fi

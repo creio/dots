@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/usr/bin/bash
 set -e
 . /home/creio/.env
 
 USER=cretm
-SERVER=$oci
+SERVER=$oc
 DNS=8.8.8.8
 
 mv /etc/resolv.conf /etc/resolv.conf.sshuttle.bak

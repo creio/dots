@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BPATH='/media/files/github/creio/dots'
-KB_PATH='/run/user/1000/keybase/kbfs/private/cvc/dots'
+KB_PATH='/media/files/keybase/dump/dots'
 REPO='https://github.com/creio/dots'
 BRANCH=''
 BKPS=(
@@ -27,13 +27,14 @@ BKPS=(
 .conky
 .mozilla/firefox/vos2wqqo.default-release/chrome
 .ncmpcpp/config
-.wall/lcrow.png
+.wall/wl.jpg
 )
 ROOT_DIR='root'
 ROOT_BKPS=(
 etc/{environment,fstab}
 etc/{makepkg,pacman,sddm,vconsole}.conf
 etc/pulse/{daemon.conf,default.pa}
+etc/systemd/system/dump.{timer,service}
 usr/share/sddm/themes/slice
 etc/pacman.d/hooks/mirrorupgrade.hook
 etc/pacman.d/gnupg/gpg.conf

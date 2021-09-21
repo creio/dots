@@ -1,7 +1,6 @@
 # <file system> <mount point> <type> <options> <dump> <pass>
 
-UUID=aad5bf7d-7bfc-43dd-9f88-db63a2871cb5	/	ext4	rw,relatime	0	1
-UUID=1745b9ff-c0c6-48e4-974f-dfca183831f3	/boot	ext2	rw,relatime	0	2
-UUID=7fdfd7a6-e0ac-4852-ae9c-2085f9ecf9af	/home	ext4	rw,relatime	0	2
-#UUID=8ec3d01d-9508-4338-9d84-34f14036f172	none	swap	defaults	0	0
-UUID=8508fc50-6b86-49cf-b1a2-d5e144ea1b1c	/media/files	ext4	defaults,relatime	0	0
+UUID=0b6b17d6-cb4f-4f51-9cc2-d4c07af56768	/               ext4	rw,noatime,discard	0	1
+UUID=7099-870D                          	/boot	        vfat	rw,relatime,discard,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0   2
+UUID=7ca1186a-31c2-45df-acf7-7d13ccc1dddc	/home	        ext4	rw,noatime,discard	0	2
+UUID=07a611fe-99ad-41ae-ba38-eef324a7b35b	/media/files	ext4	rw,noatime,discard	0	2

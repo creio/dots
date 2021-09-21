@@ -114,6 +114,7 @@ c.colors.tabs.selected.even.fg = xresources['*.color4']
 c.colors.tabs.selected.odd.bg  = adjust(xresources['*.background'], 1.35)
 c.colors.tabs.selected.odd.fg  = xresources['*.color4']
 
+c.url.searchengines = {'DEFAULT': 'https://gg.ctlos.ru/search?q={}', 'd': 'https://duckduckgo.com/?q={}', 'sp': 'https://www.startpage.com/do/search?q={}', 'g': 'https://www.google.com/search?q={}', 'w': 'https://en.wikipedia.org/wiki/{}'}
 
-# c.url.start_pages = "/home/javacafe01/code/startpage/index.html"
-# c.url.default_page = "/home/javacafe01/code/startpage/index.html"
+# c.url.start_pages = "/home/asdd/startpage/index.html"
+# c.url.default_page = "/home/asdd/startpage/index.html"

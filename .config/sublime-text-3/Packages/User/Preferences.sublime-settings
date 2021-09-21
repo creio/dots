@@ -4,7 +4,7 @@
 	[
 		{
 			"characters": "b4",
-			"selector": "text.html"
+			"selector": "text.html",
 		}
 	],
 	"color_scheme": "Packages/One Dark Material - Theme/schemes/OneDark.tmTheme",
@@ -17,13 +17,28 @@
 	"fallback_encoding": "Cyrillic (Windows 1251)",
 	"folder_exclude_patterns":
 	[
-		".svn",
-		".git",
-		".hg",
-		".sass-cache",
-		"CVS",
+		".svn", ".git", ".hg", "CVS",
 		"work",
-		"node_modules"
+    ".sass-cache",
+		"node_modules",
+    "bitrix/cache",
+    "bitrix/managed_cache",
+    "bitrix/stack_cache",
+    "bitrix/backup",
+    "bitrix/tmp",
+    "bitrix/updates",
+    // "bitrix/wizards",
+    "upload"
+	],
+  "file_exclude_patterns": [
+    "*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace",
+
+    // "*.min.js",
+    // "*.min.css",
+    "*.map.js",
+    "*.js.map",
+    "*.bundle.js",
+    "*.bundle.css"
 	],
 	"font_face": "Roboto Mono Medium",
 	"font_size": 9,
@@ -71,5 +86,5 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"update_check": false,
-	"word_wrap": true
+	"word_wrap": true,
 }

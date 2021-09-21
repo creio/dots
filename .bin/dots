@@ -142,7 +142,7 @@ b_keybase() {
     else
       to="$KB_PATH"
     fi
-    [[ -d $KB_PATH ]] && rsync -ahC --info=progress2 --no-i-r --safe-links --progress --delete --delete-excluded --exclude={".wall/",".icons/",".themes/",".config/sublime-text-3/"} "$BPATH/" "$to" || return 1
+    [[ -d $KB_PATH ]] && rsync -ahC --info=progress2 --no-i-r --safe-links --progress --delete --delete-excluded --include={".wall/wl.jpg",".wall/wl.png",".wall/lock.png"} --exclude={".wall/*",".icons/",".themes/",".config/sublime-text-3/"} "$BPATH/" "$to" || return 1
   else
     echo "run: systemctl start --user kbfs"
     exit 0

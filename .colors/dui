@@ -1,7 +1,7 @@
 *.foreground:  #f2f3f4
 *.background:  #161720
-*.cursorColor: #b4b6e4
 *.border:      #161720
+*.cursorColor: #b4b6e4
 
 *.color0:   #232433
 *.color1:   #FF7A93
@@ -12,7 +12,7 @@
 *.color6:   #7DA6FF
 *.color7:   #f2f3f4
 
-*.color8:   #546E7A
+*.color8:   #414868
 *.color9:   #FF7A93
 *.color10:  #baffd9
 *.color11:  #fcfcb1

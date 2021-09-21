@@ -13,16 +13,14 @@ CLEAN_DIR=(
 ~/.local/share/Trash/
 )
 
-clean_all()
-{
+clean_all() {
   echo "clean all"
   for i in "${CLEAN_ALL[@]}"; do
     [[ $i ]] && rm -rfv $i
   done
 }
 
-clean_d()
-{
+clean_d() {
   echo "clean dir"
   for i in "${CLEAN_DIR[@]}"; do
     [[ $i ]] && find $i -mindepth 1 -delete

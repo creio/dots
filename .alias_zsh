@@ -21,10 +21,6 @@ alias iip="curl --max-time 10 -w '\n' http://ident.me"
 alias tb="nc termbin.com 9999 | xsel -b -i"
 alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
-doiso() {
-  rsync -auvCL ~/ctlosiso/out/ cretm@${dev_ctlos_ru}:~/app/dev.ctlos.ru/iso/$1
-}
-
 # blur img: blur 4 .wall/wl3.jpg blur.jpg
 blur() {
   convert -filter Gaussian -blur 0x$1 $2 $3
@@ -47,6 +43,8 @@ zzd() {
 zzb() {
   find -H "/usr/bin" "$HOME/.bin" -executable -print | sed -e 's=.*/==g' | fzf | sh
 }
+
+alias bat="bat -p --color=always"
 
 # зависимость source-highlight
 hcat () {
@@ -85,14 +83,14 @@ accm () {
   # curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
   # tar -xvf $1.tar.gz
   cd $2
-  sudo ccm "$1" &&
+  sudo ccm "$1"
   gpg --detach-sign "$2"-*.pkg*
   cd ..
 }
 
 # pkg clean chroot manager
 lccm () {
-  sudo ccm "$1" &&
+  sudo ccm "$1"
   gpg --detach-sign *.pkg*
 }
 
@@ -111,7 +109,7 @@ abuild () {
   # tar -xvf $1.tar.gz
   cd $1
   makepkg -si --skipinteg
-  cd ~
+  cd ~/
   # rm -rf ~/.build/$1 ~/.build/$1.tar.gz
   rm -rf ~/.build/$1
 }
@@ -138,11 +136,12 @@ alias moon="curl 'wttr.in/Moon'"
 
 alias srm="sudo rm -rfv"
 alias rm="rm -rfv"
-brm () {
-  /bin/bash -c "yes | rm -rfv $1"{.\*\,\*}
+crm () {
+  # /bin/bash -c "yes | rm -rfv $1"{.\*\,\*}
+  /bin/bash -c "rm -rfv $1{.*,*}"
 }
-sbrm () {
-  sudo /bin/bash -c "yes | rm -rfv $1"{.\*\,\*}
+scrm () {
+  sudo /bin/bash -c "rm -rfv $1{.*,*}"
 }
 
 alias dir="dir --color=auto"
@@ -206,7 +205,7 @@ alias gpm="git push origin master"
 
 # tor chromium
 alias torc="$BROWSER --proxy-server='socks://127.0.0.1:9050' &"
-alias psi="$BROWSER --proxy-server='socks://127.0.0.1:1081' &"
+alias psi="$BROWSER --proxy-server='socks://127.0.0.1:3081' &"
 
 # full screen flags -fs
 alias yt="pipe-viewer"
@@ -255,14 +254,15 @@ iso () {
 
 alias -s {mp3,m4a,flac,mp4,mkv,webm}="mpv"
 alias -s {png,jpg,tiff,bmp,gif}="viewnior"
+alias -s {pdf}="xreader"
 # alias -s {conf,txt}="nvim"
 # alias {aurman,pikaur,trizen,yaourt}="yay"
 
 function s () {
-  subl3 -a "$1" &
+  subl -a "$1" &
 }
 function sudos () {
-  sudo subl3 -a "$1" &
+  sudo subl -a "$1" &
 }
 
 alias mi="micro"

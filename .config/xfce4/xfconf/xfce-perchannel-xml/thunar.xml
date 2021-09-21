@@ -6,16 +6,16 @@
   <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_75_PERCENT"/>
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_16"/>
-  <property name="last-window-width" type="int" value="771"/>
-  <property name="last-window-height" type="int" value="375"/>
+  <property name="last-window-width" type="int" value="774"/>
+  <property name="last-window-height" type="int" value="377"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
-  <property name="last-separator-position" type="int" value="115"/>
+  <property name="last-separator-position" type="int" value="112"/>
   <property name="last-show-hidden" type="bool" value="true"/>
   <property name="hidden-bookmarks" type="array">
     <value type="string" value="network:///"/>
-    <value type="string" value="file:///"/>
     <value type="string" value="network://"/>
+    <value type="string" value="file:///"/>
   </property>
   <property name="hidden-devices" type="array">
     <value type="string" value="2020-03-13-16-05-06-00"/>
@@ -59,13 +59,19 @@
     <value type="string" value="1745b9ff-c0c6-48e4-974f-dfca183831f3"/>
     <value type="string" value="7fdfd7a6-e0ac-4852-ae9c-2085f9ecf9af"/>
     <value type="string" value="c7b68393-4c50-42b3-ae0f-1b4cfe080117"/>
-    <value type="string" value="dd860933-513b-4b17-8e17-2de6d7f1a823"/>
-    <value type="string" value="8508fc50-6b86-49cf-b1a2-d5e144ea1b1c"/>
-    <value type="string" value="f4291e97-2362-4905-aadd-c50fa95041b9"/>
     <value type="string" value="d49b2397-fb29-4b06-bfd1-aceb29bbeddf"/>
-    <value type="string" value="f82c6bcf-174e-4786-a979-fd2bdf45bea6"/>
-    <value type="string" value="6c0653f1-706c-4dda-9ab0-89988cee0aa5"/>
-    <value type="string" value="1f512e81-ff87-4c28-bd5b-d055c5a8ef61"/>
+    <value type="string" value="dd860933-513b-4b17-8e17-2de6d7f1a823"/>
+    <value type="string" value="f4291e97-2362-4905-aadd-c50fa95041b9"/>
+    <value type="string" value="Диск Дискета"/>
+    <value type="string" value="b0956343-d2d9-4f7e-82bd-514a3722453c"/>
+    <value type="string" value="5cf660d4-8abc-4078-93a0-9f2e1ec7ca19"/>
+    <value type="string" value="8508fc50-6b86-49cf-b1a2-d5e144ea1b1c"/>
+    <value type="string" value="259cf354-7093-4bd9-97d0-94f8307d8054"/>
+    <value type="string" value="07a611fe-99ad-41ae-ba38-eef324a7b35b"/>
+    <value type="string" value="E11E-17EF"/>
+    <value type="string" value="ec48e54e-cb42-4dac-a6d4-d8e9451f9c07"/>
+    <value type="string" value="66450efa-26d5-4e75-9093-807c39d23681"/>
+    <value type="string" value="3fbfa303-8b8d-4019-abea-63df71eba03a"/>
   </property>
   <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
   <property name="last-statusbar-visible" type="bool" value="true"/>

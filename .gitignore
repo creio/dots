@@ -24,4 +24,6 @@
 
 !.wall/
 .wall/*
-!.wall/lcrow.png
+!.wall/wl.jpg
+!.wall/wl.png
+!.wall/lock.png

@@ -18,13 +18,15 @@
 		"Package Control",
 		"QML",
 		"Sass",
+		"SFTP",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
 		"SublimeLinter-php",
 		"Terminal",
+		"Terraform",
 		"TypeScript",
-		"Vue Syntax Highlight"
-	]
+		"Vue Syntax Highlight",
+	],
 }

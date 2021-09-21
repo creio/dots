@@ -2,7 +2,7 @@
 
 echo -e "\033[0;32mDeploy to Git Repo...\033[0m"
 
-git add .
+git add --all
 msg="$(date +%d.%m.%Y) Update"
 if [ $# -eq 1 ]
   then msg="$(date +%d.%m.%Y) Update $1"

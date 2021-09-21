@@ -1,15 +1,18 @@
 mpd_host = localhost
 mpd_port = 6600
 mpd_crossfade_time = 2
-visualizer_data_source = /tmp/mpd.fifo
-visualizer_output_name = "Visualizer feed"
-visualizer_in_stereo = no
-## Available values: spectrum, wave, wave_filled, ellipse.
-visualizer_type = spectrum
-visualizer_look = ●┃
-#visualizer_look = ┄┃
-#visualizer_look = ●●
+
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "Visualizer"
+visualizer_in_stereo = "yes"
+# ## Available values: spectrum, wave, wave_filled, ellipse.
+visualizer_type = "ellipse"
+visualizer_look = "●●"
+# visualizer_look = ●┃
+# #visualizer_look = ┄┃
+# visualizer_color = "white, white, black, white, red"
 visualizer_color = cyan, green, yellow, magenta, red
+
 song_list_format = "{{%a - %t}|{%f}}{$R%l}"
 #song_status_format = {%a - %t}|{%f}
 #song_status_format = "{{%a{ "%b"{ (%y)}} - }{%t$/b}}|{$b%f$/b}"

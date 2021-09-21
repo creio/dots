@@ -394,7 +394,7 @@
     </keybind>
     <keybind key="A-e">
       <action name="Execute">
-        <command>findapp subl3</command>
+        <command>findapp subl</command>
       </action>
     </keybind>
     <keybind key="A-r">
@@ -412,14 +412,14 @@
         <command>urxvt</command>
       </action>
     </keybind>
-    <keybind key="A-Return">
+    <!-- <keybind key="W-Return">
       <action name="Execute">
         <command>drawterm</command>
       </action>
-    </keybind>
+    </keybind> -->
     <keybind key="A-w">
       <action name="Execute">
-        <command>findapp brave</command>
+        <command>findapp firefox</command>
       </action>
     </keybind>
     <keybind key="A-m">
@@ -427,7 +427,7 @@
         <command>findapp telegram-desktop</command>
       </action>
     </keybind>
-    <keybind key="W-l">
+    <keybind key="W-A-l">
       <action name="Execute">
         <command>multilock.sh -l dimblur</command>
       </action>
@@ -494,7 +494,7 @@
     </keybind>
     <keybind key="C-A-h">
       <action name="Execute">
-        <command>rofi -modi "Clip  :greenclip print" -show "Clip  " -run-command '{cmd}' -width 500 -lines 18 -font "ClearSansMedium 10"</command>
+        <command>rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -font "ClearSansMedium 10" -theme-str 'window {width: 40%;height: 80%;}'</command>
       </action>
     </keybind>
     <keybind key="A-c">
@@ -954,7 +954,7 @@
         <y>center</y>
       </position> -->
     </application>
-    <application class="Subl3" type="normal">
+    <application class="Subl" type="normal">
       <maximized>yes</maximized>
       <!-- <desktop>3</desktop> -->
       <decor>no</decor>

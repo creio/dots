@@ -14,7 +14,7 @@
     separator_color = frame
     sort = yes
     idle_threshold = 120
-    font = Clear Sans Medium 9
+    font = Clear Sans Medium 10
     line_height = 0
     markup = full
     format = "<span foreground='#b3bdcb'>%s %p</span>\n%b"
@@ -42,27 +42,31 @@
     mouse_right_click = close_all
 
 [shortcuts]
-    close = ctrl+space
+    close = ctrl+Escape
     close_all = ctrl+shift+space
     history = ctrl+grave
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#232323"
-    foreground = "#A8A8A8"
-    timeout = 10
+    background = "#161720"
+    foreground = "#f2f3f4"
+    frame_color = "#161720"
+    timeout = 2
+    icon = ~/.icons/linebit/alarm.png
 
 [urgency_normal]
-    background = "#232323"
-    foreground = "#A8A8A8"
-    timeout = 10
+    background = "#161720"
+    foreground = "#f2f3f4"
+    frame_color = "#161720"
+    timeout = 2
+    icon = ~/.icons/linebit/alarm.png
 
 [urgency_critical]
-    background = "#D64E4E"
-    foreground = "#F0E0E0"
-    frame_color = "#D64E4E"
-    timeout = 10
-    icon = /usr/share/icons/Papirus-Dark/22x22/status/dialog-error.svg
+    background = "#161720"
+    foreground = "#ffd5cd"
+    frame_color = "#161720"
+    timeout = 5
+    icon = ~/.icons/linebit/alarm.png
 
 [ignore-all]
     summary = "*"

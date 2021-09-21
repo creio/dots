@@ -16,7 +16,7 @@
     <separator />
     <menu id="0" label="Development">
       <item label="Subl Txt"> <action name="Execute">
-      	<execute>subl3</execute>
+      	<execute>subl</execute>
       </action></item>
       <item label="Micro"> <action name="Execute">
       	<execute>urxvt -name w_max -e micro</execute>

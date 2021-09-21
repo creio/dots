@@ -1,33 +1,17 @@
 #!/usr/bin/zsh
 
+# ALERT="telegram alert bot"
+# curl -s -X POST https://api.telegram.org/bot$TOKEN_TG/sendMessage -d chat_id=$CHAT_ID_TG -d text="$ALERT"
+
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx &> /dev/null
 # [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -- vt1 &> /dev/null
 
 # zmodload zsh/zprof
-
 export PATH=$HOME/bin:$HOME/.bin:$HOME/.config/rofi/scripts:$HOME/.local/bin:/usr/local/bin:$PATH
-export CPR_LIB=~/cpr
 
 export HISTFILE=~/.zhistory
 export HISTSIZE=3000
 export SAVEHIST=3000
-
-# ### load zgen
-# ## git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
-# source "${HOME}/.zgen/zgen.zsh"
-# if ! zgen saved; then
-#   echo "Creating a zgen save"
-#   zgen oh-my-zsh
-#   # plugins
-#   zgen load zsh-users/zsh-autosuggestions
-#   # zgen load zsh-users/zsh-syntax-highlighting
-#   # zgen load zsh-users/zsh-history-substring-search
-#   # zgen load zsh-users/zsh-completions src
-#   zgen load zdharma/fast-syntax-highlighting
-#   # theme
-#   zgen oh-my-zsh themes/af-magic
-#   zgen save
-# fi
 
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
@@ -58,8 +42,8 @@ export FZF_COMPLETION_TRIGGER="~~"
 # export TERM="rxvt-256color"
 export TERM="xterm-256color"
 # export TERMINAL="kitty"
-export EDITOR="$([[ -n $DISPLAY && $(command -v subl3) ]] && echo 'subl3' || echo 'micro' || echo 'nano')"
-export BROWSER="$([[ -n $DISPLAY && $(command -v brave) ]] && echo 'brave' || echo 'chromium' || echo 'firefox')"
+export EDITOR="$([[ -n $DISPLAY && $(command -v subl) ]] && echo 'subl' || echo 'micro' || echo 'nano')"
+export BROWSER="$([[ -n $DISPLAY && $(command -v firefox) ]] && echo 'firefox' || echo 'brave' || echo 'chromium')"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 export XDG_CONFIG_HOME="$HOME/.config"
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -71,7 +55,11 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 [[ -s ~/.env ]] && . ~/.env
 [[ -f ~/.alias_zsh ]] && . ~/.alias_zsh
 
+# export PATH="$PATH:$HOME/.rvm/bin"
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
 [[ $(command -v ruby) ]] && export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
 # export PATH="$PATH:`yarn global bin`"
 
 # export GOPATH=$HOME/.go
@@ -96,5 +84,4 @@ if [[ -s "$NVM_DIR/nvm.sh" ]]; then
     eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
   done
 fi
-
 # zprof

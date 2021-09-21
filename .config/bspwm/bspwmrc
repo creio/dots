@@ -1,92 +1,42 @@
-#! /bin/sh
+#!/bin/sh
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+focused=$(xrdb -query all | grep color7 | cut -f2)
+normal=$(xrdb -query all | grep color8 | cut -f2)
 
-. "${HOME}/.config/bspwm/color"
+bspc monitor -d TERM CODE WEB FILES MEDIA EXTRA
 
-bspc config border_width         2
-bspc config normal_border_color "$color8"
-bspc config active_border_color "$color7"
-bspc config focused_border_color "$color6"
-bspc config presel_feedback_color "$color0"
-
-SPACES=$(bspc query -D)
-for SPACE in $SPACES
-do
-  bspc config -d ${SPACE} window_gap      10
-  bspc config -d ${SPACE} top_padding     25
-  bspc config -d ${SPACE} bottom_padding  25
-  bspc config -d ${SPACE} left_padding   50
-  bspc config -d ${SPACE} right_padding  50
-done
-
-bspc config automatic_scheme      spiral
-bspc config split_ratio           0.5
+bspc config focused_border_color  "$focused"
+bspc config normal_border_color   "$normal"
+bspc config border_width          2
+bspc config window_gap            10
+bspc config focus_follows_pointer false
+bspc config top_padding           35
+bspc config split_ratio           0.52
 bspc config borderless_monocle    true
 bspc config gapless_monocle       false
 bspc config single_monocle        true
-bspc config focus_follows_pointer true
 
-# bspc desktop ^1 -l monocle
-bspc desktop ^2 -l monocle
-# bspc desktop ^5 -l monocle
-# bspc desktop ^6 -l monocle
-bspc desktop ^9 -l monocle
-bspc desktop ^10 -l monocle
+bspc rule -a code-oss desktop='^2' follow=on
+bspc rule -a firefox desktop='^3' follow=on
+bspc rule -a Google-chrome desktop='^3' follow=on
+bspc rule -a mpv desktop='^5' state=fullscreen follow=on
+bspc rule -a feh state=fullscreen follow=on
 
-# Rules
-bspc rule -a URxvt:Tiled desktop='^1' follow=on
-bspc rule -a URxvt:Tmux desktop='^1' follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a Subl3 desktop='^3'
-# bspc rule -a Nemo desktop='^4' state=pseudo_tiled
-bspc rule -a Nemo desktop='^4'
-bspc rule -a Nemo:Dialog state=floating center=true
-bspc rule -a TelegramDesktop desktop='^5' follow=on
-bspc rule -a discord desktop='^5' follow=on
-bspc rule -a Gimp-2.10 desktop='^6'
-bspc rule -a Inkscape desktop='^6'
-bspc rule -a kdenlive desktop='^6'
-bspc rule -a Audacious desktop='^7' state=floating follow=on focus=on
-bspc rule -a Zathura desktop='^7' state=tiled follow=on
-bspc rule -a '*:libreoffice' desktop='^8' state=tiled
-bspc rule -a '*:soffice' desktop='^8'
-bspc rule -a Gnome-chess desktop='^9'
-bspc rule -a teeworlds desktop='^9'
-bspc rule -a Steam desktop='^9' state=floating
-bspc rule -a "VirtualBox Manager" desktop='^10'
-
-bspc rule -a URxvt:Newsboat sticky=on state=floating rectangle=1220x650+0+0 center=on
-bspc rule -a URxvt:Ranger sticky=on state=floating rectangle=1220x650+0+0 center=on
-bspc rule -a URxvt:Pacui sticky=on state=floating rectangle=800x450+0+0 center=on
-bspc rule -a URxvt:Float state=floating
-bspc rule -a Gnome-calculator state=floating
-bspc rule -a Galculator state=floating
-bspc rule -a Gpick state=floating
-bspc rule -a GParted state=floating
-bspc rule -a File-roller state=floating
-bspc rule -a Nitrogen state=floating
-bspc rule -a Lxappearance state=floating center=true
-bspc rule -a Lxrandr state=floating
-bspc rule -a Pavucontrol state=floating
-bspc rule -a Timeshift-gtk state=floating
-bspc rule -a qt5ct state=floating rectangle=700x470+0+0 center=on
-bspc rule -a SimpleScreenRecorder state=floating
-bspc rule -a Sxiv state=floating
-bspc rule -a Viewnior state=floating
-bspc rule -a SMPlayer state=floating
-bspc rule -a mpv state=floating sticky=on rectangle=300x180+1060+475
-
-bscp rule -a polybar manage=off
-bspc rule -a Tint2 border=off manage=off layer=above state=floating
-# bspc rule -a Mylaunchpad border=off manage=off
-bspc rule -a '*:Kunst' sticky=on layer=below border=off focus=off
-# bspc rule -a Sxiv:Kunst sticky=on layer=below border=off focus=off manage=off rectangle=250x250+1055+60
-
-# Set Desktop to start with floating windows
-FLOATING_DESKTOP_ID_5=$(bspc query -D -d '^5')
-bspc subscribe node | while read -a msg ; do
-  desk_id=${msg[2]}
-  wid=${msg[3]}
-  [ "$FLOATING_DESKTOP_ID_5" = "$desk_id" ] && bspc node "$wid" -t floating
-done
+xsetroot -cursor_name left_ptr
+hsetroot -fill ~/.wall/wl.jpg &
+tint2 -c ~/.config/tint2/button.tint2rc &
+tint2 -c ~/.config/tint2/hide_tray.tint2rc &
+$HOME/.config/bspwm/polybar/launch.sh &
+dunst &
+$HOME/.config/bspwm/bin/floating_noborder &
+picom -b --config ~/.config/picom.conf &
+urxvtd -q -o -f &
+numlockx on &
+xsettingsd &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+gnome-keyring-daemon --start --components=pkcs11,secrets &
+setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" -option "compose:ralt" &
+unclutter --timeout 2 &
+redshift -c ~/.config/redshift.conf &
+greenclip daemon &
+# syncthing &

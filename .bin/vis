@@ -40,7 +40,7 @@ Xscreen=1366
 Yscreen=768
 
 # Offset applied to the window's vertical position
-offset=5
+offset=10
 
 # Height of the cava panel
 h=200

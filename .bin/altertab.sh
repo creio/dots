@@ -12,4 +12,3 @@ else
     -pk "Left" -nk "Right" &
 fi
 
-

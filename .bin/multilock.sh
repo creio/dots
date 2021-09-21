@@ -1,6 +1,6 @@
 #!/bin/sh
 
-IMG=$HOME/.wall/wl.png
+IMG=$HOME/.wall/lock.png
 
 if [[ $(command -v  multilockscreen) ]]; then
   if [[ ! -d $HOME/.cache/multilock ]]; then

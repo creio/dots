@@ -14,7 +14,9 @@ if [[ -e /var/log/pacman.log ]]; then
     in="$(ls -ctl --time-style +"%H:%M:%S %d.%m.%Y" /etc | awk 'END{print $7}')"
 fi
 
-wm=$(wmctrl -m 2>/dev/null | grep "Name" | cut -d " " -f2)
+wm=$(wmctrl -m 2>/dev/null |
+  grep "Name" |
+  cut -d " " -f2)
 
 [[ -z $wm ]] && wm="$(xprop -root -notype _NET_WM_NAME | awk 'END{print $3}' | tr -d \")" || wm=$wm
 

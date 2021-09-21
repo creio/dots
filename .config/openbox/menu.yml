@@ -6,7 +6,7 @@ openbox_menu:
     - Web Search: search
     - separator:
     - Development:
-        - Subl Txt: subl3
+        - Subl Txt: subl
         - Micro: $terminal -name w_max -e micro
         - Vim: $terminal -e nvim
     - Network:

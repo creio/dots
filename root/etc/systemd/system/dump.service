@@ -1,0 +1,15 @@
+[Unit]
+Description=fs dump
+# After=network-online.target
+# Wants=network-online.target
+After=graphical.target
+
+[Service]
+Type=simple
+Environment="DISPLAY=:0"
+ExecStart=/home/creio/.bin/dump.sh
+StandardOutput=journal
+
+[Install]
+# WantedBy=multi-user.target
+WantedBy=default.target

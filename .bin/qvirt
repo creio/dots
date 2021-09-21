@@ -11,7 +11,7 @@
 QVIRT_DIR=$HOME/.qvirt
 WMSHARE_DIR=$HOME/vmshare
 QVIRT_QCOW=arch.qcow2
-QVIRT_SIZE=8G
+QVIRT_SIZE=15G
 
 # create dir & drive
 [[ ! -d $QVIRT_DIR ]] && mkdir -p $QVIRT_DIR
@@ -33,18 +33,53 @@ if [ "$1" = "-i" ]; then
     -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
     -cdrom $2 \
     -boot d
-elif [ "$1" = "-u" ]; then
-  # qvirt -u
+elif [ "$1" = "-b" ]; then
   qemu-system-x86_64 \
-    -enable-kvm -machine q35,accel=kvm \
-    -cpu host -m 4G \
+    -enable-kvm \
+    -m 4G \
     -net nic -net user,hostfwd=tcp::22222-:22 \
     -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
     -vga qxl \
     -device AC97 \
-    -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd \
-    -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_VARS.fd \
-    -hda $2
+    -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
+    -boot d
+elif [ "$1" = "-bu" ]; then
+  # qvirt -b       ## efi secboot
+  cp -r /usr/share/edk2-ovmf/x64/OVMF_VARS.fd /tmp
+  cp -r /usr/share/edk2-ovmf/x64/OVMF_CODE.secboot.fd /tmp
+  qemu-system-x86_64 \
+    -enable-kvm \
+    -machine type=q35,smm=on,accel=kvm,usb=on \
+    -m 4G \
+    -net nic -net user,hostfwd=tcp::22222-:22 \
+    -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
+    -vga qxl \
+    -device AC97 \
+    -drive if=pflash,format=raw,unit=0,file=/tmp/OVMF_CODE.secboot.fd,read-only=on \
+    -drive if=pflash,format=raw,unit=1,file=/tmp/OVMF_VARS.fd \
+    -global driver=cfi.pflash01,property=secure,value=on \
+    -global ICH9-LPC.disable_s3=1 \
+    -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
+    -boot d
+elif [ "$1" = "-u" ]; then
+  # qvirt -u iso-path     ## efi secboot
+  cp -r /usr/share/edk2-ovmf/x64/OVMF_VARS.fd /tmp
+  cp -r /usr/share/edk2-ovmf/x64/OVMF_CODE.secboot.fd /tmp
+  qemu-system-x86_64 \
+    -enable-kvm \
+    -machine type=q35,smm=on,accel=kvm,usb=on \
+    -m 4G \
+    -net nic -net user,hostfwd=tcp::22222-:22 \
+    -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
+    -vga qxl \
+    -device AC97 \
+    -drive if=pflash,format=raw,unit=0,file=/tmp/OVMF_CODE.secboot.fd,read-only=on \
+    -drive if=pflash,format=raw,unit=1,file=/tmp/OVMF_VARS.fd \
+    -global driver=cfi.pflash01,property=secure,value=on \
+    -global ICH9-LPC.disable_s3=1 \
+    -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
+    -cdrom $2 \
+    -boot d
 else
   # qvirt
   qemu-system-x86_64 \

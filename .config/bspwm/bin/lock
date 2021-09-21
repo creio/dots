@@ -1,0 +1,42 @@
+#!/bin/sh
+
+export TEXT=$(xrdb ~/.config/X11/xresources -query all | grep background | cut -f2)
+export WRONG=$(xrdb ~/.config/X11/xresources -query all | grep color1 | cut -f2)
+export DEFAULT=$(xrdb ~/.config/X11/xresources -query all | grep color3 | cut -f2)
+export VERIFYING=$(xrdb ~/.config/X11/xresources -query all | grep color4 | cut -f2)
+
+BLANK='#00000000'
+CLEAR='#00000000'
+
+i3lock \
+--insidever-color=$CLEAR     \
+--ringver-color=$VERIFYING   \
+\
+--insidewrong-color=$CLEAR   \
+--ringwrong-color=$WRONG     \
+\
+--inside-color=$BLANK        \
+--ring-color=$DEFAULT        \
+--line-color=$BLANK          \
+--separator-color=$DEFAULT   \
+\
+--verif-color=$TEXT          \
+--wrong-color=$TEXT          \
+--time-color=$TEXT           \
+--date-color=$TEXT           \
+--layout-color=$TEXT         \
+--keyhl-color=$TEXT          \
+--bshl-color=$TEXT           \
+\
+--blur 8                     \
+--clock                      \
+--radius 150                 \
+--ring-width 10              \
+\
+--time-str="%H:%M"           \
+--time-size 80               \
+--date-str="%A, %d/%m/%Y"    \
+--date-size 20               \
+\
+--ignore-empty-password      \
+--show-failed-attempts       \
