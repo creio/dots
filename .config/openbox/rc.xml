@@ -454,7 +454,7 @@
     </keybind>
     <keybind key="W-A-p">
       <action name="Execute">
-        <command>rofi-pass</command>
+        <command>bwmenu</command>
       </action>
     </keybind>
     <keybind key="Print">
@@ -961,7 +961,7 @@
       <shade>no</shade>
       <focus>yes</focus>
     </application>
-    <application role="browser">
+    <application role="browser" type="normal">
       <maximized>yes</maximized>
       <!-- <desktop>2</desktop> -->
       <decor>no</decor>

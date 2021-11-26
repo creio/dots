@@ -9,157 +9,157 @@ typeset -gr CFG="$HOME/.${NAME}rc"
 typeset -i BACKUP RESTORE PUSH # ints
 
 main() {
-	prep_dir || exit 1
-	if (( BACKUP )); then
-		backup && echo "Backup complete"
-	elif (( RESTORE )); then
-		restore && echo "Restore complete"
-	elif (( PUSH )); then
-		git_commit && echo "Git commit complete"
-	fi
+  prep_dir || exit 1
+  if (( BACKUP )); then
+    backup && echo "Backup complete"
+  elif (( RESTORE )); then
+    restore && echo "Restore complete"
+  elif (( PUSH )); then
+    git_commit && echo "Git commit complete"
+  fi
 }
 
 menu() {
-	printf "\e[H\e[2J\n"
-	opts=("Backup" "Restore" "Clean and backup" "Clean, backup, and push")
-	PS3=$'\nEnter selection (0/q to exit): '
-	if (( ${#REPO} )); then
-		select OPT in "${opts[@]}"; do break; done
-	else
-		select OPT in "${opts[0]}" "${opts[1]}" "${opts[2]}"; do break; done
-	fi
-	clear
-	case "$OPT" in
-		"${opts[0]}") BACKUP=1 ;;
-		"${opts[1]}") RESTORE=1 ;;
-		"${opts[2]}") BACKUP=1; clean_dir ;;
-		"${opts[3]}") BACKUP=1 PUSH=1; clean_dir ;;
-		*) exit 0 ;;
-	esac
+  printf "\e[H\e[2J\n"
+  opts=("Backup" "Restore" "Clean and backup" "Clean, backup, and push")
+  PS3=$'\nEnter selection (0/q to exit): '
+  if (( ${#REPO} )); then
+    select OPT in "${opts[@]}"; do break; done
+  else
+    select OPT in "${opts[0]}" "${opts[1]}" "${opts[2]}"; do break; done
+  fi
+  clear
+  case "$OPT" in
+    "${opts[0]}") BACKUP=1 ;;
+    "${opts[1]}") RESTORE=1 ;;
+    "${opts[2]}") BACKUP=1; clean_dir ;;
+    "${opts[3]}") BACKUP=1 PUSH=1; clean_dir ;;
+    *) exit 0 ;;
+  esac
 }
 
 usage() {
-	cat <<EOF
-USAGE:	$NAME [OPTIONS]
+  cat <<EOF
+USAGE:  $NAME [OPTIONS]
 
 OPTIONS:
-				-h        Display this usage message
-				-b        Backup files listed in $CFG
-				-r        Restore a previous backup
-				-c        Clean existing backup
-				-p        Push changes to git origin
-				-k        Backup keybase
+        -h        Display this usage message
+        -b        Backup files listed in $CFG
+        -r        Restore a previous backup
+        -c        Clean existing backup
+        -p        Push changes to git origin
+        -k        Backup keybase
 
 Configuration is done in $CFG
 A default will be created if it doesn't exist.
 
 Without any options a selection menu is opened
 EOF
-	exit 0
+  exit 0
 }
 
 backup() {
-	local to="" from=""
+  local to="" from=""
 
-	(( ${#BKPS[@]} )) || { printf "no paths to backup..\nconfiguration is done in ${CFG}\n"; return 1; }
+  (( ${#BKPS[@]} )) || { printf "no paths to backup..\nconfiguration is done in ${CFG}\n"; return 1; }
 
-	if read -re -p "Create a unique date-stamped snapshot directory for this backup? [y/N]: " ans && [[ $ans == 'y' || $ans == 'Y' ]]; then
-		to="$BPATH/$(date +%F-%H)"
-	else
-		to="$BPATH"
-	fi
+  if read -re -p "Create a unique date-stamped snapshot directory for this backup? [y/N]: " ans && [[ $ans == 'y' || $ans == 'Y' ]]; then
+    to="$BPATH/$(date +%F-%H)"
+  else
+    to="$BPATH"
+  fi
 
-	mkdir -pv "$to"
-	cd $HOME
-	for i in "${BKPS[@]}"; do
-		[[ -e "$i" ]] && rsync -aRhvP --delete-excluded --delete --safe-links "$i" "$to"
-	done
-	[[ ! -d $BPATH/$ROOT_DIR ]] && mkdir -pv $BPATH/$ROOT_DIR
-	for i in "${ROOT_BKPS[@]}"; do
-		[[ -e "/$i" ]] && rsync -aRhvP --delete-excluded --delete --safe-links "/$i" "$to/$ROOT_DIR"
-	done
+  mkdir -pv "$to"
+  cd $HOME
+  for i in "${BKPS[@]}"; do
+    [[ -e "$i" ]] && rsync -aRhvP --delete-excluded --delete --safe-links "$i" "$to"
+  done
+  [[ ! -d $BPATH/$ROOT_DIR ]] && mkdir -pv $BPATH/$ROOT_DIR
+  for i in "${ROOT_BKPS[@]}"; do
+    [[ -e "/$i" ]] && rsync -aRhvP --delete-excluded --delete --safe-links "/$i" "$to/$ROOT_DIR"
+  done
 
-	(( ! PUSH )) && return || git_commit
+  (( ! PUSH )) && return || git_commit
 }
 
 restore() {
-	[[ -d $BPATH ]] || { echo "error: missing directory: $BPATH"; return 1; }
-	local to='' from='' ans=''
+  [[ -d $BPATH ]] || { echo "error: missing directory: $BPATH"; return 1; }
+  local to='' from='' ans=''
 
-	printf "\nThis will overwrite the following files with the backups stored in %s\n\n" "$BPATH"
-	printf "\t%s\n" "${BKPS[@]}"
-	printf "\t%s\n" "${ROOT_BKPS[@]}"
-	read -re -p 'Do you want to continue? [y/N]: ' ans
-	[[ $ans == 'y' || $ans == 'Y' ]] || return 1
+  printf "\nThis will overwrite the following files with the backups stored in %s\n\n" "$BPATH"
+  printf "\t%s\n" "${BKPS[@]}"
+  printf "\t%s\n" "${ROOT_BKPS[@]}"
+  read -re -p 'Do you want to continue? [y/N]: ' ans
+  [[ $ans == 'y' || $ans == 'Y' ]] || return 1
 
-	for i in "${BKPS[@]}"; do
-		to="$HOME/$i"
-		from="$BPATH/${i}"
-		[[ -e $from ]] || continue
-		if [[ -d $from ]]; then
-			to+='/'
-			from+='/.'
-		fi
-		[[ ! $i == $HOME/* ]] && rsync -ahvP --exclude={"$BPATH/$ROOT_DIR"} --safe-links "$from" "$to"
-	done
+  for i in "${BKPS[@]}"; do
+    to="$HOME/$i"
+    from="$BPATH/${i}"
+    [[ -e $from ]] || continue
+    if [[ -d $from ]]; then
+      to+='/'
+      from+='/.'
+    fi
+    [[ ! $i == $HOME/* ]] && rsync -ahvP --exclude={"$BPATH/$ROOT_DIR"} --safe-links "$from" "$to"
+  done
 
-	echo "send backup root directory"
+  echo "send backup root directory"
 
-	for i in "${ROOT_BKPS[@]}"; do
-		to="/$i"
-		from="$BPATH/$ROOT_DIR/${i}"
-		[[ -e $from ]] || continue
-		if [[ -d $from ]]; then
-			to+='/'
-			from+='/.'
-		fi
-		[[ ! $i == /* ]] && sudo rsync -ahvP --safe-links "$from" "$to"
-	done
+  for i in "${ROOT_BKPS[@]}"; do
+    to="/$i"
+    from="$BPATH/$ROOT_DIR/${i}"
+    [[ -e $from ]] || continue
+    if [[ -d $from ]]; then
+      to+='/'
+      from+='/.'
+    fi
+    [[ ! $i == /* ]] && sudo rsync -ahvP --safe-links "$from" "$to"
+  done
 }
 
 prep_dir() {
-	[[ $BPATH ]] || { echo "BPATH must be set in config."; return 1; }
-	[[ $REPO ]] || { mkdir -p "$BPATH"; return 0; }
-	if [[ -d $BPATH/.git ]]; then
-		cd "$BPATH" && git pull && return 0
-	else
-		rm -rf "$BPATH" >/dev/null 2>&1; git clone "$REPO" "$BPATH"
-	fi
+  [[ $BPATH ]] || { echo "BPATH must be set in config."; return 1; }
+  [[ $REPO ]] || { mkdir -p "$BPATH"; return 0; }
+  if [[ -d $BPATH/.git ]]; then
+    cd "$BPATH" && git pull && return 0
+  else
+    rm -rf "$BPATH" >/dev/null 2>&1; git clone "$REPO" "$BPATH"
+  fi
 }
 
 clean_dir() {
-	[[ -d $BPATH ]] && cd "$BPATH" && git clean -f -d -x || return 1
+  [[ -d $BPATH ]] && cd "$BPATH" && git clean -f -d -x || return 1
 }
 
 b_keybase() {
-	# systemctl start --user kbfs
-	cmd="$(systemctl status --user kbfs | grep -i running 2>/dev/null || echo '')"
+  # systemctl start --user kbfs
+  cmd="$(systemctl status --user kbfs | grep -i running 2>/dev/null || echo '')"
 
-	if [[ "$cmd" ]]; then
-		if read -re -p "Create a unique date-stamped snapshot directory for this backup? [y/N]: " ans && [[ $ans == 'y' || $ans == 'Y' ]]; then
-			to="$KB_PATH/$(date +%F-%H)"
-			mkdir -pv "$to"
-		else
-			to="$KB_PATH"
-		fi
-		[[ -d $KB_PATH ]] && rsync -ahCvP --no-i-r --safe-links --delete --delete-excluded --include={".wall/wl.jpg",".wall/wl.png",".wall/lock.png"} --exclude={".wall/*",".icons/",".themes/",".config/sublime-text-3/"} "$BPATH/" "$to" || return 1
-	else
-		echo "run: systemctl start --user kbfs"
-		exit 0
-	fi
+  if [[ "$cmd" ]]; then
+    if read -re -p "Create a unique date-stamped snapshot directory for this backup? [y/N]: " ans && [[ $ans == 'y' || $ans == 'Y' ]]; then
+      to="$KB_PATH/$(date +%F-%H)"
+      mkdir -pv "$to"
+    else
+      to="$KB_PATH"
+    fi
+    [[ -d $KB_PATH ]] && rsync -ahCvP --no-i-r --safe-links --delete --delete-excluded --include={".wall/wl.jpg",".wall/wl.png",".wall/lock.png"} --exclude={".wall/*",".icons/",".themes/",".config/sublime-text-3/"} "$BPATH/" "$to" || return 1
+  else
+    echo "run: systemctl start --user kbfs"
+    exit 0
+  fi
 }
 
 git_commit() {
-	[[ $REPO ]] && cd "$BPATH" || return 1
-	cp -r README.md docs/README.md
-	git add --all
-	read -re -p $'\nEnter a short summary of this commit.\n\n> ' msg
-	git commit -am "$(date +%Y.%m.%d) update ${msg}"
-	git push origin "${BRANCH:-HEAD}"
+  [[ $REPO ]] && cd "$BPATH" || return 1
+  cp -r README.md docs/README.md
+  git add --all
+  read -re -p $'\nEnter a short summary of this commit.\n\n> ' msg
+  git commit -am "$(date +%Y.%m.%d) update ${msg}"
+  git push origin "${BRANCH:-HEAD}"
 }
 
 mk_cfg() {
-	cat <<LOL >${CFG}
+  cat <<LOL >${CFG}
 # sourced as a bash script, this allows command substitution,
 # brace expansion, additional scripting, and anything else that works.
 
@@ -191,32 +191,32 @@ etc/fstab
 )
 LOL
 
-	printf "New config created: $CFG\n\nEdit cfg file $CFG\n"
-	exit 0
+  printf "New config created: $CFG\n\nEdit cfg file $CFG\n"
+  exit 0
 }
 
 if ! . "$CFG" 2>/dev/null; then
-	mk_cfg; exit 1
+  mk_cfg; exit 1
 elif ! hash rsync >/dev/null 2>&1; then
-	echo "error: this requires rsync installed"; exit 1
+  echo "error: this requires rsync installed"; exit 1
 elif (( ${#REPO} )) && ! hash git >/dev/null 2>&1; then
-	echo "error: this requires git installed"; exit 1
+  echo "error: this requires git installed"; exit 1
 fi
 
 if (( $# == 0 )); then
-	menu
+  menu
 else
-	while getopts ":hbrcptk" OPT; do
-		case "$OPT" in
-			h) usage ;;
-			p) PUSH=1 ;;
-			b) BACKUP=1 ;;
-			r) RESTORE=1 ;;
-			c) clean_dir ;;
-			k) b_keybase ;;
-			\?) echo "error: invalid option: -$OPTARG"; exit 1 ;;
-		esac
-	done
+  while getopts ":hbrcptk" OPT; do
+    case "$OPT" in
+      h) usage ;;
+      p) PUSH=1 ;;
+      b) BACKUP=1 ;;
+      r) RESTORE=1 ;;
+      c) clean_dir ;;
+      k) b_keybase ;;
+      \?) echo "error: invalid option: -$OPTARG"; exit 1 ;;
+    esac
+  done
 fi
 
 (( BACKUP || RESTORE || PUSH )) && main

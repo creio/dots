@@ -28,9 +28,9 @@ progressbar_thickness=3font
 menubar_mouse_tracking=true
 toolbutton_style=1
 double_click=false
-translucent_windows=true
-blurring=true
-popup_blurring=true
+translucent_windows=false
+blurring=false
+popup_blurring=false
 vertical_spin_indicators=false
 spin_button_width=32
 fill_rubberband=false
@@ -38,9 +38,9 @@ merge_menubar_with_toolbar=true
 small_icon_size=16
 large_icon_size=32
 button_icon_size=16
-toolbar_icon_size=22
+toolbar_icon_size=16
 combo_as_lineedit=true
-animate_states=true
+animate_states=false
 button_contents_shift=false
 combo_menu=true
 hide_combo_checkboxes=true
@@ -69,7 +69,8 @@ respect_DE=true
 saturation=1.00
 scrollable_menu=true
 shadowless_popup=false
-submenu_delay=250
+submenu_delay=50
+drag_from_buttons=false
 
 [GeneralColors]
 window.color=#1D2026
@@ -93,18 +94,18 @@ link.visited.color=#9E4FFF
 progress.indicator.text.color=white
 
 [Hacks]
-transparent_ktitle_label=true
+transparent_ktitle_label=false
 transparent_dolphin_view=false
-transparent_pcmanfm_sidepane=true
+transparent_pcmanfm_sidepane=false
 blur_translucent=false
-transparent_menutitle=true
+transparent_menutitle=false
 respect_darkness=true
 kcapacitybar_as_progressbar=true
 force_size_grip=true
 iconless_pushbutton=true
 iconless_menu=false
 disabled_icon_opacity=35
-lxqtmainmenu_iconsize=22
+lxqtmainmenu_iconsize=16
 normal_default_pushbutton=true
 single_top_toolbar=true
 tint_on_mouseover=0
@@ -116,6 +117,7 @@ opaque_colors=false
 scroll_jump_workaround=false
 centered_forms=false
 noninteger_translucency=false
+style_vertical_toolbars=false
 
 [PanelButtonCommand]
 frame=true

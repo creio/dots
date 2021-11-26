@@ -7,7 +7,7 @@
 # [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -- vt1 &> /dev/null
 
 # zmodload zsh/zprof
-export PATH=$HOME/bin:$HOME/.bin:$HOME/.config/rofi/scripts:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.bin:$HOME/.local/bin:$HOME/.config/rofi/scripts:$PATH
 
 export HISTFILE=~/.zhistory
 export HISTSIZE=3000
@@ -15,7 +15,7 @@ export SAVEHIST=3000
 
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
-	compinit
+  compinit
 done
 compinit -C
 
@@ -23,6 +23,7 @@ compinit -C
 export ZSH="/usr/share/oh-my-zsh"
 ZSH_THEME="af-magic"
 DISABLE_AUTO_UPDATE="true"
+ZSH_TMUX_AUTOSTART="false"
 plugins=()
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 [[ ! -d $ZSH_CACHE_DIR ]] && mkdir -p $ZSH_CACHE_DIR
@@ -41,7 +42,7 @@ export FZF_COMPLETION_TRIGGER="~~"
 
 # export TERM="rxvt-256color"
 export TERM="xterm-256color"
-# export TERMINAL="kitty"
+export TERMINAL="urxvt"
 export EDITOR="$([[ -n $DISPLAY && $(command -v subl) ]] && echo 'subl' || echo 'micro' || echo 'nano')"
 export BROWSER="$([[ -n $DISPLAY && $(command -v firefox) ]] && echo 'firefox' || echo 'brave' || echo 'chromium')"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -53,12 +54,15 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 [[ $(command -v bat) ]] && export MANPAGER="sh -c 'sed -e s/.\\\\x08//g | bat -l man -p'"
 
 [[ -s ~/.env ]] && . ~/.env
+[[ -s ~/.env_borg ]] && . ~/.env_borg
 [[ -f ~/.alias_zsh ]] && . ~/.alias_zsh
 
-# export PATH="$PATH:$HOME/.rvm/bin"
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# https://wiki.archlinux.org/title/RVM
+[[ -d "$HOME/.rvm/bin" ]] && export PATH="$PATH:$HOME/.rvm/bin"
+[[ -r "$HOME/.rvm/scripts/completion" ]] && . "$HOME/.rvm/scripts/completion"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-[[ $(command -v ruby) ]] && export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+# [[ $(command -v ruby) ]] && export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 # export PATH="$PATH:`yarn global bin`"
 
@@ -72,16 +76,20 @@ export NVM_DIR="$HOME/.config/nvm"
 
 # Lazy load
 if [[ -s "$NVM_DIR/nvm.sh" ]]; then
-	NODE_GLOBALS=(`find $NVM_DIR/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
-	NODE_GLOBALS+=("node")
-	NODE_GLOBALS+=("nvm")
-	# Lazy-loading nvm + npm on node globals
-	load_nvm () {
-		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-	}
-	# Making node global trigger the lazy loading
-	for cmd in "${NODE_GLOBALS[@]}"; do
-		eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
-	done
+  NODE_GLOBALS=(`find $NVM_DIR/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
+  NODE_GLOBALS+=("node")
+  NODE_GLOBALS+=("nvm")
+  # Lazy-loading nvm + npm on node globals
+  load_nvm () {
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  }
+  # Making node global trigger the lazy loading
+  for cmd in "${NODE_GLOBALS[@]}"; do
+    eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
+  done
 fi
 # zprof
+
+# >>>> Vagrant command completion (start)
+# fpath=(/opt/vagrant/embedded/gems/2.2.18/gems/vagrant-2.2.18/contrib/zsh $fpath)
+# <<<<  Vagrant command completion (end)

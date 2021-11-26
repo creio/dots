@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# notify-send -t 0 "Warning" "Kill mouse"
+
 action=$(yad --entry --title "System Logout" \
 	--center --borders=20 --width 300 \
 	--image=gnome-shutdown \
@@ -33,3 +35,8 @@ case $action in
 esac
 
 eval exec $cmd
+
+# sudo -u creio DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -t 0 "Выключи быстрее" "бла бла"
+# notify-send -t 0 "Выключи быстрее" "бла бла"
+
+# sleep 10;

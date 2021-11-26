@@ -32,7 +32,7 @@ settings:
       <Shift-Return>: <Return>
   colors.completion.category.bg:
     global: '#161720'
-  content.notifications:
+  content.notifications.enabled:
     global: true
   fonts.completion.entry:
     global: 9pt default_family
@@ -59,6 +59,10 @@ settings:
     global: 9pt default_family
   fonts.tabs.unselected:
     global: 9pt default_family
+  spellcheck.languages:
+    global:
+    - en-US
+    - ru-RU
   statusbar.padding:
     global:
       bottom: 3
@@ -67,8 +71,13 @@ settings:
       top: 3
   statusbar.show:
     global: always
+  # pinned, always, never
   tabs.favicons.show:
-    global: never
+    global: pinned
+  tabs.close_mouse_button:
+    global: right
+  tabs.last_close:
+    global: default-page
   tabs.indicator.width:
     global: 0
   tabs.max_width:
@@ -83,6 +92,8 @@ settings:
     global: top
   tabs.show:
     global: always
+  tabs.select_on_remove:
+    global: prev
   tabs.title.alignment:
     global: center
   tabs.title.format:

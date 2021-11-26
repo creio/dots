@@ -26,6 +26,7 @@
 		"SublimeLinter-php",
 		"Terminal",
 		"Terraform",
+		"TOML",
 		"TypeScript",
 		"Vue Syntax Highlight",
 	],

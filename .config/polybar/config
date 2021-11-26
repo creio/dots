@@ -18,7 +18,7 @@ margin-bottom = 0
 # //////////////////////////////////////
 [bar/top]
 width = 100%
-height = 22
+height = 30
 offset-x = 0
 offset-y = 0
 radius = 0
@@ -41,15 +41,15 @@ padding-right = 0
 module-margin-left = 5
 module-margin-right = 0
 
-# font-0 = "UW Ttyp0:style=Regular:size=8:antialias=false;2"
-font-0 = "Ubuntu:style=Bold:size=8:antialias=false;2"
+# font-0 = "Clear Sans:style=Bold:size=10:antialias=false;2"
+font-0 = "Ubuntu:style=Bold:size=9:antialias=false;2"
 #font-2 = "Siji:pixelsize=8;1"
 # Cat unicode: echo -e "\uF31A"
-font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=8;2"
-font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=8;2"
-font-3 = "Font Awesome 5 Brands:pixelsize=8;2"
-font-4 = "Hack Nerd Font Mono:size=12:antialias=false;2"
-font-5 = "Weather Icons:style=Regular:pixelsize=9;2"
+font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=9;2"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=9;2"
+font-3 = "Font Awesome 5 Brands:pixelsize=9;2"
+font-4 = "Hack Nerd Font Mono:pixelsize=16:antialias=false;4"
+font-5 = "Weather Icons:style=Regular:pixelsize=10:antialias=false;2"
 
 
 modules-left = app show_desktop cpu memory uparch wtr gmail title
@@ -99,7 +99,9 @@ content-padding = 3
 type = custom/text
 content = 
 content-foreground = ${colors.accent}
-content-padding = 1
+content-padding = 2
+content-margin = 0
+content-offset = -7
 click-left = ~/.bin/show_desktop
 
 
@@ -109,6 +111,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.accent}
+format-offset = -7
 label = %percentage%%
 
 
@@ -128,6 +131,7 @@ exec = ~/.config/polybar/uparch.sh
 interval = 3600
 format-prefix = " "
 format-prefix-foreground = ${colors.accent}
+format-padding = 1
 click-left = "urxvt -name w_85 -e ~/.config/polybar/uparch.sh d_up &"
 click-right = "urxvt -name w_85 -e pacui &"
 
@@ -155,8 +159,8 @@ interval = 1800
 type = custom/script
 exec = ~/.config/polybar/gmail/launch.py --color '#798BC7' --nosound
 tail = true
+format-padding = 1
 click-left = xdg-open https://mail.google.com
-
 
 
 [module/title]
@@ -276,7 +280,7 @@ type = custom/text
 content = 
 content-foreground = ${colors.accent}
 click-left = "pkill -9 redshift; ~/.bin/bri.sh 0.7 0.9:0.9:0.9 &"
-click-right = "~/.bin/bri.sh 1 1:1:1; pkill -9 redshift &"
+click-right = "~/.bin/bri.sh &"
 
 
 

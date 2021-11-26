@@ -11,16 +11,19 @@ Xft.lcdfilter: lcddefault
 !URxvt.font: xft:Hack Nerd Font Mono:size=9
 
 !!! xlsfonts | grep ttyp0    &&    fc-list : family style
-URxvt.font: xft:UW Ttyp0:size=10,xft:Hack Nerd Font Mono:size=9,xft:Noto Color Emoji,xft:Symbola
-URxvt.boldFont: xft:UW Ttyp0:size=10,xft:Hack Nerd Font Mono:size=9,xft:Noto Color Emoji,xft:Symbola
+!URxvt.font: xft:UW Ttyp0:antialias=False:pixelsize=14,xft:Hack Nerd Font Mono:size=9,xft:Noto Color Emoji,xft:Symbola
+!URxvt.boldFont: xft:UW Ttyp0:antialias=False:pixelsize=14,xft:Hack Nerd Font Mono:size=9,xft:Noto Color Emoji,xft:Symbola
 
 !! cozette-otb
 !URxvt.font: xft:Cozette:size=10,xft:Hack Nerd Font Mono:size=9,xft:Symbola
 !URxvt.boldFont: xft:Cozette:size=10,xft:Hack Nerd Font Mono:size=9,xft:Symbola
 
+URxvt.font: xft:Hack Nerd Font Mono:size=10,xft:Noto Color Emoji,xft:Symbola
+URxvt.boldFont: xft:Hack Nerd Font Mono:size=10,xft:Noto Color Emoji,xft:Symbola
+
 !URxvt.termname: xterm-256color
 URxvt.iconFile: /usr/share/icons/Papirus/48x48/apps/urxvt.svg
-URxvt.geometry: 84x22
+URxvt.geometry: 94x23
 URxvt.internalBorder: 15
 URxvt.letterSpace: 0
 URxvt.antialias: true

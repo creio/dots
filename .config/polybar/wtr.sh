@@ -27,6 +27,7 @@ get_icon() {
 
 KEY="$KEY_OPENWEATHERMAP"
 CITY="$CITY_OPENWEATHERMAP"
+# CITY=$(curl -s ipinfo.io/city | awk '{print $2}')
 UNITS="metric"
 SYMBOL="°"
 API="https://api.openweathermap.org/data/2.5"

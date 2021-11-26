@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="64"
+   height="64"
+   id="theFolder">
+  <metadata
+     id="metadata26">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="folderDefs">
+    <linearGradient
+       y2="553.46"
+       x2="416.57"
+       gradientTransform="translate(-384.57,-483.8)"
+       y1="515.8"
+       gradientUnits="userSpaceOnUse"
+       x1="416.57"
+       id="folderGradient">
+      <stop
+         id="stop2"
+         offset="0"
+         stop-color="#9ac5f1" />
+      <stop
+         id="stop4"
+         offset="1"
+         stop-color="#77abea" />
+    </linearGradient>
+  </defs>
+  <g
+     id="originalFolder">
+    <path
+       style="fill:#8bb9e8"
+       id="path8"
+       d="m 5,12 c -1.1046,0 -2,0.89542 -2,2 v 21 h 20 l 4,-4 H 61 V 18 L 59,16 H 31 L 27,12 H 10 Z" />
+    <path
+       style="fill:url(#folderGradient)"
+       id="path10"
+       d="m 26,29 -4,4 H 3 V 58 H 61 V 29 Z" />
+    <g
+       id="g18">
+      <path
+         style="fill:#7ca3d5"
+         id="path12"
+         d="m 5,12 c -1.1046,0 -2,0.89543 -2,2 v 1 c -2.3e-6,1.7724 0,20 0,20 H 4 V 14 c 0,-0.552285 0.4477153,-1 1,-1 h 21.486 l 3.980288,4 H 60 l 3e-4,16 H 61 V 18 L 59,16 H 31 l -4.0005,-4 h -17 z" />
+      <path
+         style="fill:#7ca3d5"
+         id="path14"
+         d="m 26,29 -4,4 H 3 c 0,-1.2e-4 10e-4,13.061 0,25 H 61 V 29 Z m 0.52539,1 H 60 l 3.9e-4,27 h -56 V 34 h 18.514 z" />
+      <path
+         style="fill:#648bbe;fill-opacity:1"
+         id="path16"
+         d="m 4,34 h 18.514 l 3.4856,-5 -5,4 z" />
+      <path
+         style="fill:#ffffff;fill-opacity:0.23529412"
+         id="path20"
+         d="m 26.525,30 -4.0117,4 H 4.0003 v 1 h 19 l 4,-4 H 60 v -1 z" />
+    </g>
+    <path
+       id="path833"
+       d="m 59,16 a 2,2 0 0 0 -1.728516,1 H 59 a 1,1 0 0 1 1,1 v 1.730469 A 2,2 0 0 0 61,18 2,2 0 0 0 59,16 Z"
+       style="opacity:1;vector-effect:none;fill:#7ca3d5;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill" />
+  </g>
+</svg>

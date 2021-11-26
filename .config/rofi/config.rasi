@@ -11,5 +11,4 @@ configuration {
   run-shell-command: "{terminal} -e {cmd}";
   window-command: "wmctrl -i -R {window}";
   sidebar-mode: true;
-  separator-style: "none";
 }

@@ -8,7 +8,7 @@
 
 # Check for root
 if [[ $EUID -ne 0 ]]; then
-	echo "run root" && exit 1
+  echo "run root" && exit 1
 fi
 
 HOST_NAME=rach
@@ -22,13 +22,14 @@ echo "sda,vda,nvme..?"
 read -p "Disk? : " I_DISK
 DISK=/dev/$I_DISK
 if [[ ! $(lsblk -d | grep $I_DISK) ]]; then
-	echo "Error no disk."; exit 1
+  echo "Error no disk."; exit 1
 fi
 
 dd if=/dev/zero of=${DISK} status=progress bs=4096 count=256
 
+# || mklabel gpt
 parted ${DISK} << EOF
-mklabel gpt
+mklabel msdos
 mkpart primary 1MiB 300MiB
 set 1 boot on
 mkpart primary 300MiB 100%
@@ -82,7 +83,7 @@ wget git rsync gnu-netcat pv bash-completion htop tmux networkmanager
 )
 
 for i in "${PKGS[@]}"; do
-	pacstrap /mnt $i 2>&1 | tee -a /tmp/log
+  pacstrap /mnt $i 2>&1 | tee -a /tmp/log
 done
 
 genfstab -pU /mnt > /mnt/etc/fstab
@@ -136,14 +137,14 @@ sed -i "s/^HOOKS=\(.*keyboard\)/HOOKS=\1 keymap/" /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 if [ "$virt_d" = "oracle" ]; then
-	echo "Virtualbox"
-	pacman -S --noconfirm --needed virtualbox-guest-utils virtualbox-guest-dkms
-	systemctl enable vboxservice
-	usermod -a -G vboxsf ${NEW_USER}
+  echo "Virtualbox"
+  pacman -S --noconfirm --needed virtualbox-guest-utils
+  systemctl enable vboxservice
+  usermod -a -G vboxsf ${NEW_USER}
 elif [ "$virt_d" = "vmware" ]; then
-	echo
+  echo
 else
-	echo "Virt $virt_d"
+  echo "Virt $virt_d"
 fi
 
 # bootctl install
@@ -159,61 +160,15 @@ fi
 # options root=UUID=$root_uuid rw
 # EOF
 
-# cd /home/$NEW_USER/
-# sudo -u $NEW_USER git clone https://aur.archlinux.org/preloader-signed.git
-# cd /home/$NEW_USER/preloader-signed
-# sudo -u $NEW_USER makepkg -sr
-# cd /
-# pacman -U /home/$NEW_USER/preloader-signed/*.pkg.tar.zst --noconfirm
-# rm -rf /home/$NEW_USER/preloader-signed
-# cp /usr/share/preloader-signed/{PreLoader,HashTool}.efi /boot/EFI/systemd
-# cp /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/loader.efi
-
-# #### Fallback
-# cp /usr/share/preloader-signed/HashTool.efi /boot/EFI/BOOT/
-# cp /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/BOOT/loader.efi
-# cp /usr/share/preloader-signed/PreLoader.efi /boot/EFI/BOOT/BOOTx64.EFI
-
-# #### backup the original bootmgfw.efi
-# mkdir -p /boot/EFI/Microsoft/Boot
-# cp /usr/share/preloader-signed/PreLoader.efi /boot/EFI/Microsoft/Boot/bootmgfw.efi
-# cp /usr/share/preloader-signed/HashTool.efi /boot/EFI/Microsoft/Boot/
-# cp /boot/EFI/BOOT/loader.efi /boot/EFI/Microsoft/Boot/
-
-# efibootmgr -c -d $DISK -p 1 -L "PreLoader" -l /EFI/systemd/PreLoader.efi
-
-# grub-install $DISK
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-install $DISK
+# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 # sed -i -e 's/^GRUB_TIMEOUT=.*$/GRUB_TIMEOUT=0/' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
-# cd /home/$NEW_USER/
-# sudo -u $NEW_USER git clone https://aur.archlinux.org/shim-signed.git
-# cd /home/$NEW_USER/shim-signed
-# sudo -u $NEW_USER makepkg -sr
-# cd /
-# pacman -U /home/$NEW_USER/shim-signed/*.pkg.tar.zst --noconfirm
-# rm -rf /home/$NEW_USER/shim-signed
-# cp /usr/share/shim-signed/* /boot/EFI/GRUB/
-
-# efibootmgr -c -d $DISK -p 1 -L "Shim" -l /EFI/GRUB/shimx64.efi
-
-cd /home/$NEW_USER/
-sudo -u $NEW_USER git clone https://aur.archlinux.org/preloader-signed.git
-cd /home/$NEW_USER/preloader-signed
-sudo -u $NEW_USER makepkg -sr
-cd /
-pacman -U /home/$NEW_USER/preloader-signed/*.pkg.tar.zst --noconfirm
-rm -rf /home/$NEW_USER/preloader-signed
-cp /usr/share/preloader-signed/* /boot/EFI/GRUB/
-cp /boot/EFI/GRUB/grubx64.efi /boot/EFI/GRUB/loader.efi
-
-efibootmgr -c -d $DISK -p 1 -L "PreLoader" -l /EFI/GRUB/PreLoader.efi
-
 cat <<EOF >/etc/hosts
-127.0.0.1				localhost
-::1							localhost
-127.0.1.1				$HOST_NAME.localdomain $HOST_NAME
+127.0.0.1       localhost
+::1             localhost
+127.0.1.1       $HOST_NAME.localdomain $HOST_NAME
 EOF
 
 # systemctl enable dhcpcd

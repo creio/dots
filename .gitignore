@@ -7,6 +7,8 @@
 .conky/gmail/credentials.json
 .conky/gmail/client_secret.json
 .env
+.env_borg
+.2fa
 .gauth
 .gitconfig
 .gnupg

@@ -27,6 +27,7 @@ setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" -option "c
 # setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
 unclutter --timeout 2 &
 redshift -c ~/.config/redshift.conf &
+# ~/.bin/bri.sh 0.7 0.9:0.9:0.9 &
 greenclip daemon &
 # parcellite &
 # animatebg -v https://www.youtube.com/watch?v=N1FuK9KC1vc &

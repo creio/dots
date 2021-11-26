@@ -1,0 +1,71 @@
+# Section: menu
+menu.border.width:                      15
+menu.border.color:                      #282c37
+menu.separator.color:                   #282c37
+menu.*.bg:                              flat
+menu.*.bg.color:                        #282c37
+menu.*.text.color:                      #9baec8
+menu.*.text.justify:                    center 
+menu.*.disabled.text.color:             #282c37
+menu.*.active.text.color:               #282c37
+menu.*.active.bg.color:                 #9baec8
+
+# Section: osd
+osd.border.width:                       0
+osd.border.color:                       #282c37
+osd.bg:                                 flat
+osd.bg.color:                           #282c37
+osd.label.bg:                           flat solid
+osd.label.bg.color:                     #282c37
+osd.label.text.color:                   #9baec8
+osd.highlight.bg:                       flat solid
+osd.highlight.bg.color:                 #282c37
+osd.unhighlight.bg:                     flat
+osd.unhighlight.bg.color:               #282c37
+osd.button.unpressed.bg:                flat
+osd.button.unpressed.bg.color:          #282c37
+osd.button.unpressed.*.border.color:    #282c37
+osd.button.pressed.bg:                  flat
+osd.button.pressed.bg.color:            #282c37
+osd.button.pressed.*.border.color:      #282c37
+osd.button.focused.bg:                  flat  
+osd.button.focused.bg.color:            #282c37
+osd.button.focused.*.border.color:      #282c37
+osd.button.focused.box.color:           #282c37
+
+# Section: window
+window.*.bg:                            flat parentrelative
+window.*.*.bg:                          flat parentrelative
+window.*.*.*.bg:                        flat parentrelative
+window.*.text.justify:                  left
+window.active.button.*.*.image.color:   #9baec8
+window.active.label.text.color:         #9baec8
+window.active.title.bg.color:           #16191f
+window.active.title.separator.color:    #16191f
+window.active.border.color:             #16191f
+window.inactive.button.*.*.image.color: #9baec8
+window.inactive.label.text.color:       #16191f
+window.inactive.title.bg.color:         #414458
+window.inactive.title.separator.color:  #414458
+window.inactive.border.color:           #16191f
+
+window.*.button.*.image.color:           #9baec8
+window.*.label.text.color:               #9baec8
+window.*.title.bg.color:                 #282c37
+window.*.title.separator.color:          #282c37
+window.*.border.color:                   #282c37
+window.*.handle.bg.color:                #282c37
+
+# Section: fonts
+window.active.label.text.font:          shadow=n
+window.inactive.label.text.font:        shadow=n
+menu.items.font:                        shadow=n
+menu.title.text.font:                   shadow=n
+
+# Section: misc
+border.width:                           0
+padding.width:                          5
+padding.height:                         7
+window.client.padding.height:           0
+window.client.padding.width:            0
+window.label.text.justify:              left

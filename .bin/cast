@@ -1,43 +1,54 @@
 #! /bin/bash
 
 # nvidia-settings --load-config-only
-nvidia-settings --assign="SyncToVBlank=0" --assign="0/AllowFlipping=0" &>/dev/null
+sudo nvidia-settings --assign="0/AllowFlipping=0" &>/dev/null
 
-RES=$(xdpyinfo | grep dimensions | awk '{print $2;}')
-ALSA_OUT="alsa_output.pci-0000_00_14.2.analog-stereo.monitor"
+V_SIZE=$(xdpyinfo | grep dimensions | awk '{print $2;}')
+OUTRES="1920x1080"
+QUAL="ultrafast"   ## Preset medium, fast, ultrafast, superfast
+# pacmd list-sources | grep -e device.string -e 'name:'
+ALSA_OUT="alsa_output.pci-0000_00_1b.0.analog-stereo.monitor"
+
+# ffmpeg \
+# -f x11grab -s $RES -i :0.0 \
+# -f alsa -i default \
+# -c:v h264_nvenc -r 30 -preset superfast -crf 23 -threads 0 -vf "format=yuv420p,scale=-2:1080" \
+# -c:a ac3 -b:a 128k \
+# -y ~/Videos/out.mkv
 
 if [ "$1" = "-m" ]; then
-	ffmpeg \
-	-f x11grab -s $RES -i :0.0 \
-	-f alsa -i default \
-	-c:v h264_nvenc -r 30 -preset superfast -crf 23 -threads 0 -vf "format=yuv420p,scale=-2:1080" \
-	-c:a ac3 -b:a 128k \
-	-y ~/Videos/output.mkv
-elif [ "$1" = "-n" ]; then
-	ffmpeg \
-	-f x11grab -s $RES -i :0.0 \
-	-c:v libx264 -pix_fmt yuv420p -r 30 -preset superfast -qp 0 \
-	-y ~/Videos/output.mp4
+  ffmpeg \
+    -f x11grab -s $V_SIZE -r 60 -i :0.0 \
+    -f alsa -i default \
+    -acodec libmp3lame -b:a 128k -ar 44100 -threads auto \
+    -vcodec libx264 -preset $QUAL -tune animation -b:v 8000k -s $OUTRES -threads 0 \
+    -y ~/Videos/out.mp4
+elif [ "$1" = "-a" ]; then
+  ffmpeg \
+    -f x11grab -s $V_SIZE -r 60 -i :0.0 \
+    -f pulse -i $ALSA_OUT \
+    -acodec libmp3lame -b:a 128k -ar 44100 -threads auto \
+    -vcodec libx264 -preset $QUAL -tune animation -b:v 8000k -s $OUTRES -threads 0 \
+    -y ~/Videos/out.mp4
 elif [ "$1" = "-s" ]; then
-	slop=$(slop -f "%x %y %w %h %g %i") || exit 1
-	read -r X Y W H G ID < <(echo $slop)
-	ffmpeg \
-	-f x11grab -s "$W"x"$H" -i :0.0+$X,$Y \
-	-f pulse -i $ALSA_OUT \
-	-c:v libx264 -pix_fmt yuv420p -r 30 -crf 23 -preset superfast \
-	-y ~/Videos/output.mp4
-# elif [ "$1" = "-g" ]; then
-#		slop=$(slop -f "%x %y %w %h %g %i") || exit 1
-#		read -r X Y W H G ID < <(echo $slop)
-#		ffmpeg \
-#		-f x11grab -s "$W"x"$H" -i :0.0+$X,$Y \
-#		-c:v gif \
-#		-y ~/Videos/output.gif
+  slop=$(slop -f "%x %y %w %h %g %i") || exit 1
+  read -r X Y W H G ID < <(echo $slop)
+  ffmpeg \
+    -f x11grab -s "$W"x"$H" -r 60 -i :0.0+$X,$Y \
+    -f pulse -i $ALSA_OUT \
+    -acodec libmp3lame -b:a 128k -ar 44100 -threads auto \
+    -vcodec libx264 -preset $QUAL -tune animation -b:v 8000k -s $OUTRES -threads 0 \
+    -y ~/Videos/out.mp4
+elif [ "$1" = "-g" ]; then
+  slop=$(slop -f "%x %y %w %h %g %i") || exit 1
+  read -r X Y W H G ID < <(echo $slop)
+  ffmpeg \
+    -f x11grab -s "$W"x"$H" -i :0.0+$X,$Y \
+    -c:v gif \
+    -y ~/Videos/out.gif
 else
-	ffmpeg \
-	-f x11grab -video_size $RES -i :0.0 \
-	-f pulse -i $ALSA_OUT \
-	-c:a ac3 -b:a 128k \
-	-c:v h264_nvenc -r 30 -crf 20 -vf "format=yuv420p,scale=-2:1080" \
-	-y ~/Videos/out.mp4
+  ffmpeg \
+    -f x11grab -s $V_SIZE -r 60 -i :0.0 \
+    -vcodec libx264 -preset $QUAL -tune animation -b:v 8000k -s $OUTRES -threads 0 \
+    -y ~/Videos/out.mp4
 fi
