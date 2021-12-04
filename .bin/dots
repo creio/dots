@@ -156,6 +156,7 @@ git_commit() {
   read -re -p $'\nEnter a short summary of this commit.\n\n> ' msg
   git commit -am "$(date +%Y.%m.%d) update ${msg}"
   git push origin "${BRANCH:-HEAD}"
+  echo $REPO
 }
 
 mk_cfg() {
