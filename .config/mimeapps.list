@@ -86,6 +86,7 @@ video/vnd.mpegurl=mpv.desktop
 video/dv=mpv.desktop
 application/vnd.rn-realmedia=mpv.desktop
 application/vnd.rn-realmedia-vbr=mpv.desktop
+application/x-ms-dos-executable;application/x-wine-extension-msp;application/x-msi;application/x-msdos-program=PortProton.desktop
 
 [Added Associations]
 text/x-qml=sublime_text_3.desktop;
@@ -99,7 +100,7 @@ video/x-matroska=org.shotcut.Shotcut.desktop;audacity.desktop;org.avidemux.Avide
 application/x-shellscript=sublime_text.desktop;micro.desktop;sublime_text_3.desktop;nvim.desktop;org.gnome.FileRoller.desktop;
 audio/mpeg=audacious.desktop;audacity.desktop;
 image/x-xbitmap=viewnior.desktop;
-image/svg+xml=sublime_text.desktop;viewnior.desktop;firefox.desktop;gimp.desktop;org.inkscape.Inkscape.desktop;sublime_text_3.desktop;inkscape.desktop;
+image/svg+xml=viewnior.desktop;sublime_text.desktop;firefox.desktop;gimp.desktop;org.inkscape.Inkscape.desktop;sublime_text_3.desktop;inkscape.desktop;
 application/x-cd-image=org.gnome.FileRoller.desktop;
 application/x-tint2-theme=sublime_text_3.desktop;
 text/html=sublime_text.desktop;sublime_text_3.desktop;firefox.desktop;
@@ -110,8 +111,8 @@ image/vnd.microsoft.icon=viewnior.desktop;
 application/json=sublime_text.desktop;sublime_text_3.desktop;
 text/x-matlab=sublime_text_3.desktop;
 image/x-xpixmap=viewnior.desktop;
-application/x-ms-dos-executable=net.lutris.Lutris.desktop;wine.desktop;
-text/csv=sublime_text.desktop;libreoffice-calc.desktop;sublime_text_3.desktop;wine-extension-txt.desktop;
+application/x-ms-dos-executable=PortProton.desktop;wine.desktop;net.lutris.Lutris.desktop;
+text/csv=libreoffice-calc.desktop;sublime_text.desktop;sublime_text_3.desktop;wine-extension-txt.desktop;
 application/pdf=xreader.desktop;org.pwmt.zathura.desktop;pqiv.desktop;libreoffice-draw.desktop;firefox.desktop;
 application/x-php=sublime_text.desktop;sublime_text_3.desktop;
 application/sql=sublime_text.desktop;sublime_text_3.desktop;

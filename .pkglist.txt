@@ -15,6 +15,7 @@ bind
 binutils
 bison
 bitwarden-cli
+borg
 brainfuck-psiphon-pro-go-bin
 brightnessctl
 ca-certificates
@@ -45,6 +46,7 @@ edk2-ovmf
 efibootmgr
 expac
 fakeroot
+fd
 ffmpegthumbnailer
 figlet
 file
@@ -63,10 +65,9 @@ fuse2
 fzf
 fzf-extras
 galculator
+gamemode
 gawk
 gcc
-geany
-geany-plugins
 geoip
 gettext
 gifsicle
@@ -106,9 +107,10 @@ jre8-openjdk
 keybase-gui
 kitty
 kubectl
-kvantum-qt5
+kvantum
 lib32-alsa-lib
 lib32-alsa-plugins
+lib32-gamemode
 lib32-giflib
 lib32-gnutls
 lib32-gst-plugins-base-libs
@@ -123,6 +125,7 @@ lib32-libva
 lib32-libxcomposite
 lib32-libxinerama
 lib32-libxslt
+lib32-mesa-utils
 lib32-mpg123
 lib32-ncurses
 lib32-ocl-icd
@@ -130,6 +133,7 @@ lib32-openal
 lib32-sqlite
 lib32-v4l-utils
 lib32-vulkan-icd-loader
+lib32-vulkan-mesa-layers
 libcanberra
 libreoffice-fresh-ru
 libtool
@@ -138,7 +142,6 @@ linux-lts
 linux-lts-headers
 lldb
 llvm
-lolcat
 lostfiles
 lsof
 lutris
@@ -155,6 +158,7 @@ mkinitcpio-archiso
 mpc
 mpd
 mpv
+mtr
 multilockscreen-git
 nano
 ncmpcpp
@@ -185,6 +189,7 @@ pavucontrol
 pipe-viewer-git
 pkgconf
 polkit-gnome
+polybar
 privoxy
 progress
 psensor
@@ -196,7 +201,6 @@ python-oauth2client
 python-pip-api
 python-pyperclip
 python-tldextract
-qbittorrent
 qemu
 qogir-icon-theme
 qutebrowser
@@ -213,8 +217,6 @@ rofi
 rofi-greenclip
 rofi-pass
 rsync
-ruby
-rubygems
 rxvt-unicode-pixbuf
 s-tui
 sassc
@@ -235,7 +237,6 @@ squashfs-tools
 sshuttle
 sublime-text
 sudo
-sxhkd
 syntax-highlighting
 sysstat
 systemd-swap
@@ -275,12 +276,15 @@ veracrypt
 viewnior
 virt-manager
 virtualbox
+vulkan-mesa-layers
+vulkan-tools
 weechat
 weechat-matrix
 wget
 which
 whois
-wine-staging
+wine
+winetricks
 wireguard-tools
 wireless_tools
 wmctrl
@@ -303,6 +307,7 @@ yq2-bin
 ytfzf
 zathura
 zathura-pdf-mupdf
+zenity
 zsh
 zsh-autosuggestions
 zsync

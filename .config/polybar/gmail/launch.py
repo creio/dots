@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# sudo pip install --upgrade google-api-python-client
 
 import os
 import pathlib
