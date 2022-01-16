@@ -151,7 +151,8 @@ b_keybase() {
 
 git_commit() {
   [[ $REPO ]] && cd "$BPATH" || return 1
-  cp -r README.md docs/README.md
+  sed -i "s/Date:.*/Date: $(date -u +'%d.%m.%Y,%H:%M:%S')/" docs/README.md
+  cp -r docs/README.md README.md
   git add --all
   read -re -p $'\nEnter a short summary of this commit.\n\n> ' msg
   git commit -am "$(date +%Y.%m.%d) update ${msg}"
