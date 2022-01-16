@@ -1060,6 +1060,22 @@
       <layer>below</layer>
       <!-- <desktop>all</desktop> -->
     </application>
+    <application class="URxvt" name="rx_vis">
+      <decor>no</decor>
+      <shade>no</shade>
+      <layer>above</layer>
+      <desktop>all</desktop>
+      <skip_pager>yes</skip_pager>
+      <skip_taskbar>yes</skip_taskbar>
+      <position force="yes">
+        <x>center</x>
+        <y>-0</y>
+      </position>
+      <size>
+        <width>100/100</width>
+        <height>15/100</height>
+      </size>
+    </application>
     <application title="m_fixed">
       <position force="yes">
         <x>1010</x>
@@ -1128,5 +1144,10 @@
       <shade>yes</shade>
       <layer>below</layer>
     </application> -->
+    <application title="Eww - main">
+      <shade>no</shade>
+      <layer>below</layer>
+      <desktop>all</desktop>
+    </application>
   </applications>
 </openbox_config>

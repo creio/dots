@@ -16,6 +16,7 @@ exodus
 ifuse
 lib32-nvidia-390xx-utils
 lib32-opencl-nvidia-390xx
+libxnvctrl-390xx
 mergerfs
 mpv-acestream
 ngrok
@@ -32,6 +33,8 @@ popcorntime-bin
 python-pywapi
 solana-bin
 ssrt
+sublime-text
+tdrop-git
 tlauncher
 toilet
 ttf-symbola
@@ -39,5 +42,6 @@ ttf-weather-icons
 tuned
 urxvt-resize-font-git
 xclickroot-git
+xdman
 xwinwrap-git
 zsh-fast-syntax-highlighting

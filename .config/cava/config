@@ -10,8 +10,8 @@ bar_spacing = 1
 [color]
 gradient = 1
 gradient_count = 2
-gradient_color_1 = '#364670'
-gradient_color_2 = '#93cfbd'
+gradient_color_1 = '#7aa2f7'
+gradient_color_2 = '#bb9af7'
 
 [output]
 method = ncurses

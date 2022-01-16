@@ -1,0 +1,159 @@
+// general
+*{
+    all: unset;
+}
+
+window {
+    background-color: transparent;
+    color: #e5e9f0;
+    font-family: monospace;
+}
+
+button {
+    all: unset;
+    padding: 10px;
+}
+
+.main_box {
+    background-color: #12131B;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #1D202F;
+    border-radius: 12px;
+}
+
+//system-info
+.sliders-side {
+  all: unset;
+  background-color: rgb(29,32,47,0.6);
+  border-radius: 12px;
+  margin: 10px 10px 10px 5px;
+  font-family: icons;
+}
+
+.slider-ram-side scale trough highlight {
+  all: unset;
+	background-color: #ebcb8b;;
+	color: #000000;
+	border-radius: 10px;
+}
+
+.slider-ram-side scale trough {
+	all: unset;
+	background-color: #434c5e;
+	border-radius: 10px;
+	min-height: 10px;
+  min-width: 130px;
+  margin-top: 0px;
+  margin-left: 15px;
+}
+
+.label-ram-side {
+  font-size: 28px;
+  margin-left: 20px;
+  color: #ebcb8b;
+}
+
+.slider-cpu-side scale trough highlight {
+  all: unset;
+	background-color: #b48ead;;
+	color: #000000;
+	border-radius: 10px;
+}
+
+.slider-cpu-side scale trough {
+	all: unset;
+	background-color: #434c5e;
+	border-radius: 10px;
+	min-height: 10px;
+  min-width: 130px;
+  margin-top: 0px;
+  margin-left: 15px;
+  margin-right: 20px;
+}
+
+.label-cpu-side {
+  font-size: 28px;
+  margin-left: 20px;
+  color: #b48ead;
+}
+
+.slider-hdd-side scale trough highlight {
+  all: unset;
+	background-color: #a3be8c;
+	color: #000000;
+	border-radius: 10px;
+}
+
+.slider-hdd-side scale trough {
+	all: unset;
+	background-color: #434c5e;
+	border-radius: 10px;
+	min-height: 10px;
+  min-width: 125px;
+  margin-left: 15px;
+}
+
+.label-hdd-side {
+  font-size: 20px;
+  margin-left: 20px;
+  color: #a3be8c;
+}
+
+//launch
+.launch {
+  background-color: rgb(29,32,47,0.6);
+  border-radius: 12px;
+  margin: 10px 5px 10px 10px;
+  font-family: icons;
+  font-size: 48px;
+  color: #9baec8;
+}
+
+.launch1 {
+  margin: 10px 10px 10px 10px;
+}
+
+.internet:hover {
+  color: #798BC7;
+}
+
+.mail:hover {
+  color: #798BC7;
+}
+
+.music:hover {
+  color: #798BC7;
+}
+
+.file:hover {
+  color: #798BC7;
+}
+
+.editor:hover {
+  color: #798BC7;
+}
+
+.launch2 {
+  margin: 10px 10px 10px 10px;
+}
+
+.pomo:hover {
+  color: #798BC7;
+}
+
+.chat:hover {
+  color: #798BC7;
+}
+
+.discord {
+  font-family: "Font Awesome 5 Free";
+  font-size: 30px;
+}
+.discord:hover {
+  color: #798BC7;
+}
+
+.terminal:hover {
+  color: #798BC7;
+}

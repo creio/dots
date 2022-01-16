@@ -53,8 +53,8 @@ font-5 = "Weather Icons:style=Regular:pixelsize=10:antialias=false;2"
 
 
 modules-left = app show_desktop cpu memory uparch wtr gmail title
-modules-center = mpd mpd_sh
-modules-right = blur_picom bri_sh fs tor alsa date xkeyboard power
+modules-center = mpd eww_main
+modules-right = blur_picom bri_sh vpn tor fs alsa date xkeyboard power
 
 #click-right = "jgmenu_run >/dev/null 2>&1 &"
 #click-right = "sleep 0.2; xdotool key ctrl+space &"
@@ -221,6 +221,17 @@ label-urgent-padding = 3
 
 
 
+[module/eww_main]
+type = custom/ipc
+hook-0 = echo 
+hook-1 = echo 
+initial = 1
+format-foreground = ${colors.accent}
+format-background = ${xrdb:color0}
+format-padding = 3
+click-left = ~/.config/polybar/eww.sh
+
+
 [module/mpd_sh]
 type = custom/text
 content = 
@@ -284,6 +295,31 @@ click-right = "~/.bin/bri.sh &"
 
 
 
+[module/vpn]
+type = custom/ipc
+hook-0 = echo 
+hook-1 = echo 
+initial = 1
+format-foreground = ${colors.accent}
+# format-background = ${xrdb:color0}
+format-padding = 1
+click-left = ~/.config/polybar/vpn.sh
+
+
+
+[module/tor]
+type = custom/script
+exec = ~/.config/polybar/status tor
+interval = 6
+format = <label>
+format-prefix = "  "
+format-prefix-foreground = ${colors.accent}
+format-padding = 0
+click-left = "systemctl restart tor &"
+click-right = "systemctl stop tor &"
+
+
+
 [module/fs]
 type = internal/fs
 mount-0 = /home
@@ -303,19 +339,6 @@ format-unmounted-prefix-foreground = ${colors.suffix}
 label-mounted = " %free%"
 label-unmounted = %mountpoint%: not mounted
 label-unmounted-foreground = ${colors.text}
-
-
-
-[module/tor]
-type = custom/script
-exec = ~/.config/polybar/status tor
-interval = 6
-format = <label>
-format-prefix = "  "
-format-prefix-foreground = ${colors.accent}
-format-padding = 0
-click-left = "systemctl restart tor &"
-click-right = "systemctl stop tor &"
 
 
 

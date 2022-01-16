@@ -15,6 +15,7 @@ bind
 binutils
 bison
 bitwarden-cli
+boost
 borg
 brainfuck-psiphon-pro-go-bin
 brightnessctl
@@ -25,6 +26,7 @@ chromium
 clean-chroot-manager
 cmake
 colorpicker
+conky
 cpio
 cronie
 ctlos-helper
@@ -32,6 +34,7 @@ ctlos-keyring
 ctlos-mirrorlist
 ctlos-qogir
 ctop
+devilspie
 dhcpcd
 dialog
 discord
@@ -73,6 +76,7 @@ gettext
 gifsicle
 gimp
 git
+glava
 glm
 gnome-themes-extra
 gnu-netcat
@@ -176,6 +180,7 @@ nvme-cli
 ob-yml-menu
 oh-my-zsh-git
 openbox
+opencl-mesa
 openssh
 otb-uw_ttyp0
 p7zip
@@ -192,7 +197,6 @@ polkit-gnome
 polybar
 privoxy
 progress
-psensor
 pulseaudio
 pulseaudio-alsa
 pv
@@ -235,7 +239,6 @@ smartmontools
 source-highlight
 squashfs-tools
 sshuttle
-sublime-text
 sudo
 syntax-highlighting
 sysstat
@@ -290,6 +293,7 @@ wireless_tools
 wmctrl
 xclip
 xdg-user-dirs
+xdo
 xdotool
 xorg-server
 xorg-server-xephyr

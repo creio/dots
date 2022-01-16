@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eww>
+  <definitions>
+    <def name="system_info">
+      <box orientation="v" space-evenly="true" class="sliders-side">
+        <box orientation="h" class="slider-cpu-side" space-evenly="false">
+          <box class="label-cpu-side"></box>
+          <scale min="0" active="false" max="100" value="{{cpu-used}}"/>
+        </box>
+        <box orientation="h" class="slider-ram-side" space-evenly="false">
+          <box class="label-ram-side"></box>
+          <scale min="0" active="false" max="100" value="{{ram-used}}"/>
+        </box>
+        <box orientation="h" class="slider-hdd-side" space-evenly="false">
+          <box class="label-hdd-side"></box>
+          <scale min="0" max="100" active="false" value="{{hdd-used}}"/>
+        </box>
+      </box>
+    </def>
+    <def name="launch">
+      <box orientation="v" space-evenly="false" class="launch">
+        <box orientation="h" halign="center" class="launch1" space-evenly="false">
+          <button class="internet" onclick="wmctrl -xa firefox --new-tab --url 'moz-extension://f503fcc1-ab56-44c6-a06e-b1eed6d03d19/index.html' || setsid -f firefox --new-tab --url 'moz-extension://f503fcc1-ab56-44c6-a06e-b1eed6d03d19/index.html'"></button>
+          <!-- <button class="mail" onclick="wmctrl -xa geary || setsid -f geary"></button> -->
+          <button class="music" onclick="urxvt -name w_85 -e ncmpcpp -S visualizer &">ﱘ</button>
+          <button class="file" onclick="wmctrl -xa thunar || setsid -f thunar ~"></button>
+        </box>
+        <box orientation="h" halign="center" class="launch2" space-evenly="false">
+          <button class="chat" onclick="wmctrl -xa telegram-desktop || setsid -f telegram-desktop">切</button>
+          <button class="discord" onclick="wmctrl -xa discord || setsid -f discord"></button>
+          <button class="editor" onclick="wmctrl -xa subl || setsid -f subl"></button>
+          <button class="terminal" onclick="urxvt -cd $HOME &"></button>
+        </box>
+      </box>
+    </def>
+  </definitions>
+  <variables>
+    <!-- System info vars -->
+    <script-var name="cpu-used" interval="1s">~/.config/eww/scripts/getcpu</script-var>
+    <script-var name="ram-used" interval="1s">~/.config/eww/scripts/getram</script-var>
+    <script-var name="hdd-used" interval="5s">~/.config/eww/scripts/gethdd</script-var>
+  </variables>
+  <windows>
+    <window name="main" windowtype="dock" wm-ignore="false" focusable="true">
+      <geometry anchor="top center" y="30px"/>
+      <widget>
+        <box class="main_box" orientation="h" space-evenly="false">
+          <launch/>
+          <system_info/>
+        </box>
+      </widget>
+    </window>
+  </windows>
+</eww>

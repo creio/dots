@@ -29,13 +29,16 @@ unclutter --timeout 2 &
 redshift -c ~/.config/redshift.conf &
 # ~/.bin/bri.sh 0.7 0.9:0.9:0.9 &
 greenclip daemon &
+[[ $(command -v eww) ]] && eww daemon &
+
 # parcellite &
 # animatebg -v https://www.youtube.com/watch?v=N1FuK9KC1vc &
 # ~/.bin/mpv_bg &
 # sh -c ~/.bin/urxvt_bg &
 # sh -c ~/.conky/start.sh &
 
-#glava &
+#glava -m bars &
+# glava >/dev/null 2>&1 &
 
 # jgmenu_run start &
 # cornora -bl "skippy-xd" -tl "rofi -show run" &

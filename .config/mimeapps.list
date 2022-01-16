@@ -87,6 +87,7 @@ video/dv=mpv.desktop
 application/vnd.rn-realmedia=mpv.desktop
 application/vnd.rn-realmedia-vbr=mpv.desktop
 application/x-ms-dos-executable;application/x-wine-extension-msp;application/x-msi;application/x-msdos-program=PortProton.desktop
+application/x-wine-extension-ini=sublime_text.desktop
 
 [Added Associations]
 text/x-qml=sublime_text_3.desktop;
@@ -151,3 +152,4 @@ x-scheme-handler/https=firefox.desktop;
 audio/x-mpegurl=mpv.desktop;
 text/x-patch=sublime_text.desktop;
 image/x-xcursor=viewnior.desktop;
+application/x-wine-extension-ini=sublime_text.desktop;
