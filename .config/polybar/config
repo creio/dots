@@ -230,6 +230,7 @@ format-foreground = ${colors.accent}
 format-background = ${xrdb:color0}
 format-padding = 3
 click-left = ~/.config/polybar/eww.sh
+click-right = "~/.conky/start.sh -k"
 
 
 [module/mpd_sh]

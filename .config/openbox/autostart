@@ -8,7 +8,7 @@ tint2 -c ~/.config/tint2/hide_tray.tint2rc &
 [[ $(command -v polybar) ]] && sh ~/.config/polybar/launch.sh &
 # hsetroot -add '#2c3539' -add '#b89ca8' -gradient 130 &
 # hsetroot -tile input.jpg -contrast 0.6 &
-hsetroot -fill ~/.wall/wl.png &
+hsetroot -fill ~/.wall/qw.png &
 # sh ~/.bin/pscircle-dark.sh &
 picom -b --config ~/.config/picom.conf &
 # picom -b --experimental-backends --config ~/.config/picom_blur.conf &
@@ -29,13 +29,13 @@ unclutter --timeout 2 &
 redshift -c ~/.config/redshift.conf &
 # ~/.bin/bri.sh 0.7 0.9:0.9:0.9 &
 greenclip daemon &
-[[ $(command -v eww) ]] && eww daemon &
+# [[ $(command -v eww) ]] && eww daemon &
 
 # parcellite &
 # animatebg -v https://www.youtube.com/watch?v=N1FuK9KC1vc &
 # ~/.bin/mpv_bg &
 # sh -c ~/.bin/urxvt_bg &
-# sh -c ~/.conky/start.sh &
+sh -c ~/.conky/start.sh &
 
 #glava -m bars &
 # glava >/dev/null 2>&1 &

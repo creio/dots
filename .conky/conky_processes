@@ -5,7 +5,7 @@ conky.config = {
   double_buffer=true,
   no_buffers=true,
   use_xft=true,
-  font='monospace:pixelsize=10',
+  font='monospace:pixelsize=11',
   draw_shades=false,
   override_utf8_locale=true,
   own_window=true,
@@ -16,12 +16,12 @@ conky.config = {
   own_window_colour='#000000',
 
   alignment = 'top_left',
-  gap_x = 870,
-  gap_y = 765,
+  gap_x = 670,
+  gap_y = 860,
   cpu_avg_samples = 2,
   net_avg_samples = 2,
-  minimum_width = 450, minimum_height = 210,
-  maximum_width = 450,
+  minimum_width = 600, minimum_height = 210,
+  maximum_width = 600,
   color0 = '#494a5b',
   default_color = '#a5adff',
   color1 = '#494a5b',
@@ -29,16 +29,16 @@ conky.config = {
 
 conky.text = [[
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿ ❱❱❰❰
-${goto 100}${font Monospace:pixelsize=12}CPU${font}${goto 215}│${goto 300}${color0}${font Monospace:pixelsize=12}RAM${font}${color}
+${goto 130}${font Monospace:pixelsize=15}CPU${font}${goto 292}│${goto 430}${color0}${font Monospace:pixelsize=15}RAM${font}${color}
 
-╶┼╴                               ╶┼╴                                  ╶┼╴
+╶┼╴                                     ╶┼╴                                      ╶┼╴
 ${execpi 5 top -b -n 1 -o %CPU | head -n 15  | tail -n 8 | awk '{print $12, $9}' | column -t -o "   " | sed 's/^/         /'}
 
-${voffset -120}${color0}${execpi 5 top -b -n 1 -o %MEM | head -n 15  | tail -n 8 | awk '{print $12, $10}' | column -t -o "      " | sed 's/^/${goto 270}/'}${color}
-╶┼╴                                                                    ╶┼╴
+${voffset -120}${color0}${execpi 5 top -b -n 1 -o %MEM | head -n 15  | tail -n 8 | awk '{print $12, $10}' | column -t -o "      " | sed 's/^/${goto 370}/'}${color}
+╶┼╴                                                                              ╶┼╴
 
 
-${goto 60}${color1}${exec grep [0-9] /proc/loadavg | awk '{print $1}'}   ${exec grep [0-9] /proc/loadavg | awk '{print $2}'}   ${exec grep [0-9] /proc/loadavg | awk '{print $3}'}
-${voffset -13}${goto 270}$mem / $memmax - ${fs_used_perc /tmp}% tmp${color}
-${image ~/.conky/processes.png -p 0,35 -n}
+${goto 60}${color1}${exec grep [0-9] /proc/loadavg | awk '{print $1}'}    ${exec grep [0-9] /proc/loadavg | awk '{print $2}'}    ${exec grep [0-9] /proc/loadavg | awk '{print $3}'}
+${voffset -13}${goto 360}$mem / $memmax - ${fs_used_perc /tmp}% tmp${color}
+${image ~/.conky/processes.png -p 0,30 -n}
 ]];

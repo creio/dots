@@ -7,7 +7,7 @@ settings_table = {
         bg_alpha=0.1,
         fg_colour=0xa5adff,
         fg_alpha=1,
-        x=55, y=35,
+        x=105, y=35,
         radius=30,
         thickness=5,
         start_angle=-90,
@@ -21,7 +21,35 @@ settings_table = {
         bg_alpha=0.1,
         fg_colour=0xa5adff,
         fg_alpha=1,
-        x=260, y=35,
+        x=525, y=35,
+        radius=30,
+        thickness=5,
+        start_angle=-90,
+        end_angle=180
+    },
+    {
+        name='cpu',
+        arg='cpu2',
+        max=100,
+        bg_colour=0xa5adff,
+        bg_alpha=0.1,
+        fg_colour=0xa5adff,
+        fg_alpha=1,
+        x=525, y=455,
+        radius=30,
+        thickness=5,
+        start_angle=-90,
+        end_angle=180
+    },
+    {
+        name='cpu',
+        arg='cpu3',
+        max=100,
+        bg_colour=0xa5adff,
+        bg_alpha=0.1,
+        fg_colour=0xa5adff,
+        fg_alpha=1,
+        x=105, y=455,
         radius=30,
         thickness=5,
         start_angle=-90,
@@ -35,9 +63,9 @@ settings_table = {
         bg_alpha=0.1,
         fg_colour=0xa5adff,
         fg_alpha=0.5,
-        x=155, y=160,
-        radius=88,
-        thickness=4,
+        x=315, y=245,
+        radius=200,
+        thickness=2,
         start_angle=0,
         end_angle=360
     },
@@ -81,6 +109,10 @@ function conky_cpu_rings()
         str=conky_parse(str)
 
         value=tonumber(str)
+        if not value then
+          value=0
+        end
+
         pct=value/pt['max']
 
         draw_ring(cr,pct,pt)

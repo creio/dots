@@ -5,13 +5,13 @@ Thanks!
 - [Original repo](https://github.com/davidrlunu/dots-and-dashes).
 - [r/unixporn](https://www.reddit.com/r/unixporn/comments/4rgcdq/openbox_i_herd_you_like_rice/).
 
-1366x768
+1920x1080
 
-![preview](https://raw.githubusercontent.com/creio/dots/master/docs/screen/qw.png)
+![preview](https://raw.githubusercontent.com/creio/dots/master/docs/screen/qw2.png)
 
-- Arch Linux
 - Openbox
 - sensors
-- acpi
 - speedtest
 - conky-lua-nv
+- xwinwrap-git
+- [vis-cava](https://github.com/creio/dots/blob/master/.bin/vis)

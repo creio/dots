@@ -15,10 +15,10 @@ conky.config = {
   own_window_colour = '#000000',
   own_window_argb_value = 0,
 
-  gap_x = 270,
-  gap_y = 350,
-  minimum_width = 60, minimum_height = 30,
-  maximum_width = 60,
+  gap_x = 55,
+  gap_y = 375,
+  minimum_width = 160, minimum_height = 350,
+  maximum_width = 160,
 };
 
 conky.text = [[

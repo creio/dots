@@ -1,14 +1,14 @@
 settings_table = {
     {
         name='exec',
-        arg="acpi -t | awk '{print $4}'",
+        arg="echo $(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))",
         max=100,
         bg_alpha=0.1,
         bg_colour=0xa5adff,
         fg_colour=0xa5adff,
         fg_alpha=0.6,
-        x=120, y=90,
-        radius=115,
+        x=240, y=245,
+        radius=220,
         thickness=5,
         start_angle=-135,
         end_angle=-45
@@ -21,8 +21,8 @@ settings_table = {
         bg_colour=0xa5adff,
         fg_colour=0xa5adff,
         fg_alpha=0.6,
-        x=255, y=90,
-        radius=115,
+        x=450, y=245,
+        radius=220,
         thickness=5,
         start_angle=45,
         end_angle=135

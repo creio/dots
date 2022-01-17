@@ -5,7 +5,7 @@ conky.config = {
   double_buffer=true,
   no_buffers=true,
   use_xft=true,
-  font='monospace:pixelsize=10',
+  font='monospace:pixelsize=11',
   draw_shades=false,
   override_utf8_locale=true,
   own_window=true,
@@ -17,11 +17,11 @@ conky.config = {
 
   default_color = '#494b5a',
   alignment = 'top_left',
-  gap_x = 458,
-  gap_y = 45,
   color1 = '#a5adff',
   color2 = '#FFFF00',
   color3 = '#a5adff',
+  gap_x = 700,
+  gap_y = 70,
   minimum_width = 100, minimum_height = 200,
   maximum_width = 600,
 };

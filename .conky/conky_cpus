@@ -7,10 +7,10 @@ conky.config = {
   no_buffers=true,
   use_xft=true,
   font='monospace:pixelsize=11',
-  gap_x = 533,
-  gap_y = 260,
-  minimum_width = 300, minimum_height = 300,
-  maximum_width = 300,
+  gap_x = 650,
+  gap_y = 300,
+  minimum_width = 600, minimum_height = 600,
+  maximum_width = 600,
   draw_shades=false,
   override_utf8_locale=true,
   own_window=true,
@@ -29,10 +29,16 @@ conky.config = {
 
 conky.text = [[
 
-${voffset 10}${goto 45}${cpu cpu0}%
-${voffset 0}${goto 30}CPU
-${goto 30} 0
-${voffset -45}${goto 250}${cpu cpu1}%
-${voffset 0}${goto 235}CPU
-${goto 235} 1
+${voffset 10}${goto 100}${cpu cpu0}%
+${voffset 5}${goto 70}CPU
+${goto 70} 0
+${voffset -45}${goto 520}${cpu cpu1}%
+${voffset 5}${goto 495}CPU
+${goto 495} 1
+${voffset 380}${goto 520}${cpu cpu2}%
+${goto 495}CPU
+${goto 495} 2
+${voffset -40}${goto 100}${cpu cpu3}%
+${voffset 3}${goto 70}CPU
+${goto 70} 3
 ]];

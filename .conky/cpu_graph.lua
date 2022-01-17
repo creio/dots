@@ -10,9 +10,9 @@ function conky_main_graph(color, alpha)
 	cr = cairo_create(cs)
 	local updates = tonumber(conky_parse('${updates}'))
 	if updates == 1 then
-		center_x = 155
-		center_y = 150
-		radius = 115
+		center_x = 305
+    center_y = 305
+    radius = 225
 		circle_width = 50
 		line_length = 75
 		cpu_table_length = 120

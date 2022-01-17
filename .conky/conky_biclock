@@ -1,7 +1,7 @@
 conky.config={
   background=false,
   use_xft=true,
-  font='Droid Sans :pixelsize=40',
+  font='Droid Sans :pixelsize=50',
   update_interval=1.0,
   total_run_times=0,
   own_window=true,

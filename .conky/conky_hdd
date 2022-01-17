@@ -5,7 +5,7 @@ conky.config = {
   double_buffer=true,
   no_buffers=true,
   use_xft=true,
-  font='monospace:pixelsize=10',
+  font='monospace:pixelsize=11',
   draw_shades=false,
   override_utf8_locale=true,
   own_window=true,
@@ -18,8 +18,8 @@ conky.config = {
   minimum_width = 300, minimum_height = 20,
   maximum_width = 300,
   alignment = 'top_left',
-  gap_x = 533,
-  gap_y = 550,
+  gap_x = 810,
+  gap_y = 800,
   own_window_argb_visual = true,
   own_window_argb_value = 0,
   default_color = '#494b5a',
@@ -27,5 +27,5 @@ conky.config = {
 };
 
 conky.text = [[
-${alignc}/ ${fs_used_perc /}%  /home/ ${fs_used_perc /home}%  /m/files/ ${fs_used_perc /media/files}%
+${alignc}/ ${fs_used_perc /}%     /home/ ${fs_used_perc /home}%     /m/files/ ${fs_used_perc /media/files}%
 ]];
