@@ -1,6 +1,6 @@
 # Dotfiles
 
-Date: 17.01.2022,15:39:47
+Date: 17.01.2022,15:48:07
 
 - Repo: [creio/dots](https://github.com/creio/dots)
 - Distro: [Ctlos/Arch Linux](https://ctlos.github.io/)
@@ -11,6 +11,4 @@ Date: 17.01.2022,15:39:47
 <!-- - Yt: [youtube.com](https://www.youtube.com/channel/UCPCp_ZnMKEwYdnA_YfOZrZg) -->
 <!-- - [Start Page](https://creio.github.io/dots/sp.html) -->
 
-![preview](https://raw.githubusercontent.com/creio/dots/master/docs/screen/ob3.png)
-
-[![Dots](https://github-readme-stats.vercel.app/api?username=creio&show_icons=true&include_all_commits=true&hide_border=true&theme=tokyonight)](https://github.com/creio/dots)
+![preview](https://raw.githubusercontent.com/creio/dots/master/docs/screen/qw2.png)
