@@ -164,8 +164,8 @@ fi
 # options root=UUID=$root_uuid rw
 # EOF
 
-grub-install $DISK
-# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+# grub-install $DISK
+grub-install --target=x86_64-efi --efi-directory=/boot
 # sed -i -e 's/^GRUB_TIMEOUT=.*$/GRUB_TIMEOUT=0/' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
