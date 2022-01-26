@@ -58,7 +58,8 @@ mount $B_DISK /mnt/boot
 
 root_uuid=$(lsblk -no UUID ${R_DISK})
 
-reflector --verbose -a 12 -l 15 -f 15 -p https,http --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --verbose -p "http,https" -l 10 --sort score --save /etc/pacman.d/mirrorlist
+reflector --verbose -p "http,https" -c "$(curl -s https://ipinfo.io/country)," --sort rate --save /etc/pacman.d/mirrorlist
 
 PKGS=(
 base base-devel iwd nano reflector openssh efibootmgr
@@ -94,7 +95,6 @@ virt_d=$(systemd-detect-virt)
 # sed '1,/^#chroot$/d'
 cat <<LOL >/mnt/settings.sh
 # reflector --verbose -p "http,https" -l 10 --sort score --save /etc/pacman.d/mirrorlist
-reflector --verbose -p "http,https" -c "$(curl -s https://ipinfo.io/country)," --sort rate --save /etc/pacman.d/mirrorlist
 pacman-key --init
 pacman-key --populate
 
