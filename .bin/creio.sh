@@ -1,5 +1,5 @@
 #!/bin/bash
-# Install script for Arch Linux
+# Install script archlinux
 # https://raw.githubusercontent.com/creio/dots/master/.bin/creio.sh
 
 # curl -LO git.io/creio.sh
@@ -58,6 +58,9 @@ mount $B_DISK /mnt/boot
 
 root_uuid=$(lsblk -no UUID ${R_DISK})
 
+## https://ipapi.co/timezone | http://ip-api.com/line?fields=timezone | https://ipwhois.app/line/?objects=timezone
+time_zone=$(curl -s https://ipinfo.io/timezone)
+
 # reflector --verbose -p "http,https" -l 10 --sort score --save /etc/pacman.d/mirrorlist
 reflector --verbose -p "http,https" -c "$(curl -s https://ipinfo.io/country)," --sort rate --save /etc/pacman.d/mirrorlist
 
@@ -114,8 +117,7 @@ echo $HOST_NAME > /etc/hostname
 
 #ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 #timedatectl set-timezone Europe/Moscow
-## https://ipapi.co/timezone | http://ip-api.com/line?fields=timezone | https://ipwhois.app/line/?objects=timezone
-timedatectl set-timezone $(curl -s https://ipinfo.io/timezone)
+timedatectl set-timezone $time_zone
 hwclock --systohc --utc
 
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
