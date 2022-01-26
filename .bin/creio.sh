@@ -190,6 +190,14 @@ Type=ether
 DHCP=yes
 EOF
 
+cat <<EOF >/etc/systemd/network/20-wireless.network
+[Match]
+Type=wlan
+
+[Network]
+DHCP=yes
+EOF
+
 # systemctl enable sddm
 
 echo "System Setup Complete"
