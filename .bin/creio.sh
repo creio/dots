@@ -27,7 +27,7 @@ fi
 
 dd if=/dev/zero of=${DISK} status=progress bs=4096 count=256
 
-# || mklabel gpt
+# mklabel msdos || mklabel gpt
 parted ${DISK} << EOF
 mklabel msdos
 mkpart primary 1MiB 300MiB
@@ -93,14 +93,15 @@ virt_d=$(systemd-detect-virt)
 
 # sed '1,/^#chroot$/d'
 cat <<LOL >/mnt/settings.sh
-# reflector -a 12 -l 15 -f 15 -p https,http --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --verbose -p "http,https" -l 10 --sort score --save /etc/pacman.d/mirrorlist
+reflector --verbose -p "http,https" -c "$(curl -s https://ipinfo.io/country)," --sort rate --save /etc/pacman.d/mirrorlist
 pacman-key --init
 pacman-key --populate
 
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 pacman -Syy --noconfirm
 
-# pass
+## pass, add user
 # usermod -p ${PASSWORD} root
 echo "root:$PASSWORD" | chpasswd
 useradd -m -g users -G "adm,network,storage,power,wheel" -s /bin/bash "$NEW_USER"
@@ -111,7 +112,10 @@ echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
 echo $HOST_NAME > /etc/hostname
 
-ln -sfv /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+#ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+#timedatectl set-timezone Europe/Moscow
+## https://ipapi.co/timezone | http://ip-api.com/line?fields=timezone | https://ipwhois.app/line/?objects=timezone
+timedatectl set-timezone $(curl -s https://ipinfo.io/timezone)
 hwclock --systohc --utc
 
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen

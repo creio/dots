@@ -1,19 +1,24 @@
 #!/bin/bash
+# https://archlinux.org/mirrorlist/
+# https://archlinux.org/mirrors/status/
+
 # reflector --list
+## https://ipapi.co/country | http://ip-api.com/line?fields=country | https://ipwhois.app/line/?objects=country
 
 if [ "$(which curl)" != "curl not found" ]; then
-	check_country=$(curl -s https://ipinfo.io/country)
+  check_country=$(curl -s https://ipinfo.io/country)
 fi
 
 if [ "$1" = "-lc" ]; then
-	# mirrors -lc
-	sudo reflector -c $check_country,ru,ua,pl,gb -p https,http -a 12 -l 10 --sort rate --save /etc/pacman.d/mirrorlist
+  # mirrors -lc
+  sudo reflector --verbose -p "http,https" -c "$check_country,,ru,ua,pl,de" --sort country -f 10 --save /etc/pacman.d/mirrorlist
 elif [ "$1" = "-c" ]; then
-	# mirrors -c
-	sudo reflector -c $check_country -p https,http -a 12 --sort score -f 5 --save /etc/pacman.d/mirrorlist
+  # mirrors -c
+  sudo reflector --verbose -p "http,https" -c "$check_country," --sort country -f 10 --save /etc/pacman.d/mirrorlist
 else
-	# mirrors
-	sudo reflector --verbose -a 12 -l 50 -p https,http --sort score -f 15 --save /etc/pacman.d/mirrorlist
+  # mirrors
+  # sudo reflector --verbose -p "http,https" -l 10 --sort rate --save /etc/pacman.d/mirrorlist
+  sudo reflector --verbose -p "http,https" -l 10 --sort score --save /etc/pacman.d/mirrorlist
 fi
 
 cat /etc/pacman.d/mirrorlist
