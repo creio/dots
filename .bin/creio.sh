@@ -29,7 +29,7 @@ dd if=/dev/zero of=${DISK} status=progress bs=4096 count=256
 
 # mklabel msdos || mklabel gpt
 parted ${DISK} << EOF
-mklabel msdos
+mklabel gpt
 mkpart primary 1MiB 300MiB
 set 1 boot on
 mkpart primary 300MiB 100%
@@ -62,17 +62,18 @@ root_uuid=$(lsblk -no UUID ${R_DISK})
 reflector --verbose -p "http,https" -c "$(curl -s https://ipinfo.io/country)," --sort rate --save /etc/pacman.d/mirrorlist
 
 PKGS=(
-base base-devel iwd nano reflector openssh efibootmgr
+base base-devel iwd nano reflector openssh
 linux linux-headers
-grub
+grub efibootmgr
+# os-prober
 # linux-lts linux-lts-headers
 # linux-zen linux-zen-headers
 # linux-firmware lvm2
 # arch-install-scripts
 # amd-ucode intel-ucode
-# dhcpcd
+# dhcpcd netctl
 wget git rsync gnu-netcat pv bash-completion htop tmux networkmanager
-# netctl unzip unrar p7zip zsh
+# unzip unrar p7zip zsh
 # xorg-apps xorg-server xorg-server-common xorg-xinit xorg-xkill xorg-xrdb xorg-xinput
 # xf86-video-intel xf86-video-amdgpu xf86-video-ati xf86-video-nouveau xf86-video-fbdev xf86-video-dummy
 # xf86-video-vesa xf86-video-openchrome xf86-video-sisusb xf86-video-vmware xf86-video-voodoo
@@ -94,7 +95,6 @@ virt_d=$(systemd-detect-virt)
 
 # sed '1,/^#chroot$/d'
 cat <<LOL >/mnt/settings.sh
-# reflector --verbose -p "http,https" -l 10 --sort score --save /etc/pacman.d/mirrorlist
 pacman-key --init
 pacman-key --populate
 
@@ -204,6 +204,6 @@ echo "==== Done settings.sh ===="
 # swapoff $S_DISK
 umount -R /mnt
 
-echo "cat /tmp/log"
+echo "less /tmp/log"
 
 echo "==== Finish Him ===="
