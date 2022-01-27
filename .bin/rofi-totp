@@ -1,4 +1,4 @@
 #!/bin/bash
 
 name=$(2fa -list | rofi -dmenu -p "2FAKEY" -i | tr -d "\n")
-2fa -clip ${name} &>/dev/null | xclip -selection clipboard -i
+2fa -clip ${name} &>/dev/null | xclip -selection secondary -i

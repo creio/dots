@@ -42,6 +42,7 @@ files=(
 
 mkdir -p /tmp/vera
 # /bin/bash -c "rm -rf /tmp/vera/{.*,*}"
+[[ $(command -v bw) ]] && bw export $BW_PASSWORD --format csv --output /tmp/vera/bw.csv
 for i in "${files[@]}"; do
   cp -pra $i /tmp/vera
 done

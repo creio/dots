@@ -59,7 +59,6 @@ root_uuid=$(lsblk -no UUID ${R_DISK})
 ## https://ipapi.co/timezone | http://ip-api.com/line?fields=timezone | https://ipwhois.app/line/?objects=timezone
 time_zone=$(curl -s https://ipinfo.io/timezone)
 timedatectl set-timezone $time_zone
-timedatectl set-ntp true
 
 # reflector --verbose -p "http,https" -l 10 --sort score --save /etc/pacman.d/mirrorlist
 reflector --verbose -p "http,https" -c "$(curl -s https://ipinfo.io/country)," --sort rate --save /etc/pacman.d/mirrorlist
@@ -117,6 +116,7 @@ echo $HOST_NAME > /etc/hostname
 
 ln -sf /usr/share/zoneinfo/$time_zone /etc/localtime
 hwclock --systohc --utc
+timedatectl set-ntp true
 
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen

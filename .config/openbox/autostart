@@ -36,13 +36,13 @@ greenclip daemon &
 # ~/.bin/mpv_bg &
 # sh -c ~/.bin/urxvt_bg &
 sh -c ~/.conky/start.sh &
+# caffeine &
 
 #glava -m bars &
 # glava >/dev/null 2>&1 &
 
 # jgmenu_run start &
 # cornora -bl "skippy-xd" -tl "rofi -show run" &
-# (sleep 2; caffeine) &
 # (sleep 5; nm-applet) &
 # (sleep 2; volumeicon) &
 # udiskie -t &
