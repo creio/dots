@@ -62,9 +62,9 @@ mount $R_DISK /mnt
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
 umount -R /mnt
-mount -o compress=zstd,relatime,commit=120,subvol=@ $R_DISK /mnt
+mount -o compress=zstd,subvol=@ $R_DISK /mnt
 mkdir -p /mnt/{boot,home}
-mount -o compress=zstd,relatime,commit=120,subvol=@home $R_DISK /mnt/home
+mount -o compress=zstd,subvol=@home $R_DISK /mnt/home
 mount $B_DISK /mnt/boot
 
 root_uuid=$(lsblk -no UUID ${R_DISK})
