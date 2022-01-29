@@ -80,6 +80,7 @@ PKGS=(
 base base-devel iwd nano reflector openssh
 linux linux-headers
 grub efibootmgr
+btrfs-progs
 # os-prober
 # linux-lts linux-lts-headers
 # linux-zen linux-zen-headers
