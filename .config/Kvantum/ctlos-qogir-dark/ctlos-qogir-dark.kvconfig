@@ -118,6 +118,7 @@ scroll_jump_workaround=false
 centered_forms=false
 noninteger_translucency=false
 style_vertical_toolbars=false
+blur_only_active_window=false
 
 [PanelButtonCommand]
 frame=true

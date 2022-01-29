@@ -19,7 +19,7 @@ read -sp "create password: " PASSWORD
 # cfdisk -z /dev/sda
 lsblk -d
 echo "sda,vda,nvme..?"
-read -p "Disk? : " I_DISK
+read -p "Disk?: " I_DISK
 DISK=/dev/$I_DISK
 if [[ ! $(lsblk -d | grep $I_DISK) ]]; then
   echo "Error no disk."; exit 1
@@ -41,18 +41,30 @@ R_DISK=${DISK}2
 S_DISK=${DISK}3
 H_DISK=${DISK}4
 
-yes | mkfs.ext4 $R_DISK -L root
-yes | mkfs.fat -F32 $B_DISK
-# yes | mkfs.ext4 $H_DISK -L home
-
+## swap
 # mkswap $S_DISK -L swap
 # swapon $S_DISK
 
-mount $R_DISK /mnt
-mkdir /mnt/boot
+## ext4
+# yes | mkfs.ext4 $R_DISK -L root
+# yes | mkfs.fat -F32 $B_DISK
+# # yes | mkfs.ext4 $H_DISK -L home
+# mount $R_DISK /mnt
+# mkdir /mnt/boot
+# mount $B_DISK /mnt/boot
+# # mkdir /mnt/home
+# # mount $H_DISK /mnt/home
+
+## btrfs
+yes | mkfs.btrfs -f -L "root" $R_DISK
+yes | mkfs.fat -F32 $B_DISK
+mkdir -p /mnt/{boot,home}
+btrfs subvolume create /mnt/@
+btrfs subvolume create /mnt/@home
+umount -R /mnt
+mount -o compress=zstd,relatime,commit=120,subvol=@ $R_DISK /mnt
+mount -o compress=zstd,relatime,commit=120,subvol=@home $R_DISK /mnt/home
 mount $B_DISK /mnt/boot
-# mkdir /mnt/home
-# mount $H_DISK /mnt/home
 
 root_uuid=$(lsblk -no UUID ${R_DISK})
 
