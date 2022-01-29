@@ -56,7 +56,7 @@ H_DISK=${DISK}4
 # # mount $H_DISK /mnt/home
 
 ## btrfs
-yes | mkfs.btrfs -f -L "root" $R_DISK
+mkfs.btrfs -f -L "root" $R_DISK
 yes | mkfs.fat -F32 $B_DISK
 mount $R_DISK /mnt
 mkdir -p /mnt/{boot,home}
