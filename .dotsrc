@@ -22,7 +22,7 @@ BKPS=(
 .config/pipe-viewer/pipe-viewer.conf
 .config/sublime-text-3/Packages/User
 .config/{clean-chroot-manager.conf,chromium-flags.conf,picom.conf,picom_blur.conf}
-.config/{redshift.conf,Trolltech.conf,kdenliverc,mimeapps.list}
+.config/{redshift.conf,Trolltech.conf,kdenliverc,mimeapps.list,config.json}
 .config/user-dirs.{dirs,locale}
 .conky
 .mozilla/firefox/vos2wqqo.default-release/chrome
