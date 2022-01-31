@@ -1,5 +1,5 @@
 {
-    "audio": "pipewire",
+    "audio": "pulseaudio",
     "bootloader": "systemd-bootctl",
     "custom-commands": [
         "cd /home/creio; git clone https://aur.archlinux.org/paru.git",
@@ -9,22 +9,22 @@
     "!encryption-password": "1111",
     "filesystem": "btrfs",
     "gfx_driver": "All open-source (default)",
-    "harddrive": {
-        "path": "/dev/sda"
-    },
+    "harddrives": [
+        "/dev/sda"
+    ],
     "swap": true,
     "hostname": "box",
     "kernels": [
         "linux"
     ],
-    "keyboard-language": "us",
     "mirror-region": "Worldwide",
     "nic": {
         "NetworkManager": true
     },
     "ntp": true,
     "packages": ["docker", "git", "wget", "zsh"],
-    "profile": "guided",
+    "profile": null,
+    "script": "guided",
     "services": ["docker"],
     "!root-password": "11",
     "superusers": {
@@ -34,6 +34,8 @@
     },
     "sys-encoding": "utf-8",
     "sys-language": "en_US",
+    "keyboard-language": "us",
+    "keyboard-layout": "us",
     "timezone": "Europe/Moscow",
     "users": {}
 }
