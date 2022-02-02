@@ -16,6 +16,7 @@
             {
                 "btrfs": {
                     "subvolumes": {
+                        "@": "/",
                         "@.snapshots": "/.snapshots",
                         "@home": "/home",
                         "@log": "/var/log",
