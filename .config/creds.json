@@ -1,9 +1,0 @@
-{
-    "!root-password": "1",
-    "!users": {
-        "cretm": {"!password": "11"}
-    },
-    "!superusers": {
-        "creio": {"!password": "1"}
-    }
-}

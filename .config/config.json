@@ -1,14 +1,9 @@
 {
     "audio": "pulseaudio",
     "bootloader": "systemd-bootctl",
-    "custom-commands": [
-        "cd /home/creio; git clone https://aur.archlinux.org/paru.git",
-        "chown -R creio:creio /home/creio/paru",
-        "usermod -aG docker creio"
-    ],
-    "!encryption-password": "1111",
-    "filesystem": "btrfs",
     "gfx_driver": "All open-source (default)",
+    "filesystem": "btrfs",
+    "!encryption-password": "1111",
     "harddrives": [
         "/dev/sda"
     ],
@@ -26,16 +21,21 @@
     "profile": "minimal",
     "script": "guided",
     "services": ["docker"],
-    "!root-password": "11",
-    "superusers": {
-        "creio": {
-            "!password": "1"
-        }
-    },
     "sys-encoding": "utf-8",
     "sys-language": "en_US",
     "keyboard-language": "us",
     "keyboard-layout": "us",
     "timezone": "Europe/Moscow",
-    "users": {}
+    "custom-commands": [
+        "cd /home/creio; git clone https://aur.archlinux.org/paru.git",
+        "chown -R creio:creio /home/creio/paru",
+        "usermod -aG docker creio"
+    ],
+    "!root-password": "1",
+    "!users": {
+        "cretm": {"!password": "11"}
+    },
+    "!superusers": {
+        "creio": {"!password": "1"}
+    }
 }
