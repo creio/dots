@@ -2,8 +2,8 @@
     "audio": "pulseaudio",
     "bootloader": "systemd-bootctl",
     "gfx_driver": "All open-source (default)",
-    "filesystem": "btrfs",
     "!encryption-password": "1111",
+    "filesystem": "btrfs",
     "harddrives": [
         "/dev/sda"
     ],
