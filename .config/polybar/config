@@ -54,7 +54,7 @@ font-5 = "Weather Icons:style=Regular:pixelsize=10:antialias=false;2"
 
 modules-left = app show_desktop cpu memory uparch wtr gmail title
 modules-center = mpd eww_main
-modules-right = blur_picom bri_sh vpn tor fs alsa date xkeyboard power
+modules-right = crypto blur_picom bri_sh vpn tor fs alsa date xkeyboard power
 
 #click-right = "jgmenu_run >/dev/null 2>&1 &"
 #click-right = "sleep 0.2; xdotool key ctrl+space &"
@@ -271,6 +271,14 @@ icon-pause-foreground = ${colors.accent}
 icon-stop-foreground = ${colors.accent}
 icon-prev-foreground = ${colors.accent}
 icon-next-foreground = ${colors.accent}
+
+
+
+[module/crypto]
+type = custom/script
+format-foreground = ${colors.text}
+interval = 300
+exec = ~/.config/polybar/crypto.py
 
 
 
