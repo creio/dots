@@ -10,8 +10,6 @@ short_pass=$3
 short_expire=$4
 short_desc=$5
 
-# "expire_in": "2 minutes/hours/days"
-# "password": "123"
 generate_data()
 {
   cat <<LOL
@@ -29,7 +27,7 @@ LOL
 
 if [[ -n "$target_url" && "$1" != "-l" && "$1" != "-d" ]]; then
   result="$(curl -s -H "X-API-KEY:$kutt_key" --data "$(generate_data)" -H "Content-Type: application/json" -X POST https://kutt.it/api/v2/links)"
-  echo $result | jq -r "."
+  echo $result | jq -r "." | tr -d '{}'
   echo $result | jq -r ".link"| xclip -selection c
 elif [[ "$1" == "-l" ]]; then
   echo -e "\nlist shorts"
