@@ -1,25 +1,18 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+#!/usr/bin/bash
 
-import json,sys,urllib.request,time
+choice=$1
 
-if len(sys.argv) != 3:
-		print("Usage: btc usd,eur,btc nok")
-		sys.exit()
+case $choice in
+  btc)
+    coin=bitcoin;;
+  eth)
+    coin=ethereum;;
+  sol|solana)
+    coin=solana;;
+  *)
+    echo "Bad!";;
+esac
 
-currencies = sys.argv[1]
-basecurrency = sys.argv[2]
-
-currencyurl = "http://freecurrencyrates.com/api/action.php?do=cvals&iso=" + currencies.replace(',','') + "&f=" + basecurrency + "&v=1&s=cbr"
-f = urllib.request.urlopen(currencyurl)
-obj = json.loads(f.read())
-res="";
-for c in currencies.split(','):
-		res += c.upper() + ":{:,.2f}".format(1/obj[c.upper()]).replace(',',' ')
-
-# some unicode currency code replacement (optional)
-res = res.replace("USD", "$")
-res = res.replace("EUR", "€")
-res = res.replace("BTC", "")
-
-print(res);
+if [[ -n "$coin" ]]; then
+  curl -s "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=$coin" | jq ".[].current_price"
+fi

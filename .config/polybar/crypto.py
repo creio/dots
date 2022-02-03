@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+## https://github.com/willHol/polybar-crypto
 
 import configparser
 import sys
