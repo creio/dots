@@ -198,7 +198,8 @@ systemctl enable NetworkManager
 
 cat <<EOF >/etc/systemd/network/20-ethernet.network
 [Match]
-Type=ether
+Name=en*
+Name=eth*
 
 [Network]
 DHCP=yes
