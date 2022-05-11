@@ -1,0 +1,10 @@
+<snippet>
+	<content>
+<![CDATA[echo "<pre>";
+var_dump(get_field('${1:field_name}'));
+die();]]>
+	</content>
+	<tabTrigger>ddfield</tabTrigger>
+	<description>Dump ACF field</description>
+	<scope>source.php</scope>
+</snippet>

@@ -7,6 +7,7 @@ V_SIZE=$(xdpyinfo | grep dimensions | awk '{print $2;}')
 OUTRES="1920x1080"
 QUAL="ultrafast"   ## Preset medium, fast, ultrafast, superfast
 # pacmd list-sources | grep -e device.string -e 'name:'
+# pactl list | grep -A2 'Source #' | grep 'Name: ' | cut -d" " -f2
 ALSA_OUT="alsa_output.pci-0000_00_1b.0.analog-stereo.monitor"
 
 # ffmpeg \
@@ -16,7 +17,7 @@ ALSA_OUT="alsa_output.pci-0000_00_1b.0.analog-stereo.monitor"
 # -c:a ac3 -b:a 128k \
 # -y ~/Videos/out.mkv
 
-if [ "$1" = "-m" ]; then
+if [ "$1" = "-mic" ]; then
   ffmpeg \
     -f x11grab -s $V_SIZE -r 60 -i :0.0 \
     -f alsa -i default \

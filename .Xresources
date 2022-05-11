@@ -18,12 +18,12 @@ Xft.lcdfilter: lcddefault
 !URxvt.font: xft:Cozette:size=10,xft:Hack Nerd Font Mono:size=9,xft:Symbola
 !URxvt.boldFont: xft:Cozette:size=10,xft:Hack Nerd Font Mono:size=9,xft:Symbola
 
-URxvt.font: xft:Hack Nerd Font Mono:size=10,xft:Noto Color Emoji,xft:Symbola
-URxvt.boldFont: xft:Hack Nerd Font Mono:size=10,xft:Noto Color Emoji,xft:Symbola
+URxvt.font: xft:Hack Nerd Font Mono:size=12,xft:Noto Color Emoji,xft:Symbola
+URxvt.boldFont: xft:Hack Nerd Font Mono:size=12,xft:Noto Color Emoji,xft:Symbola
 
 !URxvt.termname: xterm-256color
 URxvt.iconFile: /usr/share/icons/Papirus/48x48/apps/urxvt.svg
-URxvt.geometry: 94x23
+URxvt.geometry: 94x27
 URxvt.internalBorder: 15
 URxvt.letterSpace: 0
 URxvt.antialias: true

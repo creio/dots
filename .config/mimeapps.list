@@ -1,6 +1,6 @@
 [Default Applications]
 text/x-qml=sublime_text_3.desktop
-inode/directory=peony.desktop
+inode/directory=thunar.desktop
 video/x-matroska=mpv.desktop
 text/plain=sublime_text.desktop
 x-scheme-handler/http=firefox.desktop
@@ -88,12 +88,13 @@ application/vnd.rn-realmedia=mpv.desktop
 application/vnd.rn-realmedia-vbr=mpv.desktop
 application/x-ms-dos-executable;application/x-wine-extension-msp;application/x-msi;application/x-msdos-program=PortProton.desktop
 application/x-wine-extension-ini=sublime_text.desktop
+image/vnd.adobe.photoshop=viewnior.desktop
 
 [Added Associations]
 text/x-qml=sublime_text_3.desktop;
 inode/directory=sublime_text.desktop;exo-file-manager.desktop;peony.desktop;
 x-scheme-handler/trash=exo-file-manager.desktop;
-text/plain=sublime_text.desktop;micro.desktop;geany.desktop;viewnior.desktop;sublime_text_3.desktop;nvim.desktop;mpv.desktop;
+text/plain=codium.desktop;sublime_text.desktop;micro.desktop;geany.desktop;viewnior.desktop;sublime_text_3.desktop;nvim.desktop;mpv.desktop;
 text/x-makefile=sublime_text.desktop;sublime_text_3.desktop;
 application/xml=sublime_text.desktop;sublime_text_3.desktop;firefox.desktop;
 image/png=gimp.desktop;firefox.desktop;pqiv.desktop;imv.desktop;krita_png.desktop;
@@ -101,7 +102,7 @@ video/x-matroska=org.shotcut.Shotcut.desktop;audacity.desktop;org.avidemux.Avide
 application/x-shellscript=sublime_text.desktop;micro.desktop;sublime_text_3.desktop;nvim.desktop;org.gnome.FileRoller.desktop;
 audio/mpeg=audacious.desktop;audacity.desktop;
 image/x-xbitmap=viewnior.desktop;
-image/svg+xml=org.inkscape.Inkscape.desktop;sublime_text.desktop;viewnior.desktop;gimp.desktop;firefox.desktop;sublime_text_3.desktop;inkscape.desktop;
+image/svg+xml=viewnior.desktop;org.inkscape.Inkscape.desktop;sublime_text.desktop;gimp.desktop;firefox.desktop;sublime_text_3.desktop;inkscape.desktop;
 application/x-cd-image=org.gnome.FileRoller.desktop;
 application/x-tint2-theme=sublime_text_3.desktop;
 text/html=sublime_text.desktop;sublime_text_3.desktop;firefox.desktop;
@@ -153,3 +154,6 @@ audio/x-mpegurl=mpv.desktop;
 text/x-patch=sublime_text.desktop;
 image/x-xcursor=viewnior.desktop;
 application/x-wine-extension-ini=sublime_text.desktop;
+image/vnd.adobe.photoshop=gimp.desktop;viewnior.desktop;
+application/octet-stream=firefox.desktop;
+message/rfc822=org.gnome.Evolution.desktop;chromium.desktop;libreoffice-writer.desktop;

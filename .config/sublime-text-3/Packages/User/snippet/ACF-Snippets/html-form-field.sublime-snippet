@@ -1,0 +1,12 @@
+<snippet>
+	<content>
+<![CDATA[<?${TM_PHP_OPEN_TAG:php} if ( get_field('${1:field_name}') ) {
+	\$form = get_field('${1:field_name}');
+	gravity_form_enqueue_scripts(\$form->id, true);
+	gravity_form(\$form->id, ${2:display_title}, ${3:display_description}, false, ${4:field_values}, ${5:enable_ajax}, 1);
+} ?>]]>
+	</content>
+	<tabTrigger>field:form</tabTrigger>
+	<description>ACF gravity forms field</description>
+	<scope>text.html - source.php</scope>
+</snippet>

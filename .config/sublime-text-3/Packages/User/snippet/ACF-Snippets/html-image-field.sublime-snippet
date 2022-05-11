@@ -1,0 +1,10 @@
+<snippet>
+	<content>
+<![CDATA[<?${TM_PHP_OPEN_TAG:php} if ( get_field('${1:field_name}') ) : ?>
+	<img src="<?${TM_PHP_OPEN_TAG:php} the_field('${1:field_name}'); ?>" alt="${2:<?${TM_PHP_OPEN_TAG:php} the_field(''); ?>}">
+<?${TM_PHP_OPEN_TAG:php} endif; ?>]]>
+	</content>
+	<tabTrigger>field:image</tabTrigger>
+	<description>ACF image field (URL)</description>
+	<scope>text.html - source.php</scope>
+</snippet>

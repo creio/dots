@@ -1,16 +1,4 @@
 [
-	{ "keys": ["ctrl+shift+r"], "command": "reindent" },
-	{ "keys": ["ctrl+k", "ctrl+m"], "command": "toggle_menu" },
-
-	{ "keys": ["ctrl+k", "ctrl+i"], "command": "gist" },
-	{ "keys": ["ctrl+k", "ctrl+p"], "command": "gist_private" },
-	{ "keys": ["ctrl+k", "ctrl+s"], "command": "gist_update_file" },
-	// { "keys": ["ctrl+k", "ctrl+l"], "command": "gist_list" },
-	{ "keys": ["ctrl+k", "ctrl+["], "command": "insert_gist_list" },
-	{ "keys": ["ctrl+k", "ctrl+]"], "command": "gist_add_file" },
-	//
-	{ "keys": ["ctrl+."], "command": "toggle_comment", "args": { "block": false } },
-	{ "keys": ["ctrl+'"], "command": "expand_selection_to_quotes" },
   // ru
   { "keys": ["ctrl+ч"], "command": "cut" },
   { "keys": ["ctrl+ы"], "command": "save" },
@@ -25,5 +13,21 @@
   { "keys": ["ctrl+л", "ctrl+г"], "command": "upper_case" },
   { "keys": ["ctrl+л", "ctrl+д"], "command": "lower_case" },
   { "keys": ["ctrl+а"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
-  { "keys": ["ctrl+д"], "command": "expand_selection", "args": {"to": "line"} }
+  { "keys": ["ctrl+д"], "command": "expand_selection", "args": {"to": "line"} },
+
+  { "keys": ["ctrl+shift+r"], "command": "reindent" },
+  { "keys": ["ctrl+k", "ctrl+m"], "command": "toggle_menu" },
+
+  { "keys": ["ctrl+k", "ctrl+i"], "command": "gist" },
+  { "keys": ["ctrl+k", "ctrl+p"], "command": "gist_private" },
+  { "keys": ["ctrl+k", "ctrl+s"], "command": "gist_update_file" },
+  // { "keys": ["ctrl+k", "ctrl+l"], "command": "gist_list" },
+  { "keys": ["ctrl+k", "ctrl+["], "command": "insert_gist_list" },
+  { "keys": ["ctrl+k", "ctrl+]"], "command": "gist_add_file" },
+  //
+  { "keys": ["ctrl+."], "command": "toggle_comment", "args": { "block": false } },
+  { "keys": ["ctrl+'"], "command": "expand_selection_to_quotes" },
+
+  // { "keys": ["ctrl+n"], "command": "side_bar_new_file" },
+  { "keys": ["ctrl+alt+n"], "command": "side_bar_new_directory" }
 ]

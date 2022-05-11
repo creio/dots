@@ -1,0 +1,10 @@
+<snippet>
+	<content>
+<![CDATA[<?${TM_PHP_OPEN_TAG:php} if ( get_field('${1:field_name}') ) : \$date = DateTime::createFromFormat('${2:Ymd}', get_field('${1:field_name}')); ?>
+	<?${TM_PHP_OPEN_TAG:php} echo \$date->format('${3:d-m-Y}'); ?>
+<?${TM_PHP_OPEN_TAG:php} endif; ?>]]>
+	</content>
+	<tabTrigger>field:date</tabTrigger>
+	<description>ACF date field</description>
+	<scope>text.html - source.php</scope>
+</snippet>

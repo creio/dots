@@ -1,0 +1,16 @@
+<snippet>
+	<content>
+<![CDATA[<?${TM_PHP_OPEN_TAG:php} if ( get_field('${1:field_name}') ) : \$image = get_field('${1:field_name}'); ?>
+
+	<!-- Full size image -->
+	<img src="<?${TM_PHP_OPEN_TAG:php} echo \$image['url']; ?>" alt="<?${TM_PHP_OPEN_TAG:php} echo \$image['alt']; ?>"/>
+
+	<!-- Thumbnail image -->
+	<img src="<?${TM_PHP_OPEN_TAG:php} echo \$image['sizes']['thumbnail']; ?>" alt="<?${TM_PHP_OPEN_TAG:php} echo \$image['alt']; ?>"/>
+
+<?${TM_PHP_OPEN_TAG:php} endif; ?>]]>
+	</content>
+	<tabTrigger>field:image:object</tabTrigger>
+	<description>ACF image field (object)</description>
+	<scope>text.html - source.php</scope>
+</snippet>

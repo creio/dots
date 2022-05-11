@@ -1,0 +1,10 @@
+<snippet>
+	<content>
+<![CDATA[if( get_field('${1:field_name}') ) {
+	echo get_field('${1:field_name}');
+}]]>
+	</content>
+	<tabTrigger>field</tabTrigger>
+	<description>Display ACF field</description>
+	<scope>source.php</scope>
+</snippet>

@@ -1,90 +1,89 @@
 {
-	"auto_complete": true,
-	"auto_complete_triggers":
-	[
-		{
-			"characters": "b4",
-			"selector": "text.html",
-		}
-	],
-	"color_scheme": "Packages/One Dark Material - Theme/schemes/OneDark.tmTheme",
-	"detect_indentation": false,
-	"dictionary": "Packages/User/Russian.dic",
-	"draw_shadows": false,
-	"draw_white_space": "all",
-	"enable_tab_scrolling": false,
-	"ensure_newline_at_eof_on_save": true,
-	"fallback_encoding": "Cyrillic (Windows 1251)",
-	"folder_exclude_patterns":
-	[
-		".svn", ".git", ".hg", "CVS",
-		"work",
-		".sass-cache",
-		"node_modules",
-		"bitrix/cache",
-		"bitrix/managed_cache",
-		"bitrix/stack_cache",
-		"bitrix/backup",
-		"bitrix/tmp",
-		"bitrix/updates",
-		// "bitrix/wizards",
-		"upload"
-	],
-	"file_exclude_patterns": [
-		"*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace",
-
-		// "*.min.js",
-		// "*.min.css",
-		"*.map.js",
-		"*.js.map",
-		"*.bundle.js",
-		"*.bundle.css"
-	],
-	"font_face": "Hack Nerd Font Mono",
-	"font_size": 10,
-	"gruvbox_accent_blue": true,
-	"gruvbox_animate_icons": true,
-	"gruvbox_autocomplete_cramped": true,
-	"gruvbox_buttons_bold": true,
-	"gruvbox_command_palette_cramped": true,
-	"gruvbox_folder_icons_circle": true,
-	"gruvbox_iconset_spacegray": true,
-	"gruvbox_panel_xxs": true,
-	"gruvbox_scrollbar_width_xs": true,
-	"gruvbox_sidebar_cramped": true,
-	"gruvbox_sidebar_font_size_10": true,
-	"gruvbox_sidebar_indent_xs": true,
-	"gruvbox_sidebar_label_bold": true,
-	"gruvbox_statusbar_bold": true,
-	"gruvbox_statusbar_button_xxs": true,
-	"gruvbox_statusbar_font_size_10": true,
-	"gruvbox_statusbar_xxs": true,
-	"gruvbox_tabs_bold": true,
-	"gruvbox_tabs_font_size_10": true,
-	"gruvbox_tabs_xxs": true,
-	"highlight_line": true,
-	"ignored_packages":
-	[
-	],
-	"indent_guide_options":
-	[
-		"draw_active"
-	],
-	"indent_to_bracket": true,
-	"line_padding_bottom": 2,
-	"line_padding_top": 2,
-	"margin": 3,
-	"rulers":
-	[
-		120
-	],
-	"show_encoding": true,
-	"show_scroll_tabs": false,
-	"spell_check": false,
-	"tab_size": 2,
-	"theme": "gruvbox.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"update_check": false,
-	"word_wrap": true,
+    "auto_complete": true,
+    "auto_complete_triggers":
+    [
+        {
+            "characters": "b4",
+            "selector": "text.html",
+        }
+    ],
+    "color_scheme": "Packages/One Dark Material - Theme/schemes/OneDark.tmTheme",
+    "detect_indentation": false,
+    "dictionary": "Packages/User/Russian.dic",
+    "draw_shadows": false,
+    "draw_white_space": "all",
+    "enable_tab_scrolling": false,
+    "ensure_newline_at_eof_on_save": true,
+    "fallback_encoding": "Cyrillic (Windows 1251)",
+    "folder_exclude_patterns":
+    [
+        ".svn", ".git", ".hg", "CVS",
+        "work",
+        ".sass-cache",
+        "node_modules",
+        "bitrix/cache",
+        "bitrix/managed_cache",
+        "bitrix/stack_cache",
+        "bitrix/backup",
+        "bitrix/tmp",
+        "bitrix/updates",
+        // "bitrix/wizards",
+        "upload"
+    ],
+    "file_exclude_patterns": [
+        "*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace",
+        // "*.min.js",
+        // "*.min.css",
+        "*.map.js",
+        "*.js.map",
+        "*.bundle.js",
+        "*.bundle.css"
+    ],
+    "font_face": "Hack Nerd Font Mono",
+    "font_size": 10,
+    "gruvbox_accent_blue": true,
+    "gruvbox_animate_icons": true,
+    "gruvbox_autocomplete_cramped": true,
+    "gruvbox_buttons_bold": true,
+    "gruvbox_command_palette_cramped": true,
+    "gruvbox_folder_icons_circle": true,
+    "gruvbox_iconset_spacegray": true,
+    "gruvbox_panel_xxs": true,
+    "gruvbox_scrollbar_width_xs": true,
+    "gruvbox_sidebar_cramped": true,
+    "gruvbox_sidebar_font_size_10": true,
+    "gruvbox_sidebar_indent_xs": true,
+    "gruvbox_sidebar_label_bold": true,
+    "gruvbox_statusbar_bold": true,
+    "gruvbox_statusbar_button_xxs": true,
+    "gruvbox_statusbar_font_size_10": true,
+    "gruvbox_statusbar_xxs": true,
+    "gruvbox_tabs_bold": true,
+    "gruvbox_tabs_font_size_10": true,
+    "gruvbox_tabs_xxs": true,
+    "highlight_line": true,
+    "ignored_packages":
+    [
+    ],
+    "indent_guide_options":
+    [
+        "draw_active"
+    ],
+    "indent_to_bracket": true,
+    "line_padding_bottom": 2,
+    "line_padding_top": 2,
+    "margin": 3,
+    "rulers":
+    [
+        120
+    ],
+    "show_encoding": true,
+    "show_scroll_tabs": false,
+    "spell_check": false,
+    "tab_size": 4,
+    "theme": "gruvbox.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "update_check": false,
+    "word_wrap": true,
 }

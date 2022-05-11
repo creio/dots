@@ -1,0 +1,26 @@
+<snippet>
+	<content>
+<![CDATA[<?${TM_PHP_OPEN_TAG:php} if ( get_field('${1:field_name}') ) : ?>
+
+	<div class="${3:item}s">
+		<?${TM_PHP_OPEN_TAG:php} foreach ( array_chunk(get_field('${1:field_name}'), ${2:2}) as \$row): ?>
+
+			<div class="row">
+				<?${TM_PHP_OPEN_TAG:php} foreach (\$row as \$${3:item}): ?>
+
+					<div class="${3:item}">
+						<?${TM_PHP_OPEN_TAG:php} echo \$${3:item}['${4:field_name}']; ?>$5
+					</div>
+
+				<?${TM_PHP_OPEN_TAG:php} endforeach; ?>
+			</div>
+
+		<?${TM_PHP_OPEN_TAG:php} endforeach; ?>
+	</div>
+
+<?${TM_PHP_OPEN_TAG:php} endif; ?>]]>
+	</content>
+	<tabTrigger>field:repeater:grid</tabTrigger>
+	<description>ACF repeater field grid</description>
+	<scope>text.html - source.php</scope>
+</snippet>

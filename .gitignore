@@ -1,6 +1,7 @@
 .bin/stream
 .config/sublime-text-3/Packages/User/Color Highlight.cache/
 .config/sublime-text-3/Packages/User/Gist.sublime-settings
+.config/sublime-text-3/Packages/User/FileHeader.sublime-settings
 .config/sublime-text-3/Packages/User/linters
 .config/sublime-text-3/Packages/User/Package Control.cache
 .config/sublime-text-3/Packages/User/Russian*

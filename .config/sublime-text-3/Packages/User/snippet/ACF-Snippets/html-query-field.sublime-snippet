@@ -1,0 +1,31 @@
+<snippet>
+	<content>
+<![CDATA[<?${TM_PHP_OPEN_TAG:php}
+
+\$args = array(
+	'numberposts' => 10,
+	'post_type' => 'post',
+	'meta_key' => '${1:field_name}',
+	'meta_value' => '${2:field_value}'
+);
+
+\$query = new WP_Query( \$args );
+
+?>
+
+<?${TM_PHP_OPEN_TAG:php} if( \$query->have_posts() ) : ?>
+	<ul>
+	<?${TM_PHP_OPEN_TAG:php} while ( \$query->have_posts() ) : \$query->the_post(); ?>
+		<li>
+			<a href="<?${TM_PHP_OPEN_TAG:php} the_permalink(); ?>"><?${TM_PHP_OPEN_TAG:php} the_title(); ?></a>
+		</li>
+	<?${TM_PHP_OPEN_TAG:php} endwhile; ?>
+	</ul>
+<?${TM_PHP_OPEN_TAG:php} endif; ?>
+
+<?${TM_PHP_OPEN_TAG:php} wp_reset_query(); ?>]]>
+	</content>
+	<tabTrigger>field:query</tabTrigger>
+	<description>Query on an ACF field</description>
+	<scope>text.html - source.php</scope>
+</snippet>

@@ -23,95 +23,95 @@ alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/maste
 
 # blur img: blur 4 .wall/wl3.jpg blur.jpg
 blur() {
-	convert -filter Gaussian -blur 0x$1 $2 $3
+  convert -filter Gaussian -blur 0x$1 $2 $3
 }
 
 tbg() {
-	urxvt -bg '[0]red' -b 0 -depth 32 +sb -name urxvt_bg &
+  urxvt -bg '[0]red' -b 0 -depth 32 +sb -name urxvt_bg &
 }
 
 # fzf
 zzh() {
-	du -a ~/ | awk '{print $2}' | fzf | xargs -r $EDITOR
+  du -a ~/ | awk '{print $2}' | fzf | xargs -r $EDITOR
 }
 zz() {
-	du -a . | awk '{print $2}' | fzf | xargs -r $EDITOR
+  du -a . | awk '{print $2}' | fzf | xargs -r $EDITOR
 }
 zzd() {
-	du -a $1 | awk '{print $2}' | fzf | xargs -r $EDITOR
+  du -a $1 | awk '{print $2}' | fzf | xargs -r $EDITOR
 }
 zzb() {
-	find -H "/usr/bin" "$HOME/.bin" -executable -print | sed -e 's=.*/==g' | fzf | sh
+  find -H "/usr/bin" "$HOME/.bin" -executable -print | sed -e 's=.*/==g' | fzf | sh
 }
 
 alias bat="bat -p --color=always"
 
 # зависимость source-highlight
 hcat () {
-	/usr/bin/src-hilite-lesspipe.sh "$1" | less -m -N
+  /usr/bin/src-hilite-lesspipe.sh "$1" | less -m -N
 }
 ccat () {
-	cat "$1" | xsel -b -i
+  cat "$1" | xsel -b -i
 }
 
 # share vbox В локальной машине mkdir vboxshare
 # в виртуалке uid={имя пользователя} git={группа}
 vboxshare () {
-	[[ ! -d ~/vboxshare ]] && mkdir -p ~/vboxshare
-	sudo mount -t vboxsf -o rw,uid=1000,gid=985 vboxshare vboxshare
-	# sudo mount -t vboxsf -o rw,uid=st,gid=users vboxshare vboxshare
+  [[ ! -d ~/vboxshare ]] && mkdir -p ~/vboxshare
+  sudo mount -t vboxsf -o rw,uid=1000,gid=985 vboxshare vboxshare
+  # sudo mount -t vboxsf -o rw,uid=st,gid=users vboxshare vboxshare
 }
 # share qemu
 vmshare () {
-	[[ ! -d ~/vmshare ]] && mkdir -p ~/vmshare
-	sudo mount -t 9p -o trans=virtio,version=9p2000.L host0 vmshare
+  [[ ! -d ~/vmshare ]] && mkdir -p ~/vmshare
+  sudo mount -t 9p -o trans=virtio,version=9p2000.L host0 vmshare
 }
 
 # aur pkg
 amake () {
-	git clone https://aur.archlinux.org/"$1".git
-	# curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
-	cd $1
-	makepkg -s
-	# makepkg -s --sign
-	cd ..
+  git clone https://aur.archlinux.org/"$1".git
+  # curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
+  cd $1
+  makepkg -s
+  # makepkg -s --sign
+  cd ..
 }
 
 # aur clean chroot manager
 accm () {
-	git clone https://aur.archlinux.org/"$2".git
-	# curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
-	# tar -xvf $1.tar.gz
-	cd $2
-	sudo ccm "$1"
-	gpg --detach-sign "$2"-*.pkg*
-	cd ..
+  git clone https://aur.archlinux.org/"$2".git
+  # curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
+  # tar -xvf $1.tar.gz
+  cd $2
+  sudo ccm "$1"
+  gpg --detach-sign "$2"-*.pkg*
+  cd ..
 }
 
 # pkg clean chroot manager
 lccm () {
-	sudo ccm "$1"
-	gpg --detach-sign *.pkg*
+  sudo ccm "$1"
+  gpg --detach-sign *.pkg*
 }
 
 aget () {
-	git clone https://aur.archlinux.org/"$1".git
-	# curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
-	# tar -xvf $1.tar.gz
-	cd $1
+  git clone https://aur.archlinux.org/"$1".git
+  # curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
+  # tar -xvf $1.tar.gz
+  cd $1
 }
 
 # build and install pkg from aur
 abuild () {
-	cd ~/.build
-	git clone https://aur.archlinux.org/"$1".git
-	# curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
-	# tar -xvf $1.tar.gz
-	cd $1
-	makepkg -si --skipinteg
-	cd ~/
-	# rm -rf ~/.build/$1 ~/.build/$1.tar.gz
-	rm -rf ~/.build/$1
+  cd ~/.build
+  git clone https://aur.archlinux.org/"$1".git
+  # curl -fO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz
+  # tar -xvf $1.tar.gz
+  cd $1
+  makepkg -si --skipinteg
+  cd ~/
+  # rm -rf ~/.build/$1 ~/.build/$1.tar.gz
+  rm -rf ~/.build/$1
 }
 
 
@@ -126,22 +126,22 @@ alias neo="neofetch --w3m ~/.config/neofetch/mmm.jpg"
 # alias wtr="curl 'wttr.in/Москва?M&lang=ru' | sed -n '1,17p'"
 # alias wtr="curl 'wttr.in/?M1npQ&lang=ru'"
 wtr () {
-	# curl "wttr.in/?M$1npQ&lang=ru"
-	curl "wttr.in/Gomel?M$1npQ&lang=ru"
+  # curl "wttr.in/?M$1npQ&lang=ru"
+  curl "wttr.in/Gomel?M$1npQ&lang=ru"
 }
 wts () {
-	curl "wttr.in/$1?M&lang=ru"
+  curl "wttr.in/$1?M&lang=ru"
 }
 alias moon="curl 'wttr.in/Moon'"
 
 alias srm="sudo rm -rfv"
 alias rm="rm -rfv"
 crm () {
-	# /bin/bash -c "yes | rm -rfv $1"{.\*\,\*}
-	/bin/bash -c "rm -rfv $1{.*,*}"
+  # /bin/bash -c "yes | rm -rfv $1"{.\*\,\*}
+  /bin/bash -c "rm -rfv $1{.*,*}"
 }
 scrm () {
-	sudo /bin/bash -c "rm -rfv $1{.*,*}"
+  sudo /bin/bash -c "rm -rfv $1{.*,*}"
 }
 
 alias dir="dir --color=auto"
@@ -190,18 +190,27 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......='cd ../../../../..'
 alias q="exit"
+alias w="cd /media/files/work"
+alias wwg="cd /media/files/work/work-gulp"
 alias gh="cd /media/files/github"
+alias ghc="cd /media/files/github/creio"
 alias ghd="cd /media/files/github/creio/dots"
+alias srht="cd /media/files/srht"
 
 function gc () {
-	git clone "$1" ${2}
+  git clone "$1" ${2}
 }
 
 function gcj () {
-	git clone "$1"
-	local to=$(echo ${1##*/}|sed 's/\..*//')
-	cd $to
-	# $EDITOR .
+  if [[ -n "$2" ]]; then
+    git clone "$1" "$2"
+    cd "$2"
+  else
+    git clone "$1"
+    local to=$(echo ${1##*/}|sed 's/\..*//')
+    cd $to
+    # $EDITOR .
+  fi
 }
 alias gi="git init"
 alias gs="git status"
@@ -209,8 +218,8 @@ alias gl="git log --stat --pretty=oneline --graph --date=short"
 # alias gg="gitg &"
 alias ga="git add --all"
 gac () {
-	git add --all
-	git commit -am "$1"
+  git add --all
+  git commit -am "$1"
 }
 alias gr="git remote"
 alias gf="git fetch"
@@ -227,28 +236,28 @@ alias psi="$BROWSER --proxy-server='socks://127.0.0.1:3081' &"
 # full screen flags -fs
 alias yt="pipe-viewer"
 ytv () {
-	pipe-viewer "$1"
+  pipe-viewer "$1"
 }
 
 # youtube-dl --ignore-errors -o '~/Видео/youtube/%(playlist)s/%(title)s.%(ext)s' https://www.youtube.com/playlist?list=PL-UzghgfytJQV-JCEtyuttutudMk7
 # Загрузка Видео ~/Videos или ~/Видео
 # Пример: dlv https://www.youtube.com/watch?v=gBAfejjUQoA
 dlv () {
-	youtube-dl --ignore-errors -o '~/Videos/youtube/%(title)s.%(ext)s' "$1"
+  youtube-dl --ignore-errors -o '~/Videos/youtube/%(title)s.%(ext)s' "$1"
 }
 # dlp https://www.youtube.com/playlist?list=PL-UzghgfytJQV-JCEtyuttutudMk7
 dlp () {
-	youtube-dl --ignore-errors -o '~/Videos/youtube/%(playlist)s/%(title)s.%(ext)s' "$1"
+  youtube-dl --ignore-errors -o '~/Videos/youtube/%(playlist)s/%(title)s.%(ext)s' "$1"
 }
 
 # Загрузка аудио ~/Music или ~/Музыка
 # Пример: mp3 https://www.youtube.com/watch?v=gBAfejjUQoA
 mp3 () {
-	youtube-dl --ignore-errors -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o '~/Music/youtube/%(title)s.%(ext)s' "$1"
+  youtube-dl --ignore-errors -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o '~/Music/youtube/%(title)s.%(ext)s' "$1"
 }
 # mp3p https://www.youtube.com/watch?v=-F7A24f6gNc&list=RD-F7A24f6gNc
 mp3p () {
-	youtube-dl --ignore-errors -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o '~/Music/youtube/%(playlist)s/%(title)s.%(ext)s' "$1"
+  youtube-dl --ignore-errors -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o '~/Music/youtube/%(playlist)s/%(title)s.%(ext)s' "$1"
 }
 
 alias porn="mpv 'http://www.pornhub.com/random'"
@@ -257,16 +266,16 @@ alias mvis="ncmpcpp -S visualizer"
 alias m="ncmpcpp"
 
 pf () {
-	peerflix "$1" --mpv
+  peerflix "$1" --mpv
 }
 alias rss="newsboat"
 alias wget="wget --no-hsts"
 # download web site
 wgetw () {
-	wget -rkx "$1"
+  wget -rkx "$1"
 }
 iso () {
-	sudo dd bs=4M if="$1" of=/dev/"$2" status=progress && sync
+  sudo dd bs=4M if="$1" of=/dev/"$2" status=progress && sync
 }
 
 alias -s {mp3,m4a,flac,mp4,mkv,webm}="mpv"
@@ -276,10 +285,10 @@ alias -s {pdf}="xreader"
 # alias {aurman,pikaur,trizen,yaourt}="yay"
 
 function s () {
-	subl -a "$1" &
+  subl -a "$1" &
 }
 function sudos () {
-	sudo subl -a "$1" &
+  sudo subl -a "$1" &
 }
 
 alias mi="micro"
@@ -328,61 +337,61 @@ alias yngpg='yay --noconfirm --gpgflags "--keyserver keys.gnupg.net"'
 
 # top history
 tophist() {
-	cat ~/.zhistory \
-		| cut -d ';' -f 2- 2>/dev/null \
-		| awk '{a[$1]++ } END{for(i in a){print a[i] " " i}}' \
-		| sort -rn \
-		| head
+  cat ~/.zhistory \
+    | cut -d ';' -f 2- 2>/dev/null \
+    | awk '{a[$1]++ } END{for(i in a){print a[i] " " i}}' \
+    | sort -rn \
+    | head
 }
 
 # распаковать архив не указывая тип распаковщика
 function ex {
-	if [ -z "$1" ]; then
-		# display usage if no parameters given
-		echo "Использование: ex <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
-	else
-		if [ -f "$1" ] ; then
-			NAME=${1%.*}
-			#mkdir $NAME && cd $NAME
-			case "$1" in
-				*.tar.bz2)   tar xvjf ./"$1"    ;;
-				*.tar.gz)    tar xvzf ./"$1"    ;;
-				*.tar.xz)    tar xvJf ./"$1"    ;;
-				*.lzma)      unlzma ./"$1"      ;;
-				*.bz2)       bunzip2 ./"$1"     ;;
-				*.rar)       unrar x -ad ./"$1" ;;
-				*.gz)        gunzip ./"$1"      ;;
-				*.tar)       tar xvf ./"$1"     ;;
-				*.tbz2)      tar xvjf ./"$1"    ;;
-				*.tgz)       tar xvzf ./"$1"    ;;
-				*.zip)       unzip ./"$1"       ;;
-				*.Z)         uncompress ./"$1"  ;;
-				*.7z)        7z x ./"$1"        ;;
-				*.xz)        unxz ./"$1"        ;;
-				*.exe)       cabextract ./"$1"  ;;
-				*)           echo "ex: '$1' - Не может быть распакован" ;;
-			esac
-		else
-			echo "'$1' - не является допустимым файлом"
-		fi
-	fi
+  if [ -z "$1" ]; then
+    # display usage if no parameters given
+    echo "Использование: ex <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+  else
+    if [ -f "$1" ] ; then
+      NAME=${1%.*}
+      #mkdir $NAME && cd $NAME
+      case "$1" in
+        *.tar.bz2)   tar xvjf ./"$1"    ;;
+        *.tar.gz)    tar xvzf ./"$1"    ;;
+        *.tar.xz)    tar xvJf ./"$1"    ;;
+        *.lzma)      unlzma ./"$1"      ;;
+        *.bz2)       bunzip2 ./"$1"     ;;
+        *.rar)       unrar x -ad ./"$1" ;;
+        *.gz)        gunzip ./"$1"      ;;
+        *.tar)       tar xvf ./"$1"     ;;
+        *.tbz2)      tar xvjf ./"$1"    ;;
+        *.tgz)       tar xvzf ./"$1"    ;;
+        *.zip)       unzip ./"$1"       ;;
+        *.Z)         uncompress ./"$1"  ;;
+        *.7z)        7z x ./"$1"        ;;
+        *.xz)        unxz ./"$1"        ;;
+        *.exe)       cabextract ./"$1"  ;;
+        *)           echo "ex: '$1' - Не может быть распакован" ;;
+      esac
+    else
+      echo "'$1' - не является допустимым файлом"
+    fi
+  fi
 }
 
 # Упаковка в архив командой pk 7z /что/мы/пакуем имя_файла.7z
 function pk () {
-	if [ $1 ] ; then
-		case $1 in
-			tbz)       tar cjvf $2.tar.bz2 $2      ;;
-			tgz)       tar czvf $2.tar.gz  $2       ;;
-			txz)       tar -caf $2.tar.xz  $2       ;;
-			tar)       tar cpvf $2.tar  $2       ;;
-			bz2)       bzip $2 ;;
-			gz)        gzip -c -9 -n $2 > $2.gz ;;
-			zip)       zip -r $2.zip $2   ;;
-			7z)        7z a $2.7z $2    ;;
-			*)         echo "'$1' не может быть упакован с помощью pk()" ;;
-		esac
-	else
-		echo "'$1' не является допустимым файлом"
-	fi
+  if [ $1 ] ; then
+    case $1 in
+      tbz)       tar cjvf $2.tar.bz2 $2      ;;
+      tgz)       tar czvf $2.tar.gz  $2       ;;
+      txz)       tar -caf $2.tar.xz  $2       ;;
+      tar)       tar cpvf $2.tar  $2       ;;
+      bz2)       bzip $2 ;;
+      gz)        gzip -c -9 -n $2 > $2.gz ;;
+      zip)       zip -r $2.zip $2   ;;
+      7z)        7z a $2.7z $2    ;;
+      *)         echo "'$1' не может быть упакован с помощью pk()" ;;
+    esac
+  else
+    echo "'$1' не является допустимым файлом"
+  fi
 }

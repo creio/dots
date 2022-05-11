@@ -2,8 +2,8 @@
 
 . /home/creio/.env
 
-USER=cretm
-SERVER=$oc
+USER=ubuntu
+SERVER=$uoc
 
 # if (($(ps -aux | grep [p]icom | wc -l) > 0))
 

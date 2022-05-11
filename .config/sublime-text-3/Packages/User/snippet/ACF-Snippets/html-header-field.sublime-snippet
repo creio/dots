@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<${2:h1}><?${TM_PHP_OPEN_TAG:php} the_field('${1:field_name}'); ?></${2:h1}>]]></content>
+	<tabTrigger>field:header</tabTrigger>
+	<description>Display ACF header field</description>
+	<scope>text.html - source.php</scope>
+</snippet>

@@ -1,5 +1,6 @@
 2fa
 acestream-engine-stable
+anydesk-bin
 aurutils
 bashmount
 bitwarden-rofi
@@ -7,13 +8,12 @@ blackarch-keyring
 chaotic-keyring
 chaotic-mirrorlist
 cointop-bin
+conky-lua-nv
 creio-dots
 cryptowatch-desktop-bin
 davinci-resolve
 duc
-ebtables
 exodus
-ifuse
 lib32-nvidia-390xx-utils
 lib32-opencl-nvidia-390xx
 libxnvctrl-390xx
@@ -31,6 +31,7 @@ pkgbuild-introspection
 pkgtop-git
 popcorntime-bin
 python-pywapi
+skypeforlinux-preview-bin
 solana-bin
 ssrt
 sublime-text

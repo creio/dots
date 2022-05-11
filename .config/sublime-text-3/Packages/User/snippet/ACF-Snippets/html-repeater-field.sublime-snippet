@@ -1,0 +1,16 @@
+<snippet>
+	<content>
+<![CDATA[<?${TM_PHP_OPEN_TAG:php} if ( have_rows('${1:field_name}') ) : ?>
+
+	<?${TM_PHP_OPEN_TAG:php} while( have_rows('${1:field_name}') ) : the_row(); ?>
+
+		<?${TM_PHP_OPEN_TAG:php} the_sub_field('${3:sub_field_name}'); ?>$4
+
+	<?${TM_PHP_OPEN_TAG:php} endwhile; ?>
+
+<?${TM_PHP_OPEN_TAG:php} endif; ?>]]>
+	</content>
+	<tabTrigger>field:repeater</tabTrigger>
+	<description>ACF repeater field</description>
+	<scope>text.html - source.php</scope>
+</snippet>

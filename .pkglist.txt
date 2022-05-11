@@ -8,6 +8,7 @@ archiso
 audacity
 autoconf
 automake
+awesome-terminal-fonts
 base
 bash-completion
 bat
@@ -26,13 +27,14 @@ chromium
 clean-chroot-manager
 cmake
 colorpicker
-conky
 cpio
 cronie
+ctl-themes
 ctlos-helper
 ctlos-keyring
 ctlos-mirrorlist
 ctlos-qogir
+ctlos-welcome
 ctop
 devilspie
 dhcpcd
@@ -103,9 +105,12 @@ hsetroot
 htop
 hub
 hugo
+ifuse
 inetutils
+inkscape
 inotify-tools
 inxi
+iptables-nft
 jq
 jre8-openjdk
 keybase-gui
@@ -142,10 +147,13 @@ libcanberra
 libreoffice-fresh-ru
 libtool
 libvncserver
+libxcrypt-compat
 linux-lts
 linux-lts-headers
 lldb
 llvm
+logrotate
+lolcat
 lostfiles
 lsof
 lutris
@@ -166,6 +174,7 @@ mtr
 multilockscreen-git
 nano
 ncmpcpp
+neofetch
 neovim
 nerd-fonts-hack
 netctl
@@ -182,6 +191,7 @@ oh-my-zsh-git
 openbox
 opencl-mesa
 openssh
+optipng
 otb-uw_ttyp0
 p7zip
 packer
@@ -201,6 +211,7 @@ pulseaudio
 pulseaudio-alsa
 pv
 python-adblock
+python-llfuse
 python-oauth2client
 python-pip-api
 python-pyperclip
@@ -242,7 +253,6 @@ sshuttle
 sudo
 syntax-highlighting
 sysstat
-systemd-swap
 tcpdump
 telegram-desktop
 terraform
@@ -281,6 +291,7 @@ virt-manager
 virtualbox
 vulkan-mesa-layers
 vulkan-tools
+w3m
 weechat
 weechat-matrix
 wget
@@ -300,7 +311,6 @@ xorg-server-xephyr
 xorg-xinit
 xorg-xkill
 xorg-xlsfonts
-xorg-xwayland
 xorg-xwininfo
 xreader
 xsettingsd
@@ -312,6 +322,7 @@ ytfzf
 zathura
 zathura-pdf-mupdf
 zenity
+zram-generator
 zsh
 zsh-autosuggestions
 zsync

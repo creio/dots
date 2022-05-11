@@ -14,6 +14,6 @@
     <property name="dpms-on-ac-off" type="uint" value="20"/>
     <property name="battery-button-action" type="uint" value="3"/>
     <property name="dpms-on-ac-sleep" type="uint" value="2"/>
-    <property name="dpms-enabled" type="bool" value="true"/>
+    <property name="dpms-enabled" type="bool" value="false"/>
   </property>
 </channel>

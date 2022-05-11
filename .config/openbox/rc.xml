@@ -954,7 +954,7 @@
         <y>center</y>
       </position> -->
     </application>
-    <application class="Subl" type="normal">
+    <application class="Sublime_text" type="normal">
       <maximized>yes</maximized>
       <!-- <desktop>3</desktop> -->
       <decor>no</decor>
