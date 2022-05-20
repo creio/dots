@@ -66,9 +66,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # export PATH="$PATH:`yarn global bin`"
 
-# export GOPATH=$HOME/.go
-# export PATH=$PATH:$GOPATH/bin
-# export GO111MODULE=on
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export GO111MODULE=on
 
 export NVM_DIR="$HOME/.config/nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

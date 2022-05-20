@@ -69,8 +69,8 @@ button_max_icon_size = 0
 # Button 2
 button = new
 button_text = 
-button_lclick_command = urxvt -name rxtmux -g 190x50 -e sh -c '~/.bin/tmrun.sh'
-button_rclick_command = urxvt -name rxtmux -g 190x50 -e sh -c 'tmux attach || tmux new -s work'
+button_lclick_command = urxvt -name rxtmux -b 0 -g 190x50 -e sh -c '~/.bin/tmrun.sh'
+button_rclick_command = urxvt -name rxtmux -b 0 -g 190x50 -e sh -c 'tmux attach || tmux new -s work'
 button_mclick_command =
 button_uwheel_command =
 button_dwheel_command =

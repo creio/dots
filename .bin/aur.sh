@@ -1,4 +1,4 @@
-#!/usr/bin bash
+#!/usr/bin/env bash
 
 pack=(
 oh-my-zsh-git zsh-autosuggestions
