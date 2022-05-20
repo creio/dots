@@ -8,9 +8,9 @@
 
 HOST_NAME=rach
 # btrfs || ext4
-FS_TYPE=btrfs
+FS_TYPE=ext4
 # systemd-boot || grub-efi || grub
-BOOT_LOADER=systemd-boot
+BOOT_LOADER=grub
 
 # Check for root
 if [[ $EUID -ne 0 ]]; then
@@ -38,7 +38,7 @@ dd if=/dev/zero of=${DISK} status=progress bs=4096 count=256
 
 # mklabel msdos || mklabel gpt
 parted ${DISK} << EOF
-mklabel gpt
+mklabel msdos
 mkpart primary 1MiB 300MiB
 set 1 boot on
 mkpart primary 300MiB 100%
@@ -95,28 +95,32 @@ timedatectl set-timezone $time_zone
 reflector --verbose -p "http,https" -c "$(curl -s https://ipinfo.io/country)," --sort rate --save /etc/pacman.d/mirrorlist
 
 PKGS=(
-base base-devel iwd nano reflector openssh
+base base-devel nano reflector openssh
 linux linux-headers
-grub efibootmgr
-btrfs-progs
-# os-prober
+# linux-firmware lvm2
 # linux-lts linux-lts-headers
 # linux-zen linux-zen-headers
-# linux-firmware lvm2
+# btrfs-progs
+grub
+# efibootmgr
+# os-prober
 # arch-install-scripts
 # amd-ucode intel-ucode
-# dhcpcd netctl
+# dhcpcd netctl iwd
 networkmanager
-wget git rsync gnu-netcat pv bash-completion htop tmux
-# unzip unrar p7zip zsh
-# xorg-apps xorg-server xorg-server-common xorg-xinit xorg-xkill xorg-xrdb xorg-xinput
+wget git rsync gnu-netcat pv bash-completion htop tmux zsh
+zip unzip unrar p7zip gzip bzip2 zlib
+xorg-apps xorg-server xorg-server-common xorg-xinit xorg-xkill xorg-xrdb xorg-xinput
 # xf86-video-intel xf86-video-amdgpu xf86-video-ati xf86-video-nouveau xf86-video-fbdev xf86-video-dummy
-# xf86-video-vesa xf86-video-openchrome xf86-video-sisusb xf86-video-vmware xf86-video-voodoo
-# xf86-input-libinput xf86-input-elographics xf86-input-evdev xf86-input-void xf86-input-vmmouse
-# sddm plasma-meta kde-system-meta kde-utilities-meta plasma-pa packagekit-qt5
+xf86-video-vesa xf86-video-openchrome xf86-video-sisusb xf86-video-vmware xf86-video-voodoo
+xf86-input-libinput xf86-input-elographics xf86-input-evdev xf86-input-void xf86-input-vmmouse
+pulseaudio pulseaudio-alsa pavucontrol
+# pulseaudio-equalizer pulseaudio-bluetooth
+sddm yay-bin
+# plasma-meta kde-system-meta kde-utilities-meta plasma-pa packagekit-qt5
 # plasma-desktop plasma-wayland-session egl-wayland
 # konsole dolphin ark kate kwalletmanager kdeconnect latte-dock
-# brave-bin vlc yay-bin
+# brave-bin vlc
 )
 
 for i in "${PKGS[@]}"; do
@@ -233,7 +237,7 @@ Type=wlan
 DHCP=yes
 EOF
 
-# systemctl enable sddm
+systemctl enable sddm
 
 echo "System Setup Complete"
 LOL
