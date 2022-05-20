@@ -299,7 +299,6 @@ alias tmk="tmux kill-server"
 # ~/.config/ranger/rc.conf ## set save_tabs_on_exit true
 alias rr='ranger --cmd="tab_shift 4" --cmd=tab_close'
 alias srr="sudo ranger"
-alias h="htop"
 # alias {v,vi,vim}="nvim"
 
 # LANG=C pacman -Sl | awk '/\[installed\]$/ {print $2}' > ~/.pkglist.txt

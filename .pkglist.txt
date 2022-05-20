@@ -18,6 +18,7 @@ bison
 bitwarden-cli
 boost
 borg
+bottom
 brainfuck-psiphon-pro-go-bin
 brightnessctl
 ca-certificates
@@ -82,7 +83,6 @@ glm
 gnome-themes-extra
 gnu-netcat
 go
-gotop-bin
 gparted
 grep
 groff
@@ -102,7 +102,6 @@ hddtemp
 hdparm
 helm
 hsetroot
-htop
 hub
 hugo
 ifuse
