@@ -212,8 +212,6 @@ function gcj () {
     # $EDITOR .
   fi
 }
-alias gi="git init"
-alias gs="git status"
 alias gl="git log --stat --pretty=oneline --graph --date=short"
 # alias gg="gitg &"
 alias ga="git add --all"

@@ -108,7 +108,7 @@ grub
 # amd-ucode intel-ucode
 # dhcpcd netctl iwd
 networkmanager
-wget git rsync gnu-netcat pv bash-completion htop tmux zsh
+wget git rsync gnu-netcat pv bash-completion bottom tmux zsh
 zip unzip unrar p7zip gzip bzip2 zlib
 xorg-apps xorg-server xorg-server-common xorg-xinit xorg-xkill xorg-xrdb xorg-xinput
 # xf86-video-intel xf86-video-amdgpu xf86-video-ati xf86-video-nouveau xf86-video-fbdev xf86-video-dummy
