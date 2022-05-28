@@ -9,8 +9,8 @@ fi
 
 killall -q conky
 
+(sleep 2; conky -c ~/.conky/conky_connections -d)
 conky -c ~/.conky/conky_asset -d
-conky -c ~/.conky/conky_connections -d
 conky -c ~/.conky/conky_biclock -d
 conky -c ~/.conky/conky.conf -d
 conky -c ~/.conky/conky_cpus -d
@@ -26,4 +26,4 @@ conky -c ~/.conky/conky_news2 -d
 
 kill -9 $(pgrep -f gifbg.sh)
 killall xwinwrap
-sh ~/.conky/gifbg.sh ~/.wall/animate/quark.gif &
+sh ~/.conky/gifbg.sh ~/.wall/animate/quark.gif

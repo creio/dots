@@ -54,7 +54,7 @@ font-5 = "Weather Icons:style=Regular:pixelsize=10:antialias=false;2"
 
 modules-left = app show_desktop cpu memory uparch wtr gmail title
 modules-center = mpd eww_main
-modules-right = crypto blur_picom bri_sh vpn tor fs alsa date xkeyboard power
+modules-right = crypto blur_picom bri_sh vpn tor fs pulseaudio date xkeyboard power
 
 #click-right = "jgmenu_run >/dev/null 2>&1 &"
 #click-right = "sleep 0.2; xdotool key ctrl+space &"
@@ -351,14 +351,15 @@ label-unmounted-foreground = ${colors.text}
 
 
 
-[module/alsa]
-type = internal/alsa
+[module/pulseaudio]
+type = internal/pulseaudio
 format-volume = <ramp-volume> <label-volume>
 format-muted =  0%
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.accent}
+click-right = pavucontrol
 
 
 

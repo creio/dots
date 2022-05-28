@@ -43,6 +43,6 @@ ${color 494a5b}${execi 3600 ip route}${color}
 ${color 494a5b}╭╴              ╶╮${color}
      OPEN NET
 ${color 494a5b}╰╴              ╶╯${color}
-${rss https://www.opennet.ru/opennews/opennews_all_noadv.rss 400 item_titles 22}
+${rss https://www.opennet.ru/opennews/opennews_all_noadv.rss 400 item_titles 20}
 ${image ~/.conky/asset.png -p 0,0 -n}
 ]];

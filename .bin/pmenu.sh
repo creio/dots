@@ -5,7 +5,7 @@ iconpath=$HOME/.icons/linebit
 # IMG:$iconpath/appearance.png
 
 cat <<EOF | pmenu -w | sh &
-IMG:$iconpath/start.png	rofi -show drun -theme ~/.config/rofi/drun.rasi
+IMG:$iconpath/start.png	rofi -show drun -theme ~/.config/rofi/full.rasi
 IMG:$iconpath/search.png	search
 IMG:$iconpath/firefox.png	$BROWSER
 IMG:$iconpath/terminal.png	draw
