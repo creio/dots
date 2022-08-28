@@ -1,0 +1,157 @@
+{
+    // For remote debugging to resolve the file locations
+    // it is required to configure the path mapping
+    // with the server path as key and local path as value.
+    //
+    // Make sure to use absolute path when defining server path,
+    // because Xdebug debugger engine does not return symbolic links.
+    //
+    // Example:
+    // "/absolute/path/to/file/on/server" : "/path/to/file/on/computer",
+    // "/var/www/htdocs/example/" : "C:/git/websites/example/"
+    "path_mapping": {
+
+    },
+
+    // Determine which URL to launch in the default web browser
+    // when starting/stopping a session.
+    "url": "",
+
+    // An IDE key is used to identify with debugger engine
+    // when Sublime Text will start or stop a debugging session.
+    //
+    // This package does not filter sessions by IDE key,
+    // it will accept any IDE key, also ones that do not match this configured IDE key.
+    // It is merely used when launching the default web browser with the configured URL.
+    "ide_key": "sublime.xdebug",
+
+    // Host address of network interface which Sublime Text
+    // should listen to connect with debugger engine.
+    //
+    // By specifying "" or "0.0.0.0" as host address, Sublime Text
+    // will listen on all the configured network interfaces.
+    // This is the desired configuration when debugging
+    // a script that is located on a remote server.
+    //
+    // Otherwise it is recommended to use "127.0.0.1" or "localhost"
+    // as configuration, when debugging a script on your local machine.
+    // Due to the fact that by listening on all the configured
+    // network interfaces raises a security concern as anyone
+    // can access Sublime Text through the configured port.
+    //
+    // When specifying host address of network interface,
+    // be sure to specify an IPv4 address as Sublime Text
+    // will listen for connections through an IPv4 socket.
+    "host": "",
+
+    // Which port number Sublime Text should listen
+    // to connect with debugger engine.
+    "port": 9000,
+
+    // Maximum amount of array children
+    // and object's properties to return.
+    "max_children": 32,
+
+    // Maximum amount of
+    // variable data to initially retrieve.
+    "max_data": 1024,
+
+    // Maximum amount of nested levels to retrieve
+    // of array elements and object properties.
+    "max_depth": 1,
+
+    // Break at first line on session start, when debugger engine has connected.
+    "break_on_start": false,
+
+    // Break on exceptions, suspend execution
+    // when the exception name matches an entry in this list value.
+    "break_on_exception": [
+        // E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR
+        "Fatal error",
+        // E_RECOVERABLE_ERROR (since PHP 5.2.0)
+        "Catchable fatal error",
+        // E_WARNING, E_CORE_WARNING, E_COMPILE_WARNING, E_USER_WARNING
+        "Warning",
+        // E_PARSE
+        "Parse error",
+        // E_NOTICE, E_USER_NOTICE
+        "Notice",
+        // E_STRICT
+        "Strict standards",
+        // E_DEPRECATED, E_USER_DEPRECATED (since PHP 5.3.0)
+        "Deprecated",
+        // 0
+        "Xdebug",
+        // default
+        "Unknown error"
+    ],
+
+    // Always close debug windows and restore layout on session stop.
+    "close_on_stop": false,
+
+    // Show information about super globals in context view.
+    "super_globals": true,
+
+    // Display property by fullname in context view.
+    "fullname_property": true,
+
+    // Do not show possible password values in context view.
+    "hide_password": false,
+
+    // Render evaluated result as parsed output instead of raw XML.
+    "pretty_output": false,
+
+    // Always launch browser on session start/stop.
+    // Note: This will only work if you have the 'url' setting configured.
+    "launch_browser": false,
+
+    // When launching browser on session stop do not execute script.
+    // By using parameter XDEBUG_SESSION_STOP_NO_EXEC instead of XDEBUG_SESSION_STOP.
+    "browser_no_execute": false,
+
+    // Do not use the debugging window layout.
+    "disable_layout": false,
+
+    // Window layout that is being used when debugging.
+    "debug_layout" : {
+        "cols": [0.0, 0.5, 1.0],
+        "rows": [0.0, 0.7, 1.0],
+        "cells": [[0, 0, 2, 1], [0, 1, 1, 2], [1, 1, 2, 2]]
+    },
+
+    // Group and index positions for debug views.
+    "breakpoint_group": 2,
+    "breakpoint_index": 1,
+    "context_group": 1,
+    "context_index": 0,
+    "stack_group": 2,
+    "stack_index": 0,
+    "watch_group": 1,
+    "watch_index": 1,
+
+    // Custom gutter icons for indicating current line or enabled/disabled breakpoints.
+    //
+    // Do not use same icon for following values, because Sublime Text is unable
+    // to use the same icon for different scopes, in case there are duplicate icons
+    // detected it will fall back to the corresponding icon in the package.
+    "breakpoint_enabled": "circle",
+    "breakpoint_disabled": "dot",
+    "breakpoint_current": "",
+    "current_line": "bookmark",
+
+    // Path to Python installation on your system.
+    // Which is being used to load missing modules.
+    //
+    // It is recommended to configure your Python path for Sublime Text 2
+    // especially on older UNIX systems, where some modules (xml.parsers.expat)
+    // might be missing and could improve performance of package.
+    //
+    // Example:
+    // "python_path" : "/usr/lib/python2.7"
+    "python_path" : "",
+
+    // Show detailed log information about communication
+    // between debugger engine and Sublime Text.
+    // Log can be found at Packages/User/Xdebug.log
+    "debug": true
+}

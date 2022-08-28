@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+global \$USER; if (\$USER->IsAdmin()) {
+    echo'<pre>';print_r(\$${1:arResult});echo'</pre>';
+}
+]]></content>
+  <tabTrigger>pra</tabTrigger>
+  <scope>source.php</scope>
+</snippet>

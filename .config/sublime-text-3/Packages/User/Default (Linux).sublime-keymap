@@ -16,6 +16,8 @@
   { "keys": ["ctrl+д"], "command": "expand_selection", "args": {"to": "line"} },
 
   { "keys": ["ctrl+shift+r"], "command": "reindent" },
+  { "keys": ["ctrl+shift+c"], "command": "color_pick" },
+  { "keys": ["ctrl+alt+c"], "command": "css_comb" },
   { "keys": ["ctrl+k", "ctrl+m"], "command": "toggle_menu" },
 
   { "keys": ["ctrl+k", "ctrl+i"], "command": "gist" },
@@ -27,6 +29,8 @@
   //
   { "keys": ["ctrl+."], "command": "toggle_comment", "args": { "block": false } },
   { "keys": ["ctrl+'"], "command": "expand_selection_to_quotes" },
+
+  { "keys": ["alt+`"], "command": "toggle_terminus_panel" },
 
   // { "keys": ["ctrl+n"], "command": "side_bar_new_file" },
   { "keys": ["ctrl+alt+n"], "command": "side_bar_new_directory" }

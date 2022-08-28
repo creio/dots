@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+<?
+${1:php}
+?>
+]]></content>
+  <tabTrigger>phh</tabTrigger>
+  <scope>source.php</scope>
+</snippet>

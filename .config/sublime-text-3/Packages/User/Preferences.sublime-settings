@@ -28,11 +28,7 @@
         "upload"
     ],
     "file_exclude_patterns": [
-    "*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace",
-        "*.map.js",
-        "*.js.map",
-        "*.bundle.js",
-        "*.bundle.css"
+    "*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace"
     ],
     "font_face": "Hack Nerd Font Mono",
     "font_size": 11,
@@ -72,7 +68,7 @@
     "spell_check": false,
     "tab_size": 4,
     "theme": "gruvbox.sublime-theme",
-    "translate_tabs_to_spaces": true,
+    "translate_tabs_to_spaces": false,
     "trim_trailing_white_space_on_save": true,
     "update_check": false,
     "word_wrap": true,

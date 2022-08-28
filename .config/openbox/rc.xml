@@ -374,17 +374,17 @@
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>amixer -D pulse sset Master '5%+'</command>
+        <command>pactl -- set-sink-volume 0 +5%</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>amixer -D pulse sset Master '5%-'</command>
+        <command>pactl -- set-sink-volume 0 -5%</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>amixer set Master toggle</command>
+        <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
       </action>
     </keybind>
     <keybind key="A-f">
@@ -425,6 +425,11 @@
     <keybind key="A-m">
       <action name="Execute">
         <command>findapp telegram-desktop</command>
+      </action>
+    </keybind>
+    <keybind key="W-y">
+      <action name="Execute">
+        <command>ytcmpv.sh</command>
       </action>
     </keybind>
     <keybind key="W-A-l">
@@ -495,6 +500,16 @@
     <keybind key="C-A-h">
       <action name="Execute">
         <command>rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -font "ClearSansMedium 10" -theme-str 'window {width: 40%;height: 80%;}'</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-t">
+      <action name="Execute">
+        <command>trans.sh -b</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-p">
+      <action name="Execute">
+        <command>trans.sh -p</command>
       </action>
     </keybind>
     <keybind key="A-c">

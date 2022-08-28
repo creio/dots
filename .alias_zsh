@@ -313,6 +313,7 @@ alias yl="yay -S --noconfirm --needed - < ~/.pkglist.txt"
 alias ys="yay"
 alias ysn="yay --noconfirm"
 alias yo="yay -S --overwrite='*'"
+alias yno="yay -S --noconfirm --overwrite='*'"
 alias yU="yay -U"
 alias yUo="yay -U --overwrite='*'"
 alias yc="yay -Sc"
@@ -344,7 +345,6 @@ tophist() {
 # распаковать архив не указывая тип распаковщика
 function ex {
   if [ -z "$1" ]; then
-    # display usage if no parameters given
     echo "Использование: ex <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
   else
     if [ -f "$1" ] ; then
@@ -374,7 +374,7 @@ function ex {
   fi
 }
 
-# Упаковка в архив командой pk 7z /что/мы/пакуем имя_файла.7z
+# Упаковка в архив командой pk 7z /что/мы/пакуем
 function pk () {
   if [ $1 ] ; then
     case $1 in

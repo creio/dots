@@ -1,8 +1,6 @@
 <snippet>
   <content><![CDATA[
-echo '<pre>';
-print_r (\$${1:arResult});
-echo '</pre>;'
+echo '<pre>'; print_r(\$${1:arResult}); echo '</pre>';
 ]]></content>
   <tabTrigger>prr</tabTrigger>
   <scope>source.php</scope>

@@ -1,6 +1,5 @@
 acpi
 alsa-plugins
-alsa-utils
 alttab-git
 amfora
 arch-audit
@@ -38,6 +37,7 @@ ctlos-qogir
 ctlos-welcome
 ctop
 devilspie
+dhcpcd
 dialog
 discord
 dmenu
@@ -51,6 +51,7 @@ dunst
 edk2-ovmf
 efibootmgr
 expac
+fakechroot
 fakeroot
 fd
 ffmpegthumbnailer
@@ -65,8 +66,8 @@ firejail
 flameshot
 flatpak
 flex
-foliate
 fontconfig
+fsarchiver
 fuse2
 fzf
 fzf-extras
@@ -88,6 +89,7 @@ grep
 groff
 gsimplecal
 gst-libav
+gst-plugin-pipewire
 gst-plugins-bad
 gtk-engine-murrine
 gtk-engines
@@ -173,6 +175,7 @@ mpd
 mpv
 mtr
 multilockscreen-git
+mypaint
 nano
 ncmpcpp
 neofetch
@@ -190,6 +193,7 @@ ob-yml-menu
 oh-my-zsh-git
 openbox
 opencl-mesa
+openresolv
 openssh
 optipng
 otb-uw_ttyp0
@@ -203,7 +207,7 @@ patch
 pavucontrol
 pipe-viewer-git
 pipewire
-pipewire-media-session
+pipewire-alsa
 pipewire-pulse
 pkgconf
 polkit-gnome
@@ -219,6 +223,9 @@ python-pyperclip
 python-tldextract
 qemu-desktop
 qogir-icon-theme
+qt5ct
+qt6-base
+qt6ct
 qutebrowser
 ranger
 rclone
@@ -264,9 +271,9 @@ timeshift
 tint2
 tmux
 tor
-torrserver-bin
 torsocks
 traceroute
+translate-shell
 trash-cli
 tree
 ttf-clear-sans
@@ -299,6 +306,7 @@ wine
 winetricks
 wireguard-tools
 wireless_tools
+wireplumber
 wmctrl
 xclip
 xdg-user-dirs
@@ -320,7 +328,6 @@ yq2-bin
 ytfzf
 zathura
 zathura-pdf-mupdf
-zenity
 zram-generator
 zsh
 zsh-autosuggestions

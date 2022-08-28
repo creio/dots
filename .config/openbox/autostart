@@ -36,6 +36,7 @@ greenclip daemon &
 # ~/.bin/mpv_bg &
 # sh -c ~/.bin/urxvt_bg &
 sh -c ~/.conky/start.sh &
+(sleep 3; telegram-desktop) &
 # caffeine &
 
 #glava -m bars &
@@ -46,5 +47,5 @@ sh -c ~/.conky/start.sh &
 # (sleep 5; nm-applet) &
 # (sleep 2; volumeicon) &
 # udiskie -t &
-# sh -c "kunst --music_dir /media/files/music --size 250x250 --x 1080 --y 60"
+# sh -c "kunst --music_dir /media/files/music --size 250x250 --x 1080 --y 60" &
 
