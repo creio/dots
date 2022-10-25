@@ -7,7 +7,7 @@
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_16"/>
   <property name="last-window-width" type="int" value="1920"/>
-  <property name="last-window-height" type="int" value="1055"/>
+  <property name="last-window-height" type="int" value="1050"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
   <property name="last-separator-position" type="int" value="124"/>

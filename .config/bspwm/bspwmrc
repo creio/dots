@@ -54,6 +54,7 @@ bspc rule -a Inkscape desktop='^6'
 bspc rule -a kdenlive desktop='^6'
 bspc rule -a Audacious desktop='^6' state=floating follow=on focus=on
 bspc rule -a mpv desktop='^6' follow=on
+bspc rule -a obs desktop='^6' follow=on
 bspc rule -a Zathura desktop='^7' state=tiled follow=on
 bspc rule -a Xreader desktop='^7' state=tiled follow=on
 bspc rule -a '*:libreoffice' desktop='^7' state=tiled
@@ -89,7 +90,7 @@ bspc rule -a Viewnior state=floating
 bspc rule -a SMPlayer state=floating
 # bspc rule -a mpv state=floating sticky=on rectangle=300x180+1060+475
 
-bspc rule -a polybar manage=off
+# bspc rule -a polybar manage=off
 bspc rule -a SPLASH manage=off border=off layer=above
 bspc rule -a Tint2 border=off manage=off state=floating layer=above
 

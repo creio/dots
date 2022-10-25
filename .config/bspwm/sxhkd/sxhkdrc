@@ -143,8 +143,12 @@ alt + space
   bspc node -t "~"{floating,tiled}
 
 # set the window state
-super + {t,alt + t,s,f}
-    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,alt + t,s}
+	polybar-msg cmd show; \
+    bspc node -t {tiled,pseudo_tiled,floating}
+super + f
+	polybar-msg cmd hide; \
+    bspc node -t fullscreen
 
 # set the node flags
 super + ctrl + {m,x,y,z}
