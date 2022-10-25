@@ -13,8 +13,8 @@ super + d
 super + alt + {f, o, g, b, v, s, d}
 	{thunar, obs, rofi-totp, $BROWSER, virtualbox, subl, discord-ptb}
 
-super + alt + {a, h, n, p, r, m, t}
-  $TERMINAL -e {alsamixer, btm, $EDITOR, pulsemixer, $FMANAGER, ncmpcpp, rtorrent}
+super + alt + {a, t, n, p, r, m}
+  $TERMINAL -e {alsamixer, btm, $EDITOR, pulsemixer, $FMANAGER, ncmpcpp}
 
 # scripts
 ctrl + alt + h
@@ -143,7 +143,7 @@ alt + space
   bspc node -t "~"{floating,tiled}
 
 # set the window state
-super + {t,alt + t,s}
+super + {t,shift + t,s}
 	polybar-msg cmd show; \
     bspc node -t {tiled,pseudo_tiled,floating}
 super + f
