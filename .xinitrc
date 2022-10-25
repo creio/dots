@@ -27,36 +27,46 @@ xset -b off
 
 # dbus-update-activation-environment --all
 
-# flashfocus &
-# ~/.config/frankenwm/autostart &
-# exec frankenwm
-# exec monsterwm
+### openbox-session|bspwm|frankenwm
+DEFAULT_SESSION=bspwm
 
-# exec xmonad > $HOME/.xmonad/log.txt 2>&1
+case $1 in
+    xfce)
+        exec startxfce4
+    ;;
+    kde)
+        exec startkde
+    ;;
+    gnome)
+        exec gnome-session
+    ;;
+    bspwm)
+        exec bspwm
+    ;;
+    frankenwm)
+        ~/.config/frankenwm/autostart &
+        exec frankenwm
+    ;;
+    *)
+        exec ${DEFAULT_SESSION:-openbox-session}
+    ;;
+esac
+
+# flashfocus &
+# exec monsterwm
 # exec awesome
 # exec dwm
-# python $HOME/.local/bin/i3-layouts &
-# exec i3
 # exec spectrwm
-# exec startfluxbox
-# exec pekwm
-# exec startinstantos
-# exec gnome-session
 # exec leftwm
 
-exec openbox-session
-
-# sxhkd -c $HOME/.config/bspwm/sxhkd/sxhkdrc &
-# exec bspwm
+# python $HOME/.local/bin/i3-layouts &
+# exec i3
 
 # ~/.config/shod/autostart.sh &
 # exec shod
 
 # ~/.config/2bwm/autostart &
 # exec 2bwm
-
-# hsetroot -fill ~/.wall/lcrow.png &
-# exec startxfce4
 
 # sh ~/.config/xfwm/autostart &
 # exec xfwm4

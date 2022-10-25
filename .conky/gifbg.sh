@@ -6,6 +6,8 @@ echo 1>&2 Usage: $0 image.gif
 exit 1
 fi
 
+killall xwinwrap >/dev/null 2>&1
+
 #get screen resolution
 SCRH=`xrandr | awk '/current/ { print $8 }'`
 SCRW=`xrandr | awk '/current/ { print $10 }' | sed 's/.$//'`

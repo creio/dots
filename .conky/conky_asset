@@ -17,10 +17,10 @@ conky.config = {
   own_window_argb_value = 0,
   default_color = '#a5adff',
   alignment = 'top_left',
-  gap_x = 60,
+  gap_x = 70,
   gap_y = 60,
-  minimum_width = 580, minimum_height = 150,
-  maximum_width = 580,
+  minimum_width = 560, minimum_height = 150,
+  maximum_width = 560,
 };
 
 conky.text = [[
@@ -43,6 +43,6 @@ ${color 494a5b}${execi 3600 ip route}${color}
 ${color 494a5b}╭╴              ╶╮${color}
      OPEN NET
 ${color 494a5b}╰╴              ╶╯${color}
-${rss https://www.opennet.ru/opennews/opennews_all_noadv.rss 400 item_titles 20}
+${rss https://www.opennet.ru/opennews/opennews_all_noadv.rss 400 item_titles 19}
 ${image ~/.conky/asset.png -p 0,0 -n}
 ]];

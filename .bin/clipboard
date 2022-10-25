@@ -1,0 +1,6 @@
+#!/bin/sh
+
+rofi -modi "clipboard:greenclip print" \
+    -show clipboard -run-command '{cmd}' \
+    -font "ClearSansMedium 10" \
+    -theme-str 'window {width: 40%;height: 80%;}'

@@ -18,8 +18,8 @@ Xft.lcdfilter: lcddefault
 !URxvt.font: xft:Cozette:size=10,xft:Hack Nerd Font Mono:size=9,xft:Symbola
 !URxvt.boldFont: xft:Cozette:size=10,xft:Hack Nerd Font Mono:size=9,xft:Symbola
 
-URxvt.font: xft:Hack Nerd Font Mono:size=11,xft:Noto Color Emoji,xft:Symbola
-URxvt.boldFont: xft:Hack Nerd Font Mono:size=11,xft:Noto Color Emoji,xft:Symbola
+URxvt.font: xft:Hack Nerd Font Mono:size=11:antialias=false,xft:Noto Color Emoji:antialias=false,xft:Symbola:antialias=false
+URxvt.boldFont: xft:Hack Nerd Font Mono:size=11:antialias=false,xft:Noto Color Emoji:antialias=false,xft:Symbola:antialias=false
 
 !URxvt.termname: xterm-256color
 URxvt.iconFile: /usr/share/icons/Papirus/48x48/apps/urxvt.svg
@@ -40,7 +40,7 @@ URxvt.depth: 32
 URxvt.iso14755:        false
 URxvt.iso14755_52:     false
 
-URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select,resize-font,url-select
+URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select,resize-font,url-select,-confirm-paste
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
 URxvt.matcher.button: 1

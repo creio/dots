@@ -1,13 +1,14 @@
 2fa
-acestream-engine-stable
 anydesk-bin
 aurutils
 bashmount
 bitwarden-rofi
+bsptab-git
 cef-minimal-obs-bin
 cointop-bin
 conky-lua-nv
 creio-dots
+discord-ptb
 duc
 exodus
 figma-linux-bin
@@ -17,12 +18,10 @@ lib32-nvidia-390xx-utils
 lib32-opencl-nvidia-390xx
 libxnvctrl-390xx
 mergerfs
-mpv-acestream
 nvidia-390xx-dkms
 nvidia-390xx-settings
 nvidia-390xx-utils
 obfs4proxy-bin
-obs-studio-browser
 opencl-nvidia-390xx
 pepper-flash
 perl-linux-desktopfiles
@@ -34,7 +33,6 @@ pup
 python-pywapi
 repoctl
 rhvoice-git
-skypeforlinux-preview-bin
 solana-bin
 sublime-text
 tlauncher

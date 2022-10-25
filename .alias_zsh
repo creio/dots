@@ -262,6 +262,7 @@ alias porn="mpv 'http://www.pornhub.com/random'"
 
 alias mvis="ncmpcpp -S visualizer"
 alias m="ncmpcpp"
+alias h="btm"
 
 pf () {
   peerflix "$1" --mpv

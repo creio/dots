@@ -57,7 +57,8 @@ settings_table = {
     },
     {
         name='exec',
-        arg="amixer get Master | grep 'Front Left:' | awk '{print $5}' | grep -o '[0-9]' | tr -d '\n'",
+        -- arg="amixer get Master | grep 'Front Left:' | awk '{print $5}' | grep -o '[0-9]' | tr -d '\n'",
+        arg="pamixer --get-volume",
         max=100,
         bg_colour=0xa5adff,
         bg_alpha=0.1,

@@ -16,7 +16,7 @@ conky -c ~/.conky/conky.conf -d
 conky -c ~/.conky/conky_cpus -d
 conky -c ~/.conky/conky_sensors -d
 conky -c ~/.conky/conky_hdd -d
-conky -c ~/.conky/conky_cal -d
+# conky -c ~/.conky/conky_cal -d
 conky -c ~/.conky/conky_loggs -d
 conky -c ~/.conky/conky_processes -d
 # conky -c ~/.conky/conky_gmail -d

@@ -17,8 +17,8 @@ conky.config = {
   own_window_argb_value = 0,
   alignment = 'top_left',
 
-  minimum_width = 540, minimum_height = 350,
-  maximum_width = 540,
+  minimum_width = 600, minimum_height = 350,
+  maximum_width = 600,
   gap_x = 55,
   gap_y = 765,
   default_color = '#494a5b',

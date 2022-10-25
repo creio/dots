@@ -8,7 +8,7 @@ if test "$pid"; then
 	kill -9 "$pid"
 	notify-send "compositor disabled"
 else
-	picom &
+	picom -b --config ~/.config/picom.conf &
 	disown
 	notify-send "compositor enabled"
 fi

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+NODES=$(bspc query -N -n .hidden -d focused)
+
+# if pgrep "polybar"; then
+  # polybar-msg cmd show
+# fi
+
+for node in $NODES; do
+  bspc node $node -g hidden=off
+done

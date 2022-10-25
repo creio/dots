@@ -1,42 +1,132 @@
 #!/bin/sh
 
-focused=$(xrdb -query all | grep color7 | cut -f2)
+export BROWSER=firefox
+export TERMINAL=urxvt
+export FMANAGER=ranger
+export EDITOR=nvim
+
+# toggle border floating $HOME/.config/bspwm/bin/floating_noborder
+export br_width=2
+
+run() { ! pgrep -x "$1" >/dev/null && "$@"; }
+
+accent="#798BC7"
+focused=$(xrdb -query all | grep color4 | cut -f2)
 normal=$(xrdb -query all | grep color8 | cut -f2)
+color7=$(xrdb -query all | grep color7 | cut -f2)
+color0=$(xrdb -query all | grep color0 | cut -f2)
 
-bspc monitor -d TERM CODE WEB FILES MEDIA EXTRA
+bspc monitor -d 1 2 3 4 5 6 7 8 9
 
-bspc config focused_border_color  "$focused"
+bspc config automatic_scheme      spiral
+bspc config focused_border_color  "$accent"
 bspc config normal_border_color   "$normal"
-bspc config border_width          2
+bspc config active_border_color   "$color7"
+bspc config presel_feedback_color "$color0"
+bspc config border_width          "$br_width"
 bspc config window_gap            10
-bspc config focus_follows_pointer false
-bspc config top_padding           35
-bspc config split_ratio           0.52
+bspc config focus_follows_pointer true
+bspc config top_padding           0
+bspc config split_ratio           0.5
 bspc config borderless_monocle    true
-bspc config gapless_monocle       false
+bspc config gapless_monocle       true
 bspc config single_monocle        true
 
-bspc rule -a code-oss desktop='^2' follow=on
-bspc rule -a firefox desktop='^3' follow=on
-bspc rule -a Google-chrome desktop='^3' follow=on
-bspc rule -a mpv desktop='^5' state=fullscreen follow=on
-bspc rule -a feh state=fullscreen follow=on
+bspc desktop ^2 -l monocle
+bspc desktop ^3 -l monocle
+# bspc desktop ^7 -l floating
 
+bspc rule -a code-oss desktop='^2' follow=on
+bspc rule -a Sublime_text desktop='^2' follow=on
+bspc rule -a firefox desktop='^3' follow=on
+bspc rule -a Yandex-browser desktop='^4' follow=on
+bspc rule -a Google-chrome desktop='^3' follow=on
+bspc rule -a feh state=fullscreen follow=on
+bspc rule -a URxvt:dropdown sticky=on state=floating hidden=on
+
+# bspc rule -a Thunar desktop='^4' state=pseudo_tiled
+bspc rule -a Thunar desktop='^4' follow=on focus=on
+bspc rule -a Thunar:Dialog state=floating center=true
+bspc rule -a TelegramDesktop desktop='^5' follow=on
+bspc rule -a discord desktop='^5' follow=on
+bspc rule -a Gimp-2.10 desktop='^6'
+bspc rule -a Inkscape desktop='^6'
+bspc rule -a kdenlive desktop='^6'
+bspc rule -a Audacious desktop='^6' state=floating follow=on focus=on
+bspc rule -a mpv desktop='^6' follow=on
+bspc rule -a Zathura desktop='^7' state=tiled follow=on
+bspc rule -a Xreader desktop='^7' state=tiled follow=on
+bspc rule -a '*:libreoffice' desktop='^7' state=tiled
+bspc rule -a '*:soffice' desktop='^7'
+bspc rule -a 'Wps' desktop='^7'
+bspc rule -a 'Et' desktop='^7'
+bspc rule -a 'Wpp' desktop='^7'
+bspc rule -a 'Wpspdf' desktop='^7'
+bspc rule -a "VirtualBox Manager" desktop='^8' follow=on
+bspc rule -a "VirtualBox Machine" desktop='^8'
+bspc rule -a Gnome-chess desktop='^9'
+bspc rule -a teeworlds desktop='^9'
+bspc rule -a Steam desktop='^9' state=floating
+
+bspc rule -a URxvt:Newsboat state=floating center=on
+bspc rule -a URxvt:Ranger state=floating center=on
+bspc rule -a URxvt:Pacui state=floating center=on
+bspc rule -a URxvt:Float state=floating
+bspc rule -a URxvt:Draw state=floating
+bspc rule -a Galculator state=floating
+bspc rule -a Gpick state=floating
+bspc rule -a GParted state=floating
+bspc rule -a File-roller state=floating
+bspc rule -a Nitrogen state=floating
+bspc rule -a Lxappearance state=floating center=true
+bspc rule -a Lxrandr state=floating
+bspc rule -a Pavucontrol state=floating
+bspc rule -a Timeshift-gtk state=floating
+bspc rule -a qt5ct state=floating rectangle=700x470+0+0 center=on
+bspc rule -a SimpleScreenRecorder state=floating
+bspc rule -a Sxiv state=floating
+bspc rule -a Viewnior state=floating
+bspc rule -a SMPlayer state=floating
+# bspc rule -a mpv state=floating sticky=on rectangle=300x180+1060+475
+
+bspc rule -a polybar manage=off
+bspc rule -a SPLASH manage=off border=off layer=above
+bspc rule -a Tint2 border=off manage=off state=floating layer=above
+
+# bspc rule -a '*' desktop=^7 state=floating
+
+# $HOME/.config/bspwm/bin/floating_noborder &
+
+# Set Desktop 7 to start with floating windows
+$HOME/.config/bspwm/bin/floating &
+
+run sxhkd -c $HOME/.config/bspwm/sxhkd/sxhkdrc &
+
+wmname LG3D &
 xsetroot -cursor_name left_ptr
-hsetroot -fill ~/.wall/wl.jpg &
-tint2 -c ~/.config/tint2/button.tint2rc &
-tint2 -c ~/.config/tint2/hide_tray.tint2rc &
-$HOME/.config/bspwm/polybar/launch.sh &
-dunst &
-$HOME/.config/bspwm/bin/floating_noborder &
-picom -b --config ~/.config/picom.conf &
-urxvtd -q -o -f &
-numlockx on &
-xsettingsd &
+# hsetroot -fill ~/.wall/wl.jpg &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 gnome-keyring-daemon --start --components=pkcs11,secrets &
 setxkbmap -layout us,ru -option "grp:win_space_toggle,grp_led:scroll" -option "compose:ralt" &
-unclutter --timeout 2 &
-redshift -c ~/.config/redshift.conf &
-greenclip daemon &
+run numlockx on &
+run xsettingsd &
+
+## lololo)
+$HOME/.bin/animatebg -v ~/.wall/animate/mylivewallpapers.com-Nebula-Zooming-Stars.mp4 &
+# run splash hairy --a --bg --ns &
+
+$HOME/.config/bspwm/polybar/launch.sh &
+run tint2 -c ~/.config/tint2/button.tint2rc &
+run tint2 -c ~/.config/tint2/hide_tray.tint2rc &
+run dunst &
+run unclutter --timeout 2 &
+run greenclip daemon &
+# run urxvtd -q -o -f &
+run redshift -c ~/.config/redshift.conf &
+run caffeine &
 # syncthing &
+
+## scratchpad ~/.config/bspwm/bin/scratchpad
+run urxvt -name dropdown &
+# picom --config ~/.config/picom.conf &
+run urxvt -e nohup $HOME/.bin/toggle-compositor.sh &
