@@ -115,6 +115,7 @@ inkscape
 inotify-tools
 inxi
 iptables-nft
+jgmenu
 jq
 jre8-openjdk
 keybase-gui
@@ -164,6 +165,7 @@ lsof
 lutris
 lvm2
 lxappearance-gtk3
+lxmenu-data
 m4
 make
 man-db

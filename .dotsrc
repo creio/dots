@@ -8,7 +8,7 @@ BKPS=(
 {docs,_config.yml}
 .{github,bin,colors,devilspie,fonts,gnupg,nano,ssh,themes,icons,wall}
 .{zshrc,alias_zsh,xinitrc,Xresources,xsettingsd,gitconfig,gitignore,editorconfig,aurlist.txt,pkglist.txt}
-.{env,env_borg,2fa,dotsrc,hushlogin,gtkrc-2.0,nanorc,pam_environment,tmux.conf,face.icon}
+.{env,env_borg,2fa,dotsrc,hushlogin,gtkrc-2.0,nanorc,tmux.conf,face.icon}
 .config/{berry,bspwm,glava,sxhkd,i3,openbox,xfce4,frankenwm,xfwm}
 .config/{gtk-2.0,gtk-3.0,cava,clipit,conky,dconf,dunst,fontconfig,fish,htop,parcellite}
 .config/{eww,jgmenu,mc,mpv,menus,neofetch,netwmpager,newsboat,polybar,Kvantum,qt5ct,qt6ct,yay}
@@ -24,6 +24,7 @@ BKPS=(
 .config/{clean-chroot-manager.conf,chromium-flags.conf,picom.conf,picom_blur.conf}
 .config/{redshift.conf,Trolltech.conf,kdenliverc,mimeapps.list,config.json}
 .config/user-dirs.{dirs,locale}
+.config/pulse/{daemon.conf,default.pa}
 .conky
 .mozilla/firefox/vos2wqqo.default-release/chrome
 .ncmpcpp/config
@@ -33,7 +34,6 @@ ROOT_DIR='root'
 ROOT_BKPS=(
 etc/{environment,fstab}
 etc/{makepkg,pacman,sddm,vconsole}.conf
-etc/pulse/{daemon.conf,default.pa}
 etc/systemd/system/dump.{timer,service}
 usr/share/sddm/themes/slice
 etc/pacman.d/hooks/mirrorupgrade.hook
