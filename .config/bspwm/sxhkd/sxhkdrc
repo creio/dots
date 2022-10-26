@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# show help on key bindings
+super + F1
+	~/.config/bspwm/bin/show_keys
+
 # terminal
 super + Return
     $TERMINAL
@@ -7,16 +11,21 @@ super + Return
 # program launcher
 super + d
     rofi -show drun
+ctrl + space
+	jgmenu_run >/dev/null 2>&1
 
-# programs
-# variables in ~/.config/bspwm/bspwmrc
+## programs
+## variables in ~/.config/bspwm/bspwmrc
+# run: thunar, obs, rofi-totp, $BROWSER, virtualbox, subl, discord-ptb
 super + alt + {f, o, g, b, v, s, d}
 	{thunar, obs, rofi-totp, $BROWSER, virtualbox, subl, discord-ptb}
 
+# run: alsamixer, btm, $EDITOR, pulsemixer, $FMANAGER, ncmpcpp
 super + alt + {a, t, n, p, r, m}
   $TERMINAL -e {alsamixer, btm, $EDITOR, pulsemixer, $FMANAGER, ncmpcpp}
 
-# scripts
+## scripts
+# ~/.bin/clipboard
 ctrl + alt + h
     ~/.bin/clipboard
     

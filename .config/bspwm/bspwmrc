@@ -103,8 +103,10 @@ $HOME/.config/bspwm/bin/floating &
 
 run sxhkd -c $HOME/.config/bspwm/sxhkd/sxhkdrc &
 
+xset -b
 wmname LG3D &
 xsetroot -cursor_name left_ptr
+# hsetroot -add '#2c3539' -add '#b89ca8' -gradient 130 &
 # hsetroot -fill ~/.wall/wl.jpg &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 gnome-keyring-daemon --start --components=pkcs11,secrets &
@@ -113,7 +115,7 @@ run numlockx on &
 run xsettingsd &
 
 ## lololo)
-$HOME/.bin/animatebg -v ~/.wall/animate/mylivewallpapers.com-Nebula-Zooming-Stars.mp4 &
+[[ -s $HOME/.bin/animatebg ]] && $HOME/.bin/animatebg -v ~/.wall/animate/mylivewallpapers.com-Nebula-Zooming-Stars.mp4 &
 # run splash hairy --a --bg --ns &
 
 $HOME/.config/bspwm/polybar/launch.sh &
@@ -125,6 +127,8 @@ run greenclip daemon &
 # run urxvtd -q -o -f &
 run redshift -c ~/.config/redshift.conf &
 run caffeine &
+[[ $(command -v thunar) ]] && run thunar --daemon &
+[[ $(command -v telegram-desktop) ]] && run telegram-desktop &
 # syncthing &
 
 ## scratchpad ~/.config/bspwm/bin/scratchpad
