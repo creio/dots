@@ -28,7 +28,7 @@ xset -b off
 # dbus-update-activation-environment --all
 
 ### openbox-session|bspwm|frankenwm
-DEFAULT_SESSION=bspwm
+DEFAULT_SESSION=
 
 case $1 in
     xfce)

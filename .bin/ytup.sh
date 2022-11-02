@@ -14,9 +14,10 @@
 ## delay publication GMT-0 (-3h MSK) date -u +"%Y-%m-%dT%H:%M:00Z"
 # --publish-at 2021-10-07T08:24:00Z
 youtube-upload \
-  --title="LINUX KDE DE REVIEW | ОБЗОР" \
+  --title="LINUX BSPWM WM REVIEW | РАЗБОР КОНФИГУРАЦИИ" \
+  --thumbnail ~/Videos/ps.png \
   --privacy public \
-  --tags="linux, archlinux" \
+  --tags="linux, archlinux, bspwm" \
   --publish-at $(date -d "1 hour" -u +"%Y-%m-%dT%H:%M:00Z") \
   --description-file="$HOME/Videos/desc" \
   --recording-date="$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
