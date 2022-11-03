@@ -8,8 +8,9 @@ if [[ $(ps aux | grep "conky") && $(pgrep -f gifbg.sh) && "$1" == "-k" ]]; then
 fi
 
 killall -q conky
+sleep 5
 
-(sleep 2; conky -c ~/.conky/conky_connections -d)
+conky -c ~/.conky/conky_connections -d
 conky -c ~/.conky/conky_asset -d
 conky -c ~/.conky/conky_biclock -d
 conky -c ~/.conky/conky.conf -d

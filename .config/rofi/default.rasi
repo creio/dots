@@ -1,6 +1,6 @@
 * {
   bg-color: #161720;
-  selected: #5A74CA;
+  selected: #5A74CA95;
   text: #e8eaef;
 
   background-color: transparent;
