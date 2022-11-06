@@ -14,10 +14,10 @@
 ## delay publication GMT-0 (-3h MSK) date -u +"%Y-%m-%dT%H:%M:00Z"
 # --publish-at 2021-10-07T08:24:00Z
 youtube-upload \
-  --title="LINUX BSPWM WM REVIEW | РАЗБОР КОНФИГУРАЦИИ" \
+  --title="ARCHLINUX ARCHINSTALL | CONFIG | DISK_LAYOUTS | CREDS" \
   --thumbnail ~/Videos/ps.png \
   --privacy public \
-  --tags="linux, archlinux, bspwm" \
+  --tags="linux, archlinux, archinstall, virtualbox, ssh" \
   --publish-at $(date -d "1 hour" -u +"%Y-%m-%dT%H:%M:00Z") \
   --description-file="$HOME/Videos/desc" \
   --recording-date="$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# deps: translate-shell
+# deps: xclip translate-shell
+# aur deps: rhvoice-git
 
 icon_path="~/.icons/linebit/keyboard.png"
 

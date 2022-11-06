@@ -1,13 +1,17 @@
+#!/usr/bin/pulseaudio -nF
+
 .include /etc/pulse/default.pa
 
-load-module module-udev-detect tsched=0
-load-module module-null-sink sink_name=stream
-load-module module-loopback latency_msec=5 sink=stream
-load-module module-loopback latency_msec=5 sink=stream
+# load-module module-udev-detect tsched=0
+
+# load-module module-null-sink sink_name=stream
+# load-module module-loopback latency_msec=5 sink=stream
+# load-module module-loopback latency_msec=5 sink=stream
 
 ## noise-suppression-for-voice
 load-module module-null-sink sink_name=mic_denoised_out rate=48000
-load-module module-ladspa-sink sink_name=mic_raw_in sink_master=mic_denoised_out label=noise_suppressor_mono plugin=/path/to/librnnoise_ladspa.so control=50,200,0,0,0
-load-module module-loopback source=alsa_input.pci-0000_00_1b.0.analog-stereo sink=mic_raw_in channels=1 source_dont_move=true sink_dont_move=true
+load-module module-ladspa-sink sink_name=mic_raw_in sink_master=mic_denoised_out label=noise_suppressor_mono plugin=librnnoise_ladspa.so control=50,200,0,0,0
 
 set-default-source mic_denoised_out.monitor
+
+# load-module module-loopback source=alsa_input.pci-0000_00_1b.0.analog-stereo sink=mic_raw_in channels=1 source_dont_move=true sink_dont_move=true

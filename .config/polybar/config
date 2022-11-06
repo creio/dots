@@ -127,7 +127,7 @@ label = %percentage_used%%
 
 [module/uparch]
 type = custom/script
-exec = ~/.config/polybar/uparch.sh
+exec = sleep 5; ~/.config/polybar/uparch.sh
 interval = 3600
 format-prefix = " "
 format-prefix-foreground = ${colors.accent}
@@ -166,8 +166,7 @@ click-left = xdg-open https://mail.google.com
 [module/title]
 type = internal/xwindow
 format-padding = 1
-label = "%title:0:30:...%"
-label-maxlen = 30
+label = "%title:0:50:.%"
 
 
 [module/zentile]
@@ -220,19 +219,6 @@ label-urgent-foreground = ${xrdb:color5}
 label-urgent-padding = 3
 
 
-
-[module/eww_main]
-type = custom/ipc
-hook-0 = echo 
-hook-1 = echo 
-initial = 1
-format-foreground = ${colors.accent}
-format-background = ${xrdb:color0}
-format-padding = 3
-click-left = ~/.config/polybar/eww.sh
-click-right = "~/.conky/start.sh -k"
-
-
 [module/mpd_sh]
 type = custom/text
 content = 
@@ -274,11 +260,24 @@ icon-next-foreground = ${colors.accent}
 
 
 
+[module/eww_main]
+type = custom/ipc
+hook-0 = echo 
+hook-1 = echo 
+initial = 1
+format-foreground = ${colors.accent}
+format-background = ${xrdb:color0}
+format-padding = 3
+click-left = ~/.config/polybar/eww.sh
+click-right = "~/.conky/start.sh -k"
+
+
+
 [module/crypto]
 type = custom/script
 format-foreground = ${colors.text}
 interval = 300
-exec = ~/.config/polybar/crypto.py
+exec = sleep 5; ~/.config/polybar/crypto.py
 
 
 

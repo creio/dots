@@ -11,7 +11,7 @@
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
   <property name="last-separator-position" type="int" value="124"/>
-  <property name="last-show-hidden" type="bool" value="true"/>
+  <property name="last-show-hidden" type="bool" value="false"/>
   <property name="hidden-bookmarks" type="array">
     <value type="string" value="network:///"/>
     <value type="string" value="network://"/>
