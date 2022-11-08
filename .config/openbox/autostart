@@ -36,6 +36,8 @@ greenclip daemon &
 # ~/.bin/mpv_bg &
 # sh -c ~/.bin/urxvt_bg &
 sh -c ~/.conky/start.sh &
+~/.bin/pulseaudio.sh &
+
 (sleep 3; telegram-desktop) &
 # caffeine &
 

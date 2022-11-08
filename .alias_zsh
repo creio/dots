@@ -6,6 +6,9 @@
 # git.io custom url
 # curl -i https://git.io -F "url=https://github.com/creio" -F "code=YOUR_CUSTOM_NAME"
 
+# laravel
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+
 alias sz="source $HOME/.zshrc"
 alias ez="$EDITOR $HOME/.zshrc"
 alias ea="$EDITOR $HOME/.alias_zsh"
@@ -307,6 +310,7 @@ alias aurlist="pacman -Qmeq > ~/.aurlist.txt"
 
 alias pqo="pacman -Qqo"
 
+alias pl="pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse"
 alias pkey="sudo pacman-key --init && sudo pacman-key --populate && sudo pacman-key --refresh-keys --keyserver hkp://keys.gnupg.net && sudo pacman -Syy"
 alias y="yay -S"
 alias yn="yay -S --noconfirm"
