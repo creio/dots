@@ -4,7 +4,7 @@ Date: 07.11.2022,12:08:51
 
 - Repo: [creio/dots](https://github.com/creio/dots)
 - Distro: [Ctlos/Arch Linux](https://ctlos.github.io/)
-- DE(WM): openbox
+- DE(WM): openbox, bspwm
 - Panel: tint2,polybar
 - Demo video: [youtube.com](https://www.youtube.com/watch?v=gC5yvQnroRk)
 <!-- - Info: [r/unixporn](https://www.reddit.com/r/unixporn/comments/cbf98s/xfwm_light/etf1549/) -->
