@@ -9,7 +9,3 @@ else
   ps -eo rss,pid,euser,args:100 --sort %mem | grep -v grep | grep -i $@ | \
   sed '/mem.sh/d' | awk '{printf $1/1024 " MB"; $1=""; print }'
 fi
-
-function name () {
-  echo 'text here'
-}

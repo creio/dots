@@ -193,4 +193,5 @@
     "*.env_example": "env"
   },
   "workbench.activityBar.visible": false,
+  "php.validate.enable": false,
 }
