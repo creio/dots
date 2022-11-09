@@ -1,0 +1,196 @@
+{
+  "editor.scrollbar.verticalScrollbarSize": 7,
+  "editor.scrollbar.horizontalScrollbarSize": 7,
+  "oneDarkPro.editorTheme": "One Dark Pro Darker",
+  "editor.fontFamily": "'Hack Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.tabSize": 4,
+  "editor.fontSize": 15,
+  "editor.lineHeight": 24,
+  "window.zoomLevel": -0.3,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.tabCompletion": "on",
+  "editor.rulers": [
+    120
+  ],
+  "terminal.integrated.tabs.enabled": false,
+  "files.exclude": {
+    "**/.sass-cache": true,
+    "**/bitrix/backup": true,
+    "**/bitrix/cache": true,
+    "**/bitrix/managed_cache": true,
+    "**/bitrix/stack_cache": true,
+    "**/bitrix/tmp": true,
+    "**/bitrix/updates": true,
+    "**/node_modules": true,
+    "**/upload": true,
+    "**/work": true
+  },
+  "workbench.colorCustomizations": {
+    "editor.selectionHighlightBackground": "#3d465695", // similar selection
+    "editor.selectionHighlightBorder": "#0000",
+    "editor.wordHighlightStrongBackground": "#3d465695", // syntax variable assignment
+    "editor.wordHighlightStrongBorder": "#0000",
+    "editor.wordHighlightBackground": "#3d465695", // syntax variable
+    "editor.wordHighlightBorder": "#0000"
+    // "editorBracketMatch.background": "#3d465695", // brackets
+    // "editorBracketMatch.border": "#0000",
+  },
+  "oneDarkPro.vivid": true,
+  "editor.definitionLinkOpensInPeek": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.smoothScrolling": true,
+  "files.defaultLanguage": "html",
+  "editor.parameterHints.enabled": false,
+  "editor.hover.enabled": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.linkedEditing": true,
+  "editor.snippetSuggestions": "top",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "ecsstractor_port.bem_nesting": false,
+  "ecsstractor_port.add_comment": true,
+  "ecsstractor_port.brackets_newline_after": false,
+  "ecsstractor_port.empty_line_before_nested_selector": false,
+  "ecsstractor_port.indentation": " ",
+  "json.format.enable": true,
+  "bashBeautify.tabSize": 2,
+  "[html]": {
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[php]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "emmet.includeLanguages": {
+    "blade": "html"
+  },
+  "emmet.triggerExpansionOnTab": true, // enable tab to expanse emmet tags
+  "blade.format.enable": true, // if you would like to enable blade format
+  "[blade]": {
+    "editor.autoClosingBrackets": "always"
+  },
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[vue]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[yaml]": {
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.insertSpaces": true,
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    }
+  },
+  "[dockerfile]": {
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true
+  },
+  "[properties]": {
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "terminal.integrated.enablePersistentSessions": false,
+  "files.trimTrailingWhitespace": true,
+  "breadcrumbs.enabled": false,
+  "security.workspace.trust.enabled": false,
+  "vetur.ignoreProjectWarning": true,
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "editor.codeLens": false,
+  "editor.occurrencesHighlight": false,
+  "workbench.editor.tabSizing": "shrink",
+  "prettier.tabWidth": 4,
+  "indentRainbow.excludedLanguages": [
+    "markdown"
+  ],
+  "php.suggest.basic": false,
+  "php.executablePath": "/usr/local/bin/php",
+  "php.validate.executablePath": "/usr/local/bin/php",
+  "php.debug.executablePath": "/usr/local/bin/php",
+  "indentRainbow.indicatorStyle": "classic",
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.03)",
+    "rgba(127,255,127,0.03)",
+    "rgba(255,127,255,0.03)",
+    "rgba(79,236,236,0.03)"
+  ],
+  "explorer.compactFolders": false,
+  "emmet.excludeLanguages": [
+    "markdown",
+    "php"
+  ],
+  "editor.insertSpaces": false,
+  "editor.detectIndentation": false,
+  "editor.renderControlCharacters": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.wordWrap": "on",
+  "update.showReleaseNotes": false,
+  "redhat.telemetry.enabled": false,
+  "window.customMenuBarAltFocus": false,
+  "window.enableMenuBarMnemonics": false,
+  "window.menuBarVisibility": "hidden",
+  "settings.cycle": [
+    {
+      "id": "toggleMenuBar",
+      "values": [
+        {
+          "window.menuBarVisibility": "hidden"
+        },
+        {
+          "window.menuBarVisibility": "visible"
+        }
+      ]
+    }
+  ],
+  "editor.parameterHints.cycle": true,
+  "files.associations": {
+    "*.env.development": "env",
+    "*.env.production": "env",
+    "*.env.example": "env",
+    "*.env_example": "env"
+  },
+  "workbench.activityBar.visible": false,
+}

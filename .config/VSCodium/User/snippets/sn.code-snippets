@@ -1,0 +1,28 @@
+{
+	"Print console js": {
+		"scope": "javascript,typescript",
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	},
+	"md code": {
+		"prefix": "sh",
+		"body": [
+			"```${1:bash}",
+			"${2:code}",
+			"```"
+		]
+	},
+	"hugo spoiler": {
+		"scope": "markdown",
+		"prefix": "sp",
+		"body": [
+			"{% spoiler ${1:title} %}",
+			"${2:main}",
+			"{% endspoiler %}"
+		]
+	}
+}

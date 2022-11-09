@@ -5,39 +5,40 @@ KB_PATH='/media/files/keybase/dump/dots'
 REPO='https://github.com/creio/dots'
 BRANCH=''
 BKPS=(
-{docs}
-.{github,bin,colors,devilspie,fonts,gnupg,nano,ssh,themes,icons,wall}
-.{zshrc,alias_zsh,xinitrc,Xresources,xsettingsd,gitconfig,gitignore,editorconfig,aurlist.txt,pkglist.txt}
-.{env,env_borg,2fa,dotsrc,hushlogin,gtkrc-2.0,nanorc,tmux.conf,face.icon}
-.config/{berry,bspwm,glava,sxhkd,i3,openbox,xfce4,frankenwm,xfwm}
-.config/{gtk-2.0,gtk-3.0,cava,clipit,conky,dconf,dunst,fontconfig,fish,htop,parcellite}
-.config/{eww,jgmenu,mc,mpv,menus,neofetch,netwmpager,newsboat,polybar,Kvantum,qt5ct,qt6ct,yay}
-.config/{ranger,rofi,rofi-pass,skippy-xd,streamlink,kitty,termite,tint2,viewnior,volumeicon}
-.config/audacious/config
-.config/mpd/mpd.conf
-.config/nvim/init.vim
-.config/oomox/colors
-.config/obmenu-generator/{config.pl,schema.pl}
-.config/qutebrowser/{autoconfig.yml,config.py}
-.config/pipe-viewer/pipe-viewer.conf
-.config/sublime-text-3/Packages/User
-.config/{clean-chroot-manager.conf,chromium-flags.conf,picom.conf,picom_blur.conf}
-.config/{redshift.conf,Trolltech.conf,kdenliverc,mimeapps.list,config.json}
-.config/user-dirs.{dirs,locale}
-.config/pulse/{daemon.conf,default.pa}
-.conky
-.mozilla/firefox/vos2wqqo.default-release/chrome
-.ncmpcpp/config
-.wall/wl.jpg
+  {docs}
+  .{github,bin,colors,devilspie,fonts,gnupg,nano,ssh,themes,icons,wall}
+  .{zshrc,alias_zsh,xinitrc,Xresources,xsettingsd,gitconfig,gitignore,editorconfig,aurlist.txt,pkglist.txt}
+  .{env,env_borg,2fa,dotsrc,hushlogin,gtkrc-2.0,nanorc,tmux.conf,face.icon}
+  .config/{berry,bspwm,glava,sxhkd,i3,openbox,xfce4,frankenwm,xfwm}
+  .config/{gtk-2.0,gtk-3.0,cava,clipit,conky,dconf,dunst,fontconfig,fish,htop,parcellite}
+  .config/{eww,jgmenu,mc,mpv,menus,neofetch,netwmpager,newsboat,polybar,Kvantum,qt5ct,qt6ct,yay}
+  .config/{ranger,rofi,rofi-pass,skippy-xd,streamlink,kitty,termite,tint2,viewnior,volumeicon}
+  .config/audacious/config
+  .config/mpd/mpd.conf
+  .config/nvim/init.vim
+  .config/oomox/colors
+  .config/obmenu-generator/{config.pl,schema.pl}
+  .config/qutebrowser/{autoconfig.yml,config.py}
+  .config/pipe-viewer/pipe-viewer.conf
+  .config/sublime-text-3/Packages/User
+  .config/VSCodium/User/{snippets,{settings,keybindings}.json}
+  .config/{clean-chroot-manager.conf,chromium-flags.conf,picom.conf,picom_blur.conf}
+  .config/{redshift.conf,Trolltech.conf,kdenliverc,mimeapps.list,config.json}
+  .config/user-dirs.{dirs,locale}
+  .config/pulse/{daemon.conf,default.pa}
+  .conky
+  .mozilla/firefox/vos2wqqo.default-release/chrome
+  .ncmpcpp/config
+  .wall/wl.jpg
 )
 ROOT_DIR='root'
 ROOT_BKPS=(
-etc/{environment,fstab}
-etc/{makepkg,pacman,sddm,vconsole}.conf
-etc/systemd/system/dump.{timer,service}
-usr/share/sddm/themes/slice
-etc/pacman.d/hooks/mirrorupgrade.hook
-etc/pacman.d/gnupg/gpg.conf
-etc/X11/xorg.conf.d/00-keyboard.conf
-etc/X11/xorg.conf.d/30-nvidia.conf
+  etc/{environment,fstab}
+  etc/{makepkg,pacman,sddm,vconsole}.conf
+  etc/systemd/system/dump.{timer,service}
+  usr/share/sddm/themes/slice
+  etc/pacman.d/hooks/mirrorupgrade.hook
+  etc/pacman.d/gnupg/gpg.conf
+  etc/X11/xorg.conf.d/00-keyboard.conf
+  etc/X11/xorg.conf.d/30-nvidia.conf
 )

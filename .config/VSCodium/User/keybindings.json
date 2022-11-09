@@ -1,0 +1,52 @@
+[
+  {
+    "key": "ctrl+k ctrl+x",
+    "command": "extension.ecsstractor_port_runwithbemandcomments"
+  },
+  {
+    "key": "ctrl+k ctrl+b",
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+  {
+    "key": "ctrl+k ctrl+a",
+    "command": "workbench.action.openSnippets"
+  },
+  {
+    "key": "ctrl+l ctrl+s",
+    "command": "workbench.action.saveWorkspaceAs"
+  },
+  {
+    "key": "ctrl+k ctrl+m",
+    // "command": "workbench.action.toggleMenuBar"
+    "command": "settings.cycle.toggleMenuBar"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "expandLineSelection",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.clear",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+d b",
+    "command": "workbench.view.debug",
+    "when": "viewContainer.workbench.view.debug.enabled"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "workbench.view.debug",
+    "when": "viewContainer.workbench.view.debug.enabled"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "editor.action.duplicateSelection",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+n",
+    "command": "fileutils.newFile"
+  }
+]

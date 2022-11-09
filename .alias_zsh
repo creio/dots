@@ -286,6 +286,11 @@ alias -s {pdf}="xreader"
 # alias -s {conf,txt}="nvim"
 # alias {aurman,pikaur,trizen,yaourt}="yay"
 
+alias code='[[ $(command -v code >/dev/null 2>&1) ]] && code || vscodium'
+function c () {
+  vscodium -a "$1" &
+}
+
 function s () {
   subl -a "$1" &
 }
@@ -341,10 +346,10 @@ alias yngpg='yay --noconfirm --gpgflags "--keyserver keys.gnupg.net"'
 # top history
 tophist() {
   cat ~/.zhistory \
-    | cut -d ';' -f 2- 2>/dev/null \
-    | awk '{a[$1]++ } END{for(i in a){print a[i] " " i}}' \
-    | sort -rn \
-    | head
+  | cut -d ';' -f 2- 2>/dev/null \
+  | awk '{a[$1]++ } END{for(i in a){print a[i] " " i}}' \
+  | sort -rn \
+  | head
 }
 
 # распаковать архив не указывая тип распаковщика

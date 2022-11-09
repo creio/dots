@@ -394,7 +394,7 @@
     </keybind>
     <keybind key="A-e">
       <action name="Execute">
-        <command>findapp subl</command>
+        <command>findapp vscodium</command>
       </action>
     </keybind>
     <keybind key="A-r">
