@@ -190,7 +190,8 @@
     "*.env.development": "env",
     "*.env.production": "env",
     "*.env.example": "env",
-    "*.env_example": "env"
+    "*.env_example": "env",
+    "neomuttrc": "editorconfig"
   },
   "workbench.activityBar.visible": false,
   "php.validate.enable": false,

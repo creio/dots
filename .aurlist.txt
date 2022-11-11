@@ -3,7 +3,6 @@ anydesk-bin
 aurutils
 bashmount
 bitwarden-rofi
-bsptab-git
 cef-minimal-obs-bin
 cointop-bin
 conky-lua-nv
@@ -11,7 +10,6 @@ creio-dots
 discord-ptb
 duc
 exodus
-figma-linux-bin
 html2md
 kiln-git
 lib32-nvidia-390xx-utils
@@ -31,6 +29,7 @@ pkgtop-git
 popcorntime-bin
 pup
 python-pywapi
+r8168-dkms
 repoctl
 rhvoice-git
 solana-bin
@@ -42,6 +41,8 @@ ttf-symbola
 ttf-weather-icons
 tuned
 urxvt-resize-font-git
+vscodium-bin
+vscodium-bin-marketplace
 weechat-matrix-rs-git
 xclickroot-git
 xdman

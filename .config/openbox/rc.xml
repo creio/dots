@@ -976,13 +976,13 @@
       <shade>no</shade>
       <focus>yes</focus>
     </application>
-    <application role="browser" type="normal">
+    <!-- <application role="browser" type="normal">
       <maximized>yes</maximized>
-      <!-- <desktop>2</desktop> -->
+      <desktop>1</desktop>
       <decor>no</decor>
       <shade>no</shade>
       <focus>yes</focus>
-    </application>
+    </application> -->
     <application role="GtkFileChooserDialog">
       <position force="yes">
         <x>center</x>
@@ -1067,6 +1067,17 @@
       <!-- <decor>no</decor> -->
       <shade>no</shade>
       <layer>below</layer>
+    </application>
+    <application name="mail">
+      <focus>yes</focus>
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <size>
+        <width>85/100</width>
+        <height>85/100</height>
+      </size>
     </application>
     <application name="urxvt_bg">
       <maximized>yes</maximized>

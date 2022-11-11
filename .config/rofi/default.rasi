@@ -17,6 +17,14 @@ mainbox {
   padding: 0.5em;
 }
 
+listview {
+  columns: 2;
+  cycle: true;
+  dynamic: true;
+  layout: vertical;
+  scrollbar: true;
+}
+
 element {
   padding: 0.3em;
   border-radius: 3px;

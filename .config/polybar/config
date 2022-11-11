@@ -94,7 +94,6 @@ content-padding = 3
 # click-right = mylaunchpad xfce-applications
 
 
-
 [module/show_desktop]
 type = custom/text
 content = 
@@ -103,7 +102,6 @@ content-padding = 2
 content-margin = 0
 content-offset = -7
 click-left = ~/.bin/show_desktop
-
 
 
 [module/cpu]
@@ -115,14 +113,12 @@ format-offset = -7
 label = %percentage%%
 
 
-
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.accent}
 label = %percentage_used%%
-
 
 
 [module/uparch]
@@ -143,7 +139,6 @@ click-right = "urxvt -name w_85 -e pacui &"
 # tail = true
 
 
-
 [module/wtr]
 type = custom/script
 exec = ~/.config/polybar/wtr.sh
@@ -154,13 +149,13 @@ interval = 1800
 # click-left =
 
 
-
 [module/gmail]
 type = custom/script
 exec = ~/.config/polybar/gmail/launch.py --color '#798BC7' --nosound
 tail = true
 format-padding = 1
-click-left = xdg-open https://mail.google.com
+click-left = urxvt -name mail -e aerc
+click-right = xdg-open https://mail.google.com
 
 
 [module/title]
@@ -228,7 +223,6 @@ content-padding = 3
 click-left = "urxvt -name w_85 -e ncmpcpp -S visualizer &"
 
 
-
 [module/mpd]
 type = internal/mpd
 interval = 2
@@ -259,7 +253,6 @@ icon-prev-foreground = ${colors.accent}
 icon-next-foreground = ${colors.accent}
 
 
-
 [module/eww_main]
 type = custom/ipc
 hook-0 = echo 
@@ -272,13 +265,11 @@ click-left = ~/.config/polybar/eww.sh
 click-right = "~/.conky/start.sh -k"
 
 
-
 [module/crypto]
 type = custom/script
 format-foreground = ${colors.text}
 interval = 300
 exec = sleep 5; ~/.config/polybar/crypto.py
-
 
 
 [module/blur_picom]
@@ -293,14 +284,12 @@ click-left = ~/.config/polybar/blurtoggle.sh
 click-right = ~/.bin/toggle-compositor.sh
 
 
-
 [module/bri_sh]
 type = custom/text
 content = 
 content-foreground = ${colors.accent}
 click-left = "pkill -9 redshift; ~/.bin/bri.sh 0.7 0.9:0.9:0.9 &"
 click-right = "~/.bin/bri.sh &"
-
 
 
 [module/vpn]
@@ -314,7 +303,6 @@ format-padding = 1
 click-left = ~/.config/polybar/vpn.sh
 
 
-
 [module/tor]
 type = custom/script
 exec = ~/.config/polybar/status tor
@@ -325,7 +313,6 @@ format-prefix-foreground = ${colors.accent}
 format-padding = 0
 click-left = "systemctl restart tor &"
 click-right = "systemctl stop tor &"
-
 
 
 [module/fs]
@@ -349,7 +336,6 @@ label-unmounted = %mountpoint%: not mounted
 label-unmounted-foreground = ${colors.text}
 
 
-
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <ramp-volume> <label-volume>
@@ -359,7 +345,6 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.accent}
 click-right = pavucontrol
-
 
 
 [module/date]
@@ -379,7 +364,6 @@ label-foreground = ${colors.text}
 format-padding = 0
 
 
-
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
@@ -388,7 +372,6 @@ format-prefix = " "
 format-prefix-foreground = ${colors.accent}
 label = %layout%
 format-padding = 0
-
 
 
 [module/power]

@@ -3,12 +3,17 @@ configuration {
   icon-theme: "Qogir-dark";
   font: "ClearSansMedium 11";
   terminal: "urxvt";
-  modi: "drun,run,window";
+  modi: "drun,window,filebrowser,run";
   ssh-client: "ssh";
   ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
   run-command: "{cmd}";
   run-shell-command: "{terminal} -e {cmd}";
   window-command: "wmctrl -i -R {window}";
   sidebar-mode: true;
+
+filebrowser {
+  directories-first:	true;
+  sorting-method:	"name";
+  }
 }
 @theme "default.rasi"

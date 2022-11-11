@@ -304,7 +304,8 @@ alias tm="tmux attach || tmux new -s work"
 alias tmd="tmux detach"
 alias tmk="tmux kill-server"
 # ~/.config/ranger/rc.conf ## set save_tabs_on_exit true
-alias rr='ranger --cmd="tab_shift 4" --cmd=tab_close'
+# alias rr='ranger --cmd="tab_shift 4" --cmd=tab_close'
+alias rr='ranger'
 alias srr="sudo ranger"
 # alias {v,vi,vim}="nvim"
 

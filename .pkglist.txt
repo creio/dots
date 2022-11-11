@@ -21,7 +21,6 @@ borg
 bottom
 brainfuck-psiphon-pro-go-bin
 brightnessctl
-bspwm
 ca-certificates
 caffeine-ng
 cava
@@ -115,7 +114,8 @@ inkscape
 inotify-tools
 inxi
 iptables-nft
-jgmenu
+java-environment-common
+jdk11-openjdk
 jq
 jre8-openjdk
 keybase-gui
@@ -154,6 +154,7 @@ libtool
 libva-mesa-driver
 libvncserver
 libxcrypt-compat
+linux-firmware
 linux-lts
 linux-lts-headers
 lldb
@@ -165,7 +166,6 @@ lsof
 lutris
 lvm2
 lxappearance-gtk3
-lxmenu-data
 m4
 make
 man-db
@@ -186,6 +186,7 @@ neofetch
 neovim
 nethogs
 netwmpager
+networkmanager
 newsboat
 nmap
 noise-suppression-for-voice
@@ -263,7 +264,6 @@ source-highlight
 squashfs-tools
 sshuttle
 sudo
-sxhkd
 syntax-highlighting
 sysstat
 tcpdump
