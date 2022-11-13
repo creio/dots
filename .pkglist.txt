@@ -1,4 +1,5 @@
 acpi
+aerc
 alsa-plugins
 alsa-utils
 alttab-git
@@ -16,6 +17,7 @@ bind
 binutils
 bison
 bitwarden-cli
+bleachbit
 boost
 borg
 bottom
@@ -37,6 +39,7 @@ ctlos-mirrorlist
 ctlos-qogir
 ctlos-welcome
 ctop
+dante
 debugedit
 devilspie
 dex

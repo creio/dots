@@ -5,10 +5,10 @@ if [[ $(command -v eww) ]]; then
     eww daemon &
   fi
 
-  if [[ $(eww state 2>&1 | grep "ram-used" | wc -l) == 0 ]]; then
+  if [[ ! $(eww -c $HOME/.config/eww/bar state 2>&1) ]]; then
     polybar-msg hook eww_main 1
-    eww open main >/dev/null 2>&1
+    eww -c $HOME/.config/eww/bar open music_win >/dev/null 2>&1
   else
-    eww close main >/dev/null 2>&1
+    eww -c $HOME/.config/eww/bar close music_win >/dev/null 2>&1
   fi
 fi

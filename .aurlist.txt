@@ -12,6 +12,8 @@ duc
 exodus
 html2md
 kiln-git
+kopia-bin
+kopia-ui-bin
 lib32-nvidia-390xx-utils
 lib32-opencl-nvidia-390xx
 libxnvctrl-390xx

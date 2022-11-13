@@ -5,9 +5,22 @@ font pango:monospace 8
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # exec --no-startup-id nm-applet
 
-exec --no-startup-id sh ~/.config/polybar/launch.sh
+exec --no-startup-id sh ~/.config/i3/polybar/launch.sh
 exec --no-startup-id hsetroot -fill ~/.wall/wl.png
 exec --no-startup-id picom -b --config ~/.config/picom.conf
+
+# exec --no-startup-id ~/.local/bin/i3-autolayout autolayout
+exec_always --no-startup-id ~/.local/bin/i3-autolayout autolayout
+
+client.focused          #364670 #364670 #93CFBD #364670 #364670
+
+# for_window [class=".*"] floating enable
+for_window [class=".*"] border pixel 1
+
+# i3-gaps configuration
+gaps outer 2
+gaps inner 2
+gaps bottom 2
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -79,16 +92,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -114,9 +127,8 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# reload the configuration file
+# reload/restart
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Are you sure?' -B 'Yes, exit i3' 'i3-msg exit'"
@@ -147,11 +159,3 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-for_window [class=".*"] floating enable
-for_window [class=".*"] border pixel 1
-
-# i3-gaps configuration
-gaps outer 4
-gaps inner 4
-gaps bottom 4

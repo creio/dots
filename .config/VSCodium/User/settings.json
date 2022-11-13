@@ -59,7 +59,10 @@
   "ecsstractor_port.empty_line_before_nested_selector": false,
   "ecsstractor_port.indentation": " ",
   "json.format.enable": true,
-  "bashBeautify.tabSize": 2,
+  "[shellscript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "[html]": {
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
@@ -193,6 +196,9 @@
     "*.env_example": "env",
     "neomuttrc": "editorconfig"
   },
-  "workbench.activityBar.visible": false,
   "php.validate.enable": false,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.activityBar.visible": false,
 }

@@ -1,0 +1,11 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; Created & Designed by: https://github.com/rxyhn ;;;;
+;;;;			AESTHETIC DASHBOARD					 ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(include "./src/yuck/_windows.yuck")
+(include "./src/yuck/_widgets.yuck")
+(include "./src/yuck/_variables.yuck")
+
+
+	

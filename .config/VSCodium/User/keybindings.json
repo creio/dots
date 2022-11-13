@@ -48,5 +48,14 @@
   {
     "key": "ctrl+alt+n",
     "command": "fileutils.newFile"
+  },
+  {
+    "key": "ctrl+k ctrl+u",
+    "command": "-editor.action.removeCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+u",
+    "command": "editor.action.transformToUppercase"
   }
 ]

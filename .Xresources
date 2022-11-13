@@ -64,3 +64,8 @@ URxvt.keysym.C-minus:     resize-font:smaller
 URxvt.keysym.C-plus:      resize-font:bigger
 URxvt.keysym.C-equal:     resize-font:reset
 URxvt.keysym.C-question:  resize-font:show
+
+URxvt.keysym.F1: \033OP
+URxvt.keysym.F2: \033OQ
+URxvt.keysym.F3: \033OR
+URxvt.keysym.F4: \033OS

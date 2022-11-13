@@ -52,7 +52,7 @@ font-4 = "Hack Nerd Font Mono:pixelsize=16:antialias=false;4"
 font-5 = "Weather Icons:style=Regular:pixelsize=10:antialias=false;2"
 
 
-modules-left = app show_desktop cpu memory uparch wtr gmail title
+modules-left = app show_desktop cpu memory uparch wtr gmail yandex title
 modules-center = mpd eww_main
 modules-right = crypto blur_picom bri_sh vpn tor fs pulseaudio date xkeyboard power
 
@@ -151,11 +151,23 @@ interval = 1800
 
 [module/gmail]
 type = custom/script
-exec = ~/.config/polybar/gmail/launch.py --color '#798BC7' --nosound
+exec = ~/.config/polybar/gmail/launch.py --color '#798BC7' --nosound;
 tail = true
 format-padding = 1
-click-left = urxvt -name mail -e aerc
+click-left = "urxvt -name w_max -e ~/.bin/tmrun.sh &"
 click-right = xdg-open https://mail.google.com
+
+
+[module/yandex]
+type = custom/script
+exec = "~/.config/polybar/yandex/check_mail.sh"
+interval = 180
+format-foreground = ${colors.text}
+format-prefix = "| "
+# format-padding = 1
+format-offset = -15
+# label-font = 5
+# click-left =
 
 
 [module/title]
@@ -318,11 +330,11 @@ click-right = "systemctl stop tor &"
 [module/fs]
 type = internal/fs
 mount-0 = /home
-# mount-1 = /
+mount-1 = /
 # mount-2 = /media/files
 interval = 10
 fixed-values = true
-spacing = 1
+spacing = 2
 format-mounted = <label-mounted>
 format-mounted-prefix = 
 format-mounted-padding = 1

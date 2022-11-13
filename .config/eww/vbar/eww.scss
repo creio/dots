@@ -1,0 +1,175 @@
+* {
+  all: unset;
+}
+
+// Variable Color's
+$background: #1a1b26;
+$foreground: #a9b1d6;
+
+$black: #24283b;
+$gray: #565f89;
+$red: #f7768e;
+$green: #73daca;
+$yellow: #e0af68;
+$blue: #7aa2f7;
+$magenta: #bb9af7;
+$cyan: #7dcfff;
+$white: $foreground;
+
+// EWW BAR
+.eww_bar {
+  font-family: Hack Nerd Font Mono;
+  background-color: $background;
+  padding: 0.3rem;
+}
+
+// Launcher
+.launcher_icon {
+  color: $cyan;
+  font-size: 30;
+  padding: 0.2rem 0 0.5rem 0;
+}
+
+// Workspaces
+.works {
+  padding: 0.2rem 0.7rem 0.2rem 0.7rem;
+  background-color: $black;
+  border-radius: 5px;
+}
+.ws {
+  font-size: 24;
+  margin: 0.2rem 0 0.2rem 0;
+}
+.active {
+  color: $blue;
+}
+.occupied {
+  color: $blue;
+}
+.empty {
+  color: $blue;
+}
+.inactive {
+  color: $gray;
+}
+
+// Control Panel
+.control {
+  font-size: 26;
+  padding: 0.5rem;
+  background-color: $black;
+  border-radius: 5px;
+}
+.bat {
+  font-size: 22;
+  padding-right: 0.5rem;
+  color: $blue;
+  margin: 0.3rem 0 0.3rem 0;
+}
+.wifi-icon {
+  color: $blue;
+  margin: 0.2rem 0 0.2rem 0;
+}
+.brightness-icon {
+  margin: 0.2rem 0 0.2rem 0;
+  color: $blue;
+}
+.volume-icon {
+  margin: 0.2rem 0 0 0;
+  color: $blue;
+}
+scale trough {
+  all: unset;
+  background-color: $background;
+  border-radius: 5px;
+  min-height: 80px;
+  min-width: 10px;
+  margin: 0.3rem 0 0.3rem 0;
+}
+.bribar trough highlight {
+  background-color: $blue;
+  border-radius: 5px;
+}
+.volbar trough highlight {
+  background-color: $blue;
+  border-radius: 5px;
+}
+
+// Clock
+.time {
+  font-weight: bold;
+  background-color: $black;
+  color: $white;
+  border-radius: 5px;
+  padding: 0.3rem 0 0.3rem 0;
+  margin: 0.3rem 0 0.3rem 0;
+}
+
+// Calendar
+.cal-box {
+  background-color: $black;
+  font-size: 1em;
+  font-weight: bold;
+
+  .cal-inner-box {
+    padding: 1rem 1rem 0.2rem;
+
+    .cal {
+      &.highlight {
+        padding: 10rem;
+      }
+
+      padding: 0.8rem 0.25rem 0rem;
+      margin-left: 10px;
+    }
+  }
+}
+
+calendar:selected {
+  color: $blue;
+}
+
+calendar.header {
+  color: $blue;
+  font-weight: bold;
+}
+
+calendar.button {
+  color: $magenta;
+}
+
+calendar.highlight {
+  color: $magenta;
+  font-weight: bold;
+}
+
+calendar:indeterminate {
+  color: $background;
+}
+
+// Powermenu
+.powermenu {
+  font-size: 30;
+}
+.button-reconf,
+.button-reb,
+.button-lock,
+.button-quit,
+.button-off {
+  padding: 0.5rem 0.2rem 0.3rem 0.2rem;
+}
+.button-off {
+  color: $cyan;
+}
+.button-reconf {
+  color: $green;
+}
+.button-reb {
+  color: $yellow;
+}
+.button-quit {
+  color: $magenta;
+}
+.button-lock {
+  color: $blue;
+}

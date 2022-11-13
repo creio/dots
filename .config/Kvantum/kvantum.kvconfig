@@ -1,2 +1,5 @@
 [General]
 theme=ctlos-qogir-dark
+
+[Applications]
+KvMojaveLight=redtimer

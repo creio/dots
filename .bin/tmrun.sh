@@ -34,6 +34,9 @@ else
   tmux new-window -t $SESSION:6 -n 'rss'
   tmux send-keys "newsboat" C-m
   #
+  tmux new-window -t $SESSION:7 -n 'mail'
+  tmux send-keys "aerc" C-m
+  #
   tmux select-window -t $SESSION:1
   tmux attach-session -t $SESSION
 fi

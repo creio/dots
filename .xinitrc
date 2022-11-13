@@ -10,7 +10,7 @@ usermodmap=$HOME/.Xmodmap
 [[ -f $usermodmap ]] && xmodmap $usermodmap
 
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
-  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
     [ -x "$f" ] && . "$f"
   done
   unset f
@@ -31,25 +31,28 @@ xset -b off
 DEFAULT_SESSION=
 
 case $1 in
-    xfce)
-        exec startxfce4
-    ;;
-    kde)
-        exec startkde
-    ;;
-    gnome)
-        exec gnome-session
-    ;;
-    bspwm)
-        exec bspwm
-    ;;
-    frankenwm)
-        ~/.config/frankenwm/autostart &
-        exec frankenwm
-    ;;
-    *)
-        exec ${DEFAULT_SESSION:-openbox-session}
-    ;;
+xfce)
+  exec startxfce4
+  ;;
+kde)
+  exec startkde
+  ;;
+gnome)
+  exec gnome-session
+  ;;
+bspwm)
+  exec bspwm
+  ;;
+i3)
+  exec i3
+  ;;
+frankenwm)
+  ~/.config/frankenwm/autostart &
+  exec frankenwm
+  ;;
+*)
+  exec ${DEFAULT_SESSION:-openbox-session}
+  ;;
 esac
 
 # flashfocus &
