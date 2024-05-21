@@ -2,16 +2,26 @@
 
 . /home/creio/.env
 
-USER=ubuntu
+USER=cvc
 SERVER=$uoc
 
 # if (($(ps -aux | grep [p]icom | wc -l) > 0))
 
-if [[ $(ps -aux | grep "sshuttle" | wc -l) == 1 ]]; then
-  pkexec bash -c "sshuttle --dns -r $USER@$SERVER -x $SERVER 0/0 >/dev/null 2>&1 &"
+
+# if [[ $(ps -aux | grep "sshuttle" | wc -l) == 1 ]]; then
+#   pkexec bash -c "sshuttle --dns -r $USER@$SERVER -x $SERVER 0/0 >/dev/null 2>&1 &"
+#   polybar-msg hook vpn 2
+# else
+#   pkexec bash -c "pkill -9 sshuttle"
+#   polybar-msg hook vpn 1
+# fi
+
+
+if [[ ! $(systemctl status wg-quick@wg0 | grep -i ": active" 2>/dev/null) ]]; then
+  systemctl start wg-quick@wg0
   polybar-msg hook vpn 2
 else
-  pkexec bash -c "pkill -9 sshuttle"
+  systemctl stop wg-quick@wg0
   polybar-msg hook vpn 1
 fi
 

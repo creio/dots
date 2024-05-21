@@ -1,9 +1,10 @@
 # These are supported funding model platforms
 
-github: # [ctlos, creio]
+github: ctlos
 patreon: ctlos
-open_collective: # Replace with a single Open Collective username
-ko_fi: # Replace with a single Ko-fi username
+open_collective: ctlos
+ko_fi: creio
 tidelift: # Replace with a single Tidelift platform-name/package-name e.g., npm/babel
 community_bridge: # Replace with a single Community Bridge project-name e.g., cloud-foundry
-custom: https://money.yandex.ru/to/410011749909586
+custom: https://yoomoney.ru/to/410011749909586
+custom: https://www.buymeacoffee.com/creio

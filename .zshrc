@@ -13,6 +13,9 @@ export HISTFILE=~/.zhistory
 export HISTSIZE=3000
 export SAVEHIST=3000
 
+# export LC_ALL=en_US.UTF-8
+# export LANG=en_US.UTF-8
+
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
   compinit
@@ -42,9 +45,6 @@ export FZF_COMPLETION_TRIGGER="~~"
 
 # export TERM="rxvt-256color"
 export TERM="xterm-256color"
-export TERMINAL="urxvt"
-export EDITOR="$([[ -n $DISPLAY && $(command -v subl) ]] && echo 'subl' || echo 'micro' || echo 'nano')"
-export BROWSER="$([[ -n $DISPLAY && $(command -v firefox) ]] && echo 'firefox' || echo 'brave' || echo 'chromium')"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 export XDG_CONFIG_HOME="$HOME/.config"
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -57,12 +57,16 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 [[ -s ~/.env_borg ]] && . ~/.env_borg
 [[ -f ~/.alias_zsh ]] && . ~/.alias_zsh
 
-# https://wiki.archlinux.org/title/RVM
-[[ -d "$HOME/.rvm/bin" ]] && export PATH="$PATH:$HOME/.rvm/bin"
-[[ -r "$HOME/.rvm/scripts/completion" ]] && . "$HOME/.rvm/scripts/completion"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
+### https://wiki.archlinux.org/title/RVM
+# [[ -d "$HOME/.rvm/bin" ]] && export PATH="$PATH:$HOME/.rvm/bin"
+# [[ -r "$HOME/.rvm/scripts/completion" ]] && . "$HOME/.rvm/scripts/completion"
+# [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 # [[ $(command -v ruby) ]] && export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
+### yay rbenv ruby-build
+eval "$(rbenv init - zsh)"
+
+# export PATH=$HOME/.gem/ruby/3.0.0/bin:$PATH
 
 # export PATH="$PATH:`yarn global bin`"
 
@@ -82,6 +86,8 @@ if [[ -s "$NVM_DIR/nvm.sh" ]]; then
   # Lazy-loading nvm + npm on node globals
   load_nvm () {
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    export NODE_PATH=$(nvm which current)
+    # export NPM_PATH=$(which npm)
   }
   # Making node global trigger the lazy loading
   for cmd in "${NODE_GLOBALS[@]}"; do
@@ -90,6 +96,13 @@ if [[ -s "$NVM_DIR/nvm.sh" ]]; then
 fi
 # zprof
 
+CODESTATS_PLUG_PATH="$HOME/.zsh/plugins/codestats.plugin.zsh"
+[[ -s $CODESTATS_PLUG_PATH ]] && . $CODESTATS_PLUG_PATH
+
+# eval "$(starship init zsh)"
+
 # >>>> Vagrant command completion (start)
 # fpath=(/opt/vagrant/embedded/gems/2.2.18/gems/vagrant-2.2.18/contrib/zsh $fpath)
 # <<<<  Vagrant command completion (end)
+
+# ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi

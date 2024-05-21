@@ -27,7 +27,7 @@ xset -b off
 
 # dbus-update-activation-environment --all
 
-### openbox-session|bspwm|frankenwm
+### openbox-session|bspwm|frankenwm|etc...
 DEFAULT_SESSION=
 
 case $1 in

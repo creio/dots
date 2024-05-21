@@ -1,4 +1,4 @@
-Xft.dpi: 96
+Xft.dpi: 90
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
@@ -18,8 +18,8 @@ Xft.lcdfilter: lcddefault
 !URxvt.font: xft:Cozette:size=10,xft:Hack Nerd Font Mono:size=9,xft:Symbola
 !URxvt.boldFont: xft:Cozette:size=10,xft:Hack Nerd Font Mono:size=9,xft:Symbola
 
-URxvt.font: xft:Hack Nerd Font Mono:size=11:antialias=false,xft:Noto Color Emoji:antialias=false,xft:Symbola:antialias=false
-URxvt.boldFont: xft:Hack Nerd Font Mono:size=11:antialias=false,xft:Noto Color Emoji:antialias=false,xft:Symbola:antialias=false
+URxvt.font: xft:Hack Nerd Font Mono:size=12:antialias=false,xft:Noto Color Emoji:antialias=false,xft:Symbola:antialias=false
+URxvt.boldFont: xft:Hack Nerd Font Mono:size=12:antialias=false,xft:Noto Color Emoji:antialias=false,xft:Symbola:antialias=false
 
 !URxvt.termname: xterm-256color
 URxvt.iconFile: /usr/share/icons/Papirus/48x48/apps/urxvt.svg

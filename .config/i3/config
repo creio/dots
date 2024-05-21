@@ -1,6 +1,10 @@
 set $mod Mod4
-font pango:monospace 8
+set $mod1 Mod1
+floating_modifier $mod
 
+font pango:ClearSansMedium 9
+
+### Autostart
 # exec --no-startup-id xinput set-prop 9 'libinput Accel Profile Enabled' 0, 1
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # exec --no-startup-id nm-applet
@@ -12,15 +16,16 @@ exec --no-startup-id picom -b --config ~/.config/picom.conf
 # exec --no-startup-id ~/.local/bin/i3-autolayout autolayout
 exec_always --no-startup-id ~/.local/bin/i3-autolayout autolayout
 
+### Window and Color
 client.focused          #364670 #364670 #93CFBD #364670 #364670
+client.focused_inactive #2F2F38 #2F2F38 #CCCCCC #2F2F38 #2F2F38
+client.unfocused        #2F2F38 #2F2F38 #93CFBD #2F2F38 #2F2F38
+client.urgent           #6B3659 #6B3659 #93CFBD #6B3659 #6B3659
+client.placeholder      #666666 #666666 #CCCCCC #666666 #666666
+client.background       #364670
 
 # for_window [class=".*"] floating enable
 for_window [class=".*"] border pixel 1
-
-# i3-gaps configuration
-gaps outer 2
-gaps inner 2
-gaps bottom 2
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -29,16 +34,28 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-floating_modifier $mod
 
+### start app key bind
 # start a terminal
 bindsym $mod+t exec urxvt
-
+bindsym $mod+Return exec --no-startup-id "xfce4-terminal --title term-tiling"
 # kill focused window
 bindsym $mod+z kill
-
 # start rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun
+
+bindsym $mod+mod1+Delete exec ~/.bin/i3-logout
+bindsym $mod+Delete exec --no-startup-id "$HOME/.bin/multilock.sh -l blur"
+#bindsym $mod+w exec --no-startup-id "$HOME/.bin/i3_switch_workspace.sh"
+bindsym Print exec --no-startup-id "$HOME/.bin/flameshot.sh -c"
+bindsym $mod1+Print exec --no-startup-id "flameshot gui"
+
+bindsym $mod+Ctrl+Up exec mpc volume +2
+bindsym $mod+Ctrl+Down exec mpc volume -2
+bindsym $mod+Ctrl+Left exec mpc prev
+bindsym $mod+Ctrl+Right exec mpc next
+bindsym $mod+Ctrl+d exec mpc del 0
+
 
 # change focus
 bindsym $mod+j focus left
@@ -135,27 +152,107 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Are you sure?' -B 'Yes, exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+
+## i3-gaps configuration
+gaps outer 2
+gaps inner 2
+gaps bottom 2
+smart_gaps on
+smart_borders on
+
+set $default_gaps_inner 0
+set $default_gaps_outer 0
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), mod1 + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), mod1 + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+    bindsym o      mode "$mode_gaps_outer"
+    bindsym i      mode "$mode_gaps_inner"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+mode "$mode_gaps_inner" {
+    bindsym plus  gaps inner current plus 5
+    bindsym minus gaps inner current minus 5
+    bindsym 0     gaps inner current set 0
+
+    bindsym mod1+plus  gaps inner all plus 5
+    bindsym mod1+minus gaps inner all minus 5
+    bindsym mod1+0     gaps inner all set 0
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+    bindsym plus  gaps outer current plus 5
+    bindsym minus gaps outer current minus 5
+    bindsym 0     gaps outer current set 0
+
+    bindsym mod1+plus  gaps outer all plus 5
+    bindsym mod1+minus gaps outer all minus 5
+    bindsym mod1+0     gaps outer all set 0
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+
+## Specific window
+# for_window [window_role="stalonetray"] floating enable
+for_window [window_role="pop-up|bubble|task_dialog|Preferences|setup"] floating enable
+for_window [window_type="dialog|menu"] floating enable
+for_window [window_role="browser|GtkFileChooserDialog"] resize set 800 600, move position center
+for_window [window_role="demo"] resize set 800 600, move position center
+for_window [class="(?i)thunar"] move window to scratchpad, scratchpad show, floating enable, resize set 800 400, move position center
+for_window [class="(?i)simplescreenrecorder"] floating enable, move position 5 30
+for_window [class="(?i)nitrogen|engrampa|flameshot|file-roller|fsearch|qt5ct"] floating enable, resize set 600 500, move position center
+for_window [class="(?i)atril|pavucontrol|lxappearance|viewnior|keepassxc|veracrypt"] floating enable
+for_window [class="(?i)mpv"] floating enable, resize set 350 250, sticky enable, move window to position 1000 85
+# for_window [title="(?i)htop"] floating enable, resize set 1280 600, move position center, focus
+for_window [class="(?i)firefox|xfce4-terminal|thunar|subl3|mousepad|mupdf"] focus
+for_window [window_role="demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
+for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 350, move absolute position 0 418
+
+for_window [workspace=$ws3] layout tabbed
+for_window [workspace=$ws6] layout tabbed
+for_window [workspace=$ws9] layout tabbed
+
+for_window [title=float"] move window to scratchpad, scratchpad show, floating enable, resize set 1280 600, move position center, focus
+for_window [title="floating"] move window to scratchpad, scratchpad show, floating enable, resize set 720 400, move position center, focus
+
+
+## Specific workspaces
+assign [title="(?i)term-tiling"] $ws1
+assign [title="htop"] $ws1
+assign [class="(?i)firefox|chromium"] $ws2
+assign [class="(?i)mousepad|subl3"] $ws3
+assign [class="(?i)smplayer"] $ws4
+assign [window_role="gimp"] $ws5
+assign [class="(?i)fractal|telegram|discord"] $ws6
+assign [class="(?i)atril|evince|zathura|fbreader|mupdf"] $ws7
+assign [class="(?i)keepassxc|veracrypt"] $ws8
+assign [class="(?i)virtualbox"] $ws9

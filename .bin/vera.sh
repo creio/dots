@@ -47,6 +47,7 @@ mkdir -p /tmp/vera
 if [[ $(command -v bw) ]]; then
   BW_SESSION=$(bw unlock --raw $BW_PASSWORD)
   bw export $BW_PASSWORD --session $BW_SESSION --format csv --output /tmp/vera/bw.csv
+  echo "export bw Done!"
 fi
 
 for i in "${files[@]}"; do

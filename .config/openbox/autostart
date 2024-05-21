@@ -36,10 +36,10 @@ greenclip daemon &
 # ~/.bin/mpv_bg &
 # sh -c ~/.bin/urxvt_bg &
 sh -c ~/.conky/start.sh &
-~/.bin/pulseaudio.sh &
 
-(sleep 3; telegram-desktop) &
+# (sleep 3; telegram-desktop) &
 # caffeine &
+~/.bin/pulseaudio.sh &
 
 #glava -m bars &
 # glava >/dev/null 2>&1 &

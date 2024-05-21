@@ -1,12 +1,11 @@
 {
   "editor.scrollbar.verticalScrollbarSize": 7,
   "editor.scrollbar.horizontalScrollbarSize": 7,
-  "oneDarkPro.editorTheme": "One Dark Pro Darker",
+  "oneDarkPro.editorTheme": "One Dark Pro Flat",
   "editor.fontFamily": "'Hack Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.tabSize": 4,
   "editor.fontSize": 15,
   "editor.lineHeight": 24,
-  "window.zoomLevel": -0.3,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -24,7 +23,6 @@
     "**/bitrix/tmp": true,
     "**/bitrix/updates": true,
     "**/node_modules": true,
-    "**/upload": true,
     "**/work": true
   },
   "workbench.colorCustomizations": {
@@ -48,6 +46,7 @@
   "explorer.confirmDragAndDrop": false,
   "editor.linkedEditing": true,
   "editor.snippetSuggestions": "top",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.quickSuggestions": {
     "other": true,
     "comments": true,
@@ -60,17 +59,18 @@
   "ecsstractor_port.indentation": " ",
   "json.format.enable": true,
   "[shellscript]": {
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[html]": {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.insertSpaces": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[php]": {
     "editor.tabSize": 4,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
     "editor.insertSpaces": true,
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
@@ -84,13 +84,14 @@
   },
   "[javascript]": {
     "editor.tabSize": 2,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
     "editor.insertSpaces": true,
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[typescript]": {
     "editor.tabSize": 2,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.insertSpaces": true,
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -118,6 +119,7 @@
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[markdown]": {
+    "files.trimTrailingWhitespace": false,
     "editor.formatOnSave": false,
     "editor.insertSpaces": true,
     "editor.quickSuggestions": {
@@ -125,6 +127,13 @@
       "strings": "on",
       "other": "on"
     }
+  },
+  "[css]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "vscode.css-language-features"
   },
   "[dockerfile]": {
     "editor.formatOnSave": true,
@@ -149,10 +158,11 @@
   "indentRainbow.excludedLanguages": [
     "markdown"
   ],
-  "php.suggest.basic": false,
+  // "php.suggest.basic": false,
   "php.executablePath": "/usr/local/bin/php",
-  "php.validate.executablePath": "/usr/local/bin/php",
-  "php.debug.executablePath": "/usr/local/bin/php",
+  // "php.validate.executablePath": "/usr/local/bin/php",
+  // "php.debug.executablePath": "/usr/local/bin/php",
+  // "php.validate.enable": false,
   "indentRainbow.indicatorStyle": "classic",
   "indentRainbow.colors": [
     "rgba(255,255,64,0.03)",
@@ -194,11 +204,15 @@
     "*.env.production": "env",
     "*.env.example": "env",
     "*.env_example": "env",
-    "neomuttrc": "editorconfig"
+    ".env": "env"
   },
-  "php.validate.enable": false,
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.activityBar.visible": false,
+  "remote.SSH.configFile": "/media/files/work/.remote_ssh",
+  "remote.SSH.localServerDownload": "always",
+  "remote.SSH.enableX11Forwarding": false,
+  "remote.SSH.useFlock": false,
+  // "files.insertFinalNewline": false,
+  // "files.trimFinalNewlines": false,
 }

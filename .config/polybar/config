@@ -30,7 +30,7 @@ background = ${colors.background}
 foreground = ${colors.text}
 
 line-size = 1
-line-color = #f00
+line-color = ${colors.suffix}
 
 border-size = 0
 border-color = #00000000
@@ -52,9 +52,9 @@ font-4 = "Hack Nerd Font Mono:pixelsize=16:antialias=false;4"
 font-5 = "Weather Icons:style=Regular:pixelsize=10:antialias=false;2"
 
 
-modules-left = app show_desktop cpu memory uparch wtr gmail yandex title
+modules-left = app show_desktop cpu memory temperature uparch wtr gmail yandex title
 modules-center = mpd eww_main
-modules-right = crypto blur_picom bri_sh vpn tor fs pulseaudio date xkeyboard power
+modules-right = blur_picom bri_sh vpn tor fs pulseaudio date xkeyboard power
 
 #click-right = "jgmenu_run >/dev/null 2>&1 &"
 #click-right = "sleep 0.2; xdotool key ctrl+space &"
@@ -121,6 +121,26 @@ format-prefix-foreground = ${colors.accent}
 label = %percentage_used%%
 
 
+[module/temperature]
+type = internal/temperature
+interval = 1
+thermal-zone = 0
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
+base-temperature = 20
+warn-temperature = 70
+units = true
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+format-prefix = " "
+format-prefix-foreground = ${colors.accent}
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.suffix}
+ramp-0 =
+ramp-1 =
+ramp-2 =
+
+
 [module/uparch]
 type = custom/script
 exec = sleep 5; ~/.config/polybar/uparch.sh
@@ -154,7 +174,8 @@ type = custom/script
 exec = ~/.config/polybar/gmail/launch.py --color '#798BC7' --nosound;
 tail = true
 format-padding = 1
-click-left = "urxvt -name w_max -e ~/.bin/tmrun.sh &"
+click-left = "kitty --name w_85 -e aerc"
+# click-left = "urxvt -name w_max -e ~/.bin/tmrun.sh &"
 click-right = xdg-open https://mail.google.com
 
 
@@ -266,14 +287,12 @@ icon-next-foreground = ${colors.accent}
 
 
 [module/eww_main]
-type = custom/ipc
-hook-0 = echo 
-hook-1 = echo 
-initial = 1
+type = custom/text
+content = 
 format-foreground = ${colors.accent}
 format-background = ${xrdb:color0}
 format-padding = 3
-click-left = ~/.config/polybar/eww.sh
+click-left = $HOME/.config/polybar/eww.sh
 click-right = "~/.conky/start.sh -k"
 
 

@@ -7,13 +7,12 @@
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_16"/>
   <property name="last-window-width" type="int" value="934"/>
-  <property name="last-window-height" type="int" value="497"/>
+  <property name="last-window-height" type="int" value="484"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
   <property name="last-separator-position" type="int" value="124"/>
   <property name="last-show-hidden" type="bool" value="true"/>
   <property name="hidden-bookmarks" type="array">
-    <value type="string" value="network:///"/>
     <value type="string" value="network://"/>
     <value type="string" value="file:///"/>
   </property>
@@ -67,18 +66,25 @@
     <value type="string" value="5cf660d4-8abc-4078-93a0-9f2e1ec7ca19"/>
     <value type="string" value="8508fc50-6b86-49cf-b1a2-d5e144ea1b1c"/>
     <value type="string" value="259cf354-7093-4bd9-97d0-94f8307d8054"/>
-    <value type="string" value="07a611fe-99ad-41ae-ba38-eef324a7b35b"/>
     <value type="string" value="E11E-17EF"/>
     <value type="string" value="ec48e54e-cb42-4dac-a6d4-d8e9451f9c07"/>
     <value type="string" value="66450efa-26d5-4e75-9093-807c39d23681"/>
-    <value type="string" value="3fbfa303-8b8d-4019-abea-63df71eba03a"/>
     <value type="string" value="fd05d9e6-5be9-463a-8a5b-9e3539d7ca4b"/>
     <value type="string" value="b4d628f0-cc29-4cb4-9fc3-6321142f3938"/>
+    <value type="string" value="3fbfa303-8b8d-4019-abea-63df71eba03a"/>
+    <value type="string" value="07a611fe-99ad-41ae-ba38-eef324a7b35b"/>
+    <value type="string" value="3de8529f-830e-4bfc-b4d7-1d789719238b"/>
+    <value type="string" value="0df1b4ab-e958-4869-9047-09f352fd0ece"/>
+    <value type="string" value="a6017d4e-155b-442a-8275-7c82614302e4"/>
+    <value type="string" value="a5802e60-2080-476b-8ce4-12dc8b815874"/>
+    <value type="string" value="391cb2b3-5da8-4227-8dbc-4362b7ecc568"/>
   </property>
   <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
   <property name="last-statusbar-visible" type="bool" value="true"/>
   <property name="misc-confirm-close-multiple-tabs" type="bool" value="false"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
-  <property name="last-details-view-column-widths" type="string" value="50,130,50,50,246,50,50,76,50,220"/>
+  <property name="last-details-view-column-widths" type="string" value="50,130,131,50,246,124,50,76,409,220,50,76,50,223"/>
   <property name="misc-recursive-permissions" type="string" value="THUNAR_RECURSIVE_PERMISSIONS_ALWAYS"/>
+  <property name="last-splitview-separator-position" type="int" value="404"/>
+  <property name="last-details-view-visible-columns" type="string" value="THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_NAME,THUNAR_COLUMN_SIZE,THUNAR_COLUMN_TYPE"/>
 </channel>

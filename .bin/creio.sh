@@ -150,9 +150,7 @@ useradd -m -g users -G "adm,network,storage,power,wheel" -s /bin/bash "$NEW_USER
 echo "$NEW_USER:$PASSWORD" | chpasswd
 
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
-
 echo $HOST_NAME > /etc/hostname
-
 ln -sf /usr/share/zoneinfo/$time_zone /etc/localtime
 hwclock --systohc --utc
 timedatectl set-ntp true
@@ -160,7 +158,6 @@ timedatectl set-ntp true
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
-
 echo "LANG=ru_RU.UTF-8" > /etc/locale.conf
 echo "KEYMAP=ru" > /etc/vconsole.conf
 echo "FONT=cyr-sun16" >> /etc/vconsole.conf

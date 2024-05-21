@@ -5,21 +5,37 @@
 # reflector --list
 ## https://ipapi.co/country | http://ip-api.com/line?fields=country | https://ipwhois.app/line/?objects=country
 
+# Check for root
+if [[ $EUID -ne 0 ]]; then
+  echo "run root | sudo"; exit 1
+fi
+
 if [ "$(which curl)" != "curl not found" ]; then
   check_country=$(curl -s https://ipinfo.io/country)
 fi
 
+if [[ $check_country == 'BY' ]]; then
+cat <<LOL >/etc/pacman.d/mirrorlist
+#Server = rsync://ftp.byfly.by/pub/archlinux/\$repo/os/\$arch
+#Server = rsync://mirror.datacenter.by/pub/archlinux/\$repo/os/\$arch
+
+Server = https://ftp.byfly.by/pub/archlinux/\$repo/os/\$arch
+Server = https://mirror.datacenter.by/pub/archlinux/\$repo/os/\$arch
+
+LOL
+fi
+
 if [ "$1" = "-lc" ]; then
   # mirrors -lc
-  sudo reflector --verbose -p "http,https" -c "$check_country,,ru,ua,pl,de" --sort country -f 10 --save /etc/pacman.d/mirrorlist
+  reflector --verbose -p "http,https" -c "$check_country,,ru,de" --sort rate -f 5 >> /etc/pacman.d/mirrorlist
 elif [ "$1" = "-c" ]; then
   # mirrors -c
-  sudo reflector --verbose -p "http,https" -c "$check_country," --sort country -f 10 --save /etc/pacman.d/mirrorlist
+  reflector --verbose -p "http,https" -c "," --sort rate -f 5 >> /etc/pacman.d/mirrorlist
 else
   # mirrors
-  # sudo reflector --verbose -p "http,https" -l 10 --sort rate --save /etc/pacman.d/mirrorlist
-  sudo reflector --verbose -p "http,https" -l 10 --sort score --save /etc/pacman.d/mirrorlist
+  # reflector --verbose -p "http,https" -l 5 --sort rate >> /etc/pacman.d/mirrorlist
+  reflector --verbose -p "http,https" --sort score -f 5 >> /etc/pacman.d/mirrorlist
 fi
 
 cat /etc/pacman.d/mirrorlist
-sudo pacman -Syy --noconfirm
+pacman -Syy --noconfirm

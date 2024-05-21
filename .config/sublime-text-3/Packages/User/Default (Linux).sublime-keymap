@@ -33,5 +33,7 @@
   { "keys": ["alt+`"], "command": "toggle_terminus_panel" },
 
   // { "keys": ["ctrl+n"], "command": "side_bar_new_file" },
-  { "keys": ["ctrl+alt+n"], "command": "side_bar_new_directory" }
+  { "keys": ["ctrl+alt+n"], "command": "side_bar_new_directory" },
+  { "keys": ["ctrl+shift+t"], "command": "open_terminal" },
+  // { "keys": ["ctrl+shift+alt+t"], "command": "open_terminal_project_folder" }
 ]

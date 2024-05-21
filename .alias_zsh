@@ -49,7 +49,7 @@ zzb() {
 
 alias batc="bat -p --color=always"
 
-# зависимость source-highlight
+# deps source-highlight
 hcat() {
   /usr/bin/src-hilite-lesspipe.sh "$1" | less -m -N
 }
@@ -57,8 +57,8 @@ ccat() {
   cat "$1" | xsel -b -i
 }
 
-# share vbox В локальной машине mkdir vboxshare
-# в виртуалке uid={имя пользователя} git={группа}
+# share vbox,local: mkdir vboxshare
+# vbox uid={имя пользователя} git={группа}
 vboxshare() {
   [[ ! -d ~/vboxshare ]] && mkdir -p ~/vboxshare
   sudo mount -t vboxsf -o rw,uid=1000,gid=985 vboxshare vboxshare
@@ -146,22 +146,15 @@ scrm() {
   sudo /bin/bash -c "rm -rfv $1{.*,*}"
 }
 
-alias dir="dir --color=auto"
-alias vdir="vdir --color=auto"
-# alias grep="grep --color=always"
-#alias grep="grep --color=auto"
-alias fgrep="fgrep --color=auto"
-alias egrep="egrep --color=auto"
-alias ls="ls --color=auto"
 alias la="ls -alFh --color=auto"
 alias llp="stat -c '%A %a %n' {*,.*}"
-alias ll="ls -a --color=auto"
+alias ll="ls -CFa --color=auto"
 alias l="ls -CF --color=auto"
-alias .l="dirs -v"
+alias las="exa -lahg --group-directories-first --octal-permissions"
 alias lss="ls -sh | sort -h"
 alias duh="du -d 1 -h | sort -h"
+alias jctl="journalctl -p 3 -xb"
 
-alias mk="mkdir"
 mkj() {
   mkdir -p "$@" && cd "$_" || exit
 }
@@ -184,16 +177,12 @@ fkill() {
 }
 
 alias /="cd /"
-alias ~="cd ~"
-alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......='cd ../../../../..'
-alias q="exit"
 alias w="cd /media/files/work"
 alias wwg="cd /media/files/work/work-gulp"
-alias gh="cd /media/files/github"
 alias ghc="cd /media/files/github/creio"
 alias ghd="cd /media/files/github/creio/dots"
 alias srht="cd /media/files/srht"
@@ -224,7 +213,7 @@ alias gr="git remote"
 alias gf="git fetch"
 alias gpl="git pull"
 alias gp="git push"
-alias gpm="git push origin master"
+alias gpb="git push origin $1"
 # yarn global add github-search-repos-cli
 # alias gsc="github-search-repos -i"
 
@@ -284,10 +273,11 @@ alias -s {pdf}="xreader"
 # alias -s {conf,txt}="nvim"
 # alias {aurman,pikaur,trizen,yaourt}="yay"
 
-alias code='[[ $(command -v code >/dev/null 2>&1) ]] && code || vscodium'
 function c() {
-  vscodium -a "$1" &
+    [[ $(command -v code >/dev/null 2>&1) ]] && code -a "$1" || vscodium -a "$1"
 }
+alias code='c'
+alias vscodium='c'
 
 function s() {
   subl -a "$1" &
@@ -318,7 +308,7 @@ alias pl="pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse"
 alias pkey="sudo pacman-key --init && sudo pacman-key --populate && sudo pacman-key --refresh-keys --keyserver hkp://keys.gnupg.net && sudo pacman -Syy"
 alias y="yay -S"
 alias yn="yay -S --noconfirm"
-alias yl="yay -S --noconfirm --needed - < ~/.pkglist.txt"
+alias yl="yay -S --noconfirm - < ~/.pkglist.txt"
 alias ys="yay"
 alias ysn="yay --noconfirm"
 alias yo="yay -S --overwrite='*'"
@@ -333,6 +323,7 @@ alias yun="yay -Syyu --noconfirm"
 alias yr="yay -R"
 alias yrs="yay -Rs"
 alias yrsn="yay -Rsn"
+alias yrdd="yay -Rdd"
 alias yrn="yay -R --noconfirm"
 alias ynskip='yay --noconfirm --mflags "--nocheck --skipchecksums --skippgpcheck"'
 alias yngpg='yay --noconfirm --gpgflags "--keyserver keys.gnupg.net"'

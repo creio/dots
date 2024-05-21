@@ -2,7 +2,7 @@
 
 tag_name="$1"
 target_name="$2"
-asset_dir="$HOME/ctlosiso/out/"
+asset_dir="$HOME/ctlosiso/out"
 cr_date=$(date +%Y%m%d)
 
 assets=()

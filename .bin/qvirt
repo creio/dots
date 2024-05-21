@@ -21,73 +21,108 @@ QVIRT_SIZE=15G
 ## vm virt
 # mkdir vmshare && sudo mount -t 9p -o trans=virtio,version=9p2000.L host0 vmshare
 
+cp -r /usr/share/edk2-ovmf/x64/OVMF_VARS.fd /tmp
+cp -r /usr/share/edk2-ovmf/x64/OVMF_CODE.secboot.fd /tmp
+
+qemu-system-x86_64 \
+    -enable-kvm \
+    -M q35 \
+    -m 4096 -smp 4 -cpu host \
+    -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
+    -cdrom $1 \
+    -usb \
+    -vga qxl \
+    -device AC97 \
+    -device virtio-tablet \
+    -device virtio-keyboard \
+    -device qemu-xhci,id=xhci \
+    -machine vmport=off \
+    -drive if=pflash,format=raw,unit=0,file=/tmp/OVMF_CODE.secboot.fd,read-only=on \
+    -drive if=pflash,format=raw,unit=1,file=/tmp/OVMF_VARS.fd \
+    -global driver=cfi.pflash01,property=secure,value=on \
+    -global ICH9-LPC.disable_s3=1 \
+    -net nic -net user,hostfwd=tcp::22222-:22
+
+exit
+
 if [ "$1" = "-i" ]; then
-	# qvirt -i
-	qemu-system-x86_64 \
-		-enable-kvm \
-		-m 4G \
-		-net nic -net user,hostfwd=tcp::22222-:22 \
-		-virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
-		-vga qxl \
-		-device AC97 \
-		-drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
-		-cdrom $2 \
-		-boot d
+    # qvirt -i
+    qemu-system-x86_64 \
+        -enable-kvm \
+        -m 4G \
+        -net nic -net user,hostfwd=tcp::22222-:22 \
+        -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
+        -vga qxl \
+        -device AC97 \
+        -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
+        -cdrom $2 \
+        -boot d
 elif [ "$1" = "-b" ]; then
-	qemu-system-x86_64 \
-		-enable-kvm \
-		-m 4G \
-		-net nic -net user,hostfwd=tcp::22222-:22 \
-		-virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
-		-vga qxl \
-		-device AC97 \
-		-drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
-		-boot d
+    qemu-system-x86_64 \
+        -enable-kvm \
+        -m 4G \
+        -net nic -net user,hostfwd=tcp::22222-:22 \
+        -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
+        -vga qxl \
+        -device AC97 \
+        -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
+        -boot d
 elif [ "$1" = "-bu" ]; then
-	# qvirt -b			 ## efi secboot
-	cp -r /usr/share/edk2-ovmf/x64/OVMF_VARS.fd /tmp
-	cp -r /usr/share/edk2-ovmf/x64/OVMF_CODE.secboot.fd /tmp
-	qemu-system-x86_64 \
-		-enable-kvm \
-		-machine type=q35,smm=on,accel=kvm,usb=on \
-		-m 4G \
-		-net nic -net user,hostfwd=tcp::22222-:22 \
-		-virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
-		-vga qxl \
-		-device AC97 \
-		-drive if=pflash,format=raw,unit=0,file=/tmp/OVMF_CODE.secboot.fd,read-only=on \
-		-drive if=pflash,format=raw,unit=1,file=/tmp/OVMF_VARS.fd \
-		-global driver=cfi.pflash01,property=secure,value=on \
-		-global ICH9-LPC.disable_s3=1 \
-		-drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
-		-boot d
+    # qvirt -b           ## efi secboot
+    cp -r /usr/share/edk2-ovmf/x64/OVMF_VARS.fd /tmp
+    cp -r /usr/share/edk2-ovmf/x64/OVMF_CODE.secboot.fd /tmp
+    qemu-system-x86_64 \
+        -enable-kvm \
+        -machine type=q35,smm=on,accel=kvm,usb=on \
+        -m 4G \
+        -net nic -net user,hostfwd=tcp::22222-:22 \
+        -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
+        -vga qxl \
+        -device AC97 \
+        -drive if=pflash,format=raw,unit=0,file=/tmp/OVMF_CODE.secboot.fd,read-only=on \
+        -drive if=pflash,format=raw,unit=1,file=/tmp/OVMF_VARS.fd \
+        -global driver=cfi.pflash01,property=secure,value=on \
+        -global ICH9-LPC.disable_s3=1 \
+        -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
+        -boot d
 elif [ "$1" = "-u" ]; then
-	# qvirt -u iso-path			## efi secboot
-	cp -r /usr/share/edk2-ovmf/x64/OVMF_VARS.fd /tmp
-	cp -r /usr/share/edk2-ovmf/x64/OVMF_CODE.secboot.fd /tmp
-	qemu-system-x86_64 \
-		-enable-kvm \
-		-machine type=q35,smm=on,accel=kvm,usb=on \
-		-m 4G \
-		-net nic -net user,hostfwd=tcp::22222-:22 \
-		-virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
-		-vga qxl \
-		-device AC97 \
-		-drive if=pflash,format=raw,unit=0,file=/tmp/OVMF_CODE.secboot.fd,read-only=on \
-		-drive if=pflash,format=raw,unit=1,file=/tmp/OVMF_VARS.fd \
-		-global driver=cfi.pflash01,property=secure,value=on \
-		-global ICH9-LPC.disable_s3=1 \
-		-drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
-		-cdrom $2 \
-		-boot d
+    # qvirt -u iso-path         ## efi secboot
+    cp -r /usr/share/edk2-ovmf/x64/OVMF_VARS.fd /tmp
+    cp -r /usr/share/edk2-ovmf/x64/OVMF_CODE.secboot.fd /tmp
+    qemu-system-x86_64 \
+        -enable-kvm \
+        -machine type=q35,smm=on,accel=kvm,usb=on \
+        -m 4G \
+        -net nic -net user,hostfwd=tcp::22222-:22 \
+        -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
+        -vga qxl \
+        -device AC97 \
+        -drive if=pflash,format=raw,unit=0,file=/tmp/OVMF_CODE.secboot.fd,read-only=on \
+        -drive if=pflash,format=raw,unit=1,file=/tmp/OVMF_VARS.fd \
+        -global driver=cfi.pflash01,property=secure,value=on \
+        -global ICH9-LPC.disable_s3=1 \
+        -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
+        -cdrom $2 \
+        -boot d
+elif [ "$1" = "-a" ]; then
+    # export QEMU_AUDIO_DRV=pa
+    # export QEMU_PA_SERVER=/tmp/pulse-PKdhtXMmr18n/native
+    qemu-system-x86_64 -cpu host -smp 2 -m 2048 \
+        -name android -machine pc,accel=kvm \
+        -soundhw hda \
+        -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 \
+        -chardev spicevmc,id=spicechannel0,name=vdagent \
+        -device virtio-net,netdev=user.1,addr=0x4 -netdev user,id=user.1,ipv6=off \
+        -device virtio-balloon \
+        -drive file="android.img",if=virtio,format=qcow2,index=1
 else
-	# qvirt
-	qemu-system-x86_64 \
-		-enable-kvm -machine accel=kvm \
-		-m 4G \
-		-net nic -net user,hostfwd=tcp::22222-:22 \
-		-virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
-		-vga qxl \
-		-device AC97 \
-		-hda $1
+    # qvirt
+    qemu-system-x86_64 \
+        -enable-kvm -machine accel=kvm \
+        -m 4G \
+        -net nic -net user,hostfwd=tcp::22222-:22 \
+        -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
+        -vga qxl \
+        -device AC97 \
+        -hda $1
 fi

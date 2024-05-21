@@ -62,6 +62,7 @@ editor_group_undo=false
 editor_state_full_filename=false
 editor_ask_filename_before_edit=false
 nice_rotating_dash=true
+shadows=true
 mcview_remember_file_position=false
 auto_fill_mkdir_name=true
 copymove_persistent_attr=true
@@ -83,21 +84,20 @@ editor_filesize_threshold=64M
 editor_stop_format_chars=-+*\\,.;:&>
 mcview_eof=
 skin=modarin256
-filepos_max_saved_entries=1024
 
 [Layout]
+output_lines=0
+left_panel_size=95
+top_panel_size=0
 message_visible=true
 keybar_visible=true
 xterm_title=true
-output_lines=0
 command_prompt=true
 menubar_visible=true
 free_space=true
 horizontal_split=false
 vertical_equal=true
-left_panel_size=42
 horizontal_equal=true
-top_panel_size=1
 
 [Misc]
 timeformat_recent=%b %e %H:%M
@@ -107,6 +107,7 @@ ftpfs_password=anonymous@
 display_codepage=UTF-8
 source_codepage=Other_8_bit
 autodetect_codeset=
+spell_language=en
 clipboard_store=
 clipboard_paste=
 
@@ -136,22 +137,8 @@ torben_fj_mode=false
 quick_search_mode=2
 select_flags=6
 
-[FindFile]
-file_case_sens=true
-file_shell_pattern=true
-file_find_recurs=true
-file_skip_hidden=false
-file_all_charsets=false
-content_case_sens=true
-content_regexp=false
-content_first_hit=false
-content_whole_words=false
-content_all_charsets=false
-ignore_dirs_enable=true
-ignore_dirs=
-
 [Panelize]
-Изменённые файлы под контролем git=git ls-files --modified
 Найти корректуры, отвергнутые командой patch=find . -name \\*.rej -print
 Найти оригиналы (*.orig) после команды patch=find . -name \\*.orig -print
-Найти программы с установленными SUID/SGID битами=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
+Найти программы с установленными битами SUID/SGID=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
+Изменённые файлы под контролем git=git ls-files --modified

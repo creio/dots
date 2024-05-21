@@ -2,7 +2,7 @@
 Description=dump timer
 
 [Timer]
-OnCalendar=Mon *-*-* 14:50:00
+OnCalendar=Mon..Sun *-*-* 13:30:00
 Persistent=true
 
 [Install]

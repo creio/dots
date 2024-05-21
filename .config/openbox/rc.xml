@@ -314,7 +314,7 @@
         <command>phide.sh</command>
       </action>
     </keybind> -->
-    <keybind key="C-space">
+    <keybind key="A-space">
      <action name="ShowMenu">
        <menu>root-menu</menu>
      </action>
@@ -394,12 +394,12 @@
     </keybind>
     <keybind key="A-e">
       <action name="Execute">
-        <command>findapp vscodium</command>
+        <command>findapp subl</command>
       </action>
     </keybind>
     <keybind key="A-r">
       <action name="Execute">
-        <command>urxvtc -name term_center -e ranger</command>
+        <command>urxvtc -name w_70 -e ranger</command>
       </action>
     </keybind>
     <keybind key="A-t">
@@ -482,11 +482,11 @@
         <command>flameshot gui -d 3000</command>
       </action>
     </keybind>
-    <keybind key="A-space">
+    <!-- <keybind key="A-space">
       <action name="Execute">
         <command>toggle-tint.sh</command>
       </action>
-    </keybind>
+    </keybind> -->
     <keybind key="A-d">
       <action name="Execute">
         <command>rofi -show drun -theme-str 'element-icon {size: 16;}'</command>
@@ -1053,6 +1053,17 @@
       <size>
         <width>85/100</width>
         <height>85/100</height>
+      </size>
+    </application>
+    <application name="w_70">
+      <focus>yes</focus>
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <size>
+        <width>70/100</width>
+        <height>70/100</height>
       </size>
     </application>
     <application name="Xpass">

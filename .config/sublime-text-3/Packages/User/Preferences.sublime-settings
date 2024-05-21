@@ -12,7 +12,7 @@
     "draw_shadows": false,
     "draw_white_space": "all",
     "enable_tab_scrolling": false,
-    "ensure_newline_at_eof_on_save": true,
+    "ensure_newline_at_eof_on_save": false,
     "fallback_encoding": "Cyrillic (Windows 1251)",
     "folder_exclude_patterns": [
         ".svn", ".git", ".hg", "CVS",
@@ -67,12 +67,14 @@
     "spell_check": false,
     "tab_size": 4,
     "theme": "gruvbox.sublime-theme",
-    "translate_tabs_to_spaces": true,
-    "trim_trailing_white_space_on_save": true,
+    "translate_tabs_to_spaces": false,
+    "trim_trailing_white_space_on_save": false,
+    /*"ensure_newline_at_eof_on_save": false,*/
     "update_check": false,
     "word_wrap": true,
     "ignored_packages":
     [
-		"Vintage",
+        "Vintage",
     ],
+    "index_files": true,
 }
