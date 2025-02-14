@@ -65,16 +65,51 @@
     "show_encoding": true,
     "show_scroll_tabs": false,
     "spell_check": false,
-    "tab_size": 4,
+    "tab_size": 2,
     "theme": "gruvbox.sublime-theme",
-    "translate_tabs_to_spaces": false,
-    "trim_trailing_white_space_on_save": false,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
     /*"ensure_newline_at_eof_on_save": false,*/
     "update_check": false,
     "word_wrap": true,
     "ignored_packages":
     [
         "Vintage",
+        // "Package Control",
+/*"TypeScript",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"LSP-typescript",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vue",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
+/*"Vintage",*/
     ],
     "index_files": true,
 }

@@ -1,4 +1,0 @@
-// These settings override both User and Default settings for the TOML syntax
-{
-	"tab_size": 2
-}

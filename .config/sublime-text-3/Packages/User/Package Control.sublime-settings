@@ -14,6 +14,7 @@
 		"Dockerfile Syntax Highlighting",
 		"DotENV",
 		"eCSStractor",
+		"EditorConfig",
 		"Emmet",
 		"Gemini",
 		"Gist",
@@ -35,7 +36,7 @@
 		"Terminus",
 		"TOML",
 		"TypeScript",
-		"Vue Syntax Highlight",
+		"Vue",
 		"Xdebug Client",
 	],
 }

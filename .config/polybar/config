@@ -53,8 +53,8 @@ font-5 = "Weather Icons:style=Regular:pixelsize=10:antialias=false;2"
 
 
 modules-left = app show_desktop cpu memory temperature uparch wtr gmail yandex title
-modules-center = mpd eww_main
-modules-right = blur_picom bri_sh vpn tor fs pulseaudio date xkeyboard power
+modules-center =
+modules-right = crypto blur_picom bri_sh vpn tor fs pulseaudio date xkeyboard power
 
 #click-right = "jgmenu_run >/dev/null 2>&1 &"
 #click-right = "sleep 0.2; xdotool key ctrl+space &"

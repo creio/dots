@@ -7,13 +7,15 @@
   <property name="log-level-apps" type="uint" value="0"/>
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
-      <value type="string" value="discord"/>
+      <value type="string" value="Firefox"/>
       <value type="string" value="flameshot"/>
-      <value type="string" value="lightcord"/>
-      <value type="string" value="nohang"/>
-      <value type="string" value="notify-send"/>
-      <value type="string" value="Transmission"/>
+      <value type="string" value="nm-applet"/>
+      <value type="string" value="org.freedesktop.network-manager-applet"/>
+      <value type="string" value="org.manjaro.pamac.tray"/>
+      <value type="string" value="Xfce volume control"/>
       <value type="string" value="Xfce4-notifyd settings"/>
+      <value type="string" value="xfce4-settings-helper"/>
+      <value type="string" value="Менеджер пакетов"/>
     </property>
   </property>
   <property name="expire-timeout" type="int" value="3"/>

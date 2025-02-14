@@ -3,8 +3,6 @@
 xset -b
 # wmname LG3D &
 
-tint2 -c ~/.config/tint2/button.tint2rc &
-tint2 -c ~/.config/tint2/hide_tray.tint2rc &
 [[ $(command -v polybar) ]] && sh ~/.config/polybar/launch.sh &
 # hsetroot -add '#2c3539' -add '#b89ca8' -gradient 130 &
 # hsetroot -tile input.jpg -contrast 0.6 &
@@ -41,6 +39,9 @@ sh -c ~/.conky/start.sh &
 # caffeine &
 ~/.bin/pulseaudio.sh &
 
+tint2 -c ~/.config/tint2/button.tint2rc &
+(sleep 3; tint2 -c ~/.config/tint2/hide_tray.tint2rc) &
+
 #glava -m bars &
 # glava >/dev/null 2>&1 &
 
@@ -50,4 +51,3 @@ sh -c ~/.conky/start.sh &
 # (sleep 2; volumeicon) &
 # udiskie -t &
 # sh -c "kunst --music_dir /media/files/music --size 250x250 --x 1080 --y 60" &
-

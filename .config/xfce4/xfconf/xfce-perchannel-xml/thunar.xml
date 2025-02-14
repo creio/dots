@@ -1,90 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.1" encoding="UTF-8"?>
 
 <channel name="thunar" version="1.0">
   <property name="last-view" type="string" value="ThunarIconView"/>
-  <property name="last-location-bar" type="string" value="ThunarLocationEntry"/>
   <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_75_PERCENT"/>
-  <property name="misc-single-click" type="bool" value="false"/>
-  <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_16"/>
-  <property name="last-window-width" type="int" value="934"/>
-  <property name="last-window-height" type="int" value="484"/>
+  <property name="last-window-width" type="int" value="787"/>
+  <property name="last-window-height" type="int" value="441"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
-  <property name="last-separator-position" type="int" value="124"/>
+  <property name="last-separator-position" type="int" value="134"/>
   <property name="last-show-hidden" type="bool" value="true"/>
-  <property name="hidden-bookmarks" type="array">
-    <value type="string" value="network://"/>
-    <value type="string" value="file:///"/>
-  </property>
-  <property name="hidden-devices" type="array">
-    <value type="string" value="2020-03-13-16-05-06-00"/>
-    <value type="string" value="0e8adc0e-b94b-4c36-83db-160e248d8e44"/>
-    <value type="string" value="b9494637-e3f4-4c2f-9f95-57c0b69e3db1"/>
-    <value type="string" value="40e27fff-a72e-48a5-bdbf-86f8805b14db"/>
-    <value type="string" value="9f7a7cce-a588-43bb-96c4-5262652cb4fc"/>
-    <value type="string" value="caae28e3-1df0-4572-9d17-e38612a05706"/>
-    <value type="string" value="39a4ba06-f49f-45e7-b423-40b8fa366737"/>
-    <value type="string" value="da9b5181-ada8-4fff-a49f-fb91a4c5f3e1"/>
-    <value type="string" value="ebf2472f-0c68-4db1-aec1-57bbe7460d43"/>
-    <value type="string" value="5d76a486-b791-4a7e-9eba-e5b56fd8d7a7"/>
-    <value type="string" value="7a67c70b-fdd3-4652-b11e-f1cb953e1703"/>
-    <value type="string" value="cf97150e-3880-4555-965f-2295f30afe4a"/>
-    <value type="string" value="361A-F3C3"/>
-    <value type="string" value="a415e362-b968-4b71-82dc-4c2df55a96cd"/>
-    <value type="string" value="4b38b1b1-c1dc-499b-8c32-c52dbdda1ad1"/>
-    <value type="string" value="00aee3e5-cdda-498a-a80e-cad304a645dc"/>
-    <value type="string" value="baac331d-aa68-4079-b672-9a53f65a7f66"/>
-    <value type="string" value="F620-8E96"/>
-    <value type="string" value="55e731a1-8906-4f17-8e40-f5a8b9986b57"/>
-    <value type="string" value="d76cf1ed-bd86-4ff7-aec0-647af6267392"/>
-    <value type="string" value="f10861b2-85b3-4101-a56d-d148fc2b87eb"/>
-    <value type="string" value="7614c6a3-f511-4919-b85b-c36d33d8e97e"/>
-    <value type="string" value="9dbbcc25-9ecd-48a7-af75-798014f3976b"/>
-    <value type="string" value="4edfc597-417f-4d3f-868e-2228bbb73156"/>
-    <value type="string" value="2020-01-08-03-15-42-00"/>
-    <value type="string" value="591cdbc8-2067-45bb-9ba6-4cb663d3bdf7"/>
-    <value type="string" value="5184a297-d3e1-4cfc-908f-bc779ad65b83"/>
-    <value type="string" value="e98142ec-de9b-494a-81cc-08894f697efa"/>
-    <value type="string" value="5fa3a748-7b5c-478c-82e4-d38c75cf42a7"/>
-    <value type="string" value="9490fad1-5c97-4eda-8fc1-fc0f9c64a7fc"/>
-    <value type="string" value="94dacebc-2804-4245-80a2-c62d0d1f326f"/>
-    <value type="string" value="36b592f2-3dd9-4c42-88c9-608992e490c3"/>
-    <value type="string" value="7915-2227"/>
-    <value type="string" value="6d8e4b4e-977c-4fbc-8583-9695dc3612ba"/>
-    <value type="string" value="5931d3b2-5819-4ab6-973d-df7be50bf896"/>
-    <value type="string" value="4eabcfbb-ea77-436e-a0d9-c65fc2428a90"/>
-    <value type="string" value="37fee20f-1a70-4f44-9af3-eaa169ea0a25"/>
-    <value type="string" value="aad5bf7d-7bfc-43dd-9f88-db63a2871cb5"/>
-    <value type="string" value="1745b9ff-c0c6-48e4-974f-dfca183831f3"/>
-    <value type="string" value="7fdfd7a6-e0ac-4852-ae9c-2085f9ecf9af"/>
-    <value type="string" value="c7b68393-4c50-42b3-ae0f-1b4cfe080117"/>
-    <value type="string" value="d49b2397-fb29-4b06-bfd1-aceb29bbeddf"/>
-    <value type="string" value="dd860933-513b-4b17-8e17-2de6d7f1a823"/>
-    <value type="string" value="f4291e97-2362-4905-aadd-c50fa95041b9"/>
-    <value type="string" value="Диск Дискета"/>
-    <value type="string" value="b0956343-d2d9-4f7e-82bd-514a3722453c"/>
-    <value type="string" value="5cf660d4-8abc-4078-93a0-9f2e1ec7ca19"/>
-    <value type="string" value="8508fc50-6b86-49cf-b1a2-d5e144ea1b1c"/>
-    <value type="string" value="259cf354-7093-4bd9-97d0-94f8307d8054"/>
-    <value type="string" value="E11E-17EF"/>
-    <value type="string" value="ec48e54e-cb42-4dac-a6d4-d8e9451f9c07"/>
-    <value type="string" value="66450efa-26d5-4e75-9093-807c39d23681"/>
-    <value type="string" value="fd05d9e6-5be9-463a-8a5b-9e3539d7ca4b"/>
-    <value type="string" value="b4d628f0-cc29-4cb4-9fc3-6321142f3938"/>
-    <value type="string" value="3fbfa303-8b8d-4019-abea-63df71eba03a"/>
-    <value type="string" value="07a611fe-99ad-41ae-ba38-eef324a7b35b"/>
-    <value type="string" value="3de8529f-830e-4bfc-b4d7-1d789719238b"/>
-    <value type="string" value="0df1b4ab-e958-4869-9047-09f352fd0ece"/>
-    <value type="string" value="a6017d4e-155b-442a-8275-7c82614302e4"/>
-    <value type="string" value="a5802e60-2080-476b-8ce4-12dc8b815874"/>
-    <value type="string" value="391cb2b3-5da8-4227-8dbc-4362b7ecc568"/>
-  </property>
-  <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
-  <property name="last-statusbar-visible" type="bool" value="true"/>
   <property name="misc-confirm-close-multiple-tabs" type="bool" value="false"/>
-  <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
-  <property name="last-details-view-column-widths" type="string" value="50,130,131,50,246,124,50,76,409,220,50,76,50,223"/>
-  <property name="misc-recursive-permissions" type="string" value="THUNAR_RECURSIVE_PERMISSIONS_ALWAYS"/>
-  <property name="last-splitview-separator-position" type="int" value="404"/>
-  <property name="last-details-view-visible-columns" type="string" value="THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_NAME,THUNAR_COLUMN_SIZE,THUNAR_COLUMN_TYPE"/>
+  <property name="hidden-devices" type="array">
+    <value type="string" value="07a611fe-99ad-41ae-ba38-eef324a7b35b"/>
+  </property>
 </channel>

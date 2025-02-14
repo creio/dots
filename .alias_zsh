@@ -261,7 +261,7 @@ alias rss="newsboat"
 alias wget="wget --no-hsts"
 # download web site
 wgetw() {
-  wget -rkx "$1"
+  wget -rkx -t 1 -e robots=off -U 'Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0' "$1"
 }
 iso() {
   sudo dd bs=4M if="$1" of=/dev/"$2" status=progress && sync

@@ -1,0 +1,58 @@
+configuration {
+  modi: "drun";
+  show-icons: true;
+  icon-theme: "dui-ico";
+  location: 1;
+}
+
+* {
+  background-color: #00000099;
+  text-color: white;
+}
+
+window {
+  fullscreen: false;
+  font: "ClearSansMedium 9";
+  width: 22%;
+  height: 100%;
+//  border-radius: 0px 50px 50px 0px;
+}
+
+prompt { enabled: false; }
+
+entry  {
+  padding: 5px 0 5px 0;
+  horizontal-align: 0.5;
+  margin: 5% 5% 0% 5%;
+  color: #333;
+  background-color: #fff;
+  font: "ClearSansMedium 12";
+  border-radius: 30px;
+  placeholder: "Search";
+}
+
+listview {
+  columns: 3;
+  padding: 2%;
+  margin: 5% 0% 5% 0%;
+}
+
+element {
+  padding: 0.4%;
+  margin: 2% 0.8% 1% 0.8%;
+  orientation: vertical;
+}
+
+element selected {
+  text-color: #fff;
+  background-color: #111;
+  border-radius: 10px;
+}
+
+element-icon {
+  size: 48;
+}
+
+element-text {
+  horizontal-align: 0.5;
+}

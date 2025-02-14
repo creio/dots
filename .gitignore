@@ -7,6 +7,7 @@
 .config/sublime-text-3/Packages/User/Russian*
 .config/sublime-text-3/Packages/User/CodeStats.sublime-settings
 .config/JetBrains
+.config/rclone
 .jetbra
 .conky/gmail/credentials.json
 .conky/gmail/client_secret.json

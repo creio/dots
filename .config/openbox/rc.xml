@@ -467,12 +467,12 @@
         <command>flameshot.sh -c</command>
       </action>
     </keybind>
-    <keybind key="A-Print">
+    <keybind key="A-Delete">
       <action name="Execute">
         <command>flameshot.sh -d 3000</command>
       </action>
     </keybind>
-    <keybind key="W-Print">
+    <keybind key="W-Delete">
       <action name="Execute">
         <command>flameshot gui</command>
       </action>

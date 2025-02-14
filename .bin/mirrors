@@ -27,10 +27,10 @@ fi
 
 if [ "$1" = "-lc" ]; then
   # mirrors -lc
-  reflector --verbose -p "http,https" -c "$check_country,,ru,de" --sort rate -f 5 >> /etc/pacman.d/mirrorlist
+  reflector --verbose -p "http,https" -c "$check_country,ru,de," --sort rate -f 5 >> /etc/pacman.d/mirrorlist
 elif [ "$1" = "-c" ]; then
   # mirrors -c
-  reflector --verbose -p "http,https" -c "," --sort rate -f 5 >> /etc/pacman.d/mirrorlist
+  reflector --verbose -p "http,https" -c "ru," --sort rate -a 12 -l 5 >> /etc/pacman.d/mirrorlist
 else
   # mirrors
   # reflector --verbose -p "http,https" -l 5 --sort rate >> /etc/pacman.d/mirrorlist

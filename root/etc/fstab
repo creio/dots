@@ -1,8 +1,13 @@
-# <file system> <mount point> <type> <options> <dump> <pass>
-
-UUID=0b6b17d6-cb4f-4f51-9cc2-d4c07af56768	/	ext4	rw,noatime,discard	0	1
-UUID=7099-870D	/boot	vfat	rw,relatime,discard,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0	2
-UUID=7ca1186a-31c2-45df-acf7-7d13ccc1dddc	/home	ext4	rw,noatime,discard	0	2
-UUID=07a611fe-99ad-41ae-ba38-eef324a7b35b	/media/files	ext4	rw,noatime,discard	0	2
-# /dev/nvme0n1p5 LABEL=docker
-UUID=b126ed8e-384a-4ce1-ab2c-6b71b5bf42c8	/var/lib/docker	ext4    rw,noatime,discard	0   2
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a device; this may
+# be used with UUID= as a more robust way to name devices that works even if
+# disks are added and removed. See fstab(5).
+#
+# <file system>             <mount point>  <type>  <options>  <dump>  <pass>
+UUID=6186-4C3C                            /boot           vfat    defaults   0 2
+UUID=71668d40-ba8e-4ca6-aae0-ff7b10422626 /               ext4    defaults   0 1
+UUID=8caa544e-cb4f-4f6e-a761-0702e442a545 /home           ext4    defaults   0 2
+tmpfs                                     /tmp            tmpfs   defaults,noatime,mode=1777 0 0
+UUID=07a611fe-99ad-41ae-ba38-eef324a7b35b /media/files	  ext4    rw,noatime 0 2
+UUID=b126ed8e-384a-4ce1-ab2c-6b71b5bf42c8 /var/lib/docker ext4    rw,noatime 0 2

@@ -1,5 +1,4 @@
-DESKTOP_SESSION=xfce
 QT_QPA_PLATFORMTHEME=qt5ct
-#QT_STYLE_OVERRIDE=kvantum
-XCURSOR_THEME=Qogir
+BROWSER=/usr/bin/firefox
+EDITOR=nano
 GTK_THEME=Ctlos-Dark

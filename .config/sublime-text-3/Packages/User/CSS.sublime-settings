@@ -1,5 +1,0 @@
-// These settings override both User and Default settings for the CSS syntax
-{
-	"tab_size": 2,
-	"translate_tabs_to_spaces": true
-}
