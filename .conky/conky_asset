@@ -41,7 +41,7 @@ ${execpi 60 cat ~/.conky/.speeds | sed -e 's/Ping/PNG/' -e 's/Download/DWN/' -e 
 ${color 494a5b}${execi 3600 ip route}${color}
 
 ${color 494a5b}╭╴              ╶╮${color}
-     OPEN NET
+OPEN NET
 ${color 494a5b}╰╴              ╶╯${color}
 ${rss https://www.opennet.ru/opennews/opennews_all_noadv.rss 400 item_titles 14}
 ${image ~/.conky/asset.png -p 0,0 -n}

@@ -21,6 +21,6 @@ IMGW=${IMGHW#*x}
 POSH=$((($SCRH/2)-($IMGH/2)))
 POSW=$((($SCRW/2)-($IMGW/2)))
 
-xwinwrap -g ${IMGHW}+${POSH}+${POSW} -ov -ni -s -nf -b -sh circle -- gifview -w WID $1 -a
+xwinwrap -g ${IMGHW}+${POSH}+${POSW} -sub WIDDS -ov -ni -s -nf -sp -st -un -b -sh circle -- gifview -a -w WIDDS $1
 
 exit 0

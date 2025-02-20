@@ -30,7 +30,7 @@
     "*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace"
     ],
     "font_face": "Hack Nerd Font Mono",
-    "font_size": 11,
+    "font_size": 12,
     "gruvbox_accent_blue": true,
     "gruvbox_animate_icons": true,
     "gruvbox_autocomplete_cramped": true,

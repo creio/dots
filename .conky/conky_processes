@@ -29,14 +29,11 @@ conky.config = {
 
 conky.text = [[
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿ ❱❱❰❰
-${goto 130}${font Monospace:pixelsize=15}CPU${font}${goto 292}│${goto 430}${color0}${font Monospace:pixelsize=15}RAM${font}${color}
-
+${goto 130}${font Monospace:pixelsize=15}CPU${font}${goto 292}│${goto 380}${color0}${font Monospace:pixelsize=15}RAM${font}${color}
 ╶┼╴                                     ╶┼╴                                      ╶┼╴
-${execpi 5 top -b -n 1 -o %CPU | head -n 15  | tail -n 8 | awk '{print $12, $9}' | column -t -o "   " | sed 's/^/         /'}
-
+${execpi 5 top -b -n 1 -o %CPU | head -n 15  | tail -n 8 | awk '{print $12, $9}' | column -t -o "   " | sed 's/^/${goto 120}/'}
 ${voffset -120}${color0}${execpi 5 top -b -n 1 -o %MEM | head -n 15  | tail -n 8 | awk '{print $12, $10}' | column -t -o "      " | sed 's/^/${goto 370}/'}${color}
 ╶┼╴                                                                              ╶┼╴
-
 
 ${goto 60}${color1}${exec grep [0-9] /proc/loadavg | awk '{print $1}'}    ${exec grep [0-9] /proc/loadavg | awk '{print $2}'}    ${exec grep [0-9] /proc/loadavg | awk '{print $3}'}
 ${voffset -13}${goto 360}$mem / $memmax - ${fs_used_perc /tmp}% tmp${color}
