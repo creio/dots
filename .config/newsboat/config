@@ -14,7 +14,7 @@ highlight article "https?://[^ ]+" color14 default protect
 
 # generals
 confirm-exit yes
-#browser chromium
+browser firefox
 auto-reload yes
 cleanup-on-quit yes
 player mpv
@@ -23,5 +23,5 @@ reload-time 20
 reload-threads 2
 notify-program notify-send
 
-# add video or audio to play queue using mpv (requires: mpv, youtube-dl, straw-viewer)
-macro y set browser "straw-viewer %u"; open-in-browser ; set browser "$BROWSER %u"
+# add video or audio to play queue using mpv (requires: mpv, youtube-dl, pipe-viewer)
+macro y set browser "pipe-viewer %u"; open-in-browser ; set browser "$BROWSER %u"

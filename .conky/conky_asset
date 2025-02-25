@@ -26,7 +26,7 @@ conky.config = {
 conky.text = [[
 
 
-${goto 415}${color 494a5b}UPL SPD
+${goto 415}${color 494a5b}DPL SPD
 ${goto 415}${downspeedf wlan0} KiB${color}
 ${voffset -40}${downspeedgraph wlan0 60,400 af2445 14151f scale 975KiB -l}
 

@@ -1,4 +1,2 @@
 QT_QPA_PLATFORMTHEME=qt5ct
-BROWSER=/usr/bin/firefox
-EDITOR=nano
 GTK_THEME=Ctlos-Dark

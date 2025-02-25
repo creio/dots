@@ -15,7 +15,7 @@ conky.config = {
   own_window_hints='undecorated,below,sticky,skip_taskbar,skip_pager',
   own_window_colour='#000000',
 
-  default_color = '#494b5a',
+  default_color = '#4e6391',
   alignment = 'top_left',
   color1 = '#a5adff',
   color2 = '#FFFF00',
@@ -27,12 +27,10 @@ conky.config = {
 };
 
 conky.text = [[
-
                              ┌───────────────┐
 ╭─                          ─┤  ${color a5adff}CONNECTIONS${color}  ├─                         ─╮
 │                            └───────────────┘                           │
 ├─     ${color3}State${color}          Local Address:Port          ${color3}Peer Address:Port${color}     ─┤
-╰──           ╶┼╴                           ╶┼╴                        ──╯
 ${image ~/.conky/connections.png -p 30,0 -n}
 ${execpi 10 ss -t -a | grep -e "ESTAB" | tail -n 9 | awk '{print $1, $4, $5}' | column -t -o "         " | sed -e 's/\(\([^ ]* *\)\{2\}\)\([^ ]*\)/\1${color3}\3${color}/' -e 's/\(\([^ ]* *\)\{0\}\)\([^ ]*\)/\1${color3}\3${color}/' -e 's/^/       /'}
 ]];

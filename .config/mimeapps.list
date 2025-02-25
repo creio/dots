@@ -93,6 +93,7 @@ x-scheme-handler/figma=figma-linux.desktop
 application/x-zerosize=sublime_text.desktop
 image/x-xfig=figma-linux.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
+x-scheme-handler/viber=viber.desktop
 
 [Added Associations]
 text/x-qml=sublime_text_3.desktop;

@@ -6,8 +6,8 @@
 #
 # <file system>             <mount point>  <type>  <options>  <dump>  <pass>
 UUID=6186-4C3C                            /boot           vfat    defaults   0 2
-UUID=71668d40-ba8e-4ca6-aae0-ff7b10422626 /               ext4    defaults   0 1
-UUID=8caa544e-cb4f-4f6e-a761-0702e442a545 /home           ext4    defaults   0 2
+UUID=71668d40-ba8e-4ca6-aae0-ff7b10422626 /               ext4    defaults,discard   0 1
+UUID=8caa544e-cb4f-4f6e-a761-0702e442a545 /home           ext4    defaults,discard   0 2
 tmpfs                                     /tmp            tmpfs   defaults,noatime,mode=1777 0 0
-UUID=07a611fe-99ad-41ae-ba38-eef324a7b35b /media/files	  ext4    rw,noatime 0 2
-UUID=b126ed8e-384a-4ce1-ab2c-6b71b5bf42c8 /var/lib/docker ext4    rw,noatime 0 2
+UUID=07a611fe-99ad-41ae-ba38-eef324a7b35b /media/files	  ext4    defaults,discard   0 2
+UUID=b126ed8e-384a-4ce1-ab2c-6b71b5bf42c8 /var/lib/docker ext4    defaults,discard   0 2

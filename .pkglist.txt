@@ -23,6 +23,7 @@ bash-completion
 bat
 bcachefs-tools
 betterlockscreen
+bind
 bitwarden-cli
 bleachbit
 blueman
@@ -42,14 +43,9 @@ chrpath
 clean-chroot-manager
 cmake
 colorpicker
-conky
 cpio
 cronie
 cryptsetup
-ctlos-helper
-ctlos-keyring
-ctlos-mirrorlist
-ctlos-qogir
 ctop
 dante
 darkhttpd
@@ -115,6 +111,7 @@ gparted
 gpm
 gptfdisk
 grub
+gsimplecal
 gst-libav
 gst-plugin-pipewire
 gst-plugins-bad
@@ -152,6 +149,7 @@ inkscape
 inotify-tools
 intltool
 inxi
+iw
 iwd
 jfsutils
 jq
@@ -271,6 +269,7 @@ openssh
 optipng
 otb-uw_ttyp0
 packer
+pamixer
 papirus-icon-theme
 partclone
 parted
@@ -414,6 +413,7 @@ whois
 wine
 winetricks
 wireguard-tools
+wireless-regdb
 wireless_tools
 wireplumber
 wmctrl

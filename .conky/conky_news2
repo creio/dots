@@ -28,7 +28,7 @@ conky.config = {
 conky.text = [[
 
 ${color 494a5b}╭╴               ╶╮${color}
- LINUX ORG
+LINUX ORG
 ${color 494a5b}╰╴               ╶╯${color}
 ${rss https://www.linux.org.ru/section-rss.jsp?section=1 400 item_titles 23}
 ]];
