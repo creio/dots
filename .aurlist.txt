@@ -7,10 +7,6 @@ caffeine-ng
 cef-minimal-obs-bin
 chatgpt-shell-cli
 conky-lua-nv
-ctlos-helper
-ctlos-keyring
-ctlos-mirrorlist
-ctlos-qogir
 duc
 exodus
 keybase-bin
@@ -31,7 +27,6 @@ python-pywapi
 rainbowcrack
 repoctl
 rmlint
-skeuos
 slides
 sublime-text-4
 torrserver-bin
@@ -39,6 +34,7 @@ ttf-symbola
 ttf-weather-icons
 urxvt-font-size-git
 urxvt-resize-font-git
+ventoy-bin
 xclickroot-git
 xwinwrap-git
 zoom

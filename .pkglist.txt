@@ -46,6 +46,9 @@ colorpicker
 cpio
 cronie
 cryptsetup
+ctlos-keyring
+ctlos-mirrorlist
+ctlos-qogir
 ctop
 dante
 darkhttpd
@@ -397,7 +400,6 @@ usbmuxd
 usbutils
 vagrant
 vdpauinfo
-ventoy-bin
 veracrypt
 viewnior
 virt-manager
@@ -487,11 +489,13 @@ xsettingsd
 yad
 yarn
 yay-bin
+yq2-bin
 yt-dlp
 ytfzf
 zathura
 zathura-pdf-mupdf
 zip
+zoxide
 zram-generator
 zsh
 zsh-autosuggestions

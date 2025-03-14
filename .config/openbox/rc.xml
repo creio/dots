@@ -462,24 +462,24 @@
         <command>bwmenu</command>
       </action>
     </keybind>
-    <keybind key="Print">
+    <keybind key="A-Delete">
       <action name="Execute">
         <command>flameshot.sh -c</command>
       </action>
     </keybind>
-    <keybind key="A-Delete">
+    <!-- <keybind key="C-A-Delete">
       <action name="Execute">
         <command>flameshot.sh -d 3000</command>
+      </action>
+    </keybind> -->
+    <keybind key="C-A-Delete">
+      <action name="Execute">
+        <command>flameshot gui -d 3000</command>
       </action>
     </keybind>
     <keybind key="W-Delete">
       <action name="Execute">
         <command>flameshot gui</command>
-      </action>
-    </keybind>
-    <keybind key="W-A-Print">
-      <action name="Execute">
-        <command>flameshot gui -d 3000</command>
       </action>
     </keybind>
     <!-- <keybind key="A-space">
