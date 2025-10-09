@@ -1,0 +1,29 @@
+{
+	"statusbar_file_size": false,
+	"close_affected_buffers_when_deleting_even_if_dirty": true,
+	"hide_open_with_entries_when_there_are_no_applicable": true,
+	"confirm_before_deleting": false,
+	"confirm_before_permanently_deleting": false,
+	"new_files_relative_to_project_root": false,
+	"new_folders_relative_to_project_root": false,
+
+	"disabled_menuitem_edit": true,
+	"disabled_menuitem_edit_to_right": true,
+	"disabled_menuitem_open_run": true,
+	"disabled_menuitem_open_in_browser": false,
+	"disabled_menuitem_open_in_new_window": true,
+	"disabled_menuitem_find_in_project": true,
+	"disabled_menuitem_copy_name": true,
+	"disabled_menuitem_copy_path": true,
+	"disabled_menuitem_copy_path_windows": true,
+	"disabled_menuitem_copy_dir_path": true,
+	"disabled_menuitem_paste_in_parent": true,
+	"disabled_menuitem_empty": true,
+
+  "default_browser": "firefox",
+
+	"disable_send_to_trash": false,
+	"use_powershell": true,
+	"auto_close_empty_groups": false,
+	"i_donated_to_sidebar_enhancements_developer": false
+}

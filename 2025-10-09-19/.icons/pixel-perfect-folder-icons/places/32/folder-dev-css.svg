@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg23"
+   version="1.1"
+   width="32"
+   height="32">
+  <metadata
+     id="metadata27">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs7">
+    <linearGradient
+       x1="416.57001"
+       y1="530.84998"
+       gradientTransform="translate(0,-5e-6)"
+       x2="416.57001"
+       gradientUnits="userSpaceOnUse"
+       y2="547.63"
+       id="linearGradient4538-3">
+      <stop
+         id="stop2"
+         offset="0"
+         stop-color="#c8e6fc" />
+      <stop
+         id="stop4"
+         offset="1"
+         stop-color="#aad5f7" />
+    </linearGradient>
+    <linearGradient
+       x1="416.57001"
+       y1="515.79999"
+       gradientTransform="translate(0,-5e-6)"
+       x2="416.57001"
+       gradientUnits="userSpaceOnUse"
+       y2="553.46002"
+       id="linearGradient4538-3-6">
+      <stop
+         id="stop2-1"
+         offset="0"
+         stop-color="#c8e6fc" />
+      <stop
+         id="stop4-2"
+         offset="1"
+         stop-color="#b4daf9" />
+    </linearGradient>
+    <linearGradient
+       y2="553.46002"
+       x2="416.57001"
+       gradientTransform="translate(-1e-6,-1e-5)"
+       y1="515.79999"
+       gradientUnits="userSpaceOnUse"
+       x1="416.57001"
+       id="folderGradient">
+      <stop
+         id="stop2-3"
+         offset="0"
+         stop-color="#9ac5f1" />
+      <stop
+         id="stop4-6"
+         offset="1"
+         stop-color="#77abea" />
+    </linearGradient>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="32.881832"
+       x2="15.809925"
+       y1="19.075274"
+       x1="15.809925"
+       id="linearGradient919"
+       xlink:href="#folderGradient" />
+  </defs>
+  <g
+     id="g881">
+    <rect
+       style="opacity:1;vector-effect:none;fill:url(#linearGradient919);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.11;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="rect857"
+       width="28"
+       height="20"
+       x="2"
+       y="9" />
+    <g
+       transform="scale(0.5)"
+       id="g18-3">
+      <rect
+         style="opacity:1;vector-effect:none;fill:#7ca3d5;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.22;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         id="rect855"
+         width="56"
+         height="2"
+         x="4"
+         y="56" />
+    </g>
+    <path
+       style="opacity:1;vector-effect:none;fill:#b0d2f4;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.11;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       d="m 2,9.9999999 h 9 l 2,-2 h 16 c 0.554,0 1,0.446 1,1 H 13.50015 L 11.50015,11 H 2 Z"
+       id="rect859" />
+    <path
+       style="opacity:1;vector-effect:none;fill:#8bb9e8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.11;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       d="M 3,5.9999999 13.003514,6.0239689 15,7.9999999 h -2 l -2,2 H 2 v -3 c 0,-0.554 0.4460016,-1.001328 1,-1 z"
+       id="rect892" />
+  </g>
+  <g
+     id="text838"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:25px;font-family:Wildera;-inkscape-font-specification:Wildera;letter-spacing:0px;word-spacing:0px;fill:#7eabe3;fill-opacity:1;stroke:none"
+     aria-label="css">
+    <path
+       id="path840"
+       d="m 11.162109,16.773438 c -1.2959999,0 -2.0410153,0.846359 -2.0410152,2.318359 0,1.424 0.7453903,2.257812 2.0253902,2.257812 1.048,0 1.774907,-0.64964 1.878907,-1.68164 h -1.072266 c -0.136,0.56 -0.358641,0.777344 -0.806641,0.777343 -0.568,0 -0.904296,-0.505515 -0.904296,-1.353515 0,-0.416 0.07884,-0.790875 0.214843,-1.046875 0.128,-0.24 0.377266,-0.369141 0.697266,-0.369141 0.456,0 0.670828,0.217156 0.798828,0.785157 h 1.072266 c -0.08,-1.056001 -0.775282,-1.687501 -1.863282,-1.6875 z m 4.732422,0 c -1.096,0 -1.77539,0.551453 -1.77539,1.439453 0,0.288 0.08628,0.535125 0.238281,0.703125 0.152,0.152 0.289078,0.225328 0.705078,0.361328 l 1.335938,0.416015 c 0.28,0.088 0.375,0.175563 0.375,0.351563 0,0.264 -0.312032,0.423828 -0.832032,0.423828 -0.296,0 -0.520062,-0.04834 -0.664062,-0.152344 -0.12,-0.088 -0.166844,-0.176203 -0.214844,-0.408203 h -1.095703 c 0.032,0.952 0.727062,1.441406 2.039062,1.441406 0.6,0 1.056954,-0.128765 1.376953,-0.384765 0.320001,-0.256 0.511719,-0.656078 0.511719,-1.080078 0,-0.56 -0.279656,-0.919891 -0.847656,-1.087891 l -1.416016,-0.408203 c -0.312,-0.096 -0.392578,-0.159938 -0.392578,-0.335938 0,-0.24 0.256438,-0.40039 0.648438,-0.40039 0.536,0 0.79864,0.191984 0.80664,0.583984 h 1.080079 c -0.016,-0.912 -0.718907,-1.46289 -1.878907,-1.46289 z m 4.900391,0 c -1.096,0 -1.777344,0.551453 -1.777344,1.439453 0,0.288 0.08824,0.535125 0.240234,0.703125 0.152001,0.152 0.289079,0.225328 0.705079,0.361328 l 1.335937,0.416015 c 0.28,0.088 0.375,0.175563 0.375,0.351563 0,0.264 -0.312031,0.423828 -0.832031,0.423828 -0.296,0 -0.520063,-0.04834 -0.664063,-0.152344 -0.12,-0.088 -0.166843,-0.176203 -0.214843,-0.408203 h -1.095703 c 0.032,0.952 0.727062,1.441406 2.039062,1.441406 0.6,0 1.056953,-0.128765 1.376953,-0.384765 0.32,-0.256 0.511719,-0.656078 0.511719,-1.080078 0,-0.56 -0.28161,-0.919891 -0.84961,-1.087891 l -1.416015,-0.408203 c -0.312,-0.096 -0.390625,-0.159938 -0.390625,-0.335938 0,-0.24 0.256437,-0.40039 0.648437,-0.40039 0.536,0 0.798641,0.191984 0.806641,0.583984 h 1.080078 c -0.016,-0.912 -0.718906,-1.46289 -1.878906,-1.46289 z"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8px;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans Bold';letter-spacing:0.40000001px;fill:#7eabe3;fill-opacity:1" />
+  </g>
+</svg>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="48"
+   height="48"
+   viewBox="0 0 12.7 12.7"
+   version="1.1"
+   id="svg18"
+   sodipodi:docname="user-trash-full.svg">
+  <metadata
+     id="metadata24">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs22" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview20" />
+  <path
+     d="M2.913.992h6.879c.44 0 .83.356.794.794l-.794 9.79c-2.117.793-4.763.793-6.88 0l-.793-9.79c-.036-.438.354-.794.794-.794z"
+     fill="#898989"
+     id="path2" />
+  <path
+     d="M2.913.992c-.44 0-.83.356-.794.794l.794 9.79c2.116.793 4.762.793 6.879 0l.794-9.79c.035-.438-.354-.794-.794-.794zm0 .265h6.879c.293 0 .529.236.529.529v.265l-.794 8.73c-2.116.795-4.233.795-6.35 0l-.793-8.73v-.265c0-.293.236-.53.529-.53z"
+     fill-opacity=".5"
+     id="path4" />
+  <g
+     stroke-width="1.333"
+     id="g10">
+    <path
+       d="M4.401 4.663l-.992-.793.992-1.39.595.596 1.39-1.19 1.984.793.793 1.389-1.587.794.198 1.587-1.389.596-.595-.993-1.786.397-.595-.992z"
+       fill="#ededed"
+       id="path6" />
+    <path
+       d="M4.401 4.663l.992-.793m-.397-.794l1.092 1.091.694 1.092m.794-.397l-.397-1.985M5.79 6.052l-.595-.992"
+       fill="none"
+       stroke="#898989"
+       stroke-width=".265"
+       id="path8" />
+  </g>
+  <g
+     stroke-width="1.333"
+     id="g16">
+    <path
+       d="M5.702 6.105l.633-1.102 1.525.768-.498.68 1.39 1.19-.482 2.082-1.25.997-1.028-1.447-1.539.439-.8-1.282.89-.74-.666-1.704.89-.74z"
+       fill="#ededed"
+       id="path12" />
+    <path
+       d="M5.702 6.105l.937.859m.723-.514l-.911 1.246-.973.853m.514.724l1.9-.696m-3.35-.887l.89-.74"
+       fill="none"
+       stroke="#898989"
+       stroke-width=".265"
+       id="path14" />
+  </g>
+</svg>

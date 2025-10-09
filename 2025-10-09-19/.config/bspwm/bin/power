@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# notify-send -t 0 "Warning" "Kill mouse"
+
+wm_name=$(wmctrl -m 2>/dev/null | grep "Name" | cut -d " " -f2)
+
+DIALOG_RESULT=$(echo -e "Exit $wm_name\nLock\nSuspend Lock\nHibernate\nReboot\nPoweroff\nExit Menu" | rofi -dmenu -i -p "SYSTEM" -font "ClearSansMedium 12" -theme-str 'window {width: 25%;height: 30%;}')
+
+if [ "$DIALOG_RESULT" = "Exit $wm_name" ]; then
+    bspc quit
+elif [ "$DIALOG_RESULT" = "Lock" ]; then
+    exec $HOME/.bin/multilock.sh -l blur
+elif [ "$DIALOG_RESULT" = "Suspend Lock" ]; then
+    exec $HOME/.bin/multilock.sh -l blur &
+    exec systemctl suspend
+elif [ "$DIALOG_RESULT" = "Hibernate" ]; then
+    exec systemctl hibernate
+elif [ "$DIALOG_RESULT" = "Reboot" ]; then
+    exec systemctl reboot
+elif [ "$DIALOG_RESULT" = "Poweroff" ]; then
+    exec systemctl poweroff
+elif [ "$DIALOG_RESULT" = "Exit Menu" ]; then
+    exit 0
+fi

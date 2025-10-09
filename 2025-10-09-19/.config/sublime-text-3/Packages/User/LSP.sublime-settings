@@ -1,0 +1,10 @@
+// Settings in here override those in "LSP/LSP.sublime-settings"
+{
+    "clients": {
+        // "LSP-*": {
+        //     "env": {
+        //         "PATH": "~/.config/nvm/versions/node/v16.14.2/bin:$PATH"
+        //     }
+        // }
+    }
+}

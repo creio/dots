@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   height="22"
+   width="22"
+   version="1.1"
+   id="svg23">
+  <metadata
+     id="metadata27">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs7">
+    <linearGradient
+       id="linearGradient4538-3"
+       y2="547.63"
+       gradientUnits="userSpaceOnUse"
+       x2="416.57001"
+       gradientTransform="translate(0,-5e-6)"
+       y1="530.84998"
+       x1="416.57001">
+      <stop
+         stop-color="#c8e6fc"
+         offset="0"
+         id="stop2" />
+      <stop
+         stop-color="#aad5f7"
+         offset="1"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4538-3-6"
+       y2="553.46002"
+       gradientUnits="userSpaceOnUse"
+       x2="416.57001"
+       gradientTransform="translate(0,-5e-6)"
+       y1="515.79999"
+       x1="416.57001">
+      <stop
+         stop-color="#c8e6fc"
+         offset="0"
+         id="stop2-1" />
+      <stop
+         stop-color="#b4daf9"
+         offset="1"
+         id="stop4-2" />
+    </linearGradient>
+    <linearGradient
+       id="folderGradient"
+       x1="416.57001"
+       gradientUnits="userSpaceOnUse"
+       y1="515.79999"
+       gradientTransform="translate(-1e-6,-1e-5)"
+       x2="416.57001"
+       y2="553.46002">
+      <stop
+         stop-color="#9ac5f1"
+         offset="0"
+         id="stop2-3" />
+      <stop
+         stop-color="#77abea"
+         offset="1"
+         id="stop4-6" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#folderGradient"
+       id="linearGradient919"
+       x1="15.809925"
+       y1="19.075274"
+       x2="15.809925"
+       y2="32.881832"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     transform="scale(0.6875)"
+     id="g839">
+    <g
+       id="g881">
+      <path
+         style="opacity:1;vector-effect:none;fill:#8bb9e8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.11;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         d="m 13.090909,5.8181819 1.454546,1.4545454 H 29.090909 V 17.454545 H 2.9090909 l 0,-11.6363631 z"
+         id="rect892" />
+      <path
+         id="rect857"
+         d="m 2.9090909,17.454546 h 8.7272731 l 2.909091,-2.909091 14.545454,0 V 29.090909 H 2.909091 Z"
+         style="opacity:1;vector-effect:none;fill:url(#linearGradient919);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.11;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+      <g
+         transform="scale(0.5)"
+         id="g18-3">
+        <rect
+           style="opacity:1;vector-effect:none;fill:#7ca3d5;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.22;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           id="rect855"
+           width="52.363636"
+           height="2.9090903"
+           x="5.818182"
+           y="55.272728" />
+      </g>
+      <path
+         style="opacity:1;vector-effect:none;fill:#b0d2f4;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.11;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         d="m 2.9090909,17.454544 7.2727271,-10e-7 4.363636,-4.363635 h 14.545455 v 1.454545 H 15.506934 l -4.363636,4.363636 -8.2342071,-1e-6 z"
+         id="rect859-6" />
+    </g>
+  </g>
+</svg>

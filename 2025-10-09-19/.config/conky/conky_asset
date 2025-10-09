@@ -1,0 +1,35 @@
+conky.config = {
+  update_interval = 1,
+  double_buffer = true,
+  text_buffer_size=2048,
+  use_xft=true,
+  font='monospace:pixelsize=11',
+  draw_shades=false,
+  draw_graph_borders=false,
+  override_utf8_locale=true,
+  own_window = true,
+  own_window_type='override',
+  own_window_class='Conky',
+  own_window_transparent = true,
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  own_window_argb_visual = true,
+  own_window_colour = '#000000',
+  own_window_argb_value = 0,
+  alignment = 'top_left',
+
+  default_color = '#a5adff',
+  alignment = 'top_left',
+  gap_x = 420,
+  gap_y = 30,
+  minimum_width = 520, minimum_height = 150,
+  maximum_width = 520,
+};
+
+conky.text = [[
+${alignc}${color 494a5b}╭╴               ╶╮${color}
+${alignc}OPEN NET
+${alignc}${color 494a5b}╰╴               ╶╯${color}
+
+${rss http://www.opennet.ru/opennews/opennews_all_noadv.rss 520 item_titles 10}
+#${execpi 300 curl 'wttr.in/Gomel?QT0&lang=ru'}
+]];

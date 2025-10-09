@@ -1,0 +1,28 @@
+name: Notify Telegram
+
+on:
+  issue_comment:
+    types:
+      - created
+  issues:
+    types: [opened, reopened]
+  pull_request:
+    types: [opened, closed, editedreopened]
+  pull_request_review_comment:
+    types:
+      - created
+  push:
+    branches:
+      - master
+
+jobs:
+  tg_alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: tg alert
+        uses: georgepstaylor/telegram-github-notifier@v0.0.1
+        with:
+          telegram_bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+          gh_event: ${{ toJson(github.event) }}
+          gh_actor: ${{ github.actor }}

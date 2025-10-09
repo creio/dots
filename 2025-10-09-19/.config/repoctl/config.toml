@@ -1,0 +1,62 @@
+# repoctl configuration
+
+# columnate specifies that listings should be in columns rather than
+# in lines. This only applies to the list command.
+columnate = false
+
+# color specifies when to use color. Can be one of auto, always, and never.
+color = "auto"
+
+# quiet specifies whether repoctl should print more information or less.
+# I prefer to know what happens, but if you don't like it, you can change it.
+quiet = false
+
+# default_profile specifies which profile should be used when none is
+# specified on the command line.
+default_profile = "default"
+
+[profiles.default]
+  # repo is the full path to the repository that will be managed by repoctl.
+  # The packages that belong to the repository are assumed to lie in the
+  # same folder.
+  repo = "/media/files/github/ctlos/ctlos-aur/x86_64/ctlos-aur.db.tar.gz"
+
+  # add_params is the set of parameters that will be passed to repo-add
+  # when it is called. Specify one time for each parameter.
+  add_params = []
+
+  # rm_params is the set of parameters that will be passed to repo-remove
+  # when it is called. Specify one time for each parameter.
+  rm_params = []
+
+  # ignore_aur is a set of package names that are ignored in conjunction
+  # with AUR related tasks, such as determining if there is an update or not.
+  ignore_aur = []
+
+  # require_signature prevents packages from being added that do not
+  # also have a signature file.
+  require_signature = false
+
+  # backup specifies whether package files should be backed up or deleted.
+  # If it is set to false, then obsolete package files are deleted.
+  backup = false
+
+  # backup_dir specifies which directory backups are stored in.
+  # - If a relative path is given, then it is interpreted as relative to
+  #   the repository directory.
+  # - If the path here resolves to the same as repo, then obsolete packages
+  #   are effectively ignored by repoctl, if backup is true.
+  backup_dir = ""
+
+  # interactive specifies that repoctl should ask before doing anything
+  # destructive.
+  interactive = false
+
+  # pre_action is a command that should be executed before doing anything
+  # with the repository, like reading or modifying it. Useful for mounting
+  # a remote filesystem.
+  pre_action = ""
+
+  # post_action is a command that should be executed before exiting.
+  post_action = ""
+

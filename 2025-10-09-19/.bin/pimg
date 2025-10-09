@@ -1,0 +1,4 @@
+#! /bin/sh
+
+placeholder=$1
+curl -F"file=@$placeholder" http://0x0.st | xsel -b -i

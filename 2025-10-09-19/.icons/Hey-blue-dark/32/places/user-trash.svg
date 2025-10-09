@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="48"
+   height="48"
+   viewBox="0 0 12.7 12.7"
+   version="1.1"
+   id="svg26"
+   sodipodi:docname="user-trash.svg">
+  <metadata
+     id="metadata32">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs30" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview28" />
+  <path
+     d="M2.913.992h6.879c.44 0 .83.356.794.794l-.794 9.79c-2.117.793-4.763.793-6.88 0l-.793-9.79c-.036-.438.354-.794.794-.794z"
+     fill="#898989"
+     id="path2" />
+  <path
+     d="M2.913.992c-.44 0-.83.356-.794.794l.794 9.79c2.116.793 4.762.793 6.879 0l.794-9.79c.035-.438-.354-.794-.794-.794zm0 .265h6.879c.293 0 .529.236.529.529v.265l-.794 8.73c-2.116.795-4.233.795-6.35 0l-.793-8.73v-.265c0-.293.236-.53.529-.53z"
+     fill-opacity=".5"
+     id="path4" />
+  <path
+     d="M9.66 1.786l-.53 8.731"
+     fill="none"
+     stroke="#000"
+     stroke-width=".265"
+     id="path6" />
+  <path
+     d="M8.866 10.517l.529-8.731"
+     fill="none"
+     stroke="#fff"
+     stroke-width=".265"
+     id="path8" />
+  <path
+     d="M8.072 1.786l-.265 8.996"
+     fill="none"
+     stroke="#000"
+     stroke-width=".265"
+     id="path10" />
+  <path
+     d="M7.807 1.786l-.264 8.996"
+     fill="none"
+     stroke="#fff"
+     stroke-width=".265"
+     id="path12" />
+  <path
+     d="M3.045 1.786l.53 8.731"
+     fill="none"
+     stroke="#000"
+     stroke-width=".265"
+     id="path14" />
+  <path
+     d="M3.839 10.517l-.53-8.731"
+     fill="none"
+     stroke="#fff"
+     stroke-width=".265"
+     id="path16" />
+  <path
+     d="M4.632 1.786l.265 8.996"
+     fill="none"
+     stroke="#000"
+     stroke-width=".265"
+     id="path18" />
+  <path
+     d="M4.897 1.786l.265 8.996"
+     fill="none"
+     stroke="#fff"
+     stroke-width=".265"
+     id="path20" />
+  <path
+     d="M6.485 1.786v9.26"
+     opacity=".35"
+     fill="none"
+     stroke="#000"
+     stroke-width=".265"
+     id="path22" />
+  <path
+     d="M6.22 1.786v9.26"
+     opacity=".35"
+     fill="none"
+     stroke="#fff"
+     stroke-width=".265"
+     id="path24" />
+</svg>

@@ -1,0 +1,60 @@
+---
+openbox_menu:
+    - Drun Rofi: "rofi -show drun -theme-str 'element-icon {size: 16;}'"
+    - Terminal: $terminal  # defaults to xterm.
+    - File Manager: $terminal -name term_center -e ranger
+    - Web Search: search
+    - separator:
+    - Development:
+        - Subl Txt: subl
+        - Micro: $terminal -name w_max -e micro
+        - Vim: $terminal -e nvim
+    - Network:
+        - Chromium:
+        # - Firefox:
+        - Qutebrowser:
+        - separator:
+        - Transmission: transmission-gtk
+        - Filezilla:
+    - Mail/Chat:
+        - Telegram: telegram-desktop
+        - Discord: lightcord
+        - Keybase: keybase-gui
+    - Multimedia:
+        - Audacity:
+        - SSR: simplescreenrecorder
+        - Mpv:
+        - PVC: pavucontrol
+    - Tools:
+        - File-roller:
+        - Galculator:
+        - Xreader:
+        - Catfish:
+        - separator:
+        - Virtualbox:
+        - Veracrypt:
+        - Gufw:
+    - Settings:
+        - Lxappearance:
+        - Qt5ct:
+        - Kvantummanager:
+        - Tint2conf:
+        - Power manager: xfce4-power-manager-settings
+    - System:
+        - htop: $terminal -name w_max -e htop
+        - gotop: $terminal -name w_max -e gotop
+        - separator:
+        - Gparted:
+        - Bleachbit:
+        - Bleachbit(Root): pkexec bleachbit
+        - Timeshift: timeshift-gtk
+        - separator:
+        - Openbox:
+            - Reconfigure: openbox --reconfigure
+            - Restart: openbox --restart
+    - separator:
+    - Lock: multilock.sh -l dimblur
+    - Logout: rofi-logout
+    # - Pipemenus:
+        # - Remote Hosts: |
+            # ~/bin/bl-sshconfig-pipemenu

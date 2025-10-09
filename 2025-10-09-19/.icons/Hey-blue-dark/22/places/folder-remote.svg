@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="22"
+   height="22"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="folder-remote.svg">
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview8" />
+  <path
+     d="M.5.5h21.165v21.165H.5z"
+     fill="none"
+     id="path2" />
+  <path
+     d="M10.72 1.835a9.26 9.26 0 1 0 .62 0zm.365 3.955c2.92 0 5.29 2.37 5.29 5.295v.66a1.985 1.985 0 0 1-3.5 1.275 2.63 2.63 0 0 1-4.435-1.935 2.65 2.65 0 1 1 5.29 0v.66a.66.66 0 0 0 1.32 0v-.66a3.97 3.97 0 1 0-3.965 3.965h3.305s.66 0 .66.665c-.04.66-.66.66-.66.66h-3.305a5.293 5.293 0 1 1 0-10.585zm0 3.97a1.325 1.325 0 1 0 0 2.65 1.325 1.325 0 0 0 0-2.65z"
+     fill="#f5f5f5"
+     id="path4" />
+</svg>

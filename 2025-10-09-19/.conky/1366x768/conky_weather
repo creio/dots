@@ -1,0 +1,26 @@
+conky.config = {
+  default_color = '#a5adff',
+  alignment = 'top_right',
+  use_xft=true,
+  font='monospace:pixelsize=20',
+  update_interval = 1,
+  double_buffer = true,
+  text_buffer_size=2048,
+  own_window = true,
+  own_window_type='desktop',
+  own_window_class='Conky',
+  own_window_transparent = true,
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  own_window_argb_visual = true,
+  own_window_colour = '#000000',
+  own_window_argb_value = 0,
+
+  gap_x = 270,
+  gap_y = 350,
+  minimum_width = 60, minimum_height = 30,
+  maximum_width = 60,
+};
+
+conky.text = [[
+${execpi 1800 ~/.conky/wtr.sh}
+]];

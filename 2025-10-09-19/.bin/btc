@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+choice=$1
+
+case $choice in
+  btc)
+    coin=bitcoin;;
+  eth)
+    coin=ethereum;;
+  sol|solana)
+    coin=solana;;
+  *)
+    echo "Bad!";;
+esac
+
+if [[ -n "$coin" ]]; then
+  curl -s "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=$coin" | jq ".[].current_price"
+fi

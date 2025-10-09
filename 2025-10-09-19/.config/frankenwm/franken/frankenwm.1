@@ -1,0 +1,276 @@
+.TH FRANKENWM 1 frankenwm
+.SH NAME
+FrankenWM \- monsterwm's bastard child
+.SH SYNOPSIS
+.B frankenwm
+.RB [ \-v ]
+.SH DESCRIPTION
+FrankenWM is a dynamic tiling window manager pieced together from other WMs and
+based on XCB.
+.P
+.SH MODES
+There are currently seven base layouts:
+.P
+.I Vertical Stack (Tile)
+where the master window fill a large space either left or right and the rest of
+the windows is stacked on the other side,
+
+  ___________        ___________
+ |       | 1 |      | 1 |       |
+ |   M   |___|  or  |___|   M   |
+ |       | 2 |      | 2 |       |
+ |_______|___|      |___|_______|
+
+.I Dualstack
+where the master is in the center and the stack is divided onto both the left
+and right side, or the top and bottom if inverted,
+
+  ___________        ___________
+ | 1|     | 3|      |__1__|__2__|
+ |__|  M  |__|  or  |     M     |
+ | 2|     | 4|      |___________|
+ |__|_____|__|      |__3__|__4__|
+
+.I Bottom stack
+where the master is on top and the stack is horizontally below it, or if
+inverted, the other way around,
+
+  ___________        ___________
+ |           |      |__1__|__2__|
+ |     M     |  or  |           |
+ |___________|      |     M     |
+ |__1__|__2__|      |___________|
+
+.I Grid mode
+where all the windows get sorted in a grid, giving each window roughly the same
+space on the screen,
+
+  ___________
+ |  M  |  2  |
+ |_____|_____|
+ |  1  |  3  |
+ |_____|_____|
+
+.I Equal mode
+where all the windows have exactly the same space on the screen, sorting them
+in either columns or rows, depending on the inverting status,
+
+  ___________        ___________
+ |   |   |   |      |_____M_____|
+ | M | 1 | 2 |  or  |_____1_____|
+ |   |   |   |      |_____2_____|
+ |___|___|___|      |_____3_____|
+
+.I Fibonacci mode
+where the clients share 50% of the space of the client above them in the stack,
+getting smaller going down the stack,
+
+  ___________        ___________
+ |     |  1  |      |     | 2| 3|
+ |  M  |_____|  or  |  M  |__|__|
+ |     | 2| 3|      |     |  1  |
+ |_____|__|__|      |_____|_____|
+
+.I Monocle mode
+where the clients take up the entire workspace, and additional clients are
+hidden behind the current shown window,
+
+  ___________
+ |           |
+ |     M     |
+ |           |
+ |___________|
+
+.I Floating mode
+where, windows can move and be resized freely in the screen space. Windows
+retain their floating status until the user switches to a tiling mode.
+
+  ___________
+ ||     | 1| |
+ ||  M  |__| |
+ ||_____|    |
+ |___________|
+
+When hitting a tiling mode shortcut while being already in this tiling mode,
+FrankenWM will catch all floating windows and reset them back to tiling as
+well.
+
+.SH OPTIONS
+.TP
+.B \-v
+prints version information to standard output, then exits.
+.SH USAGE
+.SS Status bar
+frankenwm does not provide a status bar. Consistent with the Unix philosophy,
+frankenwm provides information to the status bar or panel of choice via text.
+.SS Keyboard and mouse commands
+All of
+.I frankenwm's
+commands can be customized by editing
+.I config.h
+and recompiling.
+
+.SH DEFAULT SHORTCUTS
+
+.SS LAYOUTS
+
+.TP
+.B Mod4\-Shift\-t
+Sets tiled layout
+.TP
+.B Mod4\-Shift\-b
+Sets bottom stack layout
+.TP
+.B Mod4\-Shift\-g
+Sets grid layout
+.TP
+.B Mod4\-Shift\-f
+Sets fibonacci layout
+.TP
+.B Mod4\-Shift\-d
+Sets dualstack layout
+.TP
+.B Mod4\-Shift\-e
+Sets equal layout
+.TP
+.B Mod4\-Shift\-m
+Sets monocle layout
+.TP
+.B Mod4\-Shift\-{z,x}
+Cycle through the available tiling modes. Also resets all windows to tiling.
+
+.SS WINDOW SELECTION
+
+.TP
+.B Mod4\-{j,k}
+Focus next/previous window
+.TP
+.B Mod4\-Shift\-{j,k}
+Move the focussed window down/up the stack
+.TP
+.B Mod4\-Return
+Swaps the focused window to/from master area
+.TP
+.B Mod4\-w
+Toggle between master and previously selected stack window
+.TP
+.B Mod4\-f
+Maximize/fullscreen the current window
+.TP
+.B Mod4\-{m,n}
+Push windows to a minimize "stack"/pull them out. The stack is desktop-specific
+and the last window minimized gets restored first
+.TP
+.B Mod4\-Shift\-i
+Toggle the inverting status, which enables alternate versions of existing
+layout modes
+.TP
+.B Mod4\-Backspace
+Focus the window that raised an urgent hint. If no such window in current
+desktop, search other desktops, and focus the desktop and window that raised
+the urgent hint
+
+.SS COMMANDS
+
+.TP
+.B Mod4\-Shift\-Return
+Start
+.BR xterm (1)
+.TP
+.B Mod4\-r
+Start
+.BR dmenu (1)
+.TP
+.B Mod4\-Shift\-c
+Close the focused window
+.TP
+.B Mod4\-s
+Toggle the scratchpad terminal, if enabled. The scratchpad is a custom terminal
+that always floats and can be toggled from all displays
+.TP
+.B Mod4\-Control\-{q}
+Quit frankenwm
+
+.SS SETTINGS
+
+.TP
+.B Mod4\-Control\-{l,h}
+Increase/decrease master area size
+.TP
+.B Mod4\-Control\-{o,p}
+Decrease/increase useless gap size
+.TP
+.B Mod4\-Control\-{u,i}
+Decrease/increase the borders around windows
+.TP
+.B Mod4\-Control\-b
+Toggles the panel on and off
+.TP
+.B Mod4\-Control\-s
+Toggle display of windows on all desktops
+
+.SS VIRTUAL DESKTOPS
+
+.TP
+.B Mod4\-{1..n}
+Select the nth workspace. By default,
+.I frankenwm
+is configured with four workspaces
+.TP
+.B Mod4\-Shift\-{1..n}
+Move the focused window to the nth workspace
+.TP
+.B Mod4\-Shift\-{h,l}
+Switch to the next/previous desktop
+.TP
+.B Mod4\-Control\-{h,l}
+Switch to the next/previous desktop and take the current window with you
+.TP
+.B Mod4\-Control\-Shift-{h,l}
+Switch to the next/previous desktop and take all of the windows with you
+.TP
+.B Mod4\-Tab
+Toggles to the last selected desktop
+
+.SS FLOATING WINDOWS
+
+.TP
+.B Mod4\-c
+Center the focussed window in floating mode on the screen
+.TP
+.B Mod4\-Mod1\-{h,j,k,l}
+Move floating windows around
+.TP
+.B Mod4\-Mod1\-Control\-{h,j,k,l}
+Resize floating windows
+.TP
+.B Mod4\-t
+Reset just the active floating window back into tiling
+
+.SS MOUSE
+
+.TP
+.B Mod4\-Button1
+Dragging the mouse will move the selected window
+.TP
+.B Mod4\-Button3
+Dragging the mouse will resize the selected window
+
+.SH CUSTOMIZATION
+.I frankenwm
+is customized by copying
+.I config.def.h
+to
+.I config.h
+, customizing it and (re)compiling the source code.
+.SH SEE ALSO
+.BR dmenu (1)
+.SH BUGS
+.I frankenwm
+is under active development. Please report all bugs to the author.
+.SH AUTHOR
+Robin Schroer <sulami at peerwire dot org>
+.SH BASED ON WORKS OF
+Jari Vetoniemi <cloudef at cloudef.eu>
+Ivan Kanakarakis <ivan.kanak at gmail.com>
+

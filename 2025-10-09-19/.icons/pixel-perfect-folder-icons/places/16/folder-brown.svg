@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg23"
+   version="1.1"
+   width="16"
+   height="16"
+   sodipodi:docname="folder-brown.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="748"
+     id="namedview22"
+     showgrid="true"
+     inkscape:snap-page="true"
+     inkscape:zoom="29.5"
+     inkscape:cx="11.284729"
+     inkscape:cy="8.1443661"
+     inkscape:window-x="0"
+     inkscape:window-y="20"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg23">
+    <inkscape:grid
+       type="xygrid"
+       id="grid841" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata27">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs7">
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="32.881832"
+       x2="15.809925"
+       y1="19.075274"
+       x1="15.809925"
+       id="linearGradient919"
+       xlink:href="#folderGradient-301" />
+    <linearGradient
+       y2="553.46002"
+       x2="416.57001"
+       gradientTransform="translate(-1e-6,-1e-5)"
+       y1="515.79999"
+       gradientUnits="userSpaceOnUse"
+       x1="416.57001"
+       id="folderGradient-301">
+      <stop
+         id="stop2480"
+         offset="0"
+         stop-color="#d4bfb6" />
+      <stop
+         id="stop2482"
+         offset="1"
+         stop-color="#c2aa9e" />
+    </linearGradient>
+  </defs>
+  <g
+     id="g839"
+     transform="matrix(0.6875,0,0,0.6875,0,-6)">
+    <g
+       id="g881">
+      <g
+         id="g837"
+         transform="matrix(0.72727273,0,0,0.72727273,0,8.7272727)">
+        <path
+           sodipodi:nodetypes="ccccc"
+           style="opacity:1;vector-effect:none;fill:#c5b4ad;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.11;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           d="m 14,6 6,6 H 4 V 6 Z"
+           id="rect892"
+           inkscape:connector-curvature="0" />
+        <path
+           sodipodi:nodetypes="ccccccc"
+           inkscape:connector-curvature="0"
+           id="rect857"
+           d="m 4,12 h 8 L 16,8 H 28 V 28 H 4 Z"
+           style="opacity:1;vector-effect:none;fill:url(#linearGradient919);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.11;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+        <g
+           transform="matrix(0.5,0,0,0.5,0,-2)"
+           id="g18-3">
+          <rect
+             style="opacity:1;vector-effect:none;fill:#b4a89c;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.22;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+             id="rect855"
+             width="48"
+             height="3.9999998"
+             x="8"
+             y="56" />
+        </g>
+        <path
+           sodipodi:nodetypes="ccccccccc"
+           style="opacity:1;vector-effect:none;fill:#e0d2cc;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.11;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           d="m 4,12 h 8 l 4,-4 h 12 v 2 H 17.050848 l -4,4 H 4 Z"
+           id="rect859-6"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+  </g>
+</svg>

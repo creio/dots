@@ -1,0 +1,38 @@
+conky.config = {
+  alignment = 'top_left',
+  update_interval=1,
+  background=false,
+  text_buffer_size=2048,
+  double_buffer=true,
+  no_buffers=true,
+  use_xft=true,
+  font='monospace:pixelsize=11',
+  gap_x = 533,
+  gap_y = 260,
+  minimum_width = 300, minimum_height = 300,
+  maximum_width = 300,
+  draw_shades=false,
+  override_utf8_locale=true,
+  own_window=true,
+  own_window_type='desktop',
+  own_window_class='Conky',
+  own_window_hints='undecorated,below,sticky,skip_taskbar,skip_pager',
+  own_window_transparent=true,
+  own_window_colour='#000000',
+  own_window_argb_visual = true,
+  own_window_argb_value = 0,
+  draw_graph_borders=false,
+  default_color = '#494b5a',
+  lua_load = '~/.conky/cpu_rings.lua',
+  lua_draw_hook_pre = 'cpu_rings',
+};
+
+conky.text = [[
+
+${voffset 10}${goto 45}${cpu cpu0}%
+${voffset 0}${goto 30}CPU
+${goto 30} 0
+${voffset -45}${goto 250}${cpu cpu1}%
+${voffset 0}${goto 235}CPU
+${goto 235} 1
+]];

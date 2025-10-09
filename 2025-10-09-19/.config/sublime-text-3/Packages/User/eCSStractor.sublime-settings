@@ -1,0 +1,9 @@
+{
+  "brackets_newline_after": true,
+  "empty_line_before_nested_selector": false,
+  "bem.modifier_separator": "_",
+  "destination": "clipboard",
+  "comment_style": "SCSS",
+  "add_comments": true,
+  "bem_nesting": true,
+}

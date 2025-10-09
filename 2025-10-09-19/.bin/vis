@@ -1,0 +1,62 @@
+#!/bin/sh
+
+## autohide urxvt cava vis, bottom bar/dock
+# deps: urxvt cava xdo xdotool devilspie
+
+srcsh=${0##*/}
+
+if [[ ! $(ps -aux | grep "rx_vis" | wc -l) == 1 ]]; then
+  killall cava
+  killall devilspie >/dev/null 2>&1
+  killall $srcsh
+  exit
+fi
+
+BAR_HEIGHT_SHOW=960
+BAR_HEIGHT_HIDE=970
+SHOW_CMD='xdo show -n rx_vis'
+HIDE_CMD='xdo hide -n rx_vis'
+
+urxvt -name rx_vis -title rx_vis -bg "[0]red" -b 0 -depth 32 -borderLess +sb -e cava &
+
+# replace wintype
+if [[ $(command -v devilspie) ]]; then
+echo '(and
+  (is (window_name) "rx_vis")
+  (is (window_class) "URxvt")
+  (begin
+    (stick)
+    (above)
+    (pin)
+    (undecorate)
+    (skip_pager)
+    (skip_tasklist)
+    (wintype "dock")
+  )
+)' > /tmp/rx_vis.ds
+devilspie /tmp/rx_vis.ds > /dev/null &
+fi
+# (geometry "1920x170+0+10")
+
+# Return y-position of cursor
+get_y_position() {
+  loc=$(xdotool getmouselocation --shell | grep Y)
+  echo ${loc:2}
+}
+
+hidden=false
+eval $SHOW_CMD
+while :; do
+  y_loc=$(get_y_position)
+  sleep 0.10
+
+  if (( y_loc < BAR_HEIGHT_SHOW )) && [ "$hidden" = true ]; then
+    eval $SHOW_CMD
+    hidden=false
+  fi
+
+  if (( y_loc >= BAR_HEIGHT_HIDE )) && [ "$hidden" = false ]; then
+    eval $HIDE_CMD
+    hidden=true
+  fi
+done

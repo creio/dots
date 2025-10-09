@@ -1,0 +1,29 @@
+*.foreground:  #d9e1e8
+*.background:  #1D2026
+*.cursorColor: #5A74CA
+*.border:      #1D2026
+
+*.color0:   #1f1d27
+*.color1:   #F07178
+*.color2:   #C3E88D
+*.color3:   #FFCB6B
+*.color4:   #82AAFF
+*.color5:   #C792EA
+*.color6:   #89DDFF
+*.color7:   #b7a1ff
+
+*.color8:   #546E7A
+*.color9:   #F07178
+*.color10:  #C3E88D
+*.color11:  #FFCB6B
+*.color12:  #82AAFF
+*.color13:  #C792EA
+*.color14:  #89DDFF
+*.color15:  #eae5ff
+
+!State:           ´bg´,     ´fg´,     ´bgalt´,  ´hlbg´,   ´hlfg´
+rofi.color-normal: #282c37,  #d9e1e8,  #282c37,  #5A74CA,  #282c37
+rofi.color-urgent: #282c37,  #d9e1e8,  #282c37,  #5A74CA,  #282c37
+rofi.color-active: #282c37,  #d9e1e8,  #282c37,  #5A74CA,  #282c37
+!                  ´background´, ´border´
+rofi.color-window: #282c37,      #75444A57

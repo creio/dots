@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# kunst + ncmpcpp = ♥
+# This script launches kunst and ncmpcpp
+# at the same time. Saves me from lunching 
+# them separately 
+
+kunst --music_dir /media/files/mega/music/ --size 250x250+1100+490 --silent &
+# kunst.sh --music_dir /media/files/mega/music/ --size 250x250 --x 1100 --y 490 --silent &
+echo $! >/tmp/music.pid
+
+ncmpcpp
+
+kill -9 $(cat /tmp/kunst.pid) &> /dev/null

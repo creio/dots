@@ -1,0 +1,51 @@
+# jgmenurc
+stay_alive           = 1
+#hide_on_startup     = 0
+csv_cmd              = pmenu
+tint2_look           = 1
+terminal_exec        = xfce4-terminal
+terminal_args        = -e
+sub_hover_action     = 1
+
+arrow_string         = ➤
+# arrow_width         = 15
+
+#position_mode       = center
+position_mode       = pointer
+
+#columns = 2
+
+menu_width        = 200
+#menu_height_max      = 450
+menu_radius       = 1
+menu_border       = 1
+
+item_margin_x     = 3
+item_margin_y     = 3
+item_height       = 25
+item_padding_x    = 4
+item_radius       = 1
+item_border       = 0
+
+max_items         = 80
+min_items         = 0
+font              = Clear Sans Medium 10
+icon_size         = 16
+icon_theme        = Qogir
+# ignore_xsettings  = 1
+# ignore_icon_cache = 1
+# icon_norm_alpha = 10
+# icon_sel_alpha = 100
+show_title        = 1
+
+color_menu_bg     = #373d49 100
+color_menu_fg     = #ffffff 100
+color_norm_bg     = #373d49 100
+color_norm_fg     = #9baec8 100
+color_sel_bg      = #5a74ca 100
+color_sel_fg      = #ffffff 100
+color_noprog_fg   = #eeeeee 100
+color_title_bg    = #282c37 100
+color_title_fg    = #9baec8 100
+color_menu_border = #282c37 100
+color_sep_fg      = #282c37 100

@@ -1,0 +1,49 @@
+conky.config = {
+  update_interval = 1,
+  double_buffer = true,
+  text_buffer_size=2048,
+  use_xft=true,
+  font='monospace:pixelsize=10',
+  draw_shades=false,
+  draw_graph_borders=false,
+  override_utf8_locale=true,
+  own_window = true,
+  own_window_type='desktop',
+  own_window_class='Conky',
+  own_window_transparent = true,
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  own_window_argb_visual = true,
+  own_window_colour = '#000000',
+  own_window_argb_value = 0,
+  alignment = 'top_left',
+
+  default_color = '#a5adff',
+  alignment = 'top_left',
+  gap_x = 50,
+  gap_y = 50,
+  minimum_width = 400, minimum_height = 150,
+  maximum_width = 400,
+};
+
+conky.text = [[
+
+
+${goto 350}${color af2445}DWN SPD
+${goto 350}${downspeedf enp2s5} KiB${color}
+${voffset -40}${downspeedgraph enp2s5 60,340 af2445 14151f scale 975KiB -l}
+
+
+${goto 350}${color 494a5b}UPL SPD
+${goto 350}${upspeedf enp2s5} KiB${color}
+${voffset -45}${upspeedgraph enp2s5 60,340 14151f 494a5b scale 100KiB -l}
+${texeci 7200 speedtest --simple > ~/.conky/.speeds 2>&1}
+
+${execpi 60 cat ~/.conky/.speeds | sed -e 's/Ping/PNG/' -e 's/Download/DWN/' -e 's/Upload/UPL/' -e 's/$/    /' | tr '\n' ' '}
+
+${color 494a5b}${execi 3600 ip route}${color}
+${color 494a5b}╭╴               ╶╮${color}
+     OPEN NET
+${color 494a5b}╰╴               ╶╯${color}
+${rss http://www.opennet.ru/opennews/opennews_all_noadv.rss 400 item_titles 10}
+${image ~/.conky/asset.png -p 0,0 -n}
+]];

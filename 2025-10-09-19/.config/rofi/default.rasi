@@ -1,0 +1,50 @@
+* {
+  bg-color: #161720;
+  selected: #5A74CA95;
+  text: #e8eaef;
+
+  background-color: transparent;
+  text-color: @text;
+}
+
+window {
+  width: 30%;
+  height: 35%;
+}
+
+mainbox {
+  background-color: @bg-color;
+  padding: 0.5em;
+}
+
+listview {
+  columns: 2;
+  cycle: true;
+  dynamic: true;
+  layout: vertical;
+  scrollbar: true;
+}
+
+element {
+  padding: 0.3em;
+  border-radius: 3px;
+}
+
+element selected {
+  background-color: @selected;
+}
+
+element-icon {
+  size: 16;
+  margin: 0 5 0 0;
+}
+
+button {
+  padding: 0.2em 1em;
+}
+
+button selected {
+  padding: 0.1em;
+  border-radius: 3px;
+  background-color: @selected;
+}

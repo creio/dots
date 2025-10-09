@@ -1,0 +1,25 @@
+{
+  "Public metod": {
+    "prefix": "pf",
+    "body": [
+      "public function ${1:foo}()",
+      "{",
+      "\t$2",
+      "}"
+    ]
+  },
+  "printr": {
+    "prefix": "prr",
+    "body": [
+      "echo '<pre>'; print_r($${1:arResult}); echo '</pre>';"
+    ]
+  },
+  "printr admin": {
+    "prefix": "pra",
+    "body": [
+      "global $$USER; if ($$USER->IsAdmin()) {",
+      "echo '<pre>'; print_r($${1:arResult}); echo '</pre>';",
+      "}"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+export background=$(xrdb -query all | grep background | cut -f2)
+export foreground=$(xrdb -query all | grep foreground | cut -f2)
+export color4=$(xrdb -query all | grep color4 | cut -f2)
+
+dmenu_run -fn "ClearSansMedium 10" -nb "$background" -nf "$foreground" -sb "$color4" -sf "$background"

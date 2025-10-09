@@ -1,0 +1,11 @@
+<snippet>
+	<content>
+<![CDATA[<?${TM_PHP_OPEN_TAG:php} if ( get_field('${1:field_name}') ) :
+	\$location = get_field('${1:field_name}'); ?>
+	<?${TM_PHP_OPEN_TAG:php} echo \$location['address']; ?>
+<?${TM_PHP_OPEN_TAG:php} endif; ?>]]>
+	</content>
+	<tabTrigger>field:location</tabTrigger>
+	<description>ACF address field</description>
+	<scope>text.html - source.php</scope>
+</snippet>

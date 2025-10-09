@@ -1,0 +1,17 @@
+[general]
+mode = normal
+framerate = 30
+autosens = 1
+overshoot = 20
+sensitivity = 100
+bar_width = 1
+bar_spacing = 1
+
+[color]
+gradient = 1
+gradient_count = 2
+gradient_color_1 = '#7aa2f7'
+gradient_color_2 = '#bb9af7'
+
+[output]
+method = ncurses

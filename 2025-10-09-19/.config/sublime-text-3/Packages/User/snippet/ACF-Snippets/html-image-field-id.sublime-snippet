@@ -1,0 +1,17 @@
+<snippet>
+	<content>
+<![CDATA[<?${TM_PHP_OPEN_TAG:php}
+if ( get_field('${1:field_name}') ) {
+	\$attachment_id = get_field('${1:field_name}');
+	\$size = "${2:full}"; // (thumbnail, medium, large, full or custom size)
+	wp_get_attachment_image( \$attachment_id, \$size );
+}
+?>]]>
+	</content>
+	<tabTrigger>field:image:id</tabTrigger>
+	<description>ACF image field (ID)</description>
+	<scope>text.html - source.php</scope>
+</snippet>
+
+
+

@@ -1,0 +1,5 @@
+// These settings override both User and Default settings for the Markdown syntax
+{
+	"trim_trailing_white_space_on_save": true,
+	"ensure_newline_at_eof_on_save": true
+}

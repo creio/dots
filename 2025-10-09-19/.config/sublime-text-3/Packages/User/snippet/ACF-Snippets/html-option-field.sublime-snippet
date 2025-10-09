@@ -1,0 +1,10 @@
+<snippet>
+	<content>
+<![CDATA[<?${TM_PHP_OPEN_TAG:php} if ( get_field('${1:field_name}', 'option') ) : ?>
+	<?${TM_PHP_OPEN_TAG:php} echo get_field('${1:field_name}', 'option'); ?>
+<?${TM_PHP_OPEN_TAG:php} endif; ?>]]>
+	</content>
+	<tabTrigger>field:option</tabTrigger>
+	<description>Display ACF option field</description>
+	<scope>text.html - source.php</scope>
+</snippet>

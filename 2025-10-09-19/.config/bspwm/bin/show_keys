@@ -1,0 +1,7 @@
+#! /bin/bash
+
+# cat ~/.config/bspwm/sxhkd/sxhkdrc | awk '/^[a-z]/ && last {print $0,"\t",last} {last=""} /^#/{last=$0}' | column -t -s $'\t' | fzf
+
+awk '/^[a-z]/ && last {print $0,"\t",last} {last=""} /^#/{last=$0}' ~/.config/bspwm/sxhkd/sxhkdrc | column -t -s $'\t' | \
+	rofi -dmenu -i -p "Help Keys: " -markup-rows -no-show-icons \
+		-font "ClearSansMedium 10" -theme-str 'window {width: 40%;height: 80%;}'

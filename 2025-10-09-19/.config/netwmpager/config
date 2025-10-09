@@ -1,0 +1,44 @@
+# geometry
+geometry = "320x34+1-1"
+border_width = 0
+win_shift_x = 0
+win_shift_y = 0
+
+# zoom
+zoom = 2
+zoom_factor = 1
+
+# visibility
+layer = "normal"
+show_popups = true
+show_sticky = false
+show_titles = false
+
+# autohide
+# auto_hide = true
+# border_commands = "if [ $(pidof netwmpager) ] ; then kill -9 $(pidof netwmpager) ; else netwmpager & disown ; fi"
+
+# misc
+action_buttons = 132
+allow_cover = false
+auto_hide = false
+switch_delay = 50
+
+# fonts
+popup_font = "Clear Sans Medium"
+window_font = "Clear Sans Medium"
+
+# colors
+active_page_color = "#17181a"
+inactive_page_color = "#25272a"
+
+win_border_color = "rgb:13/19/1e"
+pager_border_color = "#b3bdcb"
+
+grid_color = "#111113"
+desk_grid_color = "#111113"
+
+active_win_color = "#798BC7"
+inactive_win_color = "#383C4A"
+
+popup_color = "#b3bdcb"

@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+gib_workspace_names() {
+  wmctrl -d |
+    awk '{ print $1 " " $2 " " $9 }' |
+    grep -v NSP
+}
+
+gib_workspace_yuck() {
+  buffered=""
+  gib_workspace_names | while read -r id active name; do
+    name="${name#*_}"
+    if [ "$active" == '*' ]; then
+      active_class="active"
+    else
+      active_class="inactive"
+    fi
+
+    if wmctrl -l | grep --regexp '.*\s\+'"$id"'\s\+.*' >/dev/null; then
+      button_class="occupied"
+      button_name="ﱣ"
+    else
+      button_class="empty"
+      button_name="祿"
+    fi
+    buffered+="(button :class \"ws $button_class $active_class\" :onclick \"wmctrl -s $id\" \"$button_name\")"
+    echo -n "$buffered"
+    buffered=""
+  done
+}
+
+box_attrs=':orientation "v" :class "works" :space-evenly false :spacing -5 :halign "center" :valign "start" :vexpand false '
+
+echo "(box $box_attrs $(gib_workspace_yuck))"

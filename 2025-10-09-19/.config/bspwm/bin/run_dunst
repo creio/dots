@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export bg=$(xrdb ~/.config/X11/xresources -query all | grep background | cut -f2)
+export fg=$(xrdb ~/.config/X11/xresources -query all | grep foreground | cut -f2)
+
+dunst -lb "$bg" -nb "$bg" -cb "$bg" -lf "$fg" -bf "$fg" -cf "$fg" -nf "$fg" -fn "Iosevka Extrabold 12" -s -geometry "280x6-10+43" -format "<b>%s</b>\n%b" -separator_height 0 -key "ctrl+space" -all_key "space" -corner_radius 8 -padding 20 -horizontal_padding 20 -min_icon_size 40 -max_icon_size 80 -frame_width 0 -alignment "center"

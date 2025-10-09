@@ -1,0 +1,31 @@
+conky.config = {
+  default_color = '#a5adff',
+  alignment = 'top_left',
+  color3 = '#af2445',
+  use_xft = true,
+  update_interval = 1,
+  double_buffer = true,
+  own_window = true,
+  own_window_type='desktop',
+  own_window_class='Conky',
+  own_window_transparent = true,
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  own_window_argb_visual = true,
+  own_window_colour = '#000000',
+  own_window_argb_value = 0,
+  gap_x = 620,
+  gap_y = 300,
+  minimum_width = 700, minimum_height = 600,
+  maximum_width = 700,
+  lua_load = '~/.conky/sensors.lua',
+  lua_draw_hook_pre = 'sensors_rings',
+};
+
+conky.text = [[
+${font monospace:pixelsize=12}
+${voffset 200}${goto 30}CPU
+${goto 30}${exec echo $(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))}.0°C
+${voffset -30}${goto 640}GPU
+${goto 620}${exec nvidia-settings -q gpucoretemp -t | head -n 1}.0°C
+${font}
+]];

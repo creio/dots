@@ -1,0 +1,47 @@
+#!/bin/sh
+
+DIALOG_RESULT=$(echo -e 'chromium\nsubl3\ntelegram\nthunar\ndiscord\nsteam\npavucontrol\nCalculator\nlxappearance\ngparted' | rofi -dmenu -i -p "Favorite [APP]" -hide-scrollbar -tokenize -lines 9 -eh 1 -width 25 -location 0 -xoffset -450 -yoffset -150 -padding 20 -disable-history -font "ClearSansMedium 10")
+
+echo "This result is : $DIALOG_RESULT"
+sleep 1;
+
+if [ "$DIALOG_RESULT" = "chromium" ];
+then
+		exec chromium
+
+elif [ "$DIALOG_RESULT" = "subl3" ];
+then
+		exec subl3
+
+elif [ "$DIALOG_RESULT" = "telegram" ];
+then
+		exec telegram-desktop
+
+elif [ "$DIALOG_RESULT" = "thunar" ];
+then
+		exec thunar
+
+elif [ "$DIALOG_RESULT" = "discord" ];
+then
+		exec discord
+
+elif [ "$DIALOG_RESULT" = "steam" ];
+then
+		exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/steam-wrapper --file-forwarding com.valvesoftware.Steam @@u %U @@
+
+elif [ "$DIALOG_RESULT" = "pavucontrol" ];
+then
+		exec pavucontrol
+
+elif [ "$DIALOG_RESULT" = "Calculator" ];
+then
+		exec gnome-calculator
+
+elif [ "$DIALOG_RESULT" = "lxappearance" ];
+then
+		exec lxappearance
+
+elif [ "$DIALOG_RESULT" = "gparted" ];
+then
+		exec gparted
+fi

@@ -1,0 +1,10 @@
+<snippet>
+	<content>
+<![CDATA[<pre>
+	<?${TM_PHP_OPEN_TAG:php} var_dump(get_field('${1:field_name}')); die(); ?>
+</pre>]]>
+	</content>
+	<tabTrigger>ddfield</tabTrigger>
+	<description>Dump ACF field</description>
+	<scope>text.html - source.php</scope>
+</snippet>

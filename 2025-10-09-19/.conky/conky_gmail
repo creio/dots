@@ -1,0 +1,30 @@
+conky.config = {
+  default_color = '#a5adff',
+  alignment = 'top_right',
+  color2 = '#af2445',
+  use_xft=true,
+  font='monospace:pixelsize=11',
+  update_interval = 1,
+  double_buffer = true,
+  text_buffer_size=2048,
+  own_window = true,
+  own_window_type='desktop',
+  own_window_class='Conky',
+  own_window_transparent = true,
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  own_window_argb_visual = true,
+  own_window_colour = '#000000',
+  own_window_argb_value = 0,
+
+  minimum_width = 100, minimum_height = 40,
+  maximum_width = 100,
+  gap_x = 139,
+  gap_y = 390,
+};
+
+conky.text = [[
+
+${texeci 180 python ~/.conky/gmail/launch.py --prefix '' --nosound > /tmp/mails}
+${image ~/.conky/Mail.png -s 40x40 -p 10,40 -n}
+${goto 85}${font monospace:pixelsize=30}${exec cat /tmp/mails | sed -n 2p}${font}
+]];

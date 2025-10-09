@@ -113,7 +113,6 @@ gpart
 gparted
 gpm
 gptfdisk
-grub
 gsimplecal
 gst-libav
 gst-plugin-pipewire
@@ -278,7 +277,7 @@ partclone
 parted
 partimage
 pass
-pavucontrol
+pavucontrol-qt
 pcsclite
 perl-file-desktopentry
 picom
@@ -400,6 +399,7 @@ usbmuxd
 usbutils
 vagrant
 vdpauinfo
+ventoy-bin
 veracrypt
 viewnior
 virt-manager

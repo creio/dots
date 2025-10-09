@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+notify-send "Now Playing ♫" "$(mpc current)"
+n30f -x 1080 -y 60 /tmp/kunst.png -c "killall n30f"

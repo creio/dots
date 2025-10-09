@@ -1,0 +1,10 @@
+<snippet>
+	<content>
+<![CDATA[<?${TM_PHP_OPEN_TAG:php} if ( get_field('${1:field_name}') ) : ?>
+	<a href="<?${TM_PHP_OPEN_TAG:php} echo get_field('${1:field_name}'); ?>">$2</a>
+<?${TM_PHP_OPEN_TAG:php} endif; ?>]]>
+	</content>
+	<tabTrigger>field:link</tabTrigger>
+	<description>ACF link/page</description>
+	<scope>text.html - source.php</scope>
+</snippet>

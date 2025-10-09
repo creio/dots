@@ -12,10 +12,12 @@ exodus
 keybase-bin
 mergerfs
 mods
+msty-bin
 nekoray-bin
 nvidia-390xx-dkms
 nvidia-390xx-settings
 obfs4proxy-bin
+obsidian-appimage
 pepper-flash
 perl-linux-desktopfiles
 phpstorm
@@ -29,12 +31,13 @@ repoctl
 rmlint
 slides
 sublime-text-4
+termius
 torrserver-bin
 ttf-symbola
 ttf-weather-icons
+twingate
 urxvt-font-size-git
 urxvt-resize-font-git
-ventoy-bin
 xclickroot-git
 xwinwrap-git
 zoom

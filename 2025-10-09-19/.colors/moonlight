@@ -1,0 +1,46 @@
+! special
+!*.foreground:  #e8eaef
+!*.background:  #161720
+*.foreground:   #839496
+*.background:   #040610
+*.cursorColor: #b4b6e4
+*.border:      #040610
+
+! black
+*.color0:       #161720
+*.color8:       #444650
+
+! red
+*.color1:       #d5996d
+*.color9:       #d5996d
+
+! green
+*.color2:       #6dd599
+*.color10:      #6dd599
+
+! yellow
+*.color3:       #99d56d
+*.color11:      #99d56d
+
+! blue
+*.color4:       #996dd5
+*.color12:      #996dd5
+
+! magenta
+*.color5:       #d56d99
+*.color13:      #d56d99
+
+! cyan
+*.color6:       #6d99d5
+*.color14:      #6d99d5
+
+! white
+*.color7:       #b4b6c0
+*.color15:      #ffffff
+
+!State:           ´bg´,     ´fg´,     ´bgalt´,  ´hlbg´,   ´hlfg´
+rofi.color-normal: #040610,  #e8eaef,  #040610,  #5A74CA,  #040610
+rofi.color-urgent: #040610,  #e8eaef,  #040610,  #5A74CA,  #040610
+rofi.color-active: #040610,  #e8eaef,  #040610,  #5A74CA,  #040610
+!                  ´background´, ´border´
+rofi.color-window: #040610,      #75444A57
