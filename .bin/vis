@@ -1,29 +1,30 @@
-#!/bin/sh
-
-## autohide urxvt cava vis, bottom bar/dock
-# deps: urxvt cava xdo xdotool devilspie
+#!/bin/bash
 
 srcsh=${0##*/}
 
-if [[ ! $(ps -aux | grep "rx_vis" | wc -l) == 1 ]]; then
+# Проверка: если процесс уже есть — убиваем всё и выходим (режим переключателя)
+if pgrep -f "rx_vis" > /dev/null; then
   killall cava
-  killall devilspie >/dev/null 2>&1
-  killall $srcsh
+  pkill -f "devilspie /tmp/rx_vis.ds"
+  pkill -f "$srcsh"
   exit
 fi
 
+# Параметры экрана
 BAR_HEIGHT_SHOW=960
 BAR_HEIGHT_HIDE=970
-SHOW_CMD='xdo show -n rx_vis'
-HIDE_CMD='xdo hide -n rx_vis'
 
-urxvt -name rx_vis -title rx_vis -bg "[0]red" -b 0 -depth 32 -borderLess +sb -e cava &
+# 1. Запуск Alacritty
+alacritty --config-file $HOME/.config/alacritty/rx_vis.toml --class rx_vis,rx_vis --title rx_vis -e cava &
 
-# replace wintype
+# 2. Ждем окно (без этого xdo выдает ошибку)
+xdotool search --sync --onlyvisible --class "rx_vis"
+WIN_ID=$(xdotool search --class "rx_vis" | tail -1)
+
+# 3. Конфиг Devilspie (убираем декорации и делаем доком)
 if [[ $(command -v devilspie) ]]; then
-echo '(and
-  (is (window_name) "rx_vis")
-  (is (window_class) "URxvt")
+echo "(and
+  (is (window_class) \"rx_vis\")
   (begin
     (stick)
     (above)
@@ -31,24 +32,27 @@ echo '(and
     (undecorate)
     (skip_pager)
     (skip_tasklist)
-    (wintype "dock")
+    (wintype \"dock\")
+    (geometry \"1920x170+0+920\")
   )
-)' > /tmp/rx_vis.ds
+)" > /tmp/rx_vis.ds
 devilspie /tmp/rx_vis.ds > /dev/null &
 fi
-# (geometry "1920x170+0+10")
 
-# Return y-position of cursor
+# Команды управления
+SHOW_CMD="xdo show $WIN_ID"
+HIDE_CMD="xdo hide $WIN_ID"
+
 get_y_position() {
-  loc=$(xdotool getmouselocation --shell | grep Y)
-  echo ${loc:2}
+  xdotool getmouselocation --shell | grep Y | cut -d= -f2
 }
 
 hidden=false
 eval $SHOW_CMD
+
+# Основной цикл
 while :; do
   y_loc=$(get_y_position)
-  sleep 0.10
 
   if (( y_loc < BAR_HEIGHT_SHOW )) && [ "$hidden" = true ]; then
     eval $SHOW_CMD
@@ -59,4 +63,5 @@ while :; do
     eval $HIDE_CMD
     hidden=true
   fi
+  sleep 0.1
 done

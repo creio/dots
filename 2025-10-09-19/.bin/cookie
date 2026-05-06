@@ -1,7 +1,0 @@
-#!/bin/bash
-while true
-do			
-				sleep 3s
-	notify-send "$(fortune)"
-	sleep 5m
-done

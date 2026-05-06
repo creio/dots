@@ -22,32 +22,54 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-# ohmyzsh
-export ZSH="/usr/share/oh-my-zsh"
-ZSH_THEME="af-magic"
-DISABLE_AUTO_UPDATE="true"
-ZSH_TMUX_AUTOSTART="false"
-plugins=()
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-[[ ! -d $ZSH_CACHE_DIR ]] && mkdir -p $ZSH_CACHE_DIR
-source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+export EDITOR="micro"
+
+# eval "$(starship init zsh)"
+# eval "$(oh-my-posh init zsh)"
+
+## ohmyzsh
+if [[ -d /usr/share/oh-my-zsh ]]; then
+  export ZSH="/usr/share/oh-my-zsh"
+  ZSH_THEME="af-magic"
+  DISABLE_AUTO_UPDATE="true"
+  ZSH_TMUX_AUTOSTART="false"
+  plugins=()
+  ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+  [[ ! -d $ZSH_CACHE_DIR ]] && mkdir -p $ZSH_CACHE_DIR
+  [[ -e $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
+fi
+
+[[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]] && \
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
+[[ -e /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ]] && \
+  source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+[[ -e /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && \
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=white"
 
 # fzf & fd
-[[ -e /usr/share/fzf/fzf-extras.zsh ]] && source /usr/share/fzf/fzf-extras.zsh
-export FZF_DEFAULT_COMMAND="fd --type file --color=always --follow --hidden --exclude .git"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-# export FZF_DEFAULT_OPTS="--ansi"
-export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --preview 'file {}' --preview-window down:1"
-export FZF_COMPLETION_TRIGGER="~~"
+if [[ -e /usr/share/fzf/fzf-extras.zsh ]]; then
+  source /usr/share/fzf/fzf-extras.zsh
+  export FZF_DEFAULT_COMMAND="fd --type file --color=always --follow --hidden --exclude .git"
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  # export FZF_DEFAULT_OPTS="--ansi"
+  # export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --preview 'file {}' --preview-window down:1"
+  export FZF_DEFAULT_OPTS="--border"
+  # export FZF_COMPLETION_TRIGGER="~~"
+fi
+
+[[ -e /usr/share/zsh/plugins/fzf-tab-source/fzf-tab.plugin.zsh ]] && \
+  source /usr/share/zsh/plugins/fzf-tab-source/fzf-tab.plugin.zsh
 
 # export TERM="rxvt-256color"
 export TERM="xterm-256color"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 export XDG_CONFIG_HOME="$HOME/.config"
 export _JAVA_AWT_WM_NONREPARENTING=1
+# export __GL_THREADED_OPTIMIZATIONS=0
 
 # export GPG_TTY=$(tty)
 
@@ -99,10 +121,14 @@ fi
 CODESTATS_PLUG_PATH="$HOME/.zsh/plugins/codestats.plugin.zsh"
 [[ -s $CODESTATS_PLUG_PATH ]] && . $CODESTATS_PLUG_PATH
 
-# eval "$(starship init zsh)"
+# ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
 # >>>> Vagrant command completion (start)
 # fpath=(/opt/vagrant/embedded/gems/2.2.18/gems/vagrant-2.2.18/contrib/zsh $fpath)
 # <<<<  Vagrant command completion (end)
 
-# ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/creio/.lmstudio/bin"
+
+# eval "$(zoxide init zsh)"

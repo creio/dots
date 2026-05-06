@@ -6,7 +6,7 @@ wm=$(wmctrl -m 2>/dev/null | grep "Name" | cut -d " " -f2)
 [[ -z $wm ]] && wm="$(xprop -root -notype _NET_WM_NAME | awk 'END{print $3}' | tr -d \")" || wm=$wm
 [[ $wm == i3 ]] && wm_name="I3" || wm_name="Openbox"
 
-DIALOG_RESULT=$(echo -e "Exit $wm_name\nLock\nSuspend Lock\nHibernate\nReboot\nPoweroff\nExit Menu" | rofi -dmenu -i -p "SYSTEM" -font "ClearSansMedium 12" -theme-str 'window {width: 25%;height: 30%;}')
+DIALOG_RESULT=$(echo -e "Exit $wm_name\nLock\nSuspend Lock\nHibernate\nReboot\nPoweroff\nExit Menu" | rofi -dmenu -i -p "SYSTEM" -hide-scrollbar -tokenize -eh 1 -location 0 -padding 20 -disable-history -theme-str "window {width: 25%;height: 33%;} listview {columns: 1;}" -font "ClearSansMedium 13")
 
 if [ "$DIALOG_RESULT" = "Exit $wm_name" ]; then
     [[ $wm == i3 ]] && i3-msg 'exit' || openbox --exit

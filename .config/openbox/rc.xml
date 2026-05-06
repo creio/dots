@@ -399,17 +399,17 @@
     </keybind>
     <keybind key="A-r">
       <action name="Execute">
-        <command>urxvtc -name w_70 -e ranger</command>
+        <command>alacritty --class w_70 -e ranger</command>
       </action>
     </keybind>
     <keybind key="A-t">
       <action name="Execute">
-        <command>findapp urxvt</command>
+        <command>findapp alacritty</command>
       </action>
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>urxvt</command>
+        <command>alacritty</command>
       </action>
     </keybind>
     <!-- <keybind key="W-Return">
@@ -969,6 +969,13 @@
         <y>center</y>
       </position> -->
     </application>
+    <application class="obsidian" type="normal">
+      <maximized>yes</maximized>
+      <!-- <desktop>3</desktop> -->
+      <!-- <decor>no</decor>
+      <shade>no</shade>
+      <focus>yes</focus> -->
+    </application>
     <application class="Sublime_text" type="normal">
       <maximized>yes</maximized>
       <!-- <desktop>3</desktop> -->
@@ -1090,14 +1097,14 @@
         <height>85/100</height>
       </size>
     </application>
-    <application name="urxvt_bg">
+    <application name="alacritty_bg">
       <maximized>yes</maximized>
       <decor>no</decor>
       <shade>no</shade>
       <layer>below</layer>
       <!-- <desktop>all</desktop> -->
     </application>
-    <application class="URxvt" name="rx_vis">
+    <application class="rx_vis" name="rx_vis">
       <decor>no</decor>
       <shade>no</shade>
       <layer>above</layer>
@@ -1131,8 +1138,8 @@
       <!-- <skip_pager>yes</skip_pager> -->
       <!-- <skip_taskbar>yes</skip_taskbar> -->
       <position force="yes">
-        <x>1010</x>
-        <y>480</y>
+        <x>1410</x>
+        <y>740</y>
       </position>
       <size>
         <width>25/100</width>

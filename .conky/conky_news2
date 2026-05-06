@@ -20,7 +20,7 @@ conky.config = {
   default_color = '#a5adff',
   alignment = 'top_right',
   gap_x = 60,
-  gap_y = 610,
+  gap_y = 600,
   minimum_width = 580, minimum_height = 150,
   maximum_width = 580,
 };
@@ -28,7 +28,7 @@ conky.config = {
 conky.text = [[
 
 ${color 494a5b}╭╴               ╶╮${color}
-LINUX ORG
+     LINUX ORG
 ${color 494a5b}╰╴               ╶╯${color}
-${rss https://www.linux.org.ru/section-rss.jsp?section=1 400 item_titles 23}
+${rss https://www.linux.org.ru/section-rss.jsp?section=1 400 item_titles 22}
 ]];

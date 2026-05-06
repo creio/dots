@@ -1,4 +1,0 @@
-// Settings in here override those in "OpenAI completion/openAI.sublime-settings"
-{
-  "token": ""
-}

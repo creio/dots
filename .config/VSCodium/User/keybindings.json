@@ -17,8 +17,8 @@
   },
   {
     "key": "ctrl+k ctrl+m",
-    // "command": "workbench.action.toggleMenuBar"
-    "command": "settings.cycle.toggleMenuBar"
+    "command": "workbench.action.toggleMenuBar"
+    // "command": "settings.cycle.toggleMenuBar"
   },
   {
     "key": "ctrl+l",

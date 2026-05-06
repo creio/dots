@@ -1,4 +1,5 @@
 .bin/stream
+.config/cava/shaders
 .config/sublime-text-3/Packages/User/Color Highlight.cache/
 .config/sublime-text-3/Packages/User/Gist.sublime-settings
 .config/sublime-text-3/Packages/User/FileHeader.sublime-settings
@@ -6,6 +7,8 @@
 .config/sublime-text-3/Packages/User/Package Control.cache
 .config/sublime-text-3/Packages/User/Russian*
 .config/sublime-text-3/Packages/User/CodeStats.sublime-settings
+.config/sublime-text-3/Packages/User/sftp
+.config/sublime-text-3/Packages/User/Xdebug*
 .config/JetBrains
 .config/rclone
 .jetbra
@@ -21,6 +24,8 @@
 .config/polybar/gmail/client_secret.json
 .config/ranger/bookmarks
 .config/ranger/history
+.config/ranger/plugins/__pycache__
+.config/ranger/plugins/ranger_devicons
 .config/jgmenu/backup
 .dots
 
@@ -34,3 +39,5 @@
 !.wall/wl.jpg
 !.wall/wl.png
 !.wall/lock.png
+
+root/etc/X11/xorg.conf.d/30-nvidia.conf

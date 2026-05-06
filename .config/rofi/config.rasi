@@ -1,8 +1,8 @@
 configuration {
   show-icons: true;
-  icon-theme: "Qogir-dark";
-  font: "ClearSansMedium 11";
-  terminal: "urxvt";
+  icon-theme: "Qogir-Dark";
+  font: "ClearSansMedium 12";
+  terminal: "alacritty";
   modi: "drun,window,filebrowser,run";
   ssh-client: "ssh";
   ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
@@ -12,8 +12,8 @@ configuration {
   sidebar-mode: true;
 
 filebrowser {
-  directories-first:	true;
-  sorting-method:	"name";
+  directories-first: true;
+  sorting-method: "name";
   }
 }
 @theme "default.rasi"

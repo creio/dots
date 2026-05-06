@@ -46,7 +46,12 @@ mkdir -p /tmp/vera
 # export bitwarden csv
 if [[ $(command -v bw) ]]; then
   BW_SESSION=$(bw unlock --raw $BW_PASSWORD)
-  bw export $BW_PASSWORD --session $BW_SESSION --format csv --output /tmp/vera/bw.csv
+  # export $BW_SESSION
+  # echo $BW_SESSION
+  # bw export $BW_PASSWORD --session $BW_SESSION --format csv --output /tmp/vera/bw.csv
+  bw export --session $BW_SESSION --output /tmp/vera/bw.csv
+  # bw export --output /tmp/vera/bw.csv
+   # bw export --output ./exp/bw.csv
   echo "export bw Done!"
 fi
 

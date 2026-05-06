@@ -1,5 +1,0 @@
-^sep(Box Menu)
-Web browser,exo-open --launch WebBrowser,web-browser
-File manager,exo-open --launch FileManager,system-file-manager
-Terminal,exo-open --launch TerminalEmulator,utilities-terminal
-^sep()

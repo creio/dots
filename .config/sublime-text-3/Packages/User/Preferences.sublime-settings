@@ -9,6 +9,7 @@
     "color_scheme": "Packages/One Dark Material - Theme/schemes/OneDark.tmTheme",
     "detect_indentation": false,
     "dictionary": "Packages/User/Russian.dic",
+    "spell_check": false,
     "draw_shadows": false,
     "draw_white_space": "all",
     "enable_tab_scrolling": false,
@@ -29,20 +30,21 @@
     "file_exclude_patterns": [
     "*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace"
     ],
-    "font_face": "Hack Nerd Font Mono",
-    "font_size": 11,
+    "font_face": "JetBrainsMonoNL Nerd Font Mono",
+    "font_size": 13,
     "gruvbox_accent_blue": true,
     "gruvbox_animate_icons": true,
     "gruvbox_autocomplete_cramped": true,
     "gruvbox_buttons_bold": true,
     "gruvbox_command_palette_cramped": true,
-    "gruvbox_folder_icons_circle": true,
+    "gruvbox_folder_icons_circle": false,
     "gruvbox_iconset_spacegray": true,
     "gruvbox_panel_xxs": true,
     "gruvbox_scrollbar_width_xs": true,
     "gruvbox_sidebar_cramped": true,
-    "gruvbox_sidebar_font_size_10": true,
+    "gruvbox_sidebar_font_size_12": true,
     "gruvbox_sidebar_indent_xs": true,
+    "gruvbox_sidebar_heading_bold": false,
     "gruvbox_sidebar_label_bold": true,
     "gruvbox_statusbar_bold": true,
     "gruvbox_statusbar_button_xxs": true,
@@ -51,6 +53,8 @@
     "gruvbox_tabs_bold": true,
     "gruvbox_tabs_font_size_10": true,
     "gruvbox_tabs_xxs": true,
+    /*"gruvbox_scrollbar_width_xs": true,*/
+    "gruvbox_buttons_font_size_10": true,
     "highlight_line": true,
     "indent_guide_options": [
         "draw_active"
@@ -64,7 +68,6 @@
     ],
     "show_encoding": true,
     "show_scroll_tabs": false,
-    "spell_check": false,
     "tab_size": 2,
     "theme": "gruvbox.sublime-theme",
     "translate_tabs_to_spaces": true,
@@ -76,5 +79,8 @@
     [
         "Vintage",
     ],
-    "index_files": true,
+    "index_files": false,
+    "in_process_packages":
+    [
+    ],
 }

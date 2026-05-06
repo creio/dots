@@ -1,0 +1,153 @@
+//   _____ _____ _____ _____ _____ _____ _____ _____ _____
+//  |   __|  _  |   __|_   _|   __|   __|_   _|     |  |  |
+//  |   __|     |__   | | | |   __|   __| | | |   --|     |
+//  |__|  |__|__|_____| |_| |__|  |_____| |_| |_____|__|__|  MINIMAL
+//
+//  by Bina
+
+
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": null,
+    "display": {
+        "separator": "  ›  "
+    },
+    "modules": [
+      "break",
+        {
+            "type": "os",
+            "key": "OS  ",
+            "keyColor": "31",  // = color1
+        },
+        {
+            "type": "kernel",
+            "key": "KER ",
+            "keyColor": "32",
+        },
+        {
+            "type": "packages",
+            "format": "{} (pacman)",
+            "key": "PKG ",
+            "keyColor": "33",
+        },
+        {
+            "type": "shell",
+            "key": "SH  ",
+            "keyColor": "34",
+        },
+        {
+            "type": "terminal",
+            "key": "TER ",
+            "keyColor": "35",
+        },
+        {
+      "type": "terminalfont",
+          "key": "TF  ",
+          "keyColor": "blue"
+        },
+        {
+            "type": "wm",
+            "key": "WM  ",
+            "keyColor": "36",
+        },
+        {
+          "type": "custom",
+          "format": "\u001b[90m───────────────────────────"
+        },
+        // {
+        //   "type": "display",
+        //   "key": "MON",
+        //   "keyColor": "green"
+        // },
+        {
+          "type": "disk",
+          "key": "/              ",
+          "keyColor": "31",
+          // "format": "{size-used} / {size-total} (DISK)",
+          "percent": {
+            "type": ["bar"]
+          },
+          "folders": "/"
+        },
+        /*{
+            "type": "disk",
+            "keyColor": "36",
+            "folders": "/",
+            "key": "|-             ",
+            "percent": {
+                "type": [
+                    "bar",
+                    "hide-others"
+                ]
+            }
+        },*/
+        {
+          "type": "disk",
+          "key": "/home          ",
+          "keyColor": "34",
+          "percent": {
+            "type": ["bar"]
+          },
+          "folders": "/home"
+        },
+        {
+          "type": "disk",
+          "key": "/media/files   ",
+          "keyColor": "35",
+          "percent": {
+            "type": ["bar"]
+          },
+          "folders": "/media/files"
+        },
+        {
+          "type": "disk",
+          "key": "/var/lib/docker",
+          "keyColor": "33",
+          "percent": {
+            "type": ["bar"]
+          },
+          "folders": "/var/lib/docker"
+        },
+        // {
+        //   "type": "swap",
+        //   "key": "SW",
+        //   "keyColor": "green"
+        // },
+        {
+          "type": "custom",
+          "format": "\u001b[90m───────────────────────────"
+        },
+        {
+          "type": "memory",
+          "key": "MEM   ",
+          "keyColor": "34"
+        },
+        {
+          "type": "command",
+          "key": "OS Age",
+          "keyColor": "31",
+          "text": "echo $(( ($(date +%s) - $(stat -c %W /)) / 86400 )) days"
+        },
+        {
+          "type": "uptime",
+          "key": "Uptime",
+          "keyColor": "magenta"
+        },
+        {
+          "type": "command",
+          "key": "Update",
+          "keyColor": "34",
+          "text": "updated=$(updated-pkgs.sh); echo \"$updated\""
+        },
+        /*{
+          "type": "weather",
+          "key": "WT    ",
+          "keyColor": "magenta"
+        },*/
+        {
+          "type": "colors",
+          "symbol": "circle",
+        },
+        "break",
+    ]
+}

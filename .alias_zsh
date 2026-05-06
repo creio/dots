@@ -9,20 +9,23 @@
 # laravel
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
+alias bm='bashmount'
+
 alias sz="source $HOME/.zshrc"
 alias ez="$EDITOR $HOME/.zshrc"
 alias ea="$EDITOR $HOME/.alias_zsh"
 alias merge="xrdb -merge $HOME/.Xresources"
-alias xcolor="xrdb -query | grep"
 alias vga="lspci -k | grep -A 2 -E '(VGA|3D)'"
 alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias updir="LC_ALL=C xdg-user-dirs-update --force"
 
-alias dmrun="dmenu_run -l 10 -p 'run >' -fn 'ClearSansMedium 9' -nb '#282c37' -nf '#f2f3f4' -sb '#5a74ca' -sf '#fff'"
+alias health='echo "--- CPU Temp ---" && sensors | grep "Core" | head -n 5 && echo "--- ZRAM ---" && zramctl && echo "--- Wi-Fi SNR ---" && awk "NR==3 {print \$3 - \$4}" /proc/net/wireless'
+
+alias dmrun="dmenu_run -l 10 -p 'run >' -fn 'ClearSansMedium 10' -nb '#282c37' -nf '#f2f3f4' -sb '#5a74ca' -sf '#fff'"
 
 alias iip="curl --max-time 10 -w '\n' http://ident.me"
 alias tb="nc termbin.com 9999 | xsel -b -i"
-alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+# alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
 # blur img: blur 4 .wall/wl3.jpg blur.jpg
 blur() {
@@ -87,7 +90,7 @@ accm() {
   # tar -xvf $1.tar.gz
   cd $2
   sudo ccm "$1"
-  gpg --detach-sign "$2"-*.pkg*
+  # gpg --detach-sign "$2"-*.pkg*
   cd ..
 }
 
@@ -117,9 +120,11 @@ abuild() {
   rm -rf ~/.build/$1
 }
 
-# alias neofetch="neofetch --ascii ~/.config/neofetch/ctlos"
-alias neoa="neofetch --ascii ~/.config/neofetch/mario"
-alias neo="neofetch --w3m ~/.config/neofetch/mmm.jpg"
+# alias neofetch="fastfetch"
+alias fastfetch="fastfetch"
+alias ff="fastfetch --config ~/.config/fastfetch/ascii-art.jsonc"
+# alias neoa="neofetch --ascii ~/.config/neofetch/mario"
+# alias neo="neofetch --w3m ~/.config/neofetch/mmm.jpg"
 # alias neo="neofetch --kitty ~/.config/neofetch/cn.jpg"
 # alias neo="neofetch --w3m"
 
@@ -138,20 +143,19 @@ alias moon="curl 'wttr.in/Moon'"
 
 alias srm="sudo rm -rfv"
 alias rm="rm -rfv"
-crm() {
-  # /bin/bash -c "yes | rm -rfv $1"{.\*\,\*}
-  /bin/bash -c "rm -rfv $1{.*,*}"
-}
-scrm() {
-  sudo /bin/bash -c "rm -rfv $1{.*,*}"
-}
 
-alias la="ls -alFh --color=auto"
-alias llp="stat -c '%A %a %n' {*,.*}"
-alias ll="ls -CFa --color=auto"
-alias l="ls -CF --color=auto"
-alias las="exa -lahg --group-directories-first --octal-permissions"
-alias lss="ls -sh | sort -h"
+alias rsyncp="rsync -ah --info=progress2"
+
+alias lz="eza --icons=always"
+# alias ls="ls --color=auto"
+alias ls="eza --icons=always"
+alias la="lz -lah"
+alias ll="lz -Ga"
+alias l="lz -G"
+alias lah="lz -lahg --group-directories-first --octal-permissions"
+alias tree="ls --tree"
+# alias lss="ls -sh | sort -h"
+
 alias duh="du -d 1 -h | sort -h"
 alias jctl="journalctl -p 3 -xb"
 
@@ -182,7 +186,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......='cd ../../../../..'
 alias w="cd /media/files/work"
-alias wwg="cd /media/files/work/work-gulp"
 alias ghc="cd /media/files/github/creio"
 alias ghd="cd /media/files/github/creio/dots"
 alias srht="cd /media/files/srht"
@@ -218,8 +221,9 @@ alias gpb="git push origin $1"
 # alias gsc="github-search-repos -i"
 
 # tor chromium
-alias torc="$BROWSER --proxy-server='socks://127.0.0.1:9050' &"
-alias psi="$BROWSER --proxy-server='socks://127.0.0.1:3081' &"
+alias torp="brave --proxy-server='socks://127.0.0.1:9050'"
+# alias vpnp="brave --proxy-server='socks://127.0.0.1:2080'"
+alias vpnp="$HOME/.config/polybar/vpnp.sh"
 
 # full screen flags -fs
 alias yt="pipe-viewer"
@@ -253,6 +257,7 @@ alias porn="mpv 'http://www.pornhub.com/random'"
 alias mvis="ncmpcpp -S visualizer"
 alias m="ncmpcpp"
 alias h="btm"
+alias ctop="docker run --rm -ti --volume /var/run/docker.sock:/var/run/docker.sock:ro quay.io/vektorlab/ctop:latest"
 
 pf() {
   peerflix "$1" --mpv
@@ -299,14 +304,15 @@ alias srr="sudo ranger"
 
 # LANG=C pacman -Sl | awk '/\[installed\]$/ {print $2}' > ~/.pkglist.txt
 # LANG=C pacman -Sl | awk '/\[installed\]$/ {print $1 "/" $2 "-" $3}' > ~/.pkglist.txt
-alias pkglist="pacman -Qneq > ~/.pkglist.txt"
+alias plist="comm -12 <(pacman -Qeq | sort) <(pacman -Qnq | sort) | awk '{print} END{print \"\n\" NR}'"
+alias pkglist="comm -12 <(pacman -Qeq | sort) <(pacman -Qnq | sort) > ~/.pkglist.txt"
+alias alist="pacman -Qmeq"
 alias aurlist="pacman -Qmeq > ~/.aurlist.txt"
 
 alias pqo="pacman -Qqo"
 
 alias pl="pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse"
 alias pkey="sudo pacman-key --init && sudo pacman-key --populate && sudo pacman-key --refresh-keys --keyserver hkp://keys.gnupg.net && sudo pacman -Syy"
-alias y="yay -S"
 alias yn="yay -S --noconfirm"
 alias yl="yay -S --noconfirm - < ~/.pkglist.txt"
 alias ys="yay"
@@ -317,9 +323,12 @@ alias yU="yay -U"
 alias yUo="yay -U --overwrite='*'"
 alias yc="yay -Sc"
 alias ycc="yay -Scc"
+alias y="yay -Sy"
 alias yy="yay -Syy"
-alias yu="yay -Syyu"
-alias yun="yay -Syyu --noconfirm"
+alias yu="yay -Syu"
+alias yun="yay -Syu --noconfirm"
+alias yyun="yay -Syyu --noconfirm"
+alias yuno="yay -Syu --noconfirm --overwrite='*'"
 alias yr="yay -R"
 alias yrs="yay -Rs"
 alias yrsn="yay -Rsn"

@@ -5,10 +5,12 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
+Xcursor.theme: Qogir
+Xcursor.size: 24
 
 #include ".colors/tn"
 
-!URxvt.font: xft:Hack Nerd Font Mono:size=9
+!URxvt.font: xft:Hack Nerd Font Mono:size=13
 
 !!! xlsfonts | grep ttyp0    &&    fc-list : family style
 !URxvt.font: xft:UW Ttyp0:antialias=False:pixelsize=14,xft:Hack Nerd Font Mono:size=9,xft:Noto Color Emoji,xft:Symbola
@@ -18,12 +20,15 @@ Xft.lcdfilter: lcddefault
 !URxvt.font: xft:Cozette:size=10,xft:Hack Nerd Font Mono:size=9,xft:Symbola
 !URxvt.boldFont: xft:Cozette:size=10,xft:Hack Nerd Font Mono:size=9,xft:Symbola
 
-URxvt.font: xft:Hack Nerd Font Mono:size=12:antialias=false,xft:Noto Color Emoji:antialias=false,xft:Symbola:antialias=false
-URxvt.boldFont: xft:Hack Nerd Font Mono:size=12:antialias=false,xft:Noto Color Emoji:antialias=false,xft:Symbola:antialias=false
+URxvt.font: xft:Hack Nerd Font Mono:size=13:antialias=false,xft:Noto Color Emoji:antialias=false,xft:Symbola:antialias=false
+URxvt.boldFont: xft:Hack Nerd Font Mono:size=13:antialias=false,xft:Noto Color Emoji:antialias=false,xft:Symbola:antialias=false
+
+!URxvt.font: xft:JetBrainsMono Nerd Font Mono:size=13:antialias=false,xft:Noto Color Emoji:antialias=false,xft:Symbola:antialias=false
+!URxvt.boldFont: xft:JetBrainsMono Nerd Font Mono:size=13:antialias=false,xft:Noto Color Emoji:antialias=false,xft:Symbola:antialias=false
 
 !URxvt.termname: xterm-256color
 URxvt.iconFile: /usr/share/icons/Papirus/48x48/apps/urxvt.svg
-URxvt.geometry: 94x25
+URxvt.geometry: 98x25
 URxvt.internalBorder: 10
 URxvt.letterSpace: 0
 URxvt.antialias: true
@@ -32,7 +37,7 @@ URxvt.saveLines:    7000
 URxvt.scrollBar:    false
 URxvt.cursorBlink:  true
 URxvt.urgentOnBell: true
-URxvt.scrollTtyOutput: true
+URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress: true
 URxvt.transparent:false

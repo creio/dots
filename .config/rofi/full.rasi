@@ -1,5 +1,5 @@
 configuration {
-    font:                           "ClearSansMedium 10";
+    font:                           "ClearSansMedium 12";
     display-drun:                   "";
     display-window: "";
     drun-display-format:            "{name}";

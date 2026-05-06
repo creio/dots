@@ -5,7 +5,10 @@ SESSION=work
 pid="$(pidof tmux)"
 
 # exec
-if test "$pid"; then
+if [[ "$1" == "-k" ]]; then
+  tmux kill-session -t $SESSION
+  exit 0
+elif test "$pid"; then
   tmux attach
 else
   tmux new -d -s $SESSION

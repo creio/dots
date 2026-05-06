@@ -25,6 +25,7 @@ radius = 0
 fixed-center = true
 bottom = false
 locale = ru_RU.UTF-8
+underline-size = 1
 
 background = ${colors.background}
 foreground = ${colors.text}
@@ -42,7 +43,7 @@ module-margin-left = 5
 module-margin-right = 0
 
 # font-0 = "Clear Sans:style=Bold:size=10:antialias=false;2"
-font-0 = "Ubuntu:style=Bold:size=9:antialias=false;2"
+font-0 = "Ubuntu:style=Bold:size=10:antialias=false;2"
 #font-2 = "Siji:pixelsize=8;1"
 # Cat unicode: echo -e "\uF31A"
 font-1 = "Font Awesome 6 Free:style=Regular:pixelsize=9;2"
@@ -116,7 +117,7 @@ label = %percentage%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = "  "
 format-prefix-foreground = ${colors.accent}
 label = %percentage_used%%
 
@@ -148,14 +149,14 @@ interval = 3600
 format-prefix = " "
 format-prefix-foreground = ${colors.accent}
 format-padding = 1
-click-left = "urxvt -name w_85 -e ~/.config/polybar/uparch.sh d_up &"
-click-right = "urxvt -name w_85 -e pacui &"
+click-left = "alacritty --class w_85 -e ~/.config/polybar/uparch.sh d_up &"
+click-right = "alacritty --class w_85 -e pacui &"
 
 # [module/pkg]
 # type = custom/script
 # exec = updates.sh
 # exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
-# label = %{A1:urxvt -e "yay -Syyu" & disown:} %{A3:urxvt -name "w_85" -e "pacui" & disown:}%{F#B48EAD}%{F-} %output%%{A} %{A}
+# label = %{A1:alacritty -e "yay -Syyu" & disown:} %{A3:alacritty --class "w_85" -e "pacui" & disown:}%{F#B48EAD}%{F-} %output%%{A} %{A}
 # tail = true
 
 
@@ -171,18 +172,21 @@ interval = 1800
 
 [module/gmail]
 type = custom/script
-exec = ~/.config/polybar/gmail/launch.py --color '#798BC7' --nosound;
+exec = ~/.config/polybar/gmail/launch.py --color '#bb9af7' --nosound;
 tail = true
 format-padding = 1
-click-left = "kitty --name w_85 -e aerc"
-# click-left = "urxvt -name w_max -e ~/.bin/tmrun.sh &"
+click-left = "alacritty --class w_85 -e aerc"
+# click-left = "alacritty --class w_85 -e aerc"
+# click-left = "alacritty --class w_max -e ~/.bin/tmrun.sh &"
 click-right = xdg-open https://mail.google.com
 
 
 [module/yandex]
 type = custom/script
 exec = "~/.config/polybar/yandex/check_mail.sh"
-interval = 180
+#tail = false
+interval = 15
+interval-fail = 5
 format-foreground = ${colors.text}
 format-prefix = "| "
 # format-padding = 1
@@ -253,7 +257,7 @@ content = 
 content-foreground = ${colors.accent}
 content-background = ${xrdb:color0}
 content-padding = 3
-click-left = "urxvt -name w_85 -e ncmpcpp -S visualizer &"
+click-left = "alacritty --class w_85 -e ncmpcpp -S visualizer &"
 
 
 [module/mpd]
@@ -306,7 +310,7 @@ exec = sleep 5; ~/.config/polybar/crypto.py
 [module/blur_picom]
 type = custom/ipc
 hook-0 = echo 
-hook-1 = echo 
+hook-1 = echo "%{F#bb9af7}%{F-}"
 initial = 1
 format-foreground = ${colors.accent}
 format-background = ${xrdb:color0}
@@ -325,13 +329,14 @@ click-right = "~/.bin/bri.sh &"
 
 [module/vpn]
 type = custom/ipc
-hook-0 = echo 
-hook-1 = echo 
+hook-0 = echo "󰦝"
+hook-1 = echo "%{F#bb9af7}󰦝%{F-}"
 initial = 1
 format-foreground = ${colors.accent}
 # format-background = ${xrdb:color0}
 format-padding = 1
-click-left = ~/.config/polybar/vpn.sh
+click-left = ~/.config/polybar/vpnp.sh
+# click-left = "brave --proxy-server='socks://127.0.0.1:2080' &"
 
 
 [module/tor]
@@ -339,7 +344,7 @@ type = custom/script
 exec = ~/.config/polybar/status tor
 interval = 6
 format = <label>
-format-prefix = "  "
+format-prefix = "  "
 format-prefix-foreground = ${colors.accent}
 format-padding = 0
 click-left = "systemctl restart tor &"
@@ -348,9 +353,9 @@ click-right = "systemctl stop tor &"
 
 [module/fs]
 type = internal/fs
-mount-0 = /home
-mount-1 = /
-# mount-2 = /media/files
+mount-0 = /
+mount-1 = /home
+mount-2 = /media/files
 interval = 10
 fixed-values = true
 spacing = 2
@@ -375,7 +380,7 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.accent}
-click-right = pavucontrol
+click-right = pavucontrol-qt
 
 
 [module/date]

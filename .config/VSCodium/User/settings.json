@@ -1,10 +1,8 @@
 {
-  "editor.scrollbar.verticalScrollbarSize": 7,
-  "editor.scrollbar.horizontalScrollbarSize": 7,
-  "oneDarkPro.editorTheme": "One Dark Pro Flat",
+  "editor.scrollbar.verticalScrollbarSize": 10,
+  "editor.scrollbar.horizontalScrollbarSize": 10,
   "editor.fontFamily": "'Hack Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.tabSize": 4,
-  "editor.fontSize": 15,
   "editor.lineHeight": 24,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.formatOnPaste": true,
@@ -59,7 +57,9 @@
   "ecsstractor_port.indentation": " ",
   "json.format.enable": true,
   "[shellscript]": {
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[html]": {
@@ -71,7 +71,7 @@
     "editor.tabSize": 4,
     "editor.formatOnSave": false,
     "editor.formatOnPaste": false,
-    "editor.insertSpaces": true,
+    "editor.insertSpaces": false,
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
   "emmet.includeLanguages": {
@@ -91,7 +91,7 @@
   },
   "[typescript]": {
     "editor.tabSize": 2,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.insertSpaces": true,
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -150,9 +150,8 @@
   "breadcrumbs.enabled": false,
   "security.workspace.trust.enabled": false,
   "vetur.ignoreProjectWarning": true,
-  "workbench.colorTheme": "One Dark Pro Darker",
-  "editor.codeLens": false,
-  "editor.occurrencesHighlight": false,
+  "editor.codeLens": true,
+  "editor.occurrencesHighlight": "off",
   "workbench.editor.tabSizing": "shrink",
   "prettier.tabWidth": 4,
   "indentRainbow.excludedLanguages": [
@@ -182,9 +181,6 @@
   "editor.wordWrap": "on",
   "update.showReleaseNotes": false,
   "redhat.telemetry.enabled": false,
-  "window.customMenuBarAltFocus": false,
-  "window.enableMenuBarMnemonics": false,
-  "window.menuBarVisibility": "hidden",
   "settings.cycle": [
     {
       "id": "toggleMenuBar",
@@ -209,10 +205,39 @@
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "remote.SSH.configFile": "/media/files/work/.remote_ssh",
   "remote.SSH.localServerDownload": "always",
   "remote.SSH.enableX11Forwarding": false,
   "remote.SSH.useFlock": false,
+  "kilo-code.allowedCommands": [
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "kilo-code.deniedCommands": [],
+  "database-client.autoSync": true,
+  "workbench.colorTheme": "Tokyo Night",
+  "window.density.editorTabHeight": "compact",
+  "workbench.preferredDarkColorTheme": "Tokyo Night",
+  "oneDarkPro.editorTheme": "One Dark Pro Flat",
+  "window.autoDetectHighContrast": false,
+  "workbench.preferredLightColorTheme": "Tokyo Night Light",
+  "workbench.editor.decorations.colors": true,
+  "workbench.productIconTheme": "fluent-icons",
+  "editor.fontSize": 14,
+  "chat.fontSize": 14,
+  "markdown.preview.fontSize": 14,
+  "workbench.view.showQuietly": {
+    "workbench.panel.output": false
+  },
+  "window.enableMenuBarMnemonics": false,
+  "window.customMenuBarAltFocus": false,
+  "window.zoomLevel": 0.9,
+  "intelliphp.inlineSuggestionsEnabled": false,
+  "php.codeActions.enabled": false,
+  "editor.minimap.autohide": "mouseover",
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "extensions.autoUpdate": false,
   // "files.insertFinalNewline": false,
-  // "files.trimFinalNewlines": false,
+  // "files.trimFinalNewlines": true,
 }

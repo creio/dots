@@ -6,19 +6,19 @@
 kutt_key="$KUTT_API_KEY"
 target_url=$1
 short_name=$2
-short_pass=$3
+short_desc=$3
 short_expire=$4
-short_desc=$5
+short_pass=$5
 
 generate_data()
 {
   cat <<LOL
 {
   "target": "${target_url}",
-  "customurl": "${short_name}",
-  "password": "${short_pass}",
-  "expire_in": "${short_expire}",
   "description": "${short_desc}",
+  "expire_in": "${short_expire}",
+  "password": "${short_pass}",
+  "customurl": "${short_name}",
   "reuse": true,
   "domain": "kutt.it"
 }
@@ -26,21 +26,21 @@ LOL
 }
 
 if [[ -n "$target_url" && "$1" != "-l" && "$1" != "-d" ]]; then
-  result="$(curl -s -H "X-API-KEY:$kutt_key" --data "$(generate_data)" -H "Content-Type: application/json" -X POST https://kutt.it/api/v2/links)"
+  result="$(curl -s -H "X-API-KEY:$kutt_key" --data "$(generate_data)" -H "Content-Type: application/json" -X POST https://kutt.to/api/v2/links)"
   echo $result | jq -r "." | tr -d '{}'
   echo $result | jq -r ".link"| xclip -selection c
 elif [[ "$1" == "-l" ]]; then
   echo -e "\nlist shorts"
-  curl -s -H "X-API-KEY:$kutt_key" https://kutt.it/api/v2/links | jq -r ".data[] | .id,.link,.target"
+  curl -s -H "X-API-KEY:$kutt_key" https://kutt.to/api/v2/links | jq -r ".data[] | .id,.link,.target"
 elif [[ "$1" == "-d" && -n "$2" ]]; then
-  curl -s -H "X-API-KEY:$kutt_key" -X DELETE "https://kutt.it/api/v2/links/$2" | jq -r ".[]"
+  curl -s -H "X-API-KEY:$kutt_key" -X DELETE "https://kutt.to/api/v2/links/$2" | jq -r ".[]"
 elif [[ "$1" == "-d" ]]; then
   echo -e "list id: $ kutt.sh -l\n$ kutt.sh -d id"
 else
   echo "random short"
   echo "$ kutt.sh https://target_url"
   echo -e "\ncustom short"
-  echo "$ kutt.sh https://target_url short_name password \"2 minutes/hours/days\" description"
+  echo "$ kutt.sh https://target_url short_name description \"2 minutes/hours/days\" password"
   echo -e "\nlist shorts"
   echo "$ kutt.sh -l"
   echo -e "\ndelete short"

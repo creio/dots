@@ -3,6 +3,8 @@
 xset -b
 # wmname LG3D &
 
+xsetroot -cursor_name left_ptr
+
 [[ $(command -v polybar) ]] && sh ~/.config/polybar/launch.sh &
 # hsetroot -add '#2c3539' -add '#b89ca8' -gradient 130 &
 # hsetroot -tile input.jpg -contrast 0.6 &
@@ -12,8 +14,8 @@ picom -b --config ~/.config/picom.conf &
 # picom -b --experimental-backends --config ~/.config/picom_blur.conf &
 # flashfocus &
 [[ $(command -v thunar) ]] && thunar --daemon &
-urxvtd -q -o -f &
-alttab -fg "#9baec8" -bg "#161720" -frame "#5a74ca" -t 128x128 -i 128x48 -d 2 -theme Qogir-dark -font "xft:ClearSansMedium:size=9:antialias=false" -pk "Left" -nk "Right" &
+# urxvtd -q -o -f &
+alttab -fg "#9baec8" -bg "#161720" -frame "#5a74ca" -t 128x128 -i 128x48 -d 2 -theme Qogir-Dark -font "xft:ClearSansMedium:size=9:antialias=false" -pk "Left" -nk "Right" &
 numlockx on &
 xsettingsd &
 # xfsettingsd &
@@ -37,10 +39,11 @@ sh -c ~/.conky/start.sh &
 
 # (sleep 3; telegram-desktop) &
 # caffeine &
-~/.bin/pulseaudio.sh &
 
 tint2 -c ~/.config/tint2/button.tint2rc &
 (sleep 3; tint2 -c ~/.config/tint2/hide_tray.tint2rc) &
+
+# (sleep 3; ~/.bin/pulseaudio.sh) &
 
 #glava -m bars &
 # glava >/dev/null 2>&1 &
