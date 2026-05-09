@@ -22,8 +22,6 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-export EDITOR="micro"
-
 command -v starship >/dev/null && eval "$(starship init zsh)"
 command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 # eval "$(oh-my-posh init zsh)"
@@ -69,6 +67,7 @@ fi
 # export TERM="rxvt-256color"
 export TERM="xterm-256color"
 # export TERM="xterm-kitty"
+export EDITOR="$([[ -n $DISPLAY && $(command -v micro) ]] && echo 'micro' || echo 'nano')"
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 export XDG_CONFIG_HOME="$HOME/.config"
 export _JAVA_AWT_WM_NONREPARENTING=1

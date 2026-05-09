@@ -399,7 +399,7 @@
     </keybind>
     <keybind key="A-y">
       <action name="Execute">
-        <command>alacritty --class w_85 -e yazi</command>
+        <command>alacritty --class w_85 -e zsh -ic yazi</command>
       </action>
     </keybind>
     <keybind key="A-t">
