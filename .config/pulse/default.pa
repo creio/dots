@@ -1,7 +1,0 @@
-#!/usr/bin/pulseaudio -nF
-
-.include /etc/pulse/default.pa
-
-# load-module module-null-sink sink_name=stream
-# load-module module-loopback latency_msec=5 sink=stream
-# load-module module-loopback latency_msec=5 sink=stream

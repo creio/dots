@@ -1,0 +1,8 @@
+{
+    // "clipboard": "terminal",
+    "colorscheme": "one-dark",
+    "hlsearch": true,
+    "scrollbar": true,
+    "tabstospaces": true,
+    "softwrap": true
+}

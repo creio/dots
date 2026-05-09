@@ -1,0 +1,50 @@
+[general]
+import = [
+  "~/.config/alacritty/themes/tn.toml"
+]
+
+[window]
+dimensions = { columns = 95, lines = 23 }
+opacity = 0.97
+padding = { x = 10, y = 10 }
+dynamic_padding = true
+
+
+[font]
+size = 13
+normal = { family = "JetBrainsMono Nerd Font Mono", style = "Medium" }
+bold = { family = "JetBrainsMono Nerd Font Mono", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font Mono", style = "Bold Italic" }
+
+[selection]
+save_to_clipboard = true
+
+# Увеличение (Ctrl + Plus)
+[[keyboard.bindings]]
+key = "Plus"
+mods = "Control"
+action = "IncreaseFontSize"
+
+# Уменьшение (Ctrl + Minus)
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Control"
+action = "DecreaseFontSize"
+
+# Сброс к базовому размеру (Ctrl + 0)
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+# Опционально: поддержка цифрового блока
+[[keyboard.bindings]]
+key = "NumpadAdd"
+mods = "Control"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "NumpadSubtract"
+mods = "Control"
+action = "DecreaseFontSize"

@@ -10,10 +10,13 @@
 .config/sublime-text-3/Packages/User/sftp
 .config/sublime-text-3/Packages/User/Xdebug*
 .config/JetBrains
+.config/Termius
 .config/rclone
+.config/weechat
 .jetbra
 .conky/gmail/credentials.json
 .conky/gmail/client_secret.json
+.conky/.speeds
 .env
 .env_borg
 .2fa
@@ -27,7 +30,10 @@
 .config/ranger/plugins/__pycache__
 .config/ranger/plugins/ranger_devicons
 .config/jgmenu/backup
+.config/yazi/vfs.toml
 .dots
+
+root/etc/X11/xorg.conf.d/30-nvidia.conf
 
 ## include file
 !.ssh/
@@ -39,5 +45,3 @@
 !.wall/wl.jpg
 !.wall/wl.png
 !.wall/lock.png
-
-root/etc/X11/xorg.conf.d/30-nvidia.conf

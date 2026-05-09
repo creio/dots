@@ -1,0 +1,24 @@
+[[plugin.deps]]
+use = "barbanevosa/autosession"
+rev = "7a12b20"
+hash = "f9b76184511c983db7c6f719eea1e14d"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "e73fd74"
+hash = "6ea5f37c7f219671ec504cb8311f889d"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "4ffa48f"
+hash = "9c7987da2d2a2120dac33abb64132004"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-macchiato"
+rev = "0670801"
+hash = "67f2240fd9c98f21714527a24cd672f8"
+
+[[flavor.deps]]
+use = "dangooddd/kanagawa"
+rev = "04985d1"
+hash = "c69a63981e254a3a06a11c2bf0e6af1d"

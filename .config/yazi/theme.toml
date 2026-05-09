@@ -1,0 +1,11 @@
+[flavor]
+# dark = "kanagawa"
+dark = "catppuccin-macchiato"
+
+[status]
+# overall   = {}
+# Например, волны
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+# sep_left  = { open = "", close = "" }
+# sep_right = { open = " ", close = "" }

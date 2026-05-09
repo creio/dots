@@ -1,6 +1,6 @@
 [Default Applications]
 text/x-qml=sublime_text_3.desktop
-inode/directory=thunar.desktop
+inode/directory=yazi.desktop
 video/x-matroska=mpv.desktop
 text/plain=sublime_text.desktop
 x-scheme-handler/http=firefox.desktop

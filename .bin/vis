@@ -18,7 +18,7 @@ BAR_HEIGHT_HIDE=970
 alacritty --config-file $HOME/.config/alacritty/rx_vis.toml --class rx_vis,rx_vis --title rx_vis -e cava &
 
 # 2. Ждем окно (без этого xdo выдает ошибку)
-xdotool search --sync --onlyvisible --class "rx_vis"
+xdotool search --sync --onlyvisible --class "rx_vis" > /dev/null
 WIN_ID=$(xdotool search --class "rx_vis" | tail -1)
 
 # 3. Конфиг Devilspie (убираем декорации и делаем доком)

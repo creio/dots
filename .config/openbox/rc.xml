@@ -397,9 +397,9 @@
         <command>findapp subl</command>
       </action>
     </keybind>
-    <keybind key="A-r">
+    <keybind key="A-y">
       <action name="Execute">
-        <command>alacritty --class w_70 -e ranger</command>
+        <command>alacritty --class w_85 -e yazi</command>
       </action>
     </keybind>
     <keybind key="A-t">

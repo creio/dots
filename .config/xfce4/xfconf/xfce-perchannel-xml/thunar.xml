@@ -6,9 +6,9 @@
   <property name="last-window-width" type="int" value="920"/>
   <property name="last-window-height" type="int" value="492"/>
   <property name="last-window-maximized" type="bool" value="false"/>
-  <property name="last-menubar-visible" type="bool" value="true"/>
-  <property name="last-separator-position" type="int" value="165"/>
-  <property name="last-show-hidden" type="bool" value="true"/>
+  <property name="last-menubar-visible" type="bool" value="false"/>
+  <property name="last-separator-position" type="int" value="157"/>
+  <property name="last-show-hidden" type="bool" value="false"/>
   <property name="misc-confirm-close-multiple-tabs" type="bool" value="false"/>
   <property name="hidden-devices" type="array">
     <value type="string" value="07a611fe-99ad-41ae-ba38-eef324a7b35b"/>

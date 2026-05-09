@@ -1,0 +1,25 @@
+[mgr]
+ratio = [1, 3, 4]
+# sort_by = "size"
+sort_sensitive = true
+# linemode = "size"
+show_hidden = true
+show_symlink = true
+
+[preview]
+image_quality = 90
+max_width = 1000
+max_height = 1000
+
+[opener]
+edit_in_subl = [
+  { run = 'subl -a "$@"', desc = "Open in Sublime Text", for = "linux" },
+]
+
+[open]
+rules = [
+  # dirs
+  { url = "*/", use = [ "edit_in_subl", "edit", "open", "reveal" ] },
+  { mime = "text/*", use = [ "edit", "reveal", "edit_in_subl" ] },
+  { url = "*", use = [ "open", "reveal", "edit_in_subl" ] },
+]

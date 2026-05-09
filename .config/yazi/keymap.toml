@@ -1,0 +1,30 @@
+[[mgr.prepend_keymap]]
+on = [ "q" ]
+run = "plugin autosession -- save-and-quit"
+desc = "Save session and quit"
+
+[[mgr.prepend_keymap]]
+on   = "!"
+for  = "unix"
+run  = 'shell "$SHELL" --block'
+desc = "Open $SHELL here"
+
+[[input.prepend_keymap]]
+on   = "<Esc>"
+run  = "close"
+desc = "Cancel input"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "i" ]
+run  = "plugin lazygit"
+desc = "run lazygit"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "s" ]
+run  = "cd sftp://my-server"
+desc = "Go to my-server"
+
+[[mgr.prepend_keymap]]
+on   = "T"
+run  = "plugin toggle-pane max-preview"
+desc = "Maximize or restore the preview pane"

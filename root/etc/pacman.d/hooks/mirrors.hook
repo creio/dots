@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = pacman-mirrorlist
+
+[Action]
+Description = Updating /etc/pacman.d/mirrorlist
+When = PostTransaction
+Depends = reflector
+Exec = /bin/sh -c "reflector -p https,http --sort rate -l 20 -f 10 --threads 5 --save /etc/pacman.d/mirrorlist"

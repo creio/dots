@@ -8,10 +8,13 @@
     	<execute>alacritty</execute>
     </action></item>
     <item label="File Manager"> <action name="Execute">
-    	<execute>alacritty --class term_center -e ranger</execute>
+    	<execute>alacritty --class w_85 -e yazi</execute>
     </action></item>
     <item label="Web Search"> <action name="Execute">
     	<execute>search</execute>
+    </action></item>
+    <item label="Btop"> <action name="Execute">
+    	<execute>alacritty --class w_max -e btop</execute>
     </action></item>
     <separator />
     <menu id="0" label="Development">
@@ -21,20 +24,23 @@
       <item label="Micro"> <action name="Execute">
       	<execute>alacritty --class w_max -e micro</execute>
       </action></item>
-      <item label="Vim"> <action name="Execute">
-      	<execute>alacritty -e nvim</execute>
+      <item label="Nvim"> <action name="Execute">
+      	<execute>alacritty --class w_max -e nvim</execute>
       </action></item>
     </menu>
     <menu id="1" label="Network">
-      <item label="Chromium"> <action name="Execute">
-      	<execute>chromium</execute>
+      <item label="Firefox"> <action name="Execute">
+      	<execute>firefox</execute>
+      </action></item>
+      <item label="Brave"> <action name="Execute">
+      	<execute>brave</execute>
       </action></item>
       <item label="Qutebrowser"> <action name="Execute">
       	<execute>qutebrowser</execute>
       </action></item>
       <separator />
-      <item label="Transmission"> <action name="Execute">
-      	<execute>transmission-gtk</execute>
+      <item label="Qbittorrent"> <action name="Execute">
+      	<execute>qbittorrent</execute>
       </action></item>
       <item label="Filezilla"> <action name="Execute">
       	<execute>filezilla</execute>
@@ -45,27 +51,38 @@
       	<execute>telegram-desktop</execute>
       </action></item>
       <item label="Discord"> <action name="Execute">
-      	<execute>lightcord</execute>
+      	<execute>discord</execute>
       </action></item>
       <item label="Keybase"> <action name="Execute">
       	<execute>keybase-gui</execute>
       </action></item>
     </menu>
-    <menu id="3" label="Multimedia">
+    <menu id="3" label="Office">
+      <item label="Obsidian"> <action name="Execute">
+      	<execute>obsidian</execute>
+      </action></item>
+      <item label="Onlyoffice"> <action name="Execute">
+      	<execute>onlyoffice-desktopeditors</execute>
+      </action></item>
+    </menu>
+    <menu id="4" label="Multimedia">
       <item label="Audacity"> <action name="Execute">
       	<execute>audacity</execute>
       </action></item>
-      <item label="SSR"> <action name="Execute">
-      	<execute>simplescreenrecorder</execute>
+      <item label="Smplayer"> <action name="Execute">
+      	<execute>smplayer</execute>
       </action></item>
-      <item label="Mpv"> <action name="Execute">
-      	<execute>mpv</execute>
+      <item label="Pavucontrol"> <action name="Execute">
+      	<execute>pavucontrol-qt</execute>
       </action></item>
-      <item label="PVC"> <action name="Execute">
-      	<execute>pavucontrol</execute>
+      <item label="OBS"> <action name="Execute">
+      	<execute>obs</execute>
       </action></item>
     </menu>
-    <menu id="4" label="Tools">
+    <menu id="5" label="Tools">
+      <item label="Thunar"> <action name="Execute">
+      	<execute>thunar</execute>
+      </action></item>
       <item label="File-roller"> <action name="Execute">
       	<execute>file-roller</execute>
       </action></item>
@@ -89,12 +106,15 @@
       	<execute>gufw</execute>
       </action></item>
     </menu>
-    <menu id="5" label="Settings">
+    <menu id="6" label="Settings">
       <item label="Lxappearance"> <action name="Execute">
       	<execute>lxappearance</execute>
       </action></item>
       <item label="Qt5ct"> <action name="Execute">
       	<execute>qt5ct</execute>
+      </action></item>
+      <item label="Qt6ct"> <action name="Execute">
+      	<execute>qt6ct</execute>
       </action></item>
       <item label="Kvantummanager"> <action name="Execute">
       	<execute>kvantummanager</execute>
@@ -106,14 +126,7 @@
       	<execute>xfce4-power-manager-settings</execute>
       </action></item>
     </menu>
-    <menu id="6" label="System">
-      <item label="htop"> <action name="Execute">
-      	<execute>alacritty --class w_max -e htop</execute>
-      </action></item>
-      <item label="bottom"> <action name="Execute">
-      	<execute>alacritty --class w_max -e btm</execute>
-      </action></item>
-      <separator />
+    <menu id="7" label="System">
       <item label="Gparted"> <action name="Execute">
       	<execute>gparted</execute>
       </action></item>
@@ -127,8 +140,8 @@
       	<execute>timeshift-gtk</execute>
       </action></item>
       <separator />
-      <menu id="7" label="Openbox">
-        <item label="Reconfigure"> <action name="Execute">
+      <menu id="8" label="Openbox">
+        <item label="Reconfigure (W-A-r)"> <action name="Execute">
         	<execute>openbox --reconfigure</execute>
         </action></item>
         <item label="Restart"> <action name="Execute">
@@ -138,10 +151,10 @@
     </menu>
     <separator />
     <item label="Lock"> <action name="Execute">
-    	<execute>multilock.sh -l dimblur</execute>
+    	<execute>~/.bin/multilock.sh -l dimblur</execute>
     </action></item>
     <item label="Logout"> <action name="Execute">
-    	<execute>rofi-logout</execute>
+    	<execute>~/.bin/rofi-logout</execute>
     </action></item>
   </menu>
 </openbox_menu>

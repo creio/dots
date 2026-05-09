@@ -1,67 +1,83 @@
 #!/usr/bin/env python
-# sudo pip install --upgrade google-api-python-client
+# deps: google-auth google-auth-oauthlib google-api-python-client
 
 import os
 import pathlib
 import subprocess
 import time
 import argparse
-from apiclient import discovery, errors
-from oauth2client import client, file
-from httplib2 import ServerNotFoundError
+import pickle
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+from google.auth.transport.requests import Request
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-l', '--label', default='INBOX')
 parser.add_argument('-p', '--prefix', default='\uf0e0')
-parser.add_argument('-c', '--color', default='#e06c75')
+parser.add_argument('-c', '--color', default='#bb9af7')
 parser.add_argument('-ns', '--nosound', action='store_true')
 args = parser.parse_args()
 
 DIR = os.path.dirname(os.path.realpath(__file__))
 CREDENTIALS_PATH = os.path.join(DIR, 'credentials.json')
 
-unread_prefix = '%{F' + args.color + '}' + args.prefix + ' %{F-}'
-error_prefix = '%{F' + args.color + '}\uf06a %{F-}'
+unread_prefix = f'%{{F{args.color}}}{args.prefix} %{{F-}}'
+error_prefix = f'%{{F{args.color}}}\uf06a %{{F-}}'
 
-count_was = 0
+def get_gmail_service():
+    if not os.path.exists(CREDENTIALS_PATH):
+        return None
+
+    with open(CREDENTIALS_PATH, 'rb') as token:
+        creds = pickle.load(token)
+
+    # Автоматическое обновление токена, если он протух
+    if creds and creds.expired and creds.refresh_token:
+        creds.refresh(Request())
+        with open(CREDENTIALS_PATH, 'wb') as token:
+            pickle.dump(creds, token)
+
+    return build('gmail', 'v1', credentials=creds, cache_discovery=False)
 
 def print_count(count, is_odd=False):
     tilde = '~' if is_odd else ''
-    output = ''
     if count > 0:
-        output = unread_prefix + tilde + str(count)
+        output = f"{unread_prefix}{tilde}{count}"
     else:
-        output = (args.prefix + ' ' + tilde).strip()
+        output = f"{args.prefix} {tilde}".strip()
     print(output, flush=True)
 
-def update_count(count_was):
-    gmail = discovery.build('gmail', 'v1', credentials=file.Storage(CREDENTIALS_PATH).get())
-    labels = gmail.users().labels().get(userId='me', id=args.label).execute()
-    count = labels['messagesUnread']
-    print_count(count)
-    if not args.nosound and count_was < count and count > 0:
-        subprocess.run(['canberra-gtk-play', '-i', 'message'])
-    return count
+count_was = 0
+service = None
 
 print_count(0, True)
 
 while True:
     try:
-        if pathlib.Path(CREDENTIALS_PATH).is_file():
-            count_was = update_count(count_was)
-            time.sleep(10)
+        if service is None:
+            service = get_gmail_service()
+
+        if service:
+            results = service.users().labels().get(userId='me', id=args.label).execute()
+            count = results.get('messagesUnread', 0)
+            print_count(count)
+
+            if not args.nosound and count_was < count and count > 0:
+                subprocess.run(['canberra-gtk-play', '-i', 'message'])
+            count_was = count
         else:
-            print(error_prefix + 'credentials not found', flush=True)
-            time.sleep(2)
-    except errors.HttpError as error:
+            print(f"{error_prefix}auth error", flush=True)
+
+        time.sleep(10)
+
+    except HttpError as error:
         if error.resp.status == 404:
-            print(error_prefix + f'"{args.label}" label not found', flush=True)
-        else:
-            print_count(count_was, True)
+            print(f"{error_prefix}label not found", flush=True)
+        elif error.resp.status in [401, 403]:
+            service = None # Сброс сервиса для переавторизации
         time.sleep(5)
-    except (ServerNotFoundError, OSError):
+    except Exception as e:
+        # Для отладки можно раскомментировать:
+        # print(f"Error: {e}", flush=True)
         print_count(count_was, True)
-        time.sleep(5)
-    except client.AccessTokenRefreshError:
-        print(error_prefix + 'revoked/expired credentials', flush=True)
         time.sleep(5)

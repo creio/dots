@@ -77,14 +77,14 @@ elif [[ "$1" == "-bu" ]]; then
         -enable-kvm \
         -machine type=q35,smm=on,accel=kvm,usb=on \
         -m 4G \
+        -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 \
+        -chardev spicevmc,id=spicechannel0,name=vdagent \
         -net nic -net user,hostfwd=tcp::22222-:22 \
         -virtfs local,path=$WMSHARE_DIR,mount_tag=host0,security_model=passthrough,id=host0 \
         -vga qxl \
         -device AC97 \
         -drive if=pflash,format=raw,unit=0,file=/tmp/OVMF_CODE.secboot.4m.fd,read-only=on \
         -drive if=pflash,format=raw,unit=1,file=/tmp/OVMF_VARS.4m.fd\
-        -global driver=cfi.pflash01,property=secure,value=on \
-        -global ICH9-LPC.disable_s3=1 \
         -drive file=$QVIRT_DIR/$QVIRT_QCOW,if=virtio \
         -boot d
 elif [[ "$1" == "-u" ]]; then

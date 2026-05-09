@@ -5,16 +5,17 @@ KB_PATH='/media/files/keybase/dump/dots'
 REPO='https://github.com/creio/dots'
 BRANCH=''
 BKPS=(
-  {docs}
+  docs
   .{github,bin,colors,devilspie,fonts,gnupg,nano,ssh,wall}
   .{zshrc,alias_zsh,xinitrc,Xresources,xsettingsd,gitconfig,gitignore,editorconfig,aurlist.txt,pkglist.txt}
   .{env,env_borg,2fa,dotsrc,gtkrc-2.0,nanorc,tmux.conf,face.icon}
   .{hushlogin,jetbra}
-  .config/{aerc,ranger,rclone,JetBrains}
-  .config/{berry,bspwm,glava,sxhkd,i3,openbox,xfce4,frankenwm,xfwm}
-  .config/{gtk-2.0,gtk-3.0,gtk-4.0,cava,clipit,conky,dconf,dunst,fontconfig,fish,htop,parcellite}
+  .config/{aerc,alacritty,yazi,rclone,JetBrains,Termius}
+  .config/{berry,bspwm,frankenwm,glava,sxhkd,i3,openbox,xfce4,xfwm}
+  .config/{gtk-2.0,gtk-3.0,gtk-4.0,cava,clipit,conky,dconf,dunst,fontconfig,fish,btop,parcellite}
   .config/{eww,jgmenu,mc,mpv,menus,fastfetch,netwmpager,newsboat,polybar,Kvantum,qt5ct,qt6ct,yay}
-  .config/{rofi,rofi-pass,skippy-xd,streamlink,kitty,termite,tint2,viewnior,volumeicon}
+  .config/{rofi,rofi-pass,skippy-xd,streamlink,kitty,tint2,viewnior,volumeicon,weechat}
+  .config/micro/{settings,bindings}.json
   .config/audacious/config
   .config/mpd/mpd.conf
   .config/nvim/init.vim
@@ -26,8 +27,9 @@ BKPS=(
   .config/sublime-text-3/Packages/User
   .config/systemd/user/rclone-mount@.service
   .config/VSCodium/User/{snippets,{settings,keybindings}.json,ext.list}
-  .config/{clean-chroot-manager.conf,chromium-flags.conf,picom.conf,picom_blur.conf}
+  .config/{brave-flags.conf,chromium-flags.conf,clean-chroot-manager.conf,picom.conf,picom_blur.conf}
   .config/{redshift.conf,Trolltech.conf,kdenliverc,mimeapps.list,config.json}
+  .config/{starship.toml}
   .config/user-dirs.{dirs,locale}
   .config/pulse/{daemon.conf,default.pa}
   .conky
@@ -41,7 +43,7 @@ ROOT_BKPS=(
   etc/{makepkg,pacman,sddm,vconsole}.conf
   etc/systemd/system/dump.{timer,service}
   usr/share/sddm/themes/slice
-  etc/pacman.d/hooks/mirrorupgrade.hook
+  etc/pacman.d/hooks/mirrors.hook
   etc/pacman.d/gnupg/gpg.conf
   etc/X11/xorg.conf.d/00-keyboard.conf
   etc/X11/xorg.conf.d/30-nvidia.conf

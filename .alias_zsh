@@ -121,8 +121,8 @@ abuild() {
 }
 
 # alias neofetch="fastfetch"
-alias fastfetch="fastfetch"
-alias ff="fastfetch --config ~/.config/fastfetch/ascii-art.jsonc"
+alias ff="fastfetch"
+alias ffa="fastfetch --config ~/.config/fastfetch/ascii-art.jsonc"
 # alias neoa="neofetch --ascii ~/.config/neofetch/mario"
 # alias neo="neofetch --w3m ~/.config/neofetch/mmm.jpg"
 # alias neo="neofetch --kitty ~/.config/neofetch/cn.jpg"
@@ -153,7 +153,7 @@ alias la="lz -lah"
 alias ll="lz -Ga"
 alias l="lz -G"
 alias lah="lz -lahg --group-directories-first --octal-permissions"
-alias tree="ls --tree"
+alias lt="ls --tree"
 # alias lss="ls -sh | sort -h"
 
 alias duh="du -d 1 -h | sort -h"
@@ -256,7 +256,7 @@ alias porn="mpv 'http://www.pornhub.com/random'"
 
 alias mvis="ncmpcpp -S visualizer"
 alias m="ncmpcpp"
-alias h="btm"
+alias h="btop"
 alias ctop="docker run --rm -ti --volume /var/run/docker.sock:/var/run/docker.sock:ro quay.io/vektorlab/ctop:latest"
 
 pf() {
@@ -287,9 +287,6 @@ alias vscodium='c'
 function s() {
   subl -a "$1" &
 }
-function sudos() {
-  sudo subl -a "$1" &
-}
 
 alias mi="micro"
 alias smi="sudo micro"
@@ -298,9 +295,8 @@ alias tmd="tmux detach"
 alias tmk="tmux kill-server"
 # ~/.config/ranger/rc.conf ## set save_tabs_on_exit true
 # alias rr='ranger --cmd="tab_shift 4" --cmd=tab_close'
-alias rr='ranger'
-alias srr="sudo ranger"
-# alias {v,vi,vim}="nvim"
+alias f='yazi'
+alias {v,vi,vim}="nvim"
 
 # LANG=C pacman -Sl | awk '/\[installed\]$/ {print $2}' > ~/.pkglist.txt
 # LANG=C pacman -Sl | awk '/\[installed\]$/ {print $1 "/" $2 "-" $3}' > ~/.pkglist.txt
